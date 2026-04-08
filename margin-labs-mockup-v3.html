@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margin Labs — Brand Mockup v3</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── THEME TOKENS ───────────────────────────────── */
+[data-theme="dark"] {
+  --bg-page:       #0a0a0a;
+  --bg-site:       #111111;
+  --bg2:           #171717;
+  --bg3:           #1e1e1e;
+  --bg4:           #252525;
+  --border:        rgba(200,130,60,0.13);
+  --border2:       rgba(240,235,228,0.07);
+  --text-primary:  #F0EBE4;
+  --text-dim:      rgba(240,235,228,0.52);
+  --text-dimmer:   rgba(240,235,228,0.28);
+  --nav-bg:        #111111;
+  --nav-border:    rgba(240,235,228,0.07);
+  --footer-bg:     #0d0d0d;
+  --stat-bg:       #1e1e1e;
+  --mm-bg:         #141414;
+  --mm-card:       #1a1a1a;
+  --product-bg:    #0f0f0f;
+  --hero-glow:     rgba(200,130,60,0.05);
+  --url-bar:       #111;
+  --url-text:      #555;
+  --browser-bar:   #1a1a1a;
+  --browser-border:#222;
+  --toggle-bg:     #2a2a2a;
+  --toggle-icon:   #888;
+  --input-bg:      #1a1a1a;
+  --input-border:  rgba(240,235,228,0.1);
+  --input-text:    rgba(240,235,228,0.4);
+}
+
+[data-theme="light"] {
+  --bg-page:       #f5f0ea;
+  --bg-site:       #ffffff;
+  --bg2:           #faf7f3;
+  --bg3:           #f0ebe3;
+  --bg4:           #e8e0d5;
+  --border:        rgba(158,98,40,0.15);
+  --border2:       rgba(30,20,10,0.08);
+  --text-primary:  #1a1208;
+  --text-dim:      rgba(30,20,10,0.55);
+  --text-dimmer:   rgba(30,20,10,0.3);
+  --nav-bg:        #ffffff;
+  --nav-border:    rgba(30,20,10,0.08);
+  --footer-bg:     #ede7df;
+  --stat-bg:       #ede7df;
+  --mm-bg:         #f5f0ea;
+  --mm-card:       #ede7df;
+  --product-bg:    #f0ebe3;
+  --hero-glow:     rgba(200,130,60,0.07);
+  --url-bar:       #f0ebe3;
+  --url-text:      #999;
+  --browser-bar:   #f5f0ea;
+  --browser-border:#e0d8ce;
+  --toggle-bg:     #e8e0d5;
+  --toggle-icon:   #888;
+  --input-bg:      #f5f0ea;
+  --input-border:  rgba(30,20,10,0.15);
+  --input-text:    rgba(30,20,10,0.4);
+}
+
+:root {
+  --copper:    #C8823C;
+  --copper-lt: #D9944E;
+  --copper-dk: #9E6228;
+  --font:      'DM Sans', sans-serif;
+  --mono:      'DM Mono', monospace;
+}
+
+body {
+  background: var(--bg-page);
+  font-family: var(--font);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ─── TOGGLE BAR ─────────────────────────────────── */
+.theme-toggle-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg-page);
+  border-bottom: 1px solid var(--border2);
+  padding: 10px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background 0.3s ease;
+}
+.toggle-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dimmer); }
+.toggle-btn {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--toggle-bg); border: none; border-radius: 20px;
+  padding: 6px 14px 6px 10px; cursor: pointer; transition: background 0.2s;
+}
+.toggle-btn:hover { opacity: 0.8; }
+.toggle-icon { font-size: 14px; line-height: 1; }
+.toggle-text { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--toggle-icon); }
+
+/* ─── OUTER WRAPPERS ─────────────────────────────── */
+.section { max-width: 960px; margin: 0 auto; padding: 56px 32px 0; }
+.section-tag {
+  font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--text-dimmer); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-tag::after { content: ''; flex: 1; height: 1px; background: var(--border2); }
+
+/* ─── WORDMARK ───────────────────────────────────── */
+.ml-mark { font-family: var(--font); letter-spacing: -0.025em; line-height: 1; white-space: nowrap; }
+.ml-mark .mg { font-weight: 300; color: var(--text-primary); }
+.ml-mark .lb { font-weight: 700; color: var(--copper); }
+.ml-mark-inv .mg { font-weight: 300; color: rgba(17,17,17,0.55); }
+.ml-mark-inv .lb { font-weight: 700; color: #111; }
+.ml-mark-dark .mg { font-weight: 300; color: #1a1208; }
+.ml-mark-dark .lb { font-weight: 700; color: var(--copper-dk); }
+.wm-xl { font-size: 36px; } .wm-lg { font-size: 28px; }
+.wm-md { font-size: 20px; } .wm-sm { font-size: 15px; } .wm-xs { font-size: 11px; }
+
+/* ─── LOGO GRID ──────────────────────────────────── */
+.logo-outer { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+.logo-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+.logo-cell { padding: 40px 28px 28px; display: flex; flex-direction: column; gap: 20px; }
+.logo-cell-sub { font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.3; }
+.lc-dark   { background: #171717; }
+.lc-light  { background: #F0EBE4; }
+.lc-copper { background: var(--copper); }
+.lc-scale  { background: #0f0f0f; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.lc-scale .logo-cell-sub { color: #555; opacity: 1; }
+
+/* ─── FAVICON ────────────────────────────────────── */
+.fav-outer { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+.fav-row { background: var(--bg2); border: 1px solid var(--border2); padding: 32px 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.fav-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.fav-item span { font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dimmer); }
+.fav-wrap { border-radius: 4px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.fav-note { flex: 1; min-width: 200px; }
+.fav-note p { font-size: 11px; font-weight: 300; color: var(--text-dim); line-height: 1.75; }
+
+/* ─── SITE FRAME ─────────────────────────────────── */
+.site-outer { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+.site-frame { background: var(--bg-site); border: 1px solid var(--browser-border); border-radius: 8px; overflow: hidden; transition: background 0.3s ease; }
+.browser-bar { background: var(--browser-bar); border-bottom: 1px solid var(--browser-border); padding: 10px 16px; display: flex; align-items: center; gap: 12px; transition: background 0.3s ease; }
+.browser-dots { display: flex; gap: 6px; }
+.browser-dots span { width: 10px; height: 10px; border-radius: 50%; background: #3a3a3a; }
+[data-theme="light"] .browser-dots span { background: #ccc; }
+.browser-url { flex: 1; background: var(--url-bar); border-radius: 3px; padding: 4px 12px; font-family: var(--mono); font-size: 10px; color: var(--url-text); letter-spacing: 0.03em; transition: all 0.3s ease; }
+
+/* ── NAV ── */
+.site-nav { padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--nav-border); background: var(--nav-bg); transition: all 0.3s ease; }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a { font-size: 12px; font-weight: 400; color: var(--text-dim); text-decoration: none; letter-spacing: 0.03em; transition: color 0.15s; }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta { font-family: var(--mono) !important; font-size: 10px !important; font-weight: 500 !important; letter-spacing: 0.12em !important; text-transform: uppercase; color: var(--copper) !important; border: 1px solid rgba(200,130,60,0.35); padding: 6px 14px; border-radius: 2px; }
+
+/* ── HERO ── */
+.site-hero { padding: 64px 48px 68px; position: relative; overflow: hidden; background: var(--bg-site); transition: background 0.3s ease; }
+.site-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 500px; height: 500px; background: radial-gradient(circle, var(--hero-glow) 0%, transparent 65%); pointer-events: none; }
+.site-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(200,130,60,0.18), transparent); }
+
+.hero-eyebrow { font-family: var(--mono); font-size: 10px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
+.hero-eyebrow::before { content: ''; width: 18px; height: 1px; background: var(--copper); opacity: 0.55; }
+
+.hero-h1 { font-size: 40px; font-weight: 300; color: var(--text-primary); line-height: 1.18; letter-spacing: -0.025em; max-width: 580px; margin-bottom: 20px; transition: color 0.3s ease; }
+.hero-h1 strong { font-weight: 600; color: var(--text-primary); }
+
+.hero-sub { font-size: 14px; font-weight: 300; color: var(--text-dim); max-width: 460px; line-height: 1.8; margin-bottom: 36px; transition: color 0.3s ease; }
+.hero-actions { display: flex; align-items: center; gap: 22px; }
+
+.btn-primary { background: var(--copper); color: #111; font-family: var(--font); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 2px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-ghost { font-size: 12px; font-weight: 400; color: var(--text-dim); text-decoration: none; letter-spacing: 0.03em; display: flex; align-items: center; gap: 6px; transition: color 0.15s; }
+
+/* ── MARGIN MULTIPLIER SECTION ── */
+.mm-section { background: var(--mm-bg); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2); padding: 52px 48px; transition: background 0.3s ease; }
+.mm-header { margin-bottom: 32px; }
+.mm-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); opacity: 0.75; margin-bottom: 10px; }
+.mm-title { font-size: 26px; font-weight: 300; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 10px; line-height: 1.2; transition: color 0.3s ease; }
+.mm-title strong { font-weight: 600; }
+.mm-subtitle { font-size: 12px; font-weight: 300; color: var(--text-dim); max-width: 520px; line-height: 1.75; transition: color 0.3s ease; }
+
+.mm-models { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin: 28px 0; }
+.mm-model { background: var(--mm-card); padding: 20px 16px; position: relative; transition: background 0.3s ease; }
+.mm-model-num { font-family: var(--mono); font-size: 8px; color: var(--copper); letter-spacing: 0.15em; margin-bottom: 8px; opacity: 0.6; }
+.mm-model-name { font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s ease; }
+.mm-model-desc { font-size: 10px; font-weight: 300; color: var(--text-dim); line-height: 1.6; margin-bottom: 12px; transition: color 0.3s ease; }
+.mm-model-rate { font-family: var(--mono); font-size: 10px; color: var(--copper-lt); letter-spacing: 0.05em; }
+.mm-model-arrow { display: flex; align-items: center; justify-content: flex-end; margin-top: 8px; opacity: 0.3; font-size: 10px; color: var(--copper); }
+.mm-model.active { border-top: 2px solid var(--copper); }
+
+.mm-gate { background: var(--mm-card); border: 1px solid var(--border); padding: 28px 24px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: end; transition: background 0.3s ease; }
+.mm-gate-copy { }
+.mm-gate-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); opacity: 0.7; margin-bottom: 8px; }
+.mm-gate-headline { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.01em; transition: color 0.3s ease; }
+.mm-gate-sub { font-size: 11px; font-weight: 300; color: var(--text-dim); line-height: 1.6; transition: color 0.3s ease; }
+.mm-form { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; }
+.mm-input { background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 2px; padding: 9px 12px; font-family: var(--mono); font-size: 10px; color: var(--input-text); letter-spacing: 0.04em; width: 160px; transition: all 0.3s ease; }
+.mm-btn { background: var(--copper); color: #111; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 18px; border-radius: 2px; border: none; cursor: pointer; white-space: nowrap; }
+
+/* ── USE CASES (4-col) ── */
+.use-cases { border-bottom: 1px solid var(--border2); }
+.use-cases-header { padding: 36px 48px 20px; background: var(--bg-site); transition: background 0.3s ease; }
+.uc-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); opacity: 0.7; margin-bottom: 6px; }
+.uc-title { font-size: 20px; font-weight: 300; letter-spacing: -0.02em; color: var(--text-primary); transition: color 0.3s ease; }
+.uc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border2); }
+.uc-item { background: var(--bg-site); padding: 24px 20px; transition: background 0.3s ease; }
+.uc-num { font-family: var(--mono); font-size: 8px; color: var(--copper); letter-spacing: 0.15em; margin-bottom: 10px; opacity: 0.65; }
+.uc-name { font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s ease; }
+.uc-desc { font-size: 10px; font-weight: 300; color: var(--text-dim); line-height: 1.65; transition: color 0.3s ease; }
+.uc-item.uc-muted { background: var(--bg2); }
+
+/* ── ABOUT / WHY ── */
+.about-split { padding: 52px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; border-bottom: 1px solid var(--border2); background: var(--bg2); transition: background 0.3s ease; }
+.about-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); opacity: 0.75; margin-bottom: 14px; }
+.about-h2 { font-size: 24px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.3; color: var(--text-primary); margin-bottom: 14px; transition: color 0.3s ease; }
+.about-h2 strong { font-weight: 600; }
+.about-body { font-size: 12px; font-weight: 300; color: var(--text-dim); line-height: 1.85; transition: color 0.3s ease; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.stat-cell { background: var(--stat-bg); padding: 22px 18px; transition: background 0.3s ease; }
+.stat-num { font-size: 26px; font-weight: 300; letter-spacing: -0.03em; color: var(--copper-lt); line-height: 1; margin-bottom: 5px; }
+.stat-label { font-size: 10px; font-weight: 300; color: var(--text-dim); line-height: 1.5; transition: color 0.3s ease; }
+
+/* ── PRODUCTS ── */
+.products-section { background: var(--product-bg); border-bottom: 1px solid var(--border2); padding: 48px; transition: background 0.3s ease; }
+.prod-header { margin-bottom: 28px; }
+.prod-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); opacity: 0.7; margin-bottom: 8px; }
+.prod-title { font-size: 20px; font-weight: 300; letter-spacing: -0.02em; color: var(--text-primary); transition: color 0.3s ease; }
+.prod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.prod-card { background: var(--bg2); padding: 28px 24px; position: relative; transition: background 0.3s ease; }
+.prod-card-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); opacity: 0.65; margin-bottom: 12px; }
+.prod-card-name { font-size: 15px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em; margin-bottom: 4px; transition: color 0.3s ease; }
+.prod-card-price { font-family: var(--mono); font-size: 20px; font-weight: 400; color: var(--copper); letter-spacing: -0.01em; margin-bottom: 12px; }
+.prod-card-desc { font-size: 11px; font-weight: 300; color: var(--text-dim); line-height: 1.7; margin-bottom: 20px; transition: color 0.3s ease; }
+.prod-card-cta { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); text-decoration: none; border-bottom: 1px solid rgba(200,130,60,0.3); padding-bottom: 2px; }
+.prod-card.prod-soon { opacity: 0.7; }
+.prod-soon-badge { position: absolute; top: 20px; right: 20px; background: rgba(200,130,60,0.15); border: 1px solid rgba(200,130,60,0.25); border-radius: 2px; padding: 3px 8px; font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--copper); }
+
+/* ── CONTACT FORM ── */
+.contact-section { padding: 52px 48px; background: var(--bg-site); border-bottom: 1px solid var(--border2); transition: background 0.3s ease; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+.contact-left { }
+.contact-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); opacity: 0.7; margin-bottom: 12px; }
+.contact-h2 { font-size: 24px; font-weight: 300; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 14px; line-height: 1.3; transition: color 0.3s ease; }
+.contact-h2 strong { font-weight: 600; }
+.contact-sub { font-size: 12px; font-weight: 300; color: var(--text-dim); line-height: 1.8; transition: color 0.3s ease; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.form-full { margin-bottom: 8px; }
+.form-field { display: flex; flex-direction: column; gap: 5px; }
+.form-label { font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dimmer); }
+.form-input { background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 2px; padding: 10px 12px; font-family: var(--font); font-size: 12px; color: var(--input-text); transition: all 0.3s ease; width: 100%; }
+.form-select { background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 2px; padding: 10px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; color: var(--input-text); transition: all 0.3s ease; width: 100%; appearance: none; }
+.form-textarea { background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 2px; padding: 10px 12px; font-family: var(--font); font-size: 12px; color: var(--input-text); transition: all 0.3s ease; width: 100%; resize: none; height: 80px; margin-bottom: 14px; display: block; }
+.form-submit { background: var(--copper); color: #111; font-family: var(--font); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 26px; border-radius: 2px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.form-note { font-family: var(--mono); font-size: 8px; letter-spacing: 0.08em; color: var(--text-dimmer); margin-top: 8px; }
+
+/* ── FOOTER ── */
+.site-footer { padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; background: var(--footer-bg); transition: background 0.3s ease; }
+.footer-copy { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; color: var(--text-dimmer); text-transform: uppercase; transition: color 0.3s ease; }
+
+/* ─── BUSINESS CARD ──────────────────────────────── */
+.card-outer { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+.cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.card-wrap { display: flex; flex-direction: column; gap: 10px; }
+.card-sub { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dimmer); text-align: center; }
+.card-front { background: #171717; border: 1px solid rgba(200,130,60,0.15); border-radius: 6px; padding: 32px 32px 28px; min-height: 196px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.card-front::before { content: ''; position: absolute; bottom: -50px; right: -50px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(200,130,60,0.07) 0%, transparent 65%); pointer-events: none; }
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.card-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); opacity: 0.65; }
+.card-back { background: var(--copper); border-radius: 6px; padding: 32px 32px 28px; min-height: 196px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.card-back::before { content: ''; position: absolute; top: -40px; left: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%); pointer-events: none; }
+.cb-logo .mg { font-family: var(--font); font-size: 26px; font-weight: 300; color: rgba(17,17,17,0.45); letter-spacing: -0.025em; }
+.cb-logo .lb { font-family: var(--font); font-size: 26px; font-weight: 700; color: #111; letter-spacing: -0.025em; }
+.cb-rule { width: 28px; height: 1px; background: rgba(17,17,17,0.2); }
+.cb-url { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: rgba(17,17,17,0.45); }
+
+/* ─── META BAR ───────────────────────────────────── */
+.meta-bar { max-width: 960px; margin: 0 auto; padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border2); margin-top: 48px; }
+.meta-bar span { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dimmer); }
+.palette { display: flex; gap: 8px; align-items: center; }
+.pc { display: flex; align-items: center; gap: 5px; }
+.ps { width: 14px; height: 14px; border-radius: 2px; border: 1px solid var(--border2); }
+.pv { font-family: var(--mono); font-size: 8px; color: var(--text-dimmer); }
+
+</style>
+</head>
+<body>
+
+<!-- ─── TOGGLE BAR ────────────────────────────────── -->
+<div class="theme-toggle-bar">
+  <span class="toggle-label">Margin Labs — Brand System v3 · Product-Led Layout</span>
+  <button class="toggle-btn" onclick="toggleTheme()" id="themeBtn">
+    <span class="toggle-icon" id="themeIcon">☀️</span>
+    <span class="toggle-text" id="themeText">Light Mode</span>
+  </button>
+</div>
+
+<!-- ─── 01: LOGO ──────────────────────────────────── -->
+<div class="section"><div class="section-tag">01 — Logo · Wordmark · Treatment A</div></div>
+<div class="logo-outer" style="padding-top:16px">
+  <div class="logo-grid">
+    <div class="logo-cell lc-dark">
+      <div class="ml-mark wm-xl"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+      <div class="logo-cell-sub" style="color:#555">Primary — Dark</div>
+    </div>
+    <div class="logo-cell lc-light">
+      <div class="ml-mark wm-xl ml-mark-dark"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+      <div class="logo-cell-sub" style="color:rgba(0,0,0,0.28)">Reversed — Light</div>
+    </div>
+    <div class="logo-cell lc-copper">
+      <div class="ml-mark wm-xl ml-mark-inv"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+      <div class="logo-cell-sub" style="color:rgba(0,0,0,0.28)">On Copper</div>
+    </div>
+    <div class="logo-cell lc-scale">
+      <div class="ml-mark wm-lg"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+      <div class="ml-mark wm-sm"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+      <div class="ml-mark wm-xs"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+      <div class="logo-cell-sub">Scale — lg / sm / xs</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 02: FAVICON ──────────────────────────────── -->
+<div class="section" style="padding-top:48px"><div class="section-tag">02 — Favicon · M light · L bold</div></div>
+<div class="fav-outer" style="padding-top:12px">
+  <div class="fav-row">
+    <div class="fav-item">
+      <div class="fav-wrap" style="width:32px;height:32px;border-radius:4px;background:#171717;border:1px solid #2a2a2a">
+        <svg width="22" height="18" viewBox="0 0 22 18"><text x="0" y="14" font-family="DM Sans,sans-serif" font-weight="300" font-size="13" fill="#F0EBE4">M</text><text x="11" y="14" font-family="DM Sans,sans-serif" font-weight="700" font-size="13" fill="#C8823C">L</text></svg>
+      </div>
+      <span>32px</span>
+    </div>
+    <div class="fav-item">
+      <div class="fav-wrap" style="width:48px;height:48px;border-radius:6px;background:#171717;border:1px solid #2a2a2a">
+        <svg width="32" height="26" viewBox="0 0 32 26"><text x="0" y="21" font-family="DM Sans,sans-serif" font-weight="300" font-size="20" fill="#F0EBE4">M</text><text x="16" y="21" font-family="DM Sans,sans-serif" font-weight="700" font-size="20" fill="#C8823C">L</text></svg>
+      </div>
+      <span>48px</span>
+    </div>
+    <div class="fav-item">
+      <div class="fav-wrap" style="width:80px;height:80px;border-radius:12px;background:#171717;border:1px solid #2a2a2a">
+        <svg width="54" height="44" viewBox="0 0 54 44"><text x="0" y="35" font-family="DM Sans,sans-serif" font-weight="300" font-size="34" fill="#F0EBE4">M</text><text x="27" y="35" font-family="DM Sans,sans-serif" font-weight="700" font-size="34" fill="#C8823C">L</text></svg>
+      </div>
+      <span>80px</span>
+    </div>
+    <div class="fav-item">
+      <div class="fav-wrap" style="width:80px;height:80px;border-radius:18px;background:linear-gradient(135deg,#1e1410,#171717);border:1px solid rgba(200,130,60,0.2);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(200,130,60,0.1),transparent 55%)"></div>
+        <svg width="54" height="44" viewBox="0 0 54 44" style="position:relative;z-index:1"><text x="0" y="35" font-family="DM Sans,sans-serif" font-weight="300" font-size="34" fill="#F0EBE4">M</text><text x="27" y="35" font-family="DM Sans,sans-serif" font-weight="700" font-size="34" fill="#C8823C">L</text></svg>
+      </div>
+      <span>App Icon</span>
+    </div>
+    <div class="fav-note">
+      <p>ML monogram — M light weight (cream), <strong style="color:var(--copper)">L bold</strong> (copper). Mirrors wordmark logic. Scales from 16px browser tab to 512px app store icon.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 03: SITE MOCKUP ───────────────────────────── -->
+<div class="section" style="padding-top:48px"><div class="section-tag">03 — Homepage Mockup v3 · Product-Led · Margin Multiplier Center</div></div>
+<div class="site-outer" style="padding-top:12px;padding-bottom:2px">
+  <div class="site-frame">
+
+    <!-- Browser chrome -->
+    <div class="browser-bar">
+      <div class="browser-dots"><span></span><span></span><span></span></div>
+      <div class="browser-url">marginlabs.io</div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="site-nav">
+      <div class="ml-mark wm-md"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Principal</a></li>
+        <li><a href="#">The Playbook</a></li>
+        <li><a href="#" class="nav-cta">Work With Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO — revised per strategic brief v2 -->
+    <div class="site-hero">
+      <div class="hero-eyebrow">Embedded Payments Intelligence</div>
+      <h1 class="hero-h1">Most vertical SaaS platforms are <strong>under-monetizing payments by 30–50%.</strong> The Margin Multiplier quantifies exactly how much you're leaving on the table.</h1>
+      <p class="hero-sub">Margin Labs works with PE-backed and growth-stage SaaS companies to model, benchmark, and capture high-margin revenue from financial infrastructure. Stack-agnostic. No vendor to push.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Run the Margin Multiplier →</a>
+        <a href="#" class="btn-ghost">How It Works ↓</a>
+      </div>
+    </div>
+
+    <!-- MARGIN MULTIPLIER SECTION — new in v3 -->
+    <div class="mm-section">
+      <div class="mm-header">
+        <div class="mm-eyebrow">The Margin Multiplier™</div>
+        <div class="mm-title">Four models. <strong>One right answer for your stage.</strong></div>
+        <p class="mm-subtitle">Most SaaS platforms sit on one of four embedded payments models — and most are on the wrong one. The Margin Multiplier maps your volume against all four to show you the revenue delta.</p>
+      </div>
+
+      <div class="mm-models">
+        <div class="mm-model">
+          <div class="mm-model-num">Model 01</div>
+          <div class="mm-model-name">ISV Referral</div>
+          <div class="mm-model-desc">Lowest effort, lowest take rate. Refer merchants to a processor, earn a residual split. Good starting point.</div>
+          <div class="mm-model-rate">~15–25 bps</div>
+        </div>
+        <div class="mm-model">
+          <div class="mm-model-num">Model 02</div>
+          <div class="mm-model-name">Enhanced Residuals</div>
+          <div class="mm-model-desc">Negotiate deeper economics with your ISO or processor. Same infrastructure, better split.</div>
+          <div class="mm-model-rate">~30–50 bps</div>
+        </div>
+        <div class="mm-model active">
+          <div class="mm-model-num">Model 03</div>
+          <div class="mm-model-name">PayFac-as-a-Service</div>
+          <div class="mm-model-desc">Own the merchant experience without full PayFac liability. Best economics for $5M–$50M ARR.</div>
+          <div class="mm-model-rate">~60–100 bps</div>
+        </div>
+        <div class="mm-model">
+          <div class="mm-model-num">Model 04</div>
+          <div class="mm-model-name">Full PayFac</div>
+          <div class="mm-model-desc">Maximum control and margin. Significant compliance overhead. Right for $50M+ ARR platforms.</div>
+          <div class="mm-model-rate">~100–150 bps</div>
+        </div>
+      </div>
+
+      <div class="mm-gate">
+        <div class="mm-gate-copy">
+          <div class="mm-gate-label">Free Margin Model</div>
+          <div class="mm-gate-headline">Enter your monthly payment volume and current model — get your Margin Multiplier output.</div>
+          <div class="mm-gate-sub">Free. No sales call. Delivered to your inbox in under 2 minutes.</div>
+        </div>
+        <div class="mm-form">
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <span style="font-family:var(--mono);font-size:8px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dimmer);">Monthly Volume</span>
+            <select class="mm-input" style="width:140px;appearance:none;background:var(--input-bg);border:1px solid var(--input-border);border-radius:2px;padding:9px 12px;font-family:var(--mono);font-size:10px;color:var(--input-text);">
+              <option>$1M – $5M</option>
+              <option>$5M – $25M</option>
+              <option>$25M – $100M</option>
+              <option>$100M+</option>
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <span style="font-family:var(--mono);font-size:8px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dimmer);">Email</span>
+            <input class="mm-input" type="email" placeholder="you@company.io" style="width:180px;" />
+          </div>
+          <button class="mm-btn">Get My Model →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- USE CASES — renamed, 4 items, outcome-led -->
+    <div class="use-cases">
+      <div class="use-cases-header">
+        <div class="uc-eyebrow">What We Do</div>
+        <div class="uc-title">Four ways Margin Labs moves the number.</div>
+      </div>
+      <div class="uc-grid">
+        <div class="uc-item">
+          <div class="uc-num">01</div>
+          <div class="uc-name">Model Your Margin Opportunity</div>
+          <div class="uc-desc">Quantify what embedded payments is worth at your volume and vertical. Understand all four paths before committing to one.</div>
+        </div>
+        <div class="uc-item">
+          <div class="uc-num">02</div>
+          <div class="uc-name">Optimize Your Payments Economics</div>
+          <div class="uc-desc">Already processing? Most platforms have 40–60 bps of recoverable margin hiding in their existing setup. We find it.</div>
+        </div>
+        <div class="uc-item">
+          <div class="uc-num">03</div>
+          <div class="uc-name">Activate Revenue at Scale</div>
+          <div class="uc-desc">Launching payments is the easy part. Getting 60–80% of merchants to use them is where the revenue lives. We build the playbook.</div>
+        </div>
+        <div class="uc-item uc-muted">
+          <div class="uc-num">04</div>
+          <div class="uc-name">Payment Processing Review</div>
+          <div class="uc-desc">Already processing and wondering if you're overpaying? Flat-fee diagnostic. No obligation to change processors.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT / WHY — sharpened stats -->
+    <div class="about-split">
+      <div>
+        <div class="about-eyebrow">Why Margin Labs</div>
+        <h2 class="about-h2">Independent advice.<br><strong>No stack to sell.</strong></h2>
+        <p class="about-body">Most payments consultants are vendors in disguise — optimizing for their own processing revenue, not your outcomes. Margin Labs earns from advisory engagements and digital products. When we refer a processor, we disclose it. When we don't recommend switching, we say so — even when there's referral income on the table.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Monetization models evaluated before any recommendation</div></div>
+        <div class="stat-cell"><div class="stat-num">$B+</div><div class="stat-label">Payment volume experience across verticals and stages</div></div>
+        <div class="stat-cell"><div class="stat-num">10+</div><div class="stat-label">Years at the intersection of payments, fintech, and SaaS</div></div>
+        <div class="stat-cell"><div class="stat-num">0</div><div class="stat-label">Preferred vendors. No conflicted recommendations.</div></div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS — new in v3 -->
+    <div class="products-section">
+      <div class="prod-header">
+        <div class="prod-eyebrow">The Playbook</div>
+        <div class="prod-title">Independent tools for operators who want the answer, not a sales call.</div>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-card-tag">Tier 1 — Available Now</div>
+          <div class="prod-card-name">The Embedded Payments Primer</div>
+          <div class="prod-card-price">$79</div>
+          <div class="prod-card-desc">30-page independent guide to all four embedded payments models. Decision framework, vertical benchmarks, glossary, and 90-day quick-start checklist. No vendor affiliation.</div>
+          <a href="#" class="prod-card-cta">Get the Primer →</a>
+        </div>
+        <div class="prod-card prod-soon">
+          <div class="prod-soon-badge">Coming Soon</div>
+          <div class="prod-card-tag">Tier 2 — Join Waitlist</div>
+          <div class="prod-card-name">The Embedded Payments Playbook</div>
+          <div class="prod-card-price">$249</div>
+          <div class="prod-card-desc">100-page playbook + ROI Calculator + Vendor Scorecard + Board Deck template + 7 execution tools. Everything a $2M–$20M ARR operator needs to go from decision to revenue.</div>
+          <a href="#" class="prod-card-cta">Join the Waitlist →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM — pre-qual dropdowns per brief -->
+    <div class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="contact-eyebrow">Work With Margin Labs</div>
+          <h2 class="contact-h2">Engagements are selective.<br><strong>Start here.</strong></h2>
+          <p class="contact-sub">If you're a SaaS operator evaluating embedded payments and want an independent perspective, we'd like to hear from you. Engagements range from a $500 Quick-Start Call to a $5K/month Strategy Retainer.</p>
+        </div>
+        <div class="contact-right">
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">Name</label>
+              <input class="form-input" type="text" placeholder="Your name" />
+            </div>
+            <div class="form-field">
+              <label class="form-label">Company</label>
+              <input class="form-input" type="text" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">Monthly Payment Volume</label>
+              <select class="form-select">
+                <option value="">Select range...</option>
+                <option>Less than $1M</option>
+                <option>$1M – $5M</option>
+                <option>$5M – $25M</option>
+                <option>$25M – $100M</option>
+                <option>$100M+</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label">Current Model</label>
+              <select class="form-select">
+                <option value="">Select model...</option>
+                <option>None / Not started</option>
+                <option>ISV Referral</option>
+                <option>Enhanced Residuals</option>
+                <option>PayFac-lite / PFaaS</option>
+                <option>Full PayFac</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-full">
+            <div class="form-field">
+              <label class="form-label">Email</label>
+              <input class="form-input" type="email" placeholder="you@company.io" style="margin-bottom:8px;" />
+            </div>
+          </div>
+          <textarea class="form-textarea" placeholder="What are you trying to solve?"></textarea>
+          <button class="form-submit">Start the Conversation →</button>
+          <div class="form-note">Engagements are limited. We respond to every submission within 48 hours.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="site-footer">
+      <div class="ml-mark wm-xs"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+      <div class="footer-copy">© 2026 Margin Labs LLC</div>
+      <div class="footer-copy">hello@marginlabs.io</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── 04: BUSINESS CARD ─────────────────────────── -->
+<div class="section" style="padding-top:48px"><div class="section-tag">04 — Business Card · Chris Jones · Principal</div></div>
+<div class="card-outer" style="padding-top:12px">
+  <div class="cards-row">
+
+    <!-- FRONT — copper -->
+    <div class="card-wrap">
+      <div class="card-back" style="border-radius:6px;padding:32px 32px 28px;min-height:196px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,0.1),transparent 55%);pointer-events:none"></div>
+        <div style="position:relative;z-index:1;">
+          <span style="font-family:var(--font);font-size:22px;font-weight:300;letter-spacing:-0.025em;color:rgba(17,17,17,0.45)">Margin</span><span style="font-family:var(--font);font-size:22px;font-weight:700;letter-spacing:-0.025em;color:#111">Labs</span>
+        </div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:15px;font-weight:600;color:#111;letter-spacing:-0.01em;margin-bottom:2px;">Chris Jones</div>
+          <div style="font-size:11px;font-weight:400;color:rgba(17,17,17,0.55);margin-bottom:14px;letter-spacing:0.02em;">Principal, Margin Labs LLC</div>
+          <div style="display:flex;flex-direction:column;gap:3px;">
+            <span style="font-family:var(--mono);font-size:9px;letter-spacing:0.05em;color:rgba(17,17,17,0.65);">chris@marginlabs.io</span>
+            <span style="font-family:var(--mono);font-size:9px;letter-spacing:0.05em;color:rgba(17,17,17,0.45);">marginlabs.io</span>
+            <span style="font-family:var(--mono);font-size:9px;letter-spacing:0.05em;color:rgba(17,17,17,0.45);">(610) 555-0100</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-sub">Front</div>
+    </div>
+
+    <!-- BACK — dark -->
+    <div class="card-wrap">
+      <div class="card-front" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div class="card-top" style="justify-content:flex-end;">
+          <div class="card-tag">Embedded Payments Intelligence</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="ml-mark wm-lg"><span class="mg" style="color:#F0EBE4">Margin</span><span class="lb">Labs</span></div>
+          <div style="width:28px;height:1px;background:rgba(200,130,60,0.3);"></div>
+          <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(240,235,228,0.35);">marginlabs.io</div>
+        </div>
+      </div>
+      <div class="card-sub">Back</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── META ──────────────────────────────────────── -->
+<div class="meta-bar">
+  <span>Iron + Copper · Treatment A · v3 · Product-Led Layout</span>
+  <div class="palette">
+    <div class="pc"><div class="ps" style="background:#111111"></div><div class="pv">#111</div></div>
+    <div class="pc"><div class="ps" style="background:#171717"></div><div class="pv">#171717</div></div>
+    <div class="pc"><div class="ps" style="background:#C8823C"></div><div class="pv">#C8823C</div></div>
+    <div class="pc"><div class="ps" style="background:#F0EBE4;border-color:#ccc"></div><div class="pv">#F0EBE4</div></div>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const icon = document.getElementById('themeIcon');
+  const text = document.getElementById('themeText');
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.setAttribute('data-theme', 'light');
+    icon.textContent = '🌙';
+    text.textContent = 'Dark Mode';
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    icon.textContent = '☀️';
+    text.textContent = 'Light Mode';
+  }
+}
+</script>
+</body>
+</html>

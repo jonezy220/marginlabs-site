@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Merchants Don't Use Embedded Payments (And What to Do About It) | Margin Labs</title>
+<meta name="description" content="Most ISVs see embedded payments adoption stall at 15–20% of their customer base. Here are the real structural reasons — and a framework to fix each one.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/why-merchants-dont-use-payments">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Why Merchants Don't Use Embedded Payments (And What to Do About It) | Margin Labs">
+<meta property="og:description" content="Most ISVs see embedded payments adoption stall at 15–20% of their customer base. Here are the real structural reasons — and a framework to fix each one.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/why-merchants-dont-use-payments">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23171717'/%3E%3Crect x='2' y='21' width='5' height='5' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='9' y='19' width='5' height='7' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='17' width='5' height='9' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='12' width='5' height='5' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='15' y1='17' x2='22' y2='17' stroke='%23C8823C' stroke-width='.9' opacity='.52'/%3E%3Crect x='23' y='15' width='7' height='11' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='23' y='4' width='7' height='11' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='22' y1='15' x2='31' y2='15' stroke='%23C8823C' stroke-width='1' opacity='.58'/%3E%3Cline x1='26.5' y1='4' x2='26.5' y2='1' stroke='%23C8823C' stroke-width='1.1' stroke-dasharray='.8,1.2'/%3E%3Cpolyline points='25,2.5 26.5,.5 28,2.5' stroke='%23C8823C' stroke-width='1.1' fill='none' stroke-linejoin='round' stroke-linecap='round'/%3E%3Cline x1='1' y1='27' x2='31' y2='27' stroke='%23C8823C' stroke-width='.6' opacity='.18'/%3E%3C/svg%3E">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+      <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Why Merchants Don't Use Embedded Payments (And What to Do About It)</h1>
+  <div class="article-meta">
+    <span>March 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Software companies spend months building embedded payments. They negotiate processor agreements, integrate APIs, train the sales team, and build a product they're proud of. Then adoption stalls at 15 or 20 percent of the customer base.</p>
+
+    <p>This is not a hypothetical. It's the median outcome for ISVs that launch payments without a deliberate activation strategy. And the frustrating part is that the problem rarely has anything to do with the product. The payments feature itself is often fine. The failure is almost always upstream — in how merchants are asked to adopt it, in the friction they encounter when they try, and in the incentive structure that's asking them to change something that already works.</p>
+
+    <p>This article breaks down the real reasons merchants don't convert to embedded payments — not the surface-level explanations, but the structural ones — and offers a framework for addressing each.</p>
+
+    <h2>Reason 1: They Already Have a Processor They Trust</h2>
+
+    <p>For many of your merchants, payment processing is a solved problem. They have a relationship with a processor, a terminal they know how to use, and a rate they negotiated three years ago. It's not optimal, but it's theirs.</p>
+
+    <p>Asking them to switch means asking them to trust a new provider for something that touches their revenue directly. That's a high-stakes request. Processors have burned merchants before — with unexpected holds, sudden rate increases, and support teams that disappear when chargebacks spike. The merchant's instinct to stay put isn't irrational. It's pattern-matched caution from real experience.</p>
+
+    <p class="cost-label">What actually works:</p>
+
+    <p>Don't lead with the switch. Lead with the pain their current setup creates. Reconciliation time. Deposits that don't match invoices. Running a report in the processor's portal and another one in your software because the data doesn't sync. The pitch isn't "our payments are better." It's "you shouldn't have to manage two systems for one business."</p>
+
+    <p>When you make the problem concrete, the solution sells itself.</p>
+
+    <h2>Reason 2: The Onboarding Ask Is Too Heavy</h2>
+
+    <p>Most embedded payments onboarding flows were designed by engineers who understand KYC compliance, not by product people who understand merchant attention spans. The result is a form that asks for a business EIN, a bank account number, the last four digits of an owner's SSN, a voided check, and a photo ID — before the merchant has any idea whether the feature is worth it.</p>
+
+    <p>Every field you add to the boarding flow is a percentage point of drop-off. Treat it like a checkout funnel, not a compliance checklist.</p>
+
+    <p>Merchants abandon long boarding flows for the same reason consumers abandon shopping carts: each step is a decision point, and enough decision points eventually produce a decision to stop. The fact that your processor requires the information doesn't mean you have to collect it all at once in a single form.</p>
+
+    <p class="cost-label">What actually works:</p>
+
+    <p>Progressive boarding. Collect what you need to get the account open. Get them processing on a small transaction. Collect the rest as you go. Some processors support phased onboarding natively. Others require you to build it yourself. Either way, the activation lift from reducing upfront friction is consistently one of the largest levers available.</p>
+
+    <p>For merchants in your vertical who are lower risk, explore whether instant approval workflows are available. The difference between "you'll hear back in 2–3 business days" and "you're approved" is not incremental. It's the difference between activation and abandonment.</p>
+
+    <h2>Reason 3: They Don't Understand What They're Signing Up For</h2>
+
+    <p>Most merchants don't understand interchange. They don't understand what a basis point is. They definitely don't understand what "interchange plus 30 basis points" means compared to "2.75 percent flat." And they are deeply, justifiably suspicious of any payment arrangement that they don't fully understand.</p>
+
+    <p>The default response to confusion is inaction. If a merchant can't quickly calculate whether your rate is better than what they have today, they won't switch. Not because your rates are worse — in most cases they're not — but because they can't tell.</p>
+
+    <p class="cost-label">What actually works:</p>
+
+    <p>Build a simple comparison tool. Show them what they paid last month and what they would have paid with you. Not in basis points. In dollars. "Based on your volume, you would have saved $340 last month" is a message that requires no financial sophistication to evaluate.</p>
+
+    <p>If you don't have access to what they currently pay, ask them to input their current rate and calculate it for them. The act of building this tool forces your team to internalize the economics, which is a side benefit you'll use in every merchant conversation afterward.</p>
+
+    <h2>Reason 4: The Sales Team Isn't Selling It</h2>
+
+    <p>This one is uncomfortable but true. Embedded payments adoption at most ISVs correlates more closely with whether the sales team is actively promoting it than with any product attribute. And sales teams don't promote things they don't understand, don't believe in, or don't get credit for.</p>
+
+    <p>If payments is mentioned as a footnote at the end of a demo — "oh, and we also have payments built in" — adoption will be footnote-level. If it's framed as a core workflow solution with a clear before-and-after, adoption looks different.</p>
+
+    <p class="cost-label">What actually works:</p>
+
+    <p>Solve the knowledge problem first. Your sales team needs to be able to explain the economics in plain language, run a basic savings calculation on the spot, and handle the three most common objections cold. That's a training and enablement investment, not a messaging problem.</p>
+
+    <p>Then solve the incentive problem. If the rep gets quota credit for the software sale and nothing for payments activation, you've told them where to spend their time. Commission structures that reward payments adoption — even modestly — change behavior consistently and fast.</p>
+
+    <h2>Reason 5: The Product Doesn't Make the Case</h2>
+
+    <p>The final reason is the hardest to hear: sometimes merchants don't adopt because the integrated experience isn't noticeably better than what they have.</p>
+
+    <p>If switching to your embedded payments means they get payments in the same interface as their software — but reconciliation still requires manual effort, reports still don't cross-reference properly, and tipping or surcharging still requires a workaround — then the value proposition isn't strong enough to justify the switching cost. You've built integration, not workflow improvement.</p>
+
+    <p class="cost-label">What actually works:</p>
+
+    <p>Audit the post-payment experience, not just the payment acceptance experience. Where does money movement data need to go in your software? What does the merchant have to do today to reconcile a day's deposits against invoices? What's their end-of-month close process look like?</p>
+
+    <p>The stickiest embedded payments implementations are the ones that eliminate work the merchant was doing anyway — not just the ones that consolidate where they swipe a card. If your payments feature can close a reconciliation loop that currently requires 45 minutes of manual work, that's your pitch. Not convenience. Recovered time.</p>
+
+    <h2>The Number That Should Keep You Up at Night</h2>
+
+    <p>Take your current payments adoption rate. Multiply it by your average merchant GMV. That's your current payments revenue base.</p>
+
+    <p>Now apply that same adoption rate to your total merchant base. The gap between those two numbers is your activation opportunity — the revenue you're already entitled to, in merchants who already pay you, who already trust you enough to run their business on your software.</p>
+
+    <p>No new product. No new customers. Just a more deliberate approach to getting existing customers to use a feature you've already built.</p>
+
+    <blockquote class="pull-quote">That math, done honestly, is usually the most compelling thing in any payments strategy conversation. Run it before your next planning cycle.</blockquote>
+
+    <p>The Margin Labs Embedded Payments Playbook covers every model in detail — economics, implementation costs, decision frameworks, and the math behind the margin. <a href="/#products">Get the Playbook →</a></p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <button onclick="openConsult(false)" style="background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;" data-analytics="article-cta-consult">Start the conversation →</button>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

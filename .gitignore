@@ -1,0 +1,17 @@
+.vercel
+.env
+.env.local
+.env*.local
+node_modules/
+.DS_Store
+.claude/
+.playwright-mcp/
+Site Briefs and Edits/
+docs/
+*.docx
+brevo-sequences.md
+email-waterfalls-plan.md
+build_email_waterfalls.js
+ping-bing.sh
+f8f02f4a68114b14aeca3a0eac0183de.txt
+ml_articles_45.docx

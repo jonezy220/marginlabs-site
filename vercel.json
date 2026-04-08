@@ -1,0 +1,18 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.marginlabs.io" }],
+      "destination": "https://marginlabs.io/:path*",
+      "permanent": true
+    }
+  ],
+  "functions": {
+    "api/stripe-webhook.js": {
+      "maxDuration": 30
+    }
+  }
+}

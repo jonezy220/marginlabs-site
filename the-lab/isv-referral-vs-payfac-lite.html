@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISV Referral vs. PayFac Lite: How to Choose the Right Embedded Payments Model | Margin Labs</title>
+<meta name="description" content="The two most common embedded payments models for vertical SaaS platforms — and a practical framework for knowing which one matches your stage, volume, and risk tolerance.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="ISV Referral vs. PayFac Lite: How to Choose the Right Embedded Payments Model | Margin Labs">
+<meta property="og:description" content="The two most common embedded payments models for vertical SaaS platforms — and a practical framework for knowing which one matches your stage, volume, and risk tolerance.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23171717'/%3E%3Crect x='2' y='21' width='5' height='5' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='9' y='19' width='5' height='7' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='17' width='5' height='9' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='12' width='5' height='5' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='15' y1='17' x2='22' y2='17' stroke='%23C8823C' stroke-width='.9' opacity='.52'/%3E%3Crect x='23' y='15' width='7' height='11' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='23' y='4' width='7' height='11' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='22' y1='15' x2='31' y2='15' stroke='%23C8823C' stroke-width='1' opacity='.58'/%3E%3Cline x1='26.5' y1='4' x2='26.5' y2='1' stroke='%23C8823C' stroke-width='1.1' stroke-dasharray='.8,1.2'/%3E%3Cpolyline points='25,2.5 26.5,.5 28,2.5' stroke='%23C8823C' stroke-width='1.1' fill='none' stroke-linejoin='round' stroke-linecap='round'/%3E%3Cline x1='1' y1='27' x2='31' y2='27' stroke='%23C8823C' stroke-width='.6' opacity='.18'/%3E%3C/svg%3E">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+      <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">ISV Referral vs. PayFac Lite: How to Choose the Right Embedded Payments Model</h1>
+  <div class="article-meta">
+    <span>March 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Every software company considering embedded payments eventually hits the same fork in the road: do you refer merchants to a processor and collect residuals, or do you take on more control — and more risk — by becoming a PayFac Lite under a larger facilitator?</p>
+
+    <p>Both models work. Both generate revenue. But they are built for fundamentally different companies at fundamentally different stages. Choosing the wrong one doesn't just leave money on the table — it can create operational drag that takes years to unwind.</p>
+
+    <p>This article lays out the two models side by side, explains the economics of each, and gives you a practical framework for deciding which one fits where you are right now.</p>
+
+    <h2>The Baseline: What Both Models Have in Common</h2>
+
+    <p>Before comparing them, it's worth grounding the conversation in what's shared. Both ISV Referral and PayFac Lite involve a software company embedding payment acceptance into its platform. In both cases, merchants process transactions through your product, not through a separate payment app they found on their own.</p>
+
+    <p>The difference is in who owns what. How much of the payment stack is yours, how much revenue flows to you versus the processor, and how much operational responsibility you carry. That's where the models diverge sharply.</p>
+
+    <h2>ISV Referral: The Low-Friction Entry Point</h2>
+
+    <p>In an ISV Referral arrangement, you partner with a processor — Stripe, Fiserv, Worldpay, TSYS, and others all have formal ISV programs — and refer your merchants to them for payment processing. The processor handles underwriting, compliance, settlement, and support. You embed the payment experience into your software through APIs. When your merchants process, you collect a residual.</p>
+
+    <p class="cost-label">The Economics</p>
+
+    <p>Residuals in referral programs typically range from 10 to 25 basis points on gross volume, depending on the processor, your vertical, and the volume you bring. Some programs pay a flat per-transaction fee instead of or in addition to basis points.</p>
+
+    <p>On a merchant processing $500,000 annually, a 20-basis-point residual produces $1,000 per year per merchant. With 200 merchants on payments, that's $200,000 in annual recurring revenue — essentially pure margin, since you're not carrying any payments infrastructure.</p>
+
+    <p>The ceiling, however, is real. You don't own the rate. You don't own the relationship with the processor on behalf of each merchant. And if you build volume under one processor's program, switching later is nontrivial.</p>
+
+    <p class="cost-label">What You're Giving Up</p>
+
+    <p>The flip side of low operational burden is limited economics. The processor is taking the majority of the margin — often 60 to 80 percent of net revenue on a transaction — because they're carrying all the risk and infrastructure. You're essentially a distribution channel, and distribution channels get distribution-channel economics.</p>
+
+    <p>You also don't control the merchant experience end to end. Boarding, underwriting decisions, hold policies, dispute handling — those belong to the processor. If a merchant has a problem, they may not even know you're involved. That can create friction in the customer relationship you've worked hard to build.</p>
+
+    <p>Referral is the right entry if you're under 200 merchants on payments or under $50M in aggregate GMV. Above that, the math starts to favor a bigger move.</p>
+
+    <h2>PayFac Lite: More Control, More Margin, More Responsibility</h2>
+
+    <p>PayFac Lite — sometimes called Managed PayFac or Payment Facilitator as a Service — is a model where you become a sub-merchant aggregator under a registered payment facilitator, typically a company like Stripe Connect, Adyen for Platforms, or one of the fintech-focused BaaS providers that has built a managed facilitator infrastructure.</p>
+
+    <p>You take on merchant onboarding, underwriting decisions (within approved parameters), and the first line of support. In exchange, you own the economics more fully. Instead of collecting a residual on someone else's spread, you set the merchant rate, buy processing at a wholesale interchange-plus rate, and keep the difference.</p>
+
+    <p class="cost-label">The Economics</p>
+
+    <p>A typical PayFac Lite arrangement involves buying processing at something like interchange plus 10 to 15 basis points, then charging merchants 2.5 to 2.9 percent. On a $100 transaction at 2.75 percent, you collect $2.75. You pay the processor perhaps $1.85 (interchange plus your cost). You keep $0.90.</p>
+
+    <p>Scale that across $50 million in GMV and you're looking at roughly $450,000 in net payments revenue. In the ISV Referral model at 20 basis points, that same volume generates $100,000. The economics are four to five times better at scale — which is why the model exists.</p>
+
+    <p class="cost-label">What You're Taking On</p>
+
+    <p>PayFac Lite isn't free money. You're now responsible for merchant onboarding accuracy, KYC/AML compliance, reserve management, and chargeback first response. You carry reserve exposure on merchants who underperform. You need someone — internally or through a third-party service — who understands chargebacks, disputes, and the basic fraud patterns in your vertical.</p>
+
+    <p>None of this is unmanageable. There are platforms specifically built to handle the operations layer for PayFac Lite programs. But it is real work, and it requires more internal attention than a pure referral arrangement.</p>
+
+    <h2>The Decision Framework</h2>
+
+    <p>Here's how to think about the choice:</p>
+
+    <p class="cost-label">Choose ISV Referral if:</p>
+
+    <ul>
+      <li>Your payments GMV is under $30–50M annually</li>
+      <li>You have fewer than 100–200 actively processing merchants</li>
+      <li>Your team has no payments operations experience and no near-term plans to hire it</li>
+      <li>You're in an early product stage and want revenue without operational complexity</li>
+      <li>Your merchants are high-risk or in a vertical with elevated chargeback rates</li>
+    </ul>
+
+    <p class="cost-label">Choose PayFac Lite if:</p>
+
+    <ul>
+      <li>Your payments GMV is above $50M and growing</li>
+      <li>You have 150+ merchants processing consistently</li>
+      <li>You can staff or contract at least one person who understands payment operations</li>
+      <li>Checkout and post-transaction experience are core to your product differentiation</li>
+      <li>You're in a vertical where you control the category and aren't worried about losing merchants to the processor</li>
+    </ul>
+
+    <h2>The Migration Question</h2>
+
+    <p>One question that comes up constantly: can you start in ISV Referral and migrate to PayFac Lite later? Yes — and many companies do exactly that. The transition isn't painless, but it's manageable. The main challenge is merchant migration: your existing merchants are typically boarding new contracts under the new model, which means some operational friction and occasional churn.</p>
+
+    <p>The smarter play, if you have any foresight about your volume trajectory, is to choose your referral partner with future migration in mind. Some processors make migration to their own PayFac program relatively straightforward. Others don't. Ask about migration paths before you sign your first referral agreement.</p>
+
+    <h2>The One Thing Most ISVs Get Wrong</h2>
+
+    <p>The most common mistake is treating this as a permanent choice rather than a stage-appropriate choice. Companies get comfortable in referral programs, the residuals start to feel meaningful, and they stop evaluating whether they've crossed the threshold where the economics of PayFac Lite would justify the move.</p>
+
+    <p>Run the math every year. At 200 merchants processing $150,000 each, you have $30 million in GMV. In referral at 20 basis points, that's $60,000 annually. In PayFac Lite at 90 basis points net, that's $270,000. The difference is $210,000 per year — and that number grows with every merchant you add.</p>
+
+    <blockquote class="pull-quote">The model you choose today should match where you are. But you should be actively managing toward where the economics get meaningfully better.</blockquote>
+
+    <p>The Margin Labs Embedded Payments Playbook covers every model in detail — economics, implementation costs, decision frameworks, and the math behind the margin. <a href="/#products">Get the Playbook →</a></p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <button onclick="openConsult(false)" style="background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;" data-analytics="article-cta-consult">Start the conversation →</button>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

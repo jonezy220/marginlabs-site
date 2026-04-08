@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded Payments Intelligence for SaaS Platforms | Margin Labs</title>
+<meta name="description" content="Margin Labs helps software platforms model, capture, and optimize the payments revenue hiding in their existing business. Vendor-neutral advisory and tools.">
+<link rel="canonical" href="https://marginlabs.io/">
+<meta property="og:title" content="Embedded Payments Intelligence for SaaS Platforms | Margin Labs">
+<meta property="og:description" content="Margin Labs helps software platforms model, capture, and optimize the payments revenue hiding in their existing business.">
+<meta property="og:url" content="https://marginlabs.io">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Margin Labs">
+<meta name="robots" content="index, follow">
+<!-- Google Search Console: replace content with your verification code from search.google.com/search-console -->
+<meta name="google-site-verification" content="fm1AF9wMW87cgIf_5sIYMmkOJFz4LhjGASNp07_fazg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23171717'/%3E%3Crect x='2' y='21' width='5' height='5' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='9' y='19' width='5' height='7' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='17' width='5' height='9' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='12' width='5' height='5' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='15' y1='17' x2='22' y2='17' stroke='%23C8823C' stroke-width='.9' opacity='.52'/%3E%3Crect x='23' y='15' width='7' height='11' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='23' y='4' width='7' height='11' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='22' y1='15' x2='31' y2='15' stroke='%23C8823C' stroke-width='1' opacity='.58'/%3E%3Cline x1='26.5' y1='4' x2='26.5' y2='1' stroke='%23C8823C' stroke-width='1.1' stroke-dasharray='.8,1.2'/%3E%3Cpolyline points='25,2.5 26.5,.5 28,2.5' stroke='%23C8823C' stroke-width='1.1' fill='none' stroke-linejoin='round' stroke-linecap='round'/%3E%3Cline x1='1' y1='27' x2='31' y2='27' stroke='%23C8823C' stroke-width='.6' opacity='.18'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <!-- P4 V2 icon — Nav horizontal lockup (22px, no bg) -->
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+      <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── HERO ────────────────────────────────────── -->
+<section class="hero">
+
+  <!-- Background animation (item 3) -->
+  <svg class="hero-bg" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="hero-glow-bg" cx="58%" cy="50%" r="42%">
+        <stop offset="0%"   stop-color="#C8823C" stop-opacity="0.06"/>
+        <stop offset="100%" stop-color="#C8823C" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="hero-fl" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"   stop-color="#0d0d0d" stop-opacity="1"/>
+        <stop offset="38%"  stop-color="#0d0d0d" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="hero-fr" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="90%"  stop-color="#0d0d0d" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#0d0d0d" stop-opacity="1"/>
+      </linearGradient>
+      <linearGradient id="hero-btf" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#0d0d0d" stop-opacity="0.65"/>
+        <stop offset="22%"  stop-color="#0d0d0d" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="560" fill="#0d0d0d"/>
+    <rect width="1440" height="560" fill="url(#hero-glow-bg)"/>
+    <!-- dot field -->
+    <g fill="#C8823C">
+      <circle class="hero-dot" cx="560" cy="100" r="1.2" opacity="0.04"/>
+      <circle class="hero-dot" cx="640" cy="100" r="1.3" opacity="0.05"/>
+      <circle class="hero-dot" cx="720" cy="100" r="1.4" opacity="0.06"/>
+      <circle class="hero-dot" cx="800" cy="100" r="1.3" opacity="0.05"/>
+      <circle class="hero-dot" cx="880" cy="100" r="1.2" opacity="0.04"/>
+      <circle class="hero-dot" cx="520" cy="185" r="1.3" opacity="0.05"/>
+      <circle class="hero-dot" cx="600" cy="185" r="1.5" opacity="0.07"/>
+      <circle class="hero-dot" cx="680" cy="185" r="1.7" opacity="0.08"/>
+      <circle class="hero-dot" cx="760" cy="185" r="1.7" opacity="0.08"/>
+      <circle class="hero-dot" cx="840" cy="185" r="1.5" opacity="0.07"/>
+      <circle class="hero-dot" cx="920" cy="185" r="1.3" opacity="0.05"/>
+      <circle class="hero-dot" cx="500" cy="270" r="1.4" opacity="0.05"/>
+      <circle class="hero-dot" cx="580" cy="270" r="1.6" opacity="0.07"/>
+      <circle class="hero-dot" cx="660" cy="270" r="1.8" opacity="0.08"/>
+      <circle class="hero-dot" cx="740" cy="270" r="2.0" opacity="0.08"/>
+      <circle class="hero-dot" cx="820" cy="270" r="1.8" opacity="0.08"/>
+      <circle class="hero-dot" cx="900" cy="270" r="1.6" opacity="0.07"/>
+      <circle class="hero-dot" cx="980" cy="270" r="1.4" opacity="0.05"/>
+      <circle class="hero-dot" cx="510" cy="355" r="1.3" opacity="0.05"/>
+      <circle class="hero-dot" cx="590" cy="355" r="1.6" opacity="0.07"/>
+      <circle class="hero-dot" cx="670" cy="355" r="1.8" opacity="0.08"/>
+      <circle class="hero-dot" cx="750" cy="355" r="1.9" opacity="0.08"/>
+      <circle class="hero-dot" cx="830" cy="355" r="1.7" opacity="0.07"/>
+      <circle class="hero-dot" cx="910" cy="355" r="1.4" opacity="0.05"/>
+      <circle class="hero-dot" cx="550" cy="440" r="1.2" opacity="0.04"/>
+      <circle class="hero-dot" cx="630" cy="440" r="1.4" opacity="0.06"/>
+      <circle class="hero-dot" cx="710" cy="440" r="1.5" opacity="0.07"/>
+      <circle class="hero-dot" cx="790" cy="440" r="1.4" opacity="0.06"/>
+      <circle class="hero-dot" cx="870" cy="440" r="1.2" opacity="0.04"/>
+    </g>
+    <!-- signal line -->
+    <polyline id="signal-line" points="500,530 615,455 728,372 830,286 918,212 994,152 1058,106"
+      stroke="#C8823C" stroke-width="1.8" fill="none" opacity="0.38"
+      stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- nodes -->
+    <circle id="n1" class="hero-node" cx="615" cy="455" r="5"  fill="#C8823C"/>
+    <circle id="n2" class="hero-node" cx="728" cy="372" r="6"  fill="#C8823C"/>
+    <circle id="n3" class="hero-node" cx="830" cy="286" r="7"  fill="#C8823C"/>
+    <circle id="n4" class="hero-node" cx="918" cy="212" r="8"  fill="#C8823C"/>
+    <circle id="n5" class="hero-node" cx="994" cy="152" r="9"  fill="#C8823C"/>
+    <!-- bar chart zone (hidden on mobile) -->
+    <g class="hero-bar-zone">
+      <line class="hero-grid-el" x1="1072" y1="0"   x2="1072" y2="560" stroke="#C8823C" stroke-width="0.7" opacity="0.14"/>
+      <line class="hero-grid-el" x1="1072" y1="116" x2="1440" y2="116" stroke="#C8823C" stroke-width="0.4" opacity="0.08"/>
+      <line class="hero-grid-el" x1="1072" y1="232" x2="1440" y2="232" stroke="#C8823C" stroke-width="0.4" opacity="0.08"/>
+      <line class="hero-grid-el" x1="1072" y1="348" x2="1440" y2="348" stroke="#C8823C" stroke-width="0.4" opacity="0.08"/>
+      <line class="hero-grid-el" x1="1072" y1="464" x2="1440" y2="464" stroke="#C8823C" stroke-width="0.4" opacity="0.08"/>
+      <line class="hero-grid-el" x1="1072" y1="116" x2="1081" y2="116" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
+      <line class="hero-grid-el" x1="1072" y1="232" x2="1081" y2="232" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
+      <line class="hero-grid-el" x1="1072" y1="348" x2="1081" y2="348" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
+      <line class="hero-grid-el" x1="1072" y1="464" x2="1081" y2="464" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
+      <text class="hero-grid-el" x="1076" y="100" font-family="DM Mono, monospace" font-size="9" fill="#C8823C" opacity="0.28" letter-spacing="0.1em">BPS</text>
+      <rect id="b1"  class="hero-bar" x="1090" y="402" width="13" height="128" fill="#C8823C" opacity="0.14" rx="1"/>
+      <rect id="b2"  class="hero-bar" x="1112" y="368" width="13" height="162" fill="#C8823C" opacity="0.17" rx="1"/>
+      <rect id="b3"  class="hero-bar" x="1134" y="415" width="13" height="115" fill="#C8823C" opacity="0.13" rx="1"/>
+      <rect id="b4"  class="hero-bar" x="1156" y="332" width="13" height="198" fill="#C8823C" opacity="0.22" rx="1"/>
+      <rect id="b5"  class="hero-bar" x="1178" y="298" width="13" height="232" fill="#C8823C" opacity="0.26" rx="1"/>
+      <rect id="b6"  class="hero-bar" x="1200" y="358" width="13" height="172" fill="#C8823C" opacity="0.19" rx="1"/>
+      <rect id="b7"  class="hero-bar" x="1222" y="262" width="13" height="268" fill="#C8823C" opacity="0.32" rx="1"/>
+      <rect id="b8"  class="hero-bar" x="1244" y="228" width="13" height="302" fill="#C8823C" opacity="0.36" rx="1"/>
+      <rect id="b9"  class="hero-bar" x="1266" y="305" width="13" height="225" fill="#C8823C" opacity="0.26" rx="1"/>
+      <rect id="b10" class="hero-bar" x="1288" y="192" width="13" height="338" fill="#C8823C" opacity="0.43" rx="1"/>
+      <rect id="b11" class="hero-bar" x="1310" y="225" width="13" height="305" fill="#C8823C" opacity="0.38" rx="1"/>
+      <rect id="b12" class="hero-bar" x="1332" y="162" width="13" height="368" fill="#C8823C" opacity="0.50" rx="1"/>
+      <rect id="b13" class="hero-bar" x="1354" y="198" width="13" height="332" fill="#C8823C" opacity="0.44" rx="1"/>
+      <rect id="b14" class="hero-bar" x="1376" y="128" width="13" height="402" fill="#C8823C" opacity="0.58" rx="1"/>
+      <rect id="b15" class="hero-bar" x="1398" y="162" width="13" height="368" fill="#C8823C" opacity="0.52" rx="1"/>
+      <rect id="b16" class="hero-bar" x="1420" y="96"  width="13" height="434" fill="#C8823C" opacity="0.66" rx="1"/>
+    </g>
+    <!-- fades always on top -->
+    <rect width="1440" height="560" fill="url(#hero-fl)"/>
+    <rect width="1440" height="560" fill="url(#hero-fr)"/>
+    <rect x="1072" y="0" width="368" height="88" fill="url(#hero-btf)"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Embedded Payments Intelligence</div>
+    <h1 class="hero-h1">Your platform is sitting on payments revenue you haven't <strong>captured yet.</strong></h1>
+    <p class="hero-sub">The Margin Multiplier quantifies what it's worth — and what it takes to capture it.</p>
+    <div class="hero-actions">
+      <a href="#margin-multiplier" class="btn-primary" data-analytics="cta-run-multiplier">Run the Margin Multiplier →</a>
+      <a href="#what-we-do" class="btn-ghost" data-analytics="cta-how-it-works">How It Works ↓</a>
+    </div>
+
+    <!-- Self-sort tiles -->
+    <div class="self-sort" role="list">
+      <a href="#margin-multiplier" class="sort-tile" role="listitem" data-analytics="tile-no-payments">
+        <span class="sort-tile-text">We don't have embedded payments yet</span>
+        <span class="sort-tile-arrow">→</span>
+      </a>
+      <a href="#uc-02" class="sort-tile" role="listitem" data-analytics="tile-underperforming">
+        <span class="sort-tile-text">We have payments but they're underperforming</span>
+        <span class="sort-tile-arrow">→</span>
+      </a>
+      <a href="#uc-04" class="sort-tile" role="listitem" data-analytics="tile-processing-cost">
+        <span class="sort-tile-text">We're not sure what we're paying to process</span>
+        <span class="sort-tile-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FREE GUIDE ───────────────────────────────── -->
+<section class="content-section" id="free-guide">
+  <div class="content-inner" style="max-width:640px;text-align:center;">
+    <div class="content-eyebrow">Free Resource</div>
+    <h2 class="content-h2">The Embedded Payments Opportunity</h2>
+    <p style="color:var(--dim);font-size:15px;line-height:1.7;margin-bottom:24px;">
+      A vendor-neutral overview of how vertical SaaS platforms capture payments revenue —
+      the four models, the economics, and how to evaluate where you stand.
+      Free. No sales call required.
+    </p>
+    <form id="guideForm"
+          action="https://formspree.io/f/mkopwvpj"
+          method="POST"
+          style="display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;">
+      <input type="email" name="email" placeholder="your@company.com" required
+             style="flex:1;min-width:200px;" class="form-input">
+      <button type="submit" class="btn-primary" id="guide-submit-btn">
+        Get the Guide →
+      </button>
+    </form>
+    <div id="guideSuccess" style="display:none;color:var(--copper);margin-top:16px;font-size:14px;">
+      Check your inbox — the guide is on its way.
+    </div>
+    <p style="font-size:11px;color:var(--dimmer);margin-top:12px;font-family:var(--mono);letter-spacing:0.04em;">
+      No spam. Unsubscribe anytime.
+    </p>
+  </div>
+</section>
+
+<!-- ── MARGIN MULTIPLIER ───────────────────────── -->
+<section id="margin-multiplier" aria-label="Margin Multiplier">
+  <div class="mm-home-wrap">
+
+    <div class="mm-home-header">
+      <div class="section-eyebrow">The Margin Multiplier™</div>
+      <h2 class="section-headline">What is your payments opportunity worth?</h2>
+      <p class="section-sub">
+        Enter your email and payments volume for an instant estimate across all four models.
+      </p>
+    </div>
+
+    <!-- Two-field capture form -->
+    <div class="mm-home-form" id="mm-home-form">
+      <div class="mm-home-fields">
+        <input
+          type="email"
+          id="mm-home-email"
+          placeholder="you@company.com"
+          aria-label="Your email address"
+          data-analytics="mm-home-email"
+        />
+        <select id="mm-home-volume" aria-label="Annual payments volume">
+          <option value="" disabled selected>Annual payments volume</option>
+          <option value="500000">Under $1M</option>
+          <option value="2500000">$1M – $5M</option>
+          <option value="7500000">$5M – $10M</option>
+          <option value="17500000">$10M – $25M</option>
+          <option value="37500000">$25M – $50M</option>
+          <option value="75000000">$50M – $100M</option>
+          <option value="150000000">$100M+</option>
+        </select>
+        <button
+          onclick="runHomeMultiplier()"
+          data-analytics="mm-home-submit"
+          aria-label="Get my estimate"
+        >
+          Get My Estimate →
+        </button>
+      </div>
+      <p class="mm-home-note">No sales call. Just your number.</p>
+      <div class="mm-home-error" id="mm-home-error" style="display:none;"></div>
+    </div>
+
+    <!-- Instant result — hidden until submitted -->
+    <div class="mm-home-result" id="mm-home-result" style="display:none;">
+      <div class="mm-result-number" id="mm-result-number"></div>
+      <div class="mm-result-label" id="mm-result-label"></div>
+      <a href="/margin-multiplier.html" class="mm-result-link" data-analytics="mm-home-go-deeper">
+        Run the full Margin Multiplier for your complete model comparison →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── USE CASES ───────────────────────────────── -->
+<section id="what-we-do" class="use-cases">
+  <div class="uc-header">
+    <div class="uc-eyebrow">What We Do</div>
+    <div class="uc-title">Four ways Margin Labs moves the number.</div>
+  </div>
+  <div class="uc-grid">
+    <div class="uc-item">
+      <div class="uc-num">01</div>
+      <div class="uc-name">Model Your Margin Opportunity</div>
+      <div class="uc-desc">Quantify what embedded payments is worth at your volume and vertical. Understand all four monetization paths before committing to one. Starts at zero — no existing payments program required.</div>
+    </div>
+    <div class="uc-item" id="uc-02">
+      <div class="uc-num">02</div>
+      <div class="uc-name">Optimize Your Payments Economics</div>
+      <div class="uc-desc">Most platforms have 40–60 bps of recoverable margin in their existing setup. We audit take rate, processor economics, and contract terms — and tell you exactly what's recoverable.</div>
+    </div>
+    <div class="uc-item">
+      <div class="uc-num">03</div>
+      <div class="uc-name">Activate Revenue at Scale</div>
+      <div class="uc-desc">Getting 60–80% of merchants to actually use payments is where the revenue lives. We build the onboarding, pricing, and adoption playbook that closes the gap between launch and revenue line.</div>
+    </div>
+    <div class="uc-item muted" id="uc-04">
+      <div class="uc-num">04</div>
+      <div class="uc-name">Payment Processing Review</div>
+      <div class="uc-desc">Flat-fee diagnostic of current rates, processor fit, and whether the switch math works. No obligation to change. Honest answer either way.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY MARGIN LABS ─────────────────────────── -->
+<section class="why-section">
+  <div class="why-inner">
+    <div>
+      <div class="why-eyebrow">Why Margin Labs</div>
+      <h2 class="why-h2">Independent advice.<br><strong>No stack to sell.</strong></h2>
+      <p class="why-body">Most payments consultants are vendors in disguise — optimizing for their own processing revenue, not your business outcomes. Margin Labs earns from advisory engagements and digital products. When we refer a processor, we disclose it. When we don't recommend switching, we say so — even when there's referral income on the table.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-cell">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Monetization models evaluated before any recommendation</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">$15B</div>
+        <div class="stat-label">Payment volume experience across verticals and stages</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years at the intersection of payments, fintech, and SaaS</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Preferred vendors. No conflicted recommendations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE PLAYBOOK ────────────────────────────── -->
+<section id="products" class="products-section">
+  <div class="products-inner">
+    <div class="prod-header">
+      <div class="prod-eyebrow">The Playbook</div>
+      <div class="prod-title">Independent tools for operators who want the answer, not a sales call.</div>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-card-tag">$139 — Available Now</div>
+        <div class="prod-card-name">The Embedded Payments Strategic Decision Framework</div>
+        <div class="prod-card-desc">A vendor-neutral guide to embedded payments for vertical SaaS operators — the four models, how the economics work across gross and net take rates, and a structured framework for choosing the right path for your platform.</div>
+        <button id="tier1-checkout-btn" class="prod-cta" style="cursor:pointer;background:none;border:none;padding:0;font:inherit;text-align:left;width:100%" data-analytics="product-tier1-cta">Get the Framework →</button>
+        <p id="tier1-checkout-error" style="display:none;font-size:12px;color:var(--copper);margin-top:8px;line-height:1.5">Something went wrong. Please try again or email <a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></p>
+      </div>
+      <div class="prod-card">
+        <div class="prod-card-tag">$997 — Available Now</div>
+        <div class="prod-card-name">The Embedded Payments Execution Playbook</div>
+        <div class="prod-card-desc">From decision to launch. Vendor profiles and evaluation criteria, the negotiation playbook, integration architecture, merchant activation strategy, 90-day timelines, and KPI framework. Everything you need to execute — not just understand.</div>
+        <button id="tier2-checkout-btn" class="prod-cta" style="cursor:pointer;background:none;border:none;padding:0;font:inherit;text-align:left;width:100%" data-analytics="product-tier2-cta">Get the Playbook →</button>
+        <p id="tier2-checkout-error" style="display:none;font-size:12px;color:var(--copper);margin-top:8px;line-height:1.5">Something went wrong. Please try again or email <a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT FORM ────────────────────────────── -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div>
+      <div class="contact-eyebrow">Work With Margin Labs</div>
+      <h2 class="contact-h2">Engagements are selective.<br><strong>Start here.</strong></h2>
+      <p class="contact-sub">If you're a SaaS operator evaluating embedded payments and want an independent perspective, start here. Engagements range from a single diagnostic call to a multi-month strategy retainer.</p>
+    </div>
+    <div>
+      <!-- Modal CTA trigger -->
+      <div style="margin-bottom:28px;">
+        <button onclick="openConsult(false, 'simple')" class="form-submit" style="width:100%;margin-bottom:16px;" data-analytics="contact-modal-cta">Start the conversation →</button>
+        <a href="/advisory" class="form-submit" style="width:100%;margin-bottom:16px;display:block;text-align:center;text-decoration:none;box-sizing:border-box;background:transparent;border:1px solid rgba(200,130,60,0.35);color:rgba(240,235,228,0.72);" data-analytics="contact-advisory-cta">Apply for advisory →</a>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;">
+          <div style="flex:1;height:1px;background:rgba(200,130,60,0.14);"></div>
+          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,235,228,0.28);white-space:nowrap;">or fill in the form below</span>
+          <div style="flex:1;height:1px;background:rgba(200,130,60,0.14);"></div>
+        </div>
+      </div>
+
+      <!-- Replace YOUR_CONTACT_FORM_ID with your Formspree form ID -->
+      <form id="contactForm" action="https://formspree.io/f/xgopeeeb" method="POST">
+        <input type="hidden" name="_subject" value="start the convo - simple">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label" for="cf-name">Name</label>
+            <input id="cf-name" class="form-input" type="text" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cf-company">Company</label>
+            <input id="cf-company" class="form-input" type="text" name="company" placeholder="Company name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label" for="cf-volume">Monthly Payment Volume</label>
+            <select id="cf-volume" class="form-select" name="monthly_volume" required>
+              <option value="" disabled selected>Select range…</option>
+              <option>Less than $1M</option>
+              <option>$1M – $5M</option>
+              <option>$5M – $25M</option>
+              <option>$25M – $100M</option>
+              <option>$100M+</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cf-model">Current Model</label>
+            <select id="cf-model" class="form-select" name="current_model" required>
+              <option value="" disabled selected>Select model…</option>
+              <option>None / Not started yet</option>
+              <option>ISV Referral</option>
+              <option>Enhanced Residuals</option>
+              <option>PayFac-lite / PFaaS</option>
+              <option>Full PayFac</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-full">
+          <div class="form-field">
+            <label class="form-label" for="cf-email">Email</label>
+            <input id="cf-email" class="form-input" type="email" name="email" placeholder="you@company.io" required>
+          </div>
+        </div>
+        <div class="form-full">
+          <div class="form-field">
+            <label class="form-label" for="cf-message">Message</label>
+            <textarea id="cf-message" class="form-textarea" name="message" placeholder="What are you trying to solve?" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit" data-analytics="form-submit">Start the Conversation →</button>
+        <div class="form-note">Engagements are limited. We respond to every submission within 48 hours.</div>
+      </form>
+      <div id="contactSuccess" class="form-success">Thank you — we'll be in touch within 48 hours.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+// ── GA4 EVENT HELPERS ─────────────────────────────
+function gaEvent(name, params) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', name, params || {});
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-analytics]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      gaEvent(el.getAttribute('data-analytics'), {
+        event_category: 'engagement',
+        event_label: el.textContent.trim().substring(0, 50),
+      });
+    });
+  });
+});
+
+// ── HOME MARGIN MULTIPLIER ────────────────────────
+async function runHomeMultiplier() {
+  const email  = document.getElementById('mm-home-email').value.trim();
+  const volume = document.getElementById('mm-home-volume').value;
+  const errEl  = document.getElementById('mm-home-error');
+
+  errEl.style.display = 'none';
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent = 'Please enter a valid email address.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (!volume) {
+    errEl.textContent = 'Please select your payments volume.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  const sel = document.getElementById('mm-home-volume');
+  const volLabel = sel.options[sel.selectedIndex].text;
+
+  // Calculate PayFac-lite estimate (65 bps) as teaser
+  const vol = parseFloat(volume);
+  const estimate = vol * (65 / 10000);
+
+  function fmtCur(n) {
+    if (n >= 1000000) return '$' + (n/1000000).toFixed(1).replace(/\.0$/,'') + 'M';
+    if (n >= 1000)    return '$' + Math.round(n/1000) + 'K';
+    return '$' + Math.round(n).toLocaleString();
+  }
+
+  // Show result immediately — don't wait for API
+  document.getElementById('mm-result-number').textContent = fmtCur(estimate);
+  document.getElementById('mm-result-label').textContent  =
+    'Estimated annual revenue at PayFac-lite (65 bps) on ' + volLabel + ' in payments volume. This is Model 03 — the most common recommendation for platforms at growth stage.';
+  document.getElementById('mm-home-result').style.display = 'block';
+
+  // Save to ML shared state if available
+  if (window.ML) {
+    window.ML.saveVisitor({ email });
+    window.ML.saveCalc({ volLbl: volLabel });
+  }
+
+  gaEvent('calculator_started', { volume_range: volLabel, source: 'homepage' });
+
+  // Submit to orchestrator — fire and forget
+  fetch('/api/submit-calculator', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email,
+      volLabel,
+      curLabel:     'Not specified',
+      arrLabel:     'Not specified',
+      vertLabel:    'Not specified',
+      recModel:     'PayFac-lite',
+      gapAmt:       fmtCur(estimate),
+      ctaType:      'primer',
+      modelSummary: 'PayFac-lite estimate: ' + fmtCur(estimate) + '/yr (65 bps)',
+    }),
+  }).catch(() => {});
+
+  // Hide form, keep result visible
+  document.getElementById('mm-home-form').style.display = 'none';
+}
+
+// ── ML STATE — PRE-FILL CONTACT FORM ─────────────
+// ML state — pre-fill contact form + save on submit
+document.addEventListener('DOMContentLoaded', function() {
+  // Pre-fill from session state if visitor has filled forms elsewhere
+  if (window.ML) {
+    window.ML.prefill('cf-name',    window.ML.visitor.name);
+    window.ML.prefill('cf-company', window.ML.visitor.company);
+    window.ML.prefill('cf-email',   window.ML.visitor.email);
+  }
+  // Save visitor data to ML state when form is submitted
+  var form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function() {
+      if (window.ML) {
+        window.ML.saveVisitor({
+          name:    document.getElementById('cf-name')    ? document.getElementById('cf-name').value    : '',
+          company: document.getElementById('cf-company') ? document.getElementById('cf-company').value : '',
+          email:   document.getElementById('cf-email')   ? document.getElementById('cf-email').value   : '',
+        });
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

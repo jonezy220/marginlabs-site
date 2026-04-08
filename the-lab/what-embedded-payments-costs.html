@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Embedded Payments Actually Costs to Implement | Margin Labs</title>
+<meta name="description" content="A clear-eyed breakdown of implementation cost across all four models — before you commit to a vendor or a path.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/what-embedded-payments-costs">
+<meta property="og:title" content="What Embedded Payments Actually Costs to Implement | Margin Labs">
+<meta property="og:description" content="A clear-eyed breakdown of implementation cost across all four models — before you commit to a vendor or a path.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/what-embedded-payments-costs">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Margin Labs">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23171717'/%3E%3Crect x='2' y='21' width='5' height='5' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='9' y='19' width='5' height='7' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='17' width='5' height='9' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='12' width='5' height='5' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='15' y1='17' x2='22' y2='17' stroke='%23C8823C' stroke-width='.9' opacity='.52'/%3E%3Crect x='23' y='15' width='7' height='11' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='23' y='4' width='7' height='11' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='22' y1='15' x2='31' y2='15' stroke='%23C8823C' stroke-width='1' opacity='.58'/%3E%3Cline x1='26.5' y1='4' x2='26.5' y2='1' stroke='%23C8823C' stroke-width='1.1' stroke-dasharray='.8,1.2'/%3E%3Cpolyline points='25,2.5 26.5,.5 28,2.5' stroke='%23C8823C' stroke-width='1.1' fill='none' stroke-linejoin='round' stroke-linecap='round'/%3E%3Cline x1='1' y1='27' x2='31' y2='27' stroke='%23C8823C' stroke-width='.6' opacity='.18'/%3E%3C/svg%3E">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+      <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">What Embedded Payments Actually Costs to Implement</h1>
+  <div class="article-meta">
+    <span>March 2026</span>
+    <span>6 min read</span>
+  </div>
+  <div class="article-body">
+    <p>The number most vendors won't give you until you're already two months into the sales process.</p>
+
+    <p>If you've ever tried to get a straight answer on what it costs to add embedded payments to a vertical SaaS platform, you know the experience: vague ranges, "it depends" answers, and a request to get on a call with a solutions engineer before anyone will give you real numbers.</p>
+
+    <p>Some of that complexity is genuine — costs do vary meaningfully based on volume, vertical, and program structure. But a lot of it is deliberate obfuscation. Payment processors and PayFac-as-a-Service providers have strong incentives to get you into a sales process before you have enough information to negotiate effectively.</p>
+
+    <p>This article lays out the real cost structure across all four embedded payments models. You should be able to read this and walk into any vendor conversation with a clear understanding of what you're paying for, what's negotiable, and what's a red flag.</p>
+
+    <h2>The Two Categories of Cost</h2>
+
+    <p>Before we get into model-specific numbers, it's worth separating embedded payments costs into two categories that often get conflated: implementation costs and ongoing operating costs. They're different decisions with different timelines and different ROI calculations.</p>
+
+    <p>Implementation costs are one-time or ramp-period expenses — the investment required to build the program, integrate the technology, and reach steady-state operations. Operating costs are ongoing — the fees, splits, and costs that repeat every month as long as the program is running.</p>
+
+    <p>Most vendors lead with implementation costs because those are the scariest-sounding numbers. Smart operators focus first on operating costs because those determine the long-run economics of the business.</p>
+
+    <h2>Model 1: ISV Referral — The Low-Cost, Low-Return Option</h2>
+
+    <p class="cost-label">Implementation Costs</p>
+
+    <p>An ISV referral arrangement has minimal implementation cost — typically $5,000 to $15,000 for basic integration work, legal review of the referral agreement, and merchant communication. You're not building payment infrastructure; you're connecting merchants to a partner's infrastructure.</p>
+
+    <p class="cost-label">Ongoing Costs</p>
+
+    <p>There are essentially no ongoing costs in a referral model. You're receiving a share of the economics the processor earns. If volume drops, your revenue drops but so does your cost basis — there's no fixed cost structure to worry about.</p>
+
+    <p class="cost-label">The Real Cost</p>
+
+    <p>The real cost of the ISV referral model isn't a line item — it's opportunity cost. You're trading long-run economics for short-run simplicity. At meaningful volume, the difference between referral economics (5–15 basis points) and PayFac-lite economics (15–40 basis points) compounds into a significant gap.</p>
+
+    <h2>Model 2: Gateway Integration / Enhanced Residuals</h2>
+
+    <p class="cost-label">Implementation Costs: $20,000–$75,000</p>
+
+    <p>The primary implementation costs in a gateway model are engineering time and integration work. If you're using a well-documented gateway API, a competent engineering team can complete the integration in 4 to 12 weeks. At typical fully-loaded engineering costs, that's $20,000 to $60,000 in internal labor.</p>
+
+    <p>Add legal review of the gateway agreement ($2,000–$5,000) and any UX/design work for the payment flow, and total implementation cost typically lands in the $25,000–$75,000 range.</p>
+
+    <p class="cost-label">Ongoing Costs</p>
+
+    <p>Gateway models have three ongoing cost components. First, the gateway fee itself: usually $0.05–$0.15 per transaction, or a small monthly platform fee. Second, passthrough costs from the card networks — these run 0.10%–0.14% of volume and can't be negotiated. Third, your processor spread — the margin your processor earns above interchange. This is your primary negotiating lever.</p>
+
+    <p>The processor spread is where you need to pay close attention. A spread of 15 basis points on $30M in volume costs you $45,000 per year. A spread of 25 basis points on the same volume costs you $75,000. That $30,000 annual difference is entirely negotiable, and most platforms either don't negotiate it or don't go back to renegotiate as their volume grows.</p>
+
+    <p class="cost-label">What's Negotiable</p>
+
+    <p>In a gateway model, the processor spread is your primary negotiating lever. Passthrough costs aren't negotiable (they're set by Visa and Mastercard). Gateway transaction fees have some flexibility but less than the spread. If your volume has grown meaningfully since you signed your agreement, you should be renegotiating.</p>
+
+    <h2>Model 3: PayFac-Lite (Sponsored PayFac)</h2>
+
+    <p class="cost-label">Implementation Costs: $50,000–$200,000</p>
+
+    <p>PayFac-lite is where implementation costs start to get serious — but also where the economics justify them. The major cost components are:</p>
+
+    <ul>
+      <li><strong>Engineering integration:</strong> Your team needs to build merchant onboarding flows, handle KYC/KYB data collection, integrate with your PayFac-as-a-Service provider's API, and build the settlement and reporting infrastructure. Plan for 3–6 months of engineering work, which translates to $40,000–$150,000 depending on your team's cost structure and the complexity of your existing platform.</li>
+      <li><strong>Compliance and legal:</strong> You'll need a legal review of the sub-merchant agreement you'll present to merchants, compliance review of your KYC flows, and ongoing monitoring obligations. Budget $10,000–$30,000 for initial setup.</li>
+      <li><strong>Reserve requirements:</strong> Most PayFac-as-a-Service providers require a cash reserve — typically $25,000–$100,000 depending on your volume profile. This isn't a cost per se, but it's capital you need to have available.</li>
+    </ul>
+
+    <p class="cost-label">Ongoing Costs</p>
+
+    <p>The ongoing cost structure in a PayFac-lite model is more complex than a gateway model. You're paying your PayFac-as-a-Service provider a platform fee (usually $500–$2,000/month), a per-transaction processing fee, and a share of the net economics. The economics you retain depend heavily on how your agreement is structured.</p>
+
+    <p>A typical PayFac-lite economics structure: the provider earns 40–60% of the net spread above passthrough costs, and you retain 40–60%. On $50M in annual volume with a net spread of 40 basis points, that's $200,000 gross margin to split. Your share — at a 50/50 split — is $100,000 per year.</p>
+
+    <p>This is also where chargeback costs matter. In a PayFac-lite model, you share in the chargeback liability. Depending on how the agreement is structured, you may absorb losses above a certain threshold. Understand this clearly before you sign.</p>
+
+    <p class="cost-label">What's Negotiable</p>
+
+    <p>The economics split between you and the PayFac-as-a-Service provider is negotiable — and your negotiating leverage increases with volume. If you're bringing $20M+ in volume to a provider, you should be negotiating for a more favorable split than their standard terms. The major providers — Finix, Payrix, Payroc — all have pricing flexibility at meaningful volume levels.</p>
+
+    <h2>Model 4: Direct PayFac</h2>
+
+    <p class="cost-label">Implementation Costs: $500,000–$2,000,000+</p>
+
+    <p>Direct PayFac is in a different cost category entirely. The primary cost components are: registration fees with Visa and Mastercard ($5,000–$10,000), dedicated payments engineering (typically 2–4 full-time engineers for 18–24 months), legal and compliance infrastructure, underwriting and risk systems, and reserves capital.</p>
+
+    <p>When you add it all up — internal labor, systems, legal, compliance, and reserve requirements — most platforms building a Direct PayFac from scratch spend $500,000 to $2M before they reach steady-state operations.</p>
+
+    <p class="cost-label">Ongoing Costs</p>
+
+    <p>The ongoing cost structure for a direct PayFac is essentially that of running a small financial services business: payments operations staff, compliance monitoring, risk management, chargeback handling, and the ongoing cost of regulatory relationships.</p>
+
+    <p>The reason platforms build to Direct PayFac despite these costs is that the economics are proportionally larger. On $200M in annual volume, the difference between a PayFac-lite take rate of 25 basis points and a Direct PayFac take rate of 60 basis points is $700,000 per year. At that scale, the investment pays back.</p>
+
+    <p class="cost-label">Who Should Actually Do This</p>
+
+    <p>Direct PayFac is the right answer for a narrow set of platforms: those with $100M or more in annual payment volume, strong technical teams, and the organizational capacity to run a payments business alongside a software business. For everyone else, the math almost never works.</p>
+
+    <p>We see early-stage platforms pursue Direct PayFac because it sounds like the most serious, most sophisticated option. That's usually a mistake that delays revenue by 18 months and consumes capital that could have been deployed in the core product.</p>
+
+    <h2>The Hidden Costs Everyone Forgets</h2>
+
+    <p>Beyond the model-specific costs above, there are recurring costs that apply regardless of which path you choose — and they're almost always underestimated in initial business cases.</p>
+
+    <p class="cost-label">Merchant Support</p>
+
+    <p>When you embed payments, you become the first line of support for payment-related questions. How long does a settlement take? Why was this transaction declined? What do I do about this chargeback? Your current support team isn't trained for this, and payment support tickets are higher-effort than typical software support tickets. Budget for training and potentially for headcount.</p>
+
+    <p class="cost-label">Compliance Overhead</p>
+
+    <p>PCI DSS compliance costs money — security scans, annual assessments, potential pen testing. At the gateway level, you're mostly protected by your processor's compliance posture, but you still have obligations. At the PayFac-lite level, you're taking on more compliance responsibility. Budget $5,000–$25,000 annually depending on your volume and risk profile.</p>
+
+    <p class="cost-label">Integration Maintenance</p>
+
+    <p>Payment APIs change. New card brands get added. Regulations update. The ongoing engineering cost of maintaining a payments integration isn't zero — it's typically 10–20% of the original build cost per year. Factor this into your ROI model.</p>
+
+    <h2>How to Think About the ROI</h2>
+
+    <p>The right way to evaluate embedded payments cost is not "can we afford to build this" but "what is the payback period relative to the annual revenue opportunity."</p>
+
+    <p>A gateway integration that costs $50,000 to build and generates $80,000 in net annual payment revenue pays back in about 7 months. After that, it's essentially pure margin on existing volume. That's a strong business case.</p>
+
+    <p>A PayFac-lite program that costs $150,000 to implement and generates $200,000 in net annual revenue at steady state has a similar profile. The implementation looks expensive until you model the 5-year return.</p>
+
+    <p>The programs that don't have good ROI are the ones where the implementation cost is out of proportion to the volume — usually because the platform tried to build too sophisticated a program too early, or because they signed a processor agreement with economics that were too favorable to the provider.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <button onclick="openConsult(false)" style="background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;" data-analytics="article-cta-consult">Start the conversation →</button>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

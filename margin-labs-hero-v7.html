@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margin Labs — Hero V7</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d0d0d; font-family: 'DM Sans', sans-serif; color: #F0EBE4; }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  padding: 80px 52px 60px;
+  background: #0d0d0d;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; z-index: 0;
+}
+.hero-content {
+  position: relative; z-index: 3;
+  max-width: 520px;
+  animation: content-in 1.2s ease-out 0.3s both;
+}
+@keyframes content-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #C8823C; opacity: 0.78;
+  margin-bottom: 20px;
+}
+.headline {
+  font-size: 38px; font-weight: 300;
+  color: #F0EBE4; line-height: 1.28;
+  letter-spacing: -0.03em; margin-bottom: 20px;
+}
+.headline strong { font-weight: 700; color: #fff; }
+.sub {
+  font-size: 15px; font-weight: 300;
+  color: rgba(240,235,228,0.5);
+  line-height: 1.78; max-width: 390px;
+  margin-bottom: 30px;
+}
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.cta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 12px 26px; border-radius: 2px;
+  cursor: pointer; border: none;
+}
+.cta-p { background: #C8823C; color: #0d0d0d; font-weight: 600; }
+.cta-g {
+  background: transparent;
+  color: rgba(240,235,228,0.7);
+  border: 1px solid rgba(240,235,228,0.15);
+}
+.tiles {
+  display: flex; gap: 10px;
+  margin-top: 30px; flex-wrap: wrap;
+}
+.tile {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(200,130,60,0.6);
+  border: 1px solid rgba(200,130,60,0.15);
+  border-radius: 2px; padding: 8px 14px;
+  cursor: pointer;
+}
+
+/* LINE — slow draw over 6s */
+#signal-line {
+  stroke-dasharray: 1380;
+  stroke-dashoffset: 1380;
+  animation: draw-line 6s linear 1s forwards;
+}
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+/*
+  NODES — fade in to full opacity as line arrives,
+  then settle back to a quiet resting opacity
+  so they're present but not competing with text.
+
+  Two-phase animation:
+  Phase 1 (0 → 0.6s): fade up to 1.0
+  Phase 2 (0.6s → 1.8s): ease back down to resting value
+
+  Resting opacities: 0.18 / 0.22 / 0.26 / 0.3 / 0.34
+  (slightly progressive so larger = a little more visible)
+*/
+.node { opacity: 0; }
+
+#n1 { animation: node-settle-1 2.0s ease-in-out 2.2s forwards; }
+#n2 { animation: node-settle-2 2.0s ease-in-out 3.4s forwards; }
+#n3 { animation: node-settle-3 2.0s ease-in-out 4.5s forwards; }
+#n4 { animation: node-settle-4 2.0s ease-in-out 5.5s forwards; }
+#n5 { animation: node-settle-5 2.2s ease-in-out 6.4s forwards; }
+
+/* each keyframe: same shape, different resting value */
+@keyframes node-settle-1 {
+  0%   { opacity: 0; }
+  30%  { opacity: 1.0; }
+  100% { opacity: 0.18; }
+}
+@keyframes node-settle-2 {
+  0%   { opacity: 0; }
+  30%  { opacity: 1.0; }
+  100% { opacity: 0.22; }
+}
+@keyframes node-settle-3 {
+  0%   { opacity: 0; }
+  30%  { opacity: 1.0; }
+  100% { opacity: 0.26; }
+}
+@keyframes node-settle-4 {
+  0%   { opacity: 0; }
+  30%  { opacity: 1.0; }
+  100% { opacity: 0.30; }
+}
+@keyframes node-settle-5 {
+  0%   { opacity: 0; }
+  30%  { opacity: 1.0; }
+  100% { opacity: 0.34; }
+}
+
+/* BARS — fade in gently after line completes */
+.bar { opacity: 0; }
+#b1  { animation: bar-fade 1s ease-out 7.8s  forwards; }
+#b2  { animation: bar-fade 1s ease-out 7.95s forwards; }
+#b3  { animation: bar-fade 1s ease-out 7.85s forwards; }
+#b4  { animation: bar-fade 1s ease-out 8.1s  forwards; }
+#b5  { animation: bar-fade 1s ease-out 8.2s  forwards; }
+#b6  { animation: bar-fade 1s ease-out 8.0s  forwards; }
+#b7  { animation: bar-fade 1s ease-out 8.3s  forwards; }
+#b8  { animation: bar-fade 1s ease-out 8.45s forwards; }
+#b9  { animation: bar-fade 1s ease-out 8.35s forwards; }
+#b10 { animation: bar-fade 1s ease-out 8.6s  forwards; }
+#b11 { animation: bar-fade 1s ease-out 8.5s  forwards; }
+#b12 { animation: bar-fade 1s ease-out 8.7s  forwards; }
+#b13 { animation: bar-fade 1s ease-out 8.65s forwards; }
+#b14 { animation: bar-fade 1s ease-out 8.85s forwards; }
+#b15 { animation: bar-fade 1s ease-out 8.75s forwards; }
+#b16 { animation: bar-fade 1s ease-out 9.0s  forwards; }
+@keyframes bar-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* background dots — slow gentle fade at start */
+.dot {
+  opacity: 0;
+  animation: dot-fade 3s ease-out 0.5s forwards;
+}
+@keyframes dot-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* grid elements fade in with bars */
+.grid-el {
+  opacity: 0;
+  animation: dot-fade 2.5s ease-out 7.5s forwards;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+
+  <svg class="hero-bg" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="glow" cx="58%" cy="50%" r="42%">
+        <stop offset="0%"   stop-color="#C8823C" stop-opacity="0.06"/>
+        <stop offset="100%" stop-color="#C8823C" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="fl" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"   stop-color="#0d0d0d" stop-opacity="1"/>
+        <stop offset="38%"  stop-color="#0d0d0d" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="fr" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="90%"  stop-color="#0d0d0d" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#0d0d0d" stop-opacity="1"/>
+      </linearGradient>
+      <linearGradient id="btf" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#0d0d0d" stop-opacity="0.65"/>
+        <stop offset="22%"  stop-color="#0d0d0d" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+
+    <rect width="1440" height="560" fill="url(#glow)"/>
+
+    <!-- background dot texture -->
+    <g fill="#C8823C">
+      <circle class="dot" cx="560" cy="100" r="1.2" opacity="0.04"/>
+      <circle class="dot" cx="640" cy="100" r="1.3" opacity="0.05"/>
+      <circle class="dot" cx="720" cy="100" r="1.4" opacity="0.06"/>
+      <circle class="dot" cx="800" cy="100" r="1.3" opacity="0.05"/>
+      <circle class="dot" cx="880" cy="100" r="1.2" opacity="0.04"/>
+
+      <circle class="dot" cx="520" cy="185" r="1.3" opacity="0.05"/>
+      <circle class="dot" cx="600" cy="185" r="1.5" opacity="0.07"/>
+      <circle class="dot" cx="680" cy="185" r="1.7" opacity="0.08"/>
+      <circle class="dot" cx="760" cy="185" r="1.7" opacity="0.08"/>
+      <circle class="dot" cx="840" cy="185" r="1.5" opacity="0.07"/>
+      <circle class="dot" cx="920" cy="185" r="1.3" opacity="0.05"/>
+
+      <circle class="dot" cx="500" cy="270" r="1.4" opacity="0.05"/>
+      <circle class="dot" cx="580" cy="270" r="1.6" opacity="0.07"/>
+      <circle class="dot" cx="660" cy="270" r="1.8" opacity="0.08"/>
+      <circle class="dot" cx="740" cy="270" r="2.0" opacity="0.08"/>
+      <circle class="dot" cx="820" cy="270" r="1.8" opacity="0.08"/>
+      <circle class="dot" cx="900" cy="270" r="1.6" opacity="0.07"/>
+      <circle class="dot" cx="980" cy="270" r="1.4" opacity="0.05"/>
+
+      <circle class="dot" cx="510" cy="355" r="1.3" opacity="0.05"/>
+      <circle class="dot" cx="590" cy="355" r="1.6" opacity="0.07"/>
+      <circle class="dot" cx="670" cy="355" r="1.8" opacity="0.08"/>
+      <circle class="dot" cx="750" cy="355" r="1.9" opacity="0.08"/>
+      <circle class="dot" cx="830" cy="355" r="1.7" opacity="0.07"/>
+      <circle class="dot" cx="910" cy="355" r="1.4" opacity="0.05"/>
+
+      <circle class="dot" cx="550" cy="440" r="1.2" opacity="0.04"/>
+      <circle class="dot" cx="630" cy="440" r="1.4" opacity="0.06"/>
+      <circle class="dot" cx="710" cy="440" r="1.5" opacity="0.07"/>
+      <circle class="dot" cx="790" cy="440" r="1.4" opacity="0.06"/>
+      <circle class="dot" cx="870" cy="440" r="1.2" opacity="0.04"/>
+    </g>
+
+    <!-- signal line -->
+    <polyline
+      id="signal-line"
+      points="500,530 615,455 728,372 830,286 918,212 994,152 1058,106"
+      stroke="#C8823C"
+      stroke-width="1.8"
+      fill="none"
+      opacity="0.38"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- nodes — flash bright on arrival, settle to quiet resting opacity -->
+    <circle id="n1" class="node" cx="615" cy="455" r="5"  fill="#C8823C"/>
+    <circle id="n2" class="node" cx="728" cy="372" r="6"  fill="#C8823C"/>
+    <circle id="n3" class="node" cx="830" cy="286" r="7"  fill="#C8823C"/>
+    <circle id="n4" class="node" cx="918" cy="212" r="8"  fill="#C8823C"/>
+    <circle id="n5" class="node" cx="994" cy="152" r="9"  fill="#C8823C"/>
+
+    <!-- bar chart zone -->
+    <g>
+      <line class="grid-el" x1="1072" y1="0"   x2="1072" y2="560" stroke="#C8823C" stroke-width="0.7" opacity="0.14"/>
+      <line class="grid-el" x1="1072" y1="116" x2="1440" y2="116" stroke="#C8823C" stroke-width="0.4" opacity="0.08"/>
+      <line class="grid-el" x1="1072" y1="232" x2="1440" y2="232" stroke="#C8823C" stroke-width="0.4" opacity="0.08"/>
+      <line class="grid-el" x1="1072" y1="348" x2="1440" y2="348" stroke="#C8823C" stroke-width="0.4" opacity="0.08"/>
+      <line class="grid-el" x1="1072" y1="464" x2="1440" y2="464" stroke="#C8823C" stroke-width="0.4" opacity="0.08"/>
+      <line class="grid-el" x1="1072" y1="116" x2="1081" y2="116" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
+      <line class="grid-el" x1="1072" y1="232" x2="1081" y2="232" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
+      <line class="grid-el" x1="1072" y1="348" x2="1081" y2="348" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
+      <line class="grid-el" x1="1072" y1="464" x2="1081" y2="464" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
+      <text class="grid-el" x="1076" y="100" font-family="DM Mono, monospace" font-size="9" fill="#C8823C" opacity="0.28" letter-spacing="0.1em">BPS</text>
+
+      <rect id="b1"  class="bar" x="1090" y="402" width="13" height="128" fill="#C8823C" opacity="0.14" rx="1"/>
+      <rect id="b2"  class="bar" x="1112" y="368" width="13" height="162" fill="#C8823C" opacity="0.17" rx="1"/>
+      <rect id="b3"  class="bar" x="1134" y="415" width="13" height="115" fill="#C8823C" opacity="0.13" rx="1"/>
+      <rect id="b4"  class="bar" x="1156" y="332" width="13" height="198" fill="#C8823C" opacity="0.22" rx="1"/>
+      <rect id="b5"  class="bar" x="1178" y="298" width="13" height="232" fill="#C8823C" opacity="0.26" rx="1"/>
+      <rect id="b6"  class="bar" x="1200" y="358" width="13" height="172" fill="#C8823C" opacity="0.19" rx="1"/>
+      <rect id="b7"  class="bar" x="1222" y="262" width="13" height="268" fill="#C8823C" opacity="0.32" rx="1"/>
+      <rect id="b8"  class="bar" x="1244" y="228" width="13" height="302" fill="#C8823C" opacity="0.36" rx="1"/>
+      <rect id="b9"  class="bar" x="1266" y="305" width="13" height="225" fill="#C8823C" opacity="0.26" rx="1"/>
+      <rect id="b10" class="bar" x="1288" y="192" width="13" height="338" fill="#C8823C" opacity="0.43" rx="1"/>
+      <rect id="b11" class="bar" x="1310" y="225" width="13" height="305" fill="#C8823C" opacity="0.38" rx="1"/>
+      <rect id="b12" class="bar" x="1332" y="162" width="13" height="368" fill="#C8823C" opacity="0.50" rx="1"/>
+      <rect id="b13" class="bar" x="1354" y="198" width="13" height="332" fill="#C8823C" opacity="0.44" rx="1"/>
+      <rect id="b14" class="bar" x="1376" y="128" width="13" height="402" fill="#C8823C" opacity="0.58" rx="1"/>
+      <rect id="b15" class="bar" x="1398" y="162" width="13" height="368" fill="#C8823C" opacity="0.52" rx="1"/>
+      <rect id="b16" class="bar" x="1420" y="96"  width="13" height="434" fill="#C8823C" opacity="0.66" rx="1"/>
+    </g>
+
+    <!-- fades always on top -->
+    <rect width="1440" height="560" fill="url(#fl)"/>
+    <rect width="1440" height="560" fill="url(#fr)"/>
+    <rect x="1072" y="0" width="368" height="88" fill="url(#btf)"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="eyebrow">Embedded Payments Intelligence</div>
+    <div class="headline">
+      Your platform is sitting on payments revenue you haven't <strong>captured yet.</strong>
+    </div>
+    <div class="sub">
+      The Margin Multiplier quantifies what it's worth — and what it takes to capture it.
+    </div>
+    <div class="cta-row">
+      <button class="cta cta-p">Run the Multiplier</button>
+      <button class="cta cta-g">How it works</button>
+    </div>
+    <div class="tiles">
+      <div class="tile">We don't have payments yet</div>
+      <div class="tile">Payments are underperforming</div>
+      <div class="tile">Not sure what we're paying</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

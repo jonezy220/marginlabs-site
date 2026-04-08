@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Margin Multiplier™ — Margin Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:   #0d0d0d; --bg2: #111111; --bg3: #171717; --bg4: #1e1e1e;
+  --bdr:  rgba(200,130,60,0.14);
+  --c:    #C8823C; --text: #F0EBE4;
+  --dim:  rgba(240,235,228,0.52); --dmr: rgba(240,235,228,0.3);
+  --font: 'DM Sans', sans-serif; --mono: 'DM Mono', monospace;
+}
+body { background:var(--bg); font-family:var(--font); color:var(--text); min-height:100vh; padding-bottom:80px; }
+
+/* NAV */
+nav { display:flex; align-items:center; justify-content:space-between; padding:20px 48px; border-bottom:1px solid var(--bdr); position:sticky; top:0; background:var(--bg); z-index:100; }
+.nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.wm { font-size:20px; letter-spacing:-0.025em; line-height:1; }
+.wm .mg { font-weight:300; color:var(--text); }
+.wm .lb { font-weight:700; color:var(--c); }
+.nav-back { font-family:var(--mono); font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--dmr); text-decoration:none; }
+.nav-back:hover { color:var(--c); }
+
+/* PAGE HEADER */
+.ph { max-width:680px; margin:64px auto 0; padding:0 48px; text-align:center; }
+.ey { font-family:var(--mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c); opacity:0.78; margin-bottom:16px; }
+.pt { font-size:38px; font-weight:300; letter-spacing:-0.03em; line-height:1.22; margin-bottom:16px; }
+.pt strong { font-weight:700; }
+.ps { font-size:15px; font-weight:300; color:var(--dim); line-height:1.75; max-width:480px; margin:0 auto; }
+
+/* MAIN */
+.wrap { max-width:680px; margin:48px auto 0; padding:0 48px; }
+.step { display:none; }
+.step.active { display:block; }
+
+/* CARDS + INPUTS */
+.card { background:var(--bg3); border:1px solid var(--bdr); border-radius:4px; padding:36px 40px; margin-bottom:12px; }
+.card-label { font-family:var(--mono); font-size:8px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:20px; }
+.inputs-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:26px; }
+.ig { display:flex; flex-direction:column; gap:8px; }
+.ig label { font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--dmr); }
+
+select, input[type="email"], input[type="tel"], input[type="text"], textarea {
+  background:var(--bg4); border:1px solid var(--bdr); border-radius:2px;
+  color:var(--text); font-family:var(--font); font-size:14px; font-weight:300;
+  padding:11px 14px; width:100%;
+}
+select {
+  appearance:none; -webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C8823C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center; cursor:pointer;
+}
+select:focus, input:focus, textarea:focus { outline:none; border-color:rgba(200,130,60,0.45); }
+select option { background:var(--bg4); color:var(--text); }
+input::placeholder, textarea::placeholder { color:var(--dmr); }
+textarea { resize:vertical; min-height:90px; line-height:1.6; }
+
+/* BUTTONS */
+.btn-p {
+  background:var(--c); color:#0d0d0d; border:none; border-radius:2px;
+  font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:0.14em;
+  text-transform:uppercase; padding:14px 24px; cursor:pointer; transition:opacity 0.2s;
+  width:100%; display:block; text-align:center;
+}
+.btn-p:hover { opacity:0.88; }
+.btn-p:disabled { opacity:0.45; cursor:not-allowed; }
+.btn-p.auto { width:auto; display:inline-block; }
+
+.btn-g {
+  background:transparent; color:var(--text); border:1px solid rgba(240,235,228,0.15);
+  border-radius:2px; font-family:var(--mono); font-size:10px; font-weight:500;
+  letter-spacing:0.14em; text-transform:uppercase; padding:13px 24px;
+  cursor:pointer; transition:border-color 0.2s; text-decoration:none;
+  display:inline-block; text-align:center;
+}
+.btn-g:hover { border-color:rgba(200,130,60,0.4); color:var(--c); }
+
+/* GATE */
+.gate-headline { font-size:20px; font-weight:300; letter-spacing:-0.01em; margin-bottom:8px; }
+.gate-sub { font-size:13px; font-weight:300; color:var(--dim); line-height:1.7; margin-bottom:22px; }
+.email-row { display:flex; gap:10px; margin-bottom:12px; }
+.email-row input { flex:1; }
+.gate-note { font-family:var(--mono); font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--dmr); }
+.gate-err { font-size:12px; color:rgba(200,130,60,0.85); margin-top:10px; display:none; font-family:var(--mono); letter-spacing:0.08em; }
+
+/* RESULTS */
+.ri-label { font-family:var(--mono); font-size:8px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:10px; }
+.ri-hl { font-size:20px; font-weight:300; letter-spacing:-0.02em; margin-bottom:6px; }
+.ri-sub { font-size:13px; font-weight:300; color:var(--dim); line-height:1.65; margin-bottom:24px; }
+
+.model-grid { display:grid; grid-template-columns:1fr 1fr; gap:3px; margin-bottom:3px; }
+.mc { background:var(--bg3); border:1px solid var(--bdr); border-radius:2px; padding:22px 24px; position:relative; }
+.mc.is-cur  { border-color:rgba(200,130,60,0.22); }
+.mc.is-rec  { border-color:rgba(200,130,60,0.55); background:var(--bg2); }
+.mc.is-rec::before {
+  content:'Recommended'; position:absolute; top:-1px; right:14px;
+  background:var(--c); color:#0d0d0d; font-family:var(--mono); font-size:7px;
+  font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+  padding:3px 8px; border-radius:0 0 2px 2px;
+}
+.mc.is-ceil.is-rec::before { content:'Optimise here'; }
+.mc-num  { font-family:var(--mono); font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:var(--c); opacity:0.5; margin-bottom:5px; }
+.mc-name { font-size:14px; font-weight:400; color:var(--text); margin-bottom:14px; }
+.mc-rev  { font-size:28px; font-weight:700; color:var(--c); letter-spacing:-0.02em; line-height:1; margin-bottom:4px; }
+.mc-bps  { font-family:var(--mono); font-size:9px; letter-spacing:0.1em; color:var(--dmr); margin-bottom:10px; }
+.mc-tag  { font-size:12px; font-weight:300; color:var(--dim); }
+.mc-tag.up   { color:rgba(200,130,60,0.8); }
+.mc-tag.mono { font-family:var(--mono); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dmr); }
+
+.gap-box {
+  background:var(--bg2); border:1px solid var(--bdr); border-left:3px solid var(--c);
+  border-radius:2px; padding:22px 26px; margin:3px 0 3px;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.gap-lbl { font-family:var(--mono); font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:var(--dmr); margin-bottom:6px; }
+.gap-num { font-size:32px; font-weight:700; color:var(--c); letter-spacing:-0.02em; line-height:1; }
+.gap-sub { font-size:12px; font-weight:300; color:var(--dim); margin-top:5px; }
+.gap-rhs { font-size:13px; font-weight:300; color:var(--dim); line-height:1.72; max-width:280px; }
+
+.rationale { background:var(--bg3); border:1px solid var(--bdr); border-radius:4px; padding:24px 28px; margin:3px 0 24px; }
+.rat-lbl  { font-family:var(--mono); font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:10px; }
+.rat-text { font-size:14px; font-weight:300; color:var(--dim); line-height:1.75; }
+.rat-text strong { color:var(--text); font-weight:400; }
+
+/* CTA BLOCK */
+.cta-block { background:var(--bg3); border:1px solid var(--bdr); border-radius:4px; padding:30px 36px; margin-bottom:4px; }
+.cta-ey   { font-family:var(--mono); font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:8px; }
+.cta-hl   { font-size:17px; font-weight:300; letter-spacing:-0.01em; margin-bottom:8px; }
+.cta-sub  { font-size:13px; font-weight:300; color:var(--dim); line-height:1.65; margin-bottom:22px; }
+.cta-btns { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.cta-2nd  { font-family:var(--mono); font-size:8px; letter-spacing:0.14em; text-transform:uppercase; color:var(--dmr); }
+.cta-2nd a { color:var(--c); text-decoration:none; }
+.cta-2nd a:hover { text-decoration:underline; }
+
+/* ══════════════════════════════════════════
+   CONSULT MODAL
+   Triggered by "Start the conversation" button
+   Pre-fills from calculator data
+   Submits to Formspree with full context
+══════════════════════════════════════════ */
+.modal-overlay {
+  display:none; position:fixed; inset:0; z-index:9000;
+  background:rgba(0,0,0,0.82);
+  align-items:center; justify-content:center; padding:24px;
+  overflow-y:auto;
+}
+.modal-overlay.open { display:flex; }
+
+.modal {
+  background:var(--bg); border:1px solid var(--bdr); border-radius:6px;
+  width:100%; max-width:600px;
+  margin:auto;
+  padding:44px;
+  position:relative;
+}
+
+.modal-close {
+  position:absolute; top:14px; right:16px;
+  background:none; border:none; color:var(--dmr);
+  font-family:var(--mono); font-size:9px; letter-spacing:0.14em;
+  text-transform:uppercase; cursor:pointer; padding:4px 8px;
+}
+.modal-close:hover { color:var(--c); }
+
+.modal-context {
+  background:var(--bg3); border:1px solid var(--bdr); border-left:3px solid var(--c);
+  border-radius:2px; padding:14px 18px; margin-bottom:24px;
+  display:none;
+}
+.mc-ctx-lbl { font-family:var(--mono); font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:6px; }
+.mc-ctx-val { font-size:13px; font-weight:300; color:var(--dim); line-height:1.65; }
+.mc-ctx-val strong { color:var(--text); font-weight:400; }
+
+.modal-ey { font-family:var(--mono); font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.7; margin-bottom:10px; }
+.modal-hl { font-size:24px; font-weight:300; letter-spacing:-0.02em; line-height:1.3; margin-bottom:8px; }
+.modal-sub { font-size:13px; font-weight:300; color:var(--dim); line-height:1.7; margin-bottom:28px; }
+
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.form-full { margin-bottom:16px; }
+.form-full label, .ig-modal label { font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--dmr); display:block; margin-bottom:7px; }
+.ig-modal { display:flex; flex-direction:column; }
+
+/* availability checkboxes */
+.avail-label { font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--dmr); margin-bottom:10px; display:block; }
+.avail-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; }
+.avail-opt {
+  display:flex; align-items:center; gap:10px;
+  background:var(--bg4); border:1px solid var(--bdr); border-radius:2px;
+  padding:10px 14px; cursor:pointer; transition:border-color 0.2s;
+}
+.avail-opt:hover { border-color:rgba(200,130,60,0.35); }
+.avail-opt input[type="checkbox"] {
+  width:14px; height:14px; min-width:14px; padding:0;
+  accent-color:var(--c); cursor:pointer;
+  background:var(--bg4); border:1px solid var(--bdr);
+}
+.avail-opt span { font-size:13px; font-weight:300; color:var(--text); }
+
+.modal-note { font-family:var(--mono); font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--dmr); margin-top:10px; }
+.modal-err { font-size:12px; color:rgba(200,130,60,0.85); margin-top:10px; display:none; font-family:var(--mono); letter-spacing:0.08em; }
+.modal-success { display:none; text-align:center; padding:20px 0; }
+.modal-success-hl { font-size:22px; font-weight:300; letter-spacing:-0.02em; margin-bottom:10px; }
+.modal-success-sub { font-size:14px; font-weight:300; color:var(--dim); line-height:1.7; }
+
+/* MM POPUP overlay (for homepage trigger) */
+.mm-overlay {
+  display:none; position:fixed; inset:0; z-index:8000;
+  background:rgba(0,0,0,0.78);
+  align-items:center; justify-content:center; padding:24px;
+  overflow-y:auto;
+}
+.mm-overlay.open { display:flex; }
+.mm-popup {
+  background:var(--bg); border:1px solid var(--bdr); border-radius:6px;
+  width:100%; max-width:680px; margin:auto; padding:40px; position:relative;
+}
+.mm-popup-close {
+  position:absolute; top:14px; right:16px; background:none; border:none;
+  color:var(--dmr); font-family:var(--mono); font-size:9px; letter-spacing:0.14em;
+  text-transform:uppercase; cursor:pointer; padding:4px 8px;
+}
+.mm-popup-close:hover { color:var(--c); }
+.mm-trigger {
+  background:var(--c); color:#0d0d0d; border:none; border-radius:2px;
+  font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:0.14em;
+  text-transform:uppercase; padding:12px 26px; cursor:pointer; transition:opacity 0.2s;
+  text-decoration:none; display:inline-block;
+}
+.mm-trigger:hover { opacity:0.88; }
+
+.disc { max-width:680px; margin:24px auto 0; padding:0 48px; font-family:var(--mono); font-size:8px; letter-spacing:0.1em; color:var(--dmr); line-height:1.75; text-align:center; }
+
+/* MOBILE */
+@media (max-width:768px) {
+  nav { padding:16px 24px; }
+  .ph  { padding:0 24px; margin-top:40px; }
+  .pt  { font-size:28px; }
+  .wrap { padding:0 24px; }
+  .card { padding:24px 20px; }
+  .inputs-grid, .model-grid, .form-grid, .avail-grid { grid-template-columns:1fr; }
+  .email-row { flex-direction:column; }
+  .cta-btns { flex-direction:column; align-items:flex-start; }
+  .btn-p, .btn-g { width:100%; text-align:center; }
+  .gap-box { flex-direction:column; }
+  .modal { padding:28px 20px; }
+  .disc { padding:0 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"    y2="9"  stroke="#C8823C" stroke-width=".9"  opacity=".58"/>
+    </svg>
+    <div class="wm"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <a href="/" class="nav-back">← Back to site</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="ph">
+  <div class="ey">The Margin Multiplier™</div>
+  <h1 class="pt">What is your payments opportunity <strong>worth?</strong></h1>
+  <p class="ps">Four inputs. Thirty seconds. See what your platform could be generating across all four embedded payments models — and where the real opportunity is.</p>
+</div>
+
+<!-- CALCULATOR -->
+<div class="wrap" id="mm-main">
+
+  <!-- STEP 1: INPUTS -->
+  <div class="step active" id="step-inputs">
+    <div class="card">
+      <div class="card-label">Step 1 of 2 — Your platform</div>
+      <div class="inputs-grid">
+        <div class="ig">
+          <label for="arr">Annual Recurring Revenue</label>
+          <select id="arr" aria-label="ARR range">
+            <option value="" disabled selected>Select ARR range</option>
+            <option value="2">$1M – $5M</option>
+            <option value="7">$5M – $10M</option>
+            <option value="15">$10M – $20M</option>
+            <option value="35">$20M – $50M</option>
+            <option value="75">$50M – $100M</option>
+            <option value="150">$100M+</option>
+          </select>
+        </div>
+        <div class="ig">
+          <label for="vol">Annual Payments Volume</label>
+          <select id="vol" aria-label="Payments volume range">
+            <option value="" disabled selected>Select volume range</option>
+            <option value="500000">Under $1M</option>
+            <option value="2500000">$1M – $5M</option>
+            <option value="7500000">$5M – $10M</option>
+            <option value="17500000">$10M – $25M</option>
+            <option value="37500000">$25M – $50M</option>
+            <option value="75000000">$50M – $100M</option>
+            <option value="150000000">$100M+</option>
+          </select>
+        </div>
+        <div class="ig">
+          <label for="cur">Current Payments Model</label>
+          <select id="cur" aria-label="Current payments model">
+            <option value="" disabled selected>Select current model</option>
+            <option value="none">None — not started yet</option>
+            <option value="isv">ISV Referral</option>
+            <option value="enhanced">Enhanced Residuals</option>
+            <option value="payfac_lite">PayFac-lite</option>
+            <option value="payfac">Full PayFac</option>
+            <option value="unsure">Not sure</option>
+          </select>
+        </div>
+        <div class="ig">
+          <label for="vert">Vertical / Industry</label>
+          <select id="vert" aria-label="Industry vertical">
+            <option value="" disabled selected>Select your vertical</option>
+            <option value="restaurant">Restaurant / Hospitality</option>
+            <option value="retail">Retail / Commerce</option>
+            <option value="field_service">Field Services</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="property">Property Management</option>
+            <option value="fitness">Fitness / Wellness</option>
+            <option value="professional">Professional Services</option>
+            <option value="other">Other vertical</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-p" onclick="goToGate()">See My Results →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: EMAIL GATE -->
+  <div class="step" id="step-gate">
+    <div class="card">
+      <div class="card-label">Step 2 of 2 — Unlock your results</div>
+      <h2 class="gate-headline">Your Margin Multiplier output is ready.</h2>
+      <p class="gate-sub">Enter your email to see your full model comparison, opportunity gap, and recommended next step. We'll also send a copy to your inbox.</p>
+      <div class="email-row">
+        <input type="email" id="gate-email" placeholder="you@company.com" required aria-label="Your email address"/>
+        <button class="btn-p" id="gate-btn" onclick="submitAndShow()" style="width:auto;padding:11px 22px;">Unlock Results →</button>
+      </div>
+      <div class="gate-err" id="gate-err"></div>
+      <p class="gate-note">No sales call. No spam. Just your numbers.</p>
+      <p style="margin-top:16px;">
+        <a href="#" onclick="goBack(event)" style="font-family:var(--mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dmr);text-decoration:none;">← Edit inputs</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- STEP 3: RESULTS -->
+  <div class="step" id="step-results">
+    <div class="ri-label">Your Margin Multiplier Output</div>
+    <h2 class="ri-hl" id="ri-hl"></h2>
+    <p class="ri-sub" id="ri-sub"></p>
+    <div class="model-grid" id="model-grid"></div>
+    <div class="gap-box">
+      <div>
+        <div class="gap-lbl" id="gap-lbl">Annual opportunity</div>
+        <div class="gap-num" id="gap-num">—</div>
+        <div class="gap-sub" id="gap-sub"></div>
+      </div>
+      <div class="gap-rhs" id="gap-rhs"></div>
+    </div>
+    <div class="rationale">
+      <div class="rat-lbl">Why this recommendation</div>
+      <p class="rat-text" id="rat-text"></p>
+    </div>
+    <div class="cta-block" id="cta-block"></div>
+  </div>
+
+</div>
+
+<div class="disc">
+  Revenue estimates use midpoint basis point rates applied to the midpoint of your selected volume range.
+  Actual results vary based on vertical, merchant mix, activation rate, and provider terms.
+  Directional modeling only — not a guarantee of outcome.
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CONSULT MODAL
+     Triggered by "Start the conversation"
+     Pre-fills from calculator state
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="consult-overlay" role="dialog" aria-modal="true" aria-label="Start the conversation">
+  <div class="modal">
+    <button class="modal-close" onclick="closeConsult()" aria-label="Close">✕ Close</button>
+
+    <!-- Form state -->
+    <div id="consult-form-state">
+
+      <!-- Context strip — shown when coming from calculator -->
+      <div class="modal-context" id="modal-context">
+        <div class="mc-ctx-lbl">Your Margin Multiplier summary</div>
+        <div class="mc-ctx-val" id="modal-context-val"></div>
+      </div>
+
+      <div class="modal-ey">Work with Margin Labs</div>
+      <h2 class="modal-hl" id="modal-hl">Let's talk about your payments opportunity.</h2>
+      <p class="modal-sub" id="modal-sub">Tell us a bit about what you're working on. We respond to every inquiry within 48 hours.</p>
+
+      <form id="consult-form" onsubmit="submitConsult(event)">
+
+        <!-- Name + Company -->
+        <div class="form-grid">
+          <div class="ig-modal">
+            <label for="c-name">Name</label>
+            <input type="text" id="c-name" name="name" placeholder="Your name" required/>
+          </div>
+          <div class="ig-modal">
+            <label for="c-company">Company</label>
+            <input type="text" id="c-company" name="company" placeholder="Company name" required/>
+          </div>
+        </div>
+
+        <!-- Email + Phone -->
+        <div class="form-grid">
+          <div class="ig-modal">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" name="email" placeholder="you@company.com" required/>
+          </div>
+          <div class="ig-modal">
+            <label for="c-phone">Phone <span style="opacity:0.5;font-size:0.9em;">(optional)</span></label>
+            <input type="tel" id="c-phone" name="phone" placeholder="+1 (555) 000-0000"/>
+          </div>
+        </div>
+
+        <!-- Volume + Model (pre-filled from calculator if available) -->
+        <div class="form-grid">
+          <div class="ig-modal">
+            <label for="c-volume">Annual Payments Volume</label>
+            <select id="c-volume" name="volume" aria-label="Payments volume">
+              <option value="">Select range</option>
+              <option value="Under $1M">Under $1M</option>
+              <option value="$1M – $5M">$1M – $5M</option>
+              <option value="$5M – $10M">$5M – $10M</option>
+              <option value="$10M – $25M">$10M – $25M</option>
+              <option value="$25M – $50M">$25M – $50M</option>
+              <option value="$50M – $100M">$50M – $100M</option>
+              <option value="$100M+">$100M+</option>
+            </select>
+          </div>
+          <div class="ig-modal">
+            <label for="c-model">Current Payments Model</label>
+            <select id="c-model" name="current_model" aria-label="Current model">
+              <option value="">Select model</option>
+              <option value="None — not started">None — not started</option>
+              <option value="ISV Referral">ISV Referral</option>
+              <option value="Enhanced Residuals">Enhanced Residuals</option>
+              <option value="PayFac-lite">PayFac-lite</option>
+              <option value="Full PayFac">Full PayFac</option>
+              <option value="Not sure">Not sure</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- What are you trying to solve -->
+        <div class="form-full">
+          <label for="c-message">What are you trying to solve?</label>
+          <textarea id="c-message" name="message" placeholder="Tell us what you're working on — the more context the better." required></textarea>
+        </div>
+
+        <!-- Availability -->
+        <div class="form-full">
+          <span class="avail-label">Availability <span style="opacity:0.5;font-size:0.9em;">(select all that apply)</span></span>
+          <div class="avail-grid">
+            <label class="avail-opt">
+              <input type="checkbox" name="availability" value="Mornings 9–12"/>
+              <span>Mornings (9–12)</span>
+            </label>
+            <label class="avail-opt">
+              <input type="checkbox" name="availability" value="Afternoons 12–5"/>
+              <span>Afternoons (12–5)</span>
+            </label>
+            <label class="avail-opt">
+              <input type="checkbox" name="availability" value="Late afternoon 4–6"/>
+              <span>Late afternoon (4–6)</span>
+            </label>
+            <label class="avail-opt">
+              <input type="checkbox" name="availability" value="Flexible — email me first"/>
+              <span>Flexible — email me first</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Timezone -->
+        <div class="form-full">
+          <div class="ig-modal">
+            <label for="c-tz">Timezone</label>
+            <select id="c-tz" name="timezone" aria-label="Timezone">
+              <option value="">Select timezone</option>
+              <option value="ET — Eastern">ET — Eastern</option>
+              <option value="CT — Central">CT — Central</option>
+              <option value="MT — Mountain">MT — Mountain</option>
+              <option value="PT — Pacific">PT — Pacific</option>
+              <option value="GMT — London">GMT — London</option>
+              <option value="CET — Central Europe">CET — Central Europe</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Hidden fields for calculator context -->
+        <input type="hidden" id="c-gap"     name="opportunity_gap"/>
+        <input type="hidden" id="c-rec"     name="recommended_model"/>
+        <input type="hidden" id="c-source"  name="source" value="Direct inquiry"/>
+
+        <button type="submit" class="btn-p" id="consult-btn" data-analytics="form-submit">
+          Start the Conversation →
+        </button>
+        <div class="modal-err" id="modal-err"></div>
+        <p class="modal-note" style="margin-top:12px;">Engagements are selective. We respond to every submission within 48 hours.</p>
+
+      </form>
+    </div>
+
+    <!-- Success state -->
+    <div class="modal-success" id="consult-success">
+      <div style="font-size:32px;margin-bottom:16px;color:var(--c);">✓</div>
+      <div class="modal-success-hl">You're in.</div>
+      <p class="modal-success-sub">We've received your inquiry and will be in touch within 48 hours.<br>Check hello@marginlabs.io if you don't hear from us — just in case it lands in your spam.</p>
+      <button class="btn-p" style="margin-top:28px;width:auto;padding:12px 24px;" onclick="closeConsult()">Back to results</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- MM POPUP for homepage trigger -->
+<div class="mm-overlay" id="mm-overlay" role="dialog" aria-modal="true" aria-label="Margin Multiplier">
+  <div class="mm-popup">
+    <button class="mm-popup-close" onclick="closeMM()" aria-label="Close">✕ Close</button>
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="ey" style="margin-bottom:10px;">The Margin Multiplier™</div>
+      <h2 style="font-size:24px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;">What is your payments opportunity worth?</h2>
+    </div>
+    <!-- popup reuses the step divs from mm-main -->
+  </div>
+</div>
+
+
+<script>
+/*
+  MARGIN MULTIPLIER v4
+  ══════════════════════════════════════════
+  Models + bps midpoints:
+    isv:          10 bps  (5–15)
+    enhanced:     30 bps  (20–40)
+    payfac_lite:  65 bps  (50–80)
+    payfac:      100 bps  (80–120)
+
+  Recommendation logic — model-aware + volume:
+    Full PayFac current       → ceiling, optimise
+    PayFac-lite, vol < $25M   → stay + optimise
+    PayFac-lite, vol ≥ $25M   → Full PayFac
+    Enhanced, vol < $25M      → PayFac-lite
+    Enhanced, vol ≥ $25M      → Full PayFac
+    ISV, vol < $10M           → Enhanced Residuals
+    ISV, $10M–$50M            → PayFac-lite
+    ISV, vol > $50M           → Full PayFac
+    None/unsure, vol < $5M    → Enhanced Residuals
+    None/unsure, $5M–$25M     → PayFac-lite
+    None/unsure, vol > $25M   → Full PayFac
+
+  CTA logic by recommendation:
+    Enhanced recommended → Primer (primary) + soft consult link
+    PayFac-lite          → Start conversation (primary) + Primer (secondary)
+    Full PayFac          → Start conversation (primary only)
+    Ceiling/optimise     → Start conversation re optimisation
+    Stay on PayFac-lite  → Primer (primary) + soft consult link
+  ══════════════════════════════════════════
+*/
+
+const MODELS = [
+  { id:'isv',         num:'01', name:'ISV Referral',       bps:10,  range:'5–15 bps' },
+  { id:'enhanced',    num:'02', name:'Enhanced Residuals', bps:30,  range:'20–40 bps' },
+  { id:'payfac_lite', num:'03', name:'PayFac-lite',        bps:65,  range:'50–80 bps' },
+  { id:'payfac',      num:'04', name:'Full PayFac',        bps:100, range:'80–120 bps' },
+];
+const MKEY = { isv:'isv', enhanced:'enhanced', payfac_lite:'payfac_lite', payfac:'payfac' };
+
+const VERT = {
+  restaurant:   'Restaurant and hospitality platforms see high transaction frequency — volume compounds quickly with strong merchant activation.',
+  retail:       'Retail platforms have variable merchant and ticket profiles. Model fit depends on merchant concentration and average transaction value.',
+  field_service:'Field service platforms typically see strong attach rates and recurring payment needs — a natural fit for embedded model economics.',
+  healthcare:   'Healthcare payments carry compliance complexity that affects model selection. Processor options may be constrained by regulatory requirements.',
+  property:     'Property management has high ACH volume alongside card — processor selection and model choice matter significantly here.',
+  fitness:      'Recurring billing and membership models drive predictable volume. Consistent with PayFac-lite and Full PayFac economics.',
+  professional: 'Professional services typically see lower transaction frequency but higher ticket — margin per transaction is the primary lever.',
+  other:        'Estimates are directional based on your volume and current model. Vertical-specific factors will affect actual basis point capture.',
+};
+
+// Formspree form ID — Claude Code: use the same form ID already in index.html
+// Find it by searching index.html for: action="https://formspree.io/f/"
+// and use the same ID here for both FORMSPREE_ID constants below.
+const FORMSPREE_ID = 'YOUR_FORM_ID';
+
+function $c(id) { return document.getElementById(id); }
+function fmtCur(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1).replace(/\.0$/,'') + 'M';
+  if (n >= 1000)    return '$' + Math.round(n/1000) + 'K';
+  return '$' + Math.round(n).toLocaleString();
+}
+function fmtDiff(a, b, v) {
+  const fa = MODELS.find(m=>m.id===a), fb = MODELS.find(m=>m.id===b);
+  return fmtCur(v*((fb.bps-fa.bps)/10000));
+}
+
+function getRec(curId, vol) {
+  const v = parseFloat(vol);
+  if (curId==='payfac') return {
+    modelId:'payfac', ceiling:true, stayPut:true, ctaType:'consult-only',
+    ctaHl:"Let's talk about optimisation.",
+    ctaSub:"You're on the right model. The question now is how much margin you're actually capturing vs what the model allows. That's a conversation worth having.",
+    rationale:`You're already on <strong>Full PayFac</strong> — the highest-margin model available. The opportunity from here isn't model selection, it's optimisation: merchant activation rate, pricing strategy, and take rate negotiation. Even a 10–15 bps improvement in effective rate at your volume moves the needle significantly.`,
+  };
+  if (curId==='payfac_lite') {
+    if (v>=25000000) return {
+      modelId:'payfac', ctaType:'consult',
+      ctaHl:"This move is worth a conversation.",
+      ctaSub:"Going from PayFac-lite to Full PayFac involves processor evaluation, pricing strategy, and implementation sequencing. It's exactly the kind of decision that benefits from independent advice.",
+      rationale:`You're on <strong>PayFac-lite</strong> at a volume where <strong>Full PayFac</strong> economics are compelling. At your scale the incremental margin — approximately ${fmtDiff('payfac_lite','payfac',v)} annually — typically justifies the implementation investment.`,
+    };
+    return {
+      modelId:'payfac_lite', stayPut:true, ctaType:'primer',
+      ctaHl:"Understand what optimisation looks like at your stage.",
+      ctaSub:"The Embedded Payments Primer covers model economics in depth — including how to maximise margin within your current model before making a move.",
+      rationale:`You're on <strong>PayFac-lite</strong>, which is appropriate for your current volume. Full PayFac economics become compelling above approximately $25M in annual payment volume. Focus on merchant activation rate and take rate optimisation — that's where the margin is at your stage.`,
+    };
+  }
+  if (curId==='enhanced') {
+    if (v>=25000000) return {
+      modelId:'payfac', ctaType:'consult',
+      ctaHl:"At your volume, this is a significant decision.",
+      ctaSub:"Moving from Enhanced Residuals to Full PayFac involves processor selection, implementation cost, and pricing strategy. Independent advice before you commit to a vendor matters.",
+      rationale:`You're on <strong>Enhanced Residuals</strong> at a volume where <strong>Full PayFac</strong> economics are genuinely compelling. The gap between 30 bps and 100 bps at your volume is approximately ${fmtDiff('enhanced','payfac',v)} annually.`,
+    };
+    return {
+      modelId:'payfac_lite', ctaType:'consult',
+      ctaHl:"This move is worth a conversation.",
+      ctaSub:"PayFac-lite selection involves evaluating providers — each with different economics and tradeoffs. Independent advice before you choose matters.",
+      rationale:`You're on <strong>Enhanced Residuals</strong>. The natural next step is <strong>PayFac-lite</strong> — it roughly doubles your effective take rate with manageable implementation complexity. At your volume the annual uplift is approximately ${fmtDiff('enhanced','payfac_lite',v)}.`,
+    };
+  }
+  if (curId==='isv') {
+    if (v>=50000000) return {
+      modelId:'payfac', ctaType:'consult',
+      ctaHl:"At your volume, this is a high-priority conversation.",
+      ctaSub:"The gap between ISV Referral and Full PayFac at your scale is substantial. Let's model the transition economics and identify the right path.",
+      rationale:`You're on <strong>ISV Referral</strong> at a volume where you're leaving significant margin on the table. Moving to <strong>Full PayFac</strong> could add approximately ${fmtDiff('isv','payfac',v)} annually.`,
+    };
+    if (v>=10000000) return {
+      modelId:'payfac_lite', ctaType:'consult',
+      ctaHl:"This move is worth a conversation.",
+      ctaSub:"PayFac-lite provider selection — Stripe, Adyen, Tilled, Finix and others — each has different economics and tradeoffs. Independent advice before you choose a partner matters.",
+      rationale:`You're on <strong>ISV Referral</strong> at a volume where <strong>PayFac-lite</strong> makes clear economic sense. The jump from 10 bps to 65 bps at your volume represents approximately ${fmtDiff('isv','payfac_lite',v)} in annual margin.`,
+    };
+    return {
+      modelId:'enhanced', ctaType:'primer',
+      ctaHl:"The Primer is your next step.",
+      ctaSub:"It covers the economics of all four models in depth — including what Enhanced Residuals looks like in practice and how to evaluate whether to go further.",
+      rationale:`You're on <strong>ISV Referral</strong>. The immediate next step is <strong>Enhanced Residuals</strong> — lowest implementation friction and roughly 3× your current take rate. At your volume that's approximately ${fmtDiff('isv','enhanced',v)} in additional annual margin.`,
+    };
+  }
+  // none / unsure
+  if (v>=25000000) return {
+    modelId:'payfac', ctaType:'consult',
+    ctaHl:"Starting at your scale is a meaningful decision.",
+    ctaSub:"Choosing the right model and processor from day one — rather than migrating later — is worth independent advice before you commit to a vendor.",
+    rationale:`With your payment volume and no existing model, you have a clean opportunity to start at <strong>Full PayFac</strong>. The economics at your scale justify the implementation investment, and starting right avoids the cost of migrating models later.`,
+  };
+  if (v>=5000000) return {
+    modelId:'payfac_lite', ctaType:'consult',
+    ctaHl:"Let's talk before you choose a provider.",
+    ctaSub:"PayFac-lite provider economics vary significantly. Getting independent advice before you commit to Stripe, Tilled, Finix, or others can save you from a costly migration later.",
+    rationale:`With your payment volume and no existing model, <strong>PayFac-lite</strong> is the recommended starting point. Strong economics without the full complexity of a PayFac buildout.`,
+  };
+  return {
+    modelId:'enhanced', ctaType:'primer',
+    ctaHl:"The Primer is the right starting point.",
+    ctaSub:"A vendor-neutral guide to all four models — how the economics work, how to evaluate the right path, and how to get started independently.",
+    rationale:`With your current volume, <strong>Enhanced Residuals</strong> is the right starting model — fastest path to meaningful payments margin, lower implementation complexity, and economics that scale as your volume grows.`,
+  };
+}
+
+// STATE
+let _s = {};
+
+function goToGate() {
+  const arr  = $c('arr').value;
+  const vol  = $c('vol').value;
+  const cur  = $c('cur').value;
+  const vert = $c('vert').value;
+  if (!arr||!vol||!cur||!vert) { alert('Please complete all four fields.'); return; }
+
+  const curKey  = MKEY[cur]||null;
+  const rec     = getRec(curKey||cur, vol);
+  const v       = parseFloat(vol);
+  const results = MODELS.map(m => ({ ...m, revenue: v*(m.bps/10000) }));
+  const curModel = results.find(m=>m.id===curKey);
+  const curRev   = curModel ? curModel.revenue : 0;
+  const recModel = results.find(m=>m.id===rec.modelId);
+  const gap      = recModel.revenue - curRev;
+
+  _s = {
+    arr, vol, cur, vert, curKey, rec, results, curModel, curRev, recModel, gap,
+    arrLbl: $c('arr').options[$c('arr').selectedIndex].text,
+    volLbl: $c('vol').options[$c('vol').selectedIndex].text,
+    curLbl: curModel ? curModel.name : (cur==='unsure'?'Unsure':'None — not started'),
+    vertLbl: $c('vert').options[$c('vert').selectedIndex].text,
+  };
+  showStep('step-gate');
+}
+
+function goBack(e) { e.preventDefault(); showStep('step-inputs'); }
+
+async function submitAndShow() {
+  const email = $c('gate-email').value.trim();
+  const errEl = $c('gate-err');
+  const btn   = $c('gate-btn');
+  errEl.style.display = 'none';
+
+  if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent = 'Please enter a valid email address.';
+    errEl.style.display = 'block';
+    return;
+  }
+  btn.disabled = true; btn.textContent = 'Unlocking...';
+
+  const gapAmt = _s.gap>0 ? _s.gap : _s.recModel.revenue;
+  const modelSummary = _s.results.map(m=>`${m.name}: ${fmtCur(m.revenue)}/yr (${m.range})`).join(' | ');
+
+  const payload = {
+    email, source: 'Margin Multiplier',
+    arr:             _s.arrLbl,
+    volume:          _s.volLbl,
+    current_model:   _s.curLbl,
+    vertical:        _s.vertLbl,
+    recommended:     _s.recModel.name,
+    opportunity_gap: fmtCur(gapAmt),
+    next_step:       _s.rec.ctaType==='primer' ? 'Get the Primer' : 'Consulting conversation',
+    model_summary:   modelSummary,
+    _subject:        `Margin Multiplier — ${email} — ${_s.volLbl}`,
+    _replyto:        email,
+  };
+
+  // Submit but never block results on failure
+  try {
+    await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(payload),
+    });
+  } catch(e) { /* silent fail — results always show */ }
+
+  buildResults();
+  showStep('step-results');
+}
+
+function buildResults() {
+  const { results, curModel, curRev, recModel, gap, rec, volLbl, vertLbl, curLbl, vert } = _s;
+
+  $c('ri-hl').textContent  = `At ${volLbl} in annual payments volume, here's what each model generates.`;
+  $c('ri-sub').textContent = curModel
+    ? `You're currently on ${curModel.name}. These numbers show what you're capturing — and what each model would generate.`
+    : `You haven't started a payments program yet. These estimates show what each model would generate at your volume.`;
+
+  // Model cards
+  const grid = $c('model-grid'); grid.innerHTML = '';
+  results.forEach(m => {
+    const isCur = m.id===(curModel?curModel.id:null);
+    const isRec = m.id===recModel.id;
+    const delta = m.revenue - curRev;
+    let tag = '';
+    if (isCur&&!isRec)    tag=`<div class="mc-tag mono">Your current model</div>`;
+    else if (isCur&&isRec&&rec.ceiling) tag=`<div class="mc-tag mono">Current — optimise here</div>`;
+    else if (delta>0&&curModel&&!rec.ceiling) tag=`<div class="mc-tag up">+${fmtCur(delta)}/yr vs current</div>`;
+    else if (!curModel)   tag=`<div class="mc-tag">${fmtCur(m.revenue)}/yr opportunity</div>`;
+    const d = document.createElement('div');
+    d.className = 'mc'+(isCur?' is-cur':'')+(isRec?' is-rec':'')+(rec.ceiling?' is-ceil':'');
+    d.innerHTML = `<div class="mc-num">Model ${m.num}</div><div class="mc-name">${m.name}</div><div class="mc-rev">${fmtCur(m.revenue)}</div><div class="mc-bps">${m.range} · est. annual</div>${tag}`;
+    grid.appendChild(d);
+  });
+
+  // Gap
+  const gapAmt = gap>0 ? gap : recModel.revenue;
+  $c('gap-lbl').textContent = rec.ceiling ? 'Annual optimisation opportunity' : rec.stayPut ? 'At your recommended model' : 'Annual opportunity gap';
+  $c('gap-num').textContent = fmtCur(gapAmt);
+  $c('gap-sub').textContent = curModel&&gap>0&&!rec.ceiling ? `potential annual uplift moving to ${recModel.name}` : rec.ceiling ? 'already captured — optimise activation and take rate to maximise it' : `annual estimate at ${recModel.name} — recommended for your stage`;
+  $c('gap-rhs').textContent = VERT[vert]||VERT.other;
+
+  // Rationale
+  $c('rat-text').innerHTML = rec.rationale;
+
+  // CTA block
+  const ctaEl = $c('cta-block');
+  const { ctaType, ctaHl, ctaSub } = rec;
+
+  if (ctaType==='consult-only'||ctaType==='consult') {
+    const sec = ctaType==='consult' ? `<span class="cta-2nd">Or <a href="#" id="primer-sec">get the Primer first →</a></span>` : '';
+    ctaEl.innerHTML = `
+      <div class="cta-ey">Next step</div>
+      <div class="cta-hl">${ctaHl}</div>
+      <p class="cta-sub">${ctaSub}</p>
+      <div class="cta-btns">
+        <button class="btn-p auto" id="consult-trigger" data-analytics="mm-cta-consult">Start the conversation →</button>
+        ${sec}
+      </div>`;
+    setTimeout(()=>{
+      const ct = $c('consult-trigger');
+      if (ct) ct.onclick = () => openConsult(false);
+      const ps = $c('primer-sec');
+      if (ps) ps.onclick = e => { e.preventDefault(); launchCheckout(ps); };
+    },50);
+  } else {
+    ctaEl.innerHTML = `
+      <div class="cta-ey">Next step</div>
+      <div class="cta-hl">${ctaHl}</div>
+      <p class="cta-sub">${ctaSub}</p>
+      <div class="cta-btns">
+        <button class="btn-p auto" id="primer-pri" data-analytics="mm-cta-primer">Get the Primer →</button>
+        <span class="cta-2nd">Or <a href="#" id="consult-soft">start a conversation →</a></span>
+      </div>`;
+    setTimeout(()=>{
+      const pp = $c('primer-pri');
+      if (pp) pp.onclick = () => launchCheckout(pp);
+      const cs = $c('consult-soft');
+      if (cs) cs.onclick = e => { e.preventDefault(); openConsult(false); };
+    },50);
+  }
+}
+
+async function launchCheckout(btn) {
+  const orig = btn.textContent;
+  btn.textContent = 'One moment...'; btn.style.opacity='0.6';
+  try {
+    const r = await fetch('/api/checkout',{method:'POST'});
+    const d = await r.json();
+    if (d.url) { window.location.href=d.url; return; }
+    throw new Error();
+  } catch(e) {
+    btn.textContent = orig; btn.style.opacity='1';
+    window.location.href='/#contact';
+  }
+}
+
+// ── CONSULT MODAL ──
+function openConsult(fromCalculator=true) {
+  // Pre-fill from calculator state if available
+  if (fromCalculator && _s.volLbl) {
+    const gapAmt = _s.gap>0 ? _s.gap : _s.recModel.revenue;
+
+    // Show context strip
+    const ctx = $c('modal-context');
+    ctx.style.display = 'block';
+    $c('modal-context-val').innerHTML =
+      `<strong>${_s.volLbl}</strong> in annual payments volume · <strong>${_s.curLbl}</strong> current model · <strong>${fmtCur(gapAmt)}</strong> opportunity gap`;
+
+    // Update headline to be specific
+    $c('modal-hl').textContent = _s.rec.ceiling
+      ? "Let's talk about optimising your payments program."
+      : `Let's talk about your path to ${_s.recModel.name}.`;
+
+    $c('modal-sub').textContent = "We've pre-filled what we know. Add your contact details and we'll be in touch within 48 hours.";
+
+    // Pre-fill email from gate
+    const gateEmail = $c('gate-email').value;
+    if (gateEmail) $c('c-email').value = gateEmail;
+
+    // Pre-fill volume dropdown
+    const volSel = $c('c-volume');
+    for (let o of volSel.options) {
+      if (o.value === _s.volLbl) { o.selected=true; break; }
+    }
+
+    // Pre-fill model dropdown
+    const modSel = $c('c-model');
+    for (let o of modSel.options) {
+      if (o.value === _s.curLbl) { o.selected=true; break; }
+    }
+
+    // Set hidden fields
+    $c('c-gap').value = fmtCur(gapAmt);
+    $c('c-rec').value = _s.recModel.name;
+    $c('c-source').value = 'Margin Multiplier';
+
+  } else {
+    // Reset to default state for direct access
+    $c('modal-context').style.display='none';
+    $c('modal-hl').textContent = "Let's talk about your payments opportunity.";
+    $c('modal-sub').textContent = "Tell us a bit about what you're working on. We respond to every inquiry within 48 hours.";
+    $c('c-source').value = 'Direct inquiry';
+  }
+
+  // Reset form + show
+  $c('consult-form-state').style.display = 'block';
+  $c('consult-success').style.display    = 'none';
+  $c('modal-err').style.display          = 'none';
+  $c('consult-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeConsult() {
+  $c('consult-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function submitConsult(e) {
+  e.preventDefault();
+  const btn    = $c('consult-btn');
+  const errEl  = $c('modal-err');
+  errEl.style.display = 'none';
+
+  const name    = $c('c-name').value.trim();
+  const company = $c('c-company').value.trim();
+  const email   = $c('c-email').value.trim();
+  const phone   = $c('c-phone').value.trim();
+  const volume  = $c('c-volume').value;
+  const model   = $c('c-model').value;
+  const message = $c('c-message').value.trim();
+  const tz      = $c('c-tz').value;
+
+  if (!name||!company||!email||!message) {
+    errEl.textContent = 'Please fill in name, company, email, and message.';
+    errEl.style.display='block'; return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent = 'Please enter a valid email address.';
+    errEl.style.display='block'; return;
+  }
+
+  // Gather availability checkboxes
+  const avail = [...document.querySelectorAll('input[name="availability"]:checked')]
+    .map(cb => cb.value).join(', ') || 'Not specified';
+
+  btn.disabled=true; btn.textContent='Sending...';
+
+  const payload = {
+    name, company, email,
+    phone:           phone||'Not provided',
+    volume:          volume||'Not specified',
+    current_model:   model||'Not specified',
+    message,
+    availability:    avail,
+    timezone:        tz||'Not specified',
+    opportunity_gap: $c('c-gap').value||'',
+    recommended:     $c('c-rec').value||'',
+    source:          $c('c-source').value,
+    _subject:        `Consulting inquiry — ${name} at ${company}`,
+    _replyto:        email,
+  };
+
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error('failed');
+    $c('consult-form-state').style.display='none';
+    $c('consult-success').style.display='block';
+  } catch(err) {
+    btn.disabled=false; btn.textContent='Start the Conversation →';
+    errEl.textContent='Something went wrong. Please email hello@marginlabs.io directly.';
+    errEl.style.display='block';
+  }
+}
+
+// Close consult on overlay click
+$c('consult-overlay').addEventListener('click', e => { if(e.target===$c('consult-overlay')) closeConsult(); });
+
+// MM popup controls
+function openMM()  { $c('mm-overlay').classList.add('open');    document.body.style.overflow='hidden'; showStep('step-inputs'); }
+function closeMM() { $c('mm-overlay').classList.remove('open'); document.body.style.overflow=''; }
+$c('mm-overlay').addEventListener('click', e => { if(e.target===$c('mm-overlay')) closeMM(); });
+
+// ESC closes either modal
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape') { closeConsult(); closeMM(); }
+});
+
+function showStep(id) {
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  $c(id).classList.add('active');
+  $c('mm-main').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+
+</body>
+</html>

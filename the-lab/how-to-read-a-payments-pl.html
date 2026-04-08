@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Read a Payments P&amp;L | Margin Labs</title>
+<meta name="description" content="What the numbers actually mean, where the margin comes from, and how to know if your payments program is performing.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/how-to-read-a-payments-pl">
+<meta property="og:title" content="How to Read a Payments P&amp;L | Margin Labs">
+<meta property="og:description" content="What the numbers actually mean, where the margin comes from, and how to know if your payments program is performing.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/how-to-read-a-payments-pl">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Margin Labs">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23171717'/%3E%3Crect x='2' y='21' width='5' height='5' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='9' y='19' width='5' height='7' rx='.5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='17' width='5' height='9' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='16' y='12' width='5' height='5' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='15' y1='17' x2='22' y2='17' stroke='%23C8823C' stroke-width='.9' opacity='.52'/%3E%3Crect x='23' y='15' width='7' height='11' rx='0 0 .5 .5' fill='%23C8823C' opacity='.38'/%3E%3Crect x='23' y='4' width='7' height='11' rx='.5 .5 0 0' fill='%23C8823C'/%3E%3Cline x1='22' y1='15' x2='31' y2='15' stroke='%23C8823C' stroke-width='1' opacity='.58'/%3E%3Cline x1='26.5' y1='4' x2='26.5' y2='1' stroke='%23C8823C' stroke-width='1.1' stroke-dasharray='.8,1.2'/%3E%3Cpolyline points='25,2.5 26.5,.5 28,2.5' stroke='%23C8823C' stroke-width='1.1' fill='none' stroke-linejoin='round' stroke-linecap='round'/%3E%3Cline x1='1' y1='27' x2='31' y2='27' stroke='%23C8823C' stroke-width='.6' opacity='.18'/%3E%3C/svg%3E">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+  .article-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; font-size: 14px; }
+  .article-table th { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dimmer); border-bottom: 1px solid rgba(200,130,60,0.2); padding: 8px 12px; text-align: left; }
+  .article-table td { padding: 12px; border-bottom: 1px solid rgba(240,235,228,0.06); color: var(--dim); vertical-align: top; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+      <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">How to Read a Payments P&amp;L</h1>
+  <div class="article-meta">
+    <span>March 2026</span>
+    <span>6 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Most vertical SaaS companies have a payments revenue line. Almost none of them know what it actually means.</p>
+
+    <p>If you've ever looked at a payments settlement report and felt like you were reading a foreign language, you're not alone. The payments industry has a talent for complexity — multiple fee types, passthrough costs, residual splits, interchange categories — and most of the people who built these revenue streams weren't thinking about how a CFO would want to see them on a P&amp;L.</p>
+
+    <p>But if you're running a vertical SaaS business with embedded payments, or evaluating whether to add them, understanding how to read a payments P&amp;L isn't optional. It's the difference between knowing whether your payments program is actually working and just assuming it is because the deposits keep showing up.</p>
+
+    <p>This is the framework we use at Margin Labs when we assess a platform's payments health. Walk through it once and you'll never look at a settlement report the same way again.</p>
+
+    <h2>Start With Gross Volume, Not Revenue</h2>
+
+    <p>The first number most people focus on is the revenue line. That's a mistake. Start with gross payment volume — the total dollar amount of transactions processed through your platform in a given period.</p>
+
+    <p>Gross volume is your raw material. Everything else is derived from it. A platform processing $40M in annual volume has a fundamentally different business than one processing $4M, even if their ARR is identical. Volume is the asset. Revenue is just one expression of how you've chosen to monetize it.</p>
+
+    <p>Once you have gross volume, the next question is: what percentage of your merchants are actually using your embedded payments solution? This is your attachment rate, and it tells you two things at once — how much of the opportunity you've already captured, and how much upside is still sitting in your installed base.</p>
+
+    <blockquote class="pull-quote">Volume is the asset. Revenue is just one expression of how you've chosen to monetize it.</blockquote>
+
+    <p>A platform with 70% attachment is in a very different conversation than one at 30%, even if they report similar payment revenue. The first has a mature program. The second has a significant growth opportunity — or a product or pricing problem they haven't diagnosed yet.</p>
+
+    <h2>The Three Layers of Payments Revenue</h2>
+
+    <p>Once you understand your volume, you need to understand where your revenue is actually coming from. Payments revenue almost always has three layers, and conflating them creates blind spots.</p>
+
+    <p class="cost-label">1. Net Interchange</p>
+
+    <p>Interchange is the fee paid by the merchant's bank to the cardholder's bank on every transaction. For most payment programs, interchange is the largest component of gross revenue. But you never keep all of it.</p>
+
+    <p>Your net interchange is what's left after your processor takes their cut and after passthrough costs — primarily card network fees from Visa, Mastercard, and others — are deducted. For most vertical SaaS platforms operating under a sponsored PayFac model, net interchange lands somewhere between 0.15% and 0.40% of volume, depending on the industry, average ticket size, and how the program was structured.</p>
+
+    <p>If your settlement reports show gross interchange without clearly breaking out passthrough costs, you're flying blind. You might think your take rate is healthy when the real number is significantly lower.</p>
+
+    <p class="cost-label">2. Processing Fees</p>
+
+    <p>In addition to interchange, most payment programs charge a flat per-transaction fee or a small basis point adder on top of interchange. This is where the economics get interesting.</p>
+
+    <p>Processing fees are more predictable than interchange because they don't vary by card type. A $0.20 per-transaction fee on 50,000 monthly transactions is $10,000 in highly reliable monthly revenue — essentially an annuity. For platforms with high transaction frequency but low average ticket, this can be the dominant revenue line.</p>
+
+    <p class="cost-label">3. Ancillary Revenue</p>
+
+    <p>The third layer includes everything else: chargeback fees, monthly account fees, hardware margins, next-day funding premiums, international transaction fees. These are often the highest-margin items in a payments P&amp;L because they carry minimal incremental cost.</p>
+
+    <p>They're also the easiest to miss in aggregate reporting. If you're only looking at a top-line payments revenue number, you're probably undervaluing your ancillary revenue and making it harder to diagnose where margin is actually being created or lost.</p>
+
+    <h2>The Number That Actually Matters: Net Take Rate</h2>
+
+    <p>All three of those revenue layers collapse into one number that tells you the most about the health of your payments program: your net take rate.</p>
+
+    <p>Net take rate is your total payments revenue — after all costs — divided by gross payment volume. It's expressed in basis points (one basis point = 0.01%).</p>
+
+    <p>Why does this matter so much? Because it's the only way to compare your payments program to benchmarks, to evaluate the impact of program changes, and to model the value of your payments business in an acquisition or investment conversation.</p>
+
+    <p>A platform at 15 basis points net take rate with strong volume is a very different asset than one at 30 basis points with weak volume. PE firms and strategic acquirers look at both numbers. Most founders only track one.</p>
+
+    <h2>How to Read the Cost Side</h2>
+
+    <p>The payments P&amp;L isn't just about revenue. The cost structure is equally important, and it's where most programs have the most room for improvement.</p>
+
+    <p>There are three categories of costs to track separately.</p>
+
+    <p class="cost-label">Passthrough Costs</p>
+
+    <p>These are costs you can't negotiate — card network fees, dues and assessments, PCI compliance fees charged by the networks. They typically run 0.10% to 0.14% of volume depending on card mix. If your passthrough costs are materially higher than that range, you either have an unusual mix of premium cards or your processor is marking up network fees, which happens more often than most platforms realize.</p>
+
+    <p class="cost-label">Processor Fees</p>
+
+    <p>This is your negotiable cost layer. Your processor charges you for access to the rails, for risk management, for settlement, and for the infrastructure that makes the program run. These fees should be negotiated, benchmarked regularly, and renegotiated as your volume grows.</p>
+
+    <p>Many vertical SaaS platforms signed their initial processing agreements when they were small. They haven't gone back to renegotiate as volume scaled. That's usually a 3–8 basis point improvement waiting to happen.</p>
+
+    <p class="cost-label">Chargeback Losses</p>
+
+    <p>Chargebacks are transactions that get reversed because a cardholder disputed them. You're on the hook for the transaction amount plus a dispute fee, typically $15–$25 per occurrence. For most platforms, chargebacks run between 0.05% and 0.15% of volume. If you're above 0.20%, you have a risk management problem that's eating margin and putting your processing agreements at risk.</p>
+
+    <h2>Benchmarks Worth Knowing</h2>
+
+    <p>When you put this all together, here's what a healthy payments P&amp;L looks like across the most common program structures:</p>
+
+    <table class="article-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Gross Take Rate</th>
+          <th>Net Take Rate</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ISV Referral</td>
+          <td>0.05–0.15%</td>
+          <td>0.05–0.12%</td>
+          <td>Early stage, &lt;$10M volume</td>
+        </tr>
+        <tr>
+          <td>PayFac-Lite (Sponsored)</td>
+          <td>0.25–0.60%</td>
+          <td>0.15–0.40%</td>
+          <td>$10M–$100M volume</td>
+        </tr>
+        <tr>
+          <td>Direct PayFac</td>
+          <td>0.50–1.20%</td>
+          <td>0.30–0.80%</td>
+          <td>$100M+ volume</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>These ranges aren't universal — industry vertical, average ticket size, and card mix all affect where you land. But if your numbers are materially below these ranges, you're likely either misclassifying costs or leaving significant margin on the table.</p>
+
+    <h2>The Questions a Payments P&amp;L Should Answer</h2>
+
+    <p>A well-structured payments P&amp;L should let you answer six questions without having to dig through settlement reports:</p>
+
+    <ol>
+      <li>What is my current net take rate, and how has it trended over the past 12 months?</li>
+      <li>What percentage of my merchants are using embedded payments?</li>
+      <li>What is my payments revenue as a percentage of total ARR?</li>
+      <li>Where are my highest-cost transaction categories, and are they negotiable?</li>
+      <li>What is my chargeback rate, and is it trending in the right direction?</li>
+      <li>What is my total addressable payment volume across my entire merchant base?</li>
+    </ol>
+
+    <p>If you can't answer all six from your current reporting, that's the first thing to fix. The data is there — it just needs to be structured so it's actually useful for decisions.</p>
+
+    <h2>Why This Matters More Than You Think</h2>
+
+    <p>Payments is increasingly being underwritten as a standalone business within vertical SaaS. PE firms model it separately. Acquirers pay multiples on it. Banks want to partner around it.</p>
+
+    <p>But none of that value creation is possible if you don't have clean, structured visibility into how the program actually performs. A payments P&amp;L isn't just a finance exercise. It's the foundation for every strategic decision about how to grow, monetize, and eventually maximize the value of what you've built.</p>
+
+    <p>If you want help building one or auditing what you have, that's exactly what we do at Margin Labs.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <button onclick="openConsult(false)" style="background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;" data-analytics="article-cta-consult">Start the conversation →</button>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

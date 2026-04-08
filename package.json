@@ -1,0 +1,11 @@
+{
+  "name": "margin-labs-site",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@upstash/redis": "^1.37.0",
+    "@vercel/blob": "^2.3.2",
+    "resend": "^6.9.4",
+    "stripe": "^17.0.0"
+  }
+}

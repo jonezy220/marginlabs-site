@@ -1,0 +1,12 @@
+# Reference / draft files — not for public deployment
+margin-labs-p4-final2.html
+margin-labs-mockup-v3.html
+margin-labs-icons-r4.html
+margin-labs-hero-v7.html
+margin-multiplier-v4.html
+
+# Markdown source / brief files
+*.md
+
+# Node modules
+node_modules
