@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
   if (curModel)  attributes.CURRENT_MODEL     = curModel;
   if (recModel)  attributes.RECOMMENDED_MODEL = recModel;
   if (gapAmt)    attributes.OPPORTUNITY_GAP   = gapAmt;
-  if (ctaType)   attributes.NEXT_STEP         = ctaType === 'primer' ? 'Get the Primer' : 'Consulting conversation';
+  if (ctaType)   attributes.NEXT_STEP         = ctaType === 'primer' ? 'Get the Framework' : 'Consulting conversation';
   if (source)    attributes.SOURCE            = source;
 
   const payload = {

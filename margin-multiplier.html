@@ -562,7 +562,7 @@ function getRec(curId, vol) {
     return {
       modelId:'payfac_lite', stayPut:true, ctaType:'primer',
       ctaHl:"Understand what optimisation looks like at your stage.",
-      ctaSub:"The Embedded Payments Primer covers model economics in depth — including how to maximise margin within your current model before making a move.",
+      ctaSub:"The Strategic Decision Framework covers model economics in depth — including how to maximise margin within your current model before making a move.",
       rationale:`You're on <strong>PayFac-lite</strong>, which is appropriate for your current volume. Full PayFac economics become compelling above approximately $25M in annual payment volume. Focus on merchant activation rate and take rate optimisation — that's where the margin is at your stage.`,
     };
   }
@@ -595,7 +595,7 @@ function getRec(curId, vol) {
     };
     return {
       modelId:'enhanced', ctaType:'primer',
-      ctaHl:"The Primer is your next step.",
+      ctaHl:"The Framework is your next step.",
       ctaSub:"It covers the economics of all four models in depth — including what Enhanced Residuals looks like in practice and how to evaluate whether to go further.",
       rationale:`You're on <strong>ISV Referral</strong>. The immediate next step is <strong>Enhanced Residuals</strong> — lowest implementation friction and roughly 3× your current take rate. At your volume that's approximately ${fmtDiff('isv','enhanced',v)} in additional annual margin.`,
     };
@@ -615,7 +615,7 @@ function getRec(curId, vol) {
   };
   return {
     modelId:'enhanced', ctaType:'primer',
-    ctaHl:"The Primer is the right starting point.",
+    ctaHl:"The Framework is the right starting point.",
     ctaSub:"A vendor-neutral guide to all four models — how the economics work, how to evaluate the right path, and how to get started independently.",
     rationale:`With your current volume, <strong>Enhanced Residuals</strong> is the right starting model — fastest path to meaningful payments margin, lower implementation complexity, and economics that scale as your volume grows.`,
   };
@@ -753,7 +753,7 @@ function buildResults() {
   const { ctaType, ctaHl, ctaSub } = rec;
 
   if (ctaType==='consult-only'||ctaType==='consult') {
-    const sec = ctaType==='consult' ? `<span class="cta-2nd">Or <a href="#" id="primer-sec">get the Primer first →</a></span>` : '';
+    const sec = ctaType==='consult' ? `<span class="cta-2nd">Or <a href="#" id="primer-sec">get the Framework first →</a></span>` : '';
     ctaEl.innerHTML = `
       <div class="cta-ey">Next step</div>
       <div class="cta-hl">${ctaHl}</div>
@@ -774,7 +774,7 @@ function buildResults() {
       <div class="cta-hl">${ctaHl}</div>
       <p class="cta-sub">${ctaSub}</p>
       <div class="cta-btns">
-        <button class="btn-p auto" id="primer-pri" data-analytics="mm-cta-primer">Get the Primer →</button>
+        <button class="btn-p auto" id="primer-pri" data-analytics="mm-cta-primer">Get the Framework →</button>
         <span class="cta-2nd">Or <a href="#" id="consult-soft">start a conversation →</a></span>
       </div>`;
     setTimeout(()=>{

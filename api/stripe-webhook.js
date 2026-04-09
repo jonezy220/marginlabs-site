@@ -48,7 +48,7 @@ module.exports = async (req, res) => {
           headers: { 'Content-Type': 'application/json' },
           body:    JSON.stringify({
             email,
-            attributes: { SOURCE: product === 'tier2' ? 'Playbook Customer' : 'Primer Customer' },
+            attributes: { SOURCE: product === 'tier2' ? 'Execution Playbook Customer' : 'Framework Customer' },
           }),
         }),
         // Send purchase confirmation via Resend

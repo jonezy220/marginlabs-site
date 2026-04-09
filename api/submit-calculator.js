@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
         vertical:        vertLabel || 'Not specified',
         recommended:     recModel,
         opportunity_gap: gapAmt,
-        next_step:       ctaType === 'primer' ? 'Get the Primer' : 'Consulting conversation',
+        next_step:       ctaType === 'primer' ? 'Get the Framework' : 'Consulting conversation',
         model_summary:   modelSummary,
         _subject:        `Margin Multiplier — ${email} — ${volLabel}`,
         _replyto:        email,
