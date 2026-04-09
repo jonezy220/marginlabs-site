@@ -49,10 +49,9 @@
 
   <div class="nav-controls">
     <ul class="nav-links" role="list">
-      <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
-      <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
-      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
       <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
       <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
@@ -64,10 +63,9 @@
 <!-- Mobile nav -->
 <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
   <ul>
-    <li><a href="/#contact" onclick="event.preventDefault(); openConsult(false);" data-analytics="nav-work-with-us">Work With Us</a></li>
-    <li><a href="/margin-multiplier.html" data-analytics="nav-products">Products</a></li>
-    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
     <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
     <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
   </ul>
 </div>
@@ -179,13 +177,13 @@
     <h1 class="hero-h1">Your platform is sitting on payments revenue you haven't <strong>captured yet.</strong></h1>
     <p class="hero-sub">The Margin Multiplier quantifies what it's worth — and what it takes to capture it.</p>
     <div class="hero-actions">
-      <a href="#margin-multiplier" class="btn-primary" data-analytics="cta-run-multiplier">Run the Margin Multiplier →</a>
+      <a href="/margin-multiplier.html" class="btn-primary" data-analytics="cta-run-multiplier">Run the Margin Multiplier →</a>
       <a href="#what-we-do" class="btn-ghost" data-analytics="cta-how-it-works">How It Works ↓</a>
     </div>
 
     <!-- Self-sort tiles -->
     <div class="self-sort" role="list">
-      <a href="#margin-multiplier" class="sort-tile" role="listitem" data-analytics="tile-no-payments">
+      <a href="/margin-multiplier.html" class="sort-tile" role="listitem" data-analytics="tile-no-payments">
         <span class="sort-tile-text">We don't have embedded payments yet</span>
         <span class="sort-tile-arrow">→</span>
       </a>
@@ -201,90 +199,7 @@
   </div>
 </section>
 
-<!-- ── FREE GUIDE ───────────────────────────────── -->
-<section class="content-section" id="free-guide">
-  <div class="content-inner" style="max-width:640px;text-align:center;">
-    <div class="content-eyebrow">Free Resource</div>
-    <h2 class="content-h2">The Embedded Payments Opportunity</h2>
-    <p style="color:var(--dim);font-size:15px;line-height:1.7;margin-bottom:24px;">
-      A vendor-neutral overview of how vertical SaaS platforms capture payments revenue —
-      the four models, the economics, and how to evaluate where you stand.
-      Free. No sales call required.
-    </p>
-    <form id="guideForm"
-          action="https://formspree.io/f/mkopwvpj"
-          method="POST"
-          style="display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;">
-      <input type="email" name="email" placeholder="your@company.com" required
-             style="flex:1;min-width:200px;" class="form-input">
-      <button type="submit" class="btn-primary" id="guide-submit-btn">
-        Get the Guide →
-      </button>
-    </form>
-    <div id="guideSuccess" style="display:none;color:var(--copper);margin-top:16px;font-size:14px;">
-      Check your inbox — the guide is on its way.
-    </div>
-    <p style="font-size:11px;color:var(--dimmer);margin-top:12px;font-family:var(--mono);letter-spacing:0.04em;">
-      No spam. Unsubscribe anytime.
-    </p>
-  </div>
-</section>
-
-<!-- ── MARGIN MULTIPLIER ───────────────────────── -->
-<section id="margin-multiplier" aria-label="Margin Multiplier">
-  <div class="mm-home-wrap">
-
-    <div class="mm-home-header">
-      <div class="section-eyebrow">The Margin Multiplier™</div>
-      <h2 class="section-headline">What is your payments opportunity worth?</h2>
-      <p class="section-sub">
-        Enter your email and payments volume for an instant estimate across all four models.
-      </p>
-    </div>
-
-    <!-- Two-field capture form -->
-    <div class="mm-home-form" id="mm-home-form">
-      <div class="mm-home-fields">
-        <input
-          type="email"
-          id="mm-home-email"
-          placeholder="you@company.com"
-          aria-label="Your email address"
-          data-analytics="mm-home-email"
-        />
-        <select id="mm-home-volume" aria-label="Annual payments volume">
-          <option value="" disabled selected>Annual payments volume</option>
-          <option value="500000">Under $1M</option>
-          <option value="2500000">$1M – $5M</option>
-          <option value="7500000">$5M – $10M</option>
-          <option value="17500000">$10M – $25M</option>
-          <option value="37500000">$25M – $50M</option>
-          <option value="75000000">$50M – $100M</option>
-          <option value="150000000">$100M+</option>
-        </select>
-        <button
-          onclick="runHomeMultiplier()"
-          data-analytics="mm-home-submit"
-          aria-label="Get my estimate"
-        >
-          Get My Estimate →
-        </button>
-      </div>
-      <p class="mm-home-note">No sales call. Just your number.</p>
-      <div class="mm-home-error" id="mm-home-error" style="display:none;"></div>
-    </div>
-
-    <!-- Instant result — hidden until submitted -->
-    <div class="mm-home-result" id="mm-home-result" style="display:none;">
-      <div class="mm-result-number" id="mm-result-number"></div>
-      <div class="mm-result-label" id="mm-result-label"></div>
-      <a href="/margin-multiplier.html" class="mm-result-link" data-analytics="mm-home-go-deeper">
-        Run the full Margin Multiplier for your complete model comparison →
-      </a>
-    </div>
-
-  </div>
-</section>
+<!-- ── (Free guide and Margin Multiplier mini-calculator removed — hero links to /margin-multiplier.html) ── -->
 
 <!-- ── USE CASES ───────────────────────────────── -->
 <section id="what-we-do" class="use-cases">
@@ -371,80 +286,38 @@
   </div>
 </section>
 
-<!-- ── CONTACT FORM ────────────────────────────── -->
-<section id="contact" class="contact-section">
-  <div class="contact-inner">
-    <div>
-      <div class="contact-eyebrow">Work With Margin Labs</div>
-      <h2 class="contact-h2">Engagements are selective.<br><strong>Start here.</strong></h2>
-      <p class="contact-sub">If you're a SaaS operator evaluating embedded payments and want an independent perspective, start here. Engagements range from a single diagnostic call to a multi-month strategy retainer.</p>
+<!-- ── FREE GUIDE + ADVISORY LINK ──────────────── -->
+<section id="contact" class="content-section" style="padding:80px 0;">
+  <div class="content-inner" style="max-width:640px;text-align:center;">
+    <div class="content-eyebrow">Free Resource</div>
+    <h2 class="content-h2">The Embedded Payments Opportunity</h2>
+    <p style="color:var(--dim);font-size:15px;line-height:1.7;margin-bottom:24px;">
+      A vendor-neutral overview of how vertical SaaS platforms capture payments revenue &#8212;
+      the four models, the economics, and how to evaluate where you stand.
+      Free. No sales call required.
+    </p>
+    <form id="guideForm"
+          action="https://formspree.io/f/mkopwvpj"
+          method="POST"
+          style="display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;">
+      <input type="email" name="email" placeholder="your@company.com" required
+             style="flex:1;min-width:200px;" class="form-input">
+      <button type="submit" class="btn-primary" id="guide-submit-btn">
+        Get the Guide &#8594;
+      </button>
+    </form>
+    <div id="guideSuccess" style="display:none;color:var(--copper);margin-top:16px;font-size:14px;">
+      Check your inbox &#8212; the guide is on its way.
     </div>
-    <div>
-      <!-- Modal CTA trigger -->
-      <div style="margin-bottom:28px;">
-        <button onclick="openConsult(false, 'simple')" class="form-submit" style="width:100%;margin-bottom:16px;" data-analytics="contact-modal-cta">Start the conversation →</button>
-        <a href="/advisory" class="form-submit" style="width:100%;margin-bottom:16px;display:block;text-align:center;text-decoration:none;box-sizing:border-box;background:transparent;border:1px solid rgba(200,130,60,0.35);color:rgba(240,235,228,0.72);" data-analytics="contact-advisory-cta">Apply for advisory →</a>
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;">
-          <div style="flex:1;height:1px;background:rgba(200,130,60,0.14);"></div>
-          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,235,228,0.28);white-space:nowrap;">or fill in the form below</span>
-          <div style="flex:1;height:1px;background:rgba(200,130,60,0.14);"></div>
-        </div>
-      </div>
+    <p style="font-size:11px;color:var(--dimmer);margin-top:12px;font-family:var(--mono);letter-spacing:0.04em;">
+      No spam. Unsubscribe anytime.
+    </p>
 
-      <!-- Replace YOUR_CONTACT_FORM_ID with your Formspree form ID -->
-      <form id="contactForm" action="https://formspree.io/f/xgopeeeb" method="POST">
-        <input type="hidden" name="_subject" value="start the convo - simple">
-        <div class="form-row">
-          <div class="form-field">
-            <label class="form-label" for="cf-name">Name</label>
-            <input id="cf-name" class="form-input" type="text" name="name" placeholder="Your name" required>
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="cf-company">Company</label>
-            <input id="cf-company" class="form-input" type="text" name="company" placeholder="Company name" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-field">
-            <label class="form-label" for="cf-volume">Monthly Payment Volume</label>
-            <select id="cf-volume" class="form-select" name="monthly_volume" required>
-              <option value="" disabled selected>Select range…</option>
-              <option>Less than $1M</option>
-              <option>$1M – $5M</option>
-              <option>$5M – $25M</option>
-              <option>$25M – $100M</option>
-              <option>$100M+</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="cf-model">Current Model</label>
-            <select id="cf-model" class="form-select" name="current_model" required>
-              <option value="" disabled selected>Select model…</option>
-              <option>None / Not started yet</option>
-              <option>ISV Referral</option>
-              <option>Enhanced Residuals</option>
-              <option>PayFac-lite / PFaaS</option>
-              <option>Full PayFac</option>
-              <option>Not sure</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-full">
-          <div class="form-field">
-            <label class="form-label" for="cf-email">Email</label>
-            <input id="cf-email" class="form-input" type="email" name="email" placeholder="you@company.io" required>
-          </div>
-        </div>
-        <div class="form-full">
-          <div class="form-field">
-            <label class="form-label" for="cf-message">Message</label>
-            <textarea id="cf-message" class="form-textarea" name="message" placeholder="What are you trying to solve?" required></textarea>
-          </div>
-        </div>
-        <button type="submit" class="form-submit" data-analytics="form-submit">Start the Conversation →</button>
-        <div class="form-note">Engagements are limited. We respond to every submission within 48 hours.</div>
-      </form>
-      <div id="contactSuccess" class="form-success">Thank you — we'll be in touch within 48 hours.</div>
+    <div style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(200,130,60,0.12);">
+      <p style="font-size:14px;color:rgba(240,235,228,0.5);line-height:1.7;margin:0 0 16px;">
+        Ready to talk to processors or need ongoing implementation support?
+      </p>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);padding-bottom:2px;" data-analytics="bottom-advisory-cta">Quick Start Calls &amp; Advisory &#8594;</a>
     </div>
   </div>
 </section>
