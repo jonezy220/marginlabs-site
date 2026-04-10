@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
   const {
     email, firstName, volLabel, curModel, recModel,
-    ctaType, gapAmt, source
+    ctaType, gapAmt, source, additionalListIds, extraAttributes
   } = req.body;
 
   if (!email) return res.status(400).json({ error: 'Missing email' });
@@ -24,10 +24,23 @@ module.exports = async (req, res) => {
   if (ctaType)   attributes.NEXT_STEP         = ctaType === 'primer' ? 'Get the Framework' : 'Consulting conversation';
   if (source)    attributes.SOURCE            = source;
 
+  // Merge any extra attributes passed by callers (e.g. HAS_FREE_GUIDE, HAS_MULTIPLIER)
+  if (extraAttributes && typeof extraAttributes === 'object') {
+    Object.assign(attributes, extraAttributes);
+  }
+
+  // Build list IDs: always include master list (2), plus any additional lists
+  const listIds = [2];
+  if (Array.isArray(additionalListIds)) {
+    for (const id of additionalListIds) {
+      if (!listIds.includes(id)) listIds.push(id);
+    }
+  }
+
   const payload = {
     email,
     attributes,
-    listIds:       [2],
+    listIds,
     updateEnabled: true,
   };
 

@@ -16,6 +16,20 @@ module.exports = async (req, res) => {
   if (!email) return res.status(400).json({ error: 'Missing email' });
 
   try {
+    // Sync to Brevo: tag as free-guide-lead, set HAS_FREE_GUIDE, add to Free Guide Leads list
+    const proto   = req.headers['x-forwarded-proto'] || 'https';
+    const baseUrl = `${proto}://${req.headers.host}`;
+    fetch(`${baseUrl}/api/brevo-subscribe`, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email,
+        source:         'Free Guide',
+        additionalListIds: [3],
+        extraAttributes: { HAS_FREE_GUIDE: true, ENTRY_DATE: new Date().toISOString().split('T')[0] },
+      }),
+    }).catch(err => console.error('Brevo sync (send-guide):', err));
+
     await resend.emails.send({
       from:    'Margin Labs <hello@marginlabs.io>',
       to:      email,

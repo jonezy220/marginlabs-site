@@ -1,7 +1,7 @@
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { email, attributes } = req.body;
+  const { email, attributes, listIds } = req.body;
   if (!email || !attributes) return res.status(400).json({ error: 'Missing email or attributes' });
 
   try {
@@ -18,14 +18,24 @@ module.exports = async (req, res) => {
 
     if (!response.ok && response.status !== 204) {
       // Contact may not exist yet — create them
+      const createListIds = [2, ...(Array.isArray(listIds) ? listIds : [])];
       await fetch('https://api.brevo.com/v3/contacts', {
         method:  'POST',
         headers: {
           'Content-Type': 'application/json',
           'api-key':       process.env.BREVO_API_KEY,
         },
-        body: JSON.stringify({ email, attributes, listIds: [2], updateEnabled: true }),
+        body: JSON.stringify({ email, attributes, listIds: createListIds, updateEnabled: true }),
       });
+    } else if (Array.isArray(listIds) && listIds.length > 0) {
+      // Contact exists — add to additional lists
+      for (const lid of listIds) {
+        await fetch(`https://api.brevo.com/v3/contacts/lists/${lid}/contacts/add`, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'api-key': process.env.BREVO_API_KEY },
+          body: JSON.stringify({ emails: [email] }),
+        }).catch(() => {});
+      }
     }
 
     res.status(200).json({ ok: true });

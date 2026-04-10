@@ -47,7 +47,7 @@ module.exports = async (req, res) => {
       }),
     }),
 
-    // 2. Brevo — add/update contact with consulting context
+    // 2. Brevo — add/update contact with consulting context + Advisory Leads list
     fetch(`${baseUrl}/api/brevo-subscribe`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -59,7 +59,9 @@ module.exports = async (req, res) => {
         recModel:   recommended,
         gapAmt:     opportunity_gap,
         ctaType:    'consult',
-        source:     source || 'Work With Us',
+        source:     source || 'Advisory Form',
+        additionalListIds: [5],
+        extraAttributes: { ENTRY_DATE: new Date().toISOString().split('T')[0] },
       }),
     }),
 

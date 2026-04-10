@@ -53,7 +53,7 @@ module.exports = async (req, res) => {
       }),
     }),
 
-    // 3. Brevo — add to CRM with full context
+    // 3. Brevo — add to CRM with full context + Multiplier Leads list
     fetch(`${baseUrl}/api/brevo-subscribe`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -65,6 +65,8 @@ module.exports = async (req, res) => {
         ctaType,
         gapAmt,
         source:    'Margin Multiplier Calculator',
+        additionalListIds: [4],
+        extraAttributes: { HAS_MULTIPLIER: true, ENTRY_DATE: new Date().toISOString().split('T')[0] },
       }),
     }),
 

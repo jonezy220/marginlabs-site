@@ -8,6 +8,11 @@
       "has": [{ "type": "host", "value": "www.marginlabs.io" }],
       "destination": "https://marginlabs.io/:path*",
       "permanent": true
+    },
+    {
+      "source": "/execution-playbook",
+      "destination": "/advisory",
+      "permanent": false
     }
   ],
   "functions": {

@@ -42,13 +42,17 @@ module.exports = async (req, res) => {
       const baseUrl = `${proto}://${req.headers.host}`;
 
       await Promise.allSettled([
-        // Tag in Brevo as customer
+        // Tag in Brevo as customer + add to Framework Customers list
         fetch(`${baseUrl}/api/brevo-tag`, {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
           body:    JSON.stringify({
             email,
-            attributes: { SOURCE: product === 'tier2' ? 'Execution Playbook Customer' : 'Framework Customer' },
+            attributes: {
+              SOURCE: product === 'tier2' ? 'Execution Playbook Customer' : 'Framework Customer',
+              HAS_FRAMEWORK: true,
+            },
+            listIds: [6],
           }),
         }),
         // Send purchase confirmation via Resend
