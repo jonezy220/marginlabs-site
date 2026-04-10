@@ -18,7 +18,6 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/global-state.js"></script>
-<script src="/js/consult-modal.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -141,53 +140,6 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
 .cta-2nd a { color:var(--c); text-decoration:none; }
 .cta-2nd a:hover { text-decoration:underline; }
 
-/* CONSULT MODAL */
-.modal-overlay {
-  display:none; position:fixed; inset:0; z-index:9000;
-  background:rgba(0,0,0,0.82);
-  align-items:center; justify-content:center; padding:24px;
-  overflow-y:auto;
-}
-.modal-overlay.open { display:flex; }
-.modal {
-  background:var(--bg); border:1px solid var(--bdr); border-radius:6px;
-  width:100%; max-width:600px; margin:auto; padding:44px; position:relative;
-}
-.modal-close {
-  position:absolute; top:14px; right:16px; background:none; border:none; color:var(--dmr);
-  font-family:var(--mono); font-size:9px; letter-spacing:0.14em;
-  text-transform:uppercase; cursor:pointer; padding:4px 8px;
-}
-.modal-close:hover { color:var(--c); }
-.modal-context {
-  background:var(--bg3); border:1px solid var(--bdr); border-left:3px solid var(--c);
-  border-radius:2px; padding:14px 18px; margin-bottom:24px; display:none;
-}
-.mc-ctx-lbl { font-family:var(--mono); font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:6px; }
-.mc-ctx-val { font-size:13px; font-weight:300; color:var(--dim); line-height:1.65; }
-.mc-ctx-val strong { color:var(--text); font-weight:400; }
-.modal-ey { font-family:var(--mono); font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.7; margin-bottom:10px; }
-.modal-hl { font-size:24px; font-weight:300; letter-spacing:-0.02em; line-height:1.3; margin-bottom:8px; }
-.modal-sub { font-size:13px; font-weight:300; color:var(--dim); line-height:1.7; margin-bottom:28px; }
-.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
-.form-full { margin-bottom:16px; }
-.form-full label, .ig-modal label { font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--dmr); display:block; margin-bottom:7px; }
-.ig-modal { display:flex; flex-direction:column; }
-.avail-label { font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--dmr); margin-bottom:10px; display:block; }
-.avail-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; }
-.avail-opt {
-  display:flex; align-items:center; gap:10px;
-  background:var(--bg4); border:1px solid var(--bdr); border-radius:2px;
-  padding:10px 14px; cursor:pointer; transition:border-color 0.2s;
-}
-.avail-opt:hover { border-color:rgba(200,130,60,0.35); }
-.avail-opt input[type="checkbox"] { width:14px; height:14px; min-width:14px; padding:0; accent-color:var(--c); cursor:pointer; }
-.avail-opt span { font-size:13px; font-weight:300; color:var(--text); }
-.modal-note { font-family:var(--mono); font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--dmr); margin-top:10px; }
-.modal-err { font-size:12px; color:rgba(200,130,60,0.85); margin-top:10px; display:none; font-family:var(--mono); letter-spacing:0.08em; }
-.modal-success { display:none; text-align:center; padding:20px 0; }
-.modal-success-hl { font-size:22px; font-weight:300; letter-spacing:-0.02em; margin-bottom:10px; }
-.modal-success-sub { font-size:14px; font-weight:300; color:var(--dim); line-height:1.7; }
 
 .disc { max-width:680px; margin:24px auto 0; padding:0 48px; font-family:var(--mono); font-size:8px; letter-spacing:0.1em; color:var(--dmr); line-height:1.75; text-align:center; }
 
@@ -371,138 +323,6 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
 </div>
 
 
-<!-- CONSULT MODAL -->
-<div class="modal-overlay" id="consult-overlay" role="dialog" aria-modal="true" aria-label="Start the conversation">
-  <div class="modal">
-    <button class="modal-close" onclick="closeConsult()" aria-label="Close">✕ Close</button>
-
-    <div id="consult-form-state">
-
-      <div class="modal-context" id="modal-context">
-        <div class="mc-ctx-lbl">Your Margin Multiplier summary</div>
-        <div class="mc-ctx-val" id="modal-context-val"></div>
-      </div>
-
-      <div class="modal-ey">Work with Margin Labs</div>
-      <h2 class="modal-hl" id="modal-hl">Let's talk about your payments opportunity.</h2>
-      <p class="modal-sub" id="modal-sub">Tell us a bit about what you're working on. We respond to every inquiry within 48 hours.</p>
-
-      <form id="consult-form" onsubmit="submitConsult(event)">
-
-        <div class="form-grid">
-          <div class="ig-modal">
-            <label for="c-name">Name</label>
-            <input type="text" id="c-name" name="name" placeholder="Your name" required/>
-          </div>
-          <div class="ig-modal">
-            <label for="c-company">Company</label>
-            <input type="text" id="c-company" name="company" placeholder="Company name" required/>
-          </div>
-        </div>
-
-        <div class="form-grid">
-          <div class="ig-modal">
-            <label for="c-email">Email</label>
-            <input type="email" id="c-email" name="email" placeholder="you@company.com" required/>
-          </div>
-          <div class="ig-modal">
-            <label for="c-phone">Phone <span style="opacity:0.5;font-size:0.9em;">(optional)</span></label>
-            <input type="tel" id="c-phone" name="phone" placeholder="+1 (555) 000-0000"/>
-          </div>
-        </div>
-
-        <div class="form-grid">
-          <div class="ig-modal">
-            <label for="c-volume">Annual Payments Volume</label>
-            <select id="c-volume" name="volume" aria-label="Payments volume">
-              <option value="">Select range</option>
-              <option value="Under $1M">Under $1M</option>
-              <option value="$1M – $5M">$1M – $5M</option>
-              <option value="$5M – $10M">$5M – $10M</option>
-              <option value="$10M – $25M">$10M – $25M</option>
-              <option value="$25M – $50M">$25M – $50M</option>
-              <option value="$50M – $100M">$50M – $100M</option>
-              <option value="$100M+">$100M+</option>
-            </select>
-          </div>
-          <div class="ig-modal">
-            <label for="c-model">Current Payments Model</label>
-            <select id="c-model" name="current_model" aria-label="Current model">
-              <option value="">Select model</option>
-              <option value="None — not started">None — not started</option>
-              <option value="ISV Referral">ISV Referral</option>
-              <option value="Enhanced Residuals">Enhanced Residuals</option>
-              <option value="PayFac-lite">PayFac-lite</option>
-              <option value="Full PayFac">Full PayFac</option>
-              <option value="Not sure">Not sure</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-full">
-          <label for="c-message">What are you trying to solve?</label>
-          <textarea id="c-message" name="message" placeholder="Tell us what you're working on — the more context the better." required></textarea>
-        </div>
-
-        <div class="form-full">
-          <span class="avail-label">Availability <span style="opacity:0.5;font-size:0.9em;">(select all that apply)</span></span>
-          <div class="avail-grid">
-            <label class="avail-opt">
-              <input type="checkbox" name="availability" value="Mornings 9–12"/>
-              <span>Mornings (9–12)</span>
-            </label>
-            <label class="avail-opt">
-              <input type="checkbox" name="availability" value="Afternoons 12–5"/>
-              <span>Afternoons (12–5)</span>
-            </label>
-            <label class="avail-opt">
-              <input type="checkbox" name="availability" value="Late afternoon 4–6"/>
-              <span>Late afternoon (4–6)</span>
-            </label>
-            <label class="avail-opt">
-              <input type="checkbox" name="availability" value="Flexible — email me first"/>
-              <span>Flexible — email me first</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="form-full">
-          <div class="ig-modal">
-            <label for="c-tz">Timezone</label>
-            <select id="c-tz" name="timezone" aria-label="Timezone">
-              <option value="">Select timezone</option>
-              <option value="ET — Eastern">ET — Eastern</option>
-              <option value="CT — Central">CT — Central</option>
-              <option value="MT — Mountain">MT — Mountain</option>
-              <option value="PT — Pacific">PT — Pacific</option>
-              <option value="GMT — London">GMT — London</option>
-              <option value="CET — Central Europe">CET — Central Europe</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-        </div>
-
-        <input type="hidden" id="c-gap"    name="opportunity_gap"/>
-        <input type="hidden" id="c-rec"    name="recommended_model"/>
-        <input type="hidden" id="c-source" name="source" value="Direct inquiry"/>
-
-        <button type="submit" class="btn-p" id="consult-btn" data-analytics="form-submit">
-          Start the Conversation →
-        </button>
-        <div class="modal-err" id="modal-err"></div>
-        <p class="modal-note" style="margin-top:12px;">Engagements are selective. We respond to every submission within 48 hours.</p>
-
-      </form>
-    </div>
-
-    <div class="modal-success" id="consult-success">
-      <div style="font-size:32px;margin-bottom:16px;color:var(--c);">✓</div>
-      <div class="modal-success-hl">You're in.</div>
-      <p class="modal-success-sub">We've received your inquiry and will be in touch within 48 hours.<br>Check hello@marginlabs.io if you don't hear from us — just in case it lands in your spam.</p>
-      <button class="btn-p" style="margin-top:28px;width:auto;padding:12px 24px;" onclick="closeConsult()">Back to results</button>
-    </div>
-  </div>
-</div>
 
 
 <script>
@@ -767,7 +587,7 @@ function buildResults() {
       </div>`;
     setTimeout(()=>{
       const ct = $c('consult-trigger');
-      if (ct) ct.onclick = () => openConsult(true);
+      if (ct) ct.onclick = () => { window.location.href = '/advisory#form'; };
       const ps = $c('primer-sec');
       if (ps) ps.onclick = e => { e.preventDefault(); launchCheckout(ps); };
     },50);
@@ -784,7 +604,7 @@ function buildResults() {
       const pp = $c('primer-pri');
       if (pp) pp.onclick = () => launchCheckout(pp);
       const cs = $c('consult-soft');
-      if (cs) cs.onclick = e => { e.preventDefault(); openConsult(true); };
+      if (cs) cs.onclick = e => { e.preventDefault(); window.location.href = '/advisory#form'; };
     },50);
   }
 }
@@ -804,141 +624,11 @@ async function launchCheckout(btn) {
   }
 }
 
-// ── CONSULT MODAL ──
-function openConsult(fromCalculator) {
-  gaEvent('consulting_modal_opened', {
-    source: fromCalculator ? 'calculator' : 'direct',
-  });
-  // Pre-fill from calculator state if available
-  if (fromCalculator && _s.volLbl) {
-    const gapAmt = _s.gap>0 ? _s.gap : _s.recModel.revenue;
-
-    const ctx = $c('modal-context');
-    ctx.style.display = 'block';
-    $c('modal-context-val').innerHTML =
-      `<strong>${_s.volLbl}</strong> in annual payments volume · <strong>${_s.curLbl}</strong> current model · <strong>${fmtCur(gapAmt)}</strong> opportunity gap`;
-
-    $c('modal-hl').textContent = _s.rec.ceiling
-      ? "Let's talk about optimising your payments program."
-      : `Let's talk about your path to ${_s.recModel.name}.`;
-
-    $c('modal-sub').textContent = "We've pre-filled what we know. Add your contact details and we'll be in touch within 48 hours.";
-
-    const gateEmail = $c('gate-email').value;
-    if (gateEmail) $c('c-email').value = gateEmail;
-
-    const volSel = $c('c-volume');
-    for (let o of volSel.options) {
-      if (o.value === _s.volLbl) { o.selected=true; break; }
-    }
-
-    const modSel = $c('c-model');
-    for (let o of modSel.options) {
-      if (o.value === _s.curLbl) { o.selected=true; break; }
-    }
-
-    $c('c-gap').value = fmtCur(gapAmt);
-    $c('c-rec').value = _s.recModel.name;
-    $c('c-source').value = 'Margin Multiplier';
-
-  } else {
-    $c('modal-context').style.display='none';
-    $c('modal-hl').textContent = "Let's talk about your payments opportunity.";
-    $c('modal-sub').textContent = "Tell us a bit about what you're working on. We respond to every inquiry within 48 hours.";
-    $c('c-source').value = 'Direct inquiry';
-  }
-
-  // Pre-fill visitor fields from ML state
-  window.ML.prefillVisitor('c-name', 'c-company', 'c-email', 'c-phone');
-
-  $c('consult-form-state').style.display = 'block';
-  $c('consult-success').style.display    = 'none';
-  $c('modal-err').style.display          = 'none';
-  $c('consult-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeConsult() {
-  $c('consult-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-async function submitConsult(e) {
-  e.preventDefault();
-  const btn    = $c('consult-btn');
-  const errEl  = $c('modal-err');
-  errEl.style.display = 'none';
-
-  const name    = $c('c-name').value.trim();
-  const company = $c('c-company').value.trim();
-  const email   = $c('c-email').value.trim();
-  const phone   = $c('c-phone').value.trim();
-  const volume  = $c('c-volume').value;
-  const model   = $c('c-model').value;
-  const message = $c('c-message').value.trim();
-  const tz      = $c('c-tz').value;
-
-  if (!name||!company||!email||!message) {
-    errEl.textContent = 'Please fill in name, company, email, and message.';
-    errEl.style.display='block'; return;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errEl.textContent = 'Please enter a valid email address.';
-    errEl.style.display='block'; return;
-  }
-
-  // Save visitor fields to shared state
-  window.ML.saveVisitor({ name, company, email, phone });
-
-  const avail = [...document.querySelectorAll('input[name="availability"]:checked')]
-    .map(cb => cb.value).join(', ') || 'Not specified';
-
-  gaEvent('consulting_form_submitted', {
-    source: $c('c-source').value,
-  });
-
-  btn.disabled=true; btn.textContent='Sending...';
-
-  const payload = {
-    name, company, email,
-    phone:           phone||'Not provided',
-    volume:          volume||'Not specified',
-    current_model:   model||'Not specified',
-    message,
-    availability:    avail,
-    timezone:        tz||'Not specified',
-    opportunity_gap: $c('c-gap').value||'',
-    recommended:     $c('c-rec').value||'',
-    source:          $c('c-source').value,
-  };
-
-  try {
-    const res = await fetch('/api/submit-consult', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(payload),
-    });
-    if (!res.ok) throw new Error('failed');
-    $c('consult-form-state').style.display='none';
-    $c('consult-success').style.display='block';
-  } catch(err) {
-    btn.disabled=false; btn.textContent='Start the Conversation →';
-    errEl.textContent='Something went wrong. Please email hello@marginlabs.io directly.';
-    errEl.style.display='block';
-  }
-}
-
 function gaEvent(name, params) {
   if (typeof gtag !== 'undefined') {
     gtag('event', name, params || {});
   }
 }
-
-$c('consult-overlay').addEventListener('click', e => { if(e.target===$c('consult-overlay')) closeConsult(); });
-
-document.addEventListener('keydown', e => {
-  if (e.key==='Escape') closeConsult();
-});
 
 function showStep(id) {
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));

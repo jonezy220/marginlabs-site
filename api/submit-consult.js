@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
   await Promise.allSettled([
 
     // 1. Formspree — notify you with full context
-    fetch('https://formspree.io/f/xgopeeeb', {
+    fetch('https://formspree.io/f/mnjopjon', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
