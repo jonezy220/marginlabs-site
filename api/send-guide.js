@@ -27,6 +27,7 @@ module.exports = async (req, res) => {
         source:         'Free Guide',
         additionalListIds: [3],
         extraAttributes: { HAS_FREE_GUIDE: true, ENTRY_DATE: new Date().toISOString().split('T')[0] },
+        utmParams: req.body.utmParams,
       }),
     }).catch(err => console.error('Brevo sync (send-guide):', err));
 

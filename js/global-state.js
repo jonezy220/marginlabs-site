@@ -47,4 +47,27 @@ window.ML = window.ML || {
     this.prefill(emailId,   this.visitor.email);
     this.prefill(phoneId,   this.visitor.phone);
   },
+
+  // UTM parameter capture — persists across page navigations via sessionStorage
+  getUtmParams: function() {
+    try {
+      var stored = sessionStorage.getItem('ml_utm');
+      return stored ? JSON.parse(stored) : {};
+    } catch(e) { return {}; }
+  },
 };
+
+// Capture UTM params from URL on page load
+(function() {
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  var params = new URLSearchParams(window.location.search);
+  var found = {};
+  var hasAny = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { found[key] = val; hasAny = true; }
+  });
+  if (hasAny) {
+    try { sessionStorage.setItem('ml_utm', JSON.stringify(found)); } catch(e) {}
+  }
+})();

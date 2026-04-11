@@ -6,6 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Order Confirmed | Margin Labs</title>
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -135,6 +140,28 @@
       el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
     });
   });
+
+  // Google Ads purchase conversion
+  if (window.location.search.includes('product=tier1')) {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18079962820/purchase',
+      'value': 139.00,
+      'currency': 'USD',
+      'transaction_id': new URLSearchParams(window.location.search).get('session_id') || ''
+    });
+  }
+
+  // GA4 purchase event
+  if (window.location.search.includes('product=')) {
+    var params = new URLSearchParams(window.location.search);
+    var product = params.get('product');
+    var value = product === 'tier2' ? 697 : 139;
+    gtag('event', 'purchase', {
+      currency: 'USD',
+      value: value,
+      items: [{ item_id: product, item_name: product === 'tier2' ? 'Execution Playbook' : 'Strategic Framework', price: value }]
+    });
+  }
 </script>
 </body>
 </html>

@@ -20,6 +20,7 @@
   window.gtag = gtag;
   gtag('js', new Date());
   gtag('config', 'G-BCFSRE0015');
+  gtag('config', 'AW-18079962820');
 })();
 
 (function () {
@@ -138,17 +139,18 @@
         btn.style.display = 'none';
 
         // Resend — email the PDF link — fire and forget
+        var _utm = window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined;
         fetch('/api/send-guide', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify({ email }),
+          body:    JSON.stringify({ email, utmParams: _utm }),
         }).catch(function () {});
 
         // Brevo — tag as free guide lead — fire and forget
         fetch('/api/brevo-subscribe', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify({ email, source: 'Free Guide Lead' }),
+          body:    JSON.stringify({ email, source: 'Free Guide Lead', utmParams: _utm }),
         }).catch(function () {});
 
         // Save to shared ML state
@@ -227,7 +229,7 @@
           fetch('/api/brevo-subscribe', {
             method:  'POST',
             headers: { 'Content-Type': 'application/json' },
-            body:    JSON.stringify({ email, firstName: name.split(' ')[0] || '', source: 'Homepage Contact Form' }),
+            body:    JSON.stringify({ email, firstName: name.split(' ')[0] || '', source: 'Homepage Contact Form', utmParams: window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined }),
           }).catch(function () {});
         } else {
           btn.textContent = 'Error — try again';

@@ -11,7 +11,8 @@ module.exports = async (req, res) => {
 
   const {
     email, firstName, volLabel, curModel, recModel,
-    ctaType, gapAmt, source, additionalListIds, extraAttributes
+    ctaType, gapAmt, source, additionalListIds, extraAttributes,
+    utmParams
   } = req.body;
 
   if (!email) return res.status(400).json({ error: 'Missing email' });
@@ -27,6 +28,13 @@ module.exports = async (req, res) => {
   // Merge any extra attributes passed by callers (e.g. HAS_FREE_GUIDE, HAS_MULTIPLIER)
   if (extraAttributes && typeof extraAttributes === 'object') {
     Object.assign(attributes, extraAttributes);
+  }
+
+  // UTM parameters
+  if (utmParams && typeof utmParams === 'object') {
+    if (utmParams.utm_source)   attributes.UTM_SOURCE   = utmParams.utm_source;
+    if (utmParams.utm_medium)   attributes.UTM_MEDIUM   = utmParams.utm_medium;
+    if (utmParams.utm_campaign) attributes.UTM_CAMPAIGN = utmParams.utm_campaign;
   }
 
   // Build list IDs: always include master list (2), plus any additional lists

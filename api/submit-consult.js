@@ -62,6 +62,7 @@ module.exports = async (req, res) => {
         source:     source || 'Advisory Form',
         additionalListIds: [5],
         extraAttributes: { ENTRY_DATE: new Date().toISOString().split('T')[0] },
+        utmParams: req.body.utmParams,
       }),
     }),
 
