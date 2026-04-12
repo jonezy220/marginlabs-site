@@ -23,6 +23,19 @@
   gtag('config', 'AW-18079962820');
 })();
 
+// LinkedIn Insight Tag (partner ID: 8971322)
+(function () {
+  window._linkedin_partner_id = '8971322';
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+  var s = document.getElementsByTagName('script')[0];
+  var b = document.createElement('script');
+  b.type = 'text/javascript';
+  b.async = true;
+  b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+  s.parentNode.insertBefore(b, s);
+})();
+
 (function () {
   'use strict';
 
