@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Facilitator vs. ISO: Which Model Fits Your Platform | Margin Labs</title>
+<meta name="description" content="The two most common structures for monetizing payment volume — and a practical framework for choosing the right one based on your volume, risk tolerance, and growth stage.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/payfac-vs-iso">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Payment Facilitator vs. ISO: Which Model Fits Your Platform | Margin Labs">
+<meta property="og:description" content="The two most common structures for monetizing payment volume — and a practical framework for choosing the right one based on your volume, risk tolerance, and growth stage.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/payfac-vs-iso">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Payment Facilitator vs. ISO: Which Model Fits Your Platform</h1>
+  <div class="article-meta">
+    <span>April 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+    <p>If you're a software company looking to monetize the payment volume flowing through your platform, you'll eventually encounter two terms: Payment Facilitator (PayFac) and Independent Sales Organization (ISO). Both are structures for participating in the economics of payment processing. But they work differently, carry different revenue potential, and suit different stages of business.</p>
+
+    <p>Most of the content explaining these models is written by companies that sell one of the two. That's a problem, because the answer isn't which model is better — it's which model matches where you are right now and how much of the payment margin you're ready to capture.</p>
+
+    <h2>What an ISO Actually Does</h2>
+
+    <p>An Independent Sales Organization is a registered entity that refers merchants to a payment processor. The ISO doesn't process payments itself. It acts as a distribution channel — finding merchants, boarding them onto a processor's platform, and earning a residual on the processing volume those merchants generate.</p>
+
+    <p>For a software company, the ISO path usually takes the form of an ISV Referral program. You partner with a processor (Fiserv, Worldpay, Global Payments, or others), embed their payment acceptance into your product via APIs, and earn a revenue share on merchant volume. The processor handles underwriting, compliance, settlement, risk management, and merchant support.</p>
+
+    <p>The economics are straightforward: you earn 5 to 25 basis points on gross volume, depending on the processor and your negotiating position. On $30 million in annual merchant volume, that's $15,000 to $75,000 per year. Essentially free money — you carry no operational burden and no risk exposure.</p>
+
+    <p>The trade-off is equally straightforward: you don't control the merchant experience, you don't own the merchant relationship in payments terms, and you're earning a fraction of the total margin on each transaction.</p>
+
+    <h2>What a Payment Facilitator Does</h2>
+
+    <p>A Payment Facilitator is a registered entity that aggregates merchants under its own merchant ID. Instead of referring merchants to a processor, the PayFac boards merchants as sub-merchants, underwrites them (within parameters set by the acquiring bank and card networks), manages compliance, handles disputes, and processes payments on their behalf.</p>
+
+    <p>The PayFac owns more of the stack — and earns more of the economics. Instead of collecting a residual, you set the merchant rate, buy processing at wholesale (interchange plus a processor spread), and keep the difference. Net margins typically range from 30 to 90+ basis points depending on volume, vertical, and how you've structured your pricing.</p>
+
+    <p>On that same $30 million in volume, PayFac economics produce $90,000 to $270,000 in annual net revenue. The ceiling is meaningfully higher.</p>
+
+    <p>The trade-off: you're now responsible for merchant onboarding, KYC/AML compliance, transaction monitoring, reserve management, chargeback response, and regulatory reporting. You need staff — or a managed service provider — who understands payment operations. Implementation costs range from $50K for managed PayFac services to $500K+ for a full direct registration.</p>
+
+    <h2>The Economic Comparison</h2>
+
+    <p>The math is simple but often ignored. Here's a side-by-side at three volume levels:</p>
+
+    <p>At $10M annual volume: ISO earns $5K–$25K. PayFac earns $30K–$90K.<br>
+    At $50M annual volume: ISO earns $25K–$125K. PayFac earns $150K–$450K.<br>
+    At $100M annual volume: ISO earns $50K–$250K. PayFac earns $300K–$900K.</p>
+
+    <p>The gap widens with every dollar of volume. At smaller scales, the ISO model is efficient — you're earning revenue with no operational cost. As volume grows, the opportunity cost of staying in ISO becomes the dominant factor.</p>
+
+    <h2>When to Choose the ISO / Referral Path</h2>
+
+    <p>The ISO model is right when your payments volume is under $30–50 million annually, you have fewer than 200 merchants processing, your team has no payments operations experience, or you're early enough in your product lifecycle that payments is a feature, not a business line.</p>
+
+    <p>It's also the right choice if your vertical carries elevated risk — high average ticket sizes, high chargeback rates, or regulatory complexity. In those cases, letting the processor carry the risk exposure is worth the economic trade-off.</p>
+
+    <p>The ISO model lets you generate payments revenue in weeks rather than months, with minimal implementation cost and zero ongoing operational burden. For many platforms, this is the correct starting point.</p>
+
+    <h2>When to Choose the PayFac Path</h2>
+
+    <p>PayFac economics become compelling when your annual merchant volume exceeds $50 million and is growing, you have 150+ merchants processing consistently, you can staff at least one person who understands payment operations (or you're willing to use a managed PayFac service), and the checkout and payment experience is core to your product differentiation.</p>
+
+    <p>The managed PayFac model — sometimes called PayFac-as-a-Service or PayFac Lite — has made this path accessible to platforms that previously couldn't afford or staff a full PayFac registration. You get most of the economics with a fraction of the operational burden.</p>
+
+    <h2>The Migration Question</h2>
+
+    <p>Can you start as an ISO and move to PayFac later? Yes. Many platforms do. The transition involves re-boarding merchants under new agreements, which creates some operational friction and occasional churn. Plan for 3–6 months of migration work depending on merchant count.</p>
+
+    <p>The smart approach: if you have any visibility into your volume trajectory, choose your initial ISO partner with future migration in mind. Some processors offer a clear path from referral to their own managed PayFac program. Others make migration deliberately difficult. Ask about the migration path before you sign your first referral agreement.</p>
+
+    <h2>The Decision That Matters More Than the Model</h2>
+
+    <p>The most common mistake is treating ISO vs. PayFac as a permanent, binary choice rather than a stage-appropriate one. Companies get comfortable in referral programs, the residuals start to feel meaningful, and they stop evaluating whether they've crossed the threshold.</p>
+
+    <p>Run the math annually. The economics shift faster than most teams realize, especially in high-growth verticals where merchant count and average volume are both increasing.</p>
+
+    <blockquote class="pull-quote">The right model today should match where you are. The mistake is staying in it after you've outgrown it.</blockquote>
+
+    <p>The <a href="/margin-multiplier.html">Margin Multiplier</a> models revenue across all four embedded payments approaches — ISV Referral, Enhanced Residuals, PayFac Lite, and Full PayFac — in about 60 seconds. Start there if you want to see where you fall.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
