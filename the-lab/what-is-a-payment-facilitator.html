@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is a Payment Facilitator? A Plain-Language Guide for Software Companies | Margin Labs</title>
+<meta name="description" content="PayFac, payment facilitator, managed PayFac, sub-merchant — the terminology is confusing by design. Here's what it actually means for SaaS platforms, explained without vendor spin.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="What Is a Payment Facilitator? A Plain-Language Guide for Software Companies | Margin Labs">
+<meta property="og:description" content="PayFac, payment facilitator, managed PayFac, sub-merchant — the terminology is confusing by design. Here's what it actually means for SaaS platforms.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/what-is-a-payment-facilitator">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">What Is a Payment Facilitator? A Plain-Language Guide for Software Companies</h1>
+  <div class="article-meta">
+    <span>April 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Payment facilitator. PayFac. Managed PayFac. PayFac Lite. PayFac-as-a-Service. Sub-merchant. Master merchant. The terminology around payment facilitation is genuinely confusing, and it's confusing by design — because the companies defining these terms are the ones selling the services.</p>
+
+    <p>If you run product, finance, or partnerships at a software company and you're trying to figure out what payment facilitation actually means for your business, this is the plain-language version. No jargon ladders. No sales positioning disguised as education.</p>
+
+    <h2>The Basic Concept</h2>
+
+    <p>A Payment Facilitator is an entity registered with the card networks (Visa, Mastercard) that is authorized to board merchants under its own merchant identification number (MID) and process payments on their behalf.</p>
+
+    <p>In plain terms: instead of each of your merchants getting their own individual merchant account with a processor — which involves separate applications, separate underwriting, and separate agreements — a PayFac aggregates merchants under one umbrella. Your merchants become "sub-merchants" under the PayFac's master account.</p>
+
+    <p>This matters for software companies because it changes the economics. When a processor gives each of your merchants their own account, the processor owns the relationship and keeps most of the margin. When merchants are aggregated under a PayFac structure, the PayFac — which could be you, or a service you use — controls the pricing and keeps a larger share.</p>
+
+    <h2>Why It Exists</h2>
+
+    <p>Before the PayFac model, getting a merchant account was slow and painful. Every business that wanted to accept card payments had to apply individually, go through underwriting, wait days or weeks for approval, and sign a direct agreement with a processor. For a software platform trying to enable payments for hundreds or thousands of small businesses, this was a dealbreaker.</p>
+
+    <p>The PayFac model was created to solve this. By allowing one entity to aggregate merchants and take responsibility for their risk, the card networks enabled faster boarding, simpler onboarding, and a better merchant experience. Square was one of the first companies to popularize this model at scale — every small business swiping through a Square reader is a sub-merchant under Square's PayFac registration.</p>
+
+    <p>For vertical SaaS platforms, the PayFac model unlocked the ability to embed payments into their product and participate in the economics — not just connect merchants to a processor and collect a referral fee.</p>
+
+    <h2>The Spectrum of Payment Facilitation</h2>
+
+    <p>This is where the terminology gets muddy. "Payment facilitator" describes a spectrum of arrangements, not a single model. Here's how to think about it:</p>
+
+    <p class="cost-label">Full / Direct PayFac</p>
+
+    <p>You register directly with Visa and Mastercard as a Payment Facilitator. You get your own MID, you underwrite merchants yourself, you manage compliance and reporting to the card networks, and you handle settlement. You buy processing at wholesale rates from a sponsor bank and keep maximum margin.</p>
+
+    <p>This is the most control and the best economics — net margins of 50 to 100+ basis points on volume. It's also the most expensive and complex to set up: $500K to $2M+ in implementation, 12-18 months to launch, and ongoing compliance obligations that require dedicated staff.</p>
+
+    <p>Full PayFac makes sense at $100M+ in annual processing volume. Below that, the infrastructure cost outweighs the economic benefit.</p>
+
+    <p class="cost-label">Managed PayFac / PayFac-as-a-Service</p>
+
+    <p>A registered PayFac provides the infrastructure — sponsor bank relationships, card network registrations, compliance frameworks — and you operate as a partner under their umbrella. You handle merchant-facing operations (onboarding, pricing, first-line support) and they handle the regulatory layer.</p>
+
+    <p>You're not registered with the card networks yourself. But you set merchant rates, control the boarding experience, and keep the spread between what you charge and what you pay the provider. Net margins typically range from 25 to 70 basis points.</p>
+
+    <p>This model — sometimes called PayFac Lite — is the fastest-growing segment in embedded payments because it gives platforms PayFac-level economics without PayFac-level infrastructure requirements. Implementation costs range from $50K to $200K, and you can be live in 3-6 months.</p>
+
+    <p class="cost-label">ISV Referral (Not PayFac)</p>
+
+    <p>For comparison: in an ISV Referral arrangement, you're not a PayFac at all. You refer merchants to a processor, the processor boards and underwrites them, and you collect a residual — typically 5 to 25 basis points. You don't control pricing, you don't own the merchant relationship in payments terms, and your economics are a fraction of what a PayFac arrangement would produce.</p>
+
+    <p>Referral is the right starting point for many platforms, but it's important to understand that it is fundamentally different from payment facilitation — even though some processors blur the line in their marketing.</p>
+
+    <h2>What a PayFac Is Responsible For</h2>
+
+    <p>Whether you're a full PayFac or operating under a managed PayFac arrangement, someone is carrying these responsibilities. Understanding them helps you evaluate what you're taking on versus what your provider handles:</p>
+
+    <ul>
+      <li><strong>Merchant underwriting:</strong> Evaluating each merchant's risk profile before allowing them to process. This includes identity verification (KYC), business verification, and risk assessment based on industry, volume, and transaction patterns.</li>
+      <li><strong>Transaction monitoring:</strong> Watching for suspicious activity, unusual volume spikes, and potential fraud — both to protect your merchants and to meet your obligations to the card networks.</li>
+      <li><strong>Chargeback management:</strong> Handling disputes when a cardholder contests a transaction. The PayFac is the first responder and carries financial exposure if chargebacks exceed network thresholds.</li>
+      <li><strong>Settlement and funding:</strong> Managing the flow of money from card networks to your merchants' bank accounts, including holding reserves where required.</li>
+      <li><strong>Compliance reporting:</strong> Filing regular reports with the card networks and your sponsor bank, including transaction volumes, chargeback rates, and risk metrics.</li>
+      <li><strong>PCI compliance:</strong> Maintaining PCI DSS compliance at a level appropriate for your processing volume — which in the case of a full PayFac means Level 1, the highest standard.</li>
+    </ul>
+
+    <p>In a managed PayFac arrangement, the provider handles most of the compliance and regulatory reporting. You handle merchant onboarding, first-line support, and pricing. The split varies by provider, and understanding exactly who owns what is critical before you sign.</p>
+
+    <h2>The Economics in Simple Terms</h2>
+
+    <p>Here's why payment facilitation matters financially. On a $100 credit card transaction at a merchant rate of 2.75%:</p>
+
+    <p>The merchant pays $2.75. Interchange (paid to the card-issuing bank) might be $1.70. The card network takes about $0.02. Your processing cost (interchange + processor markup) might be $1.85. You keep the remaining $0.90.</p>
+
+    <p>That $0.90 on a single transaction doesn't sound transformative. But multiply it across $50 million in annual volume at roughly the same margin, and you're looking at $300,000 to $450,000 in annual net payments revenue. In an ISV Referral arrangement on the same volume, you'd earn $25,000 to $125,000.</p>
+
+    <p>The difference — $175,000 to $325,000 per year on $50M in volume — is why the PayFac model exists for software companies. And that gap widens every year as your volume grows.</p>
+
+    <h2>Common Misconceptions</h2>
+
+    <p><strong>"We need to become a PayFac."</strong> Maybe. But for most platforms between $30M and $200M in volume, a managed PayFac arrangement gives you 60-80% of the economics at 20-30% of the complexity. Full registration is the end state, not the starting point.</p>
+
+    <p><strong>"PayFac means we're a payments company now."</strong> No. It means you're monetizing the payments flowing through your platform. You're still a software company. The payments program is a revenue line, not a pivot.</p>
+
+    <p><strong>"It's too complex for our team."</strong> A managed PayFac provider handles the regulatory complexity. Your operational addition is merchant onboarding, basic support, and chargeback response — which at most platforms translates to 0.5 to 1.5 FTEs depending on merchant count.</p>
+
+    <p><strong>"We should wait until we have more volume."</strong> The threshold is lower than most teams assume. At $30-50M in annual volume with 150+ merchants, the economics of managed PayFac typically justify the move. The <a href="/margin-multiplier.html">Margin Multiplier</a> can show you the specific numbers for your volume.</p>
+
+    <h2>Where to Go from Here</h2>
+
+    <p>If you're trying to decide whether payment facilitation makes sense for your platform, start with two questions:</p>
+
+    <ol>
+      <li>What is your annual merchant payment volume? If you don't know, estimate it: merchant count times average monthly volume times 12.</li>
+      <li>What are you earning on that volume today? If the answer is nothing, or a referral residual of 5-15 basis points, there is likely a significant revenue opportunity you're not capturing.</li>
+    </ol>
+
+    <blockquote class="pull-quote">Payment facilitation isn't about becoming a payments company. It's about capturing the economics of the payments already flowing through your software.</blockquote>
+
+    <p>The <a href="/margin-multiplier.html">Margin Multiplier</a> models your revenue across all four monetization approaches — ISV Referral, Enhanced Residuals, PayFac Lite, and Full PayFac — in about 60 seconds. Start there, then read our <a href="/the-lab/payfac-vs-iso">comparison of PayFac vs. ISO</a> for the full decision framework.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

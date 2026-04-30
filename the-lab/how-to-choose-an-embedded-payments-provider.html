@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Choose an Embedded Payments Provider for Your SaaS Platform | Margin Labs</title>
+<meta name="description" content="Most provider evaluations start with pricing and end with regret. Here are the 8 questions that actually determine whether a payments partnership works — from someone who doesn't sell processing.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="How to Choose an Embedded Payments Provider for Your SaaS Platform | Margin Labs">
+<meta property="og:description" content="Most provider evaluations start with pricing and end with regret. Here are the 8 questions that actually determine whether a payments partnership works.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">How to Choose an Embedded Payments Provider for Your SaaS Platform</h1>
+  <div class="article-meta">
+    <span>April 2026</span>
+    <span>8 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Most embedded payments provider evaluations start with pricing and end with regret. The pricing looked competitive, the demo was polished, and six months into the integration you discover that the migration path doesn't exist, the API documentation is incomplete, and your merchants are calling you about deposit delays that you can't resolve because the processor's support team takes 48 hours to respond.</p>
+
+    <p>The problem isn't that platforms choose bad providers. The problem is that most evaluations focus on the wrong things. Rate sheets and feature lists are table stakes. The questions that actually determine whether a payments partnership works are harder to ask and harder to compare — but they're the ones that matter 18 months in.</p>
+
+    <p>Here are the eight questions we use when evaluating embedded payments providers for our advisory clients.</p>
+
+    <h2>1. What Is the Full Cost Stack — Not Just the Headline Rate?</h2>
+
+    <p>Every provider will quote you a rate. Interchange-plus pricing, flat rate, or a blended rate — the headline number is designed to be comparable. It's also designed to be incomplete.</p>
+
+    <p>The full cost stack includes interchange (non-negotiable, set by card networks), the processor markup above interchange, per-transaction fees, monthly platform fees, PCI compliance fees, chargeback fees, batch settlement fees, and sometimes gateway fees on top of processing fees. Some providers bundle these. Others itemize them. The ones who bundle are usually hiding the most margin.</p>
+
+    <p>Ask for a complete cost breakdown on a sample month of transactions — not a rate card. Provide your actual merchant mix (average ticket size, card-present vs. card-not-present, debit vs. credit split) and ask them to model the effective cost. If they won't do this, they know the answer isn't favorable.</p>
+
+    <h2>2. Who Owns the Merchant Relationship?</h2>
+
+    <p>This is the single most consequential question in any payments partnership, and most platforms don't ask it directly enough.</p>
+
+    <p>In some arrangements, the processor owns the merchant relationship. They can contact your merchants directly, market to them, and — in some cases — migrate them to another platform's integration. In others, you own the merchant relationship and the processor is an infrastructure provider behind the scenes.</p>
+
+    <p>The answer determines your competitive exposure. If the processor can see your merchant data, understand your vertical, and reach your merchants directly, you've handed them a map to compete with you or to sell that intelligence to someone who will. Ask specifically: can the processor market directly to merchants boarded through your integration? What data do they retain? What happens to the merchant relationship if you terminate the agreement?</p>
+
+    <h2>3. What Does the Migration Path Look Like?</h2>
+
+    <p>Your payments strategy will evolve. You might start in ISV Referral and move to PayFac Lite. You might outgrow a managed PayFac provider and want to register directly. You might simply want to switch processors because the economics no longer work.</p>
+
+    <p>Before you sign, understand what migration looks like. Some providers make it straightforward — they'll export your merchant portfolio, provide a transition timeline, and cooperate with the receiving processor. Others make it deliberately painful. Merchant data is locked, re-boarding is required from scratch, and the contractual exit terms include volume commitments or early termination fees that make switching economically irrational.</p>
+
+    <p>Ask for the specific migration process in writing. If the answer is vague or the contract includes a long exclusivity period with steep exit penalties, factor that into your evaluation — because you're not just choosing a provider, you're choosing how hard it will be to leave.</p>
+
+    <h2>4. What Is the Merchant Onboarding Experience?</h2>
+
+    <p>The boarding experience is the first thing your merchants see of your payments program. If it's clunky, slow, or requires information they don't understand, you'll lose merchants before they process a single transaction.</p>
+
+    <p>Evaluate the provider's boarding flow from the merchant's perspective. How many fields? How long does approval take? Is there a sandbox you can test? Does it support progressive boarding — where merchants can start processing before full KYC is complete? Can you customize the flow, or are you locked into their standard form?</p>
+
+    <p>The providers with the best boarding experiences have invested in pre-fill, real-time verification, and instant approval for low-risk merchants. The ones with the worst experiences are the ones that built compliance-first and never came back to fix the UX.</p>
+
+    <h2>5. What Happens When Something Goes Wrong?</h2>
+
+    <p>Payments problems are urgent. When a merchant's deposit doesn't arrive, or a transaction is declined incorrectly, or a chargeback is filed, the clock is ticking. Your merchant isn't going to wait 48 hours for an email response from a support queue.</p>
+
+    <p>Ask about support SLAs — not the marketing version, the contractual version. What is the guaranteed response time for critical issues? Is there a dedicated support contact for your integration, or are you in the general queue? Can your team access the provider's internal tools to troubleshoot, or do you have to relay everything through their support team?</p>
+
+    <p>The best providers give you direct access to a dashboard where your team can investigate deposit timing, transaction status, and chargeback details without opening a ticket. The worst ones make you a middleman between your merchants and their support team.</p>
+
+    <h2>6. How Mature Is the API and Developer Documentation?</h2>
+
+    <p>If your engineering team is going to build against this API for the next 3-5 years, the quality of the developer experience matters more than any feature on the marketing site.</p>
+
+    <p>Look at the documentation before the sales process, not after. Is it public? Is it complete? Are there working code examples in your stack? Is there a sandbox environment you can test against without signing a contract? How frequently does the API change, and how much notice do they give before breaking changes?</p>
+
+    <p>Talk to other platforms who have integrated with this provider — not the references the sales team gives you, but platforms you find independently. Ask them about the integration timeline versus what was quoted, the quality of technical support during the build, and the stability of the API post-launch.</p>
+
+    <h2>7. What Are the Contract Terms That Will Hurt You Later?</h2>
+
+    <p>Five contract clauses that platforms consistently overlook:</p>
+
+    <ul>
+      <li><strong>Auto-renewal:</strong> Most agreements auto-renew for 2-3 years with a 90-day notice window. Miss the window and you're locked in at the original terms even if your volume has tripled.</li>
+      <li><strong>Volume commitments:</strong> Some providers require minimum processing volumes. If you don't hit them, the rate changes or penalties apply. Push back on these, especially if you're early-stage.</li>
+      <li><strong>Exclusivity:</strong> Some agreements require all merchants boarded through your platform to process exclusively with that provider. This limits your ability to offer merchant choice or add a second processor.</li>
+      <li><strong>Rate escalation:</strong> Check whether rates are fixed for the contract term or whether the provider can adjust them with notice. "With 30 days' notice" means your economics can change at any time.</li>
+      <li><strong>Data ownership:</strong> Who owns the transaction data and merchant information after termination? If the provider retains it, they retain leverage.</li>
+    </ul>
+
+    <p>None of these are deal-breakers on their own. All of them are negotiable. But you have to know they're there to negotiate them.</p>
+
+    <h2>8. Does This Provider's Roadmap Align with Yours?</h2>
+
+    <p>The payments landscape is evolving. Real-time payments, A2A (account-to-account) transfers, embedded lending, and card issuing are all becoming part of the embedded finance stack. Your provider today might not have the capabilities you need in two years.</p>
+
+    <p>Ask about their product roadmap. Not the slide deck version — the real version. Are they investing in the capabilities that matter for your vertical? Do they have a track record of shipping what they promise? Are they building for platforms like yours, or are you a secondary use case for a provider that primarily serves enterprise merchants?</p>
+
+    <p>A provider that is perfectly adequate today but has no roadmap alignment with your needs will become the provider you're migrating away from in 24 months — and by then, the migration cost is real.</p>
+
+    <h2>The Evaluation That Matters</h2>
+
+    <p>Rate comparisons are necessary but insufficient. The providers who quote the best rate are often the ones who make it up in hidden fees, restrictive contracts, or poor support. The providers with slightly higher rates but better APIs, clearer migration paths, and genuine support infrastructure are almost always the better long-term partners.</p>
+
+    <blockquote class="pull-quote">The best payments partnerships are the ones where the economics improve as you grow. The worst ones are the ones where the contract prevents you from capturing that improvement.</blockquote>
+
+    <p>If you're evaluating providers and want an independent assessment of proposals you've received, that's one of the most common use cases for a <a href="/advisory">Margin Labs Quick Start Call</a>. We review processor proposals, identify the contract terms that matter, and help you compare options without vendor bias.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Have proposals on your desk?</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call reviews the proposals you've received, identifies the contract terms that matter, and helps you compare options — without vendor bias.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Book a Quick Start Call →</a>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
