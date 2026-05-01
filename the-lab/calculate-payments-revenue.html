@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Calculate Your Embedded Payments Revenue | Margin Labs</title>
+<meta name="description" content="A step-by-step framework for modeling what your payment volume is actually worth under each monetization model — the same approach used in advisory engagements.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/calculate-payments-revenue">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="How to Calculate Your Embedded Payments Revenue | Margin Labs">
+<meta property="og:description" content="A step-by-step framework for modeling what your payment volume is actually worth under each monetization model — the same approach used in advisory engagements.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/calculate-payments-revenue">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .calc-block { background: var(--bg4, #1a1a1a); border-left: 2px solid var(--copper); padding: 20px 24px; margin: 24px 0 32px; font-family: var(--mono, 'DM Mono', monospace); font-size: 13px; color: var(--dim); line-height: 1.8; }
+  .calc-block .formula { color: var(--text); font-weight: 500; margin-bottom: 8px; }
+  .calc-block .example { color: var(--dimmer); font-size: 12px; }
+  .model-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .model-table th { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); padding: 8px 12px; border-bottom: 1px solid rgba(200,130,60,0.2); text-align: left; }
+  .model-table td { padding: 10px 12px; border-bottom: 1px solid rgba(240,235,228,0.06); color: var(--dim); }
+  .model-table tr:last-child td { border-bottom: none; }
+  .model-table td:first-child { color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">How to Calculate Your Embedded Payments Revenue Opportunity</h1>
+  <div class="article-meta">
+    <span>May 2026</span>
+    <span>8 min read</span>
+  </div>
+  <div class="article-body">
+    <p>The most common gap in payments strategy conversations is this: the team hasn't modeled the actual revenue opportunity. Not a vendor's projection. Not a back-of-napkin estimate. An actual model that accounts for merchant count, average volume, realistic activation rates, and the net economics of each approach.</p>
+
+    <p>Without this model, every other decision is downstream of a guess. You can't evaluate processor proposals, you can't justify implementation investment, and you can't set internal targets that mean anything.</p>
+
+    <p>This article walks through the framework. The same inputs. The same math.</p>
+
+    <h2>Step 1: Start with Gross Merchant Volume</h2>
+
+    <p>Everything in payments economics starts with volume. Not revenue. Not merchant count. Gross payment volume — the total dollar amount your merchants process through or alongside your platform.</p>
+
+    <div class="calc-block">
+      <div class="formula">Total merchants × Average monthly volume × 12 = Annual GMV</div>
+      <div class="example">Example: 250 merchants × $120,000/month = $30M annual GMV</div>
+    </div>
+
+    <p>If you don't know average monthly volume, estimate from your vertical's benchmarks. A single-location restaurant processes $30K–$80K/month. A field service company processes $15K–$50K/month. A property management company processes $50K–$200K/month. Use the midpoint and refine with real data later.</p>
+
+    <h2>Step 2: Apply Your Activation Rate</h2>
+
+    <p>Not every merchant will use your embedded payments. Some have a processor they're happy with. Some won't switch until you give them a compelling reason. Realistic activation rates by model:</p>
+
+    <table class="model-table">
+      <thead>
+        <tr><th>Model</th><th>Year 1</th><th>At Maturity</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ISV Referral (bundled with onboarding)</td><td>40–60%</td><td>60–75%</td></tr>
+        <tr><td>PayFac-as-a-Service (separate boarding)</td><td>25–40%</td><td>50–65%</td></tr>
+        <tr><td>Full PayFac (required for core workflow)</td><td>70–90%</td><td>80–95%</td></tr>
+      </tbody>
+    </table>
+
+    <p>If you're pre-launch, use 30% for year one and 50% for year two. Conservative, but grounded in what platforms typically see across verticals.</p>
+
+    <div class="calc-block">
+      <div class="formula">Active GMV = Total GMV × Activation Rate</div>
+      <div class="example">Example: $30M × 30% = $9M active GMV in year one</div>
+    </div>
+
+    <h2>Step 3: Model Revenue Under Each Approach</h2>
+
+    <p>Apply the net take rate for each model to your active GMV. Using our $9M year-one example:</p>
+
+    <table class="model-table">
+      <thead>
+        <tr><th>Model</th><th>Net Take Rate</th><th>Year 1 ($9M active)</th><th>Year 2 ($15M active)</th><th>Year 3 ($20.7M active)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ISV Referral</td><td>15 bps</td><td>$13,500</td><td>$22,500</td><td>$31,050</td></tr>
+        <tr><td>Enhanced Residuals</td><td>30 bps</td><td>$27,000</td><td>$45,000</td><td>$62,100</td></tr>
+        <tr><td>PayFac-as-a-Service</td><td>60 bps</td><td>$54,000</td><td>$90,000</td><td>$124,200</td></tr>
+        <tr><td>Full PayFac</td><td>80 bps</td><td>$72,000</td><td>$120,000</td><td>$165,600</td></tr>
+      </tbody>
+    </table>
+
+    <p>Year three assumes 60% activation and 15% organic merchant growth. The compounding effect of activation growth plus merchant growth is the most underappreciated dynamic in payments monetization.</p>
+
+    <h2>Step 4: Subtract Operating Costs</h2>
+
+    <p>Revenue is only half the equation. Each model carries operating costs that don't appear in the vendor pitch deck:</p>
+
+    <ul>
+      <li><strong>ISV Referral:</strong> Near zero. The processor carries everything. Your only cost is engineering time to maintain the integration.</li>
+      <li><strong>Enhanced Residuals:</strong> Minimal. Light merchant support responsibility, some compliance overhead. Budget $15K–$30K annually.</li>
+      <li><strong>PayFac-as-a-Service:</strong> Meaningful. Merchant support (0.5–1.0 FTEs), compliance ($5K–$15K/year), chargeback tooling ($3K–$10K/year), integration maintenance. Budget $60K–$120K annually depending on merchant count.</li>
+      <li><strong>Full PayFac:</strong> Significant. Dedicated compliance and risk staff, sponsor bank fees, network reporting, reserve management. Budget $150K–$300K annually as a baseline.</li>
+    </ul>
+
+    <p>This is why model transition thresholds matter. PayFac-as-a-Service costs $60K+ to operate. If your gross payment revenue under that model is $54K in year one, you're losing money. At $90K in year two, you're marginally profitable. At $124K in year three, the economics are clear. The crossover point — where PFaaS net revenue exceeds ISV Referral net revenue after operating costs — typically falls between $40M and $70M in total GMV, depending on activation rates.</p>
+
+    <h2>Step 5: Calculate the Opportunity Cost</h2>
+
+    <p>The number that should drive urgency isn't what you're earning. It's what you're not earning.</p>
+
+    <blockquote class="pull-quote">If you're in ISV Referral at 15 bps with $15M in active volume, you're earning $22,500. Under PayFac-as-a-Service at 60 bps on the same volume, you'd earn $90,000. The annual gap is $67,500 — growing every year.</blockquote>
+
+    <p>Over three years, assuming modest growth, that cumulative gap is typically $200K–$500K. That's capital that funds product development, sales hires, or market expansion. It's not abstract. It's real money you're choosing not to capture.</p>
+
+    <h2>What the Model Doesn't Tell You</h2>
+
+    <p>Revenue modeling is necessary but not sufficient for making the decision. The model doesn't capture:</p>
+
+    <ul>
+      <li><strong>Implementation timeline.</strong> A PayFac-as-a-Service integration takes 3–6 months of engineering time. What else could that team be building?</li>
+      <li><strong>Merchant churn risk during migration.</strong> Moving from referral to PFaaS means re-boarding merchants. Some percentage will use the transition as a reason to evaluate alternatives.</li>
+      <li><strong>Strategic value beyond revenue.</strong> Owning the payment experience creates data advantages, merchant stickiness, and competitive moats that don't show up in a revenue model but matter enormously at exit.</li>
+    </ul>
+
+    <p>The model gives you the math. The strategy gives you the decision. Both are necessary.</p>
+
+    <p>The <a href="/margin-multiplier.html">Margin Multiplier</a> runs this calculation in about 60 seconds — enter your merchant count, average volume, and current take rate and it shows you the revenue under all four models side by side. If you want to work through the operating cost and transition timing questions, that's what the <a href="/advisory">advisory engagement</a> is built for.</p>
+
+    <p>Related: <a href="/the-lab/how-to-read-a-payments-pl">How to Read a Payments P&L</a> — once you've modeled the opportunity, this is the framework for tracking whether you're capturing it.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
