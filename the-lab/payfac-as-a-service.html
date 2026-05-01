@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayFac-as-a-Service: What It Is and When It Makes Sense | Margin Labs</title>
+<meta name="description" content="PayFac-as-a-Service gives platforms PayFac-level economics without building compliance infrastructure. Here's how it works, what it costs, and when it's the right move.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/payfac-as-a-service">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="PayFac-as-a-Service: What It Is and When It Makes Sense | Margin Labs">
+<meta property="og:description" content="PayFac-as-a-Service gives platforms PayFac-level economics without building compliance infrastructure. Here's how it works, what it costs, and when it's the right move.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/payfac-as-a-service">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .economics-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; font-size: 14px; }
+  .economics-table th { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); padding: 8px 12px; border-bottom: 1px solid rgba(200,130,60,0.2); text-align: left; }
+  .economics-table td { padding: 10px 12px; border-bottom: 1px solid rgba(240,235,228,0.06); color: var(--dim); vertical-align: top; }
+  .economics-table tr:last-child td { border-bottom: none; }
+  .economics-table td:first-child { color: var(--text); font-weight: 400; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">PayFac-as-a-Service: What It Is, What It Costs, and When It Makes Sense</h1>
+  <div class="article-meta">
+    <span>April 2026</span>
+    <span>9 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Payment Facilitation as a Service — also called Managed PayFac, PayFac Lite, or Embedded PayFac — has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a Payment Facilitator without building the compliance and operational infrastructure yourself.</p>
+
+    <p>The model exists because there's a wide gap between the economics of ISV Referral (5–25 basis points) and the cost of becoming a full registered PayFac ($500K+ implementation, 12–18 months to launch, dedicated compliance staff). Most platforms fit somewhere in the middle — they've outgrown referral economics but can't justify the investment of full facilitation. PayFac-as-a-Service fills that gap.</p>
+
+    <h2>How It Works</h2>
+
+    <p>In a PayFac-as-a-Service arrangement, a registered Payment Facilitator provides the infrastructure — sponsor bank relationships, card network registrations, compliance frameworks, settlement systems — and you operate as a sub-facilitator or managed partner under their umbrella.</p>
+
+    <p>You handle merchant-facing operations: onboarding, pricing, first-line support, and in some cases, underwriting decisions within pre-approved parameters. The PFaaS provider handles the regulatory layer: network reporting, reserve calculations, compliance monitoring, and the relationship with the acquiring bank.</p>
+
+    <p>Merchants are boarded as your sub-merchants. You set the rate. You collect the spread between what you charge and what you pay the provider. The provider earns their margin from the processing cost you pay them — typically interchange plus 10 to 20 basis points, depending on volume and risk profile.</p>
+
+    <h2>The Economics</h2>
+
+    <p>PFaaS economics sit between ISV Referral and full PayFac:</p>
+
+    <table class="economics-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Net Take Rate</th>
+          <th>On $50M Volume</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ISV Referral</td>
+          <td>5–25 bps</td>
+          <td>$25K–$125K/yr</td>
+        </tr>
+        <tr>
+          <td>PayFac-as-a-Service</td>
+          <td>25–70 bps</td>
+          <td>$125K–$350K/yr</td>
+        </tr>
+        <tr>
+          <td>Full PayFac</td>
+          <td>50–100+ bps</td>
+          <td>$250K–$500K+/yr</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>On $50 million in annual merchant volume, the difference between referral at 15 bps ($75K) and PFaaS at 50 bps ($250K) is $175K per year. That gap grows with every merchant you add.</p>
+
+    <p>Implementation costs for PFaaS typically range from $50K to $200K, depending on the provider, your integration complexity, and whether you need custom boarding flows or can use their standard tools. Time to launch is 2 to 6 months — significantly faster than the 12–18 months for full registration.</p>
+
+    <h2>What You're Taking On</h2>
+
+    <p>PFaaS isn't a referral program with better economics. You're taking on real operational responsibility.</p>
+
+    <p><strong>Merchant onboarding.</strong> You manage the boarding experience, collect merchant information, and in many cases make preliminary underwriting decisions. The PFaaS provider approves or flags merchants based on risk criteria, but the merchant experience is yours.</p>
+
+    <p><strong>First-line support.</strong> When a merchant has a question about their deposit, a chargeback notification, or a rate inquiry, they come to you. You'll need internal tooling or access to the provider's dashboard to handle these.</p>
+
+    <p><strong>Pricing management.</strong> You set merchant rates. This means you need to understand interchange economics well enough to price profitably across different card types and transaction patterns. Getting this wrong is the most common source of margin compression in PFaaS programs.</p>
+
+    <p><strong>Chargeback response.</strong> You're the first responder for disputes. In most PFaaS arrangements, you have a window — typically 5–7 days — to respond to chargebacks before they default. This requires process and tooling.</p>
+
+    <h2>What the Provider Handles</h2>
+
+    <p><strong>Card network registration and reporting.</strong> They maintain the PayFac registration with Visa, Mastercard, and other networks, and handle the quarterly and annual reporting requirements.</p>
+
+    <p><strong>Sponsor bank relationship.</strong> The acquiring bank relationship — which is the legal foundation for the entire processing chain — belongs to the provider. This is the single most complex and expensive element of becoming a PayFac, and it's what you're outsourcing.</p>
+
+    <p><strong>Compliance framework.</strong> PCI compliance, AML monitoring, OFAC screening, and suspicious activity reporting are handled by the provider's compliance infrastructure. You feed data into it; they manage the regulatory obligation.</p>
+
+    <p><strong>Settlement and funding.</strong> The provider manages the settlement cycle, holds reserves where required, and distributes funds to merchants according to the agreed schedule.</p>
+
+    <h2>When PFaaS Makes Sense</h2>
+
+    <p>The model fits a specific profile:</p>
+
+    <ul>
+      <li>Annual merchant volume between $30M and $200M</li>
+      <li>150 to 1,000+ merchants processing</li>
+      <li>At least one person (internal or contracted) who understands payment operations</li>
+      <li>You've been in ISV Referral and the economics no longer justify the simplicity</li>
+      <li>Full PayFac registration isn't justified by your volume or timeline</li>
+    </ul>
+
+    <p>PFaaS does not make sense if your volume is under $20M — the operational overhead isn't worth the incremental revenue over referral. And if you're above $200M and growing fast, the economics of full PayFac registration likely justify the investment at that scale.</p>
+
+    <h2>Managed PayFac vs. Full PayFac: The Real Difference</h2>
+
+    <p>The question isn't which is better. It's which matches your scale and trajectory.</p>
+
+    <p>Full PayFac gives you maximum economics and maximum control. But it requires a sponsor bank relationship (which takes 6–12 months to secure), card network registration ($50K+ in fees), dedicated compliance staff, and ongoing regulatory obligations that don't scale down if your volume dips.</p>
+
+    <p>PFaaS gives you 60–80% of the economics at 20–30% of the cost and complexity. For most platforms between $30M and $200M in volume, that trade-off is correct.</p>
+
+    <p>The transition from PFaaS to full PayFac is possible but nontrivial. It typically involves migrating your merchant portfolio to a new processing infrastructure, securing your own sponsor bank, and building the compliance and reporting systems the PFaaS provider was handling. Plan for 12–18 months.</p>
+
+    <blockquote class="pull-quote">PFaaS is the right model when referral economics feel like leaving money on the table, but full PayFac feels like building a payments company instead of a software company.</blockquote>
+
+    <p>If you're evaluating the transition from referral to PFaaS, start with the <a href="/margin-multiplier.html">Margin Multiplier</a> to model the revenue difference. If you want to think through the operational readiness and provider selection questions, that's what the <a href="/advisory">advisory engagement</a> is built for.</p>
+
+    <p>Related: <a href="/the-lab/isv-referral-vs-payfac-lite">ISV Referral vs. PayFac-as-a-Service: How to Choose</a> — a side-by-side comparison of the two most common transition points.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
