@@ -118,7 +118,7 @@
 
     <p class="cost-label">Implementation Costs</p>
 
-    <p>An ISV referral arrangement has minimal implementation cost — typically $5,000 to $15,000 for basic integration work, legal review of the referral agreement, and merchant communication. You're not building payment infrastructure; you're connecting merchants to a partner's infrastructure.</p>
+    <p>An ISV referral arrangement has minimal implementation cost — typically $5,000 to $15,000 for basic integration work, legal review of the referral agreement, and merchant communication. You're not building payment infrastructure; you're connecting merchants to a partner's infrastructure. Processors like Fiserv, Global Payments, and Worldpay all have standard ISV referral programs with well-documented APIs.</p>
 
     <p class="cost-label">Ongoing Costs</p>
 
@@ -146,6 +146,11 @@
 
     <p>In a gateway model, the processor spread is your primary negotiating lever. Passthrough costs aren't negotiable (they're set by Visa and Mastercard). Gateway transaction fees have some flexibility but less than the spread. If your volume has grown meaningfully since you signed your agreement, you should be renegotiating.</p>
 
+    <div style="background:var(--bg4,#1a1a1a);border-left:2px solid var(--copper);padding:20px 24px;margin:32px 0;">
+      <p style="font-size:14px;font-weight:400;color:var(--text);margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
+      <p style="font-size:13px;color:var(--dim);margin:0;">The <a href="/margin-multiplier.html" style="color:var(--copper-lt);">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="/advisory" style="color:var(--copper-lt);">start a conversation</a> about what this means for your specific situation.</p>
+    </div>
+
     <h2>Model 3: PayFac-Lite (Sponsored PayFac)</h2>
 
     <p class="cost-label">Implementation Costs: $50,000–$200,000</p>
@@ -168,7 +173,7 @@
 
     <p class="cost-label">What's Negotiable</p>
 
-    <p>The economics split between you and the PayFac-as-a-Service provider is negotiable — and your negotiating leverage increases with volume. If you're bringing $20M+ in volume to a provider, you should be negotiating for a more favorable split than their standard terms. The major providers — Finix, Payrix, Payroc — all have pricing flexibility at meaningful volume levels.</p>
+    <p>The economics split between you and the PayFac-as-a-Service provider is negotiable — and your negotiating leverage increases with volume. If you're bringing $20M+ in volume to a provider, you should be negotiating for a more favorable split than their standard terms. Stripe Connect charges 0.25% + $0.25 per transaction on top of standard processing fees — a known quantity but less negotiable. PFaaS providers like Finix and Tilled typically charge interchange plus 10–20 bps, with pricing flexibility at meaningful volume levels. Payrix offers similar flexibility.</p>
 
     <h2>Model 4: Direct PayFac</h2>
 

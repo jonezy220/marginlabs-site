@@ -107,7 +107,7 @@
 
     <p>Every provider will quote you a rate. Interchange-plus pricing, flat rate, or a blended rate — the headline number is designed to be comparable. It's also designed to be incomplete.</p>
 
-    <p>The full cost stack includes interchange (non-negotiable, set by card networks), the processor markup above interchange, per-transaction fees, monthly platform fees, PCI compliance fees, chargeback fees, batch settlement fees, and sometimes gateway fees on top of processing fees. Some providers bundle these. Others itemize them. The ones who bundle are usually hiding the most margin.</p>
+    <p>The full cost stack includes interchange (non-negotiable, set by card networks), the processor markup above interchange, per-transaction fees, monthly platform fees, PCI compliance fees, chargeback fees, batch settlement fees, and sometimes gateway fees on top of processing fees. Stripe Connect, for example, charges a platform fee on top of standard processing. Adyen for Platforms bundles differently than Finix or Tilled. Traditional processors like Fiserv and Global Payments itemize more aggressively. Some providers bundle these. Others itemize them. The ones who bundle are usually hiding the most margin.</p>
 
     <p>Ask for a complete cost breakdown on a sample month of transactions — not a rate card. Provide your actual merchant mix (average ticket size, card-present vs. card-not-present, debit vs. credit split) and ask them to model the effective cost. If they won't do this, they know the answer isn't favorable.</p>
 
@@ -121,7 +121,7 @@
 
     <h2>3. What Does the Migration Path Look Like?</h2>
 
-    <p>Your payments strategy will evolve. You might start in ISV Referral and move to PayFac Lite. You might outgrow a managed PayFac provider and want to register directly. You might simply want to switch processors because the economics no longer work.</p>
+    <p>Your payments strategy will evolve. You might start in ISV Referral with Fiserv or Global Payments and move to PayFac-as-a-Service through Finix, Tilled, or Payrix. You might outgrow a managed PayFac provider and want to register directly. You might simply want to switch processors because the economics no longer work.</p>
 
     <p>Before you sign, understand what migration looks like. Some providers make it straightforward — they'll export your merchant portfolio, provide a transition timeline, and cooperate with the receiving processor. Others make it deliberately painful. Merchant data is locked, re-boarding is required from scratch, and the contractual exit terms include volume commitments or early termination fees that make switching economically irrational.</p>
 
@@ -135,6 +135,11 @@
 
     <p>The providers with the best boarding experiences have invested in pre-fill, real-time verification, and instant approval for low-risk merchants. The ones with the worst experiences are the ones that built compliance-first and never came back to fix the UX.</p>
 
+    <div style="background:var(--bg4,#1a1a1a);border-left:2px solid var(--copper);padding:20px 24px;margin:32px 0;">
+      <p style="font-size:14px;font-weight:400;color:var(--text);margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
+      <p style="font-size:13px;color:var(--dim);margin:0;">The <a href="/margin-multiplier.html" style="color:var(--copper-lt);">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="/advisory" style="color:var(--copper-lt);">start a conversation</a> about what this means for your specific situation.</p>
+    </div>
+
     <h2>5. What Happens When Something Goes Wrong?</h2>
 
     <p>Payments problems are urgent. When a merchant's deposit doesn't arrive, or a transaction is declined incorrectly, or a chargeback is filed, the clock is ticking. Your merchant isn't going to wait 48 hours for an email response from a support queue.</p>
@@ -145,7 +150,7 @@
 
     <h2>6. How Mature Is the API and Developer Documentation?</h2>
 
-    <p>If your engineering team is going to build against this API for the next 3-5 years, the quality of the developer experience matters more than any feature on the marketing site.</p>
+    <p>If your engineering team is going to build against this API for the next 3-5 years, the quality of the developer experience matters more than any feature on the marketing site. Stripe Connect and Adyen for Platforms are widely regarded for developer documentation; newer PFaaS providers like Finix and Tilled have invested heavily in catching up. Enterprise gateways like FreedomPay tend to have more complex integration requirements.</p>
 
     <p>Look at the documentation before the sales process, not after. Is it public? Is it complete? Are there working code examples in your stack? Is there a sandbox environment you can test against without signing a contract? How frequently does the API change, and how much notice do they give before breaking changes?</p>
 

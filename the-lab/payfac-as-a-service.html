@@ -107,11 +107,11 @@
 
     <h2>How It Works</h2>
 
-    <p>In a PayFac-as-a-Service arrangement, a registered Payment Facilitator provides the infrastructure — sponsor bank relationships, card network registrations, compliance frameworks, settlement systems — and you operate as a sub-facilitator or managed partner under their umbrella.</p>
+    <p>In a PayFac-as-a-Service arrangement, a registered Payment Facilitator — providers like Stripe Connect, Finix, Tilled, or Payrix — provides the infrastructure: sponsor bank relationships, card network registrations, compliance frameworks, settlement systems. You operate as a sub-facilitator or managed partner under their umbrella. Adyen for Platforms offers a similar outcome through a different architecture, combining processing and facilitation under one roof.</p>
 
     <p>You handle merchant-facing operations: onboarding, pricing, first-line support, and in some cases, underwriting decisions within pre-approved parameters. The PFaaS provider handles the regulatory layer: network reporting, reserve calculations, compliance monitoring, and the relationship with the acquiring bank.</p>
 
-    <p>Merchants are boarded as your sub-merchants. You set the rate. You collect the spread between what you charge and what you pay the provider. The provider earns their margin from the processing cost you pay them — typically interchange plus 10 to 20 basis points, depending on volume and risk profile.</p>
+    <p>Merchants are boarded as your sub-merchants. You set the rate. You collect the spread between what you charge and what you pay the provider. The provider earns their margin from the processing cost you pay them — typically interchange plus 10 to 20 basis points, depending on volume and risk profile. Stripe Connect charges differently (a per-transaction platform fee of 0.25% + $0.25 on top of standard processing), while Finix and Tilled price on an interchange-plus model that can be more economical at scale.</p>
 
     <h2>The Economics</h2>
 
@@ -146,7 +146,7 @@
 
     <p>On $50 million in annual merchant volume, the difference between referral at 15 bps ($75K) and PFaaS at 50 bps ($250K) is $175K per year. That gap grows with every merchant you add.</p>
 
-    <p>Implementation costs for PFaaS typically range from $50K to $200K, depending on the provider, your integration complexity, and whether you need custom boarding flows or can use their standard tools. Time to launch is 2 to 6 months — significantly faster than the 12–18 months for full registration.</p>
+    <p>Implementation costs for PFaaS typically range from $50K to $200K, depending on the provider, your integration complexity, and whether you need custom boarding flows or can use their standard tools. Stripe Connect sits at the lower end for time-to-market; Finix and Payrix offer more white-label control but longer integration timelines. Time to launch is 2 to 6 months — significantly faster than the 12–18 months for full registration.</p>
 
     <h2>What You're Taking On</h2>
 
@@ -169,6 +169,11 @@
     <p><strong>Compliance framework.</strong> PCI compliance, AML monitoring, OFAC screening, and suspicious activity reporting are handled by the provider's compliance infrastructure. You feed data into it; they manage the regulatory obligation.</p>
 
     <p><strong>Settlement and funding.</strong> The provider manages the settlement cycle, holds reserves where required, and distributes funds to merchants according to the agreed schedule.</p>
+
+    <div style="background:var(--bg4,#1a1a1a);border-left:2px solid var(--copper);padding:20px 24px;margin:32px 0;">
+      <p style="font-size:14px;font-weight:400;color:var(--text);margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
+      <p style="font-size:13px;color:var(--dim);margin:0;">The <a href="/margin-multiplier.html" style="color:var(--copper-lt);">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="/advisory" style="color:var(--copper-lt);">start a conversation</a> about what this means for your specific situation.</p>
+    </div>
 
     <h2>When PFaaS Makes Sense</h2>
 
