@@ -1,0 +1,201 @@
+<!-- ML-LAB-015 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chargeback Management for Software Platforms | Margin Labs</title>
+<meta name="description" content="Chargebacks are manageable if you build the right process. Here's what software platforms need to know about disputes, thresholds, and program health.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Chargeback Management for Software Platforms | Margin Labs">
+<meta property="og:description" content="Chargebacks are manageable if you build the right process before you need it. Here's what software platforms need to know about disputes, thresholds, and keeping your program healthy.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .threshold-block { background: var(--bg4, #1a1a1a); border-left: 2px solid var(--copper); padding: 20px 24px; margin: 24px 0 32px; }
+  .threshold-block .threshold-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin-bottom: 10px; }
+  .threshold-block p { font-size: 14px; color: var(--dim); line-height: 1.65; margin: 0 0 6px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Chargeback Management for Software Platforms</h1>
+  <div class="article-meta">
+    <span>May 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Chargebacks are the operational reality that most platforms discover after launching embedded payments — not before. Vendors don't lead with it. The integration docs gloss over it. And then a merchant calls about a disputed transaction and the team realizes there's no process for handling it.</p>
+
+    <p>Chargebacks are manageable. The platforms that stay healthy manage them proactively. The ones that run into problems treat them as exceptions until they become a systemic issue.</p>
+
+    <h2>What a Chargeback Actually Is</h2>
+
+    <p>A chargeback is a payment reversal initiated by a cardholder's bank. The cardholder disputes a transaction — claiming it was unauthorized, the goods or services weren't delivered, or the merchant misrepresented the transaction — and the bank reverses the payment, debiting the merchant's account and crediting the cardholder.</p>
+
+    <p>As a platform operating embedded payments, you sit between the merchant and the processor. When a chargeback is filed against one of your merchants, you're the first-line responder. You have a limited window — typically 5 to 7 calendar days from notification — to submit evidence challenging the dispute. If you don't respond in time, the chargeback defaults in the cardholder's favor.</p>
+
+    <p>Beyond the financial loss on an individual dispute, chargebacks carry fees ($15–$35 per dispute, regardless of outcome) and accumulate toward network thresholds that can put your entire payments program at risk.</p>
+
+    <h2>The Thresholds That Matter</h2>
+
+    <p>Visa and Mastercard monitor chargeback ratios at the merchant and facilitator level. Exceeding their thresholds triggers monitoring programs that are expensive and difficult to exit.</p>
+
+    <div class="threshold-block">
+      <div class="threshold-label">Visa Chargeback Monitoring Program (VCMP)</div>
+      <p>Early Warning: 0.65% chargeback ratio or 75+ chargebacks in a month</p>
+      <p>Standard: 0.9% ratio or 100+ chargebacks — monitoring begins, monthly fines</p>
+      <p>Excessive: 1.8% ratio or 1,000+ chargebacks — higher fines, potential termination risk</p>
+    </div>
+
+    <div class="threshold-block">
+      <div class="threshold-label">Mastercard Excessive Chargeback Program (ECP)</div>
+      <p>Chargeback Monitored Merchant: 1.5% ratio and 100+ chargebacks</p>
+      <p>Excessive Chargeback Merchant: 3.0% ratio and 300+ chargebacks — significant fines</p>
+    </div>
+
+    <p>In a PayFac-as-a-Service or full PayFac model, your aggregate chargeback ratio across all sub-merchants is what the networks monitor — not individual merchant ratios in isolation. A single high-risk merchant with an elevated chargeback rate can push your program into monitoring territory if their volume is significant relative to your total. Underwriting quality and ongoing monitoring are your primary defenses.</p>
+
+    <h2>Building a Response Process</h2>
+
+    <p>The response process has three components: notification, evidence assembly, and submission.</p>
+
+    <p><strong>Notification.</strong> Your processor or PFaaS provider will notify you when a chargeback is filed. Confirm how — email, dashboard alert, API webhook — and make sure the right person sees it within 24 hours. The response window is short and the default is losing.</p>
+
+    <p><strong>Evidence assembly.</strong> What you submit depends on the chargeback reason code. For "unauthorized transaction" disputes, you need evidence the cardholder authorized the transaction: IP address, device fingerprint, billing address match, authentication records. For "goods not received" or "services not as described," you need delivery confirmation, service records, communications with the merchant's customer. Build templates for the most common reason codes in your vertical so responses can be assembled quickly.</p>
+
+    <p><strong>Submission.</strong> Most processors accept evidence through a dispute portal. Some require specific file formats and page limits. Know your processor's requirements before you need them — not when you're 48 hours from a deadline.</p>
+
+    <h2>Prevention Is Cheaper Than Response</h2>
+
+    <p>The best chargeback management is keeping the chargeback rate low in the first place. The most effective levers:</p>
+
+    <ul>
+      <li><strong>Clear merchant descriptors.</strong> The most common source of "unauthorized" chargebacks is a cardholder who doesn't recognize the transaction on their statement. The merchant's name as it appears on the cardholder's statement should match their DBA name and be recognizable. A cardholder who remembers paying "Riverside Plumbing" and sees "RVS PLB LLC" will sometimes dispute it. Simple to fix, often overlooked.</li>
+      <li><strong>Prompt refunds.</strong> A merchant who processes a refund quickly rarely generates a chargeback for the same transaction. Build refund capabilities into your platform so merchants can issue credits without going through a separate process. The chargeback fee ($15–$35) almost always exceeds the cost of the refund.</li>
+      <li><strong>Merchant screening.</strong> High-risk merchant categories — travel, event ticketing, subscriptions, digital goods — generate disproportionate chargeback volumes. Know which categories are in your merchant base and either apply tighter underwriting criteria or exclude categories that create risk you can't manage.</li>
+      <li><strong>Transaction velocity monitoring.</strong> Unusual transaction patterns — multiple charges in a short window, transactions far outside a merchant's normal ticket size, late-night processing spikes — often precede chargeback waves. Basic monitoring catches most of the obvious patterns.</li>
+    </ul>
+
+    <h2>Reserve Management</h2>
+
+    <p>Processors hold rolling reserves — typically 5–10% of monthly processing volume, released on a 90–180 day rolling schedule — as a buffer against chargeback losses. Reserves are normal and expected, especially for new programs.</p>
+
+    <p>As your program matures and your chargeback history builds, reserve requirements should decline. If your processor hasn't reduced reserves in line with your performance, that's a negotiation conversation worth having. Reserves are capital you're not deploying elsewhere.</p>
+
+    <blockquote class="pull-quote">The platforms that manage chargebacks well aren't the ones with the most sophisticated tooling. They're the ones who built a process before they needed it.</blockquote>
+
+    <p>Related: <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service</a> covers the operational responsibilities that come with the PFaaS model, including chargeback first-response obligations. For a full review of your payments operations posture, see the <a href="/advisory">advisory engagement</a>.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
+      <a href="/margin-multiplier.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
