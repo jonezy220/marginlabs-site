@@ -1,14 +1,15 @@
+<!-- DRAFT — DO NOT PUBLISH WITHOUT CHRIS APPROVAL -->
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Principal | Margin Labs</title>
-<meta name="description" content="A decade at the intersection of payments, fintech, and software. VP Product background across banking infrastructure, BaaS, and PE-backed vertical SaaS. The practice behind Margin Labs.">
+<title>Chris Jones — Principal | Margin Labs</title>
+<meta name="description" content="VP Product across TD Bank, FreedomPay, InComm Payments, and PE-backed vertical SaaS. Built payments programs processing billions in annual volume. 17 patents in payments and fintech.">
 <link rel="canonical" href="https://marginlabs.io/principal">
-<meta property="og:title" content="The Principal | Margin Labs">
-<meta property="og:description" content="A decade at the intersection of payments, fintech, and software. VP Product background across banking infrastructure, BaaS, and PE-backed vertical SaaS.">
+<meta property="og:title" content="Chris Jones — Principal | Margin Labs">
+<meta property="og:description" content="VP Product across TD Bank, FreedomPay, InComm Payments, and PE-backed vertical SaaS. Built payments programs processing billions in annual volume.">
 <meta property="og:url" content="https://marginlabs.io/principal">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
@@ -28,7 +29,6 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <style>
-  /* Principal-specific pull quote */
   .pull-quote {
     border-left: 3px solid var(--copper);
     padding: 20px 24px;
@@ -40,17 +40,9 @@
     line-height: 1.7;
     letter-spacing: -0.01em;
     font-style: italic;
-    transition: color 0.3s, background 0.3s;
   }
   [data-theme="dark"] .pull-quote { background: var(--bg5); }
-
-  /* Credential chips */
-  .credential-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 24px;
-  }
+  .credential-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px; }
   .credential-chip {
     background: transparent;
     border: 1px solid var(--border2);
@@ -63,34 +55,42 @@
     color: var(--dimmer);
     transition: border-color 0.2s, color 0.2s;
   }
-  .credential-chip:hover {
-    border-color: rgba(200,130,60,0.3);
-    color: var(--dim);
+  .credential-chip:hover { border-color: rgba(200,130,60,0.3); color: var(--dim); }
+  .principal-header { display: flex; align-items: flex-start; gap: 28px; margin-bottom: 32px; }
+  .principal-photo {
+    width: 120px; height: 120px; border-radius: 4px; object-fit: cover;
+    border: 1px solid rgba(200,130,60,0.2); flex-shrink: 0;
+  }
+  .principal-name { font-size: 28px; font-weight: 700; letter-spacing: -0.03em; color: var(--text); margin-bottom: 4px; }
+  .principal-title { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); margin-bottom: 12px; }
+  .principal-links { display: flex; gap: 16px; margin-top: 12px; }
+  .principal-links a {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+    color: var(--copper-lt); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s;
+  }
+  .principal-links a:hover { border-color: var(--copper-lt); }
+  .career-timeline { margin: 32px 0; border-left: 1px solid rgba(200,130,60,0.2); padding-left: 24px; }
+  .career-item { margin-bottom: 24px; position: relative; }
+  .career-item::before {
+    content: ''; position: absolute; left: -28px; top: 8px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--copper);
+  }
+  .career-company { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .career-role { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--dimmer); text-transform: uppercase; }
+  .career-desc { font-size: 14px; font-weight: 300; color: var(--dim); line-height: 1.6; margin-top: 6px; }
+  @media (max-width: 560px) {
+    .principal-header { flex-direction: column; align-items: center; text-align: center; }
+    .principal-links { justify-content: center; }
   }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ─────────────────────────────────────── -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <a href="/" class="nav-brand" aria-label="Margin Labs home">
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
-      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
-      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
-      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
-      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
-      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
-      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
-      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
-      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
-      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-    </svg>
-    <div class="wordmark">
-      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
-    </div>
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
   </a>
-
   <div class="nav-controls">
     <ul class="nav-links" role="list">
       <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
@@ -98,47 +98,56 @@
       <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
       <li><a href="/principal.html" style="color:var(--text)" data-analytics="nav-principal">Principal</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
 <div class="nav-mobile" id="mobileNav">
-  <ul>
-    <li><a href="/margin-multiplier.html" data-analytics="nav-multiplier">Margin Multiplier</a></li>
-    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
-    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
-    <li><a href="/principal.html" data-analytics="nav-principal">Principal</a></li>
-  </ul>
-
+  <ul><li><a href="/margin-multiplier.html">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal.html">Principal</a></li></ul>
 </div>
 
 <!-- ── PAGE HERO ───────────────────────────────── -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-hero-eyebrow">The Principal</div>
-    <h1>A decade inside the system.<br><strong>Working independently.</strong></h1>
-    <p>Payments expertise built from the inside — across banking infrastructure, banking-as-a-service, and product leadership at PE-backed vertical SaaS platforms through acquisition and growth-stage transformation.</p>
+    <div class="page-hero-eyebrow">Principal</div>
+    <h1>Built from the inside.<br><strong>Advising independently.</strong></h1>
   </div>
 </section>
 
-<!-- ── OPENING ─────────────────────────────────── -->
+<!-- ── BIO ─────────────────────────────────────── -->
 <section class="content-section">
   <div class="content-inner" style="max-width:720px">
-    <div class="content-eyebrow">Background</div>
+
+    <div class="principal-header">
+      <!-- TODO: Add headshot as /headshot.jpg -->
+      <img src="/headshot.jpg" alt="Chris Jones" class="principal-photo" onerror="this.style.display='none'">
+      <div>
+        <div class="principal-name">Chris Jones</div>
+        <div class="principal-title">Principal, Margin Labs</div>
+        <div class="principal-links">
+          <a href="https://linkedin.com/in/chrismjones7" target="_blank" rel="noopener">LinkedIn →</a>
+          <a href="mailto:chris@marginlabs.io">chris@marginlabs.io</a>
+        </div>
+      </div>
+    </div>
+
     <div class="content-body">
-      <p>We've spent a decade at the intersection of payments, fintech, and software — across SMB and enterprise banking infrastructure, banking-as-a-service platforms for underserved populations, and VP-level product leadership at PE-backed vertical SaaS companies through acquisition, integration, and growth-stage transformation. Prior work spans platforms processing billions in annual payment volume across healthcare, field services, legal, and adjacent verticals.</p>
+      <p>I spent my career inside the embedded payments system — building payments products at FreedomPay, launching real-time payments and Zelle at TD Bank, running a neobank portfolio at InComm, and leading product for a PE-backed vertical SaaS platform where embedded payments was the single largest revenue driver in the portfolio.</p>
+
+      <p>Across all of it, the same pattern repeated: platforms know payments is a revenue opportunity, but the advice available comes from people with a financial stake in which processor you choose. The guidance is good enough to get you started and bad enough to cost you millions over a five-year horizon.</p>
+
+      <p>Margin Labs exists because I got tired of watching platforms make decisions based on processor sales decks instead of independent analysis. I've sat on both sides — negotiating with Fiserv and FIS as a buyer, building connectivity into processors as a vendor, and running the P&L that lives or dies on the net take rate. That's the perspective I bring to every engagement.</p>
+
+      <p>The through-line across everything I've built: payments revenue follows product experience. You can choose the right model, negotiate the best spread, and sign the right processor — but none of it matters if merchants don't activate, transactions don't flow, and the product doesn't make payments feel like a natural part of the workflow. The platforms that win on payments win because product and payments are the same conversation, not two separate roadmaps.</p>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:28px 0;">
       <div style="background:var(--bg4);padding:20px 16px;text-align:center;">
-        <div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--copper);letter-spacing:-0.02em;">10+</div>
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dimmer);margin-top:6px;">Years in Payments</div>
+        <div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--copper);letter-spacing:-0.02em;">Billions</div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dimmer);margin-top:6px;">In Payment Volume</div>
       </div>
       <div style="background:var(--bg4);padding:20px 16px;text-align:center;">
-        <div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--copper);letter-spacing:-0.02em;">$5B+</div>
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dimmer);margin-top:6px;">Annual Volume Overseen</div>
+        <div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--copper);letter-spacing:-0.02em;">17</div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dimmer);margin-top:6px;">Granted Patents</div>
       </div>
       <div style="background:var(--bg4);padding:20px 16px;text-align:center;">
         <div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--copper);letter-spacing:-0.02em;">4</div>
@@ -147,67 +156,51 @@
     </div>
 
     <blockquote class="pull-quote">
-      "The through-line: payments only work when the people who are supposed to use them actually do. Every engagement at Margin Labs starts from that premise — and builds backwards through model selection, provider evaluation, onboarding design, and adoption strategy."
+      "I built the kind of firm I wished existed when I was on the platform side — independent advice that starts with your economics, not a processor's sales pitch."
     </blockquote>
 
-    <div class="content-body">
-      <p>Margin Labs was built on a simple observation: the best payments advice isn't coming from processors, ISOs, or vendors — because they all have a stack to sell. Independent advice, aligned with operator outcomes, is the gap.</p>
-    </div>
-
+    <!-- ── CREDENTIALS ─────────────────────────── -->
+    <div class="content-eyebrow" style="margin-top:40px;">Direct Experience Across</div>
     <div class="credential-list">
-      <div class="credential-chip">VP Product</div>
-      <div class="credential-chip">PE-backed SaaS</div>
-      <div class="credential-chip">Embedded Payments</div>
-      <div class="credential-chip">Banking Infrastructure</div>
-      <div class="credential-chip">BaaS</div>
-      <div class="credential-chip">PayFac Strategy</div>
-      <div class="credential-chip">Merchant Adoption</div>
-      <div class="credential-chip">Vendor Negotiations</div>
+      <div class="credential-chip">Stripe</div>
+      <div class="credential-chip">Fiserv</div>
+      <div class="credential-chip">FIS</div>
+      <div class="credential-chip">TSYS</div>
+      <div class="credential-chip">Visa</div>
+      <div class="credential-chip">TD Bank</div>
+      <div class="credential-chip">FreedomPay</div>
+      <div class="credential-chip">InComm</div>
+      <div class="credential-chip">Togetherwork</div>
+      <div class="credential-chip">Mastercard</div>
+      <div class="credential-chip">Amex</div>
+      <div class="credential-chip">Zelle</div>
+      <div class="credential-chip">Real-Time Payments</div>
       <div class="credential-chip">ISV Referral</div>
-      <div class="credential-chip">PFaaS</div>
-      <div class="credential-chip">Money Movement</div>
-      <div class="credential-chip">Acquisition Integration</div>
-      <div class="credential-chip">10+ Years</div>
+      <div class="credential-chip">PayFac-as-a-Service</div>
+      <div class="credential-chip">BaaS</div>
+      <div class="credential-chip">PCI Compliance</div>
+      <div class="credential-chip">Processor Negotiations</div>
+      <div class="credential-chip">PE Portfolio Ops</div>
     </div>
   </div>
 </section>
 
-<!-- ── WHAT WE BELIEVE ─────────────────────────── -->
+<!-- ── WHAT I BELIEVE ─────────────────────────── -->
 <section class="content-section">
   <div class="content-inner">
-    <div class="content-eyebrow">What We Believe</div>
+    <div class="content-eyebrow">What I Believe</div>
     <h2 class="content-h2">The operating principles behind every engagement.</h2>
     <ul class="belief-list" role="list">
-      <li class="belief-item">Payments adoption is a product problem, not a sales problem.</li>
-      <li class="belief-item">Most platforms choose their monetization model too early and change it too late.</li>
-      <li class="belief-item">The gap between Model 1 and Model 3 is usually 3× revenue. The implementation gap is rarely as large as people think.</li>
-      <li class="belief-item">A payments program that 60% of merchants use is worth more than one that 20% use at twice the take rate.</li>
+      <li class="belief-item">Payments is a product problem. Product owns the strategy, the P&L, the activation rate, and the operating model. Get it right and you exceed Rule of 40. Get it wrong and you leave 3–5x revenue on the table indefinitely.</li>
+      <li class="belief-item">The difference between a well-run payments program and a neglected one can be the difference between a 3x and a 12x exit. Acquirers model payments revenue separately — and they pay a premium for platforms that have already built the machine.</li>
+      <li class="belief-item">Most platforms choose their monetization model too early and change it too late. The gap between ISV Referral and PayFac-as-a-Service is usually 3–5x revenue. The implementation gap is rarely as large as people think.</li>
+      <li class="belief-item">Merchant activation is the north star metric. A payments program that 60% of merchants use is worth more than one that 20% use at twice the take rate — and activation is a product problem, not a pricing problem.</li>
       <li class="belief-item">The best time to model your payments opportunity is before you've committed to a vendor. The second-best time is right now.</li>
     </ul>
   </div>
 </section>
 
-<!-- ── BUILT FROM THE INSIDE OUT ──────────────── -->
-<section class="content-section">
-  <div class="content-inner" style="max-width:720px">
-    <div class="content-eyebrow">Experience</div>
-    <h2 class="content-h2">Built from the inside out.</h2>
-    <div class="content-body">
-      <p>Margin Labs was built on experience that runs the full stack — from banking infrastructure and BaaS platform product management to embedded payments strategy and VP-level product leadership at PE-backed vertical SaaS companies.</p>
-      <p>That means understanding the problem from every angle: the operator who doesn't know where to start, the processor who has a stack to sell, the board that wants to see the revenue model, and the engineering team that has to build it.</p>
-    </div>
-
-    <ul class="belief-list" role="list" style="margin-top:20px;">
-      <li class="belief-item">Embedded payments strategy across ISV Referral, Enhanced Residuals, PayFac-as-a-Service, and Full PayFac models — including live implementations and migrations.</li>
-      <li class="belief-item">Merchant onboarding and activation design — the part most platforms get wrong. Adoption strategy, KYC flow design, and the UX decisions that determine whether 20% or 80% of merchants actually use the program.</li>
-      <li class="belief-item">Processor and vendor negotiations — not just model selection, but term sheet review, pricing benchmarks, and creating competitive tension during active evaluations.</li>
-      <li class="belief-item">PE-backed SaaS environments — growth-stage operators, acquisition integration, and board-level payments strategy presentations. This is where most of the buying decisions actually get made.</li>
-      <li class="belief-item">Banking-as-a-Service and banking infrastructure product management — including deposit products, card programs, and payment rails for underserved and underbanked market segments.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ── CONSULTING CTA ─────────────────────────── -->
+<!-- ── CTA ─────────────────────────────────────── -->
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:96px 24px;">
   <div style="max-width:640px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Work together</div>
@@ -217,20 +210,15 @@
   </div>
 </section>
 
-<!-- ── FOOTER ──────────────────────────────────── -->
 <footer class="site-footer">
-  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
-    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
-  </a>
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
   <div class="footer-copy">© 2026 Margin Labs LLC</div>
   <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
 </footer>
 
 <script src="/main.js"></script>
 <script>
-  function gaEvent(name, params) {
-    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
-  }
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-analytics]').forEach(function (el) {
       el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
