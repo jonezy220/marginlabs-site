@@ -1,17 +1,17 @@
-<!-- ML-LAB-006 -->
+<!-- ML-LAB-017 -->
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Facilitator vs. ISO: Which Model Fits Your Platform | Margin Labs</title>
-<meta name="description" content="ISO earns $5K-$25K on $10M volume. PayFac earns $30K-$90K. The economics, operational trade-offs, and migration path between the two most common embedded payments models.">
-<link rel="canonical" href="https://marginlabs.io/the-lab/payfac-vs-iso">
+<title>Merchant Onboarding for Embedded Payments | Margin Labs</title>
+<meta name="description" content="The boarding flow is where most payments programs lose merchants before they start. Here's how to design an onboarding experience that converts — and what to avoid.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Payment Facilitator vs. ISO: Which Model Fits Your Platform | Margin Labs">
-<meta property="og:description" content="ISO earns $5K-$25K on $10M volume. PayFac earns $30K-$90K. The economics, operational trade-offs, and migration path between the two most common embedded payments models.">
-<meta property="og:url" content="https://marginlabs.io/the-lab/payfac-vs-iso">
+<meta property="og:title" content="Merchant Onboarding for Embedded Payments | Margin Labs">
+<meta property="og:description" content="The boarding flow is where most payments programs lose merchants before they start. Here's how to design an onboarding experience that converts — and what to avoid.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
 <meta property="og:image:width" content="520">
@@ -42,7 +42,6 @@
   .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
   .article-body li { margin-bottom: 8px; }
   .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
-  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
 </style>
 </head>
 <body>
@@ -85,87 +84,86 @@
     <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
     <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
   </ul>
-
 </div>
 
 <!-- ── ARTICLE ─────────────────────────────────── -->
 <article class="article-wrap">
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
   <div class="article-eyebrow">The Lab</div>
-  <h1 class="article-title">Payment Facilitator vs. ISO: Which Model Fits Your Platform</h1>
+  <h1 class="article-title">Merchant Onboarding for Embedded Payments</h1>
   <div class="article-meta">
-    <span>April 2026</span>
+    <span>May 2026</span>
     <span>7 min read</span>
   </div>
   <div class="article-body">
-    <p>If you're a software company looking to monetize the payment volume flowing through your platform, you'll eventually encounter two terms: Payment Facilitator (PayFac) and Independent Sales Organization (ISO). Both are structures for participating in the economics of payment processing. But they work differently, carry different revenue potential, and suit different stages of business.</p>
+    <p>The boarding flow is where most embedded payments programs lose merchants before they start. The integration is live, the economics are sound, and the product team has moved on to the next feature — but 60% of merchants never complete the onboarding. They start, hit a friction point, and quietly abandon it.</p>
 
-    <p>Most of the content explaining these models is written by companies that sell one of the two. That's a problem, because the answer isn't which model is better — it's which model matches where you are right now and how much of the payment margin you're ready to capture.</p>
+    <p>Boarding conversion is the most underinvested part of a payments program. Most of the operational energy goes into the technical integration. Very little goes into the experience that determines whether merchants actually use it.</p>
 
-    <h2>What an ISO Actually Does</h2>
+    <h2>What Merchants Are Being Asked to Do</h2>
 
-    <p>An Independent Sales Organization is a registered entity that refers merchants to a payment processor. The ISO doesn't process payments itself. It acts as a distribution channel — finding merchants, boarding them onto a processor's platform, and earning a residual on the processing volume those merchants generate.</p>
+    <p>To board a merchant for embedded payments, you need to collect KYB (Know Your Business) and KYC (Know Your Customer) information sufficient for underwriting. At minimum:</p>
 
-    <p>For a software company, the ISO path usually takes the form of an ISV Referral program. You partner with a processor (Fiserv, Worldpay, Global Payments, or others), embed their payment acceptance into your product via APIs, and earn a revenue share on merchant volume. The processor handles underwriting, compliance, settlement, risk management, and merchant support.</p>
+    <ul>
+      <li>Legal business name and DBA</li>
+      <li>Business EIN or SSN (for sole proprietors)</li>
+      <li>Business address and phone</li>
+      <li>Business type and MCC category</li>
+      <li>Owner identity: name, date of birth, address, SSN last 4 (or full SSN for high-risk categories)</li>
+      <li>Bank account for settlement: routing and account number</li>
+    </ul>
 
-    <p>The economics are straightforward: you earn 5 to 25 basis points on gross volume, depending on the processor and your negotiating position. On $30 million in annual merchant volume, that's $15,000 to $75,000 per year. Essentially free money — you carry no operational burden and no risk exposure.</p>
+    <p>In some configurations, you also need a voided check or bank statement for account verification, and photo ID for identity confirmation. For certain business types or risk categories, additional documentation is required.</p>
 
-    <p>The trade-off is equally straightforward: you don't control the merchant experience, you don't own the merchant relationship in payments terms, and you're earning a fraction of the total margin on each transaction.</p>
+    <p>This is a significant ask. You're requesting sensitive financial and identity information from a small business owner who may not have all of it immediately available, may not understand why it's needed, and hasn't yet seen enough value from your payments program to feel the request is worth the friction.</p>
 
-    <h2>What a Payment Facilitator Does</h2>
+    <h2>The Progressive Disclosure Principle</h2>
 
-    <p>A Payment Facilitator is a registered entity that aggregates merchants under its own merchant ID. Instead of referring merchants to a processor, the PayFac boards merchants as sub-merchants, underwrites them (within parameters set by the acquiring bank and card networks), manages compliance, handles disputes, and processes payments on their behalf.</p>
+    <p>The single most effective design principle for boarding flows is progressive disclosure: collect only what you need to take the next step, not everything you'll eventually need up front.</p>
 
-    <p>The PayFac owns more of the stack — and earns more of the economics. Instead of collecting a residual, you set the merchant rate, buy processing at wholesale (interchange plus a processor spread), and keep the difference. Net margins typically range from 30 to 90+ basis points depending on volume, vertical, and how you've structured your pricing.</p>
+    <p>Most boarding flows fail because they present a single long form that asks for everything before the merchant can process a single transaction. The merchant sees 12 fields on screen, estimates the effort required, and abandons.</p>
 
-    <p>On that same $30 million in volume, PayFac economics produce $90,000 to $270,000 in annual net revenue. The ceiling is meaningfully higher.</p>
+    <p>A progressive flow breaks this into stages:</p>
 
-    <p>The trade-off: you're now responsible for merchant onboarding, KYC/AML compliance, transaction monitoring, reserve management, chargeback response, and regulatory reporting. You need staff — or a managed service provider — who understands payment operations. Implementation costs range from $50K for managed PayFac services to $500K+ for a full direct registration.</p>
+    <ol>
+      <li><strong>Stage 1: Enable.</strong> Collect business name, EIN, and bank account. This is enough to create a merchant record and run soft underwriting. The merchant can see their account is active and understand what they'll be able to do. Time to complete: 3–5 minutes.</li>
+      <li><strong>Stage 2: Verify.</strong> Collect owner identity information. Triggered when the merchant processes their first transaction or when their volume crosses a threshold. Framed as "complete verification to remove your processing limit." Time to complete: 2–3 minutes.</li>
+      <li><strong>Stage 3: Expand.</strong> Additional documentation for higher-risk categories or higher volume tiers. Only collected when the merchant actually needs it. Most merchants never reach this stage.</li>
+    </ol>
 
-    <h2>The Economic Comparison</h2>
+    <p>Progressive disclosure typically improves boarding completion rates by 30–50% over single-form approaches. The merchant experiences early success before encountering the most sensitive requests.</p>
 
-    <p>The math is simple but often ignored. Here's a side-by-side at three volume levels:</p>
+    <h2>Where Merchants Drop Off</h2>
 
-    <p>At $10M annual volume: ISO earns $5K–$25K. PayFac earns $30K–$90K.<br>
-    At $50M annual volume: ISO earns $25K–$125K. PayFac earns $150K–$450K.<br>
-    At $100M annual volume: ISO earns $50K–$250K. PayFac earns $300K–$900K.</p>
+    <p>Analyze your boarding funnel by step. The drop-off points are predictable:</p>
 
-    <p>The gap widens with every dollar of volume. At smaller scales, the ISO model is efficient — you're earning revenue with no operational cost. As volume grows, the opportunity cost of staying in ISO becomes the dominant factor.</p>
+    <p><strong>EIN entry.</strong> Many small business owners don't have their EIN memorized and don't know where to find it quickly. A link to the IRS EIN lookup tool, alongside a note that it's on their CP-575 letter or prior tax filing, reduces abandonment at this step significantly.</p>
 
-    <div style="background:var(--bg4,#1a1a1a);border-left:2px solid var(--copper);padding:20px 24px;margin:32px 0;">
-      <p style="font-size:14px;font-weight:400;color:var(--text);margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
-      <p style="font-size:13px;color:var(--dim);margin:0;">The <a href="/margin-multiplier" style="color:var(--copper-lt);">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="/advisory" style="color:var(--copper-lt);">start a conversation</a> about what this means for your specific situation.</p>
-    </div>
+    <p><strong>SSN or date of birth.</strong> The moment you ask for personally identifiable information, trust becomes a conversion factor. Explain why you need it ("required by federal law for identity verification"), where it's used ("not stored after verification"), and who's doing the verification ("our banking partner, not us"). Merchants who understand the request are far more likely to complete it.</p>
 
-    <h2>When to Choose the ISO / Referral Path</h2>
+    <p><strong>Bank account entry.</strong> Merchants are wary of entering routing and account numbers, especially before they trust the platform with their settlement. Micro-deposit verification (two small deposits that the merchant confirms) is slower but less fraught. Instant bank verification via Plaid is faster and has high acceptance rates for digital-native merchants.</p>
 
-    <p>The ISO model is right when your payments volume is under $30–50 million annually, you have fewer than 200 merchants processing, your team has no payments operations experience, or you're early enough in your product lifecycle that payments is a feature, not a business line.</p>
+    <p><strong>Document upload.</strong> If you require a voided check or photo ID, file upload is a friction point on mobile and a conversion killer for merchants who aren't at a computer. Make this step skippable when possible, with a follow-up email that catches it later.</p>
 
-    <p>It's also the right choice if your vertical carries elevated risk — high average ticket sizes, high chargeback rates, or regulatory complexity. In those cases, letting the processor carry the risk exposure is worth the economic trade-off.</p>
+    <h2>The Role of Context and Timing</h2>
 
-    <p>The ISO model lets you generate payments revenue in weeks rather than months, with minimal implementation cost and zero ongoing operational burden. For many platforms, this is the correct starting point.</p>
+    <p>When you surface the boarding flow matters as much as how you design it.</p>
 
-    <h2>When to Choose the PayFac Path</h2>
+    <p>The worst time to ask a merchant to board for payments is immediately after software onboarding, when they're still learning the core product. They haven't seen enough value to feel motivated to add another task.</p>
 
-    <p>PayFac economics become compelling when your annual merchant volume exceeds $50 million and is growing, you have 150+ merchants processing consistently, you can staff at least one person who understands payment operations (or you're willing to use a managed PayFac service), and the checkout and payment experience is core to your product differentiation.</p>
+    <p>The best time is at a natural workflow moment where the absence of payments creates friction: when they try to send an invoice and there's no payment link option, when they're setting up a new service that involves billing, or when they receive a report showing how much revenue they could be collecting through the platform.</p>
 
-    <p>The managed PayFac model — sometimes called PayFac-as-a-Service or PayFac Lite — has made this path accessible to platforms that previously couldn't afford or staff a full PayFac registration. You get most of the economics with a fraction of the operational burden.</p>
+    <p>Contextual prompts — surfaced at the right moment in the right workflow — convert at 2–3x the rate of standalone email campaigns promoting the payments feature.</p>
 
-    <h2>The Migration Question</h2>
+    <h2>Staffed Boarding as a Conversion Strategy</h2>
 
-    <p>Can you start as an ISO and move to PayFac later? Yes. Many platforms do. The transition involves re-boarding merchants under new agreements, which creates some operational friction and occasional churn. Plan for 3–6 months of migration work depending on merchant count.</p>
+    <p>For high-value merchants or verticals where the average merchant volume justifies the investment, staffed boarding drives the highest activation rates. A customer success rep who walks the merchant through the boarding flow over a 20-minute call — answering questions, handling document requests in real time — converts at 70–85% versus 25–35% for self-serve flows.</p>
 
-    <p>The smart approach: if you have any visibility into your volume trajectory, choose your initial ISO partner with future migration in mind. Some processors offer a clear path from referral to their own managed PayFac program. Others make migration deliberately difficult. Ask about the migration path before you sign your first referral agreement.</p>
+    <p>The economics work when the expected lifetime payments revenue from the merchant exceeds the cost of the call. At $150K/year in merchant volume and a 60 bps net take rate, that's $900/year in payments revenue per merchant. A 20-minute boarding call is worth the investment for any merchant above roughly $50K in annual volume.</p>
 
-    <h2>The Decision That Matters More Than the Model</h2>
+    <blockquote class="pull-quote">The onboarding flow is a product, not a compliance checklist. Design it for the merchant who has five minutes and a suspicious mind — not for the one who already trusts you.</blockquote>
 
-    <p>The most common mistake is treating ISO vs. PayFac as a permanent, binary choice rather than a stage-appropriate one. Companies get comfortable in referral programs, the residuals start to feel meaningful, and they stop evaluating whether they've crossed the threshold.</p>
-
-    <p>Run the math annually. The economics shift faster than most teams realize, especially in high-growth verticals where merchant count and average volume are both increasing.</p>
-
-    <blockquote class="pull-quote">The right model today should match where you are. The mistake is staying in it after you've outgrown it.</blockquote>
-
-    <p>The <a href="/margin-multiplier">Margin Multiplier</a> models revenue across all four embedded payments approaches — ISV Referral, Enhanced Residuals, PayFac Lite, and Full PayFac — in about 60 seconds. Start there if you want to see where you fall.</p>
+    <p>Related: <a href="/the-lab/why-merchants-dont-use-payments">Why Merchants Don't Use Embedded Payments</a> covers the structural activation challenges beyond onboarding. For operational design support — boarding flow review, activation strategy, or merchant support design — see the <a href="/advisory">advisory engagement</a>.</p>
   </div>
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
 </article>

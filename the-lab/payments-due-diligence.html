@@ -1,17 +1,17 @@
-<!-- ML-LAB-006 -->
+<!-- ML-LAB-016 -->
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Facilitator vs. ISO: Which Model Fits Your Platform | Margin Labs</title>
-<meta name="description" content="ISO earns $5K-$25K on $10M volume. PayFac earns $30K-$90K. The economics, operational trade-offs, and migration path between the two most common embedded payments models.">
-<link rel="canonical" href="https://marginlabs.io/the-lab/payfac-vs-iso">
+<title>Payments Due Diligence: What Acquirers Look At | Margin Labs</title>
+<meta name="description" content="When a PE firm or strategic buyer evaluates a SaaS platform, payments gets its own diligence workstream. Here's what they're looking for and how to be ready.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/payments-due-diligence">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Payment Facilitator vs. ISO: Which Model Fits Your Platform | Margin Labs">
-<meta property="og:description" content="ISO earns $5K-$25K on $10M volume. PayFac earns $30K-$90K. The economics, operational trade-offs, and migration path between the two most common embedded payments models.">
-<meta property="og:url" content="https://marginlabs.io/the-lab/payfac-vs-iso">
+<meta property="og:title" content="Payments Due Diligence: What Acquirers Look At | Margin Labs">
+<meta property="og:description" content="When a PE firm or strategic buyer evaluates a SaaS platform, payments gets its own diligence workstream. Here's what they're looking for and how to be ready.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/payments-due-diligence">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
 <meta property="og:image:width" content="520">
@@ -42,7 +42,6 @@
   .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
   .article-body li { margin-bottom: 8px; }
   .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
-  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
 </style>
 </head>
 <body>
@@ -85,87 +84,69 @@
     <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
     <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
   </ul>
-
 </div>
 
 <!-- ── ARTICLE ─────────────────────────────────── -->
 <article class="article-wrap">
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
   <div class="article-eyebrow">The Lab</div>
-  <h1 class="article-title">Payment Facilitator vs. ISO: Which Model Fits Your Platform</h1>
+  <h1 class="article-title">Payments Due Diligence: What Acquirers Look At</h1>
   <div class="article-meta">
-    <span>April 2026</span>
-    <span>7 min read</span>
+    <span>May 2026</span>
+    <span>8 min read</span>
   </div>
   <div class="article-body">
-    <p>If you're a software company looking to monetize the payment volume flowing through your platform, you'll eventually encounter two terms: Payment Facilitator (PayFac) and Independent Sales Organization (ISO). Both are structures for participating in the economics of payment processing. But they work differently, carry different revenue potential, and suit different stages of business.</p>
+    <p>When a private equity firm or strategic buyer evaluates a vertical SaaS platform, payments doesn't get lumped into the general product review. It gets its own workstream. The buyer wants to understand what you're earning today, what you could earn under a better model, how defensible the revenue is, and whether there are any operational landmines buried in the program.</p>
 
-    <p>Most of the content explaining these models is written by companies that sell one of the two. That's a problem, because the answer isn't which model is better — it's which model matches where you are right now and how much of the payment margin you're ready to capture.</p>
+    <p>Platforms that have run a clean, well-documented payments program sail through this diligence. Platforms that haven't thought about it since the original processor agreement get surprises — usually negative ones that affect valuation or deal structure.</p>
 
-    <h2>What an ISO Actually Does</h2>
+    <p>Here's what sophisticated acquirers look at, and how to be ready.</p>
 
-    <p>An Independent Sales Organization is a registered entity that refers merchants to a payment processor. The ISO doesn't process payments itself. It acts as a distribution channel — finding merchants, boarding them onto a processor's platform, and earning a residual on the processing volume those merchants generate.</p>
+    <h2>The Economics Questions</h2>
 
-    <p>For a software company, the ISO path usually takes the form of an ISV Referral program. You partner with a processor (Fiserv, Worldpay, Global Payments, or others), embed their payment acceptance into your product via APIs, and earn a revenue share on merchant volume. The processor handles underwriting, compliance, settlement, risk management, and merchant support.</p>
+    <p>The first diligence workstream is financial. Buyers want to understand the payments P&L with enough granularity to model it forward.</p>
 
-    <p>The economics are straightforward: you earn 5 to 25 basis points on gross volume, depending on the processor and your negotiating position. On $30 million in annual merchant volume, that's $15,000 to $75,000 per year. Essentially free money — you carry no operational burden and no risk exposure.</p>
+    <p><strong>Gross payment volume by cohort.</strong> Not just total GMV — volume broken out by merchant cohort, product line, and year. Buyers want to see whether payment volume grows in line with software ARR, lags it (suggesting an activation problem), or outpaces it (suggesting high-value merchant concentration).</p>
 
-    <p>The trade-off is equally straightforward: you don't control the merchant experience, you don't own the merchant relationship in payments terms, and you're earning a fraction of the total margin on each transaction.</p>
+    <p><strong>Net take rate and its components.</strong> Total payments revenue divided by gross volume, but also the breakdown: interchange component, processing fee component, ancillary revenue. A platform that can explain each layer of its payments P&L signals operational maturity. One that can only report a single "payments revenue" line raises questions.</p>
 
-    <h2>What a Payment Facilitator Does</h2>
+    <p><strong>Revenue quality.</strong> Is the payments revenue contractually committed, or does it depend on merchant activation that could reverse? Are any merchants on individually negotiated rates that don't reflect the program's standard economics? Are there revenue-share agreements with the processor that could be renegotiated at renewal?</p>
 
-    <p>A Payment Facilitator is a registered entity that aggregates merchants under its own merchant ID. Instead of referring merchants to a processor, the PayFac boards merchants as sub-merchants, underwrites them (within parameters set by the acquiring bank and card networks), manages compliance, handles disputes, and processes payments on their behalf.</p>
+    <p><strong>The opportunity gap.</strong> Good buyers model what the payments program could earn under a better model. If you're in ISV Referral at 15 bps and your volume justifies PayFac-as-a-Service at 50 bps, the buyer sees that gap as upside they're buying. A platform that has already made this transition — or can articulate a credible plan to — is worth more than one where the gap is purely theoretical.</p>
 
-    <p>The PayFac owns more of the stack — and earns more of the economics. Instead of collecting a residual, you set the merchant rate, buy processing at wholesale (interchange plus a processor spread), and keep the difference. Net margins typically range from 30 to 90+ basis points depending on volume, vertical, and how you've structured your pricing.</p>
+    <h2>The Contract Questions</h2>
 
-    <p>On that same $30 million in volume, PayFac economics produce $90,000 to $270,000 in annual net revenue. The ceiling is meaningfully higher.</p>
+    <p>Every payments contract in your business gets reviewed. Buyers look for three things: transferability, termination risk, and economics sustainability.</p>
 
-    <p>The trade-off: you're now responsible for merchant onboarding, KYC/AML compliance, transaction monitoring, reserve management, chargeback response, and regulatory reporting. You need staff — or a managed service provider — who understands payment operations. Implementation costs range from $50K for managed PayFac services to $500K+ for a full direct registration.</p>
+    <p><strong>Change of control provisions.</strong> Most processor agreements have change of control clauses that require processor consent to assign the agreement in an acquisition. Some allow the processor to reprice or terminate. Know what your agreements say before diligence begins. If renegotiation is required, it's better to handle it proactively than under deal pressure.</p>
 
-    <h2>The Economic Comparison</h2>
+    <p><strong>Exclusivity and termination terms.</strong> Exclusivity clauses and long notice periods limit the buyer's flexibility to optimize the payments program post-close. ETFs are a line item in the deal model. These terms affect deal structure and sometimes valuation.</p>
 
-    <p>The math is simple but often ignored. Here's a side-by-side at three volume levels:</p>
+    <p><strong>Rate sustainability.</strong> Buyers ask whether the current processor spread is likely to hold at renewal. A favorable rate that was negotiated on small-volume terms and is coming up for renewal in 12 months is a risk. A rate with volume ratchets tied to actual GMV thresholds is a strength.</p>
 
-    <p>At $10M annual volume: ISO earns $5K–$25K. PayFac earns $30K–$90K.<br>
-    At $50M annual volume: ISO earns $25K–$125K. PayFac earns $150K–$450K.<br>
-    At $100M annual volume: ISO earns $50K–$250K. PayFac earns $300K–$900K.</p>
+    <h2>The Operational Questions</h2>
 
-    <p>The gap widens with every dollar of volume. At smaller scales, the ISO model is efficient — you're earning revenue with no operational cost. As volume grows, the opportunity cost of staying in ISO becomes the dominant factor.</p>
+    <p>Financial buyers increasingly care about operational risk in payments programs. They've seen enough post-acquisition surprises to ask the right questions upfront.</p>
 
-    <div style="background:var(--bg4,#1a1a1a);border-left:2px solid var(--copper);padding:20px 24px;margin:32px 0;">
-      <p style="font-size:14px;font-weight:400;color:var(--text);margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
-      <p style="font-size:13px;color:var(--dim);margin:0;">The <a href="/margin-multiplier" style="color:var(--copper-lt);">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="/advisory" style="color:var(--copper-lt);">start a conversation</a> about what this means for your specific situation.</p>
-    </div>
+    <p><strong>Chargeback history.</strong> Three years of monthly chargeback ratios by merchant cohort. Buyers look for trends — stable is fine, improving is good, deteriorating requires explanation. A portfolio of merchants with elevated chargeback rates is a liability that affects reserve requirements and potentially processor relationships.</p>
 
-    <h2>When to Choose the ISO / Referral Path</h2>
+    <p><strong>Compliance posture.</strong> PCI compliance status, evidence of annual assessments, any network fines or monitoring program history. A clean compliance record is table stakes. A gap is a diligence finding that requires remediation commitments.</p>
 
-    <p>The ISO model is right when your payments volume is under $30–50 million annually, you have fewer than 200 merchants processing, your team has no payments operations experience, or you're early enough in your product lifecycle that payments is a feature, not a business line.</p>
+    <p><strong>Key person risk.</strong> Who runs payments operations? Is that knowledge documented or concentrated in one person? Buyers want to understand whether the payments program can run post-acquisition without the founder or a specific team member.</p>
 
-    <p>It's also the right choice if your vertical carries elevated risk — high average ticket sizes, high chargeback rates, or regulatory complexity. In those cases, letting the processor carry the risk exposure is worth the economic trade-off.</p>
+    <p><strong>Merchant concentration.</strong> If 20% of your payment volume runs through 3 merchants, that's a concentration risk buyers will flag. The payments revenue is less reliable than it looks.</p>
 
-    <p>The ISO model lets you generate payments revenue in weeks rather than months, with minimal implementation cost and zero ongoing operational burden. For many platforms, this is the correct starting point.</p>
+    <h2>How to Prepare</h2>
 
-    <h2>When to Choose the PayFac Path</h2>
+    <p>The platforms that perform best in payments diligence have one thing in common: they treat payments as a managed business line, not a feature that runs in the background.</p>
 
-    <p>PayFac economics become compelling when your annual merchant volume exceeds $50 million and is growing, you have 150+ merchants processing consistently, you can staff at least one person who understands payment operations (or you're willing to use a managed PayFac service), and the checkout and payment experience is core to your product differentiation.</p>
+    <p>Practically, this means maintaining a payments P&L that breaks out each revenue and cost component, tracking chargeback ratios monthly, keeping processor agreements organized and reviewed, and being able to explain the net take rate and how it's calculated.</p>
 
-    <p>The managed PayFac model — sometimes called PayFac-as-a-Service or PayFac Lite — has made this path accessible to platforms that previously couldn't afford or staff a full PayFac registration. You get most of the economics with a fraction of the operational burden.</p>
+    <blockquote class="pull-quote">A platform that walks into diligence knowing its net take rate, its contract terms, and its three-year volume trend commands a different conversation than one that has to reconstruct the numbers from settlement reports.</blockquote>
 
-    <h2>The Migration Question</h2>
+    <p>The gap between "we have payments" and "we have a payments business" is what acquirers are measuring. Platforms that close that gap before a process begins capture it in valuation. Those that don't give it away in deal structure.</p>
 
-    <p>Can you start as an ISO and move to PayFac later? Yes. Many platforms do. The transition involves re-boarding merchants under new agreements, which creates some operational friction and occasional churn. Plan for 3–6 months of migration work depending on merchant count.</p>
-
-    <p>The smart approach: if you have any visibility into your volume trajectory, choose your initial ISO partner with future migration in mind. Some processors offer a clear path from referral to their own managed PayFac program. Others make migration deliberately difficult. Ask about the migration path before you sign your first referral agreement.</p>
-
-    <h2>The Decision That Matters More Than the Model</h2>
-
-    <p>The most common mistake is treating ISO vs. PayFac as a permanent, binary choice rather than a stage-appropriate one. Companies get comfortable in referral programs, the residuals start to feel meaningful, and they stop evaluating whether they've crossed the threshold.</p>
-
-    <p>Run the math annually. The economics shift faster than most teams realize, especially in high-growth verticals where merchant count and average volume are both increasing.</p>
-
-    <blockquote class="pull-quote">The right model today should match where you are. The mistake is staying in it after you've outgrown it.</blockquote>
-
-    <p>The <a href="/margin-multiplier">Margin Multiplier</a> models revenue across all four embedded payments approaches — ISV Referral, Enhanced Residuals, PayFac Lite, and Full PayFac — in about 60 seconds. Start there if you want to see where you fall.</p>
+    <p>Related: <a href="/the-lab/how-to-read-a-payments-pl">How to Read a Payments P&L</a> is the foundation for understanding the numbers an acquirer will ask for. The <a href="/the-lab/calculate-payments-revenue">payments revenue model framework</a> is how you build the forward projection they'll want to see. For advisory support on M&A readiness, see the <a href="/advisory">advisory engagement</a>.</p>
   </div>
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
 </article>
