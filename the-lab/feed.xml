@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 08 May 2026 17:54:48 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 18:38:42 +0000</lastBuildDate>
     <pubDate>Thu, 07 May 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -17,8 +17,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/chargeback-management-for-software-platforms</guid>
       <pubDate>Thu, 07 May 2026 14:00:00 +0000</pubDate>
       <description>Chargebacks are manageable if you build the right process. Here's what software platforms need to know about disputes, thresholds, and program health.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Chargebacks are the operational reality that most platforms discover after launching embedded payments — not before. Vendors don't lead with it. The integration docs gloss over it. And then a merchant calls about a disputed transaction and the team realizes there's no process for handling it.</p>
+      <content:encoded><![CDATA[<p>Chargebacks are the operational reality that most platforms discover after launching embedded payments — not before. Vendors don't lead with it. The integration docs gloss over it. And then a merchant calls about a disputed transaction and the team realizes there's no process for handling it.</p>
 
     <p>Chargebacks are manageable. The platforms that stay healthy manage them proactively. The ones that run into problems treat them as exceptions until they become a systemic issue.</p>
 
@@ -93,7 +92,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>How to Negotiate a Processor Agreement</title>
@@ -101,8 +101,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement</guid>
       <pubDate>Tue, 05 May 2026 14:00:00 +0000</pubDate>
       <description>Most ISV processor agreements are signed once and never renegotiated. Here's what's actually negotiable, when to push, and what platforms with leverage usually get.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Most ISV processor agreements — whether with Fiserv, Global Payments (TSYS), Worldpay, or any other major acquirer — are signed once, filed away, and never revisited. The platform grows, volume increases, and the economics of the original deal become progressively worse relative to what the platform could now command. The processor is happy to let this continue.</p>
+      <content:encoded><![CDATA[<p>Most ISV processor agreements — whether with Fiserv, Global Payments (TSYS), Worldpay, or any other major acquirer — are signed once, filed away, and never revisited. The platform grows, volume increases, and the economics of the original deal become progressively worse relative to what the platform could now command. The processor is happy to let this continue.</p>
 
     <p>Processor agreements are negotiable — at signing and at renewal. This article covers what's actually on the table, when you have leverage, and what platforms that negotiate well typically get.</p>
 
@@ -176,7 +175,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Embedded vs. Integrated Payments: What's the Difference</title>
@@ -184,8 +184,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-vs-integrated-payments</guid>
       <pubDate>Mon, 04 May 2026 14:00:00 +0000</pubDate>
       <description>The two terms get used interchangeably, but they describe different architectures, different economics, and different competitive positions. Here's the distinction that matters.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/embedded-vs-integrated-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>"Embedded payments" and "integrated payments" are used interchangeably across the industry. Vendor websites, analyst reports, and conference panels treat them as synonyms. They're not. The distinction matters — and understanding it changes how you think about your payments strategy, your competitive position, and your revenue potential.</p>
+      <content:encoded><![CDATA[<p>"Embedded payments" and "integrated payments" are used interchangeably across the industry. Vendor websites, analyst reports, and conference panels treat them as synonyms. They're not. The distinction matters — and understanding it changes how you think about your payments strategy, your competitive position, and your revenue potential.</p>
 
     <h2>Integrated Payments: Connection</h2>
 
@@ -264,7 +263,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-vs-integrated-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>How to Calculate Your Embedded Payments Revenue</title>
@@ -272,8 +272,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/calculate-payments-revenue</guid>
       <pubDate>Fri, 01 May 2026 14:00:00 +0000</pubDate>
       <description>A step-by-step framework for modeling what your payment volume is actually worth under each monetization model — the same approach used in advisory engagements.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/calculate-payments-revenue?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>The most common gap in payments strategy conversations is this: the team hasn't modeled the actual revenue opportunity. Not a vendor's projection. Not a back-of-napkin estimate. An actual model that accounts for merchant count, average volume, realistic activation rates, and the net economics of each approach.</p>
+      <content:encoded><![CDATA[<p>The most common gap in payments strategy conversations is this: the team hasn't modeled the actual revenue opportunity. Not a vendor's projection. Not a back-of-napkin estimate. An actual model that accounts for merchant count, average volume, realistic activation rates, and the net economics of each approach.</p>
 
     <p>Without this model, every other decision is downstream of a guess. You can't evaluate processor proposals, you can't justify implementation investment, and you can't set internal targets that mean anything.</p>
 
@@ -381,7 +380,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/calculate-payments-revenue?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>PayFac-as-a-Service: What It Is and When It Makes Sense</title>
@@ -389,8 +389,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-as-a-service</guid>
       <pubDate>Wed, 29 Apr 2026 14:00:00 +0000</pubDate>
       <description>PayFac-as-a-Service gives platforms PayFac-level economics without building compliance infrastructure. Here's how it works, what it costs, and when it's the right move.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Payment Facilitation as a Service — also called Managed PayFac, PayFac Lite, or Embedded PayFac — has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a Payment Facilitator without building the compliance and operational infrastructure yourself.</p>
+      <content:encoded><![CDATA[<p>Payment Facilitation as a Service — also called Managed PayFac, PayFac Lite, or Embedded PayFac — has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a Payment Facilitator without building the compliance and operational infrastructure yourself.</p>
 
     <p>The model exists because there's a wide gap between the economics of ISV Referral (5–25 basis points) and the cost of becoming a full registered PayFac ($500K+ implementation, 12–18 months to launch, dedicated compliance staff). Most platforms fit somewhere in the middle — they've outgrown referral economics but can't justify the investment of full facilitation. PayFac-as-a-Service fills that gap.</p>
 
@@ -503,7 +502,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Embedded Payments for Vertical SaaS: What's Different</title>
@@ -511,8 +511,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-payments-vertical-saas</guid>
       <pubDate>Fri, 24 Apr 2026 14:00:00 +0000</pubDate>
       <description>Embedded payments advice is written for software companies broadly. Vertical SaaS has specific dynamics that change the strategy — here's what platform leaders need to know.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/embedded-payments-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Most embedded payments content is written for software companies broadly. The advice sounds reasonable in the abstract: choose a model, integrate a processor, activate merchants. But vertical SaaS platforms operate under specific conditions that change which decisions matter and how to sequence them.</p>
+      <content:encoded><![CDATA[<p>Most embedded payments content is written for software companies broadly. The advice sounds reasonable in the abstract: choose a model, integrate a processor, activate merchants. But vertical SaaS platforms operate under specific conditions that change which decisions matter and how to sequence them.</p>
 
     <p>Your merchants are in a single industry. Your competitive set is narrow. Your switching costs are structural, not just contractual. Your payment volume is concentrated and predictable. All of this affects which monetization model to choose, how to price it, how to activate merchants, and where the real risks live.</p>
 
@@ -586,7 +585,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-payments-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>How to Choose an Embedded Payments Provider</title>
@@ -594,8 +594,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider</guid>
       <pubDate>Sun, 19 Apr 2026 14:00:00 +0000</pubDate>
       <description>Most provider evaluations start with pricing and end with regret. The 8 questions that actually determine whether a payments partnership works.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Most embedded payments provider evaluations start with pricing and end with regret. The pricing looked competitive, the demo was polished, and six months into the integration you discover that the migration path doesn't exist, the API documentation is incomplete, and your merchants are calling you about deposit delays that you can't resolve because the processor's support team takes 48 hours to respond.</p>
+      <content:encoded><![CDATA[<p>Most embedded payments provider evaluations start with pricing and end with regret. The pricing looked competitive, the demo was polished, and six months into the integration you discover that the migration path doesn't exist, the API documentation is incomplete, and your merchants are calling you about deposit delays that you can't resolve because the processor's support team takes 48 hours to respond.</p>
 
     <p>The problem isn't that platforms choose bad providers. The problem is that most evaluations focus on the wrong things. Rate sheets and feature lists are table stakes. The questions that actually determine whether a payments partnership works are harder to ask and harder to compare — but they're the ones that matter 18 months in.</p>
 
@@ -693,7 +692,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>What Is a Payment Facilitator? Guide for SaaS Platforms</title>
@@ -701,8 +701,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-a-payment-facilitator</guid>
       <pubDate>Tue, 14 Apr 2026 14:00:00 +0000</pubDate>
       <description>PayFac, managed PayFac, sub-merchant — the terminology is confusing by design. Here's what it actually means for SaaS platforms, without vendor spin.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Payment facilitator. PayFac. Managed PayFac. PayFac Lite. PayFac-as-a-Service. Sub-merchant. Master merchant. The terminology around payment facilitation is genuinely confusing, and it's confusing by design — because the companies defining these terms are the ones selling the services.</p>
+      <content:encoded><![CDATA[<p>Payment facilitator. PayFac. Managed PayFac. PayFac Lite. PayFac-as-a-Service. Sub-merchant. Master merchant. The terminology around payment facilitation is genuinely confusing, and it's confusing by design — because the companies defining these terms are the ones selling the services.</p>
 
     <p>If you run product, finance, or partnerships at a software company and you're trying to figure out what payment facilitation actually means for your business, this is the plain-language version. No jargon ladders. No sales positioning disguised as education.</p>
 
@@ -810,7 +809,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>How SaaS Companies Make Money from Payments</title>
@@ -818,8 +818,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments</guid>
       <pubDate>Wed, 08 Apr 2026 14:00:00 +0000</pubDate>
       <description>From 5 bps in referral to 90+ bps in PayFac Lite — the four ways SaaS platforms monetize payment volume, with real revenue numbers at $30M, $50M, and $100M in volume.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Every vertical SaaS platform sits on top of payment volume. Your merchants process transactions through or alongside your software — scheduling, invoicing, point of sale, e-commerce, field service. That volume is raw material. The question is whether you're capturing any of its value.</p>
+      <content:encoded><![CDATA[<p>Every vertical SaaS platform sits on top of payment volume. Your merchants process transactions through or alongside your software — scheduling, invoicing, point of sale, e-commerce, field service. That volume is raw material. The question is whether you're capturing any of its value.</p>
 
     <p>Most platforms know payments is a revenue opportunity. Fewer can explain how the money actually flows. This article breaks down the four models, the economics of each, and the thresholds where each one starts to make sense.</p>
 
@@ -898,7 +897,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Payment Facilitator vs. ISO: Which Model Fits Your Platform</title>
@@ -906,8 +906,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-vs-iso</guid>
       <pubDate>Fri, 03 Apr 2026 14:00:00 +0000</pubDate>
       <description>ISO earns $5K-$25K on $10M volume. PayFac earns $30K-$90K. The economics, operational trade-offs, and migration path between the two most common embedded payments models.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>If you're a software company looking to monetize the payment volume flowing through your platform, you'll eventually encounter two terms: Payment Facilitator (PayFac) and Independent Sales Organization (ISO). Both are structures for participating in the economics of payment processing. But they work differently, carry different revenue potential, and suit different stages of business.</p>
+      <content:encoded><![CDATA[<p>If you're a software company looking to monetize the payment volume flowing through your platform, you'll eventually encounter two terms: Payment Facilitator (PayFac) and Independent Sales Organization (ISO). Both are structures for participating in the economics of payment processing. But they work differently, carry different revenue potential, and suit different stages of business.</p>
 
     <p>Most of the content explaining these models is written by companies that sell one of the two. That's a problem, because the answer isn't which model is better — it's which model matches where you are right now and how much of the payment margin you're ready to capture.</p>
 
@@ -985,7 +984,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>ISV Referral vs. PayFac Lite: How to Choose the Right Embedded Payments Model</title>
@@ -993,8 +993,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite</guid>
       <pubDate>Fri, 27 Mar 2026 14:00:00 +0000</pubDate>
       <description>At $30M in volume, ISV Referral earns $60K/year. PayFac Lite earns $270K. A side-by-side comparison with real economics and a decision framework for SaaS platforms.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Every software company considering embedded payments eventually hits the same fork in the road: do you refer merchants to a processor and collect residuals, or do you take on more control — and more risk — by becoming a PayFac Lite under a larger facilitator?</p>
+      <content:encoded><![CDATA[<p>Every software company considering embedded payments eventually hits the same fork in the road: do you refer merchants to a processor and collect residuals, or do you take on more control — and more risk — by becoming a PayFac Lite under a larger facilitator?</p>
 
     <p>Both models work. Both generate revenue. But they are built for fundamentally different companies at fundamentally different stages. Choosing the wrong one doesn't just leave money on the table — it can create operational drag that takes years to unwind.</p>
 
@@ -1098,7 +1097,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Why Merchants Don't Use Embedded Payments (And What to Do About It)</title>
@@ -1106,8 +1106,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/why-merchants-dont-use-payments</guid>
       <pubDate>Sun, 22 Mar 2026 14:00:00 +0000</pubDate>
       <description>Most ISVs see embedded payments adoption stall at 15–20% of their customer base. Here are the real structural reasons — and a framework to fix each one.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/why-merchants-dont-use-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Software companies spend months building embedded payments. They negotiate processor agreements, integrate APIs, train the sales team, and build a product they're proud of. Then adoption stalls at 15 or 20 percent of the customer base.</p>
+      <content:encoded><![CDATA[<p>Software companies spend months building embedded payments. They negotiate processor agreements, integrate APIs, train the sales team, and build a product they're proud of. Then adoption stalls at 15 or 20 percent of the customer base.</p>
 
     <p>This is not a hypothetical. It's the median outcome for ISVs that launch payments without a deliberate activation strategy. And the frustrating part is that the problem rarely has anything to do with the product. The payments feature itself is often fine. The failure is almost always upstream — in how merchants are asked to adopt it, in the friction they encounter when they try, and in the incentive structure that's asking them to change something that already works.</p>
 
@@ -1201,7 +1200,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/why-merchants-dont-use-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>What Embedded Payments Actually Costs to Implement</title>
@@ -1209,8 +1209,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/what-embedded-payments-costs</guid>
       <pubDate>Wed, 18 Mar 2026 14:00:00 +0000</pubDate>
       <description>ISV Referral: $5K-$15K. PayFac Lite: $50K-$200K. Full PayFac: $500K-$2M+. Real implementation and operating costs across all four embedded payments models.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>The number most vendors won't give you until you're already two months into the sales process.</p>
+      <content:encoded><![CDATA[<p>The number most vendors won't give you until you're already two months into the sales process.</p>
 
     <p>If you've ever tried to get a straight answer on what it costs to add embedded payments to a vertical SaaS platform, you know the experience: vague ranges, "it depends" answers, and a request to get on a call with a solutions engineer before anyone will give you real numbers.</p>
 
@@ -1342,7 +1341,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>How to Read a Payments P&amp;L</title>
@@ -1350,8 +1350,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-read-a-payments-pl</guid>
       <pubDate>Fri, 13 Mar 2026 14:00:00 +0000</pubDate>
       <description>Net take rate benchmarks: ISV Referral 5-12 bps, PayFac Lite 15-40 bps, Direct PayFac 30-80 bps. How to read your payments P&amp;L and know if your program is performing.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/how-to-read-a-payments-pl?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Most vertical SaaS companies have a payments revenue line. Almost none of them know what it actually means.</p>
+      <content:encoded><![CDATA[<p>Most vertical SaaS companies have a payments revenue line. Almost none of them know what it actually means.</p>
 
     <p>If you've ever looked at a payments settlement report and felt like you were reading a foreign language, you're not alone. The payments industry has a talent for complexity — multiple fee types, passthrough costs, residual splits, interchange categories — and most of the people who built these revenue streams weren't thinking about how a CFO would want to see them on a P&amp;L.</p>
 
@@ -1499,7 +1498,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-to-read-a-payments-pl?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>The Margin Multiplier: How We Model Payments Revenue for SaaS Platforms</title>
@@ -1507,8 +1507,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/margin-multiplier-explained</guid>
       <pubDate>Fri, 06 Mar 2026 14:00:00 +0000</pubDate>
       <description>Most platforms don't know what their payment volume is worth. The Margin Multiplier models revenue across ISV Referral, Enhanced Residuals, PayFac Lite, and Full PayFac in 60 seconds.</description>
-      <content:encoded><![CDATA[<p style="font-size:13px;color:#8a8580;font-style:italic;margin-bottom:24px;">Originally published on <a href="https://marginlabs.io/the-lab/margin-multiplier-explained?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>
-<p>Your payments volume is already there. You're just not getting paid for it.</p>
+      <content:encoded><![CDATA[<p>Your payments volume is already there. You're just not getting paid for it.</p>
 
     <p>Every vertical SaaS company that processes payments on behalf of its merchants is sitting on a revenue stream it hasn't fully monetized. Not most of them — all of them.</p>
 
@@ -1608,7 +1607,8 @@
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
-</section>]]></content:encoded>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/margin-multiplier-explained?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

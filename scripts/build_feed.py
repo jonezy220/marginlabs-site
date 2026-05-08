@@ -132,15 +132,17 @@ def build_content_encoded(html_text: str, slug: str, canonical: str) -> str:
     body = extract_body(html_text)
     end_cta = extract_end_cta(html_text)
 
-    # Pre-content note (small) acknowledging the canonical home.
-    canonical_note = (
+    # Source-attribution note at the END so Substack's auto-generated SEO
+    # description and social card pick up the article's actual first
+    # paragraph instead of this attribution line.
+    source_note = (
         f'<p style="font-size:13px;color:#8a8580;font-style:italic;'
-        f'margin-bottom:24px;">Originally published on '
+        f'margin-top:32px;">This article was originally published on '
         f'<a href="{canonical}?{UTM_SUFFIX}" style="color:#D8A058;">'
         f'Margin Labs</a>.</p>'
     )
 
-    combined = canonical_note + "\n" + body + "\n" + end_cta
+    combined = body + "\n" + end_cta + "\n" + source_note
     combined = rewrite_links(combined, slug)
     combined = replace_css_vars(combined)
     combined = strip_data_analytics(combined)
