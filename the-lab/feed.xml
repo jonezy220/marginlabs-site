@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Lab — Margin Labs</title>
+    <link>https://marginlabs.io/the-lab</link>
+    <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
+    <language>en-us</language>
+    <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 May 2026 11:44:35 +0000</lastBuildDate>
+    <pubDate>Thu, 07 May 2026 14:00:00 +0000</pubDate>
+    <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Chargeback Management for Software Platforms</title>
+      <link>https://marginlabs.io/the-lab/chargeback-management-for-software-platforms</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/chargeback-management-for-software-platforms</guid>
+      <pubDate>Thu, 07 May 2026 14:00:00 +0000</pubDate>
+      <description>Chargebacks are manageable if you build the right process. Here's what software platforms need to know about disputes, thresholds, and program health.</description>
+    </item>
+    <item>
+      <title>How to Negotiate a Processor Agreement</title>
+      <link>https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement</guid>
+      <pubDate>Tue, 05 May 2026 14:00:00 +0000</pubDate>
+      <description>Most ISV processor agreements are signed once and never renegotiated. Here's what's actually negotiable, when to push, and what platforms with leverage usually get.</description>
+    </item>
+    <item>
+      <title>Embedded vs. Integrated Payments: What's the Difference</title>
+      <link>https://marginlabs.io/the-lab/embedded-vs-integrated-payments</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-vs-integrated-payments</guid>
+      <pubDate>Mon, 04 May 2026 14:00:00 +0000</pubDate>
+      <description>The two terms get used interchangeably, but they describe different architectures, different economics, and different competitive positions. Here's the distinction that matters.</description>
+    </item>
+    <item>
+      <title>How to Calculate Your Embedded Payments Revenue</title>
+      <link>https://marginlabs.io/the-lab/calculate-payments-revenue</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/calculate-payments-revenue</guid>
+      <pubDate>Fri, 01 May 2026 14:00:00 +0000</pubDate>
+      <description>A step-by-step framework for modeling what your payment volume is actually worth under each monetization model — the same approach used in advisory engagements.</description>
+    </item>
+    <item>
+      <title>PayFac-as-a-Service: What It Is and When It Makes Sense</title>
+      <link>https://marginlabs.io/the-lab/payfac-as-a-service</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-as-a-service</guid>
+      <pubDate>Wed, 29 Apr 2026 14:00:00 +0000</pubDate>
+      <description>PayFac-as-a-Service gives platforms PayFac-level economics without building compliance infrastructure. Here's how it works, what it costs, and when it's the right move.</description>
+    </item>
+    <item>
+      <title>Embedded Payments for Vertical SaaS: What's Different</title>
+      <link>https://marginlabs.io/the-lab/embedded-payments-vertical-saas</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-payments-vertical-saas</guid>
+      <pubDate>Fri, 24 Apr 2026 14:00:00 +0000</pubDate>
+      <description>Embedded payments advice is written for software companies broadly. Vertical SaaS has specific dynamics that change the strategy — here's what platform leaders need to know.</description>
+    </item>
+    <item>
+      <title>How to Choose an Embedded Payments Provider</title>
+      <link>https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider</guid>
+      <pubDate>Sun, 19 Apr 2026 14:00:00 +0000</pubDate>
+      <description>Most provider evaluations start with pricing and end with regret. The 8 questions that actually determine whether a payments partnership works.</description>
+    </item>
+    <item>
+      <title>What Is a Payment Facilitator? Guide for SaaS Platforms</title>
+      <link>https://marginlabs.io/the-lab/what-is-a-payment-facilitator</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-a-payment-facilitator</guid>
+      <pubDate>Tue, 14 Apr 2026 14:00:00 +0000</pubDate>
+      <description>PayFac, managed PayFac, sub-merchant — the terminology is confusing by design. Here's what it actually means for SaaS platforms, without vendor spin.</description>
+    </item>
+    <item>
+      <title>How SaaS Companies Make Money from Payments</title>
+      <link>https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments</guid>
+      <pubDate>Wed, 08 Apr 2026 14:00:00 +0000</pubDate>
+      <description>From 5 bps in referral to 90+ bps in PayFac Lite — the four ways SaaS platforms monetize payment volume, with real revenue numbers at $30M, $50M, and $100M in volume.</description>
+    </item>
+    <item>
+      <title>Payment Facilitator vs. ISO: Which Model Fits Your Platform</title>
+      <link>https://marginlabs.io/the-lab/payfac-vs-iso</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-vs-iso</guid>
+      <pubDate>Fri, 03 Apr 2026 14:00:00 +0000</pubDate>
+      <description>ISO earns $5K-$25K on $10M volume. PayFac earns $30K-$90K. The economics, operational trade-offs, and migration path between the two most common embedded payments models.</description>
+    </item>
+    <item>
+      <title>ISV Referral vs. PayFac Lite: How to Choose the Right Embedded Payments Model</title>
+      <link>https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite</guid>
+      <pubDate>Fri, 27 Mar 2026 14:00:00 +0000</pubDate>
+      <description>At $30M in volume, ISV Referral earns $60K/year. PayFac Lite earns $270K. A side-by-side comparison with real economics and a decision framework for SaaS platforms.</description>
+    </item>
+    <item>
+      <title>Why Merchants Don't Use Embedded Payments (And What to Do About It)</title>
+      <link>https://marginlabs.io/the-lab/why-merchants-dont-use-payments</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/why-merchants-dont-use-payments</guid>
+      <pubDate>Sun, 22 Mar 2026 14:00:00 +0000</pubDate>
+      <description>Most ISVs see embedded payments adoption stall at 15–20% of their customer base. Here are the real structural reasons — and a framework to fix each one.</description>
+    </item>
+    <item>
+      <title>What Embedded Payments Actually Costs to Implement</title>
+      <link>https://marginlabs.io/the-lab/what-embedded-payments-costs</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/what-embedded-payments-costs</guid>
+      <pubDate>Wed, 18 Mar 2026 14:00:00 +0000</pubDate>
+      <description>ISV Referral: $5K-$15K. PayFac Lite: $50K-$200K. Full PayFac: $500K-$2M+. Real implementation and operating costs across all four embedded payments models.</description>
+    </item>
+    <item>
+      <title>How to Read a Payments P&amp;L</title>
+      <link>https://marginlabs.io/the-lab/how-to-read-a-payments-pl</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-read-a-payments-pl</guid>
+      <pubDate>Fri, 13 Mar 2026 14:00:00 +0000</pubDate>
+      <description>Net take rate benchmarks: ISV Referral 5-12 bps, PayFac Lite 15-40 bps, Direct PayFac 30-80 bps. How to read your payments P&amp;L and know if your program is performing.</description>
+    </item>
+    <item>
+      <title>The Margin Multiplier: How We Model Payments Revenue for SaaS Platforms</title>
+      <link>https://marginlabs.io/the-lab/margin-multiplier-explained</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/margin-multiplier-explained</guid>
+      <pubDate>Fri, 06 Mar 2026 14:00:00 +0000</pubDate>
+      <description>Most platforms don't know what their payment volume is worth. The Margin Multiplier models revenue across ISV Referral, Enhanced Residuals, PayFac Lite, and Full PayFac in 60 seconds.</description>
+    </item>
+  </channel>
+</rss>
