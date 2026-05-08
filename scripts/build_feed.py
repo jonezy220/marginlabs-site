@@ -107,15 +107,28 @@ def extract_end_cta(html_text: str) -> str:
 
 
 def rewrite_links(content: str, slug: str) -> str:
-    """href="/..." → absolute marginlabs.io URLs with utm_source=substack."""
-    def replace(match: re.Match) -> str:
+    """Rewrite relative URLs to absolute marginlabs.io URLs.
+
+    href="/..." → absolute + utm_source=substack tracking (these are reader
+                  navigation targets we want to attribute).
+    src="/..."  → absolute, no utm (these are asset URLs — img, video, etc.).
+    """
+    def replace_href(match: re.Match) -> str:
         path = match.group(1)
         if path.startswith("//") or path.startswith("http"):
             return match.group(0)
         sep = "&" if "?" in path else "?"
         return f'href="{SITE_URL}{path}{sep}{UTM_SUFFIX}"'
 
-    return re.sub(r'href="(/[^"]*)"', replace, content)
+    def replace_src(match: re.Match) -> str:
+        path = match.group(1)
+        if path.startswith("//") or path.startswith("http") or path.startswith("data:"):
+            return match.group(0)
+        return f'src="{SITE_URL}{path}"'
+
+    content = re.sub(r'href="(/[^"]*)"', replace_href, content)
+    content = re.sub(r'src="(/[^"]*)"', replace_src, content)
+    return content
 
 
 def replace_css_vars(content: str) -> str:

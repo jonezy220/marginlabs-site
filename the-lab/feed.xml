@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 08 May 2026 18:38:42 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 19:03:06 +0000</lastBuildDate>
     <pubDate>Thu, 07 May 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -17,7 +17,8 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/chargeback-management-for-software-platforms</guid>
       <pubDate>Thu, 07 May 2026 14:00:00 +0000</pubDate>
       <description>Chargebacks are manageable if you build the right process. Here's what software platforms need to know about disputes, thresholds, and program health.</description>
-      <content:encoded><![CDATA[<p>Chargebacks are the operational reality that most platforms discover after launching embedded payments — not before. Vendors don't lead with it. The integration docs gloss over it. And then a merchant calls about a disputed transaction and the team realizes there's no process for handling it.</p>
+      <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/chargeback-management-for-software-platforms.png" alt="Chargeback Management for Software Platforms" class="article-hero">
+    <p>Chargebacks are the operational reality that most platforms discover after launching embedded payments — not before. Vendors don't lead with it. The integration docs gloss over it. And then a merchant calls about a disputed transaction and the team realizes there's no process for handling it.</p>
 
     <p>Chargebacks are manageable. The platforms that stay healthy manage them proactively. The ones that run into problems treat them as exceptions until they become a systemic issue.</p>
 
@@ -101,7 +102,8 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement</guid>
       <pubDate>Tue, 05 May 2026 14:00:00 +0000</pubDate>
       <description>Most ISV processor agreements are signed once and never renegotiated. Here's what's actually negotiable, when to push, and what platforms with leverage usually get.</description>
-      <content:encoded><![CDATA[<p>Most ISV processor agreements — whether with Fiserv, Global Payments (TSYS), Worldpay, or any other major acquirer — are signed once, filed away, and never revisited. The platform grows, volume increases, and the economics of the original deal become progressively worse relative to what the platform could now command. The processor is happy to let this continue.</p>
+      <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/how-to-negotiate-a-processor-agreement.png" alt="How to Negotiate a Processor Agreement for Your SaaS Platform" class="article-hero">
+    <p>Most ISV processor agreements — whether with Fiserv, Global Payments (TSYS), Worldpay, or any other major acquirer — are signed once, filed away, and never revisited. The platform grows, volume increases, and the economics of the original deal become progressively worse relative to what the platform could now command. The processor is happy to let this continue.</p>
 
     <p>Processor agreements are negotiable — at signing and at renewal. This article covers what's actually on the table, when you have leverage, and what platforms that negotiate well typically get.</p>
 
