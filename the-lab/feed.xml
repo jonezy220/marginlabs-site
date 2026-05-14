@@ -8,9 +8,80 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 12 May 2026 13:34:02 +0000</lastBuildDate>
-    <pubDate>Tue, 12 May 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 14 May 2026 15:23:44 +0000</lastBuildDate>
+    <pubDate>Thu, 14 May 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Payments Due Diligence: What Acquirers Look At</title>
+      <link>https://marginlabs.io/the-lab/payments-due-diligence</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/payments-due-diligence</guid>
+      <pubDate>Thu, 14 May 2026 14:00:00 +0000</pubDate>
+      <description>When a PE firm or strategic buyer evaluates a SaaS platform, payments gets its own diligence workstream. Here's what they're looking for and how to be ready.</description>
+      <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/payments-due-diligence.png" alt="Payments Due Diligence: What Acquirers Look At" class="article-hero">
+    <p>When a private equity firm or strategic buyer evaluates a vertical SaaS platform, payments doesn't get lumped into the general product review. It gets its own workstream. The buyer wants to understand what you're earning today, what you could earn under a better model, how defensible the revenue is, and whether there are any operational landmines buried in the program.</p>
+
+    <p>Platforms that have run a clean, well-documented payments program sail through this diligence. Platforms that haven't thought about it since the original processor agreement get surprises — usually negative ones that affect valuation or deal structure.</p>
+
+    <p>Here's what sophisticated acquirers look at, and how to be ready.</p>
+
+    <h2>The Economics Questions</h2>
+
+    <p>The first diligence workstream is financial. Buyers want to understand the payments P&L with enough granularity to model it forward.</p>
+
+    <p><strong>Gross payment volume by cohort.</strong> Not just total GMV — volume broken out by merchant cohort, product line, and year. Buyers want to see whether payment volume grows in line with software ARR, lags it (suggesting an activation problem), or outpaces it (suggesting high-value merchant concentration).</p>
+
+    <p><strong>Net take rate and its components.</strong> Total payments revenue divided by gross volume, but also the breakdown: interchange component, processing fee component, ancillary revenue. A platform that can explain each layer of its payments P&L signals operational maturity. One that can only report a single "payments revenue" line raises questions.</p>
+
+    <p><strong>Revenue quality.</strong> Is the payments revenue contractually committed, or does it depend on merchant activation that could reverse? Are any merchants on individually negotiated rates that don't reflect the program's standard economics? Are there revenue-share agreements with the processor that could be renegotiated at renewal?</p>
+
+    <p><strong>The opportunity gap.</strong> Good buyers model what the payments program could earn under a better model. If you're in ISV Referral at 15 bps and your volume justifies PayFac-as-a-Service at 50 bps, the buyer sees that gap as upside they're buying. A platform that has already made this transition — or can articulate a credible plan to — is worth more than one where the gap is purely theoretical.</p>
+
+    <h2>The Contract Questions</h2>
+
+    <p>Every payments contract in your business gets reviewed. Buyers look for three things: transferability, termination risk, and economics sustainability.</p>
+
+    <p><strong>Change of control provisions.</strong> Most processor agreements have change of control clauses that require processor consent to assign the agreement in an acquisition. Some allow the processor to reprice or terminate. Know what your agreements say before diligence begins. If renegotiation is required, it's better to handle it proactively than under deal pressure.</p>
+
+    <p><strong>Exclusivity and termination terms.</strong> Exclusivity clauses and long notice periods limit the buyer's flexibility to optimize the payments program post-close. ETFs are a line item in the deal model. These terms affect deal structure and sometimes valuation.</p>
+
+    <p><strong>Rate sustainability.</strong> Buyers ask whether the current processor spread is likely to hold at renewal. A favorable rate that was negotiated on small-volume terms and is coming up for renewal in 12 months is a risk. A rate with volume ratchets tied to actual GMV thresholds is a strength.</p>
+
+    <h2>The Operational Questions</h2>
+
+    <p>Financial buyers increasingly care about operational risk in payments programs. They've seen enough post-acquisition surprises to ask the right questions upfront.</p>
+
+    <p><strong>Chargeback history.</strong> Three years of monthly chargeback ratios by merchant cohort. Buyers look for trends — stable is fine, improving is good, deteriorating requires explanation. A portfolio of merchants with elevated chargeback rates is a liability that affects reserve requirements and potentially processor relationships.</p>
+
+    <p><strong>Compliance posture.</strong> PCI compliance status, evidence of annual assessments, any network fines or monitoring program history. A clean compliance record is table stakes. A gap is a diligence finding that requires remediation commitments.</p>
+
+    <p><strong>Key person risk.</strong> Who runs payments operations? Is that knowledge documented or concentrated in one person? Buyers want to understand whether the payments program can run post-acquisition without the founder or a specific team member.</p>
+
+    <p><strong>Merchant concentration.</strong> If 20% of your payment volume runs through 3 merchants, that's a concentration risk buyers will flag. The payments revenue is less reliable than it looks.</p>
+
+    <h2>How to Prepare</h2>
+
+    <p>The platforms that perform best in payments diligence have one thing in common: they treat payments as a managed business line, not a feature that runs in the background.</p>
+
+    <p>Practically, this means maintaining a payments P&L that breaks out each revenue and cost component, tracking chargeback ratios monthly, keeping processor agreements organized and reviewed, and being able to explain the net take rate and how it's calculated.</p>
+
+    <blockquote class="pull-quote">A platform that walks into diligence knowing its net take rate, its contract terms, and its three-year volume trend commands a different conversation than one that has to reconstruct the numbers from settlement reports.</blockquote>
+
+    <p>The gap between "we have payments" and "we have a payments business" is what acquirers are measuring. Platforms that close that gap before a process begins capture it in valuation. Those that don't give it away in deal structure.</p>
+
+    <p>Related: <a href="https://marginlabs.io/the-lab/how-to-read-a-payments-pl?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How to Read a Payments P&L</a> is the foundation for understanding the numbers an acquirer will ask for. The <a href="https://marginlabs.io/the-lab/calculate-payments-revenue?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments revenue model framework</a> is how you build the forward projection they'll want to see. For advisory support on M&A readiness, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Start the conversation →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Payments Revenue and SaaS Valuation Multiples</title>
       <link>https://marginlabs.io/the-lab/payments-revenue-saas-valuation</link>
