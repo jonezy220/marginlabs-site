@@ -84,9 +84,12 @@
     <span>8 min read</span>
   </div>
   <div class="article-body">
+    <img src="/assets/lab-images/pci-compliance-for-saas-platforms.png" alt="PCI Compliance for SaaS Platforms: What You Actually Need" class="article-hero">
     <p>PCI DSS is the compliance framework that every platform encounters when evaluating embedded payments. It's also the framework that most consistently gets over-scoped by vendors trying to sell compliance services and under-scoped by engineering teams who think "we don't store card numbers, so we're fine."</p>
 
-    <p>The truth is in between. Your PCI obligations depend entirely on your embedded payments model — and the range between models is enormous. A platform using hosted payment fields might complete a 22-question self-assessment in an afternoon. A full PayFac managing its own token vault might spend $150K–$250K annually on compliance. Same regulatory framework. Completely different scope.</p>
+    <p>The truth is in between. Your PCI obligations depend entirely on your embedded payments model — and the range between models is enormous. A platform using hosted payment fields might complete a ~30-question self-assessment in an afternoon. A full PayFac managing its own token vault might spend $150K–$250K annually on compliance. Same regulatory framework. Completely different scope.</p>
+
+    <p>PCI DSS v4.0 has been the current standard since April 2024 (v4.0.1 published June 2024). The framework's structure didn't change, but v4.0 added requirements — notably script management on payment pages — that affect even fully-outsourced platforms. Everything below reflects v4.0 obligations.</p>
 
     <h2>How PCI Scope Works</h2>
 
@@ -117,7 +120,7 @@
 
     <p><strong>PayFac-as-a-Service:</strong> Typically SAQ-A or SAQ-A-EP, depending on implementation. Most PFaaS providers supply hosted payment fields that keep you at SAQ-A scope. If you've built a custom checkout page that loads the provider's tokenization JavaScript, you're likely SAQ-A-EP. The provider handles the heavy compliance infrastructure; your obligation is to not accidentally bring card data into your environment.</p>
 
-    <p><strong>Full PayFac:</strong> SAQ-D or full RoC. You're processing card data, managing tokens, and operating settlement infrastructure. Full PCI scope applies. This is where compliance costs escalate significantly — dedicated security staff, annual penetration testing, quarterly ASV scans, network segmentation, and ongoing monitoring. Budget $100K–$250K annually for a mature compliance program.</p>
+    <p><strong>Full PayFac:</strong> SAQ-D or full RoC. You're processing card data, managing tokens, and operating settlement infrastructure. Full PCI scope applies. Most full PayFacs cross the Level 1 Service Provider threshold (300K+ transactions/year) quickly, which mandates an annual on-site assessment (RoC) conducted by a QSA rather than a self-assessment. This is where compliance costs escalate significantly — dedicated security staff, annual penetration testing, quarterly ASV scans, network segmentation, and ongoing monitoring. Budget $100K–$250K annually for a mature compliance program.</p>
 
     <h2>The Mistakes That Expand Your Scope</h2>
 
@@ -163,6 +166,7 @@
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
 </article>
 
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
 <section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
