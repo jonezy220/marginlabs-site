@@ -30,6 +30,31 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<!-- Organization schema (JSON-LD). Binds the marginlabs.io entity to its
+     official social profiles via sameAs. Add new sameAs URLs here as the
+     brand grows (Twitter/X, YouTube, Crunchbase, etc.). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Margin Labs",
+  "alternateName": ["Margin Labs LLC", "MarginLabs"],
+  "url": "https://marginlabs.io",
+  "logo": "https://marginlabs.io/assets/margin-labs-logo.png",
+  "description": "Independent embedded payments advisory for vertical SaaS platforms. Model your revenue across all four monetization models. No vendor bias — we work for the platform.",
+  "founder": {
+    "@type": "Person",
+    "name": "Chris Jones",
+    "url": "https://marginlabs.io/principal"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/marginlabs-io",
+    "https://marginlabs.substack.com",
+    "https://www.linkedin.com/in/chrismjones7"
+  ]
+}
+</script>
 </head>
 <body>
 
