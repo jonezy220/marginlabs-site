@@ -49,6 +49,7 @@ ARTICLES = [
     ("payments-revenue-saas-valuation",            "2026-05-12"),
     ("payments-due-diligence",                     "2026-05-14"),
     ("pci-compliance-for-saas-platforms",          "2026-05-19"),
+    ("payments-kpis-after-launch",                 "2026-05-21"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
