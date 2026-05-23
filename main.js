@@ -159,11 +159,16 @@
           body:    JSON.stringify({ email, utmParams: _utm }),
         }).catch(function () {});
 
-        // Brevo — tag as free guide lead — fire and forget
+        // Brevo — tag as free guide lead — fire and forget, but emit GA4
+        // event on success so list signups are countable in GA4.
         fetch('/api/brevo-subscribe', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
           body:    JSON.stringify({ email, source: 'Free Guide Lead', utmParams: _utm }),
+        }).then(function (r) {
+          if (r && r.ok && typeof gtag !== 'undefined') {
+            gtag('event', 'brevo_subscribed', { source: 'free_guide' });
+          }
         }).catch(function () {});
 
         // Save to shared ML state
@@ -238,11 +243,22 @@
           if (msg) msg.style.display = 'block';
           btn.textContent = 'Sent ✓';
 
-          // Brevo — tag as consulting lead
+          // GA4 event — the homepage consult/contact form is the primary
+          // lead-intent signal from the corporate page. Mark as a key event
+          // in GA4 Admin so it counts as a conversion.
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'consult_form_submitted', { source: 'homepage_contact_form' });
+          }
+
+          // Brevo — tag as consulting lead, fire GA4 event on Brevo success
           fetch('/api/brevo-subscribe', {
             method:  'POST',
             headers: { 'Content-Type': 'application/json' },
             body:    JSON.stringify({ email, firstName: name.split(' ')[0] || '', source: 'Homepage Contact Form', utmParams: window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined }),
+          }).then(function (r) {
+            if (r && r.ok && typeof gtag !== 'undefined') {
+              gtag('event', 'brevo_subscribed', { source: 'homepage_contact_form' });
+            }
           }).catch(function () {});
         } else {
           btn.textContent = 'Error — try again';
