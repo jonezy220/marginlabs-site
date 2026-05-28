@@ -87,15 +87,15 @@
     <img src="/assets/lab-images/pci-compliance-for-saas-platforms.png" alt="PCI Compliance for SaaS Platforms: What You Actually Need" class="article-hero">
     <p>PCI DSS is the compliance framework that every platform encounters when evaluating embedded payments. It's also the framework that most consistently gets over-scoped by vendors trying to sell compliance services and under-scoped by engineering teams who think "we don't store card numbers, so we're fine."</p>
 
-    <p>The truth is in between. Your PCI obligations depend entirely on your embedded payments model — and the range between models is enormous. A platform using hosted payment fields might complete a ~30-question self-assessment in an afternoon. A full PayFac managing its own token vault might spend $150K–$250K annually on compliance. Same regulatory framework. Completely different scope.</p>
+    <p>The truth is in between. Your PCI obligations depend entirely on your embedded payments model, and the range between models is enormous. A platform using hosted payment fields might complete a ~30-question self-assessment in an afternoon. A full PayFac managing its own token vault might spend $150K-$250K annually on compliance. Same regulatory framework. Completely different scope.</p>
 
-    <p>PCI DSS v4.0 has been the current standard since April 2024 (v4.0.1 published June 2024). The framework's structure didn't change, but v4.0 added requirements — notably script management on payment pages — that affect even fully-outsourced platforms. Everything below reflects v4.0 obligations.</p>
+    <p>PCI DSS v4.0 has been the current standard since April 2024 (v4.0.1 published June 2024). The framework's structure didn't change, but v4.0 added requirements, notably script management on payment pages, that affect even fully-outsourced platforms. Everything below reflects v4.0 obligations.</p>
 
     <h2>How PCI Scope Works</h2>
 
-    <p>PCI DSS applies to any entity that stores, processes, or transmits cardholder data. The operative word is "or" — if you touch card data in any form at any point in the transaction flow, you're in scope.</p>
+    <p>PCI DSS applies to any entity that stores, processes, or transmits cardholder data. The operative word is "or", if you touch card data in any form at any point in the transaction flow, you're in scope.</p>
 
-    <p>The most important architectural decision you'll make for PCI scope is whether card data ever touches your systems. If it doesn't — if the cardholder enters their card number directly into a processor-hosted iframe or redirect — your scope is minimal. If it does — if your server receives, decrypts, or routes raw card numbers — your scope is significant.</p>
+    <p>The most important architectural decision you'll make for PCI scope is whether card data ever touches your systems. If it doesn't, if the cardholder enters their card number directly into a processor-hosted iframe or redirect, your scope is minimal. If it does, if your server receives, decrypts, or routes raw card numbers, your scope is significant.</p>
 
     <p>Most modern embedded payments architectures use tokenization and hosted fields specifically to keep platforms out of scope. The card number goes directly from the cardholder's browser to the processor's infrastructure. Your platform never sees it. You work with a token that represents the card but carries no exploitable value.</p>
 
@@ -109,20 +109,20 @@
       </thead>
       <tbody>
         <tr><td>SAQ-A</td><td>All payment processing is fully outsourced. You use hosted fields, iframes, or redirects. No card data touches your systems.</td><td>22 questions. Complete in a day. ~$0 incremental cost.</td></tr>
-        <tr><td>SAQ-A-EP</td><td>Your website controls the payment page but card data goes directly to the processor (JavaScript-based tokenization). Your server doesn't receive card data, but your frontend code could be compromised to intercept it.</td><td>139 questions. Requires web application firewall, vulnerability scanning, penetration testing. $5K–$25K/year.</td></tr>
-        <tr><td>SAQ-D</td><td>Your systems store, process, or transmit cardholder data. Full scope.</td><td>329 questions. Requires network segmentation, encryption, access controls, logging, incident response, and potentially a QSA-conducted RoC. $50K–$250K/year depending on environment complexity.</td></tr>
+        <tr><td>SAQ-A-EP</td><td>Your website controls the payment page but card data goes directly to the processor (JavaScript-based tokenization). Your server doesn't receive card data, but your frontend code could be compromised to intercept it.</td><td>139 questions. Requires web application firewall, vulnerability scanning, penetration testing. $5K-$25K/year.</td></tr>
+        <tr><td>SAQ-D</td><td>Your systems store, process, or transmit cardholder data. Full scope.</td><td>329 questions. Requires network segmentation, encryption, access controls, logging, incident response, and potentially a QSA-conducted RoC. $50K-$250K/year depending on environment complexity.</td></tr>
       </tbody>
     </table>
 
     <h2>PCI by Embedded Payments Model</h2>
 
-    <p><strong>ISV Referral:</strong> SAQ-A in almost all cases. The processor handles the entire payment flow. Your platform links to or embeds their hosted checkout. PCI obligation is minimal — confirm annually that you're using their hosted solution and haven't modified it to capture card data. Cost: essentially zero beyond the time to complete the questionnaire.</p>
+    <p><strong>ISV Referral:</strong> SAQ-A in almost all cases. The processor handles the entire payment flow. Your platform links to or embeds their hosted checkout. PCI obligation is minimal, confirm annually that you're using their hosted solution and haven't modified it to capture card data. Cost: essentially zero beyond the time to complete the questionnaire.</p>
 
     <p><strong>PayFac-as-a-Service:</strong> Typically SAQ-A or SAQ-A-EP, depending on implementation. Most PFaaS providers supply hosted payment fields that keep you at SAQ-A scope. If you've built a custom checkout page that loads the provider's tokenization JavaScript, you're likely SAQ-A-EP. The provider handles the heavy compliance infrastructure; your obligation is to not accidentally bring card data into your environment.</p>
 
-    <p><strong>Full PayFac:</strong> SAQ-D or full RoC. You're processing card data, managing tokens, and operating settlement infrastructure. Full PCI scope applies. Most full PayFacs cross the Level 1 Service Provider threshold (300K+ transactions/year) quickly, which mandates an annual on-site assessment (RoC) conducted by a QSA rather than a self-assessment. This is where compliance costs escalate significantly — dedicated security staff, annual penetration testing, quarterly ASV scans, network segmentation, and ongoing monitoring. Budget $100K–$250K annually for a mature compliance program.</p>
+    <p><strong>Full PayFac:</strong> SAQ-D or full RoC. You're processing card data, managing tokens, and operating settlement infrastructure. Full PCI scope applies. Most full PayFacs cross the Level 1 Service Provider threshold (300K+ transactions/year) quickly, which mandates an annual on-site assessment (RoC) conducted by a QSA rather than a self-assessment. This is where compliance costs escalate significantly, dedicated security staff, annual penetration testing, quarterly ASV scans, network segmentation, and ongoing monitoring. Budget $100K-$250K annually for a mature compliance program.</p>
 
-    <p>The operational gap between these models extends well beyond PCI — <a href="/the-lab/isv-referral-vs-payfac-lite">ISV Referral vs PayFac Lite</a> walks through the full set of trade-offs when you're choosing between them.</p>
+    <p>The operational gap between these models extends well beyond PCI, <a href="/the-lab/isv-referral-vs-payfac-lite">ISV Referral vs PayFac Lite</a> walks through the full set of trade-offs when you're choosing between them.</p>
 
     <h2>The Mistakes That Expand Your Scope</h2>
 
@@ -140,10 +140,10 @@
     <p>For the majority of platforms using modern embedded payments architectures (hosted fields, PFaaS), the real compliance cost is:</p>
 
     <ul>
-      <li><strong>Annual SAQ completion:</strong> 1–2 hours of internal time</li>
-      <li><strong>Quarterly vulnerability scanning</strong> (if SAQ-A-EP): $1K–$3K/year from an Approved Scanning Vendor</li>
-      <li><strong>Annual penetration test</strong> (if SAQ-A-EP or SAQ-D): $5K–$15K</li>
-      <li><strong>Ongoing monitoring and policy maintenance</strong> (SAQ-D only): $50K–$100K+ depending on environment</li>
+      <li><strong>Annual SAQ completion:</strong> 1-2 hours of internal time</li>
+      <li><strong>Quarterly vulnerability scanning</strong> (if SAQ-A-EP): $1K-$3K/year from an Approved Scanning Vendor</li>
+      <li><strong>Annual penetration test</strong> (if SAQ-A-EP or SAQ-D): $5K-$15K</li>
+      <li><strong>Ongoing monitoring and policy maintenance</strong> (SAQ-D only): $50K-$100K+ depending on environment</li>
     </ul>
 
     <p>The vendors selling $50K compliance packages to platforms using hosted payment fields are over-scoping you. If your architecture keeps card data off your systems, your compliance obligation is a questionnaire, not a program.</p>
@@ -153,12 +153,12 @@
     <p>The architectural decisions that keep your PCI scope minimal:</p>
 
     <ul>
-      <li>Use hosted payment fields (iframes) for all card data entry — never native form inputs</li>
+      <li>Use hosted payment fields (iframes) for all card data entry, never native form inputs</li>
       <li>Never log, store, or transmit raw card numbers, even temporarily</li>
       <li>Use processor-generated tokens for all recurring billing and card-on-file operations</li>
       <li>Ensure your checkout page is served over HTTPS with current TLS (1.2+)</li>
       <li>Review your logging configuration annually to confirm no card data leaks into application logs</li>
-      <li>Document your payment data flow diagram — know exactly where card data enters and exits</li>
+      <li>Document your payment data flow diagram, know exactly where card data enters and exits</li>
     </ul>
 
     <blockquote class="pull-quote">PCI compliance isn't the cost of embedded payments. It's the cost of a bad architecture decision. Get the architecture right and compliance is a checkbox, not a budget line.</blockquote>
@@ -173,7 +173,7 @@
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
-    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number, a conversation gives you a plan.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
       <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>

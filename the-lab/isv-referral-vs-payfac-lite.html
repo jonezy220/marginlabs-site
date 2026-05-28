@@ -98,9 +98,9 @@
     <span>7 min read</span>
   </div>
   <div class="article-body">
-    <p>Every software company considering embedded payments eventually hits the same fork in the road: do you refer merchants to a processor and collect residuals, or do you take on more control — and more risk — by becoming a PayFac Lite under a larger facilitator?</p>
+    <p>Every software company considering embedded payments eventually hits the same fork in the road: do you refer merchants to a processor and collect residuals, or do you take on more control, and more risk, by becoming a PayFac Lite under a larger facilitator?</p>
 
-    <p>Both models work. Both generate revenue. But they are built for fundamentally different companies at fundamentally different stages. Choosing the wrong one doesn't just leave money on the table — it can create operational drag that takes years to unwind.</p>
+    <p>Both models work. Both generate revenue. But they are built for fundamentally different companies at fundamentally different stages. Choosing the wrong one doesn't just leave money on the table, it can create operational drag that takes years to unwind.</p>
 
     <p>This article lays out the two models side by side, explains the economics of each, and gives you a practical framework for deciding which one fits where you are right now.</p>
 
@@ -112,27 +112,27 @@
 
     <h2>ISV Referral: The Low-Friction Entry Point</h2>
 
-    <p>In an ISV Referral arrangement, you partner with a processor — Stripe, Fiserv, Worldpay, TSYS, and others all have formal ISV programs — and refer your merchants to them for payment processing. The processor handles underwriting, compliance, settlement, and support. You embed the payment experience into your software through APIs. When your merchants process, you collect a residual.</p>
+    <p>In an ISV Referral arrangement, you partner with a processor, Stripe, Fiserv, Worldpay, TSYS, and others all have formal ISV programs, and refer your merchants to them for payment processing. The processor handles underwriting, compliance, settlement, and support. You embed the payment experience into your software through APIs. When your merchants process, you collect a residual.</p>
 
     <p class="cost-label">The Economics</p>
 
     <p>Residuals in referral programs typically range from 10 to 25 basis points on gross volume, depending on the processor, your vertical, and the volume you bring. Some programs pay a flat per-transaction fee instead of or in addition to basis points.</p>
 
-    <p>On a merchant processing $500,000 annually, a 20-basis-point residual produces $1,000 per year per merchant. With 200 merchants on payments, that's $200,000 in annual recurring revenue — essentially pure margin, since you're not carrying any payments infrastructure.</p>
+    <p>On a merchant processing $500,000 annually, a 20-basis-point residual produces $1,000 per year per merchant. With 200 merchants on payments, that's $200,000 in annual recurring revenue, essentially pure margin, since you're not carrying any payments infrastructure.</p>
 
     <p>The ceiling, however, is real. You don't own the rate. You don't own the relationship with the processor on behalf of each merchant. And if you build volume under one processor's program, switching later is nontrivial.</p>
 
     <p class="cost-label">What You're Giving Up</p>
 
-    <p>The flip side of low operational burden is limited economics. The processor is taking the majority of the margin — often 60 to 80 percent of net revenue on a transaction — because they're carrying all the risk and infrastructure. You're essentially a distribution channel, and distribution channels get distribution-channel economics.</p>
+    <p>The flip side of low operational burden is limited economics. The processor is taking the majority of the margin, often 60 to 80 percent of net revenue on a transaction, because they're carrying all the risk and infrastructure. You're essentially a distribution channel, and distribution channels get distribution-channel economics.</p>
 
-    <p>You also don't control the merchant experience end to end. Boarding, underwriting decisions, hold policies, dispute handling — those belong to the processor. If a merchant has a problem, they may not even know you're involved. That can create friction in the customer relationship you've worked hard to build.</p>
+    <p>You also don't control the merchant experience end to end. Boarding, underwriting decisions, hold policies, dispute handling, those belong to the processor. If a merchant has a problem, they may not even know you're involved. That can create friction in the customer relationship you've worked hard to build.</p>
 
     <p>Referral is the right entry if you're under 200 merchants on payments or under $50M in aggregate GMV. Above that, the math starts to favor a bigger move.</p>
 
     <h2>PayFac Lite: More Control, More Margin, More Responsibility</h2>
 
-    <p>PayFac-as-a-Service — sometimes called Managed PayFac or Payment Facilitator as a Service — is a model where you become a sub-merchant aggregator under a registered payment facilitator, typically a company like Stripe Connect, Adyen for Platforms, or purpose-built PFaaS providers like Finix, Tilled, or Payrix that have built managed facilitator infrastructure specifically for software platforms.</p>
+    <p>PayFac-as-a-Service, sometimes called Managed PayFac or Payment Facilitator as a Service, is a model where you become a sub-merchant aggregator under a registered payment facilitator, typically a company like Stripe Connect, Adyen for Platforms, or purpose-built PFaaS providers like Finix, Tilled, or Payrix that have built managed facilitator infrastructure specifically for software platforms.</p>
 
     <p>You take on merchant onboarding, underwriting decisions (within approved parameters), and the first line of support. In exchange, you own the economics more fully. Instead of collecting a residual on someone else's spread, you set the merchant rate, buy processing at a wholesale interchange-plus rate, and keep the difference.</p>
 
@@ -140,11 +140,11 @@
 
     <p>A typical PayFac Lite arrangement involves buying processing at something like interchange plus 10 to 15 basis points, then charging merchants 2.5 to 2.9 percent. On a $100 transaction at 2.75 percent, you collect $2.75. You pay the processor perhaps $1.85 (interchange plus your cost). You keep $0.90.</p>
 
-    <p>Scale that across $50 million in GMV and you're looking at roughly $450,000 in net payments revenue. In the ISV Referral model at 20 basis points, that same volume generates $100,000. The economics are four to five times better at scale — which is why the model exists.</p>
+    <p>Scale that across $50 million in GMV and you're looking at roughly $450,000 in net payments revenue. In the ISV Referral model at 20 basis points, that same volume generates $100,000. The economics are four to five times better at scale, which is why the model exists.</p>
 
     <p class="cost-label">What You're Taking On</p>
 
-    <p>PayFac Lite isn't free money. You're now responsible for merchant onboarding accuracy, KYC/AML compliance, reserve management, and chargeback first response. You carry reserve exposure on merchants who underperform. You need someone — internally or through a third-party service — who understands chargebacks, disputes, and the basic fraud patterns in your vertical.</p>
+    <p>PayFac Lite isn't free money. You're now responsible for merchant onboarding accuracy, KYC/AML compliance, reserve management, and chargeback first response. You carry reserve exposure on merchants who underperform. You need someone, internally or through a third-party service, who understands chargebacks, disputes, and the basic fraud patterns in your vertical.</p>
 
     <p>None of this is unmanageable. There are platforms specifically built to handle the operations layer for PayFac Lite programs. But it is real work, and it requires more internal attention than a pure referral arrangement.</p>
 
@@ -160,8 +160,8 @@
     <p class="cost-label">Choose ISV Referral if:</p>
 
     <ul>
-      <li>Your payments GMV is under $30–50M annually</li>
-      <li>You have fewer than 100–200 actively processing merchants</li>
+      <li>Your payments GMV is under $30-50M annually</li>
+      <li>You have fewer than 100-200 actively processing merchants</li>
       <li>Your team has no payments operations experience and no near-term plans to hire it</li>
       <li>You're in an early product stage and want revenue without operational complexity</li>
       <li>Your merchants are high-risk or in a vertical with elevated chargeback rates</li>
@@ -179,7 +179,7 @@
 
     <h2>The Migration Question</h2>
 
-    <p>One question that comes up constantly: can you start in ISV Referral and migrate to PayFac Lite later? Yes — and many companies do exactly that. The transition isn't painless, but it's manageable. The main challenge is merchant migration: your existing merchants are typically boarding new contracts under the new model, which means some operational friction and occasional churn.</p>
+    <p>One question that comes up constantly: can you start in ISV Referral and migrate to PayFac Lite later? Yes, and many companies do exactly that. The transition isn't painless, but it's manageable. The main challenge is merchant migration: your existing merchants are typically boarding new contracts under the new model, which means some operational friction and occasional churn.</p>
 
     <p>The smarter play, if you have any foresight about your volume trajectory, is to choose your referral partner with future migration in mind. Fiserv and Global Payments both offer ISV referral programs that can transition to their managed PayFac offerings. Stripe's upgrade path from standard Connect to custom Connect is relatively well-documented. Others make migration deliberately difficult. Ask about migration paths before you sign your first referral agreement.</p>
 
@@ -187,11 +187,11 @@
 
     <p>The most common mistake is treating this as a permanent choice rather than a stage-appropriate choice. Companies get comfortable in referral programs, the residuals start to feel meaningful, and they stop evaluating whether they've crossed the threshold where the economics of PayFac Lite would justify the move.</p>
 
-    <p>Run the math every year. At 200 merchants processing $150,000 each, you have $30 million in GMV. In referral at 20 basis points, that's $60,000 annually. In PayFac Lite at 90 basis points net, that's $270,000. The difference is $210,000 per year — and that number grows with every merchant you add.</p>
+    <p>Run the math every year. At 200 merchants processing $150,000 each, you have $30 million in GMV. In referral at 20 basis points, that's $60,000 annually. In PayFac Lite at 90 basis points net, that's $270,000. The difference is $210,000 per year, and that number grows with every merchant you add.</p>
 
     <blockquote class="pull-quote">The model you choose today should match where you are. But you should be actively managing toward where the economics get meaningfully better.</blockquote>
 
-    <p>The Margin Labs Strategic Decision Framework covers every model in detail — economics, implementation costs, decision frameworks, and the math behind the margin. <a href="/#products">Get the Framework →</a></p>
+    <p>The Margin Labs Strategic Decision Framework covers every model in detail, economics, implementation costs, decision frameworks, and the math behind the margin. <a href="/#products">Get the Framework →</a></p>
   </div>
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
 </article>
@@ -201,7 +201,7 @@
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
-    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number, a conversation gives you a plan.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
       <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>

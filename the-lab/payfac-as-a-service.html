@@ -101,17 +101,17 @@
     <span>9 min read</span>
   </div>
   <div class="article-body">
-    <p>Payment Facilitation as a Service — also called Managed PayFac, PayFac Lite, or Embedded PayFac — has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a Payment Facilitator without building the compliance and operational infrastructure yourself.</p>
+    <p>Payment Facilitation as a Service, also called Managed PayFac, PayFac Lite, or Embedded PayFac, has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a Payment Facilitator without building the compliance and operational infrastructure yourself.</p>
 
-    <p>The model exists because there's a wide gap between the economics of ISV Referral (5–25 basis points) and the cost of becoming a full registered PayFac ($500K+ implementation, 12–18 months to launch, dedicated compliance staff). Most platforms fit somewhere in the middle — they've outgrown referral economics but can't justify the investment of full facilitation. PayFac-as-a-Service fills that gap.</p>
+    <p>The model exists because there's a wide gap between the economics of ISV Referral (5-25 basis points) and the cost of becoming a full registered PayFac ($500K+ implementation, 12-18 months to launch, dedicated compliance staff). Most platforms fit somewhere in the middle, they've outgrown referral economics but can't justify the investment of full facilitation. PayFac-as-a-Service fills that gap.</p>
 
     <h2>How It Works</h2>
 
-    <p>In a PayFac-as-a-Service arrangement, a registered Payment Facilitator — providers like Stripe Connect, Finix, Tilled, or Payrix — provides the infrastructure: sponsor bank relationships, card network registrations, compliance frameworks, settlement systems. You operate as a sub-facilitator or managed partner under their umbrella. Adyen for Platforms offers a similar outcome through a different architecture, combining processing and facilitation under one roof.</p>
+    <p>In a PayFac-as-a-Service arrangement, a registered Payment Facilitator, providers like Stripe Connect, Finix, Tilled, or Payrix, provides the infrastructure: sponsor bank relationships, card network registrations, compliance frameworks, settlement systems. You operate as a sub-facilitator or managed partner under their umbrella. Adyen for Platforms offers a similar outcome through a different architecture, combining processing and facilitation under one roof.</p>
 
     <p>You handle merchant-facing operations: onboarding, pricing, first-line support, and in some cases, underwriting decisions within pre-approved parameters. The PFaaS provider handles the regulatory layer: network reporting, reserve calculations, compliance monitoring, and the relationship with the acquiring bank.</p>
 
-    <p>Merchants are boarded as your sub-merchants. You set the rate. You collect the spread between what you charge and what you pay the provider. The provider earns their margin from the processing cost you pay them — typically interchange plus 10 to 20 basis points, depending on volume and risk profile. Stripe Connect charges differently (a per-transaction platform fee of 0.25% + $0.25 on top of standard processing), while Finix and Tilled price on an interchange-plus model that can be more economical at scale.</p>
+    <p>Merchants are boarded as your sub-merchants. You set the rate. You collect the spread between what you charge and what you pay the provider. The provider earns their margin from the processing cost you pay them, typically interchange plus 10 to 20 basis points, depending on volume and risk profile. Stripe Connect charges differently (a per-transaction platform fee of 0.25% + $0.25 on top of standard processing), while Finix and Tilled price on an interchange-plus model that can be more economical at scale.</p>
 
     <h2>The Economics</h2>
 
@@ -128,25 +128,25 @@
       <tbody>
         <tr>
           <td>ISV Referral</td>
-          <td>5–25 bps</td>
-          <td>$25K–$125K/yr</td>
+          <td>5-25 bps</td>
+          <td>$25K-$125K/yr</td>
         </tr>
         <tr>
           <td>PayFac-as-a-Service</td>
-          <td>25–70 bps</td>
-          <td>$125K–$350K/yr</td>
+          <td>25-70 bps</td>
+          <td>$125K-$350K/yr</td>
         </tr>
         <tr>
           <td>Full PayFac</td>
-          <td>50–100+ bps</td>
-          <td>$250K–$500K+/yr</td>
+          <td>50-100+ bps</td>
+          <td>$250K-$500K+/yr</td>
         </tr>
       </tbody>
     </table>
 
     <p>On $50 million in annual merchant volume, the difference between referral at 15 bps ($75K) and PFaaS at 50 bps ($250K) is $175K per year. That gap grows with every merchant you add.</p>
 
-    <p>Implementation costs for PFaaS typically range from $50K to $200K, depending on the provider, your integration complexity, and whether you need custom boarding flows or can use their standard tools. Stripe Connect sits at the lower end for time-to-market; Finix and Payrix offer more white-label control but longer integration timelines. Time to launch is 2 to 6 months — significantly faster than the 12–18 months for full registration.</p>
+    <p>Implementation costs for PFaaS typically range from $50K to $200K, depending on the provider, your integration complexity, and whether you need custom boarding flows or can use their standard tools. Stripe Connect sits at the lower end for time-to-market; Finix and Payrix offer more white-label control but longer integration timelines. Time to launch is 2 to 6 months, significantly faster than the 12-18 months for full registration.</p>
 
     <h2>What You're Taking On</h2>
 
@@ -158,13 +158,13 @@
 
     <p><strong>Pricing management.</strong> You set merchant rates. This means you need to understand interchange economics well enough to price profitably across different card types and transaction patterns. Getting this wrong is the most common source of margin compression in PFaaS programs.</p>
 
-    <p><strong>Chargeback response.</strong> You're the first responder for disputes. In most PFaaS arrangements, you have a window — typically 5–7 days — to respond to chargebacks before they default. This requires process and tooling.</p>
+    <p><strong>Chargeback response.</strong> You're the first responder for disputes. In most PFaaS arrangements, you have a window, typically 5-7 days, to respond to chargebacks before they default. This requires process and tooling.</p>
 
     <h2>What the Provider Handles</h2>
 
     <p><strong>Card network registration and reporting.</strong> They maintain the PayFac registration with Visa, Mastercard, and other networks, and handle the quarterly and annual reporting requirements.</p>
 
-    <p><strong>Sponsor bank relationship.</strong> The acquiring bank relationship — which is the legal foundation for the entire processing chain — belongs to the provider. This is the single most complex and expensive element of becoming a PayFac, and it's what you're outsourcing.</p>
+    <p><strong>Sponsor bank relationship.</strong> The acquiring bank relationship, which is the legal foundation for the entire processing chain, belongs to the provider. This is the single most complex and expensive element of becoming a PayFac, and it's what you're outsourcing.</p>
 
     <p><strong>Compliance framework.</strong> PCI compliance, AML monitoring, OFAC screening, and suspicious activity reporting are handled by the provider's compliance infrastructure. You feed data into it; they manage the regulatory obligation.</p>
 
@@ -187,23 +187,23 @@
       <li>Full PayFac registration isn't justified by your volume or timeline</li>
     </ul>
 
-    <p>PFaaS does not make sense if your volume is under $20M — the operational overhead isn't worth the incremental revenue over referral. And if you're above $200M and growing fast, the economics of full PayFac registration likely justify the investment at that scale.</p>
+    <p>PFaaS does not make sense if your volume is under $20M, the operational overhead isn't worth the incremental revenue over referral. And if you're above $200M and growing fast, the economics of full PayFac registration likely justify the investment at that scale.</p>
 
     <h2>Managed PayFac vs. Full PayFac: The Real Difference</h2>
 
     <p>The question isn't which is better. It's which matches your scale and trajectory.</p>
 
-    <p>Full PayFac gives you maximum economics and maximum control. But it requires a sponsor bank relationship (which takes 6–12 months to secure), card network registration ($50K+ in fees), dedicated compliance staff, and ongoing regulatory obligations that don't scale down if your volume dips.</p>
+    <p>Full PayFac gives you maximum economics and maximum control. But it requires a sponsor bank relationship (which takes 6-12 months to secure), card network registration ($50K+ in fees), dedicated compliance staff, and ongoing regulatory obligations that don't scale down if your volume dips.</p>
 
-    <p>PFaaS gives you 60–80% of the economics at 20–30% of the cost and complexity. For most platforms between $30M and $200M in volume, that trade-off is correct.</p>
+    <p>PFaaS gives you 60-80% of the economics at 20-30% of the cost and complexity. For most platforms between $30M and $200M in volume, that trade-off is correct.</p>
 
-    <p>The transition from PFaaS to full PayFac is possible but nontrivial. It typically involves migrating your merchant portfolio to a new processing infrastructure, securing your own sponsor bank, and building the compliance and reporting systems the PFaaS provider was handling. Plan for 12–18 months.</p>
+    <p>The transition from PFaaS to full PayFac is possible but nontrivial. It typically involves migrating your merchant portfolio to a new processing infrastructure, securing your own sponsor bank, and building the compliance and reporting systems the PFaaS provider was handling. Plan for 12-18 months.</p>
 
     <blockquote class="pull-quote">PFaaS is the right model when referral economics feel like leaving money on the table, but full PayFac feels like building a payments company instead of a software company.</blockquote>
 
     <p>If you're evaluating the transition from referral to PFaaS, start with the <a href="/margin-multiplier">Margin Multiplier</a> to model the revenue difference. If you want to think through the operational readiness and provider selection questions, that's what the <a href="/advisory">advisory engagement</a> is built for.</p>
 
-    <p>Related: <a href="/the-lab/isv-referral-vs-payfac-lite">ISV Referral vs. PayFac-as-a-Service: How to Choose</a> — a side-by-side comparison of the two most common transition points.</p>
+    <p>Related: <a href="/the-lab/isv-referral-vs-payfac-lite">ISV Referral vs. PayFac-as-a-Service: How to Choose</a>, a side-by-side comparison of the two most common transition points.</p>
   </div>
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
 </article>
@@ -213,7 +213,7 @@
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
-    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number, a conversation gives you a plan.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
       <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>

@@ -100,45 +100,45 @@
   </div>
   <div class="article-body">
     <img src="/assets/lab-images/chargeback-management-for-software-platforms.png" alt="Chargeback Management for Software Platforms" class="article-hero">
-    <p>Chargebacks are the operational reality that most platforms discover after launching embedded payments — not before. Vendors don't lead with it. The integration docs gloss over it. And then a merchant calls about a disputed transaction and the team realizes there's no process for handling it.</p>
+    <p>Chargebacks are the operational reality that most platforms discover after launching embedded payments, not before. Vendors don't lead with it. The integration docs gloss over it. And then a merchant calls about a disputed transaction and the team realizes there's no process for handling it.</p>
 
     <p>Chargebacks are manageable. The platforms that stay healthy manage them proactively. The ones that run into problems treat them as exceptions until they become a systemic issue.</p>
 
     <h2>What a Chargeback Actually Is</h2>
 
-    <p>A chargeback is a payment reversal initiated by a cardholder's bank. The cardholder disputes a transaction — claiming it was unauthorized, the goods or services weren't delivered, or the merchant misrepresented the transaction — and the bank reverses the payment, debiting the merchant's account and crediting the cardholder.</p>
+    <p>A chargeback is a payment reversal initiated by a cardholder's bank. The cardholder disputes a transaction, claiming it was unauthorized, the goods or services weren't delivered, or the merchant misrepresented the transaction, and the bank reverses the payment, debiting the merchant's account and crediting the cardholder.</p>
 
-    <p>As a platform operating embedded payments, you sit between the merchant and the processor. When a chargeback is filed against one of your merchants, you're the first-line responder. You have a limited window — typically 5 to 7 calendar days from notification — to submit evidence challenging the dispute. If you don't respond in time, the chargeback defaults in the cardholder's favor.</p>
+    <p>As a platform operating embedded payments, you sit between the merchant and the processor. When a chargeback is filed against one of your merchants, you're the first-line responder. You have a limited window, typically 5 to 7 calendar days from notification, to submit evidence challenging the dispute. If you don't respond in time, the chargeback defaults in the cardholder's favor.</p>
 
-    <p>Beyond the financial loss on an individual dispute, chargebacks carry fees ($15–$35 per dispute, regardless of outcome) and accumulate toward network thresholds that can put your entire payments program at risk.</p>
+    <p>Beyond the financial loss on an individual dispute, chargebacks carry fees ($15-$35 per dispute, regardless of outcome) and accumulate toward network thresholds that can put your entire payments program at risk.</p>
 
     <h2>The Thresholds That Matter</h2>
 
     <p>Visa and Mastercard monitor chargeback ratios at the merchant and facilitator level. Exceeding their thresholds triggers monitoring programs that are expensive and difficult to exit.</p>
 
     <div class="threshold-block">
-      <div class="threshold-label">Visa Acquirer Monitoring Program (VAMP) — effective April 2026</div>
-      <p>Excessive: 1.5% VAMP ratio with minimum 1,500 disputes — fines begin, remediation required</p>
-      <p>Visa consolidated its older monitoring programs (VDMP, VFMP) into VAMP in 2025. There is now a single merchant tier — you're either compliant or flagged as Excessive.</p>
+      <div class="threshold-label">Visa Acquirer Monitoring Program (VAMP), effective April 2026</div>
+      <p>Excessive: 1.5% VAMP ratio with minimum 1,500 disputes, fines begin, remediation required</p>
+      <p>Visa consolidated its older monitoring programs (VDMP, VFMP) into VAMP in 2025. There is now a single merchant tier, you're either compliant or flagged as Excessive.</p>
     </div>
 
     <div class="threshold-block">
       <div class="threshold-label">Mastercard Excessive Chargeback Program</div>
       <p>ECM (Excessive Chargeback Merchant): 1.5% ratio and 100+ chargebacks/month</p>
-      <p>HECM (High Excessive): 3.0% ratio and 300+ chargebacks/month — significant fines</p>
+      <p>HECM (High Excessive): 3.0% ratio and 300+ chargebacks/month, significant fines</p>
     </div>
 
-    <p>In a PayFac-as-a-Service or full PayFac model, your aggregate chargeback ratio across all sub-merchants is what the networks monitor — not individual merchant ratios in isolation. A single high-risk merchant with an elevated chargeback rate can push your program into monitoring territory if their volume is significant relative to your total. Underwriting quality and ongoing monitoring are your primary defenses.</p>
+    <p>In a PayFac-as-a-Service or full PayFac model, your aggregate chargeback ratio across all sub-merchants is what the networks monitor, not individual merchant ratios in isolation. A single high-risk merchant with an elevated chargeback rate can push your program into monitoring territory if their volume is significant relative to your total. Underwriting quality and ongoing monitoring are your primary defenses.</p>
 
     <h2>Building a Response Process</h2>
 
     <p>The response process has three components: notification, evidence assembly, and submission.</p>
 
-    <p><strong>Notification.</strong> Your processor or PFaaS provider will notify you when a chargeback is filed. Confirm how — email, dashboard alert, API webhook — and make sure the right person sees it within 24 hours. The response window is short and the default is losing.</p>
+    <p><strong>Notification.</strong> Your processor or PFaaS provider will notify you when a chargeback is filed. Confirm how, email, dashboard alert, API webhook, and make sure the right person sees it within 24 hours. The response window is short and the default is losing.</p>
 
     <p><strong>Evidence assembly.</strong> What you submit depends on the chargeback reason code. For "unauthorized transaction" disputes, you need evidence the cardholder authorized the transaction: IP address, device fingerprint, billing address match, authentication records. For "goods not received" or "services not as described," you need delivery confirmation, service records, communications with the merchant's customer. Build templates for the most common reason codes in your vertical so responses can be assembled quickly.</p>
 
-    <p><strong>Submission.</strong> Most processors accept evidence through a dispute portal. Some require specific file formats and page limits. Know your processor's requirements before you need them — not when you're 48 hours from a deadline.</p>
+    <p><strong>Submission.</strong> Most processors accept evidence through a dispute portal. Some require specific file formats and page limits. Know your processor's requirements before you need them, not when you're 48 hours from a deadline.</p>
 
     <div style="background:var(--bg4,#1a1a1a);border-left:2px solid var(--copper);padding:20px 24px;margin:32px 0;">
       <p style="font-size:14px;font-weight:400;color:var(--text);margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
@@ -151,14 +151,14 @@
 
     <ul>
       <li><strong>Clear merchant descriptors.</strong> The most common source of "unauthorized" chargebacks is a cardholder who doesn't recognize the transaction on their statement. The merchant's name as it appears on the cardholder's statement should match their DBA name and be recognizable. A cardholder who remembers paying "Riverside Plumbing" and sees "RVS PLB LLC" will sometimes dispute it. Simple to fix, often overlooked.</li>
-      <li><strong>Prompt refunds.</strong> A merchant who processes a refund quickly rarely generates a chargeback for the same transaction. Build refund capabilities into your platform so merchants can issue credits without going through a separate process. The chargeback fee ($15–$35) almost always exceeds the cost of the refund.</li>
-      <li><strong>Merchant screening.</strong> High-risk merchant categories — travel, event ticketing, subscriptions, digital goods — generate disproportionate chargeback volumes. Know which categories are in your merchant base and either apply tighter underwriting criteria or exclude categories that create risk you can't manage.</li>
-      <li><strong>Transaction velocity monitoring.</strong> Unusual transaction patterns — multiple charges in a short window, transactions far outside a merchant's normal ticket size, late-night processing spikes — often precede chargeback waves. Basic monitoring catches most of the obvious patterns.</li>
+      <li><strong>Prompt refunds.</strong> A merchant who processes a refund quickly rarely generates a chargeback for the same transaction. Build refund capabilities into your platform so merchants can issue credits without going through a separate process. The chargeback fee ($15-$35) almost always exceeds the cost of the refund.</li>
+      <li><strong>Merchant screening.</strong> High-risk merchant categories, travel, event ticketing, subscriptions, digital goods, generate disproportionate chargeback volumes. Know which categories are in your merchant base and either apply tighter underwriting criteria or exclude categories that create risk you can't manage.</li>
+      <li><strong>Transaction velocity monitoring.</strong> Unusual transaction patterns, multiple charges in a short window, transactions far outside a merchant's normal ticket size, late-night processing spikes, often precede chargeback waves. Basic monitoring catches most of the obvious patterns.</li>
     </ul>
 
     <h2>Reserve Management</h2>
 
-    <p>Processors hold rolling reserves — typically 5–10% of monthly processing volume, released on a 90–180 day rolling schedule — as a buffer against chargeback losses. Reserves are normal and expected, especially for new programs.</p>
+    <p>Processors hold rolling reserves, typically 5-10% of monthly processing volume, released on a 90-180 day rolling schedule, as a buffer against chargeback losses. Reserves are normal and expected, especially for new programs.</p>
 
     <p>As your program matures and your chargeback history builds, reserve requirements should decline. If your processor hasn't reduced reserves in line with your performance, that's a negotiation conversation worth having. Reserves are capital you're not deploying elsewhere.</p>
 
@@ -174,7 +174,7 @@
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
-    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number — a conversation gives you a plan.</p>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number, a conversation gives you a plan.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
       <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
