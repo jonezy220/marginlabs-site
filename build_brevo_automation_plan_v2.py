@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-Margin Labs — Brevo Marketing Automation Plan v2 (Word Document Builder)
+Margin Labs, Brevo Marketing Automation Plan v2 (Word Document Builder)
 Run with: python3 build_brevo_automation_plan_v2.py
 Output:   Brevo_Marketing_Automation_Plan_v2.docx
 
 v2 changes (April 10, 2026):
   - Email template mockup image embedded in doc (dark + light mode previews)
   - Framework section references corrected to match actual 14-section PDF
-  - Tone tightened — more authoritative, less casual per feedback
+  - Tone tightened, more authoritative, less casual per feedback
   - /execution-playbook URLs replaced with /advisory + "ask about the Playbook"
   - Manual outreach tracking conventions section added (Brevo Gmail plugin)
   - "From The Lab" broadcast concept added to Future Enhancements
-  - Sender stays chris@marginlabs.io, sign-off stays "— Chris, Margin Labs"
+  - Sender stays chris@marginlabs.io, sign-off stays "Chris, Margin Labs"
   - Brevo cost analysis added (free tier → Standard at $18/mo)
 """
 
@@ -310,7 +310,7 @@ def build(doc):
          "and is ready to paste into Brevo's HTML editor.")
 
     h2(doc, "Design Spec")
-    bullet(doc, "Background (outer + container): #111111 — matches logo and site dark mode")
+    bullet(doc, "Background (outer + container): #111111, matches logo and site dark mode")
     bullet(doc, "Container: 560px max-width, 1px #2a2a2a border, 3px copper top border")
     bullet(doc, "Logo: brand-lockup.png (icon + MarginLabs + tagline), 280px wide, hosted at marginlabs.io/emails/brand-lockup.png")
     bullet(doc, "Body: DM Sans, 15px/1.7, #d4d4d4 (light gray text on dark)")
@@ -325,20 +325,20 @@ def build(doc):
          "Apple Mail, iOS Mail, Gmail app, and Outlook.com respect the color-scheme meta tag "
          "and render dark natively.")
 
-    h2(doc, "Template Preview — Dark Mode (default)")
+    h2(doc, "Template Preview, Dark Mode (default)")
     # Embed dark screenshot
     dark_img = os.path.join(SCRIPT_DIR, "emails", "template-preview-dark.png")
     if os.path.exists(dark_img):
         doc.add_picture(dark_img, width=Inches(5.0))
     else:
-        body(doc, "[Dark mode screenshot not found — run template-local.html in browser to generate]", italic=True, color=GRAY)
+        body(doc, "[Dark mode screenshot not found, run template-local.html in browser to generate]", italic=True, color=GRAY)
 
-    h2(doc, "Template Preview — Light Mode (forced by some clients)")
+    h2(doc, "Template Preview, Light Mode (forced by some clients)")
     light_img = os.path.join(SCRIPT_DIR, "emails", "template-preview-light.png")
     if os.path.exists(light_img):
         doc.add_picture(light_img, width=Inches(5.0))
     else:
-        body(doc, "[Light mode screenshot not found — open template-local.html in light-mode browser to generate]", italic=True, color=GRAY)
+        body(doc, "[Light mode screenshot not found, open template-local.html in light-mode browser to generate]", italic=True, color=GRAY)
 
     note(doc, "Deploy emails/brand-lockup.png to marginlabs.io/emails/ when you push the site. "
          "Alternatively, upload to Brevo's media library and swap the src URL in the template.")
@@ -422,7 +422,7 @@ def build(doc):
     data_table(doc,
         ["Event", "Action"],
         [
-            ["Contact enters WF1 AND already has multiplier-lead tag", "Skip WF1 entirely — they follow WF2"],
+            ["Contact enters WF1 AND already has multiplier-lead tag", "Skip WF1 entirely, they follow WF2"],
             ["Contact enters WF2 AND already in WF1", "Exit WF1 immediately; WF2 takes over"],
             ["Contact gets framework-customer tag", "Exit WF1 and WF2 immediately; enter WF3"],
             ["Contact gets playbook-customer tag", "Exit WF3 immediately"],
@@ -439,7 +439,7 @@ def build(doc):
     body(doc, "Suppression: Skip if tag framework-customer exists", bold=True)
     body(doc, "Goal: Drive Margin Multiplier usage → Framework purchase", bold=True)
 
-    h3(doc, "Email 1.1 — Day 2")
+    h3(doc, "Email 1.1, Day 2")
     email_block(doc,
         subject="A tool that goes deeper than the guide",
         day="2",
@@ -447,11 +447,11 @@ def build(doc):
 
 Hope you've had a chance to look through the guide.
 
-It covers the landscape — the four models, what each one means, and the questions to ask before you start evaluating. It's the orientation layer.
+It covers the landscape, the four models, what each one means, and the questions to ask before you start evaluating. It's the orientation layer.
 
 What it can't do is tell you what the numbers look like for your platform.
 
-That's what the Margin Multiplier does. Plug in your payment volume and it runs a side-by-side comparison across all four monetization models — ISV Referral, Enhanced Residuals, PayFac-as-a-Service, and Full PayFac.
+That's what the Margin Multiplier does. Plug in your payment volume and it runs a side-by-side comparison across all four monetization models, ISV Referral, Enhanced Residuals, PayFac-as-a-Service, and Full PayFac.
 
 Takes about 60 seconds.
 
@@ -459,10 +459,10 @@ Takes about 60 seconds.
 
 The output pairs well with the guide's model comparison section. Worth doing them together.
 
-— Chris, Margin Labs""",
+Chris, Margin Labs""",
         condition="If HAS_MULTIPLIER = true, skip Email 1.2 and go to 1.3.")
 
-    h3(doc, "Email 1.2 — Day 5")
+    h3(doc, "Email 1.2, Day 5")
     email_block(doc,
         subject="The number most platforms don't know",
         day="5",
@@ -470,7 +470,7 @@ The output pairs well with the guide's model comparison section. Worth doing the
 
 There's one number that determines whether embedded payments is a line item or a business unit for your platform.
 
-It's your opportunity gap — the delta between what you're earning today on payments and what you'd earn under the optimal model at your volume.
+It's your opportunity gap, the delta between what you're earning today on payments and what you'd earn under the optimal model at your volume.
 
 Most platforms don't know this number. Their processor doesn't volunteer it.
 
@@ -480,9 +480,9 @@ The Margin Multiplier calculates it in about 60 seconds.
 
 If the gap is under $50K/year, you're probably fine where you are. If it's over $200K, that's a conversation worth having.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
 
-    h3(doc, "Email 1.3 — Day 9")
+    h3(doc, "Email 1.3, Day 9")
     email_block(doc,
         subject="What the guide doesn't cover (by design)",
         day="9",
@@ -491,7 +491,7 @@ If the gap is under $50K/year, you're probably fine where you are. If it's over 
 The free guide gives you the landscape. It does not give you:
 
   · Real-world take rate economics across all four models (Sections 7-10)
-  · The payments ecosystem map — processors, gateways, acquirers, and where your platform fits (Section 5)
+  · The payments ecosystem map, processors, gateways, acquirers, and where your platform fits (Section 5)
   · A decision framework for which model fits your stage and volume (Section 11)
   · How embedded payments affects your enterprise valuation (Section 12)
   · A 90-day quick-start plan with phase-by-phase milestones (Section 12)
@@ -500,17 +500,17 @@ Those gaps are deliberate. The guide is the "should we think about this?" layer.
 
 14 sections across three parts: the landscape, the four models in detail, and the action plan.
 
-→ marginlabs.io/strategic-framework ($139)
+→ marginlabs.io/#products ($139)
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
 
-    h3(doc, "Email 1.4 — Day 14")
+    h3(doc, "Email 1.4, Day 14")
     email_block(doc,
         subject="One more resource, then I'll step back",
         day="14",
         body_text="""MARGIN LABS
 
-If embedded payments is on your roadmap — even loosely — the Strategic Decision Framework ($139) is the most efficient way to understand the model economics and what execution requires at your stage.
+If embedded payments is on your roadmap, even loosely, the Strategic Decision Framework ($139) is the most efficient way to understand the model economics and what execution requires at your stage.
 
 If the timing isn't right, the Lab has free analysis on the topics that come up most:
 
@@ -518,7 +518,7 @@ If the timing isn't right, the Lab has free analysis on the topics that come up 
 
 We'll only be in touch again when there's something genuinely worth your time.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
     note(doc, "End of Workflow 1. Contact remains in Brevo list for future broadcasts.")
 
     # ── WORKFLOW 2: MULTIPLIER ──
@@ -528,26 +528,26 @@ We'll only be in touch again when there's something genuinely worth your time.
     body(doc, "Suppression: Skip if tag framework-customer exists", bold=True)
     body(doc, "Goal: Deliver free guide (if they don't have it) → Framework purchase", bold=True)
 
-    h3(doc, "Email 2.1 — Day 2")
+    h3(doc, "Email 2.1, Day 2")
     email_block(doc,
         subject="Your results + a resource that pairs with them",
         day="2",
         body_text="""MARGIN LABS
 
-Your Margin Multiplier results showed {{RECOMMENDED_MODEL}} as the highest-margin model at your volume. The opportunity gap — what you'd gain by moving to that model — was approximately {{OPPORTUNITY_GAP}}.
+Your Margin Multiplier results showed {{RECOMMENDED_MODEL}} as the highest-margin model at your volume. The opportunity gap, what you'd gain by moving to that model, was approximately {{OPPORTUNITY_GAP}}.
 
 That's a directional estimate. The actual number depends on your merchant mix, vertical, and the terms you negotiate.
 
-If you haven't seen it yet, the free guide covers the landscape — what each model actually means, the questions to ask, and the common mistakes platforms make early on.
+If you haven't seen it yet, the free guide covers the landscape, what each model actually means, the questions to ask, and the common mistakes platforms make early on.
 
 → Download the free guide: marginlabs.io (scroll to "Get the Free Guide")
 
 It pairs well with the Multiplier output. The guide explains the models; the Multiplier shows your specific numbers.
 
-— Chris, Margin Labs""",
+Chris, Margin Labs""",
         condition="If HAS_FREE_GUIDE = true, replace free guide offer with link to Lab article (Why Merchants Don't Use Payments).")
 
-    h3(doc, "Email 2.2 — Day 5")
+    h3(doc, "Email 2.2, Day 5")
     email_block(doc,
         subject="The activation problem nobody talks about",
         day="5",
@@ -555,7 +555,7 @@ It pairs well with the Multiplier output. The guide explains the models; the Mul
 
 Your Multiplier results assume 100% merchant activation. In practice, most platforms see 40-70%.
 
-That means the real number is likely lower than the estimate you received — unless you solve the activation problem.
+That means the real number is likely lower than the estimate you received, unless you solve the activation problem.
 
 A platform with 80% activation on Enhanced Residuals generates more revenue than a platform with 40% activation on PayFac-as-a-Service. The model matters, but activation matters more.
 
@@ -563,22 +563,22 @@ This is one of the topics we cover in depth:
 
 → marginlabs.io/the-lab/why-merchants-dont-use-payments
 
-The three reasons merchants don't opt in — and what the top-performing platforms do differently.
+The three reasons merchants don't opt in, and what the top-performing platforms do differently.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
 
-    h3(doc, "Email 2.3 — Day 9")
+    h3(doc, "Email 2.3, Day 9")
     email_block(doc,
         subject="What the Multiplier doesn't show you",
         day="9",
         body_text="""MARGIN LABS
 
-The Margin Multiplier gives you the headline number — the revenue estimate across all four models at your volume.
+The Margin Multiplier gives you the headline number, the revenue estimate across all four models at your volume.
 
 What it doesn't show:
 
   · The actual take rate ranges and what drives them within each model (Sections 7-10)
-  · How the payments ecosystem works — processors, gateways, where your platform fits (Section 5)
+  · How the payments ecosystem works, processors, gateways, where your platform fits (Section 5)
   · Whether your platform is operationally ready to move up the model stack (Section 11)
   · How payments revenue affects your enterprise valuation at exit (Section 12)
   · A 90-day plan to go from decision to first payments revenue (Section 12)
@@ -587,17 +587,17 @@ That's what the Strategic Decision Framework covers. 14 sections organized as a 
 
 The Multiplier shows you the opportunity exists. The Framework shows you how to evaluate it.
 
-→ marginlabs.io/strategic-framework ($139)
+→ marginlabs.io/#products ($139)
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
 
-    h3(doc, "Email 2.4 — Day 14")
+    h3(doc, "Email 2.4, Day 14")
     email_block(doc,
         subject="One more resource, then I'll step back",
         day="14",
         body_text="""MARGIN LABS
 
-Your Multiplier estimate showed a {{OPPORTUNITY_GAP}} opportunity gap. If that number warranted attention, the Strategic Decision Framework ($139) is the next step — it turns that estimate into an evaluation you can act on.
+Your Multiplier estimate showed a {{OPPORTUNITY_GAP}} opportunity gap. If that number warranted attention, the Strategic Decision Framework ($139) is the next step, it turns that estimate into an evaluation you can act on.
 
 If the timing isn't right:
 
@@ -605,7 +605,7 @@ If the timing isn't right:
 
 Free analysis on the topics that matter most. We'll only be in touch again when there's something worth your time.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
     note(doc, "End of Workflow 2. Contact remains in Brevo list for future broadcasts.")
 
     # ── WORKFLOW 3: POST-PURCHASE ──
@@ -615,7 +615,7 @@ Free analysis on the topics that matter most. We'll only be in touch again when 
     body(doc, "Suppression: Immediately remove contact from Workflows 1 and 2", bold=True)
     body(doc, "Goal: Drive Quick Start Call ($379) booking. Playbook ($697) as secondary DIY option.", bold=True)
 
-    h3(doc, "Email 3.1 — Day 3")
+    h3(doc, "Email 3.1, Day 3")
     email_block(doc,
         subject="Getting the most out of the Framework",
         day="3",
@@ -623,17 +623,17 @@ Free analysis on the topics that matter most. We'll only be in touch again when 
 
 Your Framework should have arrived. A few sections worth reading closely.
 
-The Four Models — Sections 7 through 10: Each model gets its own deep dive with real-world take rate economics, not vendor deck numbers. If a processor is quoting outside these ranges, that's useful information for your next conversation.
+The Four Models, Sections 7 through 10: Each model gets its own deep dive with real-world take rate economics, not vendor deck numbers. If a processor is quoting outside these ranges, that's useful information for your next conversation.
 
-Which Model Is Right for You — Section 11: The decision framework based on volume, stage, operational capacity, and strategic timeline. This is where most readers spend the most time. It includes a quick-decision matrix and valuation impact analysis.
+Which Model Is Right for You, Section 11: The decision framework based on volume, stage, operational capacity, and strategic timeline. This is where most readers spend the most time. It includes a quick-decision matrix and valuation impact analysis.
 
-The 90-Day Quick Start — Section 12: Phase-by-phase milestones from decision to first payments revenue. Useful for scoping the internal conversation about resources and timeline.
+The 90-Day Quick Start, Section 12: Phase-by-phase milestones from decision to first payments revenue. Useful for scoping the internal conversation about resources and timeline.
 
-Questions on anything in there? Reply to this email — we read every one.
+Questions on anything in there? Reply to this email, we read every one.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
 
-    h3(doc, "Email 3.2 — Day 7")
+    h3(doc, "Email 3.2, Day 7")
     email_block(doc,
         subject="The fastest path from framework to decision",
         day="7",
@@ -647,10 +647,10 @@ Most operators land in one of two places:
 
   B) "I have better questions than when I started, but I'm not sure how to apply this to my specific situation."
 
-Either way — the fastest path forward is a conversation, not more reading.
+Either way, the fastest path forward is a conversation, not more reading.
 
 ────────────────────────────────────────
-QUICK START CALL — $379
+QUICK START CALL, $379
 
 One hour. Your specific situation, your numbers, your platform.
 
@@ -665,15 +665,15 @@ Follow-up action plan delivered within 48 hours.
 → marginlabs.io/advisory
 ────────────────────────────────────────
 
-If you'd rather execute independently, ask about the Execution Playbook ($697) — vendor scorecards, contract term benchmarks, negotiation playbook, and implementation project plans.
+If you'd rather execute independently, ask about the Execution Playbook ($697), vendor scorecards, contract term benchmarks, negotiation playbook, and implementation project plans.
 
 → marginlabs.io/advisory
 
 The call gets you to a decision faster and includes introductions. The Playbook is comprehensive self-service on your own timeline.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
 
-    h3(doc, "Email 3.3 — Day 14")
+    h3(doc, "Email 3.3, Day 14")
     email_block(doc,
         subject="Where does this land for you?",
         day="14",
@@ -687,15 +687,15 @@ The operators we work with usually follow a pattern:
   Week 2: Start thinking about vendors and internal buy-in
   Week 3-4: Either start vendor conversations or realize they need help navigating the specifics
 
-If you're approaching vendor conversations — or already in them — the Quick Start Call is designed for exactly that moment. One hour, your specific situation, directional recommendations, and introductions to vetted processing partners.
+If you're approaching vendor conversations, or already in them, the Quick Start Call is designed for exactly that moment. One hour, your specific situation, directional recommendations, and introductions to vetted processing partners.
 
 → marginlabs.io/advisory ($379)
 
 If you're not there yet, no rush. Reply here if anything in the Framework needs clarification.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
 
-    h3(doc, "Email 3.4 — Day 21")
+    h3(doc, "Email 3.4, Day 21")
     email_block(doc,
         subject="Two paths forward from the Framework",
         day="21",
@@ -717,7 +717,7 @@ The call is faster and includes introductions. The Playbook is more comprehensiv
 
 After this, we'll only be in touch when we have something genuinely useful to share.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
     note(doc, "End of Workflow 3.")
 
     # ── WORKFLOW 4: ADVISORY ──
@@ -727,7 +727,7 @@ After this, we'll only be in touch when we have something genuinely useful to sh
     body(doc, "Suppression: None (advisory leads can also be in product workflows)", bold=True)
     body(doc, "Goal: Confirm receipt. One follow-up. Manual outreach from here.", bold=True)
 
-    h3(doc, "Email 4.1 — Immediate")
+    h3(doc, "Email 4.1, Immediate")
     email_block(doc,
         subject="We've received your inquiry",
         day="0",
@@ -735,23 +735,23 @@ After this, we'll only be in touch when we have something genuinely useful to sh
 
 Thanks for reaching out. We've received your information and will follow up within 48 hours.
 
-In the meantime — if you haven't run the Margin Multiplier, it will give us a cleaner starting point for the conversation:
+In the meantime, if you haven't run the Margin Multiplier, it will give us a cleaner starting point for the conversation:
 
 → marginlabs.io/margin-multiplier
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
 
-    h3(doc, "Email 4.2 — Day 3")
+    h3(doc, "Email 4.2, Day 3")
     email_block(doc,
         subject="Following up on your inquiry",
         day="3",
         body_text="""MARGIN LABS
 
-Following up on your inquiry from a few days ago. I want to make sure my response didn't land in spam — I'll be reaching out directly shortly.
+Following up on your inquiry from a few days ago. I want to make sure my response didn't land in spam, I'll be reaching out directly shortly.
 
 If anything has changed or you'd like to add context before we connect, reply here.
 
-— Chris, Margin Labs""")
+Chris, Margin Labs""")
     note(doc, "End of Workflow 4. Everything after this is manual outreach by Chris.")
 
     # ── MANUAL OUTREACH TRACKING ──
@@ -760,15 +760,15 @@ If anything has changed or you'd like to add context before we connect, reply he
          "(already installed and integrated) to keep contact records in sync.")
 
     h2(doc, "How the Gmail Plugin Works")
-    bullet(doc, "Brevo's Gmail integration automatically logs sent and received emails on the contact's Brevo timeline — if the contact's email address exists in your Brevo contact list.")
+    bullet(doc, "Brevo's Gmail integration automatically logs sent and received emails on the contact's Brevo timeline, if the contact's email address exists in your Brevo contact list.")
     bullet(doc, "When you send a manual email from chris@marginlabs.io via Gmail, it appears on that contact's activity log in Brevo. No BCC or manual tagging required.")
-    bullet(doc, "The 'send email as me' permission means Brevo can also send automation emails that appear to come from your Gmail — this is what powers the FROM: chris@marginlabs.io in the workflows above.")
+    bullet(doc, "The 'send email as me' permission means Brevo can also send automation emails that appear to come from your Gmail, this is what powers the FROM: chris@marginlabs.io in the workflows above.")
 
     h2(doc, "Recommended Conventions")
     bullet(doc, "After a manual outreach to an advisory lead, add a tag in Brevo: manual-reply-sent. This prevents WF4 Email 4.2 (the 'quick follow-up') from firing if you've already responded.")
     bullet(doc, "After a Quick Start Call is booked, add tag: call-booked. This exits WF3 so they stop getting upsell emails.")
     bullet(doc, "After a Quick Start Call is completed, add tag: call-completed. Future enhancement: this will trigger a Day 30 post-call check-in.")
-    bullet(doc, "Monthly review: scan Brevo contact list for advisory-lead contacts without a manual-reply-sent tag — these are leads that fell through the cracks.")
+    bullet(doc, "Monthly review: scan Brevo contact list for advisory-lead contacts without a manual-reply-sent tag, these are leads that fell through the cracks.")
 
     # ── SEQUENCE TIMING SUMMARY ──
     page_break(doc)
@@ -823,18 +823,18 @@ If anything has changed or you'd like to add context before we connect, reply he
     bullet(doc, "Add contact attributes: HAS_FREE_GUIDE, HAS_MULTIPLIER, HAS_FRAMEWORK, ENTRY_DATE")
     bullet(doc, "Build email template in Brevo using emails/template.html (paste HTML into code editor)")
     bullet(doc, "Deploy emails/brand-lockup.png to marginlabs.io/emails/ (or upload to Brevo media library)")
-    bullet(doc, "Create Workflow 1 (Free Guide Nurture) — 4 emails, Days 2/5/9/14")
-    bullet(doc, "Create Workflow 2 (Multiplier Nurture) — 4 emails, Days 2/5/9/14")
-    bullet(doc, "Create Workflow 3 (Post-Purchase) — 4 emails, Days 3/7/14/21")
-    bullet(doc, "Create Workflow 4 (Advisory Confirmation) — 2 emails, Immediate/Day 3")
+    bullet(doc, "Create Workflow 1 (Free Guide Nurture), 4 emails, Days 2/5/9/14")
+    bullet(doc, "Create Workflow 2 (Multiplier Nurture), 4 emails, Days 2/5/9/14")
+    bullet(doc, "Create Workflow 3 (Post-Purchase), 4 emails, Days 3/7/14/21")
+    bullet(doc, "Create Workflow 4 (Advisory Confirmation), 2 emails, Immediate/Day 3")
     bullet(doc, "Configure suppression rules between workflows")
     bullet(doc, "Test with chris@marginlabs.io through each entry point")
 
     h2(doc, "API Updates")
-    bullet(doc, "api/send-guide.js — add tag free-guide-lead, set HAS_FREE_GUIDE = true")
-    bullet(doc, "api/submit-calculator.js — add tag multiplier-lead, set HAS_MULTIPLIER = true")
-    bullet(doc, "api/submit-consult.js — add tag advisory-lead")
-    bullet(doc, "api/stripe-webhook.js — add tag framework-customer, set HAS_FRAMEWORK = true")
+    bullet(doc, "api/send-guide.js, add tag free-guide-lead, set HAS_FREE_GUIDE = true")
+    bullet(doc, "api/submit-calculator.js, add tag multiplier-lead, set HAS_MULTIPLIER = true")
+    bullet(doc, "api/submit-consult.js, add tag advisory-lead")
+    bullet(doc, "api/stripe-webhook.js, add tag framework-customer, set HAS_FRAMEWORK = true")
 
     h2(doc, "Site Updates")
     bullet(doc, "Add redirect in vercel.json: /execution-playbook → /advisory (until Playbook page is built)")
@@ -842,13 +842,13 @@ If anything has changed or you'd like to add context before we connect, reply he
     # ── WHAT THIS REPLACES ──
     h1(doc, "What This Replaces")
     body(doc, "This plan supersedes two older documents:")
-    bullet(doc, "brevo-sequences.md — 5 sequences, less structured, partially overlapping")
-    bullet(doc, "email-waterfalls-plan.md — 6 waterfalls, based on v5 pricing, proposed Resend+Postgres stack instead of Brevo")
+    bullet(doc, "brevo-sequences.md, 5 sequences, less structured, partially overlapping")
+    bullet(doc, "email-waterfalls-plan.md, 6 waterfalls, based on v5 pricing, proposed Resend+Postgres stack instead of Brevo")
     body(doc, "Both older docs can be archived once this plan is approved and built.")
 
     # ── FUTURE ──
     h1(doc, "Future Enhancements (Not in v1)")
-    bullet(doc, '"From The Lab" monthly broadcast — when a new Lab article is published, Brevo sends a single-article announcement to all contacts who completed their nurture sequence and haven\'t purchased. Templated, no manual drafting. Keeps the relationship warm without a content treadmill.')
+    bullet(doc, '"From The Lab" monthly broadcast, when a new Lab article is published, Brevo sends a single-article announcement to all contacts who completed their nurture sequence and haven\'t purchased. Templated, no manual drafting. Keeps the relationship warm without a content treadmill.')
     bullet(doc, "Volume-based segmentation (High-Value / Mid-Market / Early-Stage nurture tracks)")
     bullet(doc, "Progressive profiling survey (Day 1 email with segment self-selection)")
     bullet(doc, "Post-Playbook purchase sequence (→ Quick Start Call upsell)")

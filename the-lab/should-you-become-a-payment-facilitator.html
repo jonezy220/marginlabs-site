@@ -1,0 +1,212 @@
+<!-- ML-LAB-023 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Should You Become a Payment Facilitator? Cost, Compliance, and Decision Framework | Margin Labs</title>
+<meta name="description" content="Becoming a payment facilitator costs $500K to $2M and 12 to 18 months. PayFac-as-a-Service costs $50K to $200K and 3 to 6 months. The decision framework for software platforms weighing PayFac vs PFaaS, with cost benchmarks, compliance burden, and a three-question test.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Should You Become a Payment Facilitator? Cost, Compliance, and Decision Framework | Margin Labs">
+<meta property="og:description" content="The decision framework for software platforms weighing PayFac vs PFaaS. Cost benchmarks, compliance burden, common mistakes, and a three-question test that resolves the call for most teams.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .kpi-block { background: var(--bg4, #1a1a1a); border-left: 2px solid var(--copper); padding: 16px 20px; margin: 16px 0 24px; }
+  .kpi-block .kpi-name { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
+  .kpi-block .kpi-formula { font-size: 14px; color: var(--text); margin-bottom: 4px; }
+  .kpi-block .kpi-bench { font-size: 13px; color: var(--dimmer); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Should You Become a Payment Facilitator?</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>8 min read</span>
+  </div>
+  <div class="article-body">
+    <img src="/assets/lab-images/should-you-become-a-payment-facilitator.png" alt="What It Costs to Become a Payment Facilitator, comparing Full PayFac and PayFac-as-a-Service across implementation cost, annual operating cost, and time to launch" class="article-hero">
+
+    <p>The question lands on every vertical SaaS founder's desk eventually: should we become a payment facilitator?</p>
+
+    <p>The answer matters more than most teams realize. The wrong call costs anywhere from $300K to $2M in capital and 12 to 18 months of focus. The right call captures 30 to 60 basis points of net margin on every dollar of merchant payment volume your platform carries, compounding for years.</p>
+
+    <p>This is a strategic decision that gets framed as a technical one. The technical pieces (card network registration, sponsor bank relationships, KYC infrastructure) are well-documented. The strategic pieces (when the financial case actually works, what the compliance burden really looks like, where the hidden costs hide) are what decide whether the move pays off or quietly drags on the business for years.</p>
+
+    <p>Here's the framework.</p>
+
+    <h2>The Four Ways to Participate in Payments Economics</h2>
+
+    <p>Before answering "should we become a PayFac," ground the conversation in what's available. There are four arrangements, each with different economics and different operational obligations. For the definitional version of each, see <a href="/the-lab/what-is-a-payment-facilitator">What Is a Payment Facilitator?</a></p>
+
+    <p><strong>ISV Referral.</strong> You refer merchants to a processor. The processor handles boarding, underwriting, and settlement. You collect a residual of 5 to 15 basis points. Implementation is measured in weeks. No infrastructure investment, no compliance burden. The ceiling is low because the economics are.</p>
+
+    <p><strong>ISV Enhanced Residuals.</strong> A variant of the referral model with negotiated improvements. You retain a larger share of the spread (15 to 30 basis points) and sometimes influence merchant pricing, but you're still not the merchant of record. Implementation is similar to ISV Referral.</p>
+
+    <p><strong>PayFac-as-a-Service (Managed PayFac).</strong> You operate as a payment facilitator under another registered PayFac's umbrella. You own the merchant experience, set pricing, handle support. The provider handles the regulatory layer: card network registration, sponsor bank relationships, compliance frameworks. Net economics typically run 30 to 60 basis points. See <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service</a> for the full mechanics.</p>
+
+    <p><strong>Full Payment Facilitator.</strong> You register directly with Visa and Mastercard as a PayFac. You build the compliance infrastructure, hire the risk and operations staff, and take full responsibility for the merchant relationship and the card network obligations. Net economics run 60 to 100+ basis points.</p>
+
+    <p>The decision isn't binary. Most platforms that ultimately become full PayFacs go through ISV Referral first, then PFaaS. The question for any given platform is which arrangement is right for the current stage, and which is the right end state.</p>
+
+    <h2>When Each Model Actually Makes Sense</h2>
+
+    <p>The financial case for each model is volume-driven. Below a certain processing volume, the infrastructure investment doesn't pay back. Above it, the marginal economics of the more sophisticated arrangement materially outpace the simpler one.</p>
+
+    <p><strong>ISV Referral works for platforms under $25M in annual processing volume.</strong> At this scale, the absolute dollar amount of residuals is modest but real (5 to 15 basis points on $25M is $12K to $37K per year). The operational cost is essentially zero. There's no reason to build infrastructure that won't pay for itself.</p>
+
+    <p><strong>PayFac-as-a-Service starts making sense around $30M to $50M in volume.</strong> At $50M with a 40 basis point net take rate, you're earning $200K per year, enough to justify the staff and integration investment. PFaaS gives you 80 to 90% of the economics of being a full PayFac at 10 to 20% of the cost. For most platforms in the $30M to $200M range, PFaaS is the right answer.</p>
+
+    <p><strong>Full PayFac registration starts making sense at $100M+ in processing volume, and the case strengthens at $200M+.</strong> The 25 to 30 basis point uplift over PFaaS (going from, say, 50 bps to 80 bps) needs to exceed the $300K to $800K annual operating cost of running the compliance and risk infrastructure yourself. At $100M, that's $250K to $300K of additional economic surplus before operating costs. At $200M, it's $500K to $600K. Above $300M, the case becomes obvious.</p>
+
+    <p>The transition from PFaaS to Full PayFac is also harder to reverse than the transition from ISV Referral to PFaaS. Going back means giving up control, returning to a provider relationship, and potentially restructuring contracts with sponsor banks. Get the timing right. The framework for evaluating provider transitions in general is in <a href="/the-lab/when-to-switch-embedded-payments-providers">When to Switch Embedded Payments Providers</a>.</p>
+
+    <h2>What It Actually Costs</h2>
+
+    <p>The financial case has to clear both the implementation cost and the ongoing operating cost. Both are larger than the back-of-envelope estimates that most platforms start with.</p>
+
+    <h3>Full PayFac Registration</h3>
+
+    <p><strong>Implementation: $500K to $2M.</strong> This covers card network registrations with Visa and Mastercard ($25K to $75K each), sponsor bank setup and integration ($100K to $300K), KYC and underwriting infrastructure ($150K to $500K, build or buy), fraud and risk monitoring platforms ($100K to $300K), settlement and reserve management systems ($100K to $300K), and initial PCI DSS Level 1 certification ($50K to $200K). The range is wide because complexity scales with merchant count, vertical risk profile, and how much you build versus buy.</p>
+
+    <p><strong>Annual operating cost: $300K to $800K.</strong> The biggest driver is staffing, 2 to 5 FTEs across risk, compliance, and operations, typically $150K to $220K loaded per head depending on geography. Beyond staff, expect $50K to $150K per year for continuous monitoring tools (transaction fraud scoring, watchlist screening, chargeback management), $30K to $80K for annual audits and PCI assessment, and card network fees that scale with volume.</p>
+
+    <p><strong>Time to launch: 12 to 18 months.</strong> The card network registration alone is a 6 to 12 month process. Building or integrating the operational infrastructure typically adds 6 to 9 months on top.</p>
+
+    <h3>PayFac-as-a-Service</h3>
+
+    <p><strong>Implementation: $50K to $200K.</strong> Mostly engineering integration with the PFaaS provider's APIs: boarding flow, settlement, reporting, and webhooks. There may be a one-time setup fee from the provider, typically $20K to $50K.</p>
+
+    <p><strong>Annual operating cost: $100K to $300K.</strong> The biggest cost is merchant operations staff, typically 0.5 to 1.5 FTEs handling boarding support, chargeback response, and tier-1 merchant inquiries. Beyond staff, expect $20K to $50K per year for monitoring tools and integration maintenance.</p>
+
+    <p><strong>Plus a structural cost the operating budget doesn't capture: the provider's spread share.</strong> PFaaS providers take 5 to 15 basis points of net spread in exchange for handling the regulatory layer. This doesn't show up as a line-item expense, but it's a real economic cost that scales with volume. On $50M of volume at a 10 basis point provider share, that's $50K per year flowing out of your net economics before you pay your own ops staff. On $200M, it's $200K.</p>
+
+    <p><strong>Time to launch: 3 to 6 months.</strong> Most of the timeline is engineering integration. No card network registration delay because you operate under the provider's existing registration.</p>
+
+    <h3>The Break-Even Comparison</h3>
+
+    <p>At $100M of volume, the rough comparison looks like this. PFaaS implementation $100K, annual operating $200K, provider spread share $100K (10 bps), total Year 1 cost roughly $400K, ongoing $300K. Full PayFac implementation $1M, annual operating $500K, total Year 1 cost $1.5M, ongoing $500K. The Full PayFac model becomes positive-economic versus PFaaS only when the additional take rate captured (typically 20 to 30 bps over PFaaS) exceeds the additional cost. On $100M of volume, 25 bps captures $250K of additional gross economics, which barely covers the additional $200K of operating cost.</p>
+
+    <p>That's why $200M+ in volume is where Full PayFac starts to feel like the right call. Below that, the marginal economics don't justify the marginal complexity.</p>
+
+    <h2>The Compliance Burden (Usually Underestimated)</h2>
+
+    <p>Cost numbers capture about 60% of what makes the Full PayFac decision hard. The other 40% is operational and compliance burden that most teams underestimate at decision time.</p>
+
+    <p><strong>Merchant underwriting.</strong> As a Full PayFac, you board every merchant under your own MID, which means you carry direct underwriting responsibility. You set the rules, you accept the merchants who meet them, and you carry the risk if a merchant defrauds the system or generates chargebacks beyond network thresholds. PFaaS providers handle much of this work for you within their published frameworks.</p>
+
+    <p><strong>Transaction monitoring.</strong> Card networks expect continuous monitoring for fraud, money laundering, and high-risk merchant activity. As a Full PayFac, you need either a built or bought transaction monitoring platform, plus the analysts to investigate alerts. As a PFaaS, the provider handles the platform and most of the alerting; you handle merchant-facing follow-ups.</p>
+
+    <p><strong>Chargeback management.</strong> Every dispute requires a response within network-defined windows. As a Full PayFac, you're the merchant of record from the network's perspective, which means you carry the first-loss exposure and the operational responsibility. PFaaS providers typically handle the network-side response and pass operational tickets to you for merchant communication.</p>
+
+    <p><strong>PCI compliance.</strong> Full PayFacs are subject to PCI DSS Level 1, which means an annual on-site Qualified Security Assessor (QSA) audit. Depending on your environment, the audit alone costs $50K to $150K and consumes 2 to 4 months of engineering and operations focus. For deeper context on PCI levels and how the burden scales by model, see <a href="/the-lab/pci-compliance-for-saas-platforms">PCI Compliance for SaaS Platforms</a>.</p>
+
+    <p><strong>Regulatory reporting.</strong> Full PayFacs file quarterly and annual reports with card networks and sponsor banks, including transaction volumes, chargeback ratios, fraud rates, and merchant counts by category. These reports drive whether you remain in compliance with network thresholds.</p>
+
+    <p>The operational burden of Full PayFac is what trips up most platforms that pursued the model too early. The financial case might justify the move on volume, but the team isn't structured to handle the compliance discipline. Six months in, the leadership team is spending a third of its time on payments operations questions instead of product.</p>
+
+    <h2>Common Decision-Making Mistakes</h2>
+
+    <p>The wrong call usually comes from one of these patterns.</p>
+
+    <p><strong>Optimizing for the wrong horizon.</strong> Full PayFac captures more economics over a 5 to 10 year horizon, but the cash investment is upfront. Platforms in growth mode that need capital for product or sales often make the right strategic call (move to PFaaS) for the right reason (preserve capital for higher-ROI investments). Don't confuse "right end state" with "right next step."</p>
+
+    <p><strong>Underestimating the compliance overhead.</strong> The dollar cost of staffing and audits is visible. The CEO time, board time, and audit fire drills that come with Full PayFac are not. Most platforms that ultimately stay in PFaaS do so because they realize the leadership-attention cost is bigger than the basis-point gain.</p>
+
+    <p><strong>Confusing the decision with vendor selection.</strong> "Should we become a PayFac?" is a strategic question about your business model. "Which PFaaS provider should we use?" is a vendor selection question. They get bundled in early-stage planning, which clouds both decisions.</p>
+
+    <p><strong>Pursuing Full PayFac to "control our own destiny."</strong> Sometimes a real motivation, often a rationalization. Going Full PayFac doesn't give you more strategic flexibility, it gives you more compliance obligations. The destiny you control is mostly the boring back-office one.</p>
+
+    <p><strong>Not modeling the PFaaS-to-PayFac transition explicitly.</strong> The economics of staying in PFaaS for 2 to 3 more years and then transitioning to Full PayFac are very different from the economics of going Full PayFac today. Run both scenarios. The right strategic answer is often "PFaaS now, Full PayFac at $200M."</p>
+
+    <h2>A Three-Question Decision Test</h2>
+
+    <p>If you take nothing else from this article, take the three-question test.</p>
+
+    <ol>
+      <li><strong>What's your annual processing volume?</strong> Under $30M: ISV Referral. $30M to $200M: PayFac-as-a-Service. Above $200M: evaluate Full PayFac seriously.</li>
+      <li><strong>What's your strategic time horizon?</strong> If you're building toward a 3 to 5 year exit and payments revenue is a major value driver, PFaaS captures most of the economics with much less execution risk. If you're building toward 10+ year value creation and you have the capital and team to absorb the compliance burden, Full PayFac is a legitimate option above the volume threshold.</li>
+      <li><strong>How prepared is your team for the compliance load?</strong> If you have or can hire experienced payments compliance and risk leaders, Full PayFac is operationally feasible. If you're still figuring out who handles chargebacks, the answer is PFaaS for at least another year.</li>
+    </ol>
+
+    <p>If all three answers point to Full PayFac, the decision is straightforward. If even one points to PFaaS, that's where you should land.</p>
+
+    <blockquote class="pull-quote">Becoming a payment facilitator is a strategic decision that gets framed as a technical one. The technical pieces are well-documented. The strategic pieces, when the financial case actually works, what the compliance burden really looks like, where the hidden costs hide, are what decide whether the move pays off.</blockquote>
+
+    <p>The decision isn't urgent for most platforms. The wrong call costs years of focus and capital. The right call captures structural margin on every dollar of merchant volume your platform carries. Take the time to get it right.</p>
+
+    <p>For the financial modeling, the <a href="/margin-multiplier">Margin Multiplier</a> shows revenue under each model at your specific volume. For the strategic conversation about your platform's specific situation, see the <a href="/advisory">advisory engagement</a>.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number. A conversation gives you a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
+    </div>
+  </div>
+</section>
+
+<script src="/js/global-state.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

@@ -104,7 +104,7 @@
             <span style="font-size:14px;color:rgba(240,235,228,0.6);line-height:1.6;">Follow-up action plan delivered within 48 hours</span>
           </div>
         </div>
-        <a href="#form" style="display:inline-block;margin-top:28px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);padding-bottom:2px;">Request a Quick Start Call &#8594;</a>
+        <a href="#form" data-analytics="cta-quickstart-call" style="display:inline-block;margin-top:28px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);padding-bottom:2px;">Request a Quick Start Call &#8594;</a>
       </div>
 
       <div>
@@ -114,7 +114,7 @@
         <blockquote style="margin:0;padding:16px 20px;border-left:2px solid rgba(200,130,60,0.4);background:rgba(200,130,60,0.05);border-radius:0 4px 4px 0;">
           <p style="font-family:'DM Mono',monospace;font-size:12px;line-height:1.7;color:rgba(240,235,228,0.5);margin:0;">Limited to 1&#8211;3 clients at a time. Application only.</p>
         </blockquote>
-        <a href="#form" style="display:inline-block;margin-top:28px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);padding-bottom:2px;">Apply for Advisory &#8594;</a>
+        <a href="#form" data-analytics="cta-advisory-apply" style="display:inline-block;margin-top:28px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);padding-bottom:2px;">Apply for Advisory &#8594;</a>
       </div>
 
     </div>
@@ -310,6 +310,60 @@
       if (res.ok) {
         document.getElementById('advisoryForm').style.display    = 'none';
         document.getElementById('advisorySuccess').style.display = 'block';
+
+        // \u2500\u2500 GA4 events \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+        // consult_form_submitted: every successful submission of the
+        // advisory form. This is the canonical consult-intent event
+        // for the corporate site.
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'consult_form_submitted', {
+            source: 'advisory_page',
+            engagement_type: engType,
+            arr_range: payload.arr_range,
+            gpv_range: payload.gpv_range,
+          });
+
+          // qualify_lead: fires when the submission meets a qualifying
+          // profile \u2014 Advisory Retainer OR ARR/GPV in the target band.
+          var isQualifyingType = (engType === 'Advisory Retainer' || engType === 'Quick Start Call');
+          var isQualifyingGpv  = ['$5\u201320M','$20\u201350M','$50\u2013100M','$100M+'].indexOf(payload.gpv_range) >= 0;
+          if (isQualifyingType && isQualifyingGpv) {
+            gtag('event', 'qualify_lead', {
+              source: 'advisory_page',
+              engagement_type: engType,
+              gpv_range: payload.gpv_range,
+            });
+          }
+        }
+
+        // Brevo \u2014 tag as consulting lead. Fire brevo_subscribed event
+        // on success so GA4 sees the list signup as a countable event.
+        try {
+          var brevoUtm = (window.ML && window.ML.getUtmParams) ? window.ML.getUtmParams() : undefined;
+          fetch('/api/brevo-subscribe', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify({
+              email:     payload.email,
+              firstName: (payload.name || '').split(' ')[0] || '',
+              source:    'Advisory Form',
+              utmParams: brevoUtm,
+            }),
+          }).then(function (br) {
+            if (br && br.ok && typeof gtag !== 'undefined') {
+              gtag('event', 'brevo_subscribed', { source: 'advisory_form' });
+            }
+          }).catch(function () {});
+        } catch (e) { /* fire and forget */ }
+
+        // Save to ML shared state for cross-page prefill
+        if (window.ML && window.ML.saveVisitor) {
+          window.ML.saveVisitor({
+            name:    payload.name,
+            email:   payload.email,
+            company: payload.company,
+          });
+        }
       } else {
         throw new Error('Submission failed');
       }
