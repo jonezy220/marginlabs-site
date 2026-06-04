@@ -1,0 +1,264 @@
+<!-- ML-LAB-025 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Processor for SaaS Platforms: What to Look For and How to Choose | Margin Labs</title>
+<meta name="description" content="Choosing a payment processor for a SaaS platform is not the same as choosing one for a single business. The vocabulary, the economics, and the evaluation framework are all different. Here is what actually matters when a software platform is selecting a processor for embedded payments.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/payment-processor-for-saas">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Payment Processor for SaaS Platforms: What to Look For and How to Choose | Margin Labs">
+<meta property="og:description" content="The processor decision for a SaaS platform is different from picking one for a single business. The vocabulary, the economics, and the evaluation framework all change.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/payment-processor-for-saas">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 10px; line-height: 1.4; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Payment Processor for SaaS Platforms: What to Look For and How to Choose One</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>9 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Software platforms looking to embed payments almost always start with the same question: which payment processor should we use? It is the natural starting point. It is also usually the wrong starting point.</p>
+
+    <p>The reason it is the wrong starting point is that "payment processor" is the most overloaded term in payments. Most of what software platforms actually need from a payments partner sits one level above the processor in the stack: at the facilitator, the gateway, or the integrated platform layer. Choosing a processor without first understanding which model you are operating in is how vertical SaaS platforms end up locked into bad economics for three to five years.</p>
+
+    <p>This article is the framework. What a payment processor actually does, how it differs from a gateway or a facilitator, what to look for when a SaaS platform is choosing one, and the hidden costs that determine whether the partnership pays off or quietly drags on the business.</p>
+
+    <h2>What a Payment Processor Actually Does</h2>
+
+    <p>A payment processor is the entity that handles the technical movement of money between merchants, card networks (Visa, Mastercard, American Express, Discover), and banks. The processor authorizes transactions, settles funds, manages chargebacks, and provides the technical rails that let a merchant accept a card payment.</p>
+
+    <p>The big processors most platforms have heard of (Worldpay, Fiserv, Global Payments, TSYS, Adyen, Stripe) own large portions of the merchant processing market. Most of them operate at multiple layers of the stack: they are processors, but they also operate gateways, offer PayFac-as-a-Service infrastructure, and in some cases register as Merchants of Record for specific lines of business. Calling one of them "a payment processor" describes their core function but understates everything else they do.</p>
+
+    <p>For a single business choosing how to accept card payments, "payment processor" is the right vocabulary. For a software platform embedding payments for hundreds of sub-merchants, the processor is one of several components in a larger architecture decision. The architecture decision (ISV Referral, Enhanced Residuals, PayFac-as-a-Service, Full PayFac) comes first. The processor selection comes second.</p>
+
+    <h2>Processor vs Gateway vs Payment Facilitator: The Vocabulary That Matters</h2>
+
+    <p>Three terms get used loosely in software platform conversations about payments, and the distinction matters because each layer captures different economics and carries different obligations.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>What it does</th>
+          <th>Typical examples</th>
+          <th>Who pays the platform</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Payment Gateway</strong></td>
+          <td>Routes card data from the merchant's point of sale to the processor. Often handles tokenization, basic fraud screening, recurring billing logic.</td>
+          <td>Authorize.net, NMI, Spreedly, CyberSource</td>
+          <td>Pass-through pricing or per-transaction fee, no residual to platform</td>
+        </tr>
+        <tr>
+          <td><strong>Payment Processor</strong></td>
+          <td>Authorizes and settles transactions, handles chargebacks, provides core payment rails.</td>
+          <td>Worldpay, Fiserv, TSYS, Global Payments, Adyen</td>
+          <td>Residual (5-25 bps) if platform is an ISV referrer</td>
+        </tr>
+        <tr>
+          <td><strong>Payment Facilitator (PayFac)</strong></td>
+          <td>Aggregates sub-merchants under a master MID. Owns merchant relationship, sets pricing, takes on risk and compliance.</td>
+          <td>Stripe (as PayFac), Square, Shopify Payments. For platforms: Stripe Connect, Finix, Tilled (as PFaaS providers)</td>
+          <td>Net spread of 30-100+ bps depending on PFaaS or Full PayFac</td>
+        </tr>
+        <tr>
+          <td><strong>Integrated Platform</strong></td>
+          <td>Combines gateway, processing, and facilitation under one API and one commercial relationship.</td>
+          <td>Stripe, Adyen, Braintree, Square</td>
+          <td>Varies by product (Connect, Adyen for Platforms, etc.)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>For software platforms, the meaningful question is which model the platform is operating in. Once that decision is made (and the volume math justifies it), the processor selection becomes a question of who has the best terms within that model. For the upstream model decision, see <a href="/the-lab/should-you-become-a-payment-facilitator">Should You Become a Payment Facilitator?</a> and <a href="/the-lab/isv-referral-vs-payfac-lite">ISV Referral vs PayFac-as-a-Service</a>.</p>
+
+    <h2>What to Look For When a SaaS Platform Is Choosing a Processor</h2>
+
+    <p>The evaluation criteria for a SaaS platform are different from the criteria a single business would use. The platform is evaluating a partner whose performance affects hundreds of sub-merchants and whose pricing structure determines the platform's own economics for years.</p>
+
+    <h3>Pricing structure and transparency</h3>
+
+    <p>Look for interchange-plus pricing rather than tiered or qualified-rate models. Interchange-plus passes through the actual card network costs and charges a transparent markup on top. Tiered pricing buckets card types into "qualified," "mid-qualified," and "non-qualified" tiers with margin baked in opaquely. For software platforms operating at scale, interchange-plus is the only model that lets you predict and audit your economics. For the full negotiation framework, see <a href="/the-lab/how-to-negotiate-a-processor-agreement">How to Negotiate a Processor Agreement</a>.</p>
+
+    <h3>Sub-merchant boarding architecture</h3>
+
+    <p>If the platform is operating under a PayFac or PFaaS structure, the processor needs to support sub-merchant boarding via API. The boarding process needs to handle KYC, underwriting decisions, risk scoring, and approval workflows at a pace that matches the platform's growth trajectory. Processors built for single-merchant relationships (Tier-1 acquiring banks) often cannot board sub-merchants quickly enough for vertical SaaS at scale.</p>
+
+    <h3>Settlement timing and reserves</h3>
+
+    <p>Standard merchant settlement is T+2 (two business days after the transaction). Some processors offer T+1 or same-day settlement for an additional fee. For sub-merchant portfolios, the processor's reserve policy (a percentage of volume held back against future chargebacks) directly affects merchant cash flow and the platform's economics. Negotiate this upfront. Reserves are often the largest hidden cost in processor agreements.</p>
+
+    <h3>Chargeback management infrastructure</h3>
+
+    <p>The processor's chargeback workflow becomes the platform's chargeback workflow. If the processor's dispute response window is short, the platform's operations team needs to match it. If the processor's chargeback fees are high (some charge $25 to $50 per dispute regardless of outcome), those fees compress the platform's economics on every transaction that gets disputed. For the operational framework, see <a href="/the-lab/chargeback-management-for-software-platforms">Chargeback Management for Software Platforms</a>.</p>
+
+    <h3>Vertical-specific risk tolerance</h3>
+
+    <p>Different processors have different appetites for different verticals. High-risk verticals (gaming, CBD, adult, certain SaaS subscriptions) get categorized as MATCH-listed or restricted by some processors. Low-risk verticals (B2B services, professional services, brick-and-mortar retail) get favorable rates almost everywhere. Verify before signing that the processor accepts your sub-merchant vertical mix.</p>
+
+    <h3>Geographic coverage</h3>
+
+    <p>If the platform serves merchants outside the US, the processor needs to operate in those geographies and support local card schemes (Interac in Canada, Bancomat in Italy, etc.). US-only processors often have foreign processing capability but at meaningfully worse rates. For platforms with international ambitions, evaluate this dimension early.</p>
+
+    <h2>The Hidden Costs Most Platforms Miss</h2>
+
+    <p>Processor contracts contain costs that do not show up in the headline interchange-plus rate. These are where margin gets compressed unexpectedly.</p>
+
+    <p><strong>Monthly minimums.</strong> Most processor contracts include a monthly minimum fee that scales with volume tier. Platforms in early growth often hit the minimum at lower volumes than expected, eroding effective economics.</p>
+
+    <p><strong>Statement and fees stack.</strong> Per-transaction fees, batch fees, settlement fees, chargeback fees, retrieval fees, monthly maintenance, PCI compliance fees, regulatory compliance fees, and AVS lookup fees can add 5 to 15 basis points of effective cost on top of the headline rate. Audit the fee stack carefully in the proposal.</p>
+
+    <p><strong>Currency conversion margin.</strong> Cross-border transactions get billed at a foreign exchange rate plus a markup, typically 1 to 3 percent over the wholesale rate. Platforms with international merchant volume can find that the FX margin exceeds their net economics on those transactions.</p>
+
+    <p><strong>Early termination fees.</strong> Most processor agreements have 36 to 60 month terms with early termination penalties that can run $25K to $100K+ per merchant or more for sub-merchant portfolios. Read the term and termination clauses before signing. Often these are negotiable down to lower penalties or shorter cure periods.</p>
+
+    <p><strong>PCI non-compliance fees.</strong> Some processors charge automatic monthly PCI non-compliance fees ($30 to $50 per merchant per month) until each merchant attests compliance. For platforms with 500+ sub-merchants, this can become a meaningful cost line if attestation tracking is not automated. For the compliance scope, see <a href="/the-lab/pci-compliance-for-saas-platforms">PCI Compliance for SaaS Platforms</a>.</p>
+
+    <h2>Typical Processor Categories for SaaS Platforms</h2>
+
+    <p>Different processors fit different stages of platform maturity. The right choice depends on volume, vertical, and which embedded payments model the platform is pursuing.</p>
+
+    <h3>Tier-1 acquiring banks (Worldpay, Fiserv, Global Payments, TSYS)</h3>
+
+    <p>The largest processors by volume. Strong infrastructure, broad merchant acceptance, deep risk capacity. Often the right call for ISV Referral arrangements at scale, where the platform earns a residual on volume processed through the acquirer. Pricing flexibility tends to be lower than newer providers, but stability and merchant fit are usually highest.</p>
+
+    <h3>Modern PFaaS-friendly processors (Adyen, Worldpay's PayFac line, Fiserv Carat)</h3>
+
+    <p>Processors that have built sub-merchant boarding architecture, integrated KYC tools, and platform-friendly API surfaces. Often the right call for PFaaS arrangements where the platform owns the merchant relationship but operates under the processor's facilitation infrastructure.</p>
+
+    <h3>API-first integrated platforms (Stripe, Adyen, Braintree)</h3>
+
+    <p>Companies that combine gateway, processing, and facilitation under one commercial relationship and one API. Fast to integrate, opinionated about workflow, premium pricing. Often the right call for early-stage platforms prioritizing time-to-market over economics, and for platforms whose merchant base is small-ticket or digital-native.</p>
+
+    <h3>Specialty PFaaS providers (Finix, Tilled, Payrix, NMI)</h3>
+
+    <p>Providers focused specifically on enabling other software platforms to operate as PayFacs. Typically offer better economics than the API-first integrated platforms at scale, with longer integration timelines and more customization. For deep-dive on this category, see <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service</a>.</p>
+
+    <h2>Common Mistakes Platforms Make</h2>
+
+    <p><strong>Picking the processor before the architecture.</strong> Choosing Stripe or Worldpay before deciding whether to operate as an ISV referrer, a PFaaS partner, or a full PayFac is putting the cart before the horse. The architecture determines the criteria. The criteria determine the processor.</p>
+
+    <p><strong>Optimizing for headline rate instead of total economics.</strong> The headline interchange-plus rate is one of 12 to 15 variables that determine actual processing cost. Two processors with the same headline rate can deliver materially different effective economics depending on the fee stack, the reserve policy, and the chargeback fees.</p>
+
+    <p><strong>Underestimating switching costs.</strong> Most platforms underestimate how disruptive a processor change is. Re-boarding sub-merchants, retraining the operations team, rebuilding reporting integrations, and absorbing the temporary degradation in approval rates can take 6 to 12 months and lose 10 to 15 percent of the active merchant base. For the full framework on when switching makes sense, see <a href="/the-lab/when-to-switch-embedded-payments-providers">When to Switch Embedded Payments Providers</a>.</p>
+
+    <p><strong>Signing the first proposal.</strong> Most processors will offer 20 to 50 basis points of pricing flexibility on the first proposal if the platform brings a competing bid. Most platforms do not solicit a competing bid because they do not know the negotiation framework. The cost of skipping this step is usually larger than the cost of the engagement that would have produced a competing bid.</p>
+
+    <h2>A Decision Framework</h2>
+
+    <p>If your platform is selecting a payment processor, do this in this order.</p>
+
+    <ol>
+      <li><strong>Settle the architecture decision first.</strong> Are you operating as ISV Referral, Enhanced Residuals, PayFac-as-a-Service, or Full PayFac? If you do not know, the <a href="/margin-multiplier">Margin Multiplier</a> models your economics under each.</li>
+      <li><strong>List the processors that fit your architecture.</strong> ISV Referral works with most Tier-1 acquirers. PFaaS narrows the field to providers with sub-merchant boarding architecture. Full PayFac requires direct relationships with sponsor banks and specific processors.</li>
+      <li><strong>Solicit at least two competitive proposals.</strong> Bring an outside-in benchmark of typical rates for your volume tier and vertical. Use the second proposal to negotiate the first.</li>
+      <li><strong>Audit the entire fee stack, not just the headline rate.</strong> Add up minimums, per-transaction fees, settlement fees, chargeback fees, monthly maintenance, and PCI fees. The number that matters is the effective cost per dollar of processed volume, not the interchange-plus markup.</li>
+      <li><strong>Negotiate term and termination clauses before pricing.</strong> A 36-month term with high early-termination penalties is more expensive than a 60-month term with low penalties, even at a slightly worse rate. Term flexibility is worth real money.</li>
+    </ol>
+
+    <blockquote class="pull-quote">The processor decision for a software platform is not about picking the cheapest rate. It is about picking the partner whose architecture, terms, and economics will compound the right way over the next three to five years.</blockquote>
+
+    <p>The full negotiation playbook (term sheets, redlines, the comparison framework) is in <a href="/the-lab/how-to-negotiate-a-processor-agreement">How to Negotiate a Processor Agreement</a>. For the upstream architecture decision that should precede processor selection, the <a href="/margin-multiplier">Margin Multiplier</a> models the four embedded payments models at your specific volume. For the strategic conversation about your platform's situation, see the <a href="/advisory">advisory engagement</a>.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Get help with the architecture decision first</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Model the economics before you talk to processors.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The processor decision changes shape entirely depending on which embedded payments model your platform should be operating in.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/margin-multiplier" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-mm">Run the Margin Multiplier →</a>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-consult">Or start the conversation →</a>
+    </div>
+  </div>
+</section>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

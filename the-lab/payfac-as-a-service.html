@@ -1,4 +1,4 @@
-<!-- ML-LAB-011 -->
+<!-- ML-LAB-012 -->
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
@@ -47,7 +47,73 @@
   .economics-table td { padding: 10px 12px; border-bottom: 1px solid rgba(240,235,228,0.06); color: var(--dim); vertical-align: top; }
   .economics-table tr:last-child td { border-bottom: none; }
   .economics-table td:first-child { color: var(--text); font-weight: 400; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .cost-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+  .faq-item { margin: 20px 0 28px; }
+  .faq-q { font-size: 16px; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+  .faq-a { font-size: 15px; color: var(--dim); line-height: 1.7; margin: 0; }
 </style>
+
+<!-- FAQ schema for FAQ rich results on the SERP -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is PayFac-as-a-Service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PayFac-as-a-Service (PFaaS), also called Managed PayFac or PayFac Lite, is an arrangement where a registered Payment Facilitator provides the underlying infrastructure (card network registration, sponsor bank relationships, compliance framework, settlement) while a software platform operates as a sub-facilitator under their umbrella. The platform owns the merchant experience, sets pricing, and handles first-line support. The provider handles the regulatory layer. Net economics typically run 30 to 60 basis points, compared to 5 to 15 bps for ISV Referral and 60 to 100+ bps for Full PayFac registration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is PayFac-as-a-Service different from being a full Payment Facilitator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A full Payment Facilitator is registered directly with Visa and Mastercard, owns the sponsor bank relationship, and carries direct responsibility for all card network reporting and compliance. PayFac-as-a-Service lets a platform operate under another PayFac's existing registration. The platform gets 60 to 80 percent of the economics (30 to 60 bps vs 60 to 100+ bps) at 10 to 20 percent of the cost ($50K to $200K implementation vs $500K to $2M) and timeline (3 to 6 months vs 12 to 18 months). For most platforms between $30M and $200M in annual processing volume, PFaaS is the right call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does PayFac-as-a-Service cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Implementation typically runs $50K to $200K, mostly engineering integration with the provider's APIs. Time to launch is 3 to 6 months. Ongoing operating costs include 0.5 to 1.5 FTEs handling merchant operations ($75K to $250K loaded), plus $20K to $50K per year for monitoring tools and integration maintenance. The provider takes 5 to 15 basis points of net spread, which scales with volume: $25K to $75K per year on $50M of processing volume, $100K to $300K on $200M."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who are the top PayFac-as-a-Service providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The leading PayFac-as-a-Service providers include Stripe Connect (the largest by volume, with the fastest implementation but a per-transaction platform fee model), Finix (white-label PayFac infrastructure with interchange-plus pricing), Tilled (PFaaS focused on vertical SaaS with revenue share economics), Payrix (acquired by Worldpay, deep integration with FIS), and Adyen for Platforms (combined processing and facilitation under one architecture). Pricing model, time to market, and vertical fit vary significantly between them, which is why the right choice depends on volume, vertical, and operational maturity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does it make sense to graduate from PayFac-as-a-Service to a full PayFac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The financial case for graduating from PFaaS to Full PayFac strengthens at $200M+ in annual processing volume. The marginal economics of Full PayFac (typically 25 to 30 bps over PFaaS) need to clear the marginal operating cost (typically $300K to $500K per year for compliance and risk staff). At $200M of volume, that 25 bps captures $500K of additional revenue against $300K to $500K of additional cost. Below $200M, the case is marginal. Above $300M, it usually justifies itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PayFac-as-a-Service the same as Stripe Connect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stripe Connect is one implementation of the PayFac-as-a-Service model, but not the only one. Connect uses a per-transaction platform fee model (0.25 percent plus $0.25 on top of standard processing fees) and is optimized for fast time-to-market. Other PFaaS providers like Finix, Tilled, and Payrix offer interchange-plus pricing that can be more economical at scale, white-label control over the merchant experience, and longer integration timelines in exchange for that flexibility. Choosing between them depends on volume, vertical, branding requirements, and how much engineering capacity the platform can invest in the integration."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -197,7 +263,124 @@
 
     <p>PFaaS gives you 60-80% of the economics at 20-30% of the cost and complexity. For most platforms between $30M and $200M in volume, that trade-off is correct.</p>
 
-    <p>The transition from PFaaS to full PayFac is possible but nontrivial. It typically involves migrating your merchant portfolio to a new processing infrastructure, securing your own sponsor bank, and building the compliance and reporting systems the PFaaS provider was handling. Plan for 12-18 months.</p>
+    <p>The transition from PFaaS to full PayFac is possible but nontrivial. It typically involves migrating your merchant portfolio to a new processing infrastructure, securing your own sponsor bank, and building the compliance and reporting systems the PFaaS provider was handling. Plan for 12-18 months. For the broader decision framework on whether to make that move, see <a href="/the-lab/should-you-become-a-payment-facilitator">Should You Become a Payment Facilitator?</a></p>
+
+    <h2>PayFac-as-a-Service vs Full PayFac vs ISV Referral: The Complete Comparison</h2>
+
+    <p>The three models that capture embedded payments economics for vertical SaaS platforms each sit in a different place on the economics-vs-complexity curve. The right choice depends on volume, operational capacity, and strategic time horizon.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>ISV Referral</th>
+          <th>PayFac-as-a-Service</th>
+          <th>Full PayFac</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Net economics</strong></td>
+          <td>5-15 bps</td>
+          <td>30-60 bps</td>
+          <td>60-100+ bps</td>
+        </tr>
+        <tr>
+          <td><strong>Implementation cost</strong></td>
+          <td>Minimal (weeks)</td>
+          <td>$50K-$200K</td>
+          <td>$500K-$2M</td>
+        </tr>
+        <tr>
+          <td><strong>Time to launch</strong></td>
+          <td>2-4 weeks</td>
+          <td>3-6 months</td>
+          <td>12-18 months</td>
+        </tr>
+        <tr>
+          <td><strong>Annual operating cost</strong></td>
+          <td>Minimal</td>
+          <td>$100K-$300K</td>
+          <td>$300K-$800K</td>
+        </tr>
+        <tr>
+          <td><strong>Who registers with card networks</strong></td>
+          <td>Processor</td>
+          <td>The PFaaS provider</td>
+          <td>The platform itself</td>
+        </tr>
+        <tr>
+          <td><strong>Who owns the sponsor bank relationship</strong></td>
+          <td>Processor</td>
+          <td>The PFaaS provider</td>
+          <td>The platform itself</td>
+        </tr>
+        <tr>
+          <td><strong>Who sets merchant pricing</strong></td>
+          <td>Processor</td>
+          <td>The platform</td>
+          <td>The platform</td>
+        </tr>
+        <tr>
+          <td><strong>Right volume tier</strong></td>
+          <td>Under $25M</td>
+          <td>$30M-$200M</td>
+          <td>$200M+</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The midpoint matters most: PFaaS gives you control of pricing and the merchant relationship (which is where most of the strategic value sits) without the capital expenditure or regulatory burden of full registration. For platforms at $30M to $200M of processing volume, that combination of control plus capital efficiency is usually the right answer.</p>
+
+    <h2>How Much Does PayFac-as-a-Service Cost?</h2>
+
+    <p>PFaaS costs split into three buckets: one-time implementation, recurring operating, and the volume-scaling spread share to the provider. Each scales differently with platform size.</p>
+
+    <p class="cost-label">Implementation: $50K to $200K</p>
+
+    <p>Implementation is mostly engineering integration with the PFaaS provider's APIs. The scope includes the merchant boarding flow (API integration with the provider's KYC and underwriting endpoints), the processing flow (payment intent creation, settlement reconciliation), the reporting flow (transaction-level data sync to your internal systems), and webhook handling for chargebacks, disputes, and balance updates. Most providers also charge a one-time setup fee of $20K to $50K on top of the engineering cost. Integration complexity varies by provider: Stripe Connect is the fastest at 2 to 4 months, while Finix, Tilled, and Payrix typically take 4 to 6 months.</p>
+
+    <p class="cost-label">Annual operating cost: $100K to $300K</p>
+
+    <p>The largest recurring cost is merchant operations staff, typically 0.5 to 1.5 FTEs depending on merchant count and complexity. This covers boarding support, chargeback response, tier-1 merchant inquiries, and pricing management. At fully-loaded comp of $150K to $200K per FTE, that's $75K to $250K per year in headcount. Beyond staff, expect $20K to $50K per year for monitoring tools, fraud screening integrations, and ongoing API maintenance as the provider updates their platform.</p>
+
+    <p class="cost-label">Spread share to the provider: 5 to 15 basis points of volume</p>
+
+    <p>This is the structural cost that scales with the platform's growth. The PFaaS provider takes a portion of the net spread in exchange for handling the regulatory layer. On $50M of annual processing volume at a 10 bps provider share, that's $50K per year. On $200M, it's $200K. This doesn't appear on the operating budget as a line-item expense, but it's real economic leakage that compounds with volume.</p>
+
+    <p>For a worked example: a platform with $100M of annual processing volume that has PFaaS net economics of 45 bps would gross $450K per year from payments. Operating costs (one mid-level FTE, monitoring tools, integration maintenance) run $175K. Provider spread share at 10 bps runs $100K. Net contribution to the platform: $175K per year in Year 1, scaling with volume. For the full volume-tier breakdown, see <a href="/the-lab/how-much-saas-platforms-make-from-payments">How Much Do SaaS Platforms Actually Make From Payments?</a></p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">What is PayFac-as-a-Service?</p>
+      <p class="faq-a">PayFac-as-a-Service (PFaaS), also called Managed PayFac or PayFac Lite, is an arrangement where a registered Payment Facilitator provides the underlying infrastructure (card network registration, sponsor bank relationships, compliance framework, settlement) while a software platform operates as a sub-facilitator under their umbrella. The platform owns the merchant experience, sets pricing, and handles first-line support. The provider handles the regulatory layer. Net economics typically run 30 to 60 basis points, compared to 5 to 15 bps for ISV Referral and 60 to 100+ bps for Full PayFac registration.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How is PayFac-as-a-Service different from being a full Payment Facilitator?</p>
+      <p class="faq-a">A full Payment Facilitator is registered directly with Visa and Mastercard, owns the sponsor bank relationship, and carries direct responsibility for all card network reporting and compliance. PayFac-as-a-Service lets a platform operate under another PayFac's existing registration. The platform gets 60 to 80 percent of the economics (30 to 60 bps vs 60 to 100+ bps) at 10 to 20 percent of the cost ($50K to $200K implementation vs $500K to $2M) and timeline (3 to 6 months vs 12 to 18 months). For most platforms between $30M and $200M in annual processing volume, PFaaS is the right call.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How much does PayFac-as-a-Service cost?</p>
+      <p class="faq-a">Implementation typically runs $50K to $200K, mostly engineering integration with the provider's APIs. Time to launch is 3 to 6 months. Ongoing operating costs include 0.5 to 1.5 FTEs handling merchant operations ($75K to $250K loaded), plus $20K to $50K per year for monitoring tools and integration maintenance. The provider takes 5 to 15 basis points of net spread, which scales with volume: $25K to $75K per year on $50M of processing volume, $100K to $300K on $200M.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Who are the top PayFac-as-a-Service providers?</p>
+      <p class="faq-a">The leading PayFac-as-a-Service providers include Stripe Connect (the largest by volume, with the fastest implementation but a per-transaction platform fee model), Finix (white-label PayFac infrastructure with interchange-plus pricing), Tilled (PFaaS focused on vertical SaaS with revenue share economics), Payrix (acquired by Worldpay, deep integration with FIS), and Adyen for Platforms (combined processing and facilitation under one architecture). Pricing model, time to market, and vertical fit vary significantly between them, which is why the right choice depends on volume, vertical, and operational maturity.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">When does it make sense to graduate from PayFac-as-a-Service to a full PayFac?</p>
+      <p class="faq-a">The financial case for graduating from PFaaS to Full PayFac strengthens at $200M+ in annual processing volume. The marginal economics of Full PayFac (typically 25 to 30 bps over PFaaS) need to clear the marginal operating cost (typically $300K to $500K per year for compliance and risk staff). At $200M of volume, that 25 bps captures $500K of additional revenue against $300K to $500K of additional cost. Below $200M, the case is marginal. Above $300M, it usually justifies itself.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is PayFac-as-a-Service the same as Stripe Connect?</p>
+      <p class="faq-a">Stripe Connect is one implementation of the PayFac-as-a-Service model, but not the only one. Connect uses a per-transaction platform fee model (0.25 percent plus $0.25 on top of standard processing fees) and is optimized for fast time-to-market. Other PFaaS providers like Finix, Tilled, and Payrix offer interchange-plus pricing that can be more economical at scale, white-label control over the merchant experience, and longer integration timelines in exchange for that flexibility. Choosing between them depends on volume, vertical, branding requirements, and how much engineering capacity the platform can invest in the integration.</p>
+    </div>
 
     <blockquote class="pull-quote">PFaaS is the right model when referral economics feel like leaving money on the table, but full PayFac feels like building a payments company instead of a software company.</blockquote>
 

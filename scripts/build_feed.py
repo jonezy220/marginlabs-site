@@ -55,6 +55,8 @@ ARTICLES = [
     # June 2026
     ("should-you-become-a-payment-facilitator",    "2026-06-02"),
     ("how-much-saas-platforms-make-from-payments", "2026-06-04"),
+    ("merchant-of-record-vs-payfac",               "2026-06-04"),
+    ("payment-processor-for-saas",                 "2026-06-04"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).

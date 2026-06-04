@@ -1,0 +1,248 @@
+<!-- ML-LAB-024 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merchant of Record vs PayFac: What They Are and Which Are You | Margin Labs</title>
+<meta name="description" content="Merchant of Record (MoR) and Payment Facilitator (PayFac) sound similar but solve different problems. MoR handles tax, compliance, and merchant-of-record liability for global digital sales. PayFac aggregates sub-merchants under a master account for in-person and platform-based payments. Here's how they differ and which fits your platform.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/merchant-of-record-vs-payfac">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Merchant of Record vs PayFac: What They Are and Which Are You | Margin Labs">
+<meta property="og:description" content="MoR and PayFac sound similar but solve different problems. Plain-language guide to what each one does, when to use which, and the tax/compliance angle most platforms underestimate.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/merchant-of-record-vs-payfac">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Merchant of Record vs PayFac: What They Are and Which Are You</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>8 min read</span>
+  </div>
+  <div class="article-body">
+    <p>Merchant of Record and Payment Facilitator sound like the same thing. Both involve a third party sitting between the buyer and the seller. Both promise to "handle payments" for software platforms. Both come up in the same conversations about embedded payments and revenue capture.</p>
+
+    <p>They are not the same thing. They solve different problems, carry different liabilities, and fit different business models. Picking the wrong one means either leaving money on the table or signing up for tax and compliance obligations you did not understand you were taking on.</p>
+
+    <p>This article is the plain-language version. What each one actually is, what they share, where they diverge, and how to choose between them at your platform's stage and vertical.</p>
+
+    <h2>What Merchant of Record Means</h2>
+
+    <p>A Merchant of Record (MoR) is the legal entity that sells a product or service to the end customer, takes payment, and carries the legal responsibility for that sale. The MoR shows up on the customer's credit card statement. The MoR collects, files, and remits sales tax or VAT. The MoR handles refunds, chargebacks, and customer disputes from the financial side. The MoR is the regulated entity for tax, anti-fraud, and consumer protection purposes.</p>
+
+    <p>In practice, MoR services for software platforms emerged primarily from the digital-goods and SaaS world. Providers like Paddle, FastSpring, Lemon Squeezy, and 2Checkout (now Verifone) act as the MoR for software companies selling globally. The software platform builds the product, sets the price, and runs the customer relationship. The MoR provider handles the payment processing, the tax calculations across hundreds of jurisdictions, the compliance with consumer protection laws in each country, and the chargeback liability.</p>
+
+    <p>The MoR model exists because selling software globally creates a hard tax and compliance problem. A SaaS company headquartered in Delaware selling to a customer in Germany has VAT obligations in Germany, consumer protection requirements under EU directives, currency conversion exposure, and potentially digital services tax obligations in the UK or France. Multiply that by 100 jurisdictions and the operational burden is significant. The MoR absorbs all of it in exchange for a percentage of revenue, typically 5 to 9 percent of each transaction.</p>
+
+    <h2>What Payment Facilitator Means</h2>
+
+    <p>A Payment Facilitator (PayFac) is an entity registered with the card networks (Visa, Mastercard) that aggregates merchants as sub-merchants under one master merchant identification number (MID). For the full definition and the four arrangements that capture embedded payments economics, see <a href="/the-lab/what-is-a-payment-facilitator">What Is a Payment Facilitator?</a>.</p>
+
+    <p>The short version: a PayFac lets a software platform enable card payments for hundreds or thousands of small businesses (sub-merchants) without each one needing an individual merchant account. The platform owns the merchant onboarding experience, sets pricing within negotiated parameters, and shares in the economics of every dollar processed. The sub-merchants are the merchants of record for their own sales. The PayFac sits between the sub-merchants and the card networks.</p>
+
+    <p>The PayFac model exists because, before it emerged, individual merchant accounts were slow to underwrite, friction-heavy to set up, and expensive to maintain. The PayFac model lets aggregators (Square, Stripe, Shopify Payments) board small merchants in minutes instead of weeks, accept the risk on the aggregate portfolio, and earn a portion of the basis-point spread on every transaction.</p>
+
+    <h2>The Core Differences</h2>
+
+    <p>The two models look similar on the surface (both involve a regulated entity sitting between the merchant and the payment networks) but they solve fundamentally different problems and carry different obligations.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Merchant of Record</th>
+          <th>Payment Facilitator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Primary use case</strong></td>
+          <td>SaaS or digital goods sold globally to end consumers</td>
+          <td>Software platforms enabling card payments for sub-merchants (typically B2B)</td>
+        </tr>
+        <tr>
+          <td><strong>Who is the legal seller</strong></td>
+          <td>The MoR provider</td>
+          <td>The sub-merchant (the small business)</td>
+        </tr>
+        <tr>
+          <td><strong>Whose name on card statement</strong></td>
+          <td>The MoR provider</td>
+          <td>The sub-merchant's DBA</td>
+        </tr>
+        <tr>
+          <td><strong>Who handles sales tax / VAT</strong></td>
+          <td>The MoR provider</td>
+          <td>The sub-merchant</td>
+        </tr>
+        <tr>
+          <td><strong>Who handles chargebacks</strong></td>
+          <td>The MoR provider</td>
+          <td>The PayFac (with sub-merchant operational support)</td>
+        </tr>
+        <tr>
+          <td><strong>Typical economics for the platform</strong></td>
+          <td>Platform pays MoR 5-9% of revenue</td>
+          <td>Platform earns 30-100+ bps net on volume</td>
+        </tr>
+        <tr>
+          <td><strong>Card network registration</strong></td>
+          <td>Not required by the software platform</td>
+          <td>Required (the PayFac itself or its provider)</td>
+        </tr>
+        <tr>
+          <td><strong>Right fit</strong></td>
+          <td>Digital SaaS, global, B2C or low-touch B2B</td>
+          <td>Vertical SaaS with merchants accepting card payments</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The simplest mental model: MoR is "we sell our product through a third party who handles all the tax and compliance." PayFac is "our merchants sell their products and we capture economics on the payment volume flowing through our platform."</p>
+
+    <h2>When MoR Makes Sense</h2>
+
+    <p>The Merchant of Record model fits when the software platform is the one selling the product to the end customer, especially across borders. The classic example: a SaaS company selling subscriptions globally to consumers or small businesses where the SaaS company would otherwise need to register for VAT in 30+ jurisdictions, comply with EU consumer protection law, handle currency conversion, and absorb chargeback risk on small-dollar transactions.</p>
+
+    <p>The trade is straightforward. The MoR provider takes a meaningful percentage of revenue (5 to 9 percent is the common range) but absorbs the entire tax, compliance, and chargeback burden. For a SaaS company doing $10M in global revenue, paying 7 percent ($700K per year) to a MoR can be cheaper than building the in-house tax and compliance team to handle global obligations. The math gets less favorable as the company scales, but the alternative (registering, filing, and complying in dozens of jurisdictions internally) carries real fixed cost that does not scale down.</p>
+
+    <p>MoR also fits well for indie developers, side-projects, and early-stage SaaS where the founder team would otherwise be spending engineering time on tax integrations instead of product. The simplicity-for-cost trade is correct when the company cannot yet justify dedicated finance and ops headcount.</p>
+
+    <h2>When PayFac or PFaaS Makes Sense</h2>
+
+    <p>The Payment Facilitator model fits when the software platform is enabling card payments for other businesses (the sub-merchants) rather than selling its own product directly to consumers. The classic example: a vertical SaaS platform serving 500 small businesses, each of which accepts card payments from their own customers through software embedded in the platform.</p>
+
+    <p>In this model, the small businesses are the merchants of record for their own sales. They show up on their own customers' card statements. They collect sales tax on their own sales. The software platform's role is to provide the technology and infrastructure that lets each merchant accept payments efficiently, and to capture economics on the payment volume flowing through.</p>
+
+    <p>For most vertical SaaS platforms at $30M to $200M of annual processing volume, <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service</a> is the right way to enter this model. Above $200M, full PayFac registration becomes economically justified. For the volume thresholds and the full decision framework, see <a href="/the-lab/should-you-become-a-payment-facilitator">Should You Become a Payment Facilitator?</a></p>
+
+    <h2>The Tax and Compliance Angle Most Platforms Underestimate</h2>
+
+    <p>The biggest difference between the two models is who carries the tax and consumer-protection compliance burden. This matters more than most platforms realize before they sign the contract.</p>
+
+    <p>Under MoR, the provider handles all of it. Sales tax registration and filing in every jurisdiction. VAT in the EU. GST in Australia and Canada. Consumer protection law in each country. Refund policy enforcement under local law. Currency conversion and forex risk. Anti-money-laundering screening. The platform sees a single line item (the MoR fee) and the operational complexity is invisible.</p>
+
+    <p>Under PayFac, the platform takes on some of this burden directly, and shifts some to the sub-merchants. Card network compliance and PCI DSS obligations belong to the PayFac. Merchant underwriting and risk management belong to the PayFac. The sub-merchants handle their own sales tax obligations because they are the merchant of record for their own sales. For the full operational scope of PayFac compliance, see <a href="/the-lab/pci-compliance-for-saas-platforms">PCI Compliance for SaaS Platforms</a>.</p>
+
+    <p>Platforms that try to combine the two models (acting as merchant of record for the sub-merchants' sales while also being a PayFac) usually create more compliance risk than either model alone. The clean separation is what makes either model defensible: MoR for "we are the seller," PayFac for "they are the seller, we provide the rails."</p>
+
+    <h2>Common Misconceptions</h2>
+
+    <p><strong>"PayFac and MoR are interchangeable terms."</strong> They are not. They describe different legal arrangements with different liability allocations. The PayFac model is governed by Visa and Mastercard registration rules. The MoR model is governed by consumer protection, tax, and sales law in each jurisdiction.</p>
+
+    <p><strong>"MoR is cheaper than PayFac at scale."</strong> Usually false. The 5 to 9 percent MoR fee is a percentage of gross revenue, while PayFac economics are basis points on payment volume. On a $50M-revenue SaaS company processing entirely through a MoR, the fee is $2.5M to $4.5M per year. The same $50M of revenue running through a PFaaS structure (where the platform owns the merchant accounts) would generate $150K to $300K of payments revenue for the platform, not a cost. The two models are not directly comparable because they describe different revenue structures.</p>
+
+    <p><strong>"We can use MoR while becoming a PayFac to ease the transition."</strong> The two models are not transitional states of each other. They describe different products serving different customer types. Some platforms run both in parallel for different customer segments (MoR for global B2C subscriptions, PayFac for B2B in-person merchant payments), but the architectures are independent.</p>
+
+    <p><strong>"MoR providers like Paddle compete with PayFac providers like Stripe Connect."</strong> They mostly serve different markets. Paddle and FastSpring serve SaaS companies selling their own products globally. Stripe Connect serves software platforms whose customers are themselves businesses accepting payments. The two models can coexist within the same software platform if it operates both kinds of businesses.</p>
+
+    <h2>A Decision Framework</h2>
+
+    <p>The cleanest way to know which model fits is to answer one question: who is the legal seller of the product or service being paid for?</p>
+
+    <ol>
+      <li><strong>If your platform is the seller</strong> (you sell SaaS subscriptions, digital goods, or services directly to end customers): MoR is likely the right architecture, especially if you sell globally and want to avoid the tax-and-compliance build-out.</li>
+      <li><strong>If your customers are the sellers</strong> (your platform is software that other businesses use to accept payments from their own customers): PayFac or PayFac-as-a-Service is the right architecture. The economics are basis points on volume, not a percentage of revenue.</li>
+      <li><strong>If you operate both kinds of businesses</strong> (some lines sell your own product, some lines enable merchant payments): you may need both architectures running in parallel for different revenue streams.</li>
+    </ol>
+
+    <blockquote class="pull-quote">MoR and PayFac are not competing options. They are different answers to different questions. The question is whether your platform is the seller or whether your customers are.</blockquote>
+
+    <p>For most vertical SaaS platforms enabling card payments for their merchant customers, the answer is PayFac-as-a-Service first, with Full PayFac at higher volume. The <a href="/margin-multiplier">Margin Multiplier</a> models the four embedded payments arrangements at your specific volume. For the broader strategic conversation, see the <a href="/advisory">advisory engagement</a>.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Talk through your specific situation</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Which architecture fits your platform?</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform sells (or enables) something different. The choice between MoR, PFaaS, and Full PayFac depends on what you actually do.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
+      <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
