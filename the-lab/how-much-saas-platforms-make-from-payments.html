@@ -1,0 +1,316 @@
+<!-- ML-LAB-022 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/744212eb32a97.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Much Do SaaS Platforms Actually Make From Payments? | Margin Labs</title>
+<meta name="description" content="Specific dollar amounts at each volume tier, $5M to $500M+, across all four embedded payments models. What ISV Referral, Enhanced Residuals, PayFac-as-a-Service, and Full PayFac actually generate in Year 1 and Year 3 net revenue.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="How Much Do SaaS Platforms Actually Make From Payments? | Margin Labs">
+<meta property="og:description" content="Specific dollar amounts at each volume tier across all four embedded payments models. What platforms actually generate in Year 1 and Year 3.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 10px; line-height: 1.4; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .tier-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin: 28px 0 8px; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">How Much Do SaaS Platforms Actually Make From Payments?</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>10 min read</span>
+  </div>
+  <div class="article-body">
+    <img src="/assets/lab-images/how-much-saas-platforms-make-from-payments.png" alt="Payments Revenue at $100M Volume, comparing Year 1 and Year 3 net revenue across ISV Referral, Enhanced Residuals, PayFac-as-a-Service, and Full PayFac" class="article-hero">
+
+    <p>Every vertical SaaS founder eventually asks the same question when they start looking at embedded payments: how much money is actually in this for us?</p>
+
+    <p>The honest answer is, it depends. The unhelpful answer is, a meaningful amount. The useful answer is, here are the specific numbers at the volume tiers most platforms operate in, and here is what swings them up or down.</p>
+
+    <p>The reason this question matters more than founders realize is that the numbers are large enough to materially change the trajectory of a vertical SaaS business, but they do not show up on the surface. The dollars are buried inside processor agreements, merchant pricing decisions, and operational choices that most founders never made deliberately. Until they get modeled, they are invisible.</p>
+
+    <p>For the structural overview of how each model generates revenue, see <a href="/the-lab/how-saas-companies-make-money-from-payments">How SaaS Companies Make Money From Payments</a>. This article is the financial version. Specific dollars at specific volumes, across all four embedded payments arrangements.</p>
+
+    <h2>Why Volume Is the Single Biggest Variable</h2>
+
+    <p>Most embedded payments revenue conversations focus on the model: should we be ISV Referral, PayFac-as-a-Service, Full PayFac? Those choices matter. But the variable that drives most of the revenue outcome is annual processing volume.</p>
+
+    <p>The reason is that all four models pay you a net basis point spread on the dollars flowing through your platform. A few extra basis points on $5M of volume is rounding error. The same spread on $200M is a meaningful business line. The model decision compounds with volume. Without volume, the model barely matters. With volume, it matters enormously. For the full breakdown of which model fits which volume tier, see <a href="/the-lab/should-you-become-a-payment-facilitator">Should You Become a Payment Facilitator?</a></p>
+
+    <p>The starting point for sizing your opportunity is understanding your current annual processing volume. If you do not know it, estimate it: average merchants times average monthly payment volume per merchant times twelve. Most platforms have this data buried inside their processor reporting and have never aggregated it.</p>
+
+    <h2>What the Four Models Generate at Each Volume Tier</h2>
+
+    <p>Here is the framework. Net economics by model, as published in <a href="/the-lab/what-is-a-payment-facilitator">What Is a Payment Facilitator?</a>, applied across volume tiers most vertical SaaS platforms encounter. These ranges assume 60 to 75 percent merchant activation on payments, which is realistic for platforms past their first year of an embedded payments program. Year 1 results at lower activation rates would land at the lower end of each range.</p>
+
+    <p class="tier-label">$5M Annual Processing Volume</p>
+
+    <p>At this volume you are probably pre or early embedded payments. Revenue is modest in absolute terms but the operational simplicity matches the stage.</p>
+
+    <ul>
+      <li><strong>ISV Referral (5 to 15 bps):</strong> $2.5K to $7.5K per year</li>
+      <li><strong>Enhanced Residuals (15 to 30 bps):</strong> $7.5K to $15K per year</li>
+      <li><strong>PFaaS (30 to 60 bps):</strong> $15K to $30K per year, but the implementation cost ($50K to $200K) does not pay back at this volume</li>
+      <li><strong>Full PayFac:</strong> Not viable at this scale</li>
+    </ul>
+
+    <p>At $5M, ISV Referral is the right answer. Build the merchant volume first. The model upgrade comes later.</p>
+
+    <p class="tier-label">$25M Annual Processing Volume</p>
+
+    <p>This is the bottom of the meaningful zone. Revenue starts to be a real line item rather than a rounding-error residual.</p>
+
+    <ul>
+      <li><strong>ISV Referral:</strong> $12.5K to $37.5K per year</li>
+      <li><strong>Enhanced Residuals:</strong> $37.5K to $75K per year</li>
+      <li><strong>PFaaS:</strong> $75K to $150K per year, implementation starting to pay back within 12 to 18 months</li>
+      <li><strong>Full PayFac:</strong> Not economic at this volume</li>
+    </ul>
+
+    <p>The conversation at $25M is whether to move from ISV Referral to Enhanced Residuals or PFaaS. The math starts to work for the more sophisticated arrangement, but the operational lift needs to be priced in. The detailed comparison is in <a href="/the-lab/isv-referral-vs-payfac-lite">ISV Referral vs PayFac Lite</a>.</p>
+
+    <p class="tier-label">$50M Annual Processing Volume</p>
+
+    <p>This is where embedded payments starts to become a strategic conversation rather than a residual.</p>
+
+    <ul>
+      <li><strong>ISV Referral:</strong> $25K to $75K per year (you are leaving real money on the table)</li>
+      <li><strong>Enhanced Residuals:</strong> $75K to $150K per year</li>
+      <li><strong>PFaaS:</strong> $150K to $300K per year, implementation pays back in 6 to 12 months</li>
+      <li><strong>Full PayFac:</strong> $300K to $500K per year, but the operating costs and time-to-launch make the math marginal</li>
+    </ul>
+
+    <p>At $50M, the right answer for most platforms is PFaaS. The mechanics of why are covered in detail in <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service</a>.</p>
+
+    <p class="tier-label">$100M Annual Processing Volume</p>
+
+    <p>This is the inflection point. Payments revenue becomes a meaningful contributor to total revenue at this volume tier.</p>
+
+    <ul>
+      <li><strong>ISV Referral:</strong> $50K to $150K per year (sub-optimal by a wide margin)</li>
+      <li><strong>Enhanced Residuals:</strong> $150K to $300K per year</li>
+      <li><strong>PFaaS:</strong> $300K to $600K per year, often the right answer</li>
+      <li><strong>Full PayFac:</strong> $600K to $1M per year, the case starts to deserve serious evaluation</li>
+    </ul>
+
+    <p>At $100M, the strategic question is whether PFaaS or Full PayFac. The marginal economics of going Full PayFac (typically 25 to 30 bps over PFaaS) start to clear the marginal operating cost (typically $300K to $500K per year), but barely. The decision tips on factors beyond pure economics, like the team's capacity for compliance load and the platform's strategic time horizon.</p>
+
+    <p class="tier-label">$200M Annual Processing Volume</p>
+
+    <p>At this scale, payments is a strategic business line. The model decision is no longer about whether to capture the economics; it is about which arrangement maximizes them.</p>
+
+    <ul>
+      <li><strong>ISV Referral:</strong> $100K to $300K per year (a year-over-year embarrassment)</li>
+      <li><strong>Enhanced Residuals:</strong> $300K to $600K per year</li>
+      <li><strong>PFaaS:</strong> $600K to $1.2M per year, the default if the team is execution-constrained</li>
+      <li><strong>Full PayFac:</strong> $1.2M to $2M per year, the case becomes compelling</li>
+    </ul>
+
+    <p>$200M is where Full PayFac starts to feel like the right call rather than a stretch. The additional 25 to 30 bps of net spread is now generating $500K to $600K of incremental revenue, which clears the operating cost with margin to spare.</p>
+
+    <p class="tier-label">$500M Annual Processing Volume</p>
+
+    <p>At half a billion in processing volume, payments is a major revenue stream and the platform is in the territory where embedded payments materially influences enterprise valuation.</p>
+
+    <ul>
+      <li><strong>ISV Referral:</strong> $250K to $750K per year</li>
+      <li><strong>Enhanced Residuals:</strong> $750K to $1.5M per year</li>
+      <li><strong>PFaaS:</strong> $1.5M to $3M per year</li>
+      <li><strong>Full PayFac:</strong> $3M to $5M+ per year, almost certainly the right model</li>
+    </ul>
+
+    <p>For the valuation impact of these revenue tiers, see <a href="/the-lab/payments-revenue-saas-valuation">Payments Revenue SaaS Valuation</a>. At $500M of processing volume, payments alone is adding $30M to $60M of enterprise value at typical SaaS multiples.</p>
+
+    <h2>Year 1 vs Year 3: The Compounding That Founders Miss</h2>
+
+    <p>The numbers above are Year 1 estimates assuming 60 to 75 percent merchant activation. Year 3 numbers compound from two effects most platforms underestimate.</p>
+
+    <p>First, activation rates climb. Year 1 activation typically lands at 40 to 60 percent because the program is new, onboarding is unrefined, and merchant communication is still being optimized. By Year 3, well-run programs land at 70 to 85 percent activation. That difference alone is 40 to 60 percent more revenue at the same processing volume.</p>
+
+    <p>Second, attach rate per active merchant grows. Merchants who use payments early tend to expand usage as they grow. New revenue streams (additional payment types, recurring billing, ACH, terminal hardware) compound on top of the base.</p>
+
+    <p>Realistic Year 3 revenue, at the same platform volume but with mature activation and attach, runs 50 to 80 percent above Year 1 across all four models. That is why the strategic conversation about embedded payments has to look at the three-year picture rather than the launch year. The first-year revenue line is the floor of what the program produces.</p>
+
+    <p>This compounding is one of the things <a href="/margin-multiplier">the Margin Multiplier</a> can struggle to surface, because it operates on current volume snapshots rather than activation curves. Treat the calculator output as Year 1 directional and assume meaningful upside as the program matures.</p>
+
+    <h2>What Swings the Numbers Up or Down</h2>
+
+    <p>The ranges above are wide because vertical, merchant mix, and execution all swing the result by 30 to 50 percent in either direction. Four variables matter most.</p>
+
+    <h3>Activation Rate</h3>
+
+    <p>This is the single biggest swing factor. A platform with 80 percent merchant activation generates twice the revenue of an otherwise-identical platform with 40 percent activation. The activation playbook is its own discipline. For why most platforms underperform here, see <a href="/the-lab/why-merchants-dont-use-payments">Why Merchants Do Not Use Payments</a>.</p>
+
+    <h3>Vertical and Merchant Mix</h3>
+
+    <p>Average processing volume per merchant varies by an order of magnitude across verticals. A platform serving high-ticket B2B services merchants ($100K+ annual processing each) generates very different economics from one serving low-volume retailers ($30K annual each). Take rate also varies by vertical because card mix, dispute rates, and chargeback exposure differ.</p>
+
+    <h3>Processor and Provider Terms</h3>
+
+    <p>The take rate ranges above assume reasonably negotiated arrangements. Poorly negotiated processor contracts (interchange-plus margins outside benchmark, fixed fees that compound, settlement timing penalties) can compress net economics by 30 to 50 percent. For the playbook on negotiating these terms, see <a href="/the-lab/how-to-negotiate-a-processor-agreement">How to Negotiate a Processor Agreement</a>.</p>
+
+    <h3>Pricing Strategy to Merchants</h3>
+
+    <p>Whether you charge merchants effective rate, interchange-plus, or flat per-transaction pricing materially affects both net economics and merchant retention. Aggressive pricing maximizes take rate but reduces activation. Conservative pricing maximizes activation but caps take rate. The right answer is vertical-specific.</p>
+
+    <h2>The Back-Book: The Biggest Hidden Lever in Year 1 Revenue</h2>
+
+    <p>The activation conversation has two completely different shapes depending on which merchants you are talking about, and the financial impact of confusing them is large.</p>
+
+    <p><strong>New-book merchants</strong> (onboarded after embedded payments launched) tend to activate at 70 to 85 percent in well-executed programs. The product surfaces payments during onboarding. The sales motion includes it from day one.</p>
+
+    <p><strong>Back-book merchants</strong> (already on the platform before payments launched) typically activate at 15 to 30 percent in Year 1. They have an existing processor, an existing rate, an existing chargeback workflow they trust. The platform asking them to switch is asking them to take a real risk for a benefit they have not yet personally felt.</p>
+
+    <p>This matters financially because most platforms running embedded payments have far more back-book volume than new-book volume in their first 24 months. A platform with $100M of total processing volume might have $20M flowing through new-book merchants and $80M sitting in the back-book. The Year 1 net revenue impact at a 45 bps PFaaS take rate looks like this:</p>
+
+    <ul>
+      <li>New-book at 80 percent activation: $20M × 80% × 45 bps = <strong>$72K</strong></li>
+      <li>Back-book at 20 percent activation: $80M × 20% × 45 bps = <strong>$72K</strong></li>
+      <li>Back-book at 60 percent activation: $80M × 60% × 45 bps = <strong>$216K</strong></li>
+    </ul>
+
+    <p>Same platform, same model, same volume. Three different outcomes, with a $144K Year 1 swing driven entirely by back-book conversion rate. This is why back-book activation is consistently the largest single revenue lever in the first 18 to 24 months of an embedded payments program, larger than picking the right model and larger than negotiating better processor terms.</p>
+
+    <p>Most platforms leave 60 to 80 percent of their back-book unconverted in Year 1. By Year 3 the gap compounds: unconverted back-book merchants renew with their existing processor on schedule and lock themselves in for another two to three years. The window for converting them closes quietly.</p>
+
+    <p>The platforms that actually convert back-book at scale share specific tactics. In-product rate comparisons that show merchants what they would have saved last month at the embedded rate. Support team enablement with handoff scripts and spiff structures so the team that already touches merchants becomes a conversion channel. Dedicated activation FTEs above $50M of installed-base volume, typically paying back in 4 to 8 months. Processor co-marketing programs that get negotiated into the processor agreement but almost never get volunteered (ask explicitly, and ask early). Renewal-window targeting that treats the 60 to 90 days before an existing processor contract renews as the highest-probability conversion window.</p>
+
+    <p>The operational playbook on each of these is its own discipline. A dedicated Margin Labs article on the back-book conversion playbook is in the pipeline. For the diagnostic on what holds back-book merchants in place before any of this matters, see <a href="/the-lab/why-merchants-dont-use-payments">Why Merchants Do Not Use Payments</a>. For why even new-book activation underperforms, see <a href="/the-lab/merchant-onboarding-embedded-payments">Merchant Onboarding for Embedded Payments</a>.</p>
+
+    <h2>Why Most Platforms Underestimate Year 1</h2>
+
+    <p>Founders running the math for the first time tend to make two mistakes that bias the Year 1 estimate downward by 30 to 50 percent.</p>
+
+    <p>The first mistake is using net merchant pricing rather than gross processed volume. The opportunity is on processed volume (the dollar amount running through the merchant's card swipes). Some founders accidentally model on the merchant's net revenue, which understates the base by 95 percent.</p>
+
+    <p>The second mistake is assuming current attach rate is realistic. Most platforms have legacy merchants who never adopted payments because the program did not exist or was poorly marketed when they onboarded. New merchants onboarded into a well-executed program activate at much higher rates. Modeling using your current installed-base activation rate dramatically understates what new cohorts will do.</p>
+
+    <p>For the metrics framework that catches these biases after launch, see <a href="/the-lab/payments-kpis-after-launch">Payments KPIs After Launch</a>.</p>
+
+    <h2>Two Ways to Use These Numbers</h2>
+
+    <p>The numbers above are most useful for two specific conversations.</p>
+
+    <p><strong>Building the internal business case.</strong> Founders pitching embedded payments to their board or finance team need a defensible Year 1 estimate and a credible three-year compounding story. The framework above gives you both. The structure is, at our current processing volume of $X, under PFaaS our Year 1 net revenue is $Y, scaling to $Z by Year 3 as activation matures. The Year 3 number is what justifies the upfront investment.</p>
+
+    <p><strong>Framing the model decision.</strong> Founders deciding between ISV Referral, PFaaS, and Full PayFac need to see the dollar deltas at their specific volume tier rather than the bps deltas abstracted across all platforms. The same 25 bps spread is a $25K decision at $10M volume and a $1.25M decision at $500M. The numbers above let you frame the decision at your actual scale.</p>
+
+    <h2>A Quick Gut-Check Calculation</h2>
+
+    <p>If you take nothing else from this article, do this back-of-envelope math for your platform tonight.</p>
+
+    <ol>
+      <li>Estimate your current annual processing volume. (Merchants × average monthly volume × 12.)</li>
+      <li>Pick the model you are operating under today (ISV Referral, Enhanced Residuals, PFaaS, Full PayFac).</li>
+      <li>Multiply your volume by the midpoint of the bps range for that model (10 bps for ISV Referral, 22 bps for Enhanced, 45 bps for PFaaS, 80 bps for Full PayFac).</li>
+      <li>Compare to what you are actually earning on payments today.</li>
+    </ol>
+
+    <p>If your actual is meaningfully below the framework estimate, the gap is either activation, contract terms, or pricing strategy. All three are recoverable. The size of the gap tells you how big the recovery opportunity is.</p>
+
+    <p>If your actual is in line with the framework, the question shifts to model upgrade. Moving from your current model to the next tier up captures the bps delta on your existing volume, with implementation cost as the only meaningful drag. For the full framework on whether to make that move, the decision tree is in <a href="/the-lab/should-you-become-a-payment-facilitator">Should You Become a Payment Facilitator?</a>.</p>
+
+    <blockquote class="pull-quote">The payments revenue inside a vertical SaaS business is rarely zero. It is almost always larger than the founder assumes. The work is making it visible and then choosing whether to capture it deliberately or leave it on the table.</blockquote>
+
+    <p>Embedded payments is one of the few revenue lines that scales with merchant success without proportional sales effort. Modeling it correctly is the first step. The mechanics of how it shows up in your P&L, and what it does to your valuation, are covered in <a href="/the-lab/how-to-read-a-payments-pl">How to Read a Payments P&L</a> and <a href="/the-lab/payments-revenue-saas-valuation">Payments Revenue SaaS Valuation</a>.</p>
+
+    <p>The <a href="/margin-multiplier">Margin Multiplier</a> models your specific platform across all four arrangements in about 60 seconds. Start there if you want the platform-specific version of the numbers above. For the strategic conversation about what to do with those numbers at your platform, see the <a href="/advisory">advisory engagement</a>.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want the numbers for your platform?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Model your specific platform across all four arrangements.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes 60 seconds. The conversation that follows turns the directional number into a decision.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/margin-multiplier" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-mm">Run the Margin Multiplier →</a>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-consult">Or start the conversation →</a>
+    </div>
+  </div>
+</section>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

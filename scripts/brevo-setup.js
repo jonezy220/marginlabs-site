@@ -59,6 +59,9 @@ async function createLists() {
     { id: 4, name: 'Multiplier Leads',      folderId: 1 },
     { id: 5, name: 'Advisory Leads',         folderId: 1 },
     { id: 6, name: 'Framework Customers',    folderId: 1 },
+    // Hot Leads: contacts currently in active personal outreach from Chris.
+    // Cold nurture automations (WF1/WF2) should exclude this list from entry.
+    { id: 7, name: 'Hot Leads',              folderId: 1 },
   ];
 
   // Check existing lists first
