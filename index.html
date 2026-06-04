@@ -159,16 +159,17 @@
       <circle class="hero-dot" cx="790" cy="440" r="1.4" opacity="0.06"/>
       <circle class="hero-dot" cx="870" cy="440" r="1.2" opacity="0.04"/>
     </g>
-    <!-- signal line -->
-    <polyline id="signal-line" points="500,530 615,455 728,372 830,286 918,212 994,152 1058,106"
-      stroke="#C8823C" stroke-width="1.8" fill="none" opacity="0.38"
+    <!-- signal line — J-curve: dip, inflection, exponential climb -->
+    <path id="signal-line"
+      d="M 500,500 C 560,512 620,514 680,505 C 740,496 780,460 820,400 C 870,320 940,200 1000,130 L 1058,92"
+      stroke="#C8823C" stroke-width="1.8" fill="none" opacity="0.42"
       stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- nodes -->
-    <circle id="n1" class="hero-node" cx="615" cy="455" r="5"  fill="#C8823C"/>
-    <circle id="n2" class="hero-node" cx="728" cy="372" r="6"  fill="#C8823C"/>
-    <circle id="n3" class="hero-node" cx="830" cy="286" r="7"  fill="#C8823C"/>
-    <circle id="n4" class="hero-node" cx="918" cy="212" r="8"  fill="#C8823C"/>
-    <circle id="n5" class="hero-node" cx="994" cy="152" r="9"  fill="#C8823C"/>
+    <!-- nodes — placed along the J-curve -->
+    <circle id="n1" class="hero-node" cx="600" cy="511" r="5"  fill="#C8823C"/>
+    <circle id="n2" class="hero-node" cx="720" cy="500" r="5.5" fill="#C8823C"/>
+    <circle id="n3" class="hero-node" cx="820" cy="400" r="6.5" fill="#C8823C"/>
+    <circle id="n4" class="hero-node" cx="920" cy="240" r="8"  fill="#C8823C"/>
+    <circle id="n5" class="hero-node" cx="1020" cy="118" r="9"  fill="#C8823C"/>
     <!-- bar chart zone (hidden on mobile) -->
     <g class="hero-bar-zone">
       <line class="hero-grid-el" x1="1072" y1="0"   x2="1072" y2="560" stroke="#C8823C" stroke-width="0.7" opacity="0.14"/>
@@ -181,22 +182,71 @@
       <line class="hero-grid-el" x1="1072" y1="348" x2="1081" y2="348" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
       <line class="hero-grid-el" x1="1072" y1="464" x2="1081" y2="464" stroke="#C8823C" stroke-width="0.8" opacity="0.22"/>
       <text class="hero-grid-el" x="1076" y="100" font-family="DM Mono, monospace" font-size="9" fill="#C8823C" opacity="0.28" letter-spacing="0.1em">BPS</text>
-      <rect id="b1"  class="hero-bar" x="1090" y="402" width="13" height="128" fill="#C8823C" opacity="0.14" rx="1"/>
-      <rect id="b2"  class="hero-bar" x="1112" y="368" width="13" height="162" fill="#C8823C" opacity="0.17" rx="1"/>
-      <rect id="b3"  class="hero-bar" x="1134" y="415" width="13" height="115" fill="#C8823C" opacity="0.13" rx="1"/>
-      <rect id="b4"  class="hero-bar" x="1156" y="332" width="13" height="198" fill="#C8823C" opacity="0.22" rx="1"/>
-      <rect id="b5"  class="hero-bar" x="1178" y="298" width="13" height="232" fill="#C8823C" opacity="0.26" rx="1"/>
-      <rect id="b6"  class="hero-bar" x="1200" y="358" width="13" height="172" fill="#C8823C" opacity="0.19" rx="1"/>
-      <rect id="b7"  class="hero-bar" x="1222" y="262" width="13" height="268" fill="#C8823C" opacity="0.32" rx="1"/>
-      <rect id="b8"  class="hero-bar" x="1244" y="228" width="13" height="302" fill="#C8823C" opacity="0.36" rx="1"/>
-      <rect id="b9"  class="hero-bar" x="1266" y="305" width="13" height="225" fill="#C8823C" opacity="0.26" rx="1"/>
-      <rect id="b10" class="hero-bar" x="1288" y="192" width="13" height="338" fill="#C8823C" opacity="0.43" rx="1"/>
-      <rect id="b11" class="hero-bar" x="1310" y="225" width="13" height="305" fill="#C8823C" opacity="0.38" rx="1"/>
-      <rect id="b12" class="hero-bar" x="1332" y="162" width="13" height="368" fill="#C8823C" opacity="0.50" rx="1"/>
-      <rect id="b13" class="hero-bar" x="1354" y="198" width="13" height="332" fill="#C8823C" opacity="0.44" rx="1"/>
-      <rect id="b14" class="hero-bar" x="1376" y="128" width="13" height="402" fill="#C8823C" opacity="0.58" rx="1"/>
-      <rect id="b15" class="hero-bar" x="1398" y="162" width="13" height="368" fill="#C8823C" opacity="0.52" rx="1"/>
-      <rect id="b16" class="hero-bar" x="1420" y="96"  width="13" height="434" fill="#C8823C" opacity="0.66" rx="1"/>
+      <!-- Stacked bars: muted base (back-book) + bright cap (incremental) + thin seam line — mirrors the logo treatment -->
+      <!-- b1 -->
+      <rect class="hero-bar-base" x="1090" y="440" width="13" height="90"  fill="#C8823C" opacity="0.08" rx="1"/>
+      <rect id="b1"  class="hero-bar" x="1090" y="402" width="13" height="38"  fill="#C8823C" opacity="0.22" rx="1"/>
+      <line x1="1089.5" y1="440" x2="1103.5" y2="440" stroke="#C8823C" stroke-width="0.7" opacity="0.20"/>
+      <!-- b2 -->
+      <rect class="hero-bar-base" x="1112" y="417" width="13" height="113" fill="#C8823C" opacity="0.10" rx="1"/>
+      <rect id="b2"  class="hero-bar" x="1112" y="368" width="13" height="49"  fill="#C8823C" opacity="0.27" rx="1"/>
+      <line x1="1111.5" y1="417" x2="1125.5" y2="417" stroke="#C8823C" stroke-width="0.7" opacity="0.22"/>
+      <!-- b3 -->
+      <rect class="hero-bar-base" x="1134" y="450" width="13" height="80"  fill="#C8823C" opacity="0.07" rx="1"/>
+      <rect id="b3"  class="hero-bar" x="1134" y="415" width="13" height="35"  fill="#C8823C" opacity="0.21" rx="1"/>
+      <line x1="1133.5" y1="450" x2="1147.5" y2="450" stroke="#C8823C" stroke-width="0.7" opacity="0.20"/>
+      <!-- b4 -->
+      <rect class="hero-bar-base" x="1156" y="391" width="13" height="139" fill="#C8823C" opacity="0.12" rx="1"/>
+      <rect id="b4"  class="hero-bar" x="1156" y="332" width="13" height="59"  fill="#C8823C" opacity="0.35" rx="1"/>
+      <line x1="1155.5" y1="391" x2="1169.5" y2="391" stroke="#C8823C" stroke-width="0.75" opacity="0.28"/>
+      <!-- b5 -->
+      <rect class="hero-bar-base" x="1178" y="368" width="13" height="162" fill="#C8823C" opacity="0.14" rx="1"/>
+      <rect id="b5"  class="hero-bar" x="1178" y="298" width="13" height="70"  fill="#C8823C" opacity="0.42" rx="1"/>
+      <line x1="1177.5" y1="368" x2="1191.5" y2="368" stroke="#C8823C" stroke-width="0.75" opacity="0.32"/>
+      <!-- b6 -->
+      <rect class="hero-bar-base" x="1200" y="410" width="13" height="120" fill="#C8823C" opacity="0.10" rx="1"/>
+      <rect id="b6"  class="hero-bar" x="1200" y="358" width="13" height="52"  fill="#C8823C" opacity="0.30" rx="1"/>
+      <line x1="1199.5" y1="410" x2="1213.5" y2="410" stroke="#C8823C" stroke-width="0.7" opacity="0.24"/>
+      <!-- b7 -->
+      <rect class="hero-bar-base" x="1222" y="342" width="13" height="188" fill="#C8823C" opacity="0.18" rx="1"/>
+      <rect id="b7"  class="hero-bar" x="1222" y="262" width="13" height="80"  fill="#C8823C" opacity="0.52" rx="1"/>
+      <line x1="1221.5" y1="342" x2="1235.5" y2="342" stroke="#C8823C" stroke-width="0.8" opacity="0.36"/>
+      <!-- b8 -->
+      <rect class="hero-bar-base" x="1244" y="319" width="13" height="211" fill="#C8823C" opacity="0.20" rx="1"/>
+      <rect id="b8"  class="hero-bar" x="1244" y="228" width="13" height="91"  fill="#C8823C" opacity="0.58" rx="1"/>
+      <line x1="1243.5" y1="319" x2="1257.5" y2="319" stroke="#C8823C" stroke-width="0.8" opacity="0.40"/>
+      <!-- b9 -->
+      <rect class="hero-bar-base" x="1266" y="373" width="13" height="157" fill="#C8823C" opacity="0.14" rx="1"/>
+      <rect id="b9"  class="hero-bar" x="1266" y="305" width="13" height="68"  fill="#C8823C" opacity="0.42" rx="1"/>
+      <line x1="1265.5" y1="373" x2="1279.5" y2="373" stroke="#C8823C" stroke-width="0.75" opacity="0.32"/>
+      <!-- b10 -->
+      <rect class="hero-bar-base" x="1288" y="293" width="13" height="237" fill="#C8823C" opacity="0.24" rx="1"/>
+      <rect id="b10" class="hero-bar" x="1288" y="192" width="13" height="101" fill="#C8823C" opacity="0.68" rx="1"/>
+      <line x1="1287.5" y1="293" x2="1301.5" y2="293" stroke="#C8823C" stroke-width="0.85" opacity="0.46"/>
+      <!-- b11 -->
+      <rect class="hero-bar-base" x="1310" y="317" width="13" height="213" fill="#C8823C" opacity="0.21" rx="1"/>
+      <rect id="b11" class="hero-bar" x="1310" y="225" width="13" height="92"  fill="#C8823C" opacity="0.62" rx="1"/>
+      <line x1="1309.5" y1="317" x2="1323.5" y2="317" stroke="#C8823C" stroke-width="0.8" opacity="0.42"/>
+      <!-- b12 -->
+      <rect class="hero-bar-base" x="1332" y="272" width="13" height="258" fill="#C8823C" opacity="0.28" rx="1"/>
+      <rect id="b12" class="hero-bar" x="1332" y="162" width="13" height="110" fill="#C8823C" opacity="0.80" rx="1"/>
+      <line x1="1331.5" y1="272" x2="1345.5" y2="272" stroke="#C8823C" stroke-width="0.9" opacity="0.52"/>
+      <!-- b13 -->
+      <rect class="hero-bar-base" x="1354" y="298" width="13" height="232" fill="#C8823C" opacity="0.24" rx="1"/>
+      <rect id="b13" class="hero-bar" x="1354" y="198" width="13" height="100" fill="#C8823C" opacity="0.70" rx="1"/>
+      <line x1="1353.5" y1="298" x2="1367.5" y2="298" stroke="#C8823C" stroke-width="0.85" opacity="0.48"/>
+      <!-- b14 -->
+      <rect class="hero-bar-base" x="1376" y="249" width="13" height="281" fill="#C8823C" opacity="0.32" rx="1"/>
+      <rect id="b14" class="hero-bar" x="1376" y="128" width="13" height="121" fill="#C8823C" opacity="0.92" rx="1"/>
+      <line x1="1375.5" y1="249" x2="1389.5" y2="249" stroke="#C8823C" stroke-width="0.95" opacity="0.58"/>
+      <!-- b15 -->
+      <rect class="hero-bar-base" x="1398" y="272" width="13" height="258" fill="#C8823C" opacity="0.30" rx="1"/>
+      <rect id="b15" class="hero-bar" x="1398" y="162" width="13" height="110" fill="#C8823C" opacity="0.85" rx="1"/>
+      <line x1="1397.5" y1="272" x2="1411.5" y2="272" stroke="#C8823C" stroke-width="0.9" opacity="0.54"/>
+      <!-- b16 -->
+      <rect class="hero-bar-base" x="1420" y="226" width="13" height="304" fill="#C8823C" opacity="0.36" rx="1"/>
+      <rect id="b16" class="hero-bar" x="1420" y="96"  width="13" height="130" fill="#C8823C" opacity="0.98" rx="1"/>
+      <line x1="1419.5" y1="226" x2="1433.5" y2="226" stroke="#C8823C" stroke-width="1" opacity="0.62"/>
     </g>
     <!-- fades always on top -->
     <rect width="1440" height="560" fill="url(#hero-fl)"/>
@@ -205,34 +255,83 @@
   </svg>
 
   <div class="hero-inner">
-    <div class="hero-eyebrow">Embedded Payments Intelligence</div>
+    <div class="hero-eyebrow" style="font-size:14px;font-weight:600;letter-spacing:0.22em;">Embedded Payments Intelligence</div>
     <h1 class="hero-h1">Your platform is sitting on payments revenue you haven't <strong>captured yet.</strong></h1>
-    <p class="hero-sub">The Margin Multiplier quantifies what it's worth, and what it takes to capture it.</p>
+    <p class="hero-sub" style="max-width:560px;text-wrap:balance;">The Margin Multiplier quantifies what it's worth, and what it takes to capture it.</p>
     <div class="hero-actions">
       <a href="/margin-multiplier" class="btn-primary" data-analytics="cta-run-multiplier">Run the Margin Multiplier →</a>
       <a href="#what-we-do" class="btn-ghost" data-analytics="cta-how-it-works">How It Works ↓</a>
     </div>
-    <div style="margin-top:18px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;">
-      <a href="#contact" data-analytics="cta-hero-free-guide" style="color:rgba(240,235,228,0.55);text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.22);padding-bottom:2px;">Or get the free guide first →</a>
-    </div>
-
-    <!-- Self-sort tiles -->
-    <div class="self-sort" role="list">
-      <a href="/margin-multiplier" class="sort-tile" role="listitem" data-analytics="tile-no-payments">
-        <span class="sort-tile-text">We don't have embedded payments yet</span>
-        <span class="sort-tile-arrow">→</span>
-      </a>
-      <a href="#uc-02" class="sort-tile" role="listitem" data-analytics="tile-underperforming">
-        <span class="sort-tile-text">We have payments but they're underperforming</span>
-        <span class="sort-tile-arrow">→</span>
-      </a>
-      <a href="#uc-04" class="sort-tile" role="listitem" data-analytics="tile-processing-cost">
-        <span class="sort-tile-text">We're not sure what we're paying to process</span>
-        <span class="sort-tile-arrow">→</span>
-      </a>
-    </div>
   </div>
 </section>
+
+
+<!-- ── PRODUCT LADDER ─────────────────────────── -->
+<section id="products" class="products-section" style="padding:96px 0;">
+  <div class="products-inner" style="max-width:1080px;margin:0 auto;padding:0 24px;">
+    <div class="prod-header" style="text-align:center;margin-bottom:56px;">
+      <div class="prod-eyebrow" style="font-family:'DM Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:#C8823C;margin-bottom:18px;">Two Ways to Move from Question to Decision</div>
+      <div class="prod-title" style="font-size:34px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;color:var(--text);max-width:720px;margin:0 auto;">Independent tools for operators who want the answer, not a sales call.</div>
+    </div>
+
+    <div class="product-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px;align-items:stretch;">
+
+      <!-- ─── FRAMEWORK PRODUCT CARD ─── -->
+      <div class="product-card-v2" style="background:#111;border:1px solid rgba(200,130,60,0.18);border-radius:6px;padding:40px 36px;display:flex;flex-direction:column;text-align:center;min-height:640px;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px;">
+          <div style="font-family:'DM Mono',monospace;font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C8823C;">The Framework</div>
+          <span style="color:rgba(240,235,228,0.25);font-family:'DM Mono',monospace;">·</span>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,235,228,0.6);">Self-Service</div>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:8px;">
+          <span style="font-size:48px;font-weight:700;letter-spacing:-0.02em;color:var(--text);">$139</span>
+          <span style="font-size:15px;color:rgba(240,235,228,0.55);font-family:'DM Mono',monospace;letter-spacing:0.06em;">one-time</span>
+        </div>
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.01em;line-height:1.35;color:var(--text);margin:22px auto 14px;max-width:90%;">The Embedded Payments Strategic Decision Framework</h3>
+        <p style="font-size:16px;font-weight:300;color:rgba(240,235,228,0.72);line-height:1.7;margin:0 auto 24px;max-width:90%;">A vendor-neutral playbook for vertical SaaS operators. The four models, real-world take rate ranges, and a structured framework for choosing the right path.</p>
+        <ul style="list-style:none;padding:0;margin:0 auto 32px;max-width:80%;text-align:left;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:15px;color:rgba(240,235,228,0.82);padding-left:24px;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:#C8823C;">→</span>14 sections from landscape to action plan</li>
+          <li style="font-size:15px;color:rgba(240,235,228,0.82);padding-left:24px;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:#C8823C;">→</span>Real-world take rates for all four models</li>
+          <li style="font-size:15px;color:rgba(240,235,228,0.82);padding-left:24px;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:#C8823C;">→</span>Decision matrix by volume tier and stage</li>
+          <li style="font-size:15px;color:rgba(240,235,228,0.82);padding-left:24px;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:#C8823C;">→</span>Valuation impact + 90-day quick-start plan</li>
+        </ul>
+        <div style="margin-top:auto;">
+          <button id="tier1-checkout-btn" class="btn-primary" style="width:100%;cursor:pointer;background:#C8823C;color:#0d0d0d;border:none;border-radius:3px;font-family:'DM Mono',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-indent:0.08em;text-transform:uppercase;padding:18px 20px;text-align:center;white-space:nowrap;" data-analytics="product-tier1-cta">Buy Framework — $139</button>
+          <p id="tier1-checkout-error" style="display:none;font-size:13px;color:var(--copper);margin-top:10px;line-height:1.5">Something went wrong. Try again or email <a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></p>
+          <p style="font-size:12px;color:rgba(240,235,228,0.5);margin:14px 0 0;text-align:center;font-family:'DM Mono',monospace;letter-spacing:0.06em;">Instant PDF download. Pay once, own forever.</p>
+        </div>
+      </div>
+
+      <!-- ─── QUICK START CALL PRODUCT CARD ─── -->
+      <div class="product-card-v2" style="background:#111;border:1px solid rgba(200,130,60,0.18);border-radius:6px;padding:40px 36px;display:flex;flex-direction:column;text-align:center;min-height:640px;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px;">
+          <div style="font-family:'DM Mono',monospace;font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C8823C;">Quick Start Call</div>
+          <span style="color:rgba(240,235,228,0.25);font-family:'DM Mono',monospace;">·</span>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,235,228,0.6);">Guided</div>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:8px;">
+          <span style="font-size:48px;font-weight:700;letter-spacing:-0.02em;color:var(--text);">$379</span>
+          <span style="font-size:15px;color:rgba(240,235,228,0.55);font-family:'DM Mono',monospace;letter-spacing:0.06em;">one hour</span>
+        </div>
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.01em;line-height:1.35;color:var(--text);margin:22px auto 14px;max-width:90%;">One hour. Your specific situation. An action plan.</h3>
+        <p style="font-size:16px;font-weight:300;color:rgba(240,235,228,0.72);line-height:1.7;margin:0 auto 24px;max-width:90%;">A direct working session on your platform's payments decision. Model recommendation, vendor shortlist, and warm introductions to vetted processing partners.</p>
+        <ul style="list-style:none;padding:0;margin:0 auto 32px;max-width:80%;text-align:left;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:15px;color:rgba(240,235,228,0.82);padding-left:24px;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:#C8823C;">→</span>Which model fits your volume and stage</li>
+          <li style="font-size:15px;color:rgba(240,235,228,0.82);padding-left:24px;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:#C8823C;">→</span>Realistic economics for your platform</li>
+          <li style="font-size:15px;color:rgba(240,235,228,0.82);padding-left:24px;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:#C8823C;">→</span>Warm intros to vetted processing partners</li>
+          <li style="font-size:15px;color:rgba(240,235,228,0.82);padding-left:24px;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:#C8823C;">→</span>Written action plan within 48 hours</li>
+        </ul>
+        <div style="margin-top:auto;">
+          <a href="/advisory" class="btn-primary" style="display:block;width:100%;box-sizing:border-box;cursor:pointer;background:#C8823C;color:#0d0d0d;border:none;border-radius:3px;font-family:'DM Mono',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-indent:0.08em;text-transform:uppercase;padding:18px 20px;text-align:center;white-space:nowrap;text-decoration:none;" data-analytics="product-qsc-cta">Book a Call — $379</a>
+          <p style="font-size:12px;color:rgba(240,235,228,0.5);margin:14px 0 0;text-align:center;font-family:'DM Mono',monospace;letter-spacing:0.06em;">Action plan in 48 hours. Processor intros included.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
 <!-- ── (Free guide and Margin Multiplier mini-calculator removed — hero links to /margin-multiplier.html) ── -->
 
@@ -309,77 +408,21 @@
       <!-- LAB-SPOTLIGHT:START -->
       <!-- Populated by scripts/build_lab_spotlight.py. Do not edit by hand. Run the script after publishing a new article. -->
       <a href="/the-lab/payment-processor-for-saas" data-analytics="lab-spotlight-payment-processor-for-saas" style="display:block;padding:24px;border:1px solid rgba(200,130,60,0.15);border-radius:4px;text-decoration:none;transition:border-color 0.15s;background:#111;">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:12px;">June 2026 &middot; 9 min read</div>
-        <div style="font-size:17px;font-weight:500;letter-spacing:-0.015em;color:#F0EBE4;line-height:1.35;margin-bottom:10px;">Payment Processor for SaaS Platforms</div>
-        <div style="font-size:13px;color:rgba(240,235,228,0.55);line-height:1.6;">Choosing a payment processor for a SaaS platform is not the same as choosing one for a single business.</div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:14px;">June 2026 &middot; 9 min read</div>
+        <div style="font-size:19px;font-weight:500;letter-spacing:-0.015em;color:#F0EBE4;line-height:1.35;margin-bottom:12px;">Payment Processor for SaaS Platforms</div>
+        <div style="font-size:15px;color:rgba(240,235,228,0.7);line-height:1.65;">Choosing a payment processor for a SaaS platform is not the same as choosing one for a single business.</div>
       </a>
       <a href="/the-lab/merchant-of-record-vs-payfac" data-analytics="lab-spotlight-merchant-of-record-vs-payfac" style="display:block;padding:24px;border:1px solid rgba(200,130,60,0.15);border-radius:4px;text-decoration:none;transition:border-color 0.15s;background:#111;">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:12px;">June 2026 &middot; 8 min read</div>
-        <div style="font-size:17px;font-weight:500;letter-spacing:-0.015em;color:#F0EBE4;line-height:1.35;margin-bottom:10px;">Merchant of Record vs PayFac</div>
-        <div style="font-size:13px;color:rgba(240,235,228,0.55);line-height:1.6;">Merchant of Record (MoR) and Payment Facilitator (PayFac) sound similar but solve different problems.</div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:14px;">June 2026 &middot; 8 min read</div>
+        <div style="font-size:19px;font-weight:500;letter-spacing:-0.015em;color:#F0EBE4;line-height:1.35;margin-bottom:12px;">Merchant of Record vs PayFac</div>
+        <div style="font-size:15px;color:rgba(240,235,228,0.7);line-height:1.65;">Merchant of Record (MoR) and Payment Facilitator (PayFac) sound similar but solve different problems.</div>
       </a>
       <a href="/the-lab/how-much-saas-platforms-make-from-payments" data-analytics="lab-spotlight-how-much-saas-platforms-make-from-payments" style="display:block;padding:24px;border:1px solid rgba(200,130,60,0.15);border-radius:4px;text-decoration:none;transition:border-color 0.15s;background:#111;">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:12px;">June 2026 &middot; 10 min read</div>
-        <div style="font-size:17px;font-weight:500;letter-spacing:-0.015em;color:#F0EBE4;line-height:1.35;margin-bottom:10px;">How Much Do SaaS Platforms Actually Make From Payments?</div>
-        <div style="font-size:13px;color:rgba(240,235,228,0.55);line-height:1.6;">Specific dollar amounts at each volume tier, $5M to $500M+, across all four embedded payments models.</div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:14px;">June 2026 &middot; 10 min read</div>
+        <div style="font-size:19px;font-weight:500;letter-spacing:-0.015em;color:#F0EBE4;line-height:1.35;margin-bottom:12px;">How Much Do SaaS Platforms Actually Make From Payments?</div>
+        <div style="font-size:15px;color:rgba(240,235,228,0.7);line-height:1.65;">Specific dollar amounts at each volume tier, $5M to $500M+, across all four embedded payments models.</div>
       </a>
       <!-- LAB-SPOTLIGHT:END -->
-    </div>
-  </div>
-</section>
-
-<!-- ── FREE GUIDE (MOVED ABOVE PRODUCTS) ──────── -->
-<section id="contact" class="content-section" style="padding:80px 0;">
-  <div class="content-inner" style="max-width:640px;text-align:center;">
-    <div class="content-eyebrow">Free Resource</div>
-    <h2 class="content-h2">The Embedded Payments Opportunity</h2>
-    <p style="color:var(--dim);font-size:15px;line-height:1.7;margin-bottom:24px;">
-      A vendor-neutral overview of how vertical SaaS platforms capture payments revenue:
-      the four models, the economics and how to evaluate where you stand.
-      Free. No sales call required.
-    </p>
-    <form id="guideForm"
-          action="https://formspree.io/f/mkopwvpj"
-          method="POST"
-          style="display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;">
-      <input type="email" name="email" placeholder="your@company.com" required
-             style="flex:1;min-width:200px;" class="form-input">
-      <button type="submit" class="btn-primary" id="guide-submit-btn">
-        Get the Guide &#8594;
-      </button>
-    </form>
-    <div id="guideSuccess" style="display:none;color:var(--copper);margin-top:16px;font-size:14px;">
-      Check your inbox. The guide is on its way.
-    </div>
-    <p style="font-size:11px;color:var(--dimmer);margin-top:12px;font-family:var(--mono);letter-spacing:0.04em;">
-      No spam. Unsubscribe anytime.
-    </p>
-  </div>
-</section>
-
-<!-- ── PRODUCTS (MOVED BELOW FREE GUIDE) ──────── -->
-<section id="products" class="products-section">
-  <div class="products-inner">
-    <div class="prod-header">
-      <div class="prod-eyebrow">For Operators</div>
-      <div class="prod-title">Independent tools for operators who want the answer, not a sales call.</div>
-    </div>
-    <div class="prod-card" style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
-      <div style="flex:1;min-width:280px;">
-        <div class="prod-card-tag">$139 &middot; Available Now</div>
-        <div class="prod-card-name">The Embedded Payments Strategic Decision Framework</div>
-        <div class="prod-card-desc" style="margin-bottom:0;">A vendor-neutral guide to embedded payments for vertical SaaS operators: the four models, how the economics work across gross and net take rates, and a structured framework for choosing the right path for your platform.</div>
-      </div>
-      <div style="flex-shrink:0;">
-        <button id="tier1-checkout-btn" class="prod-cta" style="cursor:pointer;background:none;border:none;padding:0;font:inherit;white-space:nowrap;" data-analytics="product-tier1-cta">Get the Framework &#8594;</button>
-        <p id="tier1-checkout-error" style="display:none;font-size:12px;color:var(--copper);margin-top:8px;line-height:1.5">Something went wrong. Please try again or email <a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></p>
-      </div>
-    </div>
-    <div style="margin-top:40px;padding-top:28px;border-top:1px solid rgba(200,130,60,0.12);text-align:center;">
-      <p style="font-size:14px;color:rgba(240,235,228,0.5);line-height:1.7;margin:0 0 14px;">
-        Ready to talk to processors or need ongoing implementation support?
-      </p>
-      <a href="/advisory" data-analytics="bottom-advisory-cta" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);padding-bottom:2px;">Quick Start Calls &amp; Advisory &#8594;</a>
     </div>
   </div>
 </section>
