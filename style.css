@@ -820,6 +820,11 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.01em;
   line-height: 1.3;
   transition: color 0.3s;
+  /* Ensure all four card titles align body copy at the same vertical position,
+     even when titles 3 + 4 are single-line vs titles 1 + 2 which wrap. */
+  min-height: 2.6em;
+  display: flex;
+  align-items: flex-start;
 }
 .uc-desc {
   font-size: 14px;
