@@ -53,7 +53,9 @@ module.exports = async (req, res) => {
       }),
     }),
 
-    // 3. Brevo — add to CRM with full context + Multiplier Leads list
+    // 3. Brevo — add to CRM with both Multiplier Leads (4) and Free Guide Leads (3) lists + both attributes
+    // The confirmation email above includes the Guide PDF download link inline,
+    // so the user gets ONE email with results + Guide instead of two separate ones.
     fetch(`${baseUrl}/api/brevo-subscribe`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -65,19 +67,12 @@ module.exports = async (req, res) => {
         ctaType,
         gapAmt,
         source:    'Margin Multiplier Calculator',
-        additionalListIds: [4],
-        extraAttributes: { HAS_MULTIPLIER: true, ENTRY_DATE: new Date().toISOString().split('T')[0] },
-        utmParams: req.body.utmParams,
-      }),
-    }),
-
-    // 4. Free Guide delivery — sends the Guide PDF + adds Free Guide Leads list (3) + HAS_FREE_GUIDE attribute
-    // The Multiplier hero promises "Includes the free Embedded Payments Guide with your results"
-    fetch(`${baseUrl}/api/send-guide`, {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
+        additionalListIds: [3, 4],
+        extraAttributes: {
+          HAS_MULTIPLIER: true,
+          HAS_FREE_GUIDE: true,
+          ENTRY_DATE: new Date().toISOString().split('T')[0],
+        },
         utmParams: req.body.utmParams,
       }),
     }),

@@ -40,14 +40,20 @@ module.exports = async (req, res) => {
               </tr>`;
             }).join('')}
           </table>
-          <div style="background:#111;border:1px solid rgba(200,130,60,0.14);border-radius:4px;padding:24px;margin-bottom:24px;">
-            <p style="font-family:monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin:0 0 8px;">Go deeper</p>
-            <p style="font-size:16px;font-weight:300;margin:0 0 8px;">Run the full Margin Multiplier</p>
-            <p style="font-size:13px;color:rgba(240,235,228,0.55);line-height:1.65;margin:0 0 16px;">Add your current model, vertical, and ARR for a complete four-model comparison and recommended path.</p>
-            <a href="https://marginlabs.io/margin-multiplier.html"
+          <div style="background:#111;border:1px solid rgba(200,130,60,0.14);border-radius:4px;padding:24px;margin-bottom:16px;">
+            <p style="font-family:monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin:0 0 8px;">Your free Guide</p>
+            <p style="font-size:16px;font-weight:300;margin:0 0 8px;">The Embedded Payments Guide</p>
+            <p style="font-size:13px;color:rgba(240,235,228,0.55);line-height:1.65;margin:0 0 16px;">A vendor-neutral PDF on the four monetization models, processor economics and the operational considerations for each path. Save it for reference.</p>
+            <a href="https://marginlabs.io/assets/MarginLabs_Embedded_Payments_Opportunity.pdf"
                style="display:inline-block;background:#C8823C;color:#0d0d0d;font-family:monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:11px 22px;border-radius:2px;text-decoration:none;">
-              Get My Full Output →
+              Download the Guide →
             </a>
+          </div>
+          <div style="background:#111;border:1px solid rgba(200,130,60,0.10);border-radius:4px;padding:20px 24px;margin-bottom:24px;">
+            <p style="font-family:monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,228,0.45);margin:0 0 8px;">Next step</p>
+            <p style="font-size:13px;color:rgba(240,235,228,0.6);line-height:1.65;margin:0;">
+              If the opportunity gap is meaningful, the <a href="https://marginlabs.io/" style="color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);">Strategic Decision Framework ($139)</a> takes you from question to decision. If you want a focused working session with model confirmation and warm processor intros, the <a href="https://marginlabs.io/advisory" style="color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);">Quick Start Call ($379)</a> is the right next move. Reply to this email if you're not sure which fits.
+            </p>
           </div>
           <p style="font-size:11px;color:rgba(240,235,228,0.3);line-height:1.7;margin:0;border-top:1px solid rgba(200,130,60,0.1);padding-top:24px;">
             Margin Labs · marginlabs.io · hello@marginlabs.io<br>
