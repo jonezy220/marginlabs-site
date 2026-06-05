@@ -2,9 +2,4 @@ User-agent: *
 Disallow: /assets/
 Disallow: /success
 Disallow: /api/
-Disallow: /margin-labs-p4-final2
-Disallow: /margin-labs-mockup-v3
-Disallow: /margin-labs-icons-r4
-Disallow: /margin-labs-hero-v7
-Disallow: /margin-multiplier-v4
 Sitemap: https://marginlabs.io/sitemap.xml
