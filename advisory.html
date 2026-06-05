@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Embedded Payments Advisory for Vertical SaaS | Margin Labs</title>
-<meta name="description" content="Quick Start Calls for platforms ready to talk to processors, and limited advisory retainers for platforms in active implementation. Independent embedded payments advisory.">
+<meta name="description" content="Quick Start Calls and advisory retainers for vertical SaaS platforms making the embedded payments move. Independent, vendor-neutral and built around your economics.">
 <link rel="canonical" href="https://marginlabs.io/advisory">
 <meta property="og:title" content="Embedded Payments Advisory for Vertical SaaS | Margin Labs">
 <meta property="og:description" content="Quick Start Calls and advisory retainers for vertical SaaS platforms building embedded payments. Independent. Vendor-neutral.">
@@ -19,13 +19,127 @@
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
-<script src="/js/global-state.js"></script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<script src="/js/global-state.js"></script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-adv:   #0d0d0d;
+  --bg-adv2: #111111;
+  --bg-adv3: #161616;
+  --bdr:     rgba(200,130,60,0.14);
+  --c:       #C8823C;
+  --text:    #F0EBE4;
+  --dim:     rgba(240,235,228,0.62);
+  --dmr:     rgba(240,235,228,0.45);
+  --font:    'DM Sans', sans-serif;
+  --mono:    'DM Mono', monospace;
+}
+body { background:var(--bg-adv); font-family:var(--font); color:var(--text); padding-bottom:80px; }
+
+/* ── HERO ───────────────────────────────────────── */
+.adv-hero { position:relative; overflow:hidden; padding:96px 48px 80px; background:var(--bg-adv2); border-bottom:1px solid var(--bdr); }
+.adv-hero-bg { position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+.adv-hero-inner { position:relative; z-index:2; max-width:760px; margin:0 auto; text-align:center; }
+.adv-hero-eyebrow { font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.88; margin-bottom:22px; }
+.adv-hero-h1 { font-size:clamp(34px, 4.4vw, 50px); font-weight:300; letter-spacing:-0.025em; line-height:1.18; color:var(--text); margin-bottom:22px; }
+.adv-hero-h1 strong { font-weight:700; }
+.adv-hero-sub { font-size:17px; font-weight:300; color:var(--dim); line-height:1.7; max-width:600px; margin:0 auto 32px; text-wrap:balance; }
+.adv-hero-cta { display:inline-flex; align-items:center; gap:10px; background:var(--c); color:#0d0d0d; border:none; border-radius:3px; font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:16px 30px; cursor:pointer; text-decoration:none; transition:opacity 0.2s; }
+.adv-hero-cta:hover { opacity:0.88; }
+.adv-hero-cta-note { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(240,235,228,0.4); margin-top:18px; }
+@media (max-width:768px) { .adv-hero { padding:64px 24px 56px; } }
+
+/* ── SECTION WRAPPER ────────────────────────────── */
+.adv-section { max-width:1080px; margin:0 auto; padding:80px 48px; }
+.adv-section-eyebrow { font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.82; text-align:center; margin-bottom:12px; }
+.adv-section-h2 { font-size:30px; font-weight:300; letter-spacing:-0.02em; line-height:1.25; color:var(--text); text-align:center; margin-bottom:16px; max-width:680px; margin-left:auto; margin-right:auto; }
+.adv-section-h2 strong { font-weight:600; }
+.adv-section-sub { font-size:16px; font-weight:300; color:var(--dim); line-height:1.7; text-align:center; max-width:600px; margin:0 auto 48px; text-wrap:balance; }
+@media (max-width:768px) { .adv-section { padding:56px 24px; } .adv-section-h2 { font-size:26px; } }
+
+/* ── TWO-SERVICE GRID ───────────────────────────── */
+.adv-svc-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.adv-svc-card { background:var(--bg-adv3); border:1px solid var(--bdr); border-radius:6px; padding:40px 36px; display:flex; flex-direction:column; }
+.adv-svc-tag { font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--c); opacity:0.85; margin-bottom:14px; }
+.adv-svc-name { font-size:24px; font-weight:600; color:var(--text); letter-spacing:-0.015em; line-height:1.3; margin-bottom:8px; }
+.adv-svc-price { font-family:var(--mono); font-size:13px; font-weight:500; letter-spacing:0.06em; color:rgba(240,235,228,0.55); margin-bottom:20px; }
+.adv-svc-body { font-size:15px; font-weight:300; line-height:1.7; color:var(--dim); margin-bottom:24px; }
+.adv-svc-list { display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+.adv-svc-row { display:flex; gap:14px; align-items:flex-start; }
+.adv-svc-arrow { font-family:var(--mono); font-size:13px; color:var(--c); min-width:14px; opacity:0.85; padding-top:1px; }
+.adv-svc-text { font-size:14px; color:rgba(240,235,228,0.65); line-height:1.6; }
+.adv-svc-cta { margin-top:auto; font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--c); text-decoration:none; border-bottom:1px solid rgba(200,130,60,0.32); padding-bottom:3px; align-self:flex-start; transition:border-color 0.2s; }
+.adv-svc-cta:hover { border-bottom-color:var(--c); }
+@media (max-width:768px) { .adv-svc-grid { grid-template-columns:1fr; } .adv-svc-card { padding:32px 24px; } }
+
+/* ── WHAT WE COVER ──────────────────────────── */
+.adv-cover-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+.adv-cover-card { background:var(--bg-adv3); border:1px solid var(--bdr); border-radius:4px; padding:32px 28px; display:flex; flex-direction:column; }
+.adv-cover-label { font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--c); opacity:0.75; margin-bottom:14px; min-height:2.6em; display:flex; align-items:flex-start; }
+.adv-cover-title { font-size:16px; font-weight:600; color:var(--text); margin-bottom:12px; line-height:1.35; min-height:2.7em; display:flex; align-items:flex-start; }
+.adv-cover-body { font-size:14px; font-weight:300; line-height:1.7; color:var(--dim); }
+@media (max-width:768px) { .adv-cover-grid { grid-template-columns:1fr; } }
+
+/* ── WHO IT'S FOR / DECISION POINTER ────────────── */
+.adv-decision { background:var(--bg-adv2); border:1px solid var(--bdr); border-left:3px solid var(--c); border-radius:4px; padding:36px 44px; max-width:780px; margin:0 auto; }
+.adv-decision-body { font-size:17px; font-weight:300; line-height:1.75; color:rgba(240,235,228,0.78); margin-bottom:18px; }
+.adv-decision-body a { color:var(--c); text-decoration:none; border-bottom:1px solid rgba(200,130,60,0.3); }
+.adv-decision-meta { font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.06em; color:rgba(240,235,228,0.5); line-height:1.7; }
+@media (max-width:768px) { .adv-decision { padding:28px 24px; } }
+
+/* ── 2-STEP FORM ─────────────────────────────── */
+.adv-form-section { background:var(--bg-adv2); border-top:1px solid var(--bdr); }
+.adv-form-wrap { max-width:680px; margin:0 auto; padding:80px 48px; }
+.adv-form-eyebrow { font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.82; margin-bottom:12px; text-align:center; }
+.adv-form-h2 { font-size:30px; font-weight:300; letter-spacing:-0.02em; color:var(--text); text-align:center; margin-bottom:16px; }
+.adv-form-h2 strong { font-weight:600; }
+.adv-form-sub { font-size:15px; font-weight:300; color:var(--dim); line-height:1.65; text-align:center; max-width:520px; margin:0 auto 48px; }
+
+.adv-form-card { background:var(--bg-adv3); border:1px solid var(--bdr); border-radius:6px; padding:40px 44px; }
+.adv-form-step { display:none; }
+.adv-form-step.active { display:block; }
+.adv-step-label { font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--c); opacity:0.7; margin-bottom:20px; }
+.adv-form-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+.adv-form-field { display:flex; flex-direction:column; gap:8px; margin-bottom:18px; }
+.adv-form-field label { font-family:var(--mono); font-size:10px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(240,235,228,0.45); }
+.adv-form-field input, .adv-form-field select, .adv-form-field textarea {
+  background:#1c1c1c; border:1px solid var(--bdr); border-radius:3px;
+  color:var(--text); font-family:var(--font); font-size:15px; font-weight:300;
+  padding:13px 16px; width:100%;
+}
+.adv-form-field select {
+  appearance:none; -webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C8823C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 14px center; padding-right:36px; cursor:pointer;
+}
+.adv-form-field select option { background:#1c1c1c; color:var(--text); }
+.adv-form-field input:focus, .adv-form-field select:focus, .adv-form-field textarea:focus { outline:none; border-color:rgba(200,130,60,0.55); }
+.adv-form-field input::placeholder, .adv-form-field textarea::placeholder { color:rgba(240,235,228,0.3); }
+.adv-form-field textarea { resize:vertical; min-height:110px; line-height:1.6; }
+
+.adv-btn-primary { background:var(--c); color:#0d0d0d; border:none; border-radius:3px; font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:16px 24px; cursor:pointer; transition:opacity 0.2s; width:100%; }
+.adv-btn-primary:hover { opacity:0.88; }
+.adv-btn-primary:disabled { opacity:0.45; cursor:not-allowed; }
+.adv-btn-back { background:transparent; border:none; font-family:var(--mono); font-size:10px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(240,235,228,0.45); cursor:pointer; padding:8px 0; margin-top:14px; }
+.adv-btn-back:hover { color:var(--c); }
+
+.adv-form-note { font-family:var(--mono); font-size:10px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:rgba(240,235,228,0.3); text-align:center; margin-top:18px; }
+.adv-form-error { font-size:13px; color:rgba(200,130,60,0.85); margin-top:14px; font-family:var(--mono); letter-spacing:0.04em; display:none; }
+
+.adv-success { padding:48px 44px; background:rgba(200,130,60,0.06); border:1px solid rgba(200,130,60,0.32); border-radius:6px; text-align:center; display:none; }
+.adv-success-eyebrow { font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--c); margin-bottom:14px; }
+.adv-success-h3 { font-size:22px; font-weight:300; color:var(--text); margin-bottom:14px; letter-spacing:-0.015em; }
+.adv-success-body { font-size:15px; font-weight:300; line-height:1.7; color:var(--dim); max-width:440px; margin:0 auto; }
+
+@media (max-width:768px) { .adv-form-wrap { padding:56px 24px; } .adv-form-card { padding:28px 24px; } .adv-form-row { grid-template-columns:1fr; } }
+</style>
 </head>
 <body>
 
@@ -44,11 +158,8 @@
       <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
       <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
     </svg>
-    <div class="wordmark">
-      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
-    </div>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
   </a>
-
   <div class="nav-controls">
     <ul class="nav-links" role="list">
       <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
@@ -61,7 +172,6 @@
     </button>
   </div>
 </nav>
-
 <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
   <ul>
     <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
@@ -72,190 +182,249 @@
 </div>
 
 <!-- ── HERO ────────────────────────────────────── -->
-<section class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-hero-eyebrow">Advisory</div>
-    <h1>Independent perspective.<br><strong>Direct access.</strong></h1>
-    <p style="max-width:560px;">Two ways to work with Margin Labs &#8212; a focused Quick Start Call for platforms ready to talk to processors, or a limited advisory retainer for platforms in active implementation.</p>
+<section class="adv-hero">
+  <svg class="adv-hero-bg" viewBox="0 0 1440 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="adv-glow" cx="50%" cy="40%" r="48%">
+        <stop offset="0%"   stop-color="#C8823C" stop-opacity="0.08"/>
+        <stop offset="100%" stop-color="#C8823C" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="adv-fade-l" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"   stop-color="#111111" stop-opacity="1"/>
+        <stop offset="18%"  stop-color="#111111" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="adv-fade-r" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="82%"  stop-color="#111111" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#111111" stop-opacity="1"/>
+      </linearGradient>
+      <linearGradient id="adv-fade-top" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#111111" stop-opacity="0.6"/>
+        <stop offset="42%"  stop-color="#111111" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="480" fill="#111111"/>
+    <rect width="1440" height="480" fill="url(#adv-glow)"/>
+
+    <!-- J-curve trajectory: flat dip, inflection, climb to right (the advisory journey) -->
+    <path d="M 120,418 C 220,430 320,430 420,420 C 520,408 600,372 680,310 C 780,232 900,140 1020,80 L 1320,38"
+      stroke="#C8823C" stroke-width="2.2" fill="none" opacity="0.45"
+      stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- nodes along the J-curve -->
+    <circle cx="220" cy="428" r="5"   fill="#C8823C" opacity="0.42"/>
+    <circle cx="420" cy="420" r="6"   fill="#C8823C" opacity="0.55"/>
+    <circle cx="600" cy="372" r="7"   fill="#C8823C" opacity="0.68"/>
+    <circle cx="800" cy="248" r="8"   fill="#C8823C" opacity="0.82"/>
+    <circle cx="1020" cy="80" r="9.5" fill="#C8823C" opacity="0.96"/>
+    <!-- Subtle dot field, weighted to corners -->
+    <g fill="#C8823C">
+      <circle cx="80"   cy="100" r="1.4" opacity="0.14"/>
+      <circle cx="80"   cy="180" r="1.6" opacity="0.16"/>
+      <circle cx="80"   cy="260" r="1.6" opacity="0.16"/>
+      <circle cx="80"   cy="340" r="1.4" opacity="0.14"/>
+      <circle cx="1360" cy="100" r="1.4" opacity="0.14"/>
+      <circle cx="1360" cy="180" r="1.6" opacity="0.16"/>
+      <circle cx="1360" cy="260" r="1.6" opacity="0.16"/>
+      <circle cx="1360" cy="340" r="1.4" opacity="0.14"/>
+    </g>
+    <!-- Subtle dark backdrop behind centered text for readability -->
+    <radialGradient id="adv-text-backdrop" cx="50%" cy="50%" r="42%">
+      <stop offset="0%"   stop-color="#111111" stop-opacity="0.55"/>
+      <stop offset="60%"  stop-color="#111111" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#111111" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="1440" height="480" fill="url(#adv-text-backdrop)"/>
+    <rect width="1440" height="480" fill="url(#adv-fade-l)"/>
+    <rect width="1440" height="480" fill="url(#adv-fade-r)"/>
+    <rect width="1440" height="480" fill="url(#adv-fade-top)"/>
+  </svg>
+
+  <div class="adv-hero-inner">
+    <div class="adv-hero-eyebrow">Advisory</div>
+    <h1 class="adv-hero-h1">Independent perspective.<br><strong>Direct access.</strong></h1>
+    <p class="adv-hero-sub">Two ways to work with Margin Labs. A focused Quick Start Call for platforms ready to talk to processors, or a limited advisory retainer for platforms in active implementation.</p>
+    <a href="#form" class="adv-hero-cta" data-analytics="adv-hero-cta">Get Started →</a>
+    <p class="adv-hero-cta-note">Two-step form · reviewed within 2 to 3 business days</p>
   </div>
 </section>
 
-<!-- ── QUICK START CALL ─────────────────────── -->
-<section class="content-section" style="padding:80px 0 60px;">
-  <div class="content-inner" style="max-width:960px;margin:0 auto;padding:0 24px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+<!-- ── TWO SERVICES ─────────────────────────────── -->
+<section class="adv-section">
+  <div class="adv-section-eyebrow">Two ways to work together</div>
+  <h2 class="adv-section-h2">Pick the engagement that <strong>fits where you are.</strong></h2>
 
-      <div>
-        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:16px;">Quick Start Call</div>
-        <h2 style="font-size:24px;font-weight:400;letter-spacing:-0.02em;color:#F0EBE4;margin:0 0 16px;">Confirm your model. Get matched with the right partners.</h2>
-        <p style="font-size:15px;line-height:1.7;color:rgba(240,235,228,0.72);margin:0 0 24px;">A focused 1-hour session for platforms that have done the strategic work and are ready to talk to processors. We review your specific situation, confirm your model selection, and facilitate warm introductions to vetted processing partners matched to your stage, volume, and vertical.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <div style="display:flex;align-items:flex-start;gap:12px;">
-            <span style="font-family:'DM Mono',monospace;font-size:11px;color:#C8823C;min-width:14px;">&#8212;</span>
-            <span style="font-size:14px;color:rgba(240,235,228,0.6);line-height:1.6;">Model confirmation and readiness assessment</span>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;">
-            <span style="font-family:'DM Mono',monospace;font-size:11px;color:#C8823C;min-width:14px;">&#8212;</span>
-            <span style="font-size:14px;color:rgba(240,235,228,0.6);line-height:1.6;">Warm introductions to 2&#8211;3 vetted processing partners</span>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;">
-            <span style="font-family:'DM Mono',monospace;font-size:11px;color:#C8823C;min-width:14px;">&#8212;</span>
-            <span style="font-size:14px;color:rgba(240,235,228,0.6);line-height:1.6;">Follow-up action plan delivered within 48 hours</span>
-          </div>
-        </div>
-        <a href="#form" data-analytics="cta-quickstart-call" style="display:inline-block;margin-top:28px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);padding-bottom:2px;">Request a Quick Start Call &#8594;</a>
+  <div class="adv-svc-grid">
+
+    <div class="adv-svc-card">
+      <div class="adv-svc-tag">Quick Start Call</div>
+      <div class="adv-svc-name">Confirm your model. Get matched with the right partners.</div>
+      <div class="adv-svc-price">$379 · one hour · written follow-up</div>
+      <p class="adv-svc-body">A focused 1-hour working session for platforms that have done the strategic work and are ready to talk to processors. We confirm your model, shortlist the right partners and facilitate warm introductions.</p>
+      <div class="adv-svc-list">
+        <div class="adv-svc-row"><span class="adv-svc-arrow">→</span><span class="adv-svc-text">Model confirmation and readiness assessment</span></div>
+        <div class="adv-svc-row"><span class="adv-svc-arrow">→</span><span class="adv-svc-text">Warm introductions to 2 or 3 vetted processing partners</span></div>
+        <div class="adv-svc-row"><span class="adv-svc-arrow">→</span><span class="adv-svc-text">Written action plan delivered within 48 hours</span></div>
       </div>
-
-      <div>
-        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:16px;">Advisory Retainer</div>
-        <h2 style="font-size:24px;font-weight:400;letter-spacing:-0.02em;color:#F0EBE4;margin:0 0 16px;">A direct line through implementation.</h2>
-        <p style="font-size:15px;line-height:1.7;color:rgba(240,235,228,0.72);margin:0 0 24px;">For platforms in active implementation that want ongoing access to someone who has been through this process repeatedly. Model selection, partner negotiation, launch sequencing, and post-launch optimization.</p>
-        <blockquote style="margin:0;padding:16px 20px;border-left:2px solid rgba(200,130,60,0.4);background:rgba(200,130,60,0.05);border-radius:0 4px 4px 0;">
-          <p style="font-family:'DM Mono',monospace;font-size:12px;line-height:1.7;color:rgba(240,235,228,0.5);margin:0;">Limited to 1&#8211;3 clients at a time. Application only.</p>
-        </blockquote>
-        <a href="#form" data-analytics="cta-advisory-apply" style="display:inline-block;margin-top:28px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);padding-bottom:2px;">Apply for Advisory &#8594;</a>
-      </div>
-
+      <a href="#form" data-analytics="adv-cta-qsc" class="adv-svc-cta" onclick="document.getElementById('adv-intent').value='Quick Start Call'">Request a Quick Start Call →</a>
     </div>
-  </div>
-</section>
 
-<!-- ── WHAT WE COVER ──────────────────────────── -->
-<section class="content-section" style="padding:60px 0 80px;">
-  <div class="content-inner" style="max-width:960px;margin:0 auto;padding:0 24px;">
-    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:40px;">What We Cover</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;">
-
-      <div style="padding:32px;border:1px solid rgba(200,130,60,0.15);border-radius:4px;">
-        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:16px;">Model &amp; Partner Selection</div>
-        <p style="font-size:15px;line-height:1.7;color:rgba(240,235,228,0.72);margin:0;">Get a second opinion on your model choice and vendor shortlist before committing. Most platforms leave 5&#8211;15 basis points on the table in their first negotiation.</p>
+    <div class="adv-svc-card">
+      <div class="adv-svc-tag">Advisory Retainer</div>
+      <div class="adv-svc-name">A direct line through implementation.</div>
+      <div class="adv-svc-price">Application only · 1 to 3 clients at a time</div>
+      <p class="adv-svc-body">For platforms in active implementation that want ongoing access to someone who has been through this process repeatedly. Model selection, partner negotiation, launch sequencing and post-launch optimization.</p>
+      <div class="adv-svc-list">
+        <div class="adv-svc-row"><span class="adv-svc-arrow">→</span><span class="adv-svc-text">Standing weekly working sessions</span></div>
+        <div class="adv-svc-row"><span class="adv-svc-arrow">→</span><span class="adv-svc-text">Term-sheet redlines and contract review</span></div>
+        <div class="adv-svc-row"><span class="adv-svc-arrow">→</span><span class="adv-svc-text">Direct introductions and partner negotiation support</span></div>
       </div>
-
-      <div style="padding:32px;border:1px solid rgba(200,130,60,0.15);border-radius:4px;">
-        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:16px;">Negotiation Support</div>
-        <p style="font-size:15px;line-height:1.7;color:rgba(240,235,228,0.72);margin:0;">Review term sheets line by line. Identify red flag clauses. Build your counter-position before you walk into the conversation.</p>
-      </div>
-
-      <div style="padding:32px;border:1px solid rgba(200,130,60,0.15);border-radius:4px;">
-        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:16px;">Launch &amp; Activation</div>
-        <p style="font-size:15px;line-height:1.7;color:rgba(240,235,228,0.72);margin:0;">Design the merchant activation strategy that gets you to 60%+ attachment. Most platforms hit 20% and stall &#8212; this is the work that closes the gap.</p>
-      </div>
-
+      <a href="#form" data-analytics="adv-cta-retainer" class="adv-svc-cta" onclick="document.getElementById('adv-intent').value='Advisory Retainer'">Apply for Advisory →</a>
     </div>
+
   </div>
 </section>
 
-<!-- ── WHO IT'S FOR ──────────────────────────── -->
-<section class="content-section" style="padding:40px 0 80px;">
-  <div class="content-inner" style="max-width:720px;margin:0 auto;padding:0 24px;">
-    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:24px;">Who It&#8217;s For</div>
-    <p style="font-size:16px;line-height:1.8;color:rgba(240,235,228,0.78);margin:0 0 24px;">Quick Start Calls are for platforms that have done the strategic work and are ready to engage processors. Advisory retainers are for platforms in active implementation that need ongoing support. Still evaluating whether to pursue payments? Start with the <a href="/#products" style="color:#C8823C;text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.3);">Strategic Decision Framework</a>.</p>
-    <blockquote style="margin:0;padding:20px 24px;border-left:2px solid rgba(200,130,60,0.4);background:rgba(200,130,60,0.05);border-radius:0 4px 4px 0;">
-      <p style="font-family:'DM Mono',monospace;font-size:13px;line-height:1.7;color:rgba(240,235,228,0.6);margin:0;">Typical engagement profile: $2M&#8211;$20M ARR, $5M&#8211;$100M in estimated GPV, pre-launch or within the first 12 months post-launch.</p>
-    </blockquote>
-  </div>
-</section>
+<!-- ── 2-STEP FORM ─────────────────────────── -->
+<section class="adv-form-section" id="form">
+  <div class="adv-form-wrap">
+    <div class="adv-form-eyebrow">Get started</div>
+    <h2 class="adv-form-h2">Tell us where you are. <strong>Two quick steps.</strong></h2>
+    <p class="adv-form-sub">Reviewed within 2 to 3 business days. We respond directly with next steps and either schedule the conversation or tell you honestly that we are not the right fit.</p>
 
-<!-- ── APPLICATION FORM ──────────────────────── -->
-<section class="content-section" style="padding:40px 0 100px;" id="form">
-  <div class="content-inner" style="max-width:640px;margin:0 auto;padding:0 24px;">
+    <div class="adv-form-card" id="adv-form-card">
 
-    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:8px;">Get Started</div>
-    <h2 style="font-size:28px;font-weight:400;letter-spacing:-0.02em;color:#F0EBE4;margin:0 0 8px;">Tell us where you are.</h2>
-    <p style="font-size:14px;color:rgba(240,235,228,0.45);margin:0 0 40px;font-family:'DM Mono',monospace;letter-spacing:0.04em;">Reviewed within 2&#8211;3 business days.</p>
+      <!-- STEP 1: Intent + basics -->
+      <div class="adv-form-step active" id="adv-step-1">
+        <div class="adv-step-label">Step 1 of 2 · Engagement and basics</div>
 
-    <form id="advisoryForm">
-      <input type="hidden" name="_subject" value="Advisory Inquiry">
-
-      <div class="form-field" style="margin-bottom:16px;">
-        <label class="form-label" for="adv-type">I&#8217;m interested in</label>
-        <select id="adv-type" class="form-input" name="engagement_type" required>
-          <option value="">Select engagement type</option>
-          <option value="Quick Start Call">Quick Start Call &#8212; confirm model + processor introductions</option>
-          <option value="Advisory Retainer">Advisory Retainer &#8212; ongoing implementation support</option>
-          <option value="Payments Optimization">Optimizing an existing payments program</option>
-          <option value="Not sure yet">Not sure yet &#8212; help me figure out the right fit</option>
-        </select>
-      </div>
-
-      <div class="form-row">
-        <div class="form-field">
-          <label class="form-label" for="adv-name">Name</label>
-          <input id="adv-name" class="form-input" type="text" name="name" placeholder="Your name" required>
-        </div>
-        <div class="form-field">
-          <label class="form-label" for="adv-email">Email</label>
-          <input id="adv-email" class="form-input" type="email" name="email" placeholder="you@company.com" required autocomplete="email">
-        </div>
-      </div>
-
-      <div class="form-field" style="margin-bottom:16px;">
-        <label class="form-label" for="adv-platform">Platform / Company</label>
-        <input id="adv-platform" class="form-input" type="text" name="platform" placeholder="Company name" required>
-      </div>
-
-      <div class="form-row">
-        <div class="form-field">
-          <label class="form-label" for="adv-arr">ARR Range</label>
-          <select id="adv-arr" class="form-input" name="arr_range" required>
-            <option value="">Select ARR range</option>
-            <option value="Under $1M">Under $1M</option>
-            <option value="$1–5M">$1&#8211;5M</option>
-            <option value="$5–10M">$5&#8211;10M</option>
-            <option value="$10–25M">$10&#8211;25M</option>
-            <option value="$25M+">$25M+</option>
+        <div class="adv-form-field">
+          <label for="adv-intent">I'm interested in</label>
+          <select id="adv-intent" required>
+            <option value="">Select an engagement type</option>
+            <option value="Quick Start Call">Quick Start Call · confirm model and get processor introductions</option>
+            <option value="Advisory Retainer">Advisory Retainer · ongoing implementation support</option>
+            <option value="Payments Optimization">Optimize an existing payments program</option>
+            <option value="Not sure yet">Not sure yet · help me figure out the right fit</option>
           </select>
         </div>
-        <div class="form-field">
-          <label class="form-label" for="adv-gpv">Estimated Annual GPV</label>
-          <select id="adv-gpv" class="form-input" name="gpv_range" required>
-            <option value="">Select estimated GPV</option>
-            <option value="Under $5M">Under $5M</option>
-            <option value="$5–20M">$5&#8211;20M</option>
-            <option value="$20–50M">$20&#8211;50M</option>
-            <option value="$50–100M">$50&#8211;100M</option>
-            <option value="$100M+">$100M+</option>
-            <option value="Not sure yet">Not sure yet</option>
+
+        <div class="adv-form-row">
+          <div class="adv-form-field" style="margin-bottom:0;">
+            <label for="adv-name">Name</label>
+            <input type="text" id="adv-name" placeholder="Your name" required>
+          </div>
+          <div class="adv-form-field" style="margin-bottom:0;">
+            <label for="adv-email">Email</label>
+            <input type="email" id="adv-email" placeholder="you@company.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="adv-form-field" style="margin-top:18px;">
+          <label for="adv-company">Platform / Company</label>
+          <input type="text" id="adv-company" placeholder="Company name" required>
+        </div>
+
+        <button type="button" class="adv-btn-primary" id="adv-next-btn" onclick="advNextStep()">Continue →</button>
+        <p class="adv-form-note">No sales call. No spam. Reviewed within 2 to 3 business days.</p>
+      </div>
+
+      <!-- STEP 2: Details -->
+      <div class="adv-form-step" id="adv-step-2">
+        <div class="adv-step-label">Step 2 of 2 · Your platform</div>
+
+        <div class="adv-form-row">
+          <div class="adv-form-field" style="margin-bottom:0;">
+            <label for="adv-arr">ARR range</label>
+            <select id="adv-arr" required>
+              <option value="">Select ARR range</option>
+              <option value="Under $1M">Under $1M</option>
+              <option value="$1 to $5M">$1 to $5M</option>
+              <option value="$5 to $10M">$5 to $10M</option>
+              <option value="$10 to $25M">$10 to $25M</option>
+              <option value="$25M+">$25M+</option>
+            </select>
+          </div>
+          <div class="adv-form-field" style="margin-bottom:0;">
+            <label for="adv-gpv">Annual payment volume</label>
+            <select id="adv-gpv" required>
+              <option value="">Select volume range</option>
+              <option value="Under $5M">Under $5M</option>
+              <option value="$5 to $20M">$5 to $20M</option>
+              <option value="$20 to $50M">$20 to $50M</option>
+              <option value="$50 to $100M">$50 to $100M</option>
+              <option value="$100M+">$100M+</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="adv-form-field" style="margin-top:18px;">
+          <label for="adv-situation">Current payments situation</label>
+          <select id="adv-situation" required>
+            <option value="">Select current situation</option>
+            <option value="No payments yet">No payments yet</option>
+            <option value="ISV Referral active">ISV Referral active</option>
+            <option value="Enhanced Residuals active">Enhanced Residuals active</option>
+            <option value="PFaaS active">PFaaS active</option>
+            <option value="Full PayFac">Full PayFac</option>
+            <option value="Evaluating options">Evaluating options</option>
           </select>
         </div>
+
+        <div class="adv-form-field">
+          <label for="adv-help">What do you need help with?</label>
+          <textarea id="adv-help" rows="4" placeholder="Describe where you are and what you're trying to solve. The more specific the better." required></textarea>
+        </div>
+
+        <div class="adv-form-field">
+          <label for="adv-referral">How did you find Margin Labs? (optional)</label>
+          <input type="text" id="adv-referral" placeholder="Lab article, LinkedIn, referral, etc.">
+        </div>
+
+        <button type="button" class="adv-btn-primary" id="adv-submit-btn" onclick="advSubmit()">Submit Application →</button>
+        <button type="button" class="adv-btn-back" onclick="advBackStep()">← Back to step 1</button>
+        <div class="adv-form-error" id="adv-error">Something went wrong. Please try again or email <a href="mailto:hello@marginlabs.io" style="color:var(--c)">hello@marginlabs.io</a>.</div>
       </div>
 
-      <div class="form-field" style="margin-bottom:16px;">
-        <label class="form-label" for="adv-situation">Current payments situation</label>
-        <select id="adv-situation" class="form-input" name="payments_situation" required>
-          <option value="">Select current situation</option>
-          <option value="No payments yet">No payments yet</option>
-          <option value="ISV Referral active">ISV Referral active</option>
-          <option value="Enhanced Residuals active">Enhanced Residuals active</option>
-          <option value="PFaaS active">PFaaS active</option>
-          <option value="Full PayFac">Full PayFac</option>
-          <option value="Evaluating options">Evaluating options</option>
-        </select>
+      <!-- SUCCESS -->
+      <div class="adv-success" id="adv-success">
+        <div class="adv-success-eyebrow">Received</div>
+        <div class="adv-success-h3">We'll be in touch within 2 to 3 business days.</div>
+        <p class="adv-success-body">Submissions are reviewed by Chris directly. You'll hear back at the email you provided, either with scheduling for the conversation or with an honest read on whether this is the right fit.</p>
       </div>
 
-      <div class="form-field" style="margin-bottom:16px;">
-        <label class="form-label" for="adv-help">What do you need help with?</label>
-        <textarea id="adv-help" class="form-input" name="help_needed" rows="4" placeholder="Describe where you are and what you're trying to solve. The more specific the better." required style="resize:vertical;"></textarea>
-      </div>
-
-      <div class="form-field" style="margin-bottom:28px;">
-        <label class="form-label" for="adv-referral">How did you find Margin Labs?</label>
-        <input id="adv-referral" class="form-input" type="text" name="referral" placeholder="Optional">
-      </div>
-
-      <button id="advisory-submit" type="submit" class="form-submit" style="width:100%;">Submit &#8594;</button>
-
-      <div id="advisoryError" style="display:none;margin-top:16px;font-size:13px;color:rgba(240,235,228,0.5);">Something went wrong. Please try again or email <a href="mailto:hello@marginlabs.io" style="color:#C8823C;text-decoration:none;">hello@marginlabs.io</a></div>
-    </form>
-
-    <!-- Success state -->
-    <div id="advisorySuccess" style="display:none;">
-      <div style="padding:32px;border:1px solid rgba(200,130,60,0.2);border-radius:4px;background:rgba(200,130,60,0.05);">
-        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;margin-bottom:12px;">Received</div>
-        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(240,235,228,0.8);">Submissions are reviewed within 2&#8211;3 business days. You&#8217;ll hear back directly at the email you provided. Thank you.</p>
-      </div>
     </div>
+  </div>
+</section>
 
+<!-- ── WHAT WE COVER ───────────────────────── -->
+<section class="adv-section" style="padding-top:0;">
+  <div class="adv-section-eyebrow">What we cover</div>
+  <h2 class="adv-section-h2">The work where <strong>independent advice earns its keep.</strong></h2>
+
+  <div class="adv-cover-grid">
+    <div class="adv-cover-card">
+      <div class="adv-cover-label">Model &amp; Partner Selection</div>
+      <div class="adv-cover-title">A second opinion before you commit.</div>
+      <p class="adv-cover-body">Get a vendor-neutral read on your model choice and vendor shortlist before you commit. Most platforms leave 5 to 15 basis points on the table in their first negotiation. We help you find them first.</p>
+    </div>
+    <div class="adv-cover-card">
+      <div class="adv-cover-label">Negotiation Support</div>
+      <div class="adv-cover-title">Term sheets reviewed line by line.</div>
+      <p class="adv-cover-body">Review processor and PayFac partner term sheets clause by clause. Identify red-flag pricing structures. Build your counter-position before you walk into the conversation.</p>
+    </div>
+    <div class="adv-cover-card">
+      <div class="adv-cover-label">Launch &amp; Activation</div>
+      <div class="adv-cover-title">The work that closes the 20-to-60 percent gap.</div>
+      <p class="adv-cover-body">Design the merchant activation strategy that gets you to 60 percent or better attachment. Most platforms hit 20 percent and stall. This is the work that closes the gap.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── DECISION POINTER ─────────────────── -->
+<section class="adv-section" style="padding-top:0;">
+  <div class="adv-decision">
+    <p class="adv-decision-body">Quick Start Calls fit platforms that have done the strategic work and are ready to engage processors. Advisory retainers fit platforms in active implementation that need ongoing support. Still evaluating whether to pursue payments? Start with the <a href="/framework">Strategic Decision Framework</a> or run the <a href="/margin-multiplier">Margin Multiplier</a> to size your opportunity first.</p>
+    <p class="adv-decision-meta">Typical engagement profile: $2M to $20M ARR · $5M to $100M annual payment volume · pre-launch or within the first 12 months post-launch.</p>
   </div>
 </section>
 
@@ -264,117 +433,175 @@
   <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
     <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
   </a>
-  <div class="footer-copy">&#169; 2026 Margin Labs LLC</div>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
   <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
 </footer>
 
-<script src="/js/global-state.js"></script>
 <script src="/main.js"></script>
 <script>
-  // Pre-fill email from ML state
+  // Pre-fill email if available via ML state
   document.addEventListener('DOMContentLoaded', function () {
     if (window.ML && window.ML.visitor && window.ML.visitor.email) {
       var f = document.getElementById('adv-email');
       if (f) f.value = window.ML.visitor.email;
     }
-  });
-
-  document.getElementById('advisoryForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    var btn = document.getElementById('advisory-submit');
-    btn.disabled    = true;
-    btn.textContent = 'Submitting\u2026';
-    var engType = document.getElementById('adv-type').value;
-    var payload = {
-      name:          document.getElementById('adv-name').value,
-      email:         document.getElementById('adv-email').value,
-      company:       document.getElementById('adv-platform').value,
-      message:       document.getElementById('adv-help').value,
-      volume:        document.getElementById('adv-arr').value,
-      current_model: document.getElementById('adv-situation').value,
-      source:        'Advisory Page',
-      subject_type:  'simple',
-      engagement_type: engType,
-      arr_range:     document.getElementById('adv-arr').value,
-      gpv_range:     document.getElementById('adv-gpv').value,
-      payments_situation: document.getElementById('adv-situation').value,
-      referral:      document.getElementById('adv-referral').value,
-    };
-    try {
-      var res = await fetch('/api/submit-consult', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload),
-      });
-      if (res.ok) {
-        document.getElementById('advisoryForm').style.display    = 'none';
-        document.getElementById('advisorySuccess').style.display = 'block';
-
-        // \u2500\u2500 GA4 events \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
-        // consult_form_submitted: every successful submission of the
-        // advisory form. This is the canonical consult-intent event
-        // for the corporate site.
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'consult_form_submitted', {
-            source: 'advisory_page',
-            engagement_type: engType,
-            arr_range: payload.arr_range,
-            gpv_range: payload.gpv_range,
-          });
-
-          // qualify_lead: fires when the submission meets a qualifying
-          // profile \u2014 Advisory Retainer OR ARR/GPV in the target band.
-          var isQualifyingType = (engType === 'Advisory Retainer' || engType === 'Quick Start Call');
-          var isQualifyingGpv  = ['$5\u201320M','$20\u201350M','$50\u2013100M','$100M+'].indexOf(payload.gpv_range) >= 0;
-          if (isQualifyingType && isQualifyingGpv) {
-            gtag('event', 'qualify_lead', {
-              source: 'advisory_page',
-              engagement_type: engType,
-              gpv_range: payload.gpv_range,
-            });
-          }
-        }
-
-        // Brevo \u2014 tag as consulting lead. Fire brevo_subscribed event
-        // on success so GA4 sees the list signup as a countable event.
-        try {
-          var brevoUtm = (window.ML && window.ML.getUtmParams) ? window.ML.getUtmParams() : undefined;
-          fetch('/api/brevo-subscribe', {
-            method:  'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body:    JSON.stringify({
-              email:     payload.email,
-              firstName: (payload.name || '').split(' ')[0] || '',
-              source:    'Advisory Form',
-              utmParams: brevoUtm,
-            }),
-          }).then(function (br) {
-            if (br && br.ok && typeof gtag !== 'undefined') {
-              gtag('event', 'brevo_subscribed', { source: 'advisory_form' });
-            }
-          }).catch(function () {});
-        } catch (e) { /* fire and forget */ }
-
-        // Save to ML shared state for cross-page prefill
-        if (window.ML && window.ML.saveVisitor) {
-          window.ML.saveVisitor({
-            name:    payload.name,
-            email:   payload.email,
-            company: payload.company,
-          });
-        }
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch (err) {
-      document.getElementById('advisoryError').style.display = 'block';
-      btn.disabled    = false;
-      btn.textContent = 'Submit \u2192';
+    if (window.location.hash === '#form') {
+      document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' });
     }
   });
 
-  if (window.location.hash === '#form') {
-    document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' });
+  function advNextStep() {
+    var intent = document.getElementById('adv-intent').value;
+    var name   = document.getElementById('adv-name').value.trim();
+    var email  = document.getElementById('adv-email').value.trim();
+    var co     = document.getElementById('adv-company').value.trim();
+    if (!intent || !name || !email || !co) {
+      alert('Please fill all four fields before continuing.');
+      return;
+    }
+
+    // ── CAPTURE PARTIAL LEAD on Step 1 Continue ─────────────────────────
+    // If the user abandons Step 2, we still have the engagement intent,
+    // name, email and company. Brevo gets tagged with ADVISORY_STEP1_ONLY
+    // so we can follow up on abandoned applications.
+    try {
+      var utm = (window.ML && window.ML.getUtmParams) ? window.ML.getUtmParams() : undefined;
+      fetch('/api/brevo-subscribe', {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify({
+          email: email,
+          firstName: name.split(' ')[0] || '',
+          source: 'Advisory Form Step 1',
+          extraAttributes: {
+            ADVISORY_INTENT:     intent,
+            ADVISORY_COMPANY:    co,
+            ADVISORY_STEP1_ONLY: true,
+            ADVISORY_STEP1_DATE: new Date().toISOString().split('T')[0],
+          },
+          utmParams: utm,
+        }),
+      }).catch(function(){});
+    } catch(e) {}
+
+    // Also persist to ML state so cross-page prefill works
+    if (window.ML && window.ML.saveVisitor) {
+      window.ML.saveVisitor({ name: name, email: email, company: co });
+    }
+
+    document.getElementById('adv-step-1').classList.remove('active');
+    document.getElementById('adv-step-2').classList.add('active');
+    document.getElementById('adv-step-2').scrollIntoView({ behavior:'smooth', block:'start' });
+
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'advisory_step1_complete', { engagement_intent: intent });
+    }
+  }
+
+  function advBackStep() {
+    document.getElementById('adv-step-2').classList.remove('active');
+    document.getElementById('adv-step-1').classList.add('active');
+    document.getElementById('adv-form-card').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  async function advSubmit() {
+    var btn = document.getElementById('adv-submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    var payload = {
+      engagement_type: document.getElementById('adv-intent').value,
+      name:            document.getElementById('adv-name').value,
+      email:           document.getElementById('adv-email').value,
+      company:         document.getElementById('adv-company').value,
+      arr_range:       document.getElementById('adv-arr').value,
+      gpv_range:       document.getElementById('adv-gpv').value,
+      payments_situation: document.getElementById('adv-situation').value,
+      message:         document.getElementById('adv-help').value,
+      referral:        document.getElementById('adv-referral').value,
+      source:          'Advisory Page',
+      subject_type:    'simple',
+    };
+
+    if (!payload.arr_range || !payload.gpv_range || !payload.payments_situation || !payload.message) {
+      alert('Please complete all required fields.');
+      btn.disabled = false;
+      btn.textContent = 'Submit Application →';
+      return;
+    }
+
+    try {
+      var res = await fetch('/api/submit-consult', {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error('submit failed');
+
+      // GA4 events
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'consult_form_submitted', {
+          source: 'advisory_page',
+          engagement_type: payload.engagement_type,
+          arr_range: payload.arr_range,
+          gpv_range: payload.gpv_range,
+        });
+        var isQualifyingType = (payload.engagement_type === 'Advisory Retainer' || payload.engagement_type === 'Quick Start Call');
+        var isQualifyingGpv  = ['$5 to $20M','$20 to $50M','$50 to $100M','$100M+'].indexOf(payload.gpv_range) >= 0;
+        if (isQualifyingType && isQualifyingGpv) {
+          gtag('event', 'qualify_lead', {
+            source: 'advisory_page',
+            engagement_type: payload.engagement_type,
+            gpv_range: payload.gpv_range,
+          });
+        }
+      }
+
+      // Brevo sync — upgrade from Step 1 partial to Step 2 complete.
+      // Clears ADVISORY_STEP1_ONLY and sets ADVISORY_COMPLETE so segmentation
+      // can distinguish full applicants from abandoned ones.
+      try {
+        var utm = (window.ML && window.ML.getUtmParams) ? window.ML.getUtmParams() : undefined;
+        fetch('/api/brevo-subscribe', {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json' },
+          body: JSON.stringify({
+            email: payload.email,
+            firstName: (payload.name || '').split(' ')[0] || '',
+            source: 'Advisory Form',
+            extraAttributes: {
+              ADVISORY_INTENT:    payload.engagement_type,
+              ADVISORY_COMPANY:   payload.company,
+              ADVISORY_ARR:       payload.arr_range,
+              ADVISORY_GPV:       payload.gpv_range,
+              ADVISORY_SITUATION: payload.payments_situation,
+              ADVISORY_STEP1_ONLY: false,
+              ADVISORY_COMPLETE:   true,
+              ADVISORY_SUBMIT_DATE: new Date().toISOString().split('T')[0],
+            },
+            utmParams: utm,
+          }),
+        }).then(function (br) {
+          if (br && br.ok && typeof gtag !== 'undefined') {
+            gtag('event', 'brevo_subscribed', { source: 'advisory_form' });
+          }
+        }).catch(function () {});
+      } catch (e) {}
+
+      if (window.ML && window.ML.saveVisitor) {
+        window.ML.saveVisitor({ name: payload.name, email: payload.email, company: payload.company });
+      }
+
+      document.getElementById('adv-step-2').classList.remove('active');
+      document.getElementById('adv-success').style.display = 'block';
+      document.getElementById('adv-success').scrollIntoView({ behavior:'smooth', block:'start' });
+
+    } catch (err) {
+      console.error('Advisory submit error:', err);
+      document.getElementById('adv-error').style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Submit Application →';
+    }
   }
 </script>
 </body>
