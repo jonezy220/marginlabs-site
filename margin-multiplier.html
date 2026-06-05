@@ -503,7 +503,7 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
           </select>
         </div>
       </div>
-      <button class="btn-p" onclick="goToGate()">See My Results →</button>
+      <button class="btn-p" onclick="goToGate()" data-analytics="mm-step1-submit">See My Results →</button>
     </div>
   </div>
 
@@ -515,12 +515,12 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
       <p class="gate-sub">Enter your email to see your full model comparison, opportunity gap and recommended next step. We'll also send a copy to your inbox.</p>
       <div class="email-row">
         <input type="email" id="gate-email" placeholder="you@company.com" required aria-label="Your email address"/>
-        <button class="btn-p" id="gate-btn" onclick="submitAndShow()" style="width:auto;padding:11px 22px;">Unlock Results →</button>
+        <button class="btn-p" id="gate-btn" onclick="submitAndShow()" data-analytics="mm-gate-submit" style="width:auto;padding:11px 22px;">Unlock Results →</button>
       </div>
       <div class="gate-err" id="gate-err"></div>
       <p class="gate-note">No sales call. No spam. Just your numbers.</p>
       <p style="margin-top:16px;">
-        <a href="#" onclick="goBack(event)" style="font-family:var(--mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dmr);text-decoration:none;">← Edit inputs</a>
+        <a href="#" onclick="goBack(event)" data-analytics="mm-edit-inputs" style="font-family:var(--mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dmr);text-decoration:none;">← Edit inputs</a>
       </p>
     </div>
   </div>

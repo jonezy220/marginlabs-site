@@ -71,6 +71,17 @@ module.exports = async (req, res) => {
       }),
     }),
 
+    // 4. Free Guide delivery — sends the Guide PDF + adds Free Guide Leads list (3) + HAS_FREE_GUIDE attribute
+    // The Multiplier hero promises "Includes the free Embedded Payments Guide with your results"
+    fetch(`${baseUrl}/api/send-guide`, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email,
+        utmParams: req.body.utmParams,
+      }),
+    }),
+
   ]);
 
   // Always return success — never block user on backend failures
