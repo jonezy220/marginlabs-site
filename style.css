@@ -1418,8 +1418,12 @@ a { color: inherit; text-decoration: none; }
   .form-input, .form-select, .form-textarea { min-height: 44px; font-size: 16px; }
   .form-submit { min-height: 44px; }
 
-  /* Hide bar chart on mobile — keep dot field + signal line */
-  .hero-bar-zone { display: none; }
+  /* On mobile, hide the J-curve and center the bars instead.
+     Bars are at viewBox x=1090-1432 (right side); shift left by ~540
+     to center them in the viewBox so they're visible in the cropped
+     mobile viewport. */
+  #signal-line, .hero-node { display: none; }
+  .hero-bar-zone { transform: translateX(-540px); transform-box: view-box; }
 
   /* Body text minimums */
   .why-body, .contact-sub { font-size: 15px; }
