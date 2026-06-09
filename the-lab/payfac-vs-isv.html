@@ -1,0 +1,350 @@
+<!-- ML-LAB-026 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayFac vs ISV for Vertical SaaS: The Real Comparison for Embedded Payments | Margin Labs</title>
+<meta name="description" content="PayFac vs ISV is the question every vertical SaaS platform faces once payments revenue becomes interesting. The real economics, the operational burden, the volume threshold where the answer flips and the migration path. Vendor-neutral.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/payfac-vs-isv">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="PayFac vs ISV for Vertical SaaS: The Real Comparison | Margin Labs">
+<meta property="og:description" content="The economics, the operational burden, the volume threshold where the answer flips. Vendor-neutral comparison for vertical SaaS platforms choosing between PayFac and ISV models.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/payfac-vs-isv">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the actual difference between PayFac and ISV in payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An ISV in payments is a software platform that refers its customers to a processor and earns a residual on the volume those customers process. The processor owns the merchant relationship, runs the underwriting, takes the operational burden and pays the platform a share. A PayFac is the merchant of record itself. The platform onboards its sub-merchants under its own master agreement with the processor, sets pricing, takes the dispute and risk burden and captures the full economics minus what it owes the underlying processor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what volume should a vertical SaaS platform switch from ISV to PayFac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The PayFac economics start to make sense around 10 to 25 million dollars in annual processed volume, depending on the variant chosen and the implementation cost. Below 10 million, the operational lift of a PayFac (full or managed) almost never pays back. Above 25 million, the basis-point delta between ISV residuals and PayFac economics becomes material enough to justify the build. The middle is where managed PayFac options (Stripe Connect, Adyen for Platforms, Tilled, Finix) flatten the curve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a SaaS platform start as an ISV and migrate to PayFac later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and most platforms do. The migration involves re-boarding sub-merchants under new agreements, rebuilding settlement and reconciliation flows, taking on PCI scope and accepting 3 to 6 months of operational disruption. The smart move is choosing the initial ISV partner with future migration in mind. Some processors have a clear path from referral to their own managed PayFac program; others make migration deliberately painful to defend their margin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the basis-point gap between ISV and PayFac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ISV Referral typically captures 5 to 15 basis points of processed volume. Enhanced Residuals on top of ISV can push that to 20 to 40 basis points with negotiation. Managed PayFac (PayFac-as-a-Service) sits at 50 to 80 basis points. Full PayFac captures 80 to 120 basis points but with materially higher operational and capital burden. The gap between ISV at 10 bps and managed PayFac at 65 bps on 25 million dollars of volume is roughly 137,500 dollars per year. That number is what makes the comparison interesting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PayFac always better than ISV for a SaaS platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. PayFac is better economically per dollar of volume processed, but it comes with operational burden (sub-merchant onboarding, KYC, settlement, disputes, PCI program, 24/7 ops) that does not pay back below a certain volume. For platforms with low payment volume, fragmented merchant bases or strategic concerns about owning payment risk, ISV Referral with negotiated enhanced residuals is often the right answer. The right model is the one whose economics outweigh its operational cost for your specific volume and stage."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 10px; line-height: 1.4; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← The Lab</a>
+
+  <div class="article-eyebrow">Model Comparison</div>
+  <h1 class="article-title">PayFac vs ISV for Vertical SaaS: The Real Comparison</h1>
+  <div class="article-meta">
+    <span>2026-06-09</span>
+    <span>8 min read</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>PayFac vs ISV is the question every vertical SaaS platform eventually faces. Usually right around the moment payments revenue starts looking like a real line item, the founder or VP of product asks finance what would happen if they captured more of the spread. The answer involves a model change. PayFac vs ISV is the choice between the two structural options, and most platforms get the comparison wrong on the first pass.</p>
+
+    <p>The short version: ISV is the entry point, PayFac is the destination, and the migration between them is rarely as smooth as the slide deck makes it sound. The right model for a specific platform depends on volume, vertical, operational appetite and where the platform is in its lifecycle. None of those answers is universal, and the wrong answer at the wrong time can cost a platform six figures of annual margin or trap it in an operational program it was not ready to run.</p>
+
+    <h2>What ISV actually means in payments</h2>
+
+    <p>An ISV in payments is an Independent Software Vendor that refers its customers to a payment processor and earns a residual on the volume those customers go on to process. The platform sells software. The processor signs the merchant agreement, runs the underwriting, owns the relationship, runs the operational machine and shares a slice of the economics with the platform that delivered the customer.</p>
+
+    <p>Sometimes the industry calls this the ISO model (Independent Sales Organization). The terms are closely related and often used interchangeably. We have a separate piece on <a href="/the-lab/payfac-vs-iso">PayFac vs ISO that walks through the ISO and ISV terminology distinction</a> in more depth. For purposes of the PayFac vs ISV comparison, treat them as the same model with different labels.</p>
+
+    <p>The ISV path is the entry point because the bar to start is low. A platform with no payments program can sign an ISV agreement with a processor in days, integrate with a vendor SDK in weeks, and start earning residuals on the first transaction. No PCI program, no sub-merchant onboarding, no underwriting risk, no 24/7 payments operations. The processor owns all of that.</p>
+
+    <h2>What PayFac actually means</h2>
+
+    <p>A Payment Facilitator is a platform that has signed a master merchant agreement with a processor and is operating its own sub-merchant program. The platform underwrites and boards the sub-merchants under its own scope, sets pricing for those sub-merchants, handles settlement and reconciliation, manages disputes and chargebacks, runs a Level 1 PCI compliance program and takes on operational and capital responsibility for the sub-merchant base.</p>
+
+    <p>In exchange, the platform captures the spread between what the processor charges it (the cost of processing) and what it charges its sub-merchants. That spread can be 50 to 120 basis points of volume depending on the variant, the negotiation and the vertical. Compared to the 5 to 15 basis points an ISV captures, the PayFac economics are dramatically better. The operational burden is also dramatically larger.</p>
+
+    <p>Most platforms that "become a PayFac" today do not actually build the full operational program themselves. They use a managed PayFac partner: Stripe Connect, Adyen for Platforms, Tilled, Finix, Payrix and a handful of others. The managed PayFac partner handles the sub-merchant infrastructure, the PCI program, the settlement and the ops, and the platform captures most of the economics while skipping most of the build. <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service is the sweet spot</a> for the majority of vertical SaaS platforms above a certain volume threshold.</p>
+
+    <h2>The economics, side by side</h2>
+
+    <p>The basis-point comparison is the headline number, but the way to compare PayFac vs ISV honestly is to look at annual dollar capture at a representative volume. Here is what each model generates on 25 million dollars of annual processed volume.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Bps captured</th>
+          <th>Annual margin on $25M</th>
+          <th>Operational burden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ISV Referral</td>
+          <td>5 to 15</td>
+          <td>$12,500 to $37,500</td>
+          <td>Minimal</td>
+        </tr>
+        <tr>
+          <td>ISV with Enhanced Residuals</td>
+          <td>20 to 40</td>
+          <td>$50,000 to $100,000</td>
+          <td>Minimal</td>
+        </tr>
+        <tr>
+          <td>Managed PayFac (PFaaS)</td>
+          <td>50 to 80</td>
+          <td>$125,000 to $200,000</td>
+          <td>Moderate</td>
+        </tr>
+        <tr>
+          <td>Full PayFac</td>
+          <td>80 to 120</td>
+          <td>$200,000 to $300,000</td>
+          <td>Heavy</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The gap between an ISV Referral arrangement and a Managed PayFac at 25 million dollars of volume is roughly 150 thousand dollars per year. At 100 million, it is closer to 600 thousand. At 500 million, the gap is in the millions. The economics tell you why every vertical SaaS platform eventually asks the PayFac vs ISV question, and why the answer for most platforms above a volume threshold is some flavor of PayFac.</p>
+
+    <h2>The operational burden, side by side</h2>
+
+    <p>The economics are only half the comparison. The other half is what each model demands operationally, and this is where most platforms underestimate the trade.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>ISV</th>
+          <th>PayFac (managed or full)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sub-merchant onboarding</td>
+          <td>Processor owns it</td>
+          <td>Platform owns it (managed PFac partner handles plumbing)</td>
+        </tr>
+        <tr>
+          <td>PCI compliance program</td>
+          <td>Out of scope</td>
+          <td>Level 1, $200K to $500K per year run-rate (full) or managed partner's scope</td>
+        </tr>
+        <tr>
+          <td>Sub-merchant pricing decisions</td>
+          <td>Processor sets prices</td>
+          <td>Platform sets prices</td>
+        </tr>
+        <tr>
+          <td>Disputes and chargebacks</td>
+          <td>Processor handles</td>
+          <td>Platform handles or shares with managed partner</td>
+        </tr>
+        <tr>
+          <td>Settlement and reconciliation</td>
+          <td>Processor handles</td>
+          <td>Platform must build or use managed partner's tooling</td>
+        </tr>
+        <tr>
+          <td>Risk and underwriting</td>
+          <td>Processor owns</td>
+          <td>Platform shares risk (managed) or owns it (full)</td>
+        </tr>
+        <tr>
+          <td>24/7 ops coverage</td>
+          <td>Processor's pager</td>
+          <td>Platform's pager (with managed partner backstop)</td>
+        </tr>
+        <tr>
+          <td>Capital requirements</td>
+          <td>None</td>
+          <td>Modest (managed) to significant (full sponsorship)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>This is what the side-by-side comparison really shows. ISV is small economics with small burden. PayFac is large economics with moderate-to-large burden. The decision is whether the additional economics pay back the additional burden at the platform's specific volume and stage.</p>
+
+    <div class="pull-quote">PayFac vs ISV is rarely a question about which model is better. It is a question about which model is right for the platform's volume, vertical and operational appetite right now.</div>
+
+    <h2>The volume threshold where the answer flips</h2>
+
+    <p>The general thresholds we see in the vertical SaaS market right now:</p>
+
+    <ul>
+      <li><strong>Under $5M annual processed volume.</strong> Stay ISV. PayFac economics do not pay back the operational complexity. Focus on activation and attach rate; the bigger lever is more merchants paying through your platform, not better margin per dollar.</li>
+      <li><strong>$5M to $25M.</strong> The grey zone. ISV with enhanced residuals is often the right answer here. Negotiate the residual share aggressively. Managed PayFac starts to look interesting around the higher end of this range, especially if the platform has product-led activation that pushes volume higher.</li>
+      <li><strong>$25M to $100M.</strong> Managed PayFac (PayFac-as-a-Service) is usually the right answer. The economics are meaningful enough to justify the build, the operational lift is manageable because the partner handles the heavy work, and the platform captures a real share of the spread.</li>
+      <li><strong>$100M to $500M.</strong> Managed PayFac still wins for most platforms. The basis points the PFaaS partner keeps are real money, but the operational cost of running a full PayFac at this scale almost always outweighs the basis points captured.</li>
+      <li><strong>Over $500M.</strong> Full PayFac starts to make sense for platforms that have the engineering depth, the capital and a strategic case for owning the stack. Even at this scale, most platforms stay on managed PayFac. The migration to full PayFac is a multi-year program, not a quarterly initiative.</li>
+    </ul>
+
+    <p>These thresholds are not bright lines. Vertical matters. Average transaction size matters. Merchant count and concentration matter. A vertical SaaS platform with 200 large merchants doing 5 million each has a different PayFac vs ISV math than a platform with 20,000 small merchants doing 50 thousand each.</p>
+
+    <h2>What determines the answer for a specific platform</h2>
+
+    <p>The honest diagnostic comes down to four questions.</p>
+
+    <h3>1. What is the actual annual volume and trajectory?</h3>
+
+    <p>Not what the platform might do in three years, but what it is doing now and what it will realistically do in twelve months. PayFac economics only pay back if the volume is real and growing. A platform building toward 100 million in volume is a different conversation from a platform that has been at 5 million for three years.</p>
+
+    <h3>2. Is the merchant base concentrated or fragmented?</h3>
+
+    <p>Concentrated bases (fewer, larger merchants) are easier to onboard, easier to support, easier to negotiate processor terms for. Fragmented bases (many small merchants) require more operational scale and make PayFac onboarding harder. The merchant base shape matters more than most platforms acknowledge.</p>
+
+    <h3>3. Does the platform have the operational appetite?</h3>
+
+    <p>PayFac brings dispute volume, settlement complexity, sub-merchant support questions and the occasional 3am incident. Managed PayFac dampens the burden but does not eliminate it. Some platforms thrive in this operational environment; others find that the payments operational load slowly degrades the rest of the product. Knowing the answer honestly matters.</p>
+
+    <h3>4. What is the strategic argument for owning the relationship?</h3>
+
+    <p>For some platforms, owning the merchant-of-record relationship is itself a strategic moat. For others, it is just a way to capture margin. The strategic answer changes how the platform should think about the model. A platform whose entire competitive position depends on payments depth thinks differently from a platform where payments is one of several revenue streams.</p>
+
+    <h2>The migration path</h2>
+
+    <p>Most platforms that end up on PayFac started as ISVs. The migration is not painless. Sub-merchants have to be re-boarded under the platform's master agreement. The settlement and reconciliation flow has to be rebuilt. The platform takes on PCI scope it did not have before. Some merchants get lost in the transition. Reasonable expectations: 3 to 6 months of operational distraction, 5 to 15 percent of active merchants lost in re-boarding, and meaningful engineering time pulled off the core product.</p>
+
+    <p>The platforms that handle the migration well plan for it from the start. They choose their initial ISV partner with a clear PayFac path in mind. They negotiate ISV agreements that do not penalize migration. They get the data structure right early so that the eventual PayFac sub-merchant import is not a from-scratch rebuild. The platforms that handle the migration poorly are the ones that built ISV for the short term and got stuck when the volume justified PayFac but the operational debt would not allow it.</p>
+
+    <h2>How to decide for your platform</h2>
+
+    <p>The Margin Multiplier walks through the four-model comparison at your specific volume and vertical in about 60 seconds. It is the right starting point for a platform asking the PayFac vs ISV question for the first time. The output shows what each model would generate, what the recommended move is and what the annual revenue delta of moving up the ladder looks like.</p>
+
+    <p>For the deeper decision (which model fits the platform's specific stage, what the right migration path looks like, how to evaluate the managed PayFac partners), the Strategic Decision Framework covers the comparison in detail, including real-world basis-point ranges, the operational requirements at each model and the decision matrix by volume tier.</p>
+
+    <p>And if the platform is at the point of choosing between specific PayFac partners or negotiating an ISV agreement with PayFac migration in mind, that is the kind of situation a Quick Start Call exists for.</p>
+
+  </div>
+
+  <div style="margin-top: 56px; padding: 36px 32px; background: rgba(200,130,60,0.04); border: 1px solid rgba(200,130,60,0.18); border-radius: 4px;">
+    <div style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #C8823C; opacity: 0.78; margin-bottom: 12px;">Take the next step</div>
+    <h3 style="font-size:22px;font-weight:400;letter-spacing:-0.02em;color:#F0EBE4;margin:0 0 12px;line-height:1.3;">See what each model would generate for your platform.</h3>
+    <p style="font-size:15px;line-height:1.7;color:rgba(240,235,228,0.7);margin:0 0 22px;">Run the Margin Multiplier in about 60 seconds. Real basis-point ranges across ISV, Enhanced Residuals, Managed PayFac and Full PayFac at your specific volume. Includes the free Embedded Payments Guide.</p>
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+      <a href="/margin-multiplier" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-mm-primary">Run the Margin Multiplier →</a>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-consult-secondary">Or talk to me about your specific situation →</a>
+    </div>
+  </div>
+
+</article>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+  <div class="footer-copy"><a href="/privacy" data-analytics="footer-privacy">Privacy</a></div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
