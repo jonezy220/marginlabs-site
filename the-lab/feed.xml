@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 10 Jun 2026 14:57:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 04:45:41 +0000</lastBuildDate>
     <pubDate>Thu, 11 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -163,37 +163,7 @@
 
     <p>The first thing to establish is which of the four embedded payments monetization models the platform is operating under. The diligence focus, the red flags and the value creation levers all differ by model.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Typical bps captured</th>
-          <th>Diligence focus</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ISV Referral</td>
-          <td>5 to 15</td>
-          <td>Is the residual fully negotiated. What does the contract say about migration. Is the platform ready to move up the ladder.</td>
-        </tr>
-        <tr>
-          <td>Enhanced Residuals</td>
-          <td>20 to 40</td>
-          <td>Same as ISV but with deeper attention to residual share clauses, term provisions and the path to managed PayFac.</td>
-        </tr>
-        <tr>
-          <td>Managed PayFac (PFaaS)</td>
-          <td>50 to 80</td>
-          <td>Are there leakages in the PFaaS partner contract. Is the platform capturing the full available spread. Is the pricing strategy optimal.</td>
-        </tr>
-        <tr>
-          <td>Full PayFac</td>
-          <td>80 to 120</td>
-          <td>Is the operational program sustainable. Is the PCI and compliance infrastructure healthy. Does the program scale with projected volume.</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/payments-due-diligence-1.png" alt="payments-due-diligence comparison table 1" />
 
     <p>If the seller cannot answer which model they are on, or describes it in terms that mix the structural variants ("we have a deal with Stripe"), that is itself a finding. It means the platform has not been thinking about payments as a strategic revenue line. That can be a buying opportunity, but it changes the diligence work required.</p>
 
@@ -260,56 +230,7 @@
 
     <p>The compact version of what we look at, organized by category.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>What to ask for</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Monetization model</td>
-          <td>Current model, contract structure, residual rates, term and termination provisions, change-of-control provisions</td>
-        </tr>
-        <tr>
-          <td>Volume</td>
-          <td>Monthly processed volume for 24+ months, broken out by sub-merchant where possible</td>
-        </tr>
-        <tr>
-          <td>Net take rate</td>
-          <td>Total payments revenue divided by processed volume, monthly trend, broken out by sub-merchant cohort</td>
-        </tr>
-        <tr>
-          <td>Activation rate</td>
-          <td>Active payments merchants divided by total platform merchants. Cohort analysis if possible.</td>
-        </tr>
-        <tr>
-          <td>Sub-merchant concentration</td>
-          <td>Top 10 and top 25 sub-merchants as a percentage of total payments volume and revenue</td>
-        </tr>
-        <tr>
-          <td>Chargeback profile</td>
-          <td>Chargeback rate (trend), average resolution time, chargeback rate by sub-merchant cohort</td>
-        </tr>
-        <tr>
-          <td>Pricing</td>
-          <td>The pricing model offered to sub-merchants, any cohort or vertical price variations, recent pricing changes</td>
-        </tr>
-        <tr>
-          <td>Compliance</td>
-          <td>Current PCI attestation, open findings, KYC and AML program documentation</td>
-        </tr>
-        <tr>
-          <td>Operational tooling</td>
-          <td>Onboarding flow, dispute management workflow, reconciliation infrastructure, ongoing operational costs by category</td>
-        </tr>
-        <tr>
-          <td>Headroom</td>
-          <td>What model migration is available, what activation rate improvement is realistic, what pricing optimization is possible</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/payments-due-diligence-2.png" alt="payments-due-diligence comparison table 2" />
 
     <h2>The value creation plan</h2>
 
@@ -476,42 +397,7 @@
 
     <p>The basis-point comparison is the headline number, but the way to compare PayFac vs ISV honestly is to look at annual dollar capture at a representative volume. Here is what each model generates on 25 million dollars of annual processed volume.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Bps captured</th>
-          <th>Annual margin on $25M</th>
-          <th>Operational burden</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ISV Referral</td>
-          <td>5 to 15</td>
-          <td>$12,500 to $37,500</td>
-          <td>Minimal</td>
-        </tr>
-        <tr>
-          <td>ISV with Enhanced Residuals</td>
-          <td>20 to 40</td>
-          <td>$50,000 to $100,000</td>
-          <td>Minimal</td>
-        </tr>
-        <tr>
-          <td>Managed PayFac (PFaaS)</td>
-          <td>50 to 80</td>
-          <td>$125,000 to $200,000</td>
-          <td>Moderate</td>
-        </tr>
-        <tr>
-          <td>Full PayFac</td>
-          <td>80 to 120</td>
-          <td>$200,000 to $300,000</td>
-          <td>Heavy</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/payfac-vs-isv-1.png" alt="payfac-vs-isv comparison table 1" />
 
     <p>The gap between an ISV Referral arrangement and a Managed PayFac at 25 million dollars of volume is roughly 150 thousand dollars per year. At 100 million, it is closer to 600 thousand. At 500 million, the gap is in the millions. The economics tell you why every vertical SaaS platform eventually asks the PayFac vs ISV question, and why the answer for most platforms above a volume threshold is some flavor of PayFac.</p>
 
@@ -519,57 +405,7 @@
 
     <p>The economics are only half the comparison. The other half is what each model demands operationally, and this is where most platforms underestimate the trade.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Component</th>
-          <th>ISV</th>
-          <th>PayFac (managed or full)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Sub-merchant onboarding</td>
-          <td>Processor owns it</td>
-          <td>Platform owns it (managed PFac partner handles plumbing)</td>
-        </tr>
-        <tr>
-          <td>PCI compliance program</td>
-          <td>Out of scope</td>
-          <td>Level 1, $200K to $500K per year run-rate (full) or managed partner's scope</td>
-        </tr>
-        <tr>
-          <td>Sub-merchant pricing decisions</td>
-          <td>Processor sets prices</td>
-          <td>Platform sets prices</td>
-        </tr>
-        <tr>
-          <td>Disputes and chargebacks</td>
-          <td>Processor handles</td>
-          <td>Platform handles or shares with managed partner</td>
-        </tr>
-        <tr>
-          <td>Settlement and reconciliation</td>
-          <td>Processor handles</td>
-          <td>Platform must build or use managed partner's tooling</td>
-        </tr>
-        <tr>
-          <td>Risk and underwriting</td>
-          <td>Processor owns</td>
-          <td>Platform shares risk (managed) or owns it (full)</td>
-        </tr>
-        <tr>
-          <td>24/7 ops coverage</td>
-          <td>Processor's pager</td>
-          <td>Platform's pager (with managed partner backstop)</td>
-        </tr>
-        <tr>
-          <td>Capital requirements</td>
-          <td>None</td>
-          <td>Modest (managed) to significant (full sponsorship)</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/payfac-vs-isv-2.png" alt="payfac-vs-isv comparison table 2" />
 
     <p>This is what the side-by-side comparison really shows. ISV is small economics with small burden. PayFac is large economics with moderate-to-large burden. The decision is whether the additional economics pay back the additional burden at the platform's specific volume and stage.</p>
 
@@ -830,57 +666,7 @@
 
     <p>The two models look similar on the surface (both involve a regulated entity sitting between the merchant and the payment networks) but they solve fundamentally different problems and carry different obligations.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Dimension</th>
-          <th>Merchant of Record</th>
-          <th>Payment Facilitator</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Primary use case</strong></td>
-          <td>SaaS or digital goods sold globally to end consumers</td>
-          <td>Software platforms enabling card payments for sub-merchants (typically B2B)</td>
-        </tr>
-        <tr>
-          <td><strong>Who is the legal seller</strong></td>
-          <td>The MoR provider</td>
-          <td>The sub-merchant (the small business)</td>
-        </tr>
-        <tr>
-          <td><strong>Whose name on card statement</strong></td>
-          <td>The MoR provider</td>
-          <td>The sub-merchant's DBA</td>
-        </tr>
-        <tr>
-          <td><strong>Who handles sales tax / VAT</strong></td>
-          <td>The MoR provider</td>
-          <td>The sub-merchant</td>
-        </tr>
-        <tr>
-          <td><strong>Who handles chargebacks</strong></td>
-          <td>The MoR provider</td>
-          <td>The PayFac (with sub-merchant operational support)</td>
-        </tr>
-        <tr>
-          <td><strong>Typical economics for the platform</strong></td>
-          <td>Platform pays MoR 5-9% of revenue</td>
-          <td>Platform earns 30-100+ bps net on volume</td>
-        </tr>
-        <tr>
-          <td><strong>Card network registration</strong></td>
-          <td>Not required by the software platform</td>
-          <td>Required (the PayFac itself or its provider)</td>
-        </tr>
-        <tr>
-          <td><strong>Right fit</strong></td>
-          <td>Digital SaaS, global, B2C or low-touch B2B</td>
-          <td>Vertical SaaS with merchants accepting card payments</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/merchant-of-record-vs-payfac-1.png" alt="merchant-of-record-vs-payfac comparison table 1" />
 
     <p>The simplest mental model: MoR is "we sell our product through a third party who handles all the tax and compliance." PayFac is "our merchants sell their products and we capture economics on the payment volume flowing through our platform."</p>
 
@@ -1978,16 +1764,7 @@
 
     <p>Not every merchant will use your embedded payments. Some have a processor they're happy with. Some won't switch until you give them a compelling reason. Realistic activation rates by model:</p>
 
-    <table class="model-table">
-      <thead>
-        <tr><th>Model</th><th>Year 1</th><th>At Maturity</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>ISV Referral (bundled with onboarding)</td><td>40-60%</td><td>60-75%</td></tr>
-        <tr><td>PayFac-as-a-Service (separate boarding)</td><td>25-40%</td><td>50-65%</td></tr>
-        <tr><td>Full PayFac (required for core workflow)</td><td>70-90%</td><td>80-95%</td></tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/calculate-payments-revenue-1.png" alt="calculate-payments-revenue comparison table 1" />
 
     <p>If you're pre-launch, use 30% for year one and 50% for year two. Conservative, but grounded in what platforms typically see across verticals.</p>
 
@@ -2000,17 +1777,7 @@
 
     <p>Apply the net take rate for each model to your active GMV. Using our $9M year-one example:</p>
 
-    <table class="model-table">
-      <thead>
-        <tr><th>Model</th><th>Net Take Rate</th><th>Year 1 ($9M active)</th><th>Year 2 ($15M active)</th><th>Year 3 ($20.7M active)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>ISV Referral</td><td>15 bps</td><td>$13,500</td><td>$22,500</td><td>$31,050</td></tr>
-        <tr><td>Enhanced Residuals</td><td>30 bps</td><td>$27,000</td><td>$45,000</td><td>$62,100</td></tr>
-        <tr><td>PayFac-as-a-Service</td><td>60 bps</td><td>$54,000</td><td>$90,000</td><td>$124,200</td></tr>
-        <tr><td>Full PayFac</td><td>80 bps</td><td>$72,000</td><td>$120,000</td><td>$165,600</td></tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/calculate-payments-revenue-2.png" alt="calculate-payments-revenue comparison table 2" />
 
     <p>Year three assumes 60% activation and 15% organic merchant growth. The compounding effect of activation growth plus merchant growth is the most underappreciated dynamic in payments monetization.</p>
 
@@ -2090,32 +1857,7 @@
 
     <p>PFaaS economics sit between ISV Referral and full PayFac:</p>
 
-    <table class="economics-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Net Take Rate</th>
-          <th>On $50M Volume</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ISV Referral</td>
-          <td>5-25 bps</td>
-          <td>$25K-$125K/yr</td>
-        </tr>
-        <tr>
-          <td>PayFac-as-a-Service</td>
-          <td>25-70 bps</td>
-          <td>$125K-$350K/yr</td>
-        </tr>
-        <tr>
-          <td>Full PayFac</td>
-          <td>50-100+ bps</td>
-          <td>$250K-$500K+/yr</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/payfac-as-a-service-1.png" alt="payfac-as-a-service comparison table 1" />
 
     <p>On $50 million in annual merchant volume, the difference between referral at 15 bps ($75K) and PFaaS at 50 bps ($250K) is $175K per year. That gap grows with every merchant you add.</p>
 
@@ -2176,66 +1918,7 @@
 
     <p>The three models that capture embedded payments economics for vertical SaaS platforms each sit in a different place on the economics-vs-complexity curve. The right choice depends on volume, operational capacity, and strategic time horizon.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Dimension</th>
-          <th>ISV Referral</th>
-          <th>PayFac-as-a-Service</th>
-          <th>Full PayFac</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Net economics</strong></td>
-          <td>5-15 bps</td>
-          <td>30-60 bps</td>
-          <td>60-100+ bps</td>
-        </tr>
-        <tr>
-          <td><strong>Implementation cost</strong></td>
-          <td>Minimal (weeks)</td>
-          <td>$50K-$200K</td>
-          <td>$500K-$2M</td>
-        </tr>
-        <tr>
-          <td><strong>Time to launch</strong></td>
-          <td>2-4 weeks</td>
-          <td>3-6 months</td>
-          <td>12-18 months</td>
-        </tr>
-        <tr>
-          <td><strong>Annual operating cost</strong></td>
-          <td>Minimal</td>
-          <td>$100K-$300K</td>
-          <td>$300K-$800K</td>
-        </tr>
-        <tr>
-          <td><strong>Who registers with card networks</strong></td>
-          <td>Processor</td>
-          <td>The PFaaS provider</td>
-          <td>The platform itself</td>
-        </tr>
-        <tr>
-          <td><strong>Who owns the sponsor bank relationship</strong></td>
-          <td>Processor</td>
-          <td>The PFaaS provider</td>
-          <td>The platform itself</td>
-        </tr>
-        <tr>
-          <td><strong>Who sets merchant pricing</strong></td>
-          <td>Processor</td>
-          <td>The platform</td>
-          <td>The platform</td>
-        </tr>
-        <tr>
-          <td><strong>Right volume tier</strong></td>
-          <td>Under $25M</td>
-          <td>$30M-$200M</td>
-          <td>$200M+</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/payfac-as-a-service-2.png" alt="payfac-as-a-service comparison table 2" />
 
     <p>The midpoint matters most: PFaaS gives you control of pricing and the merchant relationship (which is where most of the strategic value sits) without the capital expenditure or regulatory burden of full registration. For platforms at $30M to $200M of processing volume, that combination of control plus capital efficiency is usually the right answer.</p>
 

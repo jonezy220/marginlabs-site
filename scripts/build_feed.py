@@ -153,12 +153,43 @@ def replace_css_vars(content: str) -> str:
     return content
 
 
+# Substack's editor/importer has no table support — it flattens any <table>
+# into run-together text. For these articles the table IS the argument, so the
+# feed swaps each <table> for a pre-rendered branded PNG of that table (in
+# document order). The Lab HTML keeps the real tables; this only affects the
+# Substack copy. Images live at /assets/lab-images/tables/{slug}-{n}.png.
+TABLE_IMAGE_SLUGS = {
+    "payments-due-diligence",
+    "payfac-vs-isv",
+    "merchant-of-record-vs-payfac",
+    "payfac-as-a-service",
+    "calculate-payments-revenue",
+}
+
+
+def replace_tables_with_images(body: str, slug: str) -> str:
+    if slug not in TABLE_IMAGE_SLUGS:
+        return body
+    counter = {"n": 0}
+
+    def repl(_match: re.Match) -> str:
+        counter["n"] += 1
+        n = counter["n"]
+        return (
+            f'<img src="/assets/lab-images/tables/{slug}-{n}.png" '
+            f'alt="{slug} comparison table {n}" />'
+        )
+
+    return re.sub(r"<table[^>]*>.*?</table>", repl, body, flags=re.DOTALL)
+
+
 def strip_data_analytics(content: str) -> str:
     return re.sub(r'\s+data-analytics="[^"]*"', "", content)
 
 
 def build_content_encoded(html_text: str, slug: str, canonical: str) -> str:
     body = extract_body(html_text)
+    body = replace_tables_with_images(body, slug)
     end_cta = extract_end_cta(html_text)
 
     # Source-attribution note at the END so Substack's auto-generated SEO
