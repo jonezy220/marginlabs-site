@@ -47,9 +47,7 @@ ARTICLES = [
     ("how-to-negotiate-a-processor-agreement",     "2026-05-05"),
     ("chargeback-management-for-software-platforms","2026-05-07"),
     ("payments-revenue-saas-valuation",            "2026-05-12"),
-    ("payments-due-diligence",                     "2026-05-14"),
     ("pci-compliance-for-saas-platforms",          "2026-05-19"),
-    ("payments-kpis-after-launch",                 "2026-05-21"),
     ("when-to-switch-embedded-payments-providers", "2026-05-26"),
     ("merchant-onboarding-embedded-payments",      "2026-05-28"),
     # June 2026
@@ -58,6 +56,12 @@ ARTICLES = [
     ("merchant-of-record-vs-payfac",               "2026-06-04"),
     ("payment-processor-for-saas",                 "2026-06-04"),
     ("payfac-vs-isv",                              "2026-06-09"),
+    # 2026-06-11 batch: KPIs hero (rewrite), Merchant Activation pillar (new),
+    # PE diligence (absorbed the comprehensive ML-LAB-027 draft). Dates bumped
+    # so the republished pieces surface as fresh in the feed and Lab index.
+    ("merchant-activation-playbook",               "2026-06-11"),
+    ("payments-due-diligence",                     "2026-06-11"),
+    ("payments-kpis-after-launch",                 "2026-06-11"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).

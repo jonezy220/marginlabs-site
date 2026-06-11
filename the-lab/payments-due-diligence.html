@@ -1,15 +1,15 @@
-<!-- ML-LAB-016 -->
+<!-- ML-LAB-016 (upgraded 2026-06-11, absorbed ML-LAB-027 comprehensive draft) -->
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payments Due Diligence: What Acquirers Look At | Margin Labs</title>
-<meta name="description" content="When a PE firm or strategic buyer evaluates a SaaS platform, payments gets its own diligence workstream. Here's what they're looking for and how to be ready.">
+<title>Embedded Payments Due Diligence: What PE Acquirers Look At | Margin Labs</title>
+<meta name="description" content="Payments is the diligence item private equity acquirers most consistently underestimate in vertical SaaS deals. The metrics that signal a healthy program, the red flags that kill deals and the hidden value most platforms underreport.">
 <link rel="canonical" href="https://marginlabs.io/the-lab/payments-due-diligence">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Payments Due Diligence: What Acquirers Look At | Margin Labs">
-<meta property="og:description" content="When a PE firm or strategic buyer evaluates a SaaS platform, payments gets its own diligence workstream. Here's what they're looking for and how to be ready.">
+<meta property="og:title" content="Embedded Payments Due Diligence: What PE Acquirers Look At | Margin Labs">
+<meta property="og:description" content="Payments is the diligence item PE acquirers most consistently underestimate. The metrics, the red flags, the hidden value, the diligence checklist.">
 <meta property="og:url" content="https://marginlabs.io/the-lab/payments-due-diligence">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
@@ -27,6 +27,56 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does embedded payments matter in vertical SaaS due diligence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Embedded payments revenue is high-margin, sticky and often a meaningful multiple expansion lever in vertical SaaS deals. Platforms with mature payments programs typically command higher revenue multiples than equivalent software-only platforms because payments revenue compounds with merchant volume, scales without proportional headcount and increases customer lock-in. In a typical vertical SaaS deal, payments revenue can be 20 to 50 percent of total revenue at run-rate and is the single largest swing variable on the post-acquisition value creation plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the biggest red flag in payments diligence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Low merchant activation rate is the single most common red flag. A platform that has 8,000 merchants but only 1,200 actively processing payments is leaving 80 percent of its potential payments revenue on the table. The fix is operationally hard and capital-light, which makes it a good opportunity, but it requires diagnosing why activation is low (onboarding friction, pricing, sales motion, vertical fit) before the post-acquisition team can act on it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can payments revenue be improved post-acquisition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on which lever is being pulled. Negotiating a better processor contract usually takes 60 to 120 days and can improve net take rate by 5 to 15 basis points. Migrating from an ISV referral model to a managed PayFac arrangement is a 6 to 12 month program and can double or triple the net economics per dollar of volume. Improving merchant activation rate is the highest-leverage lever and typically takes 12 to 18 months to fully realize, but it can double payments revenue at the same volume."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payments metrics should appear in the data room?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At a minimum: monthly processed payment volume by sub-merchant, net take rate by month, merchant activation rate, the current monetization model (ISV Referral, Enhanced Residuals, PayFac-lite or Full PayFac), the processor and PayFac partner contracts, the residual rate or revenue share agreement, monthly residual revenue, chargeback rate and average chargeback resolution time. Most diligence packages contain top-line numbers but skip the diagnostic detail that lets an acquirer model the value creation plan accurately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does payments due diligence change for different monetization models?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The diligence focus shifts. For an ISV Referral platform, the question is whether the residual share is fully negotiated and whether the platform is ready to migrate to a higher-margin model. For a managed PayFac platform, the question is whether the PayFac partner contract has any leakage and whether the platform is capturing the full available spread. For a Full PayFac, the question is whether the operational program is sustainable and whether the compliance and risk infrastructure scales with the projected volume. Each model has different diligence red flags and different value creation levers."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -37,32 +87,23 @@
   .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
   .article-body a { color: var(--copper-lt); }
   .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 10px; line-height: 1.4; }
   .article-body p { margin-bottom: 20px; }
   .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
   .article-body li { margin-bottom: 8px; }
   .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ─────────────────────────────────────── -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <a href="/" class="nav-brand" aria-label="Margin Labs home">
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
-      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
-      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
-      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
-      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
-      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
-      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
-      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
-      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
-      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-    </svg>
-    <div class="wordmark">
-      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
-    </div>
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
   </a>
   <div class="nav-controls">
     <ul class="nav-links" role="list">
@@ -71,82 +112,200 @@
       <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
       <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-  <ul>
-    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
-    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
-    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
-    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
-  </ul>
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
 </div>
 
-<!-- ── ARTICLE ─────────────────────────────────── -->
 <article class="article-wrap">
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
-  <div class="article-eyebrow">The Lab</div>
-  <h1 class="article-title">Payments Due Diligence: What Acquirers Look At</h1>
+  <div class="article-eyebrow">PE Diligence</div>
+  <h1 class="article-title">Embedded Payments Due Diligence: What PE Acquirers Need to Know About Vertical SaaS Payments</h1>
   <div class="article-meta">
-    <span>May 2026</span>
-    <span>8 min read</span>
+    <span>Updated June 2026</span>
+    <span>9 min read</span>
   </div>
   <div class="article-body">
-    <img src="/assets/lab-images/payments-due-diligence.png" alt="Payments Due Diligence: What Acquirers Look At" class="article-hero">
-    <p>When a private equity firm or strategic buyer evaluates a vertical SaaS platform, payments doesn't get lumped into the general product review. It gets its own workstream. The buyer wants to understand what you're earning today, what you could earn under a better model, how defensible the revenue is, and whether there are any operational landmines buried in the program.</p>
 
-    <p>Platforms that have run a clean, well-documented payments program sail through this diligence. Platforms that haven't thought about it since the original processor agreement get surprises, usually negative ones that affect valuation or deal structure.</p>
+    <p>Embedded payments is the diligence item private equity acquirers most consistently underestimate in vertical SaaS deals. The reason is that the payments line on the data room summary almost always looks fine. Revenue is growing. Margins are healthy. The processor relationship is in place. What the summary does not show is the gap between what the platform is capturing and what it could be capturing, which in most cases is the single largest swing variable on the post-acquisition value creation plan.</p>
 
-    <p>Here's what sophisticated acquirers look at, and how to be ready.</p>
+    <p>A platform reporting 4 million dollars of annual payments revenue might be sitting on a 12 million dollar opportunity at full optimization. Or it might be at the ceiling of its model and have very little headroom. The difference between those two cases changes the deal multiple by a meaningful margin, and the diligence package rarely makes the distinction obvious. This piece is the diligence framework we walk acquirers through when they ask us to look at the payments part of a vertical SaaS deal.</p>
 
-    <h2>The Economics Questions</h2>
+    <h2>Why payments matters in vertical SaaS diligence</h2>
 
-    <p>The first diligence workstream is financial. Buyers want to understand the payments P&L with enough granularity to model it forward.</p>
+    <p>Three reasons embedded payments deserves more diligence attention than it usually gets.</p>
 
-    <p><strong>Gross payment volume by cohort.</strong> Not just total GMV, volume broken out by merchant cohort, product line, and year. Buyers want to see whether payment volume grows in line with software ARR, lags it (suggesting an activation problem), or outpaces it (suggesting high-value merchant concentration).</p>
+    <p><strong>It is a meaningful share of revenue at run-rate.</strong> Mature embedded payments programs at vertical SaaS platforms typically contribute 20 to 50 percent of total revenue. In some categories (restaurant, field service, fitness, property management) the share can be even higher. A platform at 10 million in software ARR with a mature payments program can have 5 to 10 million more in payments revenue layered on top.</p>
 
-    <p><strong>Net take rate and its components.</strong> Total payments revenue divided by gross volume, but also the breakdown: interchange component, processing fee component, ancillary revenue. A platform that can explain each layer of its payments P&L signals operational maturity. One that can only report a single "payments revenue" line raises questions.</p>
+    <p><strong>It is a multiple expansion lever.</strong> Payments revenue is high-margin (gross margins typically 70 to 85 percent), recurring, sticky and scales without proportional headcount. <a href="/the-lab/payments-revenue-saas-valuation">Payments revenue compounds the SaaS multiple</a> because acquirers and public markets value it more highly than software revenue alone. Adding 3 million of high-margin payments revenue to a platform doing 10 million of software ARR can shift the enterprise value by more than the dollar amount of payments revenue would suggest.</p>
 
-    <p><strong>Revenue quality.</strong> Is the payments revenue contractually committed, or does it depend on merchant activation that could reverse? Are any merchants on individually negotiated rates that don't reflect the program's standard economics? Are there revenue-share agreements with the processor that could be renegotiated at renewal?</p>
+    <p><strong>The improvement levers are operational, not capital.</strong> Most of the value creation in payments post-acquisition comes from operational improvement: negotiating a better processor contract, raising merchant activation rate, moving up the monetization model ladder. These are 12 to 24 month programs that do not require meaningful capital and can compound payments revenue by 50 to 200 percent. That kind of operational lever is exactly what PE firms are good at executing on, which is why payments diligence deserves the attention.</p>
 
-    <p><strong>The opportunity gap.</strong> Good buyers model what the payments program could earn under a better model. If you're in ISV Referral at 15 bps and your volume justifies PayFac-as-a-Service at 50 bps, the buyer sees that gap as upside they're buying. A platform that has already made this transition, or can articulate a credible plan to, is worth more than one where the gap is purely theoretical. The right next step depends on the platform's volume and merchant economics, for most growing platforms, the practical decision is <a href="/the-lab/isv-referral-vs-payfac-lite">ISV Referral vs PayFac Lite</a>, not the leap straight to full PayFac.</p>
+    <h2>The first diligence question. Which model?</h2>
 
-    <h2>The Contract Questions</h2>
+    <p>The first thing to establish is which of the four embedded payments monetization models the platform is operating under. The diligence focus, the red flags and the value creation levers all differ by model.</p>
 
-    <p>Every payments contract in your business gets reviewed. Buyers look for three things: transferability, termination risk, and economics sustainability.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Typical bps captured</th>
+          <th>Diligence focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ISV Referral</td>
+          <td>5 to 15</td>
+          <td>Is the residual fully negotiated. What does the contract say about migration. Is the platform ready to move up the ladder.</td>
+        </tr>
+        <tr>
+          <td>Enhanced Residuals</td>
+          <td>20 to 40</td>
+          <td>Same as ISV but with deeper attention to residual share clauses, term provisions and the path to managed PayFac.</td>
+        </tr>
+        <tr>
+          <td>Managed PayFac (PFaaS)</td>
+          <td>50 to 80</td>
+          <td>Are there leakages in the PFaaS partner contract. Is the platform capturing the full available spread. Is the pricing strategy optimal.</td>
+        </tr>
+        <tr>
+          <td>Full PayFac</td>
+          <td>80 to 120</td>
+          <td>Is the operational program sustainable. Is the PCI and compliance infrastructure healthy. Does the program scale with projected volume.</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p><strong>Change of control provisions.</strong> Most processor agreements have change of control clauses that require processor consent to assign the agreement in an acquisition. Some allow the processor to reprice or terminate. Know what your agreements say before diligence begins. If renegotiation is required, it's better to handle it proactively than under deal pressure.</p>
+    <p>If the seller cannot answer which model they are on, or describes it in terms that mix the structural variants ("we have a deal with Stripe"), that is itself a finding. It means the platform has not been thinking about payments as a strategic revenue line. That can be a buying opportunity, but it changes the diligence work required.</p>
 
-    <p><strong>Exclusivity and termination terms.</strong> Exclusivity clauses and long notice periods limit the buyer's flexibility to optimize the payments program post-close. ETFs are a line item in the deal model. These terms affect deal structure and sometimes valuation.</p>
+    <h2>The metrics that should appear in the data room</h2>
 
-    <p><strong>Rate sustainability.</strong> Buyers ask whether the current processor spread is likely to hold at renewal. A favorable rate that was negotiated on small-volume terms and is coming up for renewal in 12 months is a risk. A rate with volume ratchets tied to actual GMV thresholds is a strength.</p>
+    <p>The minimum acceptable payments diligence package, in our view, includes the following. These map to the same set of <a href="/the-lab/payments-kpis-after-launch">payment processing KPIs</a> a well-run platform tracks internally, so a seller that manages to them will diligence well.</p>
 
-    <h2>The Operational Questions</h2>
+    <ul>
+      <li><strong>Monthly processed payment volume.</strong> Trended over at least 24 months, broken out by sub-merchant where possible. Volume growth rate is the headline number; sub-merchant concentration is the diagnostic.</li>
+      <li><strong>Net take rate by month.</strong> Total payments revenue divided by total processed volume, in basis points. Trend matters as much as level; declining take rates are a red flag, rising take rates suggest pricing power or model migration.</li>
+      <li><strong>Merchant activation rate.</strong> The percentage of merchants on the software platform who are actively processing payments through it. This is the single most diagnostic number in payments diligence. Healthy platforms run 50 to 75 percent activation; underperforming platforms run 15 to 30 percent.</li>
+      <li><strong>Average revenue per active merchant.</strong> Total payments revenue divided by count of active payments merchants. Lets the acquirer compare cohort economics across merchant verticals or stages.</li>
+      <li><strong>The processor or PayFac partner contract.</strong> The actual signed document. Residual rate, term, termination provisions, exclusivity, migration provisions, change-of-control provisions. This is where many surprises hide.</li>
+      <li><strong>Chargeback rate and resolution time.</strong> Chargeback rate over 1 percent is a yellow flag; over 1.5 percent is a red flag. Average resolution time over 14 days suggests operational thinness.</li>
+      <li><strong>PCI compliance status.</strong> Current attestation, scope, any open findings from the most recent audit.</li>
+      <li><strong>The pricing model offered to sub-merchants.</strong> Flat-rate, interchange-plus, blended. The pricing model affects margin durability and competitive vulnerability.</li>
+    </ul>
 
-    <p>Financial buyers increasingly care about operational risk in payments programs. They've seen enough post-acquisition surprises to ask the right questions upfront.</p>
+    <p>Most diligence packages contain about half of these. The missing items are not always intentional; they are often missing because the seller's CFO has never been asked for them in this granular form.</p>
 
-    <p><strong>Chargeback history.</strong> Three years of monthly chargeback ratios by merchant cohort. Buyers look for trends, stable is fine, improving is good, deteriorating requires explanation. A portfolio of merchants with elevated chargeback rates is a liability that affects reserve requirements and potentially processor relationships.</p>
+    <h2>The red flags that show up in real diligence</h2>
 
-    <p><strong>Compliance posture.</strong> PCI compliance status, evidence of annual assessments, any network fines or monitoring program history. A clean compliance record is table stakes. A gap is a diligence finding that requires remediation commitments.</p>
+    <p>The most common red flags we see when looking at payments diligence on vertical SaaS deals.</p>
 
-    <p><strong>Key person risk.</strong> Who runs payments operations? Is that knowledge documented or concentrated in one person? Buyers want to understand whether the payments program can run post-acquisition without the founder or a specific team member.</p>
+    <h3>1. Activation rate under 30 percent</h3>
 
-    <p><strong>Merchant concentration.</strong> If 20% of your payment volume runs through 3 merchants, that's a concentration risk buyers will flag. The payments revenue is less reliable than it looks.</p>
+    <p>The platform has merchants, but most are not processing payments through it. The seller treats this as a growth opportunity ("we can activate more"); the acquirer should treat it as a question about why activation is low. Sometimes it is fixable with better onboarding. Sometimes it is a structural problem with the vertical or the pricing. The diagnostic matters, and the <a href="/the-lab/merchant-activation-playbook">merchant activation playbook</a> is the lens we use to size whether the gap is closable post-acquisition.</p>
 
-    <h2>How to Prepare</h2>
+    <h3>2. Take rate declining year over year</h3>
 
-    <p>The platforms that perform best in payments diligence have one thing in common: they treat payments as a managed business line, not a feature that runs in the background.</p>
+    <p>The platform is capturing fewer basis points per dollar of volume than it was last year. Possible causes: merchant mix shifting to larger merchants with negotiated rates, processor squeezing the residual, increased competition forcing pricing concessions. Any of these affects the valuation case.</p>
 
-    <p>Practically, this means maintaining a payments P&L that breaks out each revenue and cost component, tracking chargeback ratios monthly, keeping processor agreements organized and reviewed, and being able to explain the net take rate and how it's calculated. Knowing <a href="/the-lab/what-embedded-payments-costs">what embedded payments actually cost</a> to operate, beyond the headline interchange and processor fees, is a frequent diligence gap.</p>
+    <h3>3. Chargeback rate trending up</h3>
 
-    <blockquote class="pull-quote">A platform that walks into diligence knowing its net take rate, its contract terms, and its three-year volume trend commands a different conversation than one that has to reconstruct the numbers from settlement reports.</blockquote>
+    <p>Often a signal of merchant base quality deteriorating or operational weakness in the dispute response process. Acquirers should ask for the chargeback rate by sub-merchant cohort to understand whether the problem is concentrated or systemic.</p>
 
-    <p>The gap between "we have payments" and "we have a payments business" is what acquirers are measuring. Platforms that close that gap before a process begins capture it in valuation. Those that don't give it away in deal structure.</p>
+    <h3>4. Processor contract with no migration provisions</h3>
 
-    <p>Related: <a href="/the-lab/how-to-read-a-payments-pl">How to Read a Payments P&L</a> is the foundation for understanding the numbers an acquirer will ask for. The <a href="/the-lab/calculate-payments-revenue">payments revenue model framework</a> is how you build the forward projection they'll want to see. For advisory support on M&A readiness, see the <a href="/advisory">advisory engagement</a>.</p>
+    <p>The platform signed an ISV agreement that makes migrating to a higher-margin model painful or contractually difficult. We have seen contracts with multi-year exclusivity, with damages on early termination, with provisions that require the platform to give the processor right of first refusal on any PayFac arrangement. These materially limit the value creation case post-acquisition.</p>
+
+    <h3>5. PCI program with open findings</h3>
+
+    <p>The platform has gaps in its compliance program. These rarely kill deals but they need to be addressed and the cost of remediation should be quantified.</p>
+
+    <h3>6. Revenue concentrated in a small number of sub-merchants</h3>
+
+    <p>If the top 10 sub-merchants represent more than half the payments revenue, the platform is exposed to single-merchant loss in a way that affects the valuation. Diligence should include a separate look at whether those top merchants are at risk of leaving.</p>
+
+    <div class="pull-quote">The diligence question is not whether the payments revenue is healthy today. It is whether the platform is capturing what it could be capturing, and whether the gap is closable post-acquisition.</div>
+
+    <h2>The hidden value most platforms underreport</h2>
+
+    <p>Vertical SaaS platforms with embedded payments often have value the diligence package undersells. A few patterns we see repeatedly.</p>
+
+    <p><strong>Back-book activation runway.</strong> A platform with 8,000 software-only merchants and 1,200 payments-active merchants has 6,800 potential payments customers. If the unit economics of activated merchants are healthy, the activation runway is a value creation plan that does not require new logo acquisition. The acquirer can model this explicitly, but the seller often does not.</p>
+
+    <p><strong>Model migration optionality.</strong> A platform on ISV Referral that has not yet considered the move to managed PayFac has 30 to 50 basis points of upside on its current volume that the seller is not pricing into the deal. The migration is a 6 to 12 month program with meaningful execution risk, but it is real value.</p>
+
+    <p><strong>Pricing power on enhanced residuals.</strong> Many ISV platforms have never aggressively negotiated their residual share. A processor that gives 7 basis points by default will often give 12 if pushed; that 70 percent improvement falls straight to the bottom line.</p>
+
+    <p><strong>Operational efficiency at scale.</strong> Payments operations costs typically grow sub-linearly with volume. A platform that has built sub-merchant onboarding tooling, dispute management workflow and reconciliation infrastructure can run two to three times the current volume with marginal incremental cost. This operational leverage is often invisible in the diligence summary.</p>
+
+    <h2>The diligence checklist</h2>
+
+    <p>The compact version of what we look at, organized by category.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>What to ask for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monetization model</td>
+          <td>Current model, contract structure, residual rates, term and termination provisions, change-of-control provisions</td>
+        </tr>
+        <tr>
+          <td>Volume</td>
+          <td>Monthly processed volume for 24+ months, broken out by sub-merchant where possible</td>
+        </tr>
+        <tr>
+          <td>Net take rate</td>
+          <td>Total payments revenue divided by processed volume, monthly trend, broken out by sub-merchant cohort</td>
+        </tr>
+        <tr>
+          <td>Activation rate</td>
+          <td>Active payments merchants divided by total platform merchants. Cohort analysis if possible.</td>
+        </tr>
+        <tr>
+          <td>Sub-merchant concentration</td>
+          <td>Top 10 and top 25 sub-merchants as a percentage of total payments volume and revenue</td>
+        </tr>
+        <tr>
+          <td>Chargeback profile</td>
+          <td>Chargeback rate (trend), average resolution time, chargeback rate by sub-merchant cohort</td>
+        </tr>
+        <tr>
+          <td>Pricing</td>
+          <td>The pricing model offered to sub-merchants, any cohort or vertical price variations, recent pricing changes</td>
+        </tr>
+        <tr>
+          <td>Compliance</td>
+          <td>Current PCI attestation, open findings, KYC and AML program documentation</td>
+        </tr>
+        <tr>
+          <td>Operational tooling</td>
+          <td>Onboarding flow, dispute management workflow, reconciliation infrastructure, ongoing operational costs by category</td>
+        </tr>
+        <tr>
+          <td>Headroom</td>
+          <td>What model migration is available, what activation rate improvement is realistic, what pricing optimization is possible</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The value creation plan</h2>
+
+    <p>Once the diligence is complete, the right question is what the post-acquisition value creation plan on payments actually looks like. The three biggest levers, in rough order of impact and difficulty:</p>
+
+    <ol>
+      <li><strong>Activation rate improvement.</strong> Highest leverage. Typically 12 to 18 months of work, requires sales and onboarding redesign. Can double payments revenue at the same volume.</li>
+      <li><strong>Monetization model migration.</strong> Moderate leverage with execution risk. 6 to 12 months of work, requires engineering and operational investment. Can lift net take rate by 30 to 70 basis points depending on starting model.</li>
+      <li><strong>Processor or PayFac contract renegotiation.</strong> Lowest leverage but fastest payback. 60 to 120 days of work, mostly contract and relationship effort. Can lift net take rate by 5 to 15 basis points.</li>
+    </ol>
+
+    <p>Most of our diligence engagements with PE acquirers end with a sized version of these three levers, with the operational requirements and the realistic time horizon. That is what lets the acquirer build a credible value creation plan and underwrite the deal with confidence.</p>
   </div>
   <a href="/the-lab/" class="article-back">← Back to The Lab</a>
 </article>
@@ -154,30 +313,26 @@
 <!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
 <section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk through what this means for your platform.</h2>
-    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number, a conversation gives you a plan.</p>
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">If you're in diligence right now</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Independent payments diligence for active deals.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A focused working session on the payments side of a vertical SaaS deal. Model confirmation, headroom assessment, processor contract review and a written value creation plan.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult">Start the conversation →</a>
-      <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm">Or run the Margin Multiplier →</a>
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Request a Quick Start Call →</a>
+      <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-mm-secondary">Or run the Margin Multiplier on the target →</a>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ──────────────────────────────────── -->
 <footer class="site-footer">
-  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
-    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
-  </a>
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
   <div class="footer-copy">© 2026 Margin Labs LLC</div>
   <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+  <div class="footer-copy"><a href="/privacy" data-analytics="footer-privacy">Privacy</a></div>
 </footer>
 
 <script src="/main.js"></script>
 <script>
-  function gaEvent(name, params) {
-    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
-  }
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-analytics]').forEach(function (el) {
       el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });

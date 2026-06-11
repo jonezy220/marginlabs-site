@@ -8,9 +8,444 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 09 Jun 2026 15:58:02 +0000</lastBuildDate>
-    <pubDate>Tue, 09 Jun 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Wed, 10 Jun 2026 14:57:31 +0000</lastBuildDate>
+    <pubDate>Thu, 11 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Payment Processing KPIs: The Metrics Every Vertical SaaS Platform Should Track</title>
+      <link>https://marginlabs.io/the-lab/payments-kpis-after-launch</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/payments-kpis-after-launch</guid>
+      <pubDate>Thu, 11 Jun 2026 14:00:00 +0000</pubDate>
+      <description>The payment metrics that tell you whether your embedded payments program is healthy and growing: activation rate, net take rate, chargeback ratio, cost to serve and more, with benchmarks for each.</description>
+      <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/payments-kpis-after-launch.png" alt="Revenue Isn't the Whole Story, seven payments program health KPIs with healthy and warning benchmarks" class="article-hero">
+
+    <p>Most platforms measure their embedded payments program with one number: revenue. It is the easiest metric to pull and the one the board asks about. It is also the least useful for steering, because revenue is a trailing indicator. It reflects decisions made months ago, and by the time a problem shows up in the revenue line, you have already spent two quarters compounding it.</p>
+
+    <p>The platforms that build durable payments businesses manage them the way they manage the rest of the software P&L: with a small set of leading indicators, targets for each and a monthly review. This is the framework we use with operators, whether the program launched last quarter or three years ago. Seven metrics, with benchmarks and the combinations that tell you what is actually going on.</p>
+
+    <p>If you only take one thing from this piece, make it this: track these monthly, set a target for each and review them together. The signal is in how they move relative to one another, not in any single number.</p>
+
+    <h2>1. Merchant Activation Rate</h2>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Activation Rate</div>
+      <div class="kpi-formula">Merchants processing ÷ Total eligible merchants</div>
+      <div class="kpi-bench">Benchmark: 30-40% year 1, 50-65% at maturity. Top quartile: 70%+</div>
+    </div>
+
+    <p>The single most important leading indicator, and the one most platforms underinvest in. A platform with 500 merchants and 30% activation is in a fundamentally different position than one with 70% activation on the same base, and the revenue line will not tell you which you are until much later. Activation tells you whether your onboarding, positioning and go-to-market are working before revenue does.</p>
+
+    <p>Track it monthly, broken out by cohort (when the merchant joined the platform) and by segment (size, sub-vertical, acquisition channel). The cohort view tells you whether activation is improving over time. The segment view tells you where to focus. When activation is the metric you most want to move, the levers live in a dedicated piece: the <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Merchant Activation Playbook</a> walks the structural reasons merchants stall and the sequence for fixing each.</p>
+
+    <h2>2. Net Take Rate</h2>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Net Take Rate</div>
+      <div class="kpi-formula">Net payments revenue ÷ Gross payment volume (expressed in basis points)</div>
+      <div class="kpi-bench">ISV Referral: 5-15 bps | PFaaS: 25-70 bps | Full PayFac: 50-100 bps</div>
+    </div>
+
+    <p>Your net take rate tells you how efficiently you monetize volume. If it is declining, you have one of three problems: pricing (giving away too much margin to win merchants), mix (high-volume low-margin merchants growing faster than the rest) or cost (processor spread eating your net). Each has a different fix, so the first job is to figure out which one you have.</p>
+
+    <p>Track it monthly. If it moves more than 3 to 5 bps in a quarter without a deliberate pricing change, investigate. The benchmark ranges above reflect typical economics by model. See <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> for the trade-offs that determine which range your platform sits in.</p>
+
+    <h2>3. Payments Revenue per Merchant</h2>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Revenue per Merchant</div>
+      <div class="kpi-formula">Net payments revenue ÷ Active processing merchants</div>
+      <div class="kpi-bench">Healthy range: $50-$300/month depending on vertical and model</div>
+    </div>
+
+    <p>This tells you whether your average merchant generates enough payment revenue to justify the cost of supporting them. If per-merchant revenue is $40/month and per-merchant support cost is $35/month, you have a unit economics problem that more volume will not solve, it will scale the problem.</p>
+
+    <p>The fix is usually pricing (charging higher rates to small merchants) or segmentation (focusing activation effort on merchants above a minimum volume threshold). Watch this number alongside cost to serve, below, because the two together define your contribution margin per merchant.</p>
+
+    <h2>4. Gross Payment Volume Growth</h2>
+
+    <div class="kpi-block">
+      <div class="kpi-name">GPV Growth</div>
+      <div class="kpi-formula">Month-over-month or quarter-over-quarter change in gross payment volume</div>
+      <div class="kpi-bench">Healthy: 3-8% MoM in first 2 years. Adjust for seasonality in your vertical.</div>
+    </div>
+
+    <p>GPV growth comes from three sources: new merchant activation (more merchants processing), organic merchant growth (existing merchants growing their own business), and seasonality. Decompose it into those components every month. If new activation is slowing but organic growth is strong, the program is healthy and the go-to-market needs attention. If organic growth is flat, your merchants may be stagnating, which is a software problem wearing a payments costume.</p>
+
+    <h2>5. Chargeback Ratio</h2>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Chargeback Ratio</div>
+      <div class="kpi-formula">Chargebacks filed ÷ Total transactions (monthly)</div>
+      <div class="kpi-bench">Healthy: &lt;0.5%. Warning: 0.5-0.9%. Critical: &gt;0.9% (Visa monitoring threshold)</div>
+    </div>
+
+    <p>Track this at the portfolio level and flag individual merchants who exceed 0.5%. A single high-chargeback merchant can drag your aggregate ratio into monitoring territory if their volume is large enough. Monitor weekly, not monthly. By the time a monthly report surfaces a problem merchant, they may have been accumulating disputes for three weeks. For the operational side of keeping this number down, see <a href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">chargeback management for software platforms</a>.</p>
+
+    <h2>6. Boarding Completion Rate</h2>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Boarding Completion</div>
+      <div class="kpi-formula">Merchants who completed boarding ÷ Merchants who started boarding</div>
+      <div class="kpi-bench">Self-serve: 35-55%. Staffed: 70-85%. Below 30% = UX problem worth fixing.</div>
+    </div>
+
+    <p>This is the conversion rate of your onboarding funnel. Every merchant who starts boarding but does not finish is acquisition spend lost at the last mile. Track it by step to find where merchants abandon, then fix the friction. The most common drop-off points are document upload and bank verification, and both are usually fixable without engineering. The full teardown lives in <a href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant onboarding for embedded payments</a>.</p>
+
+    <h2>7. Cost to Serve</h2>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Cost to Serve</div>
+      <div class="kpi-formula">Total payments operating costs ÷ Active processing merchants</div>
+      <div class="kpi-bench">Should decline as the program scales. Target: &lt;30% of revenue per merchant.</div>
+    </div>
+
+    <p>Operating costs include support time (proportional), compliance (amortized), chargeback losses, processor fees beyond interchange and integration maintenance. If cost to serve grows faster than revenue per merchant, you are scaling in the wrong direction. The usual culprit is support, merchants generating more tickets than planned, often because the product experience is not clear enough to self-serve. For the full cost stack by model, see <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a> to operate.</p>
+
+    <h2>How to Read These Together</h2>
+
+    <p>No single metric tells the full story. The power is in the combinations, because each pair isolates a different problem:</p>
+
+    <ul>
+      <li><strong>High activation + low take rate</strong> = you are winning merchants but not monetizing them. Pricing or model issue.</li>
+      <li><strong>High take rate + low activation</strong> = strong economics on a small base. Go-to-market or onboarding problem.</li>
+      <li><strong>Growing GPV + declining revenue per merchant</strong> = you are adding small merchants that dilute per-merchant economics. Segmentation issue.</li>
+      <li><strong>High boarding completion + low activation</strong> = merchants board but never process. Product integration or value-proposition problem.</li>
+      <li><strong>Flat chargebacks + rising cost to serve</strong> = the cost is in support and operations, not risk. Look at the product experience, not the underwriting.</li>
+    </ul>
+
+    <h2>How Often to Review, and With Whom</h2>
+
+    <p>Cadence matters as much as the metrics. Chargeback ratio is weekly, because the cost of a late catch is real money and monitoring exposure. The other six are monthly, in a standing review that includes product, not just finance, because most of the fixes (onboarding friction, activation, support load) are product decisions. Quarterly, pull the cohort view and ask whether each new cohort is activating faster than the last. If it is not, your go-to-market is not learning.</p>
+
+    <p>The single biggest process failure we see is payments getting reviewed in the finance meeting as a revenue line and nowhere else. A program managed that way drifts, because the people who can move the leading indicators are never in the room.</p>
+
+    <h2>The Metrics to Stop Watching</h2>
+
+    <p>A few numbers get tracked because they are easy, not because they steer anything. Total transaction count tells you almost nothing on its own, volume and revenue already capture it. Gross payment volume without the activation and take-rate context is a vanity number, a platform can grow GPV while its economics quietly erode. And raw merchant count, divorced from activation, is the most misleading of all, it is the metric that lets a platform tell itself the program is working while 70 percent of the base has never processed a dollar.</p>
+
+    <blockquote class="pull-quote">The platforms that treat payments as a managed business line, with KPIs, targets and monthly reviews, outperform the ones that check revenue quarterly and assume it is working.</blockquote>
+
+    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> gives you the revenue baseline. These KPIs tell you whether you are tracking toward it. And when an exit or fundraise is on the horizon, the same numbers show up in <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments due diligence</a>, so a platform that has been managing to them is also a platform that diligences well. For a working session on your own metrics and where the headroom is, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments program could be worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier turns your volume and model into a directional revenue number in two minutes. A conversation turns it into a plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or talk to me about your specific situation →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payments-kpis-after-launch?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Embedded Payments Due Diligence: What PE Acquirers Look At</title>
+      <link>https://marginlabs.io/the-lab/payments-due-diligence</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/payments-due-diligence</guid>
+      <pubDate>Thu, 11 Jun 2026 14:00:00 +0000</pubDate>
+      <description>Payments is the diligence item private equity acquirers most consistently underestimate in vertical SaaS deals. The metrics that signal a healthy program, the red flags that kill deals and the hidden value most platforms underreport.</description>
+      <content:encoded><![CDATA[<p>Embedded payments is the diligence item private equity acquirers most consistently underestimate in vertical SaaS deals. The reason is that the payments line on the data room summary almost always looks fine. Revenue is growing. Margins are healthy. The processor relationship is in place. What the summary does not show is the gap between what the platform is capturing and what it could be capturing, which in most cases is the single largest swing variable on the post-acquisition value creation plan.</p>
+
+    <p>A platform reporting 4 million dollars of annual payments revenue might be sitting on a 12 million dollar opportunity at full optimization. Or it might be at the ceiling of its model and have very little headroom. The difference between those two cases changes the deal multiple by a meaningful margin, and the diligence package rarely makes the distinction obvious. This piece is the diligence framework we walk acquirers through when they ask us to look at the payments part of a vertical SaaS deal.</p>
+
+    <h2>Why payments matters in vertical SaaS diligence</h2>
+
+    <p>Three reasons embedded payments deserves more diligence attention than it usually gets.</p>
+
+    <p><strong>It is a meaningful share of revenue at run-rate.</strong> Mature embedded payments programs at vertical SaaS platforms typically contribute 20 to 50 percent of total revenue. In some categories (restaurant, field service, fitness, property management) the share can be even higher. A platform at 10 million in software ARR with a mature payments program can have 5 to 10 million more in payments revenue layered on top.</p>
+
+    <p><strong>It is a multiple expansion lever.</strong> Payments revenue is high-margin (gross margins typically 70 to 85 percent), recurring, sticky and scales without proportional headcount. <a href="https://marginlabs.io/the-lab/payments-revenue-saas-valuation?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Payments revenue compounds the SaaS multiple</a> because acquirers and public markets value it more highly than software revenue alone. Adding 3 million of high-margin payments revenue to a platform doing 10 million of software ARR can shift the enterprise value by more than the dollar amount of payments revenue would suggest.</p>
+
+    <p><strong>The improvement levers are operational, not capital.</strong> Most of the value creation in payments post-acquisition comes from operational improvement: negotiating a better processor contract, raising merchant activation rate, moving up the monetization model ladder. These are 12 to 24 month programs that do not require meaningful capital and can compound payments revenue by 50 to 200 percent. That kind of operational lever is exactly what PE firms are good at executing on, which is why payments diligence deserves the attention.</p>
+
+    <h2>The first diligence question. Which model?</h2>
+
+    <p>The first thing to establish is which of the four embedded payments monetization models the platform is operating under. The diligence focus, the red flags and the value creation levers all differ by model.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Typical bps captured</th>
+          <th>Diligence focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ISV Referral</td>
+          <td>5 to 15</td>
+          <td>Is the residual fully negotiated. What does the contract say about migration. Is the platform ready to move up the ladder.</td>
+        </tr>
+        <tr>
+          <td>Enhanced Residuals</td>
+          <td>20 to 40</td>
+          <td>Same as ISV but with deeper attention to residual share clauses, term provisions and the path to managed PayFac.</td>
+        </tr>
+        <tr>
+          <td>Managed PayFac (PFaaS)</td>
+          <td>50 to 80</td>
+          <td>Are there leakages in the PFaaS partner contract. Is the platform capturing the full available spread. Is the pricing strategy optimal.</td>
+        </tr>
+        <tr>
+          <td>Full PayFac</td>
+          <td>80 to 120</td>
+          <td>Is the operational program sustainable. Is the PCI and compliance infrastructure healthy. Does the program scale with projected volume.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>If the seller cannot answer which model they are on, or describes it in terms that mix the structural variants ("we have a deal with Stripe"), that is itself a finding. It means the platform has not been thinking about payments as a strategic revenue line. That can be a buying opportunity, but it changes the diligence work required.</p>
+
+    <h2>The metrics that should appear in the data room</h2>
+
+    <p>The minimum acceptable payments diligence package, in our view, includes the following. These map to the same set of <a href="https://marginlabs.io/the-lab/payments-kpis-after-launch?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment processing KPIs</a> a well-run platform tracks internally, so a seller that manages to them will diligence well.</p>
+
+    <ul>
+      <li><strong>Monthly processed payment volume.</strong> Trended over at least 24 months, broken out by sub-merchant where possible. Volume growth rate is the headline number; sub-merchant concentration is the diagnostic.</li>
+      <li><strong>Net take rate by month.</strong> Total payments revenue divided by total processed volume, in basis points. Trend matters as much as level; declining take rates are a red flag, rising take rates suggest pricing power or model migration.</li>
+      <li><strong>Merchant activation rate.</strong> The percentage of merchants on the software platform who are actively processing payments through it. This is the single most diagnostic number in payments diligence. Healthy platforms run 50 to 75 percent activation; underperforming platforms run 15 to 30 percent.</li>
+      <li><strong>Average revenue per active merchant.</strong> Total payments revenue divided by count of active payments merchants. Lets the acquirer compare cohort economics across merchant verticals or stages.</li>
+      <li><strong>The processor or PayFac partner contract.</strong> The actual signed document. Residual rate, term, termination provisions, exclusivity, migration provisions, change-of-control provisions. This is where many surprises hide.</li>
+      <li><strong>Chargeback rate and resolution time.</strong> Chargeback rate over 1 percent is a yellow flag; over 1.5 percent is a red flag. Average resolution time over 14 days suggests operational thinness.</li>
+      <li><strong>PCI compliance status.</strong> Current attestation, scope, any open findings from the most recent audit.</li>
+      <li><strong>The pricing model offered to sub-merchants.</strong> Flat-rate, interchange-plus, blended. The pricing model affects margin durability and competitive vulnerability.</li>
+    </ul>
+
+    <p>Most diligence packages contain about half of these. The missing items are not always intentional; they are often missing because the seller's CFO has never been asked for them in this granular form.</p>
+
+    <h2>The red flags that show up in real diligence</h2>
+
+    <p>The most common red flags we see when looking at payments diligence on vertical SaaS deals.</p>
+
+    <h3>1. Activation rate under 30 percent</h3>
+
+    <p>The platform has merchants, but most are not processing payments through it. The seller treats this as a growth opportunity ("we can activate more"); the acquirer should treat it as a question about why activation is low. Sometimes it is fixable with better onboarding. Sometimes it is a structural problem with the vertical or the pricing. The diagnostic matters, and the <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant activation playbook</a> is the lens we use to size whether the gap is closable post-acquisition.</p>
+
+    <h3>2. Take rate declining year over year</h3>
+
+    <p>The platform is capturing fewer basis points per dollar of volume than it was last year. Possible causes: merchant mix shifting to larger merchants with negotiated rates, processor squeezing the residual, increased competition forcing pricing concessions. Any of these affects the valuation case.</p>
+
+    <h3>3. Chargeback rate trending up</h3>
+
+    <p>Often a signal of merchant base quality deteriorating or operational weakness in the dispute response process. Acquirers should ask for the chargeback rate by sub-merchant cohort to understand whether the problem is concentrated or systemic.</p>
+
+    <h3>4. Processor contract with no migration provisions</h3>
+
+    <p>The platform signed an ISV agreement that makes migrating to a higher-margin model painful or contractually difficult. We have seen contracts with multi-year exclusivity, with damages on early termination, with provisions that require the platform to give the processor right of first refusal on any PayFac arrangement. These materially limit the value creation case post-acquisition.</p>
+
+    <h3>5. PCI program with open findings</h3>
+
+    <p>The platform has gaps in its compliance program. These rarely kill deals but they need to be addressed and the cost of remediation should be quantified.</p>
+
+    <h3>6. Revenue concentrated in a small number of sub-merchants</h3>
+
+    <p>If the top 10 sub-merchants represent more than half the payments revenue, the platform is exposed to single-merchant loss in a way that affects the valuation. Diligence should include a separate look at whether those top merchants are at risk of leaving.</p>
+
+    <div class="pull-quote">The diligence question is not whether the payments revenue is healthy today. It is whether the platform is capturing what it could be capturing, and whether the gap is closable post-acquisition.</div>
+
+    <h2>The hidden value most platforms underreport</h2>
+
+    <p>Vertical SaaS platforms with embedded payments often have value the diligence package undersells. A few patterns we see repeatedly.</p>
+
+    <p><strong>Back-book activation runway.</strong> A platform with 8,000 software-only merchants and 1,200 payments-active merchants has 6,800 potential payments customers. If the unit economics of activated merchants are healthy, the activation runway is a value creation plan that does not require new logo acquisition. The acquirer can model this explicitly, but the seller often does not.</p>
+
+    <p><strong>Model migration optionality.</strong> A platform on ISV Referral that has not yet considered the move to managed PayFac has 30 to 50 basis points of upside on its current volume that the seller is not pricing into the deal. The migration is a 6 to 12 month program with meaningful execution risk, but it is real value.</p>
+
+    <p><strong>Pricing power on enhanced residuals.</strong> Many ISV platforms have never aggressively negotiated their residual share. A processor that gives 7 basis points by default will often give 12 if pushed; that 70 percent improvement falls straight to the bottom line.</p>
+
+    <p><strong>Operational efficiency at scale.</strong> Payments operations costs typically grow sub-linearly with volume. A platform that has built sub-merchant onboarding tooling, dispute management workflow and reconciliation infrastructure can run two to three times the current volume with marginal incremental cost. This operational leverage is often invisible in the diligence summary.</p>
+
+    <h2>The diligence checklist</h2>
+
+    <p>The compact version of what we look at, organized by category.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>What to ask for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monetization model</td>
+          <td>Current model, contract structure, residual rates, term and termination provisions, change-of-control provisions</td>
+        </tr>
+        <tr>
+          <td>Volume</td>
+          <td>Monthly processed volume for 24+ months, broken out by sub-merchant where possible</td>
+        </tr>
+        <tr>
+          <td>Net take rate</td>
+          <td>Total payments revenue divided by processed volume, monthly trend, broken out by sub-merchant cohort</td>
+        </tr>
+        <tr>
+          <td>Activation rate</td>
+          <td>Active payments merchants divided by total platform merchants. Cohort analysis if possible.</td>
+        </tr>
+        <tr>
+          <td>Sub-merchant concentration</td>
+          <td>Top 10 and top 25 sub-merchants as a percentage of total payments volume and revenue</td>
+        </tr>
+        <tr>
+          <td>Chargeback profile</td>
+          <td>Chargeback rate (trend), average resolution time, chargeback rate by sub-merchant cohort</td>
+        </tr>
+        <tr>
+          <td>Pricing</td>
+          <td>The pricing model offered to sub-merchants, any cohort or vertical price variations, recent pricing changes</td>
+        </tr>
+        <tr>
+          <td>Compliance</td>
+          <td>Current PCI attestation, open findings, KYC and AML program documentation</td>
+        </tr>
+        <tr>
+          <td>Operational tooling</td>
+          <td>Onboarding flow, dispute management workflow, reconciliation infrastructure, ongoing operational costs by category</td>
+        </tr>
+        <tr>
+          <td>Headroom</td>
+          <td>What model migration is available, what activation rate improvement is realistic, what pricing optimization is possible</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The value creation plan</h2>
+
+    <p>Once the diligence is complete, the right question is what the post-acquisition value creation plan on payments actually looks like. The three biggest levers, in rough order of impact and difficulty:</p>
+
+    <ol>
+      <li><strong>Activation rate improvement.</strong> Highest leverage. Typically 12 to 18 months of work, requires sales and onboarding redesign. Can double payments revenue at the same volume.</li>
+      <li><strong>Monetization model migration.</strong> Moderate leverage with execution risk. 6 to 12 months of work, requires engineering and operational investment. Can lift net take rate by 30 to 70 basis points depending on starting model.</li>
+      <li><strong>Processor or PayFac contract renegotiation.</strong> Lowest leverage but fastest payback. 60 to 120 days of work, mostly contract and relationship effort. Can lift net take rate by 5 to 15 basis points.</li>
+    </ol>
+
+    <p>Most of our diligence engagements with PE acquirers end with a sized version of these three levers, with the operational requirements and the realistic time horizon. That is what lets the acquirer build a credible value creation plan and underwrite the deal with confidence.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">If you're in diligence right now</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Independent payments diligence for active deals.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A focused working session on the payments side of a vertical SaaS deal. Model confirmation, headroom assessment, processor contract review and a written value creation plan.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Request a Quick Start Call →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier on the target →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Merchant Activation Playbook for Vertical SaaS</title>
+      <link>https://marginlabs.io/the-lab/merchant-activation-playbook</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/merchant-activation-playbook</guid>
+      <pubDate>Thu, 11 Jun 2026 14:00:00 +0000</pubDate>
+      <description>Merchant activation rate is the highest-leverage number in embedded payments. The structural reasons merchants stall, and a sequenced playbook to move activation from 20% to 60%, without acquiring a single new logo.</description>
+      <content:encoded><![CDATA[<p>Most embedded payments programs do not have a revenue problem. They have an activation problem wearing a revenue mask. The platform launched payments, signed up a processor, built the boarding flow and then watched the revenue line grow slower than the deck promised. The instinct is to chase more volume or renegotiate the rate. The real answer is almost always sitting in the existing customer base, unactivated.</p>
+
+    <p>Merchant activation rate, the percentage of your eligible merchants who actually process payments through you, is the highest-leverage number you control. This is the playbook for moving it, organized the way we work it with operators: define the gap, diagnose why it exists, then pull the levers in the order that actually compounds.</p>
+
+    <h2>The math that makes activation the priority</h2>
+
+    <p>Start with the arithmetic, because it reframes everything. Take a platform with 8,000 software merchants and a 15 percent activation rate. That is 1,200 merchants processing and 6,800 who are not. Every one of those 6,800 is a customer you already won, already onboarded to the software, already paying you, already inside a trusted relationship. They are the cheapest payments revenue you will ever earn, because the acquisition cost is already sunk.</p>
+
+    <p>Now run the lever. Moving activation from 15 to 30 percent does not add 15 percent more revenue. It doubles the processing base, from 1,200 to 2,400 merchants, and roughly doubles payments revenue at the same total volume of merchants on the platform. No new logos. No new market. The same lever applied to new-customer acquisition would take a year of sales spend and a bigger funnel. Activation is demand you have already paid to win.</p>
+
+    <div class="pull-quote">Activation is the only growth lever in payments where the customer is already yours. Everything else costs more and takes longer.</div>
+
+    <p>This is also why activation rate is the number acquirers fixate on. A platform with a low activation rate and healthy unit economics on its activated merchants is, to a buyer, a value creation plan that does not require new logo acquisition. The same gap that frustrates an operator is upside to an investor. If an exit is anywhere on the horizon, see <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments due diligence</a> for how that gap gets read in a data room.</p>
+
+    <h2>Define the gap before you chase it</h2>
+
+    <p>Activation rate as a single number hides the diagnosis. Two breakdowns turn it into something you can act on.</p>
+
+    <p><strong>By cohort.</strong> Group merchants by when they joined the platform and measure activation for each. If your oldest cohorts are at 10 percent and your newest are at 35 percent, the back book is the opportunity and your current motion is already improving. If every cohort sits at 15 percent regardless of vintage, the problem is structural and lives in your onboarding or product, not your history. The cohort view tells you whether to fix the past or fix the system.</p>
+
+    <p><strong>By segment.</strong> Break activation out by merchant size, sub-vertical and acquisition channel. Activation that is strong for larger merchants and weak for smaller ones is a pricing or effort-to-value problem. Activation that varies by sub-vertical points to a fit or positioning problem. The segment view tells you where the leverage is concentrated, so you do not spread a fix evenly across a base where only one slice is broken.</p>
+
+    <p>Tracking this is the first move, and it sits alongside the rest of your program health metrics. See <a href="https://marginlabs.io/the-lab/payments-kpis-after-launch?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment processing KPIs</a> for the full set and how activation reads against them.</p>
+
+    <h2>Why merchants stall</h2>
+
+    <p>Before the playbook, the diagnosis. Merchants do not fail to activate at random. There are five structural reasons, and most platforms are losing to two or three of them at once. We covered each in depth in <a href="https://marginlabs.io/the-lab/why-merchants-dont-use-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">why merchants don't use embedded payments</a>; in short:</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Blocker</th>
+          <th>What it looks like</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Incumbent processor</td>
+          <td>The merchant already has a processor they trust and no compelling reason to switch.</td>
+        </tr>
+        <tr>
+          <td>Onboarding friction</td>
+          <td>The boarding ask is too heavy and the merchant abandons before processing.</td>
+        </tr>
+        <tr>
+          <td>Unclear value</td>
+          <td>The merchant does not understand what they are signing up for or why it beats what they have.</td>
+        </tr>
+        <tr>
+          <td>Sales not selling it</td>
+          <td>The sales and CS teams treat payments as optional, so it never gets positioned.</td>
+        </tr>
+        <tr>
+          <td>Product doesn't make the case</td>
+          <td>The software never surfaces payments at the moment the merchant would say yes.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The reason the diagnosis matters is that the fixes do not transfer. A pricing change does nothing for a merchant who never finished boarding. A boarding fix does nothing for a merchant the sales team never mentioned payments to. You have to know which blocker is costing you the most before you spend a quarter fixing the wrong one.</p>
+
+    <h2>The playbook, in sequence</h2>
+
+    <p>Five moves, in the order that compounds. The sequence matters: each move makes the next one more effective, and doing them out of order wastes effort on a funnel that leaks upstream.</p>
+
+    <h3>1. Instrument it</h3>
+
+    <p>You cannot move what you cannot see by cohort. Before any intervention, stand up the activation rate by cohort and segment, the boarding completion funnel by step and a weekly view of newly activated merchants. This is a week of analytics work and it is the foundation for everything after, because it tells you where the leak is and lets you prove that a fix worked.</p>
+
+    <h3>2. Fix the boarding funnel</h3>
+
+    <p>This is almost always the largest single leak, and the cheapest to fix, because the merchant has already raised their hand. Pull your boarding completion rate by step and find where merchants abandon. The usual culprits are document upload and bank verification. Apply progressive disclosure, ask only for what you need to start and defer the rest. The full teardown is in <a href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant onboarding for embedded payments</a>. Fixing boarding first means every downstream move pushes merchants into a funnel that actually converts.</p>
+
+    <h3>3. Default payments into the product</h3>
+
+    <p>The highest-converting activation motion is the one the merchant does not have to choose. Where it fits the product, make payments the default path rather than an opt-in buried in settings: the invoice that is created with online payment already on, the new merchant who is offered payments setup inside their first-run experience, the feature that simply works better with payments enabled. Default-on, with a clear opt-out, beats opt-in every time because it removes the decision rather than winning it.</p>
+
+    <h3>4. Arm the sales and CS motion</h3>
+
+    <p>If a human talks to the merchant, that human needs to position payments, and most do not, because they were never given the language or the incentive. Give the sales and customer success teams a one-line value case, a sense of when to raise it and a comp or scorecard signal that makes activation their job too. Staffed activation outperforms self-serve by a wide margin when the rep actually raises it. This move depends on move two: arming a sales team to drive merchants into a broken boarding flow just relocates the leak.</p>
+
+    <h3>5. Make the product carry the case</h3>
+
+    <p>The last and longest move is making the software itself surface payments at the moment of need, when the merchant is creating an invoice, chasing a late payment or reconciling their month. This is product discovery work, not a banner. It means finding the moments where payments genuinely makes the merchant's job easier and meeting them there. It compounds slowly and it is what separates a platform stuck at 30 percent from one that reaches 60.</p>
+
+    <h2>Where to start</h2>
+
+    <p>Resist the urge to run all five at once. The diagnosis from step one tells you the order. If boarding completion is under 40 percent, that is your first quarter, full stop, because nothing downstream matters until the funnel holds. If boarding is healthy but the sales team never mentions payments, start with the motion. If activation is uniform and low across every cohort and channel, the product is not making the case and you are looking at the longest of the five.</p>
+
+    <p>What good looks like: a healthy vertical SaaS platform runs 30 to 40 percent activation in the first year of a serious program and 50 to 65 percent at maturity, with top-quartile platforms above 70. If you are under 30 and have been live for more than a year, the gap is not a market problem. It is a fixable one, and it is the best revenue you are not yet earning.</p>
+
+    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> will size what closing that gap is worth on your specific volume. For a working session on which of the five blockers is costing you the most and the sequence to fix it, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Find out what your activation gap is worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier sizes the revenue sitting in your unactivated base. A conversation turns it into a sequence you can run.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or talk to me about your specific situation →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>PayFac vs ISV for Vertical SaaS: The Real Comparison for Embedded Payments</title>
       <link>https://marginlabs.io/the-lab/payfac-vs-isv</link>
@@ -1069,121 +1504,6 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/when-to-switch-embedded-payments-providers?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>Payments KPIs: What to Measure After Launch</title>
-      <link>https://marginlabs.io/the-lab/payments-kpis-after-launch</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/payments-kpis-after-launch</guid>
-      <pubDate>Thu, 21 May 2026 14:00:00 +0000</pubDate>
-      <description>The 7 metrics that tell you whether your embedded payments program is healthy, growing, and worth the operational investment, with benchmarks for each.</description>
-      <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/payments-kpis-after-launch.png" alt="Revenue Isn't the Whole Story, six payments program health KPIs with healthy and warning benchmarks" class="article-hero">
-
-    <p>Most platforms launch embedded payments with a clear metric in mind: revenue. But revenue alone doesn't tell you whether the program is healthy, growing efficiently, or worth continued investment. It's a trailing indicator of decisions made months ago.</p>
-
-    <p>The platforms that build durable payments businesses track seven metrics that, together, give a complete picture of program health. Here's the framework, with benchmarks for each.</p>
-
-    <h2>1. Merchant Activation Rate</h2>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Activation Rate</div>
-      <div class="kpi-formula">Merchants processing ÷ Total eligible merchants</div>
-      <div class="kpi-bench">Benchmark: 30-40% year 1, 50-65% at maturity. Top quartile: 70%+</div>
-    </div>
-
-    <p>The single most important leading indicator. A platform with 500 merchants and 30% activation is in a fundamentally different position than one with 70% activation on the same base. This metric tells you whether your onboarding, positioning, and go-to-market are working, before revenue reflects it.</p>
-
-    <p>Track it monthly. Break it by cohort (when did the merchant join your platform) and by segment (merchant size, vertical sub-segment, acquisition channel). The cohort view tells you whether activation is improving over time. The segment view tells you where to focus.</p>
-
-    <h2>2. Net Take Rate</h2>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Net Take Rate</div>
-      <div class="kpi-formula">Net payments revenue ÷ Gross payment volume (expressed in basis points)</div>
-      <div class="kpi-bench">ISV Referral: 5-15 bps | PFaaS: 25-70 bps | Full PayFac: 50-100 bps</div>
-    </div>
-
-    <p>Your net take rate tells you how efficiently you're monetizing volume. If it's declining, you have either a pricing problem (giving away too much margin to win merchants), a mix problem (high-volume low-margin merchants growing faster than others), or a cost problem (processor spread eating into your net).</p>
-
-    <p>Track monthly. If it moves more than 3-5 bps in a quarter without a deliberate pricing change, investigate. The benchmark ranges above reflect typical economics by model, see <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> for the trade-offs that determine which range your platform sits in.</p>
-
-    <h2>3. Payments Revenue per Merchant</h2>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Revenue per Merchant</div>
-      <div class="kpi-formula">Net payments revenue ÷ Active processing merchants</div>
-      <div class="kpi-bench">Healthy range: $50-$300/month depending on vertical and model</div>
-    </div>
-
-    <p>This tells you whether your average merchant generates enough payment revenue to justify the cost of supporting them. If your per-merchant revenue is $40/month and your per-merchant support cost is $35/month, you have a unit economics problem that more volume won't solve.</p>
-
-    <p>The fix is usually pricing (charging higher rates to small merchants) or segmentation (focusing activation efforts on merchants above a minimum volume threshold).</p>
-
-    <h2>4. Gross Payment Volume Growth</h2>
-
-    <div class="kpi-block">
-      <div class="kpi-name">GMV Growth</div>
-      <div class="kpi-formula">Month-over-month or quarter-over-quarter change in gross payment volume</div>
-      <div class="kpi-bench">Healthy: 3-8% MoM growth in first 2 years. Adjust for seasonality in your vertical.</div>
-    </div>
-
-    <p>GMV growth comes from three sources: new merchant activation (more merchants processing), organic merchant growth (existing merchants growing their business), and seasonal effects. Decompose growth into these components monthly. If new activation is slowing but organic growth is strong, your program is healthy but your go-to-market needs attention. If organic growth is flat, your merchants may be stagnating, which is a software problem, not a payments problem.</p>
-
-    <h2>5. Chargeback Ratio</h2>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Chargeback Ratio</div>
-      <div class="kpi-formula">Chargebacks filed ÷ Total transactions (monthly)</div>
-      <div class="kpi-bench">Healthy: &lt;0.5%. Warning: 0.5-0.9%. Critical: &gt;0.9% (Visa monitoring threshold)</div>
-    </div>
-
-    <p>Track at the portfolio level and flag individual merchants who exceed 0.5%. A single high-chargeback merchant can push your aggregate ratio into monitoring territory if their volume is significant. Monitor weekly, not monthly, by the time you see a monthly report, a problem merchant may have been accumulating chargebacks for three weeks.</p>
-
-    <h2>6. Boarding Completion Rate</h2>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Boarding Completion</div>
-      <div class="kpi-formula">Merchants who completed boarding ÷ Merchants who started boarding</div>
-      <div class="kpi-bench">Self-serve: 35-55%. Staffed: 70-85%. Below 30% = UX problem worth fixing.</div>
-    </div>
-
-    <p>This is the conversion rate of your onboarding funnel. Every merchant who starts boarding but doesn't finish is revenue you've already spent marketing and sales effort to acquire, lost at the last mile. Track by step to identify where merchants abandon, then fix the friction points.</p>
-
-    <h2>7. Cost to Serve</h2>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Cost to Serve</div>
-      <div class="kpi-formula">Total payments operating costs ÷ Active processing merchants</div>
-      <div class="kpi-bench">Should decline as program scales. Target: &lt;30% of revenue per merchant.</div>
-    </div>
-
-    <p>Operating costs include support time (proportional), compliance (amortized), chargeback losses, processor fees beyond interchange, and integration maintenance. If cost to serve is growing faster than revenue per merchant, you're scaling in the wrong direction. The most common cause is support, merchants generating more tickets than anticipated, often because the product experience isn't clear enough to self-serve. For the full picture of <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a> to operate by model, the cost stack varies more than most teams expect.</p>
-
-    <h2>How to Use These Together</h2>
-
-    <p>No single metric tells the full story. The power is in combinations:</p>
-
-    <ul>
-      <li><strong>High activation + low take rate</strong> = you're winning merchants but not monetizing well. Pricing or model issue.</li>
-      <li><strong>High take rate + low activation</strong> = strong economics on a small base. Go-to-market or onboarding problem.</li>
-      <li><strong>Growing GMV + declining revenue per merchant</strong> = you're adding small merchants that dilute per-merchant economics. Segmentation issue.</li>
-      <li><strong>High boarding completion + low activation</strong> = merchants board but never process. Product integration or value proposition problem.</li>
-    </ul>
-
-    <blockquote class="pull-quote">The platforms that treat payments as a managed business line, with KPIs, targets, and monthly reviews, outperform the ones that check revenue quarterly and assume it's working.</blockquote>
-
-    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> gives you the revenue baseline. These KPIs tell you whether you're tracking toward it. When an exit or fundraise is on the horizon, the same numbers show up in <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments due diligence</a>. For operational metrics review and optimization strategy, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk through what this means for your platform.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number, a conversation gives you a plan.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or talk to me about your specific situation →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payments-kpis-after-launch?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
       <title>PCI Compliance for SaaS Platforms: What You Need</title>
       <link>https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms</guid>
@@ -1281,77 +1601,6 @@
   </div>
 </section>
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Payments Due Diligence: What Acquirers Look At</title>
-      <link>https://marginlabs.io/the-lab/payments-due-diligence</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/payments-due-diligence</guid>
-      <pubDate>Thu, 14 May 2026 14:00:00 +0000</pubDate>
-      <description>When a PE firm or strategic buyer evaluates a SaaS platform, payments gets its own diligence workstream. Here's what they're looking for and how to be ready.</description>
-      <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/payments-due-diligence.png" alt="Payments Due Diligence: What Acquirers Look At" class="article-hero">
-    <p>When a private equity firm or strategic buyer evaluates a vertical SaaS platform, payments doesn't get lumped into the general product review. It gets its own workstream. The buyer wants to understand what you're earning today, what you could earn under a better model, how defensible the revenue is, and whether there are any operational landmines buried in the program.</p>
-
-    <p>Platforms that have run a clean, well-documented payments program sail through this diligence. Platforms that haven't thought about it since the original processor agreement get surprises, usually negative ones that affect valuation or deal structure.</p>
-
-    <p>Here's what sophisticated acquirers look at, and how to be ready.</p>
-
-    <h2>The Economics Questions</h2>
-
-    <p>The first diligence workstream is financial. Buyers want to understand the payments P&L with enough granularity to model it forward.</p>
-
-    <p><strong>Gross payment volume by cohort.</strong> Not just total GMV, volume broken out by merchant cohort, product line, and year. Buyers want to see whether payment volume grows in line with software ARR, lags it (suggesting an activation problem), or outpaces it (suggesting high-value merchant concentration).</p>
-
-    <p><strong>Net take rate and its components.</strong> Total payments revenue divided by gross volume, but also the breakdown: interchange component, processing fee component, ancillary revenue. A platform that can explain each layer of its payments P&L signals operational maturity. One that can only report a single "payments revenue" line raises questions.</p>
-
-    <p><strong>Revenue quality.</strong> Is the payments revenue contractually committed, or does it depend on merchant activation that could reverse? Are any merchants on individually negotiated rates that don't reflect the program's standard economics? Are there revenue-share agreements with the processor that could be renegotiated at renewal?</p>
-
-    <p><strong>The opportunity gap.</strong> Good buyers model what the payments program could earn under a better model. If you're in ISV Referral at 15 bps and your volume justifies PayFac-as-a-Service at 50 bps, the buyer sees that gap as upside they're buying. A platform that has already made this transition, or can articulate a credible plan to, is worth more than one where the gap is purely theoretical. The right next step depends on the platform's volume and merchant economics, for most growing platforms, the practical decision is <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>, not the leap straight to full PayFac.</p>
-
-    <h2>The Contract Questions</h2>
-
-    <p>Every payments contract in your business gets reviewed. Buyers look for three things: transferability, termination risk, and economics sustainability.</p>
-
-    <p><strong>Change of control provisions.</strong> Most processor agreements have change of control clauses that require processor consent to assign the agreement in an acquisition. Some allow the processor to reprice or terminate. Know what your agreements say before diligence begins. If renegotiation is required, it's better to handle it proactively than under deal pressure.</p>
-
-    <p><strong>Exclusivity and termination terms.</strong> Exclusivity clauses and long notice periods limit the buyer's flexibility to optimize the payments program post-close. ETFs are a line item in the deal model. These terms affect deal structure and sometimes valuation.</p>
-
-    <p><strong>Rate sustainability.</strong> Buyers ask whether the current processor spread is likely to hold at renewal. A favorable rate that was negotiated on small-volume terms and is coming up for renewal in 12 months is a risk. A rate with volume ratchets tied to actual GMV thresholds is a strength.</p>
-
-    <h2>The Operational Questions</h2>
-
-    <p>Financial buyers increasingly care about operational risk in payments programs. They've seen enough post-acquisition surprises to ask the right questions upfront.</p>
-
-    <p><strong>Chargeback history.</strong> Three years of monthly chargeback ratios by merchant cohort. Buyers look for trends, stable is fine, improving is good, deteriorating requires explanation. A portfolio of merchants with elevated chargeback rates is a liability that affects reserve requirements and potentially processor relationships.</p>
-
-    <p><strong>Compliance posture.</strong> PCI compliance status, evidence of annual assessments, any network fines or monitoring program history. A clean compliance record is table stakes. A gap is a diligence finding that requires remediation commitments.</p>
-
-    <p><strong>Key person risk.</strong> Who runs payments operations? Is that knowledge documented or concentrated in one person? Buyers want to understand whether the payments program can run post-acquisition without the founder or a specific team member.</p>
-
-    <p><strong>Merchant concentration.</strong> If 20% of your payment volume runs through 3 merchants, that's a concentration risk buyers will flag. The payments revenue is less reliable than it looks.</p>
-
-    <h2>How to Prepare</h2>
-
-    <p>The platforms that perform best in payments diligence have one thing in common: they treat payments as a managed business line, not a feature that runs in the background.</p>
-
-    <p>Practically, this means maintaining a payments P&L that breaks out each revenue and cost component, tracking chargeback ratios monthly, keeping processor agreements organized and reviewed, and being able to explain the net take rate and how it's calculated. Knowing <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a> to operate, beyond the headline interchange and processor fees, is a frequent diligence gap.</p>
-
-    <blockquote class="pull-quote">A platform that walks into diligence knowing its net take rate, its contract terms, and its three-year volume trend commands a different conversation than one that has to reconstruct the numbers from settlement reports.</blockquote>
-
-    <p>The gap between "we have payments" and "we have a payments business" is what acquirers are measuring. Platforms that close that gap before a process begins capture it in valuation. Those that don't give it away in deal structure.</p>
-
-    <p>Related: <a href="https://marginlabs.io/the-lab/how-to-read-a-payments-pl?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How to Read a Payments P&L</a> is the foundation for understanding the numbers an acquirer will ask for. The <a href="https://marginlabs.io/the-lab/calculate-payments-revenue?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments revenue model framework</a> is how you build the forward projection they'll want to see. For advisory support on M&A readiness, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk through what this means for your platform.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number, a conversation gives you a plan.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Start the conversation →</a>
-      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Payments Revenue and SaaS Valuation Multiples</title>
