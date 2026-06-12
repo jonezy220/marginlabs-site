@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 11 Jun 2026 04:45:41 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2026 23:08:57 +0000</lastBuildDate>
     <pubDate>Thu, 11 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -290,36 +290,7 @@
 
     <p>Before the playbook, the diagnosis. Merchants do not fail to activate at random. There are five structural reasons, and most platforms are losing to two or three of them at once. We covered each in depth in <a href="https://marginlabs.io/the-lab/why-merchants-dont-use-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">why merchants don't use embedded payments</a>; in short:</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Blocker</th>
-          <th>What it looks like</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Incumbent processor</td>
-          <td>The merchant already has a processor they trust and no compelling reason to switch.</td>
-        </tr>
-        <tr>
-          <td>Onboarding friction</td>
-          <td>The boarding ask is too heavy and the merchant abandons before processing.</td>
-        </tr>
-        <tr>
-          <td>Unclear value</td>
-          <td>The merchant does not understand what they are signing up for or why it beats what they have.</td>
-        </tr>
-        <tr>
-          <td>Sales not selling it</td>
-          <td>The sales and CS teams treat payments as optional, so it never gets positioned.</td>
-        </tr>
-        <tr>
-          <td>Product doesn't make the case</td>
-          <td>The software never surfaces payments at the moment the merchant would say yes.</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/merchant-activation-playbook-1.png" alt="merchant-activation-playbook comparison table 1" />
 
     <p>The reason the diagnosis matters is that the fixes do not transfer. A pricing change does nothing for a merchant who never finished boarding. A boarding fix does nothing for a merchant the sales team never mentioned payments to. You have to know which blocker is costing you the most before you spend a quarter fixing the wrong one.</p>
 
@@ -495,42 +466,7 @@
 
     <p>Three terms get used loosely in software platform conversations about payments, and the distinction matters because each layer captures different economics and carries different obligations.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Role</th>
-          <th>What it does</th>
-          <th>Typical examples</th>
-          <th>Who pays the platform</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Payment Gateway</strong></td>
-          <td>Routes card data from the merchant's point of sale to the processor. Often handles tokenization, basic fraud screening, recurring billing logic.</td>
-          <td>Authorize.net, NMI, Spreedly, CyberSource</td>
-          <td>Pass-through pricing or per-transaction fee, no residual to platform</td>
-        </tr>
-        <tr>
-          <td><strong>Payment Processor</strong></td>
-          <td>Authorizes and settles transactions, handles chargebacks, provides core payment rails.</td>
-          <td>Worldpay, Fiserv, TSYS, Global Payments, Adyen</td>
-          <td>Residual (5-25 bps) if platform is an ISV referrer</td>
-        </tr>
-        <tr>
-          <td><strong>Payment Facilitator (PayFac)</strong></td>
-          <td>Aggregates sub-merchants under a master MID. Owns merchant relationship, sets pricing, takes on risk and compliance.</td>
-          <td>Stripe (as PayFac), Square, Shopify Payments. For platforms: Stripe Connect, Finix, Tilled (as PFaaS providers)</td>
-          <td>Net spread of 30-100+ bps depending on PFaaS or Full PayFac</td>
-        </tr>
-        <tr>
-          <td><strong>Integrated Platform</strong></td>
-          <td>Combines gateway, processing, and facilitation under one API and one commercial relationship.</td>
-          <td>Stripe, Adyen, Braintree, Square</td>
-          <td>Varies by product (Connect, Adyen for Platforms, etc.)</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/payment-processor-for-saas-1.png" alt="payment-processor-for-saas comparison table 1" />
 
     <p>For software platforms, the meaningful question is which model the platform is operating in. Once that decision is made (and the volume math justifies it), the processor selection becomes a question of who has the best terms within that model. For the upstream model decision, see <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Should You Become a Payment Facilitator?</a> and <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac-as-a-Service</a>.</p>
 
@@ -1314,16 +1250,7 @@
 
     <p>PCI compliance is validated through Self-Assessment Questionnaires (SAQs) or, at higher levels, a Report on Compliance (RoC) conducted by a Qualified Security Assessor (QSA). Which SAQ applies to your platform depends on how you interact with card data.</p>
 
-    <table class="saq-table">
-      <thead>
-        <tr><th>SAQ Type</th><th>When It Applies</th><th>Effort / Cost</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>SAQ-A</td><td>All payment processing is fully outsourced. You use hosted fields, iframes, or redirects. No card data touches your systems.</td><td>22 questions. Complete in a day. ~$0 incremental cost.</td></tr>
-        <tr><td>SAQ-A-EP</td><td>Your website controls the payment page but card data goes directly to the processor (JavaScript-based tokenization). Your server doesn't receive card data, but your frontend code could be compromised to intercept it.</td><td>139 questions. Requires web application firewall, vulnerability scanning, penetration testing. $5K-$25K/year.</td></tr>
-        <tr><td>SAQ-D</td><td>Your systems store, process, or transmit cardholder data. Full scope.</td><td>329 questions. Requires network segmentation, encryption, access controls, logging, incident response, and potentially a QSA-conducted RoC. $50K-$250K/year depending on environment complexity.</td></tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/pci-compliance-for-saas-platforms-1.png" alt="pci-compliance-for-saas-platforms comparison table 1" />
 
     <h2>PCI by Embedded Payments Model</h2>
 
@@ -2278,42 +2205,7 @@
 
     <p>One of the most common questions software platforms ask is how a payment facilitator differs from a payment processor or an ISO (independent sales organization). The terms get used interchangeably in vendor marketing, but they describe genuinely different arrangements with different economics and different obligations.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Role</th>
-          <th>What They Do</th>
-          <th>Who Owns the Merchant</th>
-          <th>Typical Platform Economics</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Payment Processor</strong></td>
-          <td>Moves money between merchants, card networks, and banks. Provides the technical rails.</td>
-          <td>The processor (when sold directly to the merchant)</td>
-          <td>Not applicable, the platform is not in the flow</td>
-        </tr>
-        <tr>
-          <td><strong>ISO (Referral)</strong></td>
-          <td>Refers merchants to a processor. The processor underwrites and boards. The ISO collects a residual.</td>
-          <td>The processor</td>
-          <td>5-15 bps residual on volume</td>
-        </tr>
-        <tr>
-          <td><strong>PayFac-as-a-Service</strong></td>
-          <td>Operates under a registered PayFac's umbrella. Owns the merchant experience, sets pricing, handles support.</td>
-          <td>The platform (with the PFaaS provider as the registered entity)</td>
-          <td>30-60 bps net on volume</td>
-        </tr>
-        <tr>
-          <td><strong>Full Payment Facilitator</strong></td>
-          <td>Registered directly with Visa and Mastercard. Underwrites merchants, manages compliance, owns end-to-end.</td>
-          <td>The platform</td>
-          <td>60-100+ bps net on volume</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/what-is-a-payment-facilitator-1.png" alt="what-is-a-payment-facilitator comparison table 1" />
 
     <p>The simplest way to think about it: a processor is infrastructure, an ISO is a sales channel, and a payment facilitator owns the merchant relationship. For software platforms looking to capture the payments economics, the meaningful choice is between operating as an ISO (the simplest, lowest-margin arrangement), operating under a managed PayFac (the middle ground that most platforms land on), or registering as a full PayFac (the highest margin, highest complexity).</p>
 
@@ -3031,36 +2923,7 @@
 
     <p>When you put this all together, here's what a healthy payments P&amp;L looks like across the most common program structures:</p>
 
-    <table class="article-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Gross Take Rate</th>
-          <th>Net Take Rate</th>
-          <th>Best For</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ISV Referral</td>
-          <td>0.05-0.15%</td>
-          <td>0.05-0.12%</td>
-          <td>Early stage, &lt;$10M volume</td>
-        </tr>
-        <tr>
-          <td>PayFac-Lite (Sponsored)</td>
-          <td>0.25-0.60%</td>
-          <td>0.15-0.40%</td>
-          <td>$10M-$100M volume</td>
-        </tr>
-        <tr>
-          <td>Direct PayFac</td>
-          <td>0.50-1.20%</td>
-          <td>0.30-0.80%</td>
-          <td>$100M+ volume</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/how-to-read-a-payments-pl-1.png" alt="how-to-read-a-payments-pl comparison table 1" />
 
     <p>These ranges aren't universal, industry vertical, average ticket size, and card mix all affect where you land. But if your numbers are materially below these ranges, you're likely either misclassifying costs or leaving significant margin on the table.</p>
 

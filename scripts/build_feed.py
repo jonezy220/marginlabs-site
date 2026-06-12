@@ -164,6 +164,12 @@ TABLE_IMAGE_SLUGS = {
     "merchant-of-record-vs-payfac",
     "payfac-as-a-service",
     "calculate-payments-revenue",
+    # supporting articles (1 table each), added 2026-06-12
+    "merchant-activation-playbook",
+    "what-is-a-payment-facilitator",
+    "payment-processor-for-saas",
+    "pci-compliance-for-saas-platforms",
+    "how-to-read-a-payments-pl",
 }
 
 
