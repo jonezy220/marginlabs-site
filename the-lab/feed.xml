@@ -8,9 +8,106 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 12 Jun 2026 23:08:57 +0000</lastBuildDate>
-    <pubDate>Thu, 11 Jun 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Jun 2026 23:44:15 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>PFaaS Provider Strengths and Weaknesses: What the Sales Deck Leaves Out</title>
+      <link>https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses</guid>
+      <pubDate>Tue, 16 Jun 2026 14:00:00 +0000</pubDate>
+      <description>Every PayFac-as-a-Service provider makes tradeoffs the pitch glosses over. Where PFaaS providers are genuinely strong, where they are systematically weak, and the questions that surface it before you sign.</description>
+      <content:encoded><![CDATA[<p>Every PayFac-as-a-Service pitch sounds the same. We handle compliance. Merchants onboard in minutes. You keep more of the spread. None of that is wrong. PFaaS is the right model for a lot of vertical SaaS platforms, and if you have decided <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PFaaS is your route</a>, you are pointed in a sensible direction.</p>
+
+    <p>But every PFaaS provider makes tradeoffs, and the ones that hurt do not show up in the demo. They show up twelve to eighteen months in, when a chunk of your merchants get frozen, or your margin quietly compresses, or your finance team cannot reconcile a month. This piece is the part that does not make the deck: where PFaaS providers are genuinely strong, where they are systematically weak, and what each tradeoff actually means for you. No provider named, because the point is to teach you to read any of them.</p>
+
+    <p>The pattern to hold in your head is simple. Every PFaaS strength has a paired tradeoff. The right provider is not the one with no weaknesses. It is the one whose weaknesses you can live with given your product and your merchant base.</p>
+
+    <h2>1. Onboarding speed</h2>
+
+    <div class="dim-block">
+      <div class="dim-strength"><span class="lbl">Strength.</span> Fast, self-serve merchant boarding. The best providers get a sub-merchant from sign-up to processing in minutes.</div>
+      <div class="dim-catch"><span class="lbl">The catch.</span> The providers that board fastest usually have the strictest, most automated downstream risk. Your merchant boards in minutes, then trips a rule weeks later and gets held or offboarded, and you eat the support call.</div>
+    </div>
+
+    <p>Speed at the front door is a real strength, but it is the wrong thing to weigh alone. What happens after boarding is where the cost actually lives: how often merchants get held, what triggers a review, who notifies the merchant and who fields the call when a merchant's funds are frozen. Boarding is a one-time event. Risk holds are a recurring cost, and they land on you, not the provider. The fastest boarding and the strictest downstream risk tend to travel together, and that pairing is the part the speed pitch leaves out.</p>
+
+    <h2>2. The economics</h2>
+
+    <div class="dim-block">
+      <div class="dim-strength"><span class="lbl">Strength.</span> You capture far more of the payment spread than an ISV referral model, often 50 to 80 basis points versus 5 to 15.</div>
+      <div class="dim-catch"><span class="lbl">The catch.</span> Blended pricing looks great at today's merchant mix and compresses as you add larger or lower-margin merchants. The residual that pencils out now may not at scale.</div>
+    </div>
+
+    <p>The headline take rate is the most quoted number and the least useful one. What actually sets your margin is the buy rate underneath the blended figure and how your merchant mix moves over time. A residual that pencils out on today's mix can compress meaningfully once larger or lower-margin merchants come on, and most platforms never model that second part. The number that matters is what you keep after cost-to-serve at scale, not the rate on the slide. For the full picture of what sits in that cost stack, see <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a>.</p>
+
+    <h2>3. "We handle compliance and risk"</h2>
+
+    <div class="dim-block">
+      <div class="dim-strength"><span class="lbl">Strength.</span> The provider owns PCI scope, underwriting and the sponsor-bank relationship. You do not stand up a compliance or risk team.</div>
+      <div class="dim-catch"><span class="lbl">The catch.</span> The more they own, the less you control. "We handle it" can mean you cannot price a specific merchant competitively, or override a decline, or move fast on an exception your sales team needs closed.</div>
+    </div>
+
+    <p>This is the central PFaaS tradeoff, and for most platforms it is genuinely a feature. Offloading risk and compliance is the whole point. What matters is understanding where the control line sits: who can override an underwriting decision, who can adjust pricing on a named merchant and how long an exception takes. For many providers the honest answer is that the provider decides, and that is fine, as long as you understood the constraint going in rather than meeting it the first time a deal needs an exception your sales team has already promised.</p>
+
+    <h2>4. Funds flow and settlement</h2>
+
+    <div class="dim-block">
+      <div class="dim-strength"><span class="lbl">Strength.</span> Clean, predictable settlement for the standard case: a charge settles to the merchant on a normal cycle.</div>
+      <div class="dim-catch"><span class="lbl">The catch.</span> Anything beyond charge-then-settle (split payments, delayed capture, escrow, hold-and-release, marketplace flows) varies enormously between providers and is exactly where integrations break.</div>
+    </div>
+
+    <p>If your product needs only simple payments, this dimension is easy and most providers handle it well. If your product needs to split a payment across parties, hold funds, delay capture, or move money in any non-trivial way, the variance between providers is wide and it is where integrations quietly break. A provider that is excellent at simple settlement can be painful at split-pay, and that gap almost never surfaces in a demo. It surfaces in your build, months later, when the workaround becomes the roadmap.</p>
+
+    <h2>5. Support and dispute handling</h2>
+
+    <div class="dim-block">
+      <div class="dim-strength"><span class="lbl">Strength.</span> "Dedicated support" and a partner team, as every provider will tell you.</div>
+      <div class="dim-catch"><span class="lbl">The catch.</span> Support quality is the single largest gap between the demo and the reality, and it is invisible until you need it. It is also where your cost-to-serve quietly lives.</div>
+    </div>
+
+    <p>Who actually handles the hard cases (a frozen merchant on a Friday afternoon, a chargeback that needs a representment, a merchant disputing a hold) is what separates the demo from the reality. When those route back to you instead of the provider, your team absorbs the load, and support is one of the biggest and most underestimated <a href="https://marginlabs.io/the-lab/payments-kpis-after-launch?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">cost-to-serve</a> drivers in a payments program. A current partner's lived experience tells you more about this dimension than anything in the pitch does.</p>
+
+    <h2>6. Reporting and reconciliation</h2>
+
+    <div class="dim-block">
+      <div class="dim-strength"><span class="lbl">Strength.</span> A clean dashboard and a payments API.</div>
+      <div class="dim-catch"><span class="lbl">The catch.</span> Sub-merchant-level reporting and reconciliation depth varies wildly, and a thin one is what your finance team will quietly hate for years.</div>
+    </div>
+
+    <p>A dashboard demos well. Reconciliation at the sub-merchant level, month after month, is the real test, and it is rarely the thing that gets shown. Whether you can tie every dollar of volume, fee and residual back to a specific merchant and period through the API is what your finance team lives with for as long as the program runs, and the depth of it is wildly variable between providers. A thin reporting layer is a cost you pay quietly, every single close.</p>
+
+    <h2>7. Contract and exit terms</h2>
+
+    <div class="dim-block">
+      <div class="dim-strength"><span class="lbl">Strength.</span> A standard agreement and a smooth onboarding.</div>
+      <div class="dim-catch"><span class="lbl">The catch.</span> Exclusivity, multi-year terms, change-of-control provisions and data-portability limits are what make leaving painful, and they are buried where nobody reads.</div>
+    </div>
+
+    <p>The terms that matter most are the ones nobody reads at signing: whether you can migrate to a different model or provider without penalty, who owns the sub-merchant data and underwriting history, what happens if you get acquired and whether exclusivity blocks a second processor. These rarely affect the launch and heavily shape the next three years, which is also when they show up in <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments due diligence</a> if you raise or sell. When you do get to the table, <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to negotiate a processor agreement</a> walks through the terms worth pushing on.</p>
+
+    <blockquote class="pull-quote">The right PFaaS provider is not the one with no weaknesses. It is the one whose weaknesses you can live with, given your product and your merchant base.</blockquote>
+
+    <h2>How to read all of it at once</h2>
+
+    <p>Lay the seven dimensions next to your own situation and the picture usually resolves quickly. A platform with simple payments, small merchants and a light support appetite weights onboarding speed and economics, and can live with less control. A platform with complex funds flow, larger merchants or a regulated vertical weights control, settlement flexibility and support, and should be suspicious of the fastest-boarding, most-automated option. There is no best provider in the abstract. There is a best fit for a specific platform, and the fit is determined by which tradeoffs you can absorb.</p>
+
+    <p>For the full provider-agnostic evaluation checklist, the companion piece is <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>. And if you are still deciding between models before you get to providers at all, start with <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
+
+    <p>So which provider is right for you? My honest answer is the same one I give every platform that asks: it depends. Not as a way to dodge the question, but because it genuinely does, on your volume, your merchant mix and what your product needs to do with money. The seven dimensions are the framework anyone can use. Which tradeoffs you can absorb, and which provider on your shortlist is strongest exactly where you are weakest, is the part that only resolves when someone who has done this looks at your actual situation. If you are weighing providers right now, that is the conversation worth having before you sign anything. Reach out and we will work through yours.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">The honest answer? It depends.</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's work out what it depends on for you.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Two ways to work out what it depends on for you. The Framework walks you through the decision on your own. A Quick Start Call does it with you, against your actual volume, merchant mix and product, and I make the intro when it fits.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Payment Processing KPIs: The Metrics Every Vertical SaaS Platform Should Track</title>
       <link>https://marginlabs.io/the-lab/payments-kpis-after-launch</link>
@@ -1774,7 +1871,7 @@
 
     <h2>How It Works</h2>
 
-    <p>In a PayFac-as-a-Service arrangement, a registered Payment Facilitator, providers like Stripe Connect, Finix, Tilled, or Payrix, provides the infrastructure: sponsor bank relationships, card network registrations, compliance frameworks, settlement systems. You operate as a sub-facilitator or managed partner under their umbrella. Adyen for Platforms offers a similar outcome through a different architecture, combining processing and facilitation under one roof.</p>
+    <p>In a PayFac-as-a-Service arrangement, a registered Payment Facilitator, providers like Stripe Connect, Finix, Tilled, or Payrix, provides the infrastructure: sponsor bank relationships, card network registrations, compliance frameworks, settlement systems. You operate as a sub-facilitator or managed partner under their umbrella. Adyen for Platforms offers a similar outcome through a different architecture, combining processing and facilitation under one roof. These providers differ more than the pitch suggests, so <a href="https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">where PFaaS providers are strong and weak</a> is worth understanding before you commit to one.</p>
 
     <p>You handle merchant-facing operations: onboarding, pricing, first-line support, and in some cases, underwriting decisions within pre-approved parameters. The PFaaS provider handles the regulatory layer: network reporting, reserve calculations, compliance monitoring, and the relationship with the acquiring bank.</p>
 
@@ -2008,7 +2105,7 @@
       <description>Most provider evaluations start with pricing and end with regret. The 8 questions that actually determine whether a payments partnership works.</description>
       <content:encoded><![CDATA[<p>Most embedded payments provider evaluations start with pricing and end with regret. The pricing looked competitive, the demo was polished, and six months into the integration you discover that the migration path doesn't exist, the API documentation is incomplete, and your merchants are calling you about deposit delays that you can't resolve because the processor's support team takes 48 hours to respond.</p>
 
-    <p>The problem isn't that platforms choose bad providers. The problem is that most evaluations focus on the wrong things. Rate sheets and feature lists are table stakes. The questions that actually determine whether a payments partnership works are harder to ask and harder to compare, but they're the ones that matter 18 months in.</p>
+    <p>The problem isn't that platforms choose bad providers. The problem is that most evaluations focus on the wrong things. Rate sheets and feature lists are table stakes. The questions that actually determine whether a payments partnership works are harder to ask and harder to compare, but they're the ones that matter 18 months in. If you have narrowed to the PayFac-as-a-Service route specifically, <a href="https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">the strengths and weaknesses of PFaaS providers</a> covers the model-specific tradeoffs.</p>
 
     <p>Here are the eight questions we use when evaluating embedded payments providers for our advisory clients.</p>
 
