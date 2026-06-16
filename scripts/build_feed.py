@@ -33,7 +33,6 @@ ARTICLES = [
     ("how-to-read-a-payments-pl",                  "2026-03-13"),
     ("what-embedded-payments-costs",               "2026-03-18"),
     ("why-merchants-dont-use-payments",            "2026-03-22"),
-    ("isv-referral-vs-payfac-lite",                "2026-03-27"),
     # April 2026
     ("payfac-vs-iso",                              "2026-04-03"),
     ("how-saas-companies-make-money-from-payments","2026-04-08"),

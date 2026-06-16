@@ -13,6 +13,11 @@
       "source": "/execution-playbook",
       "destination": "/advisory",
       "permanent": false
+    },
+    {
+      "source": "/the-lab/isv-referral-vs-payfac-lite",
+      "destination": "/the-lab/payfac-vs-isv",
+      "permanent": true
     }
   ],
   "functions": {

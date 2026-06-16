@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 16 Jun 2026 14:20:45 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 15:25:57 +0000</lastBuildDate>
     <pubDate>Tue, 16 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -92,7 +92,7 @@
 
     <p>Lay the seven dimensions next to your own situation and the picture usually resolves quickly. A platform with simple payments, small merchants and a light support appetite weights onboarding speed and economics, and can live with less control. A platform with complex funds flow, larger merchants or a regulated vertical weights control, settlement flexibility and support, and should be suspicious of the fastest-boarding, most-automated option. There is no best provider in the abstract. There is a best fit for a specific platform, and the fit is determined by which tradeoffs you can absorb.</p>
 
-    <p>For the full provider-agnostic evaluation checklist, the companion piece is <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>. And if you are still deciding between models before you get to providers at all, start with <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
+    <p>For the full provider-agnostic evaluation checklist, the companion piece is <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>. And if you are still deciding between models before you get to providers at all, start with <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
 
     <p>So which provider is right for you? My honest answer is the same one I give every platform that asks: it depends. Not as a way to dodge the question, but because it genuinely does, on your volume, your merchant mix and what your product needs to do with money. The seven dimensions are the framework anyone can use. Which tradeoffs you can absorb, and which provider on your shortlist is strongest exactly where you are weakest, is the part that only resolves when someone who has done this looks at your actual situation. If you are weighing providers right now, that is the conversation worth having before you sign anything. Reach out and we will work through yours.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
@@ -144,7 +144,7 @@
 
     <p>Your net take rate tells you how efficiently you monetize volume. If it is declining, you have one of three problems: pricing (giving away too much margin to win merchants), mix (high-volume low-margin merchants growing faster than the rest) or cost (processor spread eating your net). Each has a different fix, so the first job is to figure out which one you have.</p>
 
-    <p>Track it monthly. If it moves more than 3 to 5 bps in a quarter without a deliberate pricing change, investigate. The benchmark ranges above reflect typical economics by model. See <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> for the trade-offs that determine which range your platform sits in.</p>
+    <p>Track it monthly. If it moves more than 3 to 5 bps in a quarter without a deliberate pricing change, investigate. The benchmark ranges above reflect typical economics by model. See <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> for the trade-offs that determine which range your platform sits in.</p>
 
     <h2>3. Payments Revenue per Merchant</h2>
 
@@ -521,6 +521,8 @@
 
     <h2>How to decide for your platform</h2>
 
+    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. The residuals start to feel meaningful, and they stop checking whether they have crossed the threshold where moving up the ladder pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
+
     <p>The Margin Multiplier walks through the four-model comparison at your specific volume and vertical in about 60 seconds. It is the right starting point for a platform asking the PayFac vs ISV question for the first time. The output shows what each model would generate, what the recommended move is and what the annual revenue delta of moving up the ladder looks like.</p>
 
     <p>For the deeper decision (which model fits the platform's specific stage, what the right migration path looks like, how to evaluate the managed PayFac partners), the Strategic Decision Framework covers the comparison in detail, including real-world basis-point ranges, the operational requirements at each model and the decision matrix by volume tier.</p>
@@ -565,7 +567,7 @@
 
     <img src="https://marginlabs.io/assets/lab-images/tables/payment-processor-for-saas-1.png" alt="payment-processor-for-saas comparison table 1" />
 
-    <p>For software platforms, the meaningful question is which model the platform is operating in. Once that decision is made (and the volume math justifies it), the processor selection becomes a question of who has the best terms within that model. For the upstream model decision, see <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Should You Become a Payment Facilitator?</a> and <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac-as-a-Service</a>.</p>
+    <p>For software platforms, the meaningful question is which model the platform is operating in. Once that decision is made (and the volume math justifies it), the processor selection becomes a question of who has the best terms within that model. For the upstream model decision, see <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Should You Become a Payment Facilitator?</a> and <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac-as-a-Service</a>.</p>
 
     <h2>What to Look For When a SaaS Platform Is Choosing a Processor</h2>
 
@@ -817,7 +819,7 @@
       <li><strong>Full PayFac:</strong> Not economic at this volume</li>
     </ul>
 
-    <p>The conversation at $25M is whether to move from ISV Referral to Enhanced Residuals or PFaaS. The math starts to work for the more sophisticated arrangement, but the operational lift needs to be priced in. The detailed comparison is in <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
+    <p>The conversation at $25M is whether to move from ISV Referral to Enhanced Residuals or PFaaS. The math starts to work for the more sophisticated arrangement, but the operational lift needs to be priced in. The detailed comparison is in <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
 
     <p class="tier-label">$50M Annual Processing Volume</p>
 
@@ -1357,7 +1359,7 @@
 
     <p><strong>Full PayFac:</strong> SAQ-D or full RoC. You're processing card data, managing tokens, and operating settlement infrastructure. Full PCI scope applies. Most full PayFacs cross the Level 1 Service Provider threshold (300K+ transactions/year) quickly, which mandates an annual on-site assessment (RoC) conducted by a QSA rather than a self-assessment. This is where compliance costs escalate significantly, dedicated security staff, annual penetration testing, quarterly ASV scans, network segmentation, and ongoing monitoring. Budget $100K-$250K annually for a mature compliance program.</p>
 
-    <p>The operational gap between these models extends well beyond PCI, <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> walks through the full set of trade-offs when you're choosing between them.</p>
+    <p>The operational gap between these models extends well beyond PCI, <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> walks through the full set of trade-offs when you're choosing between them.</p>
 
     <h2>The Mistakes That Expand Your Scope</h2>
 
@@ -1471,7 +1473,7 @@
 
     <p>The most interesting valuation dynamic is what we call the optionality premium: the value attributed to payments revenue that doesn't exist yet but is structurally available.</p>
 
-    <p>A platform processing $80M in merchant volume through ISV Referral at 15 bps is earning $120K in payments revenue. Under PayFac-as-a-Service at 55 bps, the same volume would generate $440K. The $320K gap is unrealized revenue, but it's not theoretical. The volume exists. The merchants are already there. The only question is execution. But not every platform should jump straight to PayFac-as-a-Service. <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> covers the volume thresholds where the intermediate model makes more sense.</p>
+    <p>A platform processing $80M in merchant volume through ISV Referral at 15 bps is earning $120K in payments revenue. Under PayFac-as-a-Service at 55 bps, the same volume would generate $440K. The $320K gap is unrealized revenue, but it's not theoretical. The volume exists. The merchants are already there. The only question is execution. But not every platform should jump straight to PayFac-as-a-Service. <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> covers the volume thresholds where the intermediate model makes more sense.</p>
 
     <blockquote class="pull-quote">A platform that has already made the structural decision, chosen a model, built the activation playbook, knows its net take rate, is a fundamentally different asset than one where payments is still a line item on the roadmap.</blockquote>
 
@@ -2000,7 +2002,7 @@
 
     <p>If you're evaluating the transition from referral to PFaaS, start with the <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> to model the revenue difference. If you want to think through the operational readiness and provider selection questions, that's what the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a> is built for.</p>
 
-    <p>Related: <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs. PayFac-as-a-Service: How to Choose</a>, a side-by-side comparison of the two most common transition points.</p>
+    <p>Related: <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs. PayFac-as-a-Service: How to Choose</a>, a side-by-side comparison of the two most common transition points.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
@@ -2306,7 +2308,7 @@
 
     <p>The simplest way to think about it: a processor is infrastructure, an ISO is a sales channel, and a payment facilitator owns the merchant relationship. For software platforms looking to capture the payments economics, the meaningful choice is between operating as an ISO (the simplest, lowest-margin arrangement), operating under a managed PayFac (the middle ground that most platforms land on), or registering as a full PayFac (the highest margin, highest complexity).</p>
 
-    <p>For a deeper comparison of the model trade-offs, see <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISO</a> and <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>. For the managed PayFac model specifically, see <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a>.</p>
+    <p>For a deeper comparison of the model trade-offs, see <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISO</a> and <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>. For the managed PayFac model specifically, see <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a>.</p>
 
     <h2>How Much Does It Cost to Become a Payment Facilitator?</h2>
 
@@ -2544,7 +2546,7 @@
 
     <p>A lot of platforms search for "PayFac vs ISV" or "ISV vs PayFac" when they really mean PayFac vs ISO. The ISO model and the ISV Referral model are closely related: in both cases, the platform refers merchants to a processor and earns a residual. ISO is the older industry term; ISV Referral is the modern term software companies tend to use. The economics and the operational burden are similar, the labels are different.</p>
 
-    <p>If you're comparing PayFac to ISV Referral, the answer is the same as the comparison above. The PayFac model gives you control of the merchant relationship and the full economics. The ISV Referral model gives you a residual and lower operational burden. Volume is the main variable that flips the math: below roughly $10M in annual processed volume, ISV Referral usually wins. Above $25M, the PayFac economics start to look compelling. The middle is where the work of <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">comparing ISV Referral to PayFac-lite</a> actually pays off.</p>
+    <p>If you're comparing PayFac to ISV Referral, the answer is the same as the comparison above. The PayFac model gives you control of the merchant relationship and the full economics. The ISV Referral model gives you a residual and lower operational burden. Volume is the main variable that flips the math: below roughly $10M in annual processed volume, ISV Referral usually wins. Above $25M, the PayFac economics start to look compelling. The middle is where the work of <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">comparing ISV Referral to PayFac-lite</a> actually pays off.</p>
 
     <h2>The Migration Question</h2>
 
@@ -2573,119 +2575,6 @@
   </div>
 </section>
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ISV Referral vs PayFac: The Economics, Side by Side</title>
-      <link>https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite</guid>
-      <pubDate>Fri, 27 Mar 2026 14:00:00 +0000</pubDate>
-      <description>At $30M of volume, ISV Referral earns about $60K and PayFac Lite about $270K. The side-by-side economics and a decision framework for vertical SaaS.</description>
-      <content:encoded><![CDATA[<p>Every software company considering embedded payments eventually hits the same fork in the road: do you refer merchants to a processor and collect residuals, or do you take on more control, and more risk, by becoming a PayFac Lite under a larger <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitator</a>?</p>
-
-    <p>Both models work. Both generate revenue. But they are built for fundamentally different companies at fundamentally different stages. Choosing the wrong one doesn't just leave money on the table, it can create operational drag that takes years to unwind.</p>
-
-    <p>This article lays out the two models side by side, explains the economics of each, and gives you a practical framework for deciding which one fits where you are right now.</p>
-
-    <h2>The Baseline: What Both Models Have in Common</h2>
-
-    <p>Before comparing them, it's worth grounding the conversation in what's shared. Both ISV Referral and PayFac Lite involve a software company embedding payment acceptance into its platform. In both cases, merchants process transactions through your product, not through a separate payment app they found on their own.</p>
-
-    <p>The difference is in who owns what. How much of the payment stack is yours, how much revenue flows to you versus the processor, and how much operational responsibility you carry. That's where the models diverge sharply.</p>
-
-    <h2>ISV Referral: The Low-Friction Entry Point</h2>
-
-    <p>In an ISV Referral arrangement, you partner with a processor, Stripe, Fiserv, Worldpay, TSYS, and others all have formal ISV programs, and refer your merchants to them for payment processing. The processor handles underwriting, compliance, settlement, and support. You embed the payment experience into your software through APIs. When your merchants process, you collect a residual.</p>
-
-    <p class="cost-label">The Economics</p>
-
-    <p>Residuals in referral programs typically range from 10 to 25 basis points on gross volume, depending on the processor, your vertical, and the volume you bring. Some programs pay a flat per-transaction fee instead of or in addition to basis points.</p>
-
-    <p>On a merchant processing $500,000 annually, a 20-basis-point residual produces $1,000 per year per merchant. With 200 merchants on payments, that's $200,000 in annual recurring revenue, essentially pure margin, since you're not carrying any payments infrastructure.</p>
-
-    <p>The ceiling, however, is real. You don't own the rate. You don't own the relationship with the processor on behalf of each merchant. And if you build volume under one processor's program, switching later is nontrivial.</p>
-
-    <p class="cost-label">What You're Giving Up</p>
-
-    <p>The flip side of low operational burden is limited economics. The processor is taking the majority of the margin, often 60 to 80 percent of net revenue on a transaction, because they're carrying all the risk and infrastructure. You're essentially a distribution channel, and distribution channels get distribution-channel economics.</p>
-
-    <p>You also don't control the merchant experience end to end. Boarding, underwriting decisions, hold policies, dispute handling, those belong to the processor. If a merchant has a problem, they may not even know you're involved. That can create friction in the customer relationship you've worked hard to build.</p>
-
-    <p>Referral is the right entry if you're under 200 merchants on payments or under $50M in aggregate GMV. Above that, the math starts to favor a bigger move.</p>
-
-    <h2>PayFac Lite: More Control, More Margin, More Responsibility</h2>
-
-    <p>PayFac-as-a-Service, sometimes called Managed PayFac or Payment Facilitator as a Service, is a model where you become a sub-merchant aggregator under a registered payment facilitator, typically a company like Stripe Connect, Adyen for Platforms, or purpose-built PFaaS providers like Finix, Tilled, or Payrix that have built managed facilitator infrastructure specifically for software platforms.</p>
-
-    <p>You take on merchant onboarding, underwriting decisions (within approved parameters), and the first line of support. In exchange, you own the economics more fully. Instead of collecting a residual on someone else's spread, you set the merchant rate, buy processing at a wholesale interchange-plus rate, and keep the difference.</p>
-
-    <p class="cost-label">The Economics</p>
-
-    <p>A typical PayFac Lite arrangement involves buying processing at something like interchange plus 10 to 15 basis points, then charging merchants 2.5 to 2.9 percent. On a $100 transaction at 2.75 percent, you collect $2.75. You pay the processor perhaps $1.85 (interchange plus your cost). You keep $0.90.</p>
-
-    <p>Scale that across $50 million in GMV and you're looking at roughly $450,000 in net payments revenue. In the ISV Referral model at 20 basis points, that same volume generates $100,000. The economics are four to five times better at scale, which is why the model exists.</p>
-
-    <p class="cost-label">What You're Taking On</p>
-
-    <p>PayFac Lite isn't free money. You're now responsible for merchant onboarding accuracy, KYC/AML compliance, reserve management, and chargeback first response. You carry reserve exposure on merchants who underperform. You need someone, internally or through a third-party service, who understands chargebacks, disputes, and the basic fraud patterns in your vertical.</p>
-
-    <p>None of this is unmanageable. There are platforms specifically built to handle the operations layer for PayFac Lite programs. But it is real work, and it requires more internal attention than a pure referral arrangement.</p>
-
-    <div style="background:#1a1a1a;border-left:2px solid #C8823C;padding:20px 24px;margin:32px 0;">
-      <p style="font-size:14px;font-weight:400;color:#F0EBE4;margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
-      <p style="font-size:13px;color:#8a8580;margin:0;">The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">start a conversation</a> about what this means for your specific situation.</p>
-    </div>
-
-    <h2>The Decision Framework</h2>
-
-    <p>Here's how to think about the choice:</p>
-
-    <p class="cost-label">Choose ISV Referral if:</p>
-
-    <ul>
-      <li>Your payments GMV is under $30-50M annually</li>
-      <li>You have fewer than 100-200 actively processing merchants</li>
-      <li>Your team has no payments operations experience and no near-term plans to hire it</li>
-      <li>You're in an early product stage and want revenue without operational complexity</li>
-      <li>Your merchants are high-risk or in a vertical with elevated chargeback rates</li>
-    </ul>
-
-    <p class="cost-label">Choose PayFac Lite if:</p>
-
-    <ul>
-      <li>Your payments GMV is above $50M and growing</li>
-      <li>You have 150+ merchants processing consistently</li>
-      <li>You can staff or contract at least one person who understands payment operations</li>
-      <li>Checkout and post-transaction experience are core to your product differentiation</li>
-      <li>You're in a vertical where you control the category and aren't worried about losing merchants to the processor</li>
-    </ul>
-
-    <h2>The Migration Question</h2>
-
-    <p>One question that comes up constantly: can you start in ISV Referral and migrate to PayFac Lite later? Yes, and many companies do exactly that. The transition isn't painless, but it's manageable. The main challenge is merchant migration: your existing merchants are typically boarding new contracts under the new model, which means some operational friction and occasional churn.</p>
-
-    <p>The smarter play, if you have any foresight about your volume trajectory, is to choose your referral partner with future migration in mind. Fiserv and Global Payments both offer ISV referral programs that can transition to their managed PayFac offerings. Stripe's upgrade path from standard Connect to custom Connect is relatively well-documented. Others make migration deliberately difficult. Ask about migration paths before you sign your first referral agreement.</p>
-
-    <h2>The One Thing Most ISVs Get Wrong</h2>
-
-    <p>The most common mistake is treating this as a permanent choice rather than a stage-appropriate choice. Companies get comfortable in referral programs, the residuals start to feel meaningful, and they stop evaluating whether they've crossed the threshold where the economics of PayFac Lite would justify the move.</p>
-
-    <p>Run the math every year. At 200 merchants processing $150,000 each, you have $30 million in GMV. In referral at 20 basis points, that's $60,000 annually. In PayFac Lite at 90 basis points net, that's $270,000. The difference is $210,000 per year, and that number grows with every merchant you add.</p>
-
-    <blockquote class="pull-quote">The model you choose today should match where you are. But you should be actively managing toward where the economics get meaningfully better.</blockquote>
-
-    <p>The Margin Labs Strategic Decision Framework covers every model in detail, economics, implementation costs, decision frameworks, and the math behind the margin. <a href="https://marginlabs.io/#products?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Get the Framework →</a></p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk through what this means for your platform.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform has a different starting point, volume, and risk tolerance. The Margin Multiplier gives you a directional number, a conversation gives you a plan.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or talk to me about your specific situation →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Why Merchants Don't Use Embedded Payments (And What to Do About It)</title>
