@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 15 Jun 2026 23:44:15 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 14:20:45 +0000</lastBuildDate>
     <pubDate>Tue, 16 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -436,11 +436,11 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>PayFac vs ISV for Vertical SaaS: The Real Comparison for Embedded Payments</title>
+      <title>PayFac vs ISV for Vertical SaaS: The Real Comparison</title>
       <link>https://marginlabs.io/the-lab/payfac-vs-isv</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-vs-isv</guid>
       <pubDate>Tue, 09 Jun 2026 14:00:00 +0000</pubDate>
-      <description>PayFac vs ISV is the question every vertical SaaS platform faces once payments revenue becomes interesting. The real economics, the operational burden, the volume threshold where the answer flips and the migration path. Vendor-neutral.</description>
+      <description>PayFac vs ISV is the question every vertical SaaS platform faces once payments matter. The economics, the operational burden and where the answer flips.</description>
       <content:encoded><![CDATA[<p>PayFac vs ISV is the question every vertical SaaS platform eventually faces. Usually right around the moment payments revenue starts looking like a real line item, the founder or VP of product asks finance what would happen if they captured more of the spread. The answer involves a model change. PayFac vs ISV is the choice between the two structural options, and most platforms get the comparison wrong on the first pass.</p>
 
     <p>The short version: ISV is the entry point, PayFac is the destination, and the migration between them is rarely as smooth as the slide deck makes it sound. The right model for a specific platform depends on volume, vertical, operational appetite and where the platform is in its lifecycle. None of those answers is universal, and the wrong answer at the wrong time can cost a platform six figures of annual margin or trap it in an operational program it was not ready to run.</p>
@@ -540,11 +540,11 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>Payment Processor for SaaS Platforms: What to Look For and How to Choose</title>
+      <title>Payment Processor for SaaS: How to Choose the Right One</title>
       <link>https://marginlabs.io/the-lab/payment-processor-for-saas</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/payment-processor-for-saas</guid>
       <pubDate>Thu, 04 Jun 2026 14:00:00 +0000</pubDate>
-      <description>Choosing a payment processor for a SaaS platform is not the same as choosing one for a single business. The vocabulary, the economics, and the evaluation framework are all different. Here is what actually matters when a software platform is selecting a processor for embedded payments.</description>
+      <description>Picking a processor for a software platform is not like picking one for a single business. The economics, vocabulary and evaluation that actually matter.</description>
       <content:encoded><![CDATA[<p>Software platforms looking to embed payments almost always start with the same question: which payment processor should we use? It is the natural starting point. It is also usually the wrong starting point.</p>
 
     <p>The reason it is the wrong starting point is that "payment processor" is the most overloaded term in payments. Most of what software platforms actually need from a payments partner sits one level above the processor in the stack: at the facilitator, the gateway, or the integrated platform layer. Choosing a processor without first understanding which model you are operating in is how vertical SaaS platforms end up locked into bad economics for three to five years.</p>
@@ -668,11 +668,11 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payment-processor-for-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>Merchant of Record vs PayFac: What They Are and Which Are You</title>
+      <title>Merchant of Record vs PayFac: Which One Fits Your Platform</title>
       <link>https://marginlabs.io/the-lab/merchant-of-record-vs-payfac</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/merchant-of-record-vs-payfac</guid>
       <pubDate>Thu, 04 Jun 2026 14:00:00 +0000</pubDate>
-      <description>Merchant of Record (MoR) and Payment Facilitator (PayFac) sound similar but solve different problems. MoR handles tax, compliance, and merchant-of-record liability for global digital sales. PayFac aggregates sub-merchants under a master account for in-person and platform-based payments. Here's how they differ and which fits your platform.</description>
+      <description>MoR and PayFac sound alike but solve different problems. One owns tax and liability for global sales, the other aggregates sub-merchants. Which fits you.</description>
       <content:encoded><![CDATA[<p>Merchant of Record and Payment Facilitator sound like the same thing. Both involve a third party sitting between the buyer and the seller. Both promise to "handle payments" for software platforms. Both come up in the same conversations about embedded payments and revenue capture.</p>
 
     <p>They are not the same thing. They solve different problems, carry different liabilities, and fit different business models. Picking the wrong one means either leaving money on the table or signing up for tax and compliance obligations you did not understand you were taking on.</p>
@@ -1327,7 +1327,7 @@
       <link>https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms</guid>
       <pubDate>Tue, 19 May 2026 14:00:00 +0000</pubDate>
-      <description>PCI requirements for embedded payments range from trivial to $250K/year depending on your model. Here's what actually applies to your platform and what you can ignore.</description>
+      <description>PCI for embedded payments ranges from trivial to $250K/year depending on your model. What actually applies to your platform and what you can ignore.</description>
       <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/pci-compliance-for-saas-platforms.png" alt="PCI Compliance for SaaS Platforms: What You Actually Need" class="article-hero">
     <p>PCI DSS is the compliance framework that every platform encounters when evaluating embedded payments. It's also the framework that most consistently gets over-scoped by vendors trying to sell compliance services and under-scoped by engineering teams who think "we don't store card numbers, so we're fine."</p>
 
@@ -1678,7 +1678,7 @@
       <link>https://marginlabs.io/the-lab/embedded-vs-integrated-payments</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-vs-integrated-payments</guid>
       <pubDate>Mon, 04 May 2026 14:00:00 +0000</pubDate>
-      <description>The two terms get used interchangeably, but they describe different architectures, different economics, and different competitive positions. Here's the distinction that matters.</description>
+      <description>The two terms get used interchangeably but describe different architectures, economics and competitive positions. Here is the distinction that matters.</description>
       <content:encoded><![CDATA[<p>"Embedded payments" and "integrated payments" are used interchangeably across the industry. Vendor websites, analyst reports, and conference panels treat them as synonyms. They're not. The distinction matters, and understanding it changes how you think about your payments strategy, your competitive position, and your revenue potential.</p>
 
     <h2>Integrated Payments: Connection</h2>
@@ -2205,11 +2205,11 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>Payment Facilitator (PayFac), Explained: Economics, Costs, and When SaaS Should Become One</title>
+      <title>What Is a Payment Facilitator (PayFac)? A SaaS Guide</title>
       <link>https://marginlabs.io/the-lab/what-is-a-payment-facilitator</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-a-payment-facilitator</guid>
       <pubDate>Tue, 14 Apr 2026 14:00:00 +0000</pubDate>
-      <description>What a payment facilitator (PayFac) actually is, what it costs to become one, and whether your SaaS platform should. Real economics, model comparison vs ISO and processor, and the decision framework.</description>
+      <description>What a payment facilitator (PayFac) is, what it costs to become one and whether your SaaS platform should. Real economics and a clear decision framework.</description>
       <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/what-is-a-payment-facilitator.png" alt="The Payment Facilitation Spectrum, comparing ISV Referral, ISV Enhanced, PayFac-as-a-Service, and Full PayFac across volume threshold and net economics" class="article-hero">
 
     <p>Payment facilitator. PayFac. Managed PayFac. PayFac Lite. PayFac-as-a-Service. Sub-merchant. Master merchant. The terminology around payment facilitation is genuinely confusing, and it's confusing by design, because the companies defining these terms are the ones selling the services.</p>
@@ -2575,11 +2575,11 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>ISV Referral vs PayFac: Side-by-Side Economics for Vertical SaaS Platforms</title>
+      <title>ISV Referral vs PayFac: The Economics, Side by Side</title>
       <link>https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/isv-referral-vs-payfac-lite</guid>
       <pubDate>Fri, 27 Mar 2026 14:00:00 +0000</pubDate>
-      <description>ISV Referral vs PayFac (full and lite). At $30M volume: ISV Referral earns $60K, PayFac Lite earns $270K. Side-by-side economics and a decision framework for vertical SaaS.</description>
+      <description>At $30M of volume, ISV Referral earns about $60K and PayFac Lite about $270K. The side-by-side economics and a decision framework for vertical SaaS.</description>
       <content:encoded><![CDATA[<p>Every software company considering embedded payments eventually hits the same fork in the road: do you refer merchants to a processor and collect residuals, or do you take on more control, and more risk, by becoming a PayFac Lite under a larger <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitator</a>?</p>
 
     <p>Both models work. Both generate revenue. But they are built for fundamentally different companies at fundamentally different stages. Choosing the wrong one doesn't just leave money on the table, it can create operational drag that takes years to unwind.</p>
@@ -2791,11 +2791,11 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/why-merchants-dont-use-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>Embedded Payments Cost: $5K to $2M+ Real Implementation Math for SaaS Platforms</title>
+      <title>What Embedded Payments Cost: $5K to $2M+ by Model</title>
       <link>https://marginlabs.io/the-lab/what-embedded-payments-costs</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/what-embedded-payments-costs</guid>
       <pubDate>Wed, 18 Mar 2026 14:00:00 +0000</pubDate>
-      <description>What embedded payments actually costs vertical SaaS platforms. ISV Referral $5K to 15K. PayFac Lite $50K to 200K. Full PayFac $500K to $2M+. Real implementation and operating math across all four models.</description>
+      <description>What embedded payments actually cost vertical SaaS, by model: ISV Referral $5-15K, PayFac Lite $50-200K, Full PayFac $500K-$2M+. The real math.</description>
       <content:encoded><![CDATA[<p>The number most vendors won't give you until you're already two months into the sales process.</p>
 
     <p>If you've ever tried to get a straight answer on what it costs to add embedded payments to a vertical SaaS platform, you know the experience: vague ranges, "it depends" answers, and a request to get on a call with a solutions engineer before anyone will give you real numbers.</p>
