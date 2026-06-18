@@ -36,21 +36,49 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Margin Labs",
-  "alternateName": ["Margin Labs LLC", "MarginLabs"],
-  "url": "https://marginlabs.io",
-  "logo": "https://marginlabs.io/assets/margin-labs-logo.png",
-  "description": "Independent embedded payments advisory for vertical SaaS platforms. Model your revenue across all four monetization models. No vendor bias. We work for the platform.",
-  "founder": {
-    "@type": "Person",
-    "name": "Chris Jones",
-    "url": "https://marginlabs.io/principal"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/marginlabs-io",
-    "https://marginlabs.substack.com",
-    "https://www.linkedin.com/in/chrismjones7"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marginlabs.io/#organization",
+      "name": "Margin Labs",
+      "alternateName": ["Margin Labs LLC", "MarginLabs"],
+      "url": "https://marginlabs.io",
+      "logo": "https://marginlabs.io/assets/margin-labs-logo.png",
+      "image": "https://marginlabs.io/assets/margin-labs-logo.png",
+      "description": "Independent embedded payments advisory for vertical SaaS platforms. Model your revenue across all four monetization models. No vendor bias. We work for the platform.",
+      "slogan": "Embedded payments intelligence for SaaS platforms",
+      "email": "hello@marginlabs.io",
+      "knowsAbout": [
+        "Embedded payments",
+        "Payment facilitation",
+        "PayFac",
+        "PayFac-as-a-Service",
+        "Vertical SaaS",
+        "Interchange",
+        "Payments monetization",
+        "Merchant activation"
+      ],
+      "areaServed": "US",
+      "founder": {
+        "@type": "Person",
+        "name": "Chris Jones",
+        "url": "https://marginlabs.io/principal"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/marginlabs-io",
+        "https://marginlabs.substack.com",
+        "https://www.linkedin.com/in/chrismjones7"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marginlabs.io/#website",
+      "name": "Margin Labs",
+      "alternateName": "Margin Labs - Embedded Payments Intelligence",
+      "url": "https://marginlabs.io",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://marginlabs.io/#organization" }
+    }
   ]
 }
 </script>
