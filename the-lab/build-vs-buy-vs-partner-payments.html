@@ -1,0 +1,201 @@
+<!-- ML-LAB-031 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build vs Buy vs Partner: The Platform Payments Decision | Margin Labs</title>
+<meta name="description" content="Every vertical SaaS platform picks one of three ways to run payments: partner, buy or build. What each path means, what it earns, what it costs and how to choose.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Build vs Buy vs Partner: The Platform Payments Decision | Margin Labs">
+<meta property="og:description" content="Partner, buy or build: the three ways a software platform can run payments, what each earns and costs, and how to choose the right one for your stage.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the three ways a software platform can run payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Partner, buy or build. Partnering means referring merchants to a processor and earning a residual, the ISV referral model, where someone else owns the program. Buying means running your own payment facilitator program on a managed provider's rails, known as PayFac-as-a-Service, where you capture most of the economics without building the infrastructure. Building means becoming your own registered payment facilitator and owning the full program: underwriting, compliance, risk and operations. The three map onto a spectrum of more economics in exchange for more operational responsibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does each payments model earn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As a rough guide, an ISV referral partnership captures around 5 to 15 basis points of processed volume, a managed PayFac-as-a-Service program captures around 30 to 60 basis points, and a full in-house PayFac can capture 80 to 120 basis points or more. The higher numbers come with proportionally higher cost-to-serve, capital requirements and risk, so the right comparison is net margin after the full cost of running the program, not the headline take rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I choose between partnering, buying and building payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The decision is a function of processed volume, vertical, operational appetite and where the platform is in its lifecycle. Lower volume and a light operational appetite point to partnering. Meaningful volume and a willingness to own merchant experience point to buying a managed PayFac program. Very large volume, a specific risk or product need, and an appetite to run a compliance and risk operation point to building. The choice is not permanent, and most platforms move up the spectrum as volume grows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the payments model decision permanent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Partnering, buying and building are stages on a path more often than they are a one-time choice. A platform commonly starts by partnering, moves to a managed PayFac program as volume justifies the economics, and a small number eventually build. The mistake is treating the first decision as final. The right move is to re-run the math as volume and merchant mix change, because the model that was correct at 50 merchants is often wrong at 500."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .path-block { background: var(--bg4, #1a1a1a); border-left: 2px solid var(--copper); padding: 16px 20px; margin: 18px 0 24px; }
+  .path-block .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); }
+  .path-block p { font-size: 14px; margin-bottom: 8px; }
+  .path-block p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Build vs Buy vs Partner: The Platform Payments Decision</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Every vertical SaaS platform eventually has to decide how it runs payments, and the decision almost always gets framed as build versus buy versus partner. It is a useful frame because it forces the real tradeoff into the open: how much of the payment economics you want to capture, against how much of the operation you are willing to own to capture it. More of one means more of the other. There is no path that gives you full economics and zero responsibility.</p>
+
+    <p>This is the orientation map. It lays out the three paths, what each earns, what each costs you to run, and how to think about which one fits your platform right now. It is deliberately the high-altitude version. Each path has a deeper piece underneath it, linked as we go, for when you have narrowed to one.</p>
+
+    <h2>The three paths, mapped to the real models</h2>
+
+    <p>Build, buy and partner are a clean way to say three things the payments industry names less clearly. Here is the mapping, so the frame connects to the actual models you will hear from processors.</p>
+
+    <div class="path-block">
+      <p><span class="lbl">Partner</span>: the ISV referral model.</p>
+      <p>You refer your merchants to a processor and earn a residual on the volume they process. The processor signs the merchant, underwrites, owns the relationship and runs the operation. You capture roughly 5 to 15 basis points of volume. Lowest economics, lowest burden, fastest to stand up. This is where almost every platform starts, and for many it is the right place to stay.</p>
+    </div>
+
+    <div class="path-block">
+      <p><span class="lbl">Buy</span>: PayFac-as-a-Service, also called managed PayFac.</p>
+      <p>You run your own payment facilitator program, but on a provider's infrastructure. They own PCI scope, the sponsor-bank relationship and the underwriting rails. You own pricing, merchant experience and a much larger share of the spread, roughly 30 to 60 basis points, without building the program from scratch. This is the sweet spot for most vertical SaaS platforms above a real volume threshold.</p>
+    </div>
+
+    <div class="path-block">
+      <p><span class="lbl">Build</span>: the full, registered payment facilitator.</p>
+      <p>You become your own PayFac: register with the card networks, secure a sponsor bank, stand up underwriting, compliance, risk and settlement, and run the whole program. You capture 80 to 120 basis points or more, and you take on a compliance and risk operation that needs real headcount and capital. A small number of very high-volume platforms belong here. Most that think they do are better served buying.</p>
+    </div>
+
+    <p>The same four-model language shows up across our other pieces, with the ISV referral path sometimes split into a basic referral and an enhanced-residual variant. The build, buy, partner frame collapses that into the decision that actually matters: who owns the program.</p>
+
+    <h2>The tradeoff in one line</h2>
+
+    <blockquote class="pull-quote">Every step toward more economics is a step toward more operational responsibility. The right path is the furthest one your platform can actually staff and stomach, not the one with the biggest take rate on the slide.</blockquote>
+
+    <p>The single most common mistake is reading the basis-point numbers as the whole story. The 80 to 120 of a full PayFac looks like eight times the 5 to 15 of a referral, and on a spreadsheet at today's volume it can be. But the higher number carries underwriting losses, PCI program cost, support load, capital tied up in reserves and a team you have to hire. The number that matters is what you net after the full cost of running the program, which is why the honest comparison is always net margin at your real volume, not the rate anyone quotes you. For the full picture of how those economics work, see <a href="/the-lab/how-saas-companies-make-money-from-payments">how SaaS companies make money from payments</a>, and to put rough numbers against your own volume, the <a href="/margin-multiplier">Margin Multiplier</a> sizes it in two minutes.</p>
+
+    <h2>How to choose for your stage</h2>
+
+    <p>The right path is a function of four things: processed volume, vertical, operational appetite and where you are in your lifecycle. They tend to point the same direction.</p>
+
+    <p>Lower volume and a light operational appetite point to <strong>partnering</strong>. The economics of building or buying do not clear the cost of the operation until you have enough volume to spread it over, and below that line the referral model keeps you out of a program you are not ready to run. Meaningful and growing volume, plus a willingness to own the merchant experience, point to <strong>buying</strong> a managed PayFac program, which is where most platforms maximize net margin without taking on a risk operation. Very large volume, a specific product or risk need a provider cannot serve, and a genuine appetite to run compliance and risk in-house point to <strong>building</strong>.</p>
+
+    <p>The deeper decision between the entry path and the managed path is the one most platforms actually wrestle with, and it has its own piece: <a href="/the-lab/payfac-vs-isv">PayFac vs ISV for vertical SaaS</a> walks through the comparison with the volume thresholds and the migration math. If you are weighing the full build, <a href="/the-lab/should-you-become-a-payment-facilitator">should you become a payment facilitator</a> is the honest version of that question. And once you have settled on buying, <a href="/the-lab/pfaas-provider-strengths-and-weaknesses">PFaaS provider strengths and weaknesses</a> is how you read the providers without getting sold.</p>
+
+    <h2>It is a path, not a one-time pick</h2>
+
+    <p>The last thing to hold onto is that this is rarely a permanent choice. Partnering, buying and building are stages on a path far more often than they are a fork you take once. The common arc is to start by partnering, move to a managed program as volume justifies the better economics, and in a few cases eventually build. The mistake is treating the first decision as final and never re-running it. The model that was correct at 50 merchants is often wrong at 500, and the gap between the model you are on and the model you should be on is exactly where six figures of annual margin quietly goes missing.</p>
+
+    <p>So which path is right for you? The honest answer is that it depends, on your volume, your vertical, your merchant mix and what your team can actually run. The frame is the same one any platform can use. Which path you can staff and stomach today, and when you should move to the next one, is the part that only resolves against your real numbers. If you are making this decision right now, that is the conversation worth having before you commit. Reach out and we will work through yours.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Which model fits you?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Decide it with a framework, not a guess.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Strategic Decision Framework walks you through the model choice step by step, with the math and the volume thresholds laid out. Want a second pair of eyes on your actual numbers? A Quick Start Call does it with you.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/framework" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-framework-primary">Get the Framework →</a>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-consult-secondary">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

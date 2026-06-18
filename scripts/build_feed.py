@@ -62,6 +62,10 @@ ARTICLES = [
     ("payments-due-diligence",                     "2026-06-11"),
     ("payments-kpis-after-launch",                 "2026-06-11"),
     ("pfaas-provider-strengths-and-weaknesses",    "2026-06-16"),
+    # 2026-06-18 batch: front-loaded high-volume SEO pillars (per 1B). Surcharging
+    # (Optimization cluster, 10K-100K vol) + Build vs Buy vs Partner (Selection hub).
+    ("surcharging-for-software-platforms",         "2026-06-18"),
+    ("build-vs-buy-vs-partner-payments",           "2026-06-18"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).

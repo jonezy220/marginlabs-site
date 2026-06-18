@@ -1,0 +1,210 @@
+<!-- ML-LAB-030 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surcharging for Software Platforms: Offering It to Merchants | Margin Labs</title>
+<meta name="description" content="Surcharging lets your merchants offset card costs, but the network and state rules are a minefield. What a software platform actually owns, and the traps to avoid.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/surcharging-for-software-platforms">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Surcharging for Software Platforms: Offering It to Merchants | Margin Labs">
+<meta property="og:description" content="What a software platform owns when it offers surcharging to its merchants, and the network and state-law traps that decide whether it works.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/surcharging-for-software-platforms">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can a software platform offer surcharging to its merchants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Credit card surcharging is permitted in most US states and supported by the card networks, but the platform or its processor has to register with Visa and Mastercard before turning it on, cap the surcharge correctly, exclude debit and prepaid cards, and disclose the fee at checkout and on the receipt. In practice the platform owns the configuration and carries a real share of the compliance risk, so it is a product and risk decision, not just a pricing toggle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the maximum surcharge a merchant can charge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Visa caps credit card surcharges at 3 percent and Mastercard at 4 percent, and in every case the surcharge can never exceed the merchant's actual cost of acceptance. Debit and prepaid cards cannot be surcharged at all, even when a customer runs a debit card as credit. A few states also restrict or cap surcharging independently, and those rules change by legislation and court decision, so the cap has to be enforced per state."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between surcharging, convenience fees and cash discounting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A surcharge is an added fee on credit card transactions specifically, capped and registered with the card networks. A convenience fee is a flat charge for using an alternative payment channel, such as paying online instead of in person, and follows separate rules. Cash discounting lowers the posted price for cash and presents the card price as standard, which sidesteps most surcharge rules but changes how a merchant displays pricing. Each carries different network and state requirements, so the choice is not cosmetic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is surcharging a revenue stream for the software platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually not directly. A surcharge offsets the merchant's processing cost, so its main value to a platform is retention and differentiation: merchants who keep more of their revenue are stickier and cheaper to retain. Some platforms do share in the economics, but the durable win is a payments program merchants do not want to leave, not a new line on the platform's own P&L."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Surcharging for Software Platforms: Offering It to Your Merchants</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Your merchants are asking for it. Somewhere in your base, a merchant just got a competitor's invoice that added three percent for paying by card, did the math on their own processing bill, and emailed your support team to ask why your platform cannot do the same. Multiply that by a few hundred merchants and surcharging stops being a feature request and starts being a retention question.</p>
+
+    <p>For the merchant, surcharging is simple: pass the card fee to the customer who chose to pay by card, and keep more of the sale. For the platform sitting underneath them, it is not simple at all. Surcharging is one of the most heavily regulated things you can switch on in a payments program, the rules differ by card network and by state, and most of the compliance risk lands on whoever configured it. That is usually you. This piece is what a software platform actually takes on when it offers surcharging, and how to think about whether it is worth it.</p>
+
+    <h2>Why a platform should care at all</h2>
+
+    <p>Surcharging is rarely a revenue line for the platform itself. The fee offsets the merchant's cost of acceptance, so the money mostly moves from cardholder to merchant, not to you. The reason to care is what it does to the two numbers that actually drive a platform payments program: retention and attach.</p>
+
+    <p>A merchant who keeps an extra two or three percent of card volume is a merchant who is materially better off on your platform than off it. That is the cleanest retention lever in embedded payments, and it costs you a configuration, not a discount. It is also an activation lever. Merchants who were sitting on the sidelines of your payments product because the rate felt high will turn it on once the rate effectively goes to zero for them. If you have read the <a href="/the-lab/merchant-activation-playbook">merchant activation playbook</a>, surcharging is one of the few features that moves the activation number and the retention number at the same time. That is why it is worth the compliance load, when it is worth it.</p>
+
+    <p>The trap is treating it as a pure win. Offered badly, surcharging generates chargebacks, angry cardholders and in a few states a legal problem, and every one of those routes back to your support queue and your risk exposure, not the merchant's. The value is real and so is the downside. The job is to capture the first without the second.</p>
+
+    <h2>What surcharging actually is, and what it is not</h2>
+
+    <p>Three things get lumped together and they are not the same.</p>
+
+    <p>A <strong>surcharge</strong> is an added fee on credit card transactions specifically. It is capped, it has to be registered with the card networks, and it follows a detailed rulebook. A <strong>convenience fee</strong> is a flat charge for using an alternative payment channel, like paying online instead of in person, and it lives under different rules entirely. <strong>Cash discounting</strong> flips the framing: the posted price is the card price, and customers who pay cash get a discount, which sidesteps most surcharge rules but changes how every price on the merchant's site or invoice has to be displayed. Platforms reach for cash discounting precisely because it avoids the surcharge rulebook, but it carries its own disclosure burden and is easy to implement in a way that quietly breaks network rules.</p>
+
+    <p>If you are building a feature, you are almost always building surcharging in the strict sense, which means you are signing up for the strict rulebook. The rest of this piece is that rulebook, in the form a platform has to operationalize it.</p>
+
+    <h2>The compliance traps, in the order they bite</h2>
+
+    <p>None of these are exotic. They are the standard requirements, and platforms miss them because the demo makes surcharging look like a percentage field.</p>
+
+    <h3>The caps, and the "lesser of" rule</h3>
+
+    <p>Visa caps credit card surcharges at 3 percent. Mastercard caps at 4 percent. But the cap that actually binds is the one underneath both: a surcharge can never exceed the merchant's real cost of acceptance. If a merchant's effective rate is 2.6 percent, the most they can surcharge is 2.6 percent, not 3. That means your system has to know each merchant's actual cost, per merchant, and enforce the lower number automatically. A flat "3 percent surcharge" toggle that ignores the merchant's true rate is a compliance violation waiting for an audit.</p>
+
+    <h3>Debit and prepaid are off limits</h3>
+
+    <p>You cannot surcharge debit or prepaid cards, ever, even when a customer runs a debit card as credit. That requires real-time card-type detection at the point of payment, and getting it wrong is one of the fastest ways to generate both a regulatory problem and a wave of disputes. This is a build requirement, not a policy line in a contract.</p>
+
+    <h3>Registration and notice</h3>
+
+    <p>Before a merchant surcharges a single transaction, the surcharging entity has to give its acquirer, and through them the card networks, advance notice, typically 30 days. In a platform model, the question of who registers, you or each merchant, is not a detail. It shapes whether you can turn this on for your base centrally or whether every merchant has to file on their own, and the answer depends on your processor and your model.</p>
+
+    <h3>Disclosure</h3>
+
+    <p>The surcharge has to be disclosed clearly at the point of entry, at the point of sale, and itemized as a separate line on the receipt. In an embedded checkout that you control, the disclosure is your UI problem to solve correctly, in every flow, including the ones your merchants build on top of your API.</p>
+
+    <h3>The state patchwork</h3>
+
+    <p>Surcharging is permitted in most states, but a handful ban it outright and a few cap it below the network limit, as low as 1 to 2 percent, and that list moves by legislation and by court decision rather than staying put. For a platform with merchants in many states, that is not a one-time legal review. It is a per-state configuration that has to be maintained as the law changes, which is exactly the kind of ongoing burden a single merchant can ignore and a platform serving thousands cannot.</p>
+
+    <h2>Who owns what</h2>
+
+    <p>This is the part that separates a platform decision from a merchant one. When a single merchant surcharges, they own their own compliance. When you offer surcharging as a platform feature, you are building the mechanism that hundreds of merchants rely on, and the failures are systemic. If your cap logic is wrong, it is wrong for everyone. If your debit detection misfires, it misfires at scale. If a state changes its rules and your configuration lags, every merchant in that state is now out of compliance through no action of their own.</p>
+
+    <p>That is the real cost, and it does not appear in the feature spec. It is the cost of carrying the rulebook on behalf of your base: the engineering to enforce caps and card types correctly, the legal monitoring to keep state configuration current, the support load when a cardholder disputes a surcharge, and the share of <a href="/the-lab/chargeback-management-for-software-platforms">chargeback risk</a> that follows. Whether you take that on, or push it down to merchants, or lean on your processor to carry it, is a genuine strategic choice and it depends heavily on your model and your appetite. It is also the kind of cost that belongs in the same conversation as the rest of <a href="/the-lab/what-embedded-payments-costs">what embedded payments actually cost</a> and the broader question of <a href="/the-lab/how-saas-companies-make-money-from-payments">how SaaS platforms make money from payments</a>, because surcharging changes the economics for your merchants without obviously changing them for you.</p>
+
+    <blockquote class="pull-quote">Surcharging moves the activation number and the retention number at the same time. It also moves the compliance risk onto whoever built it. For a platform, that is you.</blockquote>
+
+    <h2>So should you offer it?</h2>
+
+    <p>The honest answer is the one I give every platform that asks: it depends. It depends on where your merchants are, how your processor handles registration, whether your checkout can enforce caps and card types correctly, and how much compliance load you are willing to carry to win the retention. For a platform with merchants concentrated in surcharge-friendly states, a processor that registers centrally, and a checkout you fully control, it can be one of the highest-leverage features you ship this year. For a platform with a fifty-state footprint, merchant-built checkout flows, and a thin risk function, it can be a liability you turned on by accident.</p>
+
+    <p>The framework is the same one any platform can use: weigh the retention and activation upside against the engineering, legal and risk load of carrying the rulebook for your base, and configure for the worst case, not the demo. Where your specific platform lands on that, and how to roll it out without lighting up your support queue or your risk exposure, is the part that only resolves against your actual merchant base and model. If you are weighing surcharging right now, that is the conversation worth having before you build it. Reach out and we will work through yours.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">The honest answer? It depends.</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Let's work out whether surcharging is worth it for you.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works your situation against your real merchant footprint, processor and checkout, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

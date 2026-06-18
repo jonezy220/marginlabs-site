@@ -8,9 +8,148 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 16 Jun 2026 16:07:39 +0000</lastBuildDate>
-    <pubDate>Tue, 16 Jun 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2026 02:38:59 +0000</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Build vs Buy vs Partner: The Platform Payments Decision</title>
+      <link>https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments</guid>
+      <pubDate>Thu, 18 Jun 2026 14:00:00 +0000</pubDate>
+      <description>Every vertical SaaS platform picks one of three ways to run payments: partner, buy or build. What each path means, what it earns, what it costs and how to choose.</description>
+      <content:encoded><![CDATA[<p>Every vertical SaaS platform eventually has to decide how it runs payments, and the decision almost always gets framed as build versus buy versus partner. It is a useful frame because it forces the real tradeoff into the open: how much of the payment economics you want to capture, against how much of the operation you are willing to own to capture it. More of one means more of the other. There is no path that gives you full economics and zero responsibility.</p>
+
+    <p>This is the orientation map. It lays out the three paths, what each earns, what each costs you to run, and how to think about which one fits your platform right now. It is deliberately the high-altitude version. Each path has a deeper piece underneath it, linked as we go, for when you have narrowed to one.</p>
+
+    <h2>The three paths, mapped to the real models</h2>
+
+    <p>Build, buy and partner are a clean way to say three things the payments industry names less clearly. Here is the mapping, so the frame connects to the actual models you will hear from processors.</p>
+
+    <div class="path-block">
+      <p><span class="lbl">Partner</span>: the ISV referral model.</p>
+      <p>You refer your merchants to a processor and earn a residual on the volume they process. The processor signs the merchant, underwrites, owns the relationship and runs the operation. You capture roughly 5 to 15 basis points of volume. Lowest economics, lowest burden, fastest to stand up. This is where almost every platform starts, and for many it is the right place to stay.</p>
+    </div>
+
+    <div class="path-block">
+      <p><span class="lbl">Buy</span>: PayFac-as-a-Service, also called managed PayFac.</p>
+      <p>You run your own payment facilitator program, but on a provider's infrastructure. They own PCI scope, the sponsor-bank relationship and the underwriting rails. You own pricing, merchant experience and a much larger share of the spread, roughly 30 to 60 basis points, without building the program from scratch. This is the sweet spot for most vertical SaaS platforms above a real volume threshold.</p>
+    </div>
+
+    <div class="path-block">
+      <p><span class="lbl">Build</span>: the full, registered payment facilitator.</p>
+      <p>You become your own PayFac: register with the card networks, secure a sponsor bank, stand up underwriting, compliance, risk and settlement, and run the whole program. You capture 80 to 120 basis points or more, and you take on a compliance and risk operation that needs real headcount and capital. A small number of very high-volume platforms belong here. Most that think they do are better served buying.</p>
+    </div>
+
+    <p>The same four-model language shows up across our other pieces, with the ISV referral path sometimes split into a basic referral and an enhanced-residual variant. The build, buy, partner frame collapses that into the decision that actually matters: who owns the program.</p>
+
+    <h2>The tradeoff in one line</h2>
+
+    <blockquote class="pull-quote">Every step toward more economics is a step toward more operational responsibility. The right path is the furthest one your platform can actually staff and stomach, not the one with the biggest take rate on the slide.</blockquote>
+
+    <p>The single most common mistake is reading the basis-point numbers as the whole story. The 80 to 120 of a full PayFac looks like eight times the 5 to 15 of a referral, and on a spreadsheet at today's volume it can be. But the higher number carries underwriting losses, PCI program cost, support load, capital tied up in reserves and a team you have to hire. The number that matters is what you net after the full cost of running the program, which is why the honest comparison is always net margin at your real volume, not the rate anyone quotes you. For the full picture of how those economics work, see <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a>, and to put rough numbers against your own volume, the <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> sizes it in two minutes.</p>
+
+    <h2>How to choose for your stage</h2>
+
+    <p>The right path is a function of four things: processed volume, vertical, operational appetite and where you are in your lifecycle. They tend to point the same direction.</p>
+
+    <p>Lower volume and a light operational appetite point to <strong>partnering</strong>. The economics of building or buying do not clear the cost of the operation until you have enough volume to spread it over, and below that line the referral model keeps you out of a program you are not ready to run. Meaningful and growing volume, plus a willingness to own the merchant experience, point to <strong>buying</strong> a managed PayFac program, which is where most platforms maximize net margin without taking on a risk operation. Very large volume, a specific product or risk need a provider cannot serve, and a genuine appetite to run compliance and risk in-house point to <strong>building</strong>.</p>
+
+    <p>The deeper decision between the entry path and the managed path is the one most platforms actually wrestle with, and it has its own piece: <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISV for vertical SaaS</a> walks through the comparison with the volume thresholds and the migration math. If you are weighing the full build, <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">should you become a payment facilitator</a> is the honest version of that question. And once you have settled on buying, <a href="https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PFaaS provider strengths and weaknesses</a> is how you read the providers without getting sold.</p>
+
+    <h2>It is a path, not a one-time pick</h2>
+
+    <p>The last thing to hold onto is that this is rarely a permanent choice. Partnering, buying and building are stages on a path far more often than they are a fork you take once. The common arc is to start by partnering, move to a managed program as volume justifies the better economics, and in a few cases eventually build. The mistake is treating the first decision as final and never re-running it. The model that was correct at 50 merchants is often wrong at 500, and the gap between the model you are on and the model you should be on is exactly where six figures of annual margin quietly goes missing.</p>
+
+    <p>So which path is right for you? The honest answer is that it depends, on your volume, your vertical, your merchant mix and what your team can actually run. The frame is the same one any platform can use. Which path you can staff and stomach today, and when you should move to the next one, is the part that only resolves against your real numbers. If you are making this decision right now, that is the conversation worth having before you commit. Reach out and we will work through yours.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Which model fits you?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Decide it with a framework, not a guess.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Strategic Decision Framework walks you through the model choice step by step, with the math and the volume thresholds laid out. Want a second pair of eyes on your actual numbers? A Quick Start Call does it with you.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Get the Framework →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Surcharging for Software Platforms: Offering It to Merchants</title>
+      <link>https://marginlabs.io/the-lab/surcharging-for-software-platforms</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/surcharging-for-software-platforms</guid>
+      <pubDate>Thu, 18 Jun 2026 14:00:00 +0000</pubDate>
+      <description>Surcharging lets your merchants offset card costs, but the network and state rules are a minefield. What a software platform actually owns, and the traps to avoid.</description>
+      <content:encoded><![CDATA[<p>Your merchants are asking for it. Somewhere in your base, a merchant just got a competitor's invoice that added three percent for paying by card, did the math on their own processing bill, and emailed your support team to ask why your platform cannot do the same. Multiply that by a few hundred merchants and surcharging stops being a feature request and starts being a retention question.</p>
+
+    <p>For the merchant, surcharging is simple: pass the card fee to the customer who chose to pay by card, and keep more of the sale. For the platform sitting underneath them, it is not simple at all. Surcharging is one of the most heavily regulated things you can switch on in a payments program, the rules differ by card network and by state, and most of the compliance risk lands on whoever configured it. That is usually you. This piece is what a software platform actually takes on when it offers surcharging, and how to think about whether it is worth it.</p>
+
+    <h2>Why a platform should care at all</h2>
+
+    <p>Surcharging is rarely a revenue line for the platform itself. The fee offsets the merchant's cost of acceptance, so the money mostly moves from cardholder to merchant, not to you. The reason to care is what it does to the two numbers that actually drive a platform payments program: retention and attach.</p>
+
+    <p>A merchant who keeps an extra two or three percent of card volume is a merchant who is materially better off on your platform than off it. That is the cleanest retention lever in embedded payments, and it costs you a configuration, not a discount. It is also an activation lever. Merchants who were sitting on the sidelines of your payments product because the rate felt high will turn it on once the rate effectively goes to zero for them. If you have read the <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant activation playbook</a>, surcharging is one of the few features that moves the activation number and the retention number at the same time. That is why it is worth the compliance load, when it is worth it.</p>
+
+    <p>The trap is treating it as a pure win. Offered badly, surcharging generates chargebacks, angry cardholders and in a few states a legal problem, and every one of those routes back to your support queue and your risk exposure, not the merchant's. The value is real and so is the downside. The job is to capture the first without the second.</p>
+
+    <h2>What surcharging actually is, and what it is not</h2>
+
+    <p>Three things get lumped together and they are not the same.</p>
+
+    <p>A <strong>surcharge</strong> is an added fee on credit card transactions specifically. It is capped, it has to be registered with the card networks, and it follows a detailed rulebook. A <strong>convenience fee</strong> is a flat charge for using an alternative payment channel, like paying online instead of in person, and it lives under different rules entirely. <strong>Cash discounting</strong> flips the framing: the posted price is the card price, and customers who pay cash get a discount, which sidesteps most surcharge rules but changes how every price on the merchant's site or invoice has to be displayed. Platforms reach for cash discounting precisely because it avoids the surcharge rulebook, but it carries its own disclosure burden and is easy to implement in a way that quietly breaks network rules.</p>
+
+    <p>If you are building a feature, you are almost always building surcharging in the strict sense, which means you are signing up for the strict rulebook. The rest of this piece is that rulebook, in the form a platform has to operationalize it.</p>
+
+    <h2>The compliance traps, in the order they bite</h2>
+
+    <p>None of these are exotic. They are the standard requirements, and platforms miss them because the demo makes surcharging look like a percentage field.</p>
+
+    <h3>The caps, and the "lesser of" rule</h3>
+
+    <p>Visa caps credit card surcharges at 3 percent. Mastercard caps at 4 percent. But the cap that actually binds is the one underneath both: a surcharge can never exceed the merchant's real cost of acceptance. If a merchant's effective rate is 2.6 percent, the most they can surcharge is 2.6 percent, not 3. That means your system has to know each merchant's actual cost, per merchant, and enforce the lower number automatically. A flat "3 percent surcharge" toggle that ignores the merchant's true rate is a compliance violation waiting for an audit.</p>
+
+    <h3>Debit and prepaid are off limits</h3>
+
+    <p>You cannot surcharge debit or prepaid cards, ever, even when a customer runs a debit card as credit. That requires real-time card-type detection at the point of payment, and getting it wrong is one of the fastest ways to generate both a regulatory problem and a wave of disputes. This is a build requirement, not a policy line in a contract.</p>
+
+    <h3>Registration and notice</h3>
+
+    <p>Before a merchant surcharges a single transaction, the surcharging entity has to give its acquirer, and through them the card networks, advance notice, typically 30 days. In a platform model, the question of who registers, you or each merchant, is not a detail. It shapes whether you can turn this on for your base centrally or whether every merchant has to file on their own, and the answer depends on your processor and your model.</p>
+
+    <h3>Disclosure</h3>
+
+    <p>The surcharge has to be disclosed clearly at the point of entry, at the point of sale, and itemized as a separate line on the receipt. In an embedded checkout that you control, the disclosure is your UI problem to solve correctly, in every flow, including the ones your merchants build on top of your API.</p>
+
+    <h3>The state patchwork</h3>
+
+    <p>Surcharging is permitted in most states, but a handful ban it outright and a few cap it below the network limit, as low as 1 to 2 percent, and that list moves by legislation and by court decision rather than staying put. For a platform with merchants in many states, that is not a one-time legal review. It is a per-state configuration that has to be maintained as the law changes, which is exactly the kind of ongoing burden a single merchant can ignore and a platform serving thousands cannot.</p>
+
+    <h2>Who owns what</h2>
+
+    <p>This is the part that separates a platform decision from a merchant one. When a single merchant surcharges, they own their own compliance. When you offer surcharging as a platform feature, you are building the mechanism that hundreds of merchants rely on, and the failures are systemic. If your cap logic is wrong, it is wrong for everyone. If your debit detection misfires, it misfires at scale. If a state changes its rules and your configuration lags, every merchant in that state is now out of compliance through no action of their own.</p>
+
+    <p>That is the real cost, and it does not appear in the feature spec. It is the cost of carrying the rulebook on behalf of your base: the engineering to enforce caps and card types correctly, the legal monitoring to keep state configuration current, the support load when a cardholder disputes a surcharge, and the share of <a href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">chargeback risk</a> that follows. Whether you take that on, or push it down to merchants, or lean on your processor to carry it, is a genuine strategic choice and it depends heavily on your model and your appetite. It is also the kind of cost that belongs in the same conversation as the rest of <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a> and the broader question of <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS platforms make money from payments</a>, because surcharging changes the economics for your merchants without obviously changing them for you.</p>
+
+    <blockquote class="pull-quote">Surcharging moves the activation number and the retention number at the same time. It also moves the compliance risk onto whoever built it. For a platform, that is you.</blockquote>
+
+    <h2>So should you offer it?</h2>
+
+    <p>The honest answer is the one I give every platform that asks: it depends. It depends on where your merchants are, how your processor handles registration, whether your checkout can enforce caps and card types correctly, and how much compliance load you are willing to carry to win the retention. For a platform with merchants concentrated in surcharge-friendly states, a processor that registers centrally, and a checkout you fully control, it can be one of the highest-leverage features you ship this year. For a platform with a fifty-state footprint, merchant-built checkout flows, and a thin risk function, it can be a liability you turned on by accident.</p>
+
+    <p>The framework is the same one any platform can use: weigh the retention and activation upside against the engineering, legal and risk load of carrying the rulebook for your base, and configure for the worst case, not the demo. Where your specific platform lands on that, and how to roll it out without lighting up your support queue or your risk exposure, is the part that only resolves against your actual merchant base and model. If you are weighing surcharging right now, that is the conversation worth having before you build it. Reach out and we will work through yours.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">The honest answer? It depends.</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's work out whether surcharging is worth it for you.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works your situation against your real merchant footprint, processor and checkout, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/surcharging-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>PFaaS Provider Strengths and Weaknesses: What the Sales Deck Leaves Out</title>
       <link>https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses</link>
