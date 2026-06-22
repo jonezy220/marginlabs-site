@@ -1,0 +1,206 @@
+<!-- ML-LAB-033 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross-Border Embedded Payments: What US Vertical SaaS Gets Wrong About LATAM | Margin Labs</title>
+<meta name="description" content="US vertical SaaS operators treat Latin America as international expansion. It is really a different payments stack with different rails, regulators and settlement. What breaks, what translates, and the patterns that work.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/cross-border-embedded-payments-latam">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Cross-Border Embedded Payments: What US Vertical SaaS Gets Wrong About LATAM | Margin Labs">
+<meta property="og:description" content="What actually breaks when a US platform takes its payments program to Latin America, what translates, and the three patterns that work.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/cross-border-embedded-payments-latam">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why can't a US vertical SaaS platform reuse its payments program in Latin America?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because Latin America is not one market and none of it runs the way the US does. Acquiring economics differ by country, the dominant rails are local instant-payment systems rather than the card networks, the regulator is a national central bank with its own KYC and data-residency rules, and settlement and FX add a layer the US program never had to think about. The strategy and the model logic carry over. The infrastructure does not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment rails matter most in Latin America?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The local instant-payment systems, more than the card networks. In Brazil that is PIX, which went from launch to dominant in a few years and is largely free and real-time. In Mexico it is SPEI, with the CoDi QR layer on top. Colombia is rolling out its own interoperable instant system. A platform that only accepts cards leaves most of the addressable volume on the table, because in several of these markets the instant rail, not the card, is how people and businesses actually pay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What translates from a US payments program to Latin America and what does not?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "What translates is the thinking: product judgment, the ISV-versus-PayFac model decision, the monetization and margin-compression patterns, and the right questions to ask a provider. What does not translate is the infrastructure: the acquiring economics, the rails, the regulatory relationship and the settlement and FX mechanics all have to be rebuilt for each market. Operators who lead with the strategy and rebuild the stack do well. Operators who assume the US plumbing ports do not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the common ways a platform enters Latin American payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three patterns recur. A US or global platform partners with a cross-border specialist that already holds the local rails and settlement, the model dLocal and EBANX built. A Latin-America-native company builds in-market first and then expands, the path Nubank took. And a vertical SaaS platform embeds local payments through a gateway or managed partner, which is the same build-versus-buy decision it faced at home, just with a different set of providers and a steeper regulatory layer."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Cross-Border Embedded Payments: What US Vertical SaaS Gets Wrong About Latin America</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>9 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>When a US vertical SaaS platform with a working payments program starts looking at Latin America, the conversation almost always gets filed under international expansion. New geography, new sales team, translate the product, hire a country manager. That framing is the first mistake, and it is an expensive one, because the hard part of Latin America for a payments-present platform is not go-to-market. It is that you are walking into a different payments stack with different rails, different regulators and different settlement, and the program you spent years building in the US does not port.</p>
+
+    <p>The good news is that the strategy ports even when the plumbing does not. The way you think about model selection, monetization and provider tradeoffs is the same on both sides of the border. The infrastructure underneath is not. This piece is the honest version of that gap: what actually breaks, what carries over and the patterns that work for operators who get it right.</p>
+
+    <blockquote class="pull-quote">Latin America is not international expansion for a payments-present platform. It is a different payments stack. The strategy ports. The infrastructure does not.</blockquote>
+
+    <h2>The four things that actually break</h2>
+
+    <p>These are the parts of a US payments program that do not survive contact with the region, in roughly the order they surprise people.</p>
+
+    <h3>1. Acquiring economics</h3>
+
+    <p>The take-rate math you built in the US assumes a US interchange and processor structure, and that structure does not exist in the same form anywhere in the region. Brazil, Mexico and Colombia each have their own acquiring economics, their own interchange dynamics and their own processor landscape, and they are not interchangeable with each other, let alone with the US. Brazil alone has features the US simply does not, like the deeply embedded culture of card installments, where a single purchase is split into monthly payments and the economics of who funds that float run through the whole acquiring chain. If you carry your US spread assumptions across the border, the model breaks on the first real volume.</p>
+
+    <h3>2. Local rails matter more than the card network</h3>
+
+    <p>This is the one US operators underweight the most. In several of these markets the dominant way money moves is not the card network, it is a local instant-payment rail. Brazil's PIX went from launch to ubiquitous in a few years, it is real-time, it is largely free and for huge swaths of commerce it is simply how people and businesses pay. Mexico has SPEI for interbank transfers with the CoDi QR layer on top, and Colombia is rolling out its own interoperable instant system. A platform that lands in the region accepting only cards has quietly excluded most of the volume before it processed a transaction. The rail is not a feature you add later. In these markets it is the market.</p>
+
+    <h3>3. The regulatory layer</h3>
+
+    <p>Your US payments compliance does not transfer, because the regulator is now a national central bank with its own rulebook. The Banco Central do Brasil and Banxico in Mexico set the terms for how payments operate, how merchants are onboarded and verified and increasingly how data is handled and where it lives. Brazil's data-protection regime adds residency and handling obligations on top. Standing up in one of these markets is closer to launching a regulated local business than shipping a feature, and the platforms that treat it as the latter find out otherwise during their first audit.</p>
+
+    <h3>4. Settlement currency and FX</h3>
+
+    <p>Even once the money moves, getting it where it needs to go is a new problem. You have to decide whether merchants settle in local currency or US dollars, and either choice carries an FX spread and a hedging cost the US program never had to price. Some markets add capital-control friction on top, so moving funds across the border is not the instant, frictionless step a US-only operator assumes. The FX and settlement layer is where a deal that penciled out on the acquiring spread can quietly lose its margin.</p>
+
+    <h2>The four things operators get right</h2>
+
+    <p>It is not all rebuild. The most valuable things a good payments operator carries are the ones that travel, and they travel intact.</p>
+
+    <p><strong>Product judgment translates.</strong> The instincts that make a platform good at payments at home, knowing what to build, what to buy, where the merchant experience actually matters and where it does not, are not country-specific. A strong product leader reads a new market faster than they expect, because the underlying questions are familiar even when the answers are not.</p>
+
+    <p><strong>The model decision translates.</strong> Whether to refer, run a managed program or build the full stack is the same structural choice in Sao Paulo as in Atlanta, even though the providers and thresholds differ. If you have worked the <a href="/the-lab/build-vs-buy-vs-partner-payments">build versus buy versus partner</a> decision once, you already have the frame for doing it again in a new market.</p>
+
+    <p><strong>The monetization economics translate.</strong> The shape of how a platform makes money from payments, and the way that margin compresses as the merchant mix shifts, follows patterns that look familiar across borders. The numbers change but the structure of <a href="/the-lab/how-saas-companies-make-money-from-payments">how a platform earns on payments</a> does not, which means an operator who understands their US economics can reason about the LATAM version quickly.</p>
+
+    <p><strong>The operator questions translate.</strong> The right things to ask a provider, about downstream risk, about pricing under a shifting mix, about who actually handles a frozen merchant, are the same questions that matter anywhere. A platform that learned to read a US provider knows how to read a local one. The checklist carries even when the names on it do not.</p>
+
+    <h2>The three patterns that work</h2>
+
+    <p>Across the operators who have actually done this, three repeatable patterns show up.</p>
+
+    <p><strong>The global platform with a local partner.</strong> A US or global company partners with a cross-border specialist that already holds the local rails, the regulatory standing and the settlement plumbing. This is the model dLocal and EBANX built their businesses on: one relationship that abstracts away the per-country complexity. It is the fastest way in and the one that keeps the least control, the same tradeoff as buying a managed program at home.</p>
+
+    <p><strong>The native company expanding out.</strong> A Latin-America-native operator builds deep in one market first and then expands, regionally and sometimes into the US. Nubank is the obvious example, a company that earned its home market before reaching outward. For a US platform this pattern is less a path to copy than a competitor to understand, because the native players move with an advantage on the local stack that an outside entrant has to buy or build.</p>
+
+    <p><strong>The vertical SaaS platform embedding via gateway.</strong> A software platform adds local payments by integrating a gateway or managed partner, market by market. This is the same build-versus-buy decision the platform already faced in the US, with a different provider set and a steeper regulatory layer. The logic is identical. The diligence is heavier, because now the provider you lean on is also your compliance and settlement bridge into a market you do not natively understand.</p>
+
+    <h2>What this means for the operator reading this</h2>
+
+    <p>If you are a US vertical SaaS CEO or CPO weighing LATAM, the move is to stop scoping it as a go-to-market project and start scoping it as a payments-stack project per country, beginning with the one market that matters most to your customers rather than the whole region at once. If you are a PE operating partner diligencing a payments-present platform on a LATAM scaling thesis, the question is not whether the product can expand but whether the payments economics survive the rails, the regulator and the FX in each target market, because that is where the thesis lives or dies. And if you are a LATAM operator reading US payments commentary, the translation runs both ways: the strategic frame is shared, and the operators who win on either side are the ones who respect what does not port.</p>
+
+    <p>Wherever you sit, the honest answer is the same one it always is: it depends, on the market, the model and the merchant base. The frame is portable. Which market to enter first, how to structure the stack and where the economics actually break for your platform is the part that only resolves against your specific situation. If you are weighing a move across the border right now, that is the conversation worth having before you commit. Reach out and we will work through yours.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">The honest answer? It depends.</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Let's work out your move across the border.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call maps your LATAM payments move against your real customers, markets and economics, country by country, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through the model logic that carries across the border.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
