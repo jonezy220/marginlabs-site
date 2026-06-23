@@ -1,0 +1,217 @@
+<!-- ML-LAB-032 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded Finance for Vertical SaaS: The Roadmap Beyond Payments | Margin Labs</title>
+<meta name="description" content="Once payments works, lending, accounts and cards are the next layer. What embedded finance actually means for a software platform, what to add when, and the traps.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Embedded Finance for Vertical SaaS: The Roadmap Beyond Payments | Margin Labs">
+<meta property="og:description" content="Payments is act one. What embedded finance means for a software platform, which products to add when, and the regulatory and capital traps to plan for.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is embedded finance for a software platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Embedded finance is offering financial products beyond payments inside your software, using the merchant relationship and transaction data you already have. For a vertical SaaS platform that means things like working-capital lending, deposit or operating accounts, and issued cards, delivered through a banking or infrastructure partner rather than by becoming a bank yourself. Payments is usually the first and largest piece. Embedded finance is the layer that comes after, once the payments program is real and the data is flowing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What financial products can a vertical SaaS platform offer beyond payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The common next steps are capital and lending (working-capital advances or loans underwritten off your payments data), accounts (deposit or operating accounts that hold the merchant's funds on your platform), and card issuing (branded debit or expense cards that earn interchange). Some platforms also add insurance or bill pay. The right sequence depends on what your merchants actually need and which product your data and merchant base can support, not on what is technically available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a platform expand into embedded finance before or after payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After, almost always. Payments comes first because it generates the two assets every embedded-finance product depends on: the money flow and the transaction data that powers underwriting and personalization. Trying to launch lending or accounts before you own the payment relationship means underwriting blind and competing with the merchant's existing bank without an advantage. Earn the payment relationship first, then expand where the data gives you an edge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a platform make money from embedded finance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each product has its own economics. Lending earns interest and origination fees, often the highest-margin line but the one that carries credit risk and capital requirements. Issued cards earn interchange on every swipe. Accounts earn a share of deposit economics and money-movement fees. Across all of them the durable value is the same as payments: deeper attach and retention. A merchant running capital, an account and a card through your platform is far harder to lose than one who only processes payments."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .stage-block { background: var(--bg4, #1a1a1a); border-left: 2px solid var(--copper); padding: 16px 20px; margin: 18px 0 24px; }
+  .stage-block .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); }
+  .stage-block p { font-size: 14px; margin-bottom: 8px; }
+  .stage-block p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Embedded Finance for Vertical SaaS: The Roadmap Beyond Payments</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>8 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Payments is act one. Once a vertical SaaS platform is moving real volume for its merchants, the same question always surfaces: what else can we run through this relationship? The answer the industry calls embedded finance is lending, accounts and cards, financial products that sit inside your software and lean on the merchant relationship and the transaction data you already own. Done in the right order it is the highest-leverage expansion a platform has. Done too early or for the wrong reason it is a regulated, capital-hungry distraction.</p>
+
+    <p>This piece is the map: what embedded finance actually means for a software platform, the products in the order most platforms add them, how each one makes money, and the traps that decide whether it works. The throughline is simple. Payments earns you the right to do the rest, and the rest is where the relationship gets hard to leave.</p>
+
+    <h2>Why payments comes first</h2>
+
+    <p>Every embedded-finance product depends on two assets, and a payments program is what creates both. The first is the money flow: once funds move through your platform, holding, lending against or issuing on top of them is a much smaller step than starting cold. The second is the data. Payment volume is the single best underwriting signal a small business produces, better than a tax return and far more current. A platform that processes a merchant's payments can see revenue trend, seasonality and health in close to real time, which is exactly what a lender or an account provider needs and exactly what the merchant's existing bank does not have.</p>
+
+    <p>That is why sequence matters more than ambition. A platform that tries to launch lending before it owns the payment relationship is underwriting blind and competing with the merchant's bank without an advantage. A platform that has earned the payment relationship first is expanding from strength. If you are still working out the payments side of this, <a href="/the-lab/build-vs-buy-vs-partner-payments">build vs buy vs partner</a> covers how to run that program, and <a href="/the-lab/how-saas-companies-make-money-from-payments">how SaaS companies make money from payments</a> covers the economics underneath it. Embedded finance is the chapter after both.</p>
+
+    <blockquote class="pull-quote">Payments gives you the money flow and the data. Embedded finance is what you build on top of them. Skip the first and the rest has no foundation.</blockquote>
+
+    <h2>The products, in the order platforms add them</h2>
+
+    <p>There is a rough sequence most successful platforms follow, ordered by how directly each product uses the payments foundation you already have.</p>
+
+    <div class="stage-block">
+      <p><span class="lbl">1. Capital and lending</span></p>
+      <p>Working-capital advances or loans, underwritten off the payments data you already see. This is usually the first and most natural step, because the data does the hard part and merchant demand is real: small businesses are chronically underserved on access to capital. It earns interest and origination fees, often the highest-margin line you can add. It also carries credit risk and a capital question, which is the catch covered below.</p>
+    </div>
+
+    <div class="stage-block">
+      <p><span class="lbl">2. Accounts</span></p>
+      <p>A deposit or operating account that holds the merchant's funds on your platform instead of at an outside bank. Once payments settle into an account you control, the merchant's financial center of gravity moves onto your software. Accounts earn a share of deposit economics and money-movement fees, and they make every other product stickier because the money already lives there.</p>
+    </div>
+
+    <div class="stage-block">
+      <p><span class="lbl">3. Cards</span></p>
+      <p>Branded debit or expense cards issued to the merchant, usually drawing on the account or the capital line. Every swipe earns interchange, and a card puts your brand in the merchant's pocket on the spending side, not just the accepting side. Issuing is operationally heavier and only pays off at enough volume, so it tends to come once accounts are established.</p>
+    </div>
+
+    <p>The order is not a rule, it is a gravity. Lending uses your data, accounts capture the funds, cards monetize the spend. Some platforms reach straight for issuing because the interchange math looks clean, and some skip lending because they have no appetite for credit risk. The point is to add the product your merchants actually need and your data can actually support, in the sequence that compounds, rather than the one with the best slide.</p>
+
+    <h2>You partner for this, the same as payments</h2>
+
+    <p>Almost no software platform becomes a bank, just as almost none becomes a full payment facilitator from scratch. You work through an infrastructure partner: a lending platform, a banking-as-a-service provider, a card-issuing processor, each sitting on top of a sponsor bank that holds the license and the regulatory relationship. You own the merchant experience, the distribution and a share of the economics. They own the charter, the compliance core and the rails.</p>
+
+    <p>The build-versus-buy logic is identical to payments, and so is the central tradeoff: the more of the stack the partner owns, the less control and margin you keep, and the faster and safer you move. The right partner is the one whose weaknesses you can live with given the product you are launching and the risk you are willing to hold. That evaluation is its own exercise, and it is worth doing with the same rigor you would apply to a payments provider, because an embedded-finance partner touches credit, deposits and compliance, not just transaction routing.</p>
+
+    <h2>The traps that decide whether it works</h2>
+
+    <p>Embedded finance fails in predictable ways, and all of them are foreseeable before you start.</p>
+
+    <h3>Regulation is a different weight class</h3>
+
+    <p>Payments compliance is real, but lending licenses, deposit rules and card-program regulation are heavier and more state-specific. A partner carries most of it, but not all, and the share you carry is larger than the payments equivalent. The platforms that get hurt are the ones that treated embedded finance as a product launch rather than a regulated-business launch.</p>
+
+    <h3>Lending means credit risk and capital</h3>
+
+    <p>The most attractive product is also the one that can lose money. Someone funds the loans and someone absorbs the defaults. Depending on the structure that someone is the partner, a capital provider, or you, and which one it is changes the economics and the risk on your balance sheet completely. Know exactly where the credit risk sits before you launch, not after the first cohort goes bad.</p>
+
+    <h3>Sequencing and focus</h3>
+
+    <p>Embedded finance only works once payments is solid. A platform still fighting activation or margin on its payments program is not ready to add a regulated lending product, and trying to do both at once usually means doing neither well. Earn the foundation first. This is also exactly the kind of expansion a buyer scrutinizes, so if a sale or raise is on the horizon, how the financial products are structured will show up in <a href="/the-lab/payments-due-diligence">payments due diligence</a>.</p>
+
+    <h2>So is embedded finance right for your platform?</h2>
+
+    <p>The honest answer is the one I give every platform that asks: it depends. It depends on whether your payments program is solid enough to build on, whether your merchants have a financial need you are positioned to meet, whether your data gives you a real underwriting or personalization edge, and how much regulatory and capital weight you are willing to carry. For a platform with a mature payments program, a clear merchant need and the appetite to run a regulated product, embedded finance is the expansion that turns a payments line into a financial-services business. For a platform still earning its payments foundation, it is a chapter to plan for, not to open yet.</p>
+
+    <p>The frame is the same one any platform can use: payments first, then the financial product your data and merchant base genuinely support, added in the sequence that compounds, with the regulatory and capital questions answered before launch rather than after. Where your specific platform sits on that path, which product to add next and how to structure it without taking on risk you did not price, is the part that only resolves against your actual volume, merchant base and roadmap. If you are weighing the move beyond payments right now, that is the conversation worth having before you build it. Reach out and we will work through yours.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">The honest answer? It depends.</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Let's work out what comes after payments for you.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call maps your move beyond payments against your real volume, merchant base and roadmap, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

@@ -68,8 +68,8 @@ ARTICLES = [
     ("build-vs-buy-vs-partner-payments",           "2026-06-18"),
     # 2026-06-22: US + LATAM positioning anchor (cross-border embedded payments).
     ("cross-border-embedded-payments-latam",       "2026-06-22"),
-    # 2026-06-23 (STAGED, re-add at publish): Expansion pillar, embedded finance.
-    # ("embedded-finance-for-vertical-saas",       "2026-06-23"),
+    # 2026-06-23: Expansion pillar, embedded finance (1K-10K SEO vein).
+    ("embedded-finance-for-vertical-saas",         "2026-06-23"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
