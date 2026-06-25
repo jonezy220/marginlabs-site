@@ -1,0 +1,192 @@
+<!-- ML-LAB-035 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Does It Cost to Build a Payment Gateway? A Build-vs-Buy Breakdown | Margin Labs</title>
+<meta name="description" content="The upfront build is the cheap part. What it actually costs a platform to build a payment gateway, the run cost everyone leaves out, and when buying or partnering wins.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/cost-to-build-a-payment-gateway">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="What Does It Cost to Build a Payment Gateway? A Build-vs-Buy Breakdown | Margin Labs">
+<meta property="og:description" content="Building a gateway runs several hundred thousand to a few million upfront, then a comparable amount every year to run. The full cost, and when buying wins.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/cost-to-build-a-payment-gateway">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to build a payment gateway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Building a payment gateway from scratch typically runs a software platform several hundred thousand to a few million dollars upfront in engineering, then a comparable amount every year to run it. The upfront build is the easiest part to scope. The ongoing cost of PCI Level 1, certifications, fraud tooling, uptime and maintenance is what makes the real number much larger than the build quote alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it cheaper to build or buy a payment gateway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buying or partnering is cheaper for almost every platform. The build cost is a one-time project, but running a gateway means carrying PCI Level 1 scope, network certifications, fraud infrastructure, uptime and an ongoing compliance burden forever. A partner prices that as a small share of revenue, where building asks you to staff a payments company inside your software company."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ongoing costs come with running a payment gateway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PCI DSS Level 1 audits and scans, Visa and Mastercard certifications plus processor certification, fraud and chargeback tooling, uptime engineering with a real on-call rotation, and continuous maintenance against card network mandates and regulatory change. These recur every year and often rival or exceed the original build cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does building your own payment gateway make sense?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Building can make sense when payments processing is your core product rather than an attached revenue line, when you are at a scale where saving a few basis points outweighs a multimillion-dollar annual run rate, or when you have a genuinely novel flow no provider supports. Those conditions are rare and the platforms that meet them usually already know it."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">What Does It Cost to Build a Payment Gateway?</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>6 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>If you are pricing out a payment gateway, you have probably found a wide range of numbers and very little agreement on what they include. That is because most estimates quote the part that is easy to scope and quietly skip the part that actually decides whether building is a good idea. The build is a project. A gateway is a permanent obligation. Pricing the first and ignoring the second is how platforms talk themselves into a multi-year commitment they did not mean to make.</p>
+
+    <p><strong>Building a payment gateway from scratch typically runs a software platform several hundred thousand to a few million dollars upfront, then a comparable amount every year to run it.</strong> The build is the cheap part. The real cost is PCI Level 1 attestation, network certifications, fraud tooling, uptime engineering and the team that carries all of it forever.</p>
+
+    <h2>What "building a payment gateway" actually means</h2>
+
+    <p>When a platform says it wants to build a gateway, it usually means one of a few different things, and they cost wildly different amounts. A thin integration layer over an existing processor is a few weeks of work. A true gateway, the thing that authorizes, captures, tokenizes, routes and settles card transactions on its own rails, is a multi-year program with a permanent team attached. Most cost estimates you find online quietly assume the first and quote it as if it were the second. The first question is always which one you actually need, and for the overwhelming majority of platforms the honest answer is neither.</p>
+
+    <h2>The upfront build is the number everyone quotes</h2>
+
+    <p>The engineering to stand up core gateway functionality, card authorization and capture, tokenization and vaulting, basic reporting and a merchant onboarding flow, generally lands somewhere between several hundred thousand and a couple million dollars depending on how much you build versus assemble. That is real money, but it is also the part of the estimate that is easiest to scope and the least dangerous. If the build cost were the whole story, more platforms would build.</p>
+
+    <blockquote class="pull-quote">The build is a project with an end date. Everything that makes a gateway a gateway is a cost with no end date.</blockquote>
+
+    <h2>The run cost is the number that matters</h2>
+
+    <p>Here is what the build-cost estimates leave out, and it is the part that sinks platforms that go it alone:</p>
+
+    <ul>
+      <li><strong>PCI DSS Level 1.</strong> The moment you store, process or transmit card data directly, you are a Level 1 environment: an annual third-party audit, a QSA, network scans, and an engineering burden to keep the whole system in scope and attested. This is the single line most build estimates ignore. See <a href="/the-lab/pci-compliance-for-saas-platforms">PCI compliance for SaaS platforms</a> for what that actually entails.</li>
+      <li><strong>Network and processor certifications.</strong> Visa and Mastercard certifications, plus a processor or acquirer certification, each with their own test scripts and renewal cycles.</li>
+      <li><strong>Fraud and risk tooling.</strong> Tokenization is table stakes. You also need fraud screening, chargeback handling and monitoring, none of which ship with the build.</li>
+      <li><strong>Uptime and on-call.</strong> A gateway that is down is merchants who cannot get paid. That means redundancy, observability and a real on-call rotation, every night, forever.</li>
+      <li><strong>Maintenance against a moving target.</strong> Card network mandates, new card products, regulatory change. Someone has to absorb all of it.</li>
+    </ul>
+
+    <p>Add it up and the ongoing cost of running a gateway often rivals or exceeds the original build cost, every single year. That is the figure to put in front of a decision, not the build quote.</p>
+
+    <h2>What buying or partnering actually replaces</h2>
+
+    <p>When you partner with a processor or a PayFac-as-a-service provider, you are not just outsourcing code. You are handing off the PCI Level 1 scope, the certifications, the fraud infrastructure, the uptime obligation and the compliance treadmill. That is why the build-versus-buy math so rarely favors building: the buy option is priced as a small share of revenue, and the build option asks you to staff a payments company inside your software company. The full decision, including the cases where building genuinely makes sense, is laid out in <a href="/the-lab/build-vs-buy-vs-partner-payments">build vs buy vs partner</a>.</p>
+
+    <h2>When building can actually make sense</h2>
+
+    <p>It is not never. If payments processing is your core product rather than an attached revenue line, if you are at a scale where a few basis points of saved cost dwarfs a multimillion-dollar run rate, or if you have a genuinely novel flow no provider supports, owning the rails can pay off. Those conditions are rare, and the platforms that meet them usually already know it. For everyone else, the question is not how to build a gateway cheaply. It is how to capture payments economics without building one at all, which is what <a href="/the-lab/what-embedded-payments-costs">embedded payments cost</a> and <a href="/the-lab/how-saas-companies-make-money-from-payments">how platforms make money from payments</a> are really about.</p>
+
+    <h2>How to actually decide</h2>
+
+    <p>The number that decides this is not the build quote and it is not a benchmark from a blog. It is your build cost plus your honest annual run cost, set against what partnering would cost as a share of your payments revenue, modeled on your real volume. Run that and the answer is usually obvious. If you want to pressure-test it against your numbers before you commit a roadmap to it, that is exactly the conversation worth having first.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Build, buy or partner?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Let's run the real number against your volume.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call models your build cost plus run cost against what partnering would cost on your actual payments volume, so the decision rests on your numbers instead of a benchmark. Prefer to work it yourself first? The Framework walks you through the economics.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

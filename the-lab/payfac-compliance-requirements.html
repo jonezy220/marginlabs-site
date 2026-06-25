@@ -1,0 +1,190 @@
+<!-- ML-LAB-036 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payfac Compliance Requirements: What a Platform Actually Has to Do | Margin Labs</title>
+<meta name="description" content="Payfac compliance is broader than PCI. The full set of obligations a payment facilitator inherits from the acquirer: underwriting, monitoring, sanctions, AML and fund-flow rules.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/payfac-compliance-requirements">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Payfac Compliance Requirements: What a Platform Actually Has to Do | Margin Labs">
+<meta property="og:description" content="Becoming a payfac means inheriting the obligations an acquirer used to carry: PCI Level 1, underwriting, monitoring, sanctions, AML and fund-flow rules. The full set.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/payfac-compliance-requirements">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the compliance requirements for a payment facilitator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A payment facilitator must carry PCI DSS Level 1, underwrite and run KYC and KYB on every sub-merchant it boards, monitor transactions on an ongoing basis for fraud and prohibited activity, screen against sanctions and watch lists and maintain an AML program and follow the fund-flow, settlement and reporting rules its sponsor bank enforces. These are continuous obligations, not a one-time certification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PCI the only compliance a payfac needs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. PCI DSS Level 1 is foundational but it is one piece. As a payfac you also own sub-merchant underwriting and KYC, ongoing transaction and risk monitoring, sanctions and AML screening and your sponsor bank's fund-flow and reporting rules. Platforms that assume PCI is the whole picture underestimate what they are taking on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who handles compliance in a managed payfac model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a managed payfac or PayFac-as-a-service model the provider absorbs a large share of the compliance burden, including PCI scope, much of the monitoring infrastructure and parts of underwriting, in exchange for a cut of the payments economics. In a full payfac you carry all of it directly. Neither is free and the right choice depends on your volume and risk appetite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is payfac compliance a one-time certification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Payfac compliance is an operational function you stand up and run for as long as you are a payfac. PCI requires annual audits and quarterly scans, underwriting and monitoring are continuous and sanctions, AML and reporting obligations never stop. It carries real headcount and real liability behind it."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul><li><a href="/margin-multiplier">Margin Multiplier</a></li><li><a href="/advisory">Advisory</a></li><li><a href="/the-lab/">The Lab</a></li><li><a href="/principal">Principal</a></li></ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Payfac Compliance Requirements: What a Platform Actually Has to Do</h1>
+  <div class="article-meta">
+    <span>June 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Most platforms researching payfac compliance start with PCI and assume that is the picture. It is not. Becoming a payment facilitator means stepping into the role an acquiring bank used to play for your merchants, and that role comes with a set of obligations that is wider, more continuous and more consequential than a single certification. Underestimating that set is the most common way platforms get surprised after they commit.</p>
+
+    <p><strong>Payfac compliance means taking on the obligations an acquiring bank used to carry: PCI DSS Level 1, sub-merchant underwriting and KYC, ongoing transaction and risk monitoring, sanctions and AML screening and the fund-flow and reporting rules your sponsor bank enforces.</strong> It is continuous operational work, not a one-time certification you pass and forget.</p>
+
+    <h2>Payfac compliance is broader than PCI</h2>
+
+    <p>When you become a <a href="/the-lab/what-is-a-payment-facilitator">payment facilitator</a>, you inherit the obligations an acquirer used to hold for your merchants. Those obligations are ongoing, they are audited and your sponsor bank holds you accountable for every one of them. PCI is the piece everyone knows about. Here is what the full set actually looks like.</p>
+
+    <h3>1. PCI DSS Level 1</h3>
+
+    <p>As a payfac you are handling card data at volume, which puts you at PCI Level 1, the most stringent tier: an annual audit by a Qualified Security Assessor, quarterly network scans and a continuous obligation to keep your environment in scope and attested. This is foundational and non-negotiable, and we cover it in depth in <a href="/the-lab/pci-compliance-for-saas-platforms">PCI compliance for SaaS platforms</a>.</p>
+
+    <h3>2. Sub-merchant underwriting and KYC/KYB</h3>
+
+    <p>You are now the entity deciding which merchants get to process, which means you own underwriting. Before a sub-merchant is boarded you have to verify the business and its owners, which is KYB and KYC, assess risk and document it. This is not a one-time check at signup. You are expected to keep the picture current, and how you build this directly shapes <a href="/the-lab/merchant-onboarding-embedded-payments">merchant onboarding</a>: the same flow that has to feel fast to the merchant has to satisfy your sponsor's underwriting standard.</p>
+
+    <blockquote class="pull-quote">The card networks do not see your sub-merchants. They see you. Every merchant you board is a risk you have underwritten and now carry.</blockquote>
+
+    <h3>3. Transaction and risk monitoring</h3>
+
+    <p>A payfac is required to monitor transactions on an ongoing basis for fraud, money laundering and merchant behavior that breaches the rules. That means systems and, past a certain size, people watching for anomalies, excessive chargebacks, prohibited business types and sudden volume changes. The networks set thresholds, and breaching them carries fines that land on you, not the merchant.</p>
+
+    <h3>4. Sanctions, OFAC and AML</h3>
+
+    <p>You have to screen merchants and, where applicable, transactions against sanctions and watch lists, which in the US means OFAC, and maintain an anti-money-laundering program appropriate to your volume. This is a hard regulatory line, not a network guideline, and getting it wrong is the kind of failure that ends programs rather than fining them.</p>
+
+    <h3>5. Fund flow, settlement and reporting rules</h3>
+
+    <p>How money moves through a payfac is tightly governed. There are rules on how quickly you settle to sub-merchants, how you handle reserves, how funds are held and segregated and what you report to your sponsor bank and the networks. Your sponsor will hold you to specific settlement and reporting cadences, and your fund-flow design has to satisfy them before a single transaction clears.</p>
+
+    <h2>Who actually carries this: managed payfac vs full payfac</h2>
+
+    <p>This is the part that decides whether the obligations above are a reason to pause or a reason to choose a different model. In a full payfac, you carry all of it directly. In a managed payfac or PayFac-as-a-service arrangement, the provider absorbs a large share, the PCI scope, much of the monitoring infrastructure, parts of underwriting, in exchange for a cut of the economics. Neither is free and neither is right for everyone. The trade is real, and it is the same trade running underneath <a href="/the-lab/should-you-become-a-payment-facilitator">becoming a payment facilitator</a> and the broader <a href="/the-lab/payfac-vs-isv">payfac vs ISV</a> decision.</p>
+
+    <h2>The honest question</h2>
+
+    <p>Payfac compliance is not a checklist you complete. It is an operational function you stand up and run for as long as you are a payfac, with real headcount and real liability behind it. For some platforms the economics clearly justify owning it. For many, a managed model captures most of the upside without the obligation. The right answer depends on your volume, your risk appetite and how much of this you actually want to build. If you are weighing it, that is the conversation worth having before you commit, not after.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Own it or hand it off?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Let's figure out which payfac model fits your risk and volume.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call weighs what carrying full payfac compliance would cost you against what a managed model gives up in economics, on your actual numbers. Prefer to work the decision yourself first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

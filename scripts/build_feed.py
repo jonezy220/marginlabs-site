@@ -72,6 +72,11 @@ ARTICLES = [
     ("embedded-finance-for-vertical-saas",         "2026-06-23"),
     # 2026-06-25: Optimization cluster, interchange (1K-10K SEO vein).
     ("interchange-optimization-for-platforms",     "2026-06-25"),
+    # 2026-06-24: long-tail commercial-intent gaps. Gateway build cost (Selection
+    # cluster, build-vs-buy vein) + payfac compliance requirements (operational,
+    # distinct from the PCI piece). Both target zero-coverage GSC demand.
+    ("cost-to-build-a-payment-gateway",            "2026-06-24"),
+    ("payfac-compliance-requirements",             "2026-06-24"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
