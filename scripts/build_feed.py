@@ -70,6 +70,8 @@ ARTICLES = [
     ("cross-border-embedded-payments-latam",       "2026-06-22"),
     # 2026-06-23: Expansion pillar, embedded finance (1K-10K SEO vein).
     ("embedded-finance-for-vertical-saas",         "2026-06-23"),
+    # 2026-06-25: Optimization cluster, interchange (1K-10K SEO vein).
+    ("interchange-optimization-for-platforms",     "2026-06-25"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).

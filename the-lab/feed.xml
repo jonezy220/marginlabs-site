@@ -8,9 +8,67 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 23 Jun 2026 11:59:08 +0000</lastBuildDate>
-    <pubDate>Tue, 23 Jun 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 25 Jun 2026 01:16:08 +0000</lastBuildDate>
+    <pubDate>Thu, 25 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Interchange Optimization for Software Platforms: The Margin Lever Most Never Pull</title>
+      <link>https://marginlabs.io/the-lab/interchange-optimization-for-platforms</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/interchange-optimization-for-platforms</guid>
+      <pubDate>Thu, 25 Jun 2026 14:00:00 +0000</pubDate>
+      <description>Platforms obsess over the rate they charge merchants and ignore the biggest cost underneath it: interchange. What you can actually influence, the levers that lower it, and who it pays off for.</description>
+      <content:encoded><![CDATA[<p>Most platforms running payments spend all of their attention on one side of the equation: the rate they charge merchants. They negotiate it, model it and watch it. Almost none of them pay the same attention to the largest cost sitting underneath that rate, which is interchange. That is a missed lever, because while you cannot negotiate interchange, you can absolutely influence it, and on the right merchant base the savings drop straight to your margin.</p>
+
+    <p><strong>Interchange optimization is making sure each transaction qualifies for the lowest interchange rate it is eligible for.</strong> You do not set the rates, the card networks do, but you can change which rate applies through the data you pass, how transactions are authorized and settled, and how debit is routed. For a platform, every basis point you take off the cost side widens the spread between what you pay and what you charge.</p>
+
+    <h2>What interchange actually is</h2>
+
+    <p>Interchange is the fee paid to the card-issuing bank on every transaction, set by Visa and Mastercard, and it is the single largest component of the cost of accepting a card. It is not the processor's margin and it is not yours. It is a wholesale cost that flows through to whoever sits in the payment chain, and in a platform model that is partly you. Because the networks publish hundreds of interchange categories, the same dollar of volume can cost very different amounts depending on the card, the merchant and the transaction. That variation is the whole opportunity.</p>
+
+    <blockquote class="pull-quote">You cannot negotiate interchange. You can change which interchange rate a transaction qualifies for. That distinction is where the margin hides.</blockquote>
+
+    <h2>The levers platforms never pull</h2>
+
+    <p>These are the things that actually move a transaction from a higher interchange tier to a lower one. None of them are exotic, and most platforms simply never get to them.</p>
+
+    <h3>Level 2 and Level 3 data</h3>
+
+    <p>This is the big one. Commercial, corporate and purchasing cards qualify for meaningfully lower interchange when you pass enhanced data with the transaction, things like tax amount, a customer code and line-item detail. This is Level 2 and Level 3 data. If your platform serves B2B merchants who accept commercial cards and you are not passing this data, you are paying a premium on every one of those transactions for no reason. It is the largest and most overlooked interchange saving available to a platform with the right merchant mix.</p>
+
+    <h3>The right merchant category code</h3>
+
+    <p>The merchant category code that classifies each sub-merchant affects which interchange rates apply. Boarding merchants under a wrong or lazy default code can push their transactions into a worse category. Getting the MCC right at onboarding is a one-time fix with a permanent payoff, and it connects directly to how you run <a href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant onboarding</a>.</p>
+
+    <h3>Clean authorization and settlement</h3>
+
+    <p>Transactions can downgrade to a higher interchange rate when the authorization and settlement are sloppy: settling late, missing address verification on card-not-present, or authorizing and capturing in ways the networks penalize. A platform that gets the transaction lifecycle right keeps volume in the rate it should be in instead of letting it slide into a more expensive tier.</p>
+
+    <h3>Debit routing</h3>
+
+    <p>For debit, regulation gives merchants a choice of networks to route over, and those networks price differently. A platform that routes debit intelligently rather than accepting the default can take real cost out, particularly at scale. This lever is specific to debit, but for platforms with high debit volume it is far from trivial.</p>
+
+    <h2>Why this is a margin lever, not just a cost line</h2>
+
+    <p>Here is the part that makes interchange optimization a platform decision rather than a back-office chore. In a managed PayFac or full PayFac model you capture the spread between your cost of processing and the rate you charge sub-merchants. Interchange is the biggest piece of that cost. Lower it, and you have two choices, both good: keep the saving and widen your margin, or pass some of it to merchants as a better rate and use it for retention and activation. Either way the work pays for itself out of money that was previously leaking to no one's benefit. It sits in the same cost stack as everything else in <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments cost</a>, and it is one of the few items on that list you can actively shrink.</p>
+
+    <h2>So is it worth the work for your platform?</h2>
+
+    <p>The honest answer is the one it usually is: it depends, and here it depends almost entirely on your merchant and card mix. A platform with B2B merchants and real commercial-card volume has the most to gain, because Level 2 and Level 3 data and clean qualification move serious money. A platform with high debit volume has the routing lever. A platform processing mostly consumer credit cards has less room, because those rates already sit near the floor and the effort may not clear the savings. The first move is always to look at your actual mix before you invest in any of it, which is exactly the kind of thing the <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">economics of your payments program</a> should already be telling you.</p>
+
+    <p>Where your platform lands on that, and which of these levers is worth pulling first against your real volume and card mix, is the part that only resolves against your numbers. If you are looking at your processing cost and suspecting there is margin trapped in it, that is the conversation worth having before you either ignore it or chase the wrong lever. Reach out and we will work through yours.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">The honest answer? It depends.</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's find the margin trapped in your processing cost.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call looks at your actual merchant and card mix and tells you which interchange levers are worth pulling, and which are not. Prefer to work the decision on your own first? The Framework walks you through the economics.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Embedded Finance for Vertical SaaS: The Roadmap Beyond Payments</title>
       <link>https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas</link>
@@ -412,6 +470,8 @@
 
     <p>If you only take one thing from this piece, make it this: track these monthly, set a target for each and review them together. The signal is in how they move relative to one another, not in any single number.</p>
 
+    <p><strong>The seven payments KPIs every vertical SaaS platform should track are merchant activation rate, net take rate, payments revenue per merchant, gross payment volume growth, chargeback ratio, boarding completion rate and cost to serve. Revenue is a trailing indicator. These seven, reviewed monthly, tell you whether the program is healthy before the revenue line does.</strong></p>
+
     <h2>1. Merchant Activation Rate</h2>
 
     <div class="kpi-block">
@@ -432,7 +492,7 @@
       <div class="kpi-bench">ISV Referral: 5-15 bps | PFaaS: 25-70 bps | Full PayFac: 50-100 bps</div>
     </div>
 
-    <p>Your net take rate tells you how efficiently you monetize volume. If it is declining, you have one of three problems: pricing (giving away too much margin to win merchants), mix (high-volume low-margin merchants growing faster than the rest) or cost (processor spread eating your net). Each has a different fix, so the first job is to figure out which one you have.</p>
+    <p>Your net take rate tells you how efficiently you monetize volume, and the range you should expect depends on <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how your platform makes money from payments</a>. If it is declining, you have one of three problems: pricing (giving away too much margin to win merchants), mix (high-volume low-margin merchants growing faster than the rest) or cost (processor spread eating your net). Each has a different fix, so the first job is to figure out which one you have.</p>
 
     <p>Track it monthly. If it moves more than 3 to 5 bps in a quarter without a deliberate pricing change, investigate. The benchmark ranges above reflect typical economics by model. See <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> for the trade-offs that determine which range your platform sits in.</p>
 
@@ -735,6 +795,8 @@
 
     <p>The short version: ISV is the entry point, PayFac is the destination, and the migration between them is rarely as smooth as the slide deck makes it sound. The right model for a specific platform depends on volume, vertical, operational appetite and where the platform is in its lifecycle. None of those answers is universal, and the wrong answer at the wrong time can cost a platform six figures of annual margin or trap it in an operational program it was not ready to run.</p>
 
+    <p><strong>An ISV refers its customers to a processor and earns a residual (5 to 15 bps) while the processor owns the merchant and the operational burden. A PayFac boards its own sub-merchants, sets pricing and captures the full spread (50 to 120 bps) in exchange for taking on risk, disputes and compliance. ISV is the entry point, PayFac the destination.</strong></p>
+
     <h2>What ISV actually means in payments</h2>
 
     <p>An ISV in payments is an Independent Software Vendor that refers its customers to a payment processor and earns a residual on the volume those customers go on to process. The platform sells software. The processor signs the merchant agreement, runs the underwriting, owns the relationship, runs the operational machine and shares a slice of the economics with the platform that delivered the customer.</p>
@@ -745,7 +807,7 @@
 
     <h2>What PayFac actually means</h2>
 
-    <p>A Payment Facilitator is a platform that has signed a master merchant agreement with a processor and is operating its own sub-merchant program. The platform underwrites and boards the sub-merchants under its own scope, sets pricing for those sub-merchants, handles settlement and reconciliation, manages disputes and chargebacks, runs a Level 1 PCI compliance program and takes on operational and capital responsibility for the sub-merchant base.</p>
+    <p>A <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Payment Facilitator</a> is a platform that has signed a master merchant agreement with a processor and is operating its own sub-merchant program. The platform underwrites and boards the sub-merchants under its own scope, sets pricing for those sub-merchants, handles settlement and reconciliation, manages disputes and chargebacks, runs a Level 1 PCI compliance program and takes on operational and capital responsibility for the sub-merchant base.</p>
 
     <p>In exchange, the platform captures the spread between what the processor charges it (the cost of processing) and what it charges its sub-merchants. That spread can be 50 to 120 basis points of volume depending on the variant, the negotiation and the vertical. Compared to the 5 to 15 basis points an ISV captures, the PayFac economics are dramatically better. The operational burden is also dramatically larger.</p>
 
@@ -811,7 +873,7 @@
 
     <h2>How to decide for your platform</h2>
 
-    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. The residuals start to feel meaningful, and they stop checking whether they have crossed the threshold where moving up the ladder pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
+    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where moving up the ladder pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
 
     <p>The Margin Multiplier walks through the four-model comparison at your specific volume and vertical in about 60 seconds. It is the right starting point for a platform asking the PayFac vs ISV question for the first time. The output shows what each model would generate, what the recommended move is and what the annual revenue delta of moving up the ladder looks like.</p>
 
@@ -843,6 +905,8 @@
 
     <p>This article is the framework. What a payment processor actually does, how it differs from a gateway or a facilitator, what to look for when a SaaS platform is choosing one, and the hidden costs that determine whether the partnership pays off or quietly drags on the business.</p>
 
+    <p><strong>A payment processor for a SaaS platform handles the technical movement of money between merchants, card networks and banks. But the processor sits below the model decision: a platform should settle its architecture (ISV Referral, PayFac-as-a-Service or Full PayFac) first, then choose the processor with the best terms inside that model. Architecture first, processor second.</strong></p>
+
     <h2>What a Payment Processor Actually Does</h2>
 
     <p>A payment processor is the entity that handles the technical movement of money between merchants, card networks (Visa, Mastercard, American Express, Discover), and banks. The processor authorizes transactions, settles funds, manages chargebacks, and provides the technical rails that let a merchant accept a card payment.</p>
@@ -853,7 +917,7 @@
 
     <h2>Processor vs Gateway vs Payment Facilitator: The Vocabulary That Matters</h2>
 
-    <p>Three terms get used loosely in software platform conversations about payments, and the distinction matters because each layer captures different economics and carries different obligations.</p>
+    <p>Three terms get used loosely in software platform conversations about payments, and the distinction matters because each layer captures different economics and carries different obligations. If the facilitator layer is unfamiliar, start with <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">What Is a Payment Facilitator?</a> before going further.</p>
 
     <img src="https://marginlabs.io/assets/lab-images/tables/payment-processor-for-saas-1.png" alt="payment-processor-for-saas comparison table 1" />
 
@@ -970,6 +1034,8 @@
     <p>They are not the same thing. They solve different problems, carry different liabilities, and fit different business models. Picking the wrong one means either leaving money on the table or signing up for tax and compliance obligations you did not understand you were taking on.</p>
 
     <p>This article is the plain-language version. What each one actually is, what they share, where they diverge, and how to choose between them at your platform's stage and vertical.</p>
+
+    <p><strong>A Merchant of Record is the legal seller that takes payment and carries tax, liability and consumer-protection responsibility for the sale, used by SaaS companies selling globally. A Payment Facilitator aggregates other businesses as sub-merchants and captures economics on their payment volume. MoR fits when you are the seller, PayFac when your customers are.</strong></p>
 
     <h2>What Merchant of Record Means</h2>
 
@@ -2511,6 +2577,8 @@
 
     <p>If you run product, finance, or partnerships at a software company and you're trying to figure out what payment facilitation actually means for your business, this is the plain-language version. No jargon ladders. No sales positioning disguised as education.</p>
 
+    <p><strong>A payment facilitator (PayFac) is an entity registered with the card networks (Visa, Mastercard) that boards merchants under its own master merchant ID and processes payments on their behalf. Instead of each merchant getting an individual account, a PayFac aggregates them as sub-merchants under one umbrella, owning the relationship and the pricing.</strong></p>
+
     <h2>The Basic Concept</h2>
 
     <p>A Payment Facilitator is an entity registered with the card networks (Visa, Mastercard) that is authorized to board merchants under its own merchant identification number (MID) and process payments on their behalf.</p>
@@ -2587,7 +2655,7 @@
 
     <p><strong>"We need to become a PayFac."</strong> Maybe. But for most platforms between $30M and $200M in volume, a managed PayFac arrangement gives you 60-80% of the economics at 20-30% of the complexity. Full registration is the end state, not the starting point.</p>
 
-    <p><strong>"PayFac means we're a payments company now."</strong> No. It means you're monetizing the payments flowing through your platform. You're still a software company. The payments program is a revenue line, not a pivot.</p>
+    <p><strong>"PayFac means we're a payments company now."</strong> No. It means you're monetizing the payments flowing through your platform. You're still a software company. The payments program is a revenue line, not a pivot. For the broader picture of <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a>, the PayFac model is one approach among several.</p>
 
     <p><strong>"It's too complex for our team."</strong> A managed PayFac provider handles the regulatory complexity. Your operational addition is merchant onboarding, basic support, and chargeback response, which at most platforms translates to 0.5 to 1.5 FTEs depending on merchant count.</p>
 
@@ -2601,7 +2669,7 @@
 
     <p>The simplest way to think about it: a processor is infrastructure, an ISO is a sales channel, and a payment facilitator owns the merchant relationship. For software platforms looking to capture the payments economics, the meaningful choice is between operating as an ISO (the simplest, lowest-margin arrangement), operating under a managed PayFac (the middle ground that most platforms land on), or registering as a full PayFac (the highest margin, highest complexity).</p>
 
-    <p>For a deeper comparison of the model trade-offs, see <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISO</a> and <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>. For the managed PayFac model specifically, see <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a>.</p>
+    <p>For a deeper comparison of the model trade-offs, see <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISO</a> and <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>. For the managed PayFac model specifically, see <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a>. A PayFac is also distinct from a Merchant of Record, which is a separate arrangement covered in <a href="https://marginlabs.io/the-lab/merchant-of-record-vs-payfac?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Merchant of Record vs PayFac</a>.</p>
 
     <h2>How Much Does It Cost to Become a Payment Facilitator?</h2>
 
