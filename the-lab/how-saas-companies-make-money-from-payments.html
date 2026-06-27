@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the embedded payments revenue models?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are four embedded payments revenue models, ordered by how much of the payment you own: ISV referral (refer merchants and earn a residual), gateway or enhanced residuals (a larger cut for deeper involvement), managed PayFac or PayFac-as-a-service (own the payment experience on a provider's infrastructure) and full payment facilitation (become the payfac yourself). Each trades more operational responsibility for a larger share of the economics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which embedded payments revenue model is most profitable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full payment facilitation captures the largest share of the economics because you own the entire value chain, but it is also the most expensive and demanding to run and only pays off above a meaningful volume threshold. For most platforms the most profitable model on a risk-adjusted basis is managed PayFac or PayFac-as-a-service, which earns facilitation-level economics without the full registration and risk burden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between interchange-plus and flat pricing for embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interchange-plus passes through the true cost of a transaction (interchange plus network fees) and adds a transparent markup, which protects your margin when card mix shifts. Flat or blended pricing charges one simple rate, for example 2.9 percent plus 30 cents, which is easier to sell and predict but means you absorb the risk if interchange runs higher than your blend assumed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which payments revenue model should a SaaS platform choose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your volume and your appetite for operational work. A platform with modest volume and no payments operations should stay in referral. A platform with real volume, a vertical-specific workflow and the will to own the merchant experience belongs in managed PayFac or full PayFac. The line between them is volume and operational readiness."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -101,6 +143,8 @@
 
     <p>Most platforms know payments is a revenue opportunity. Fewer can explain how the money actually flows. This article breaks down the four models, the economics of each, and the thresholds where each one starts to make sense.</p>
 
+    <p><strong>There are four embedded payments revenue models, ordered by how much of the payment you own: ISV referral (refer merchants and earn a residual), gateway or enhanced residuals (a larger cut for deeper involvement), managed PayFac or PayFac-as-a-service (own the payment experience on a provider's infrastructure) and full payment facilitation (become the payfac yourself). Each trades more operational responsibility for a larger share of the economics.</strong></p>
+
     <h2>Model 1: ISV Referral</h2>
 
     <p>The simplest path. You partner with a payment processor, embed their acceptance tools in your product, and earn a residual on merchant volume. The processor handles everything, underwriting, compliance, settlement, support.</p>
@@ -158,6 +202,12 @@
     </ul>
 
     <p>Smart operators focus on operating costs first because those determine long-run economics. Implementation costs are one-time. Operating costs are forever.</p>
+
+    <h2>How You Price Merchants: Interchange-Plus vs Flat</h2>
+
+    <p>The four models above are how you earn. Layered on top is how you price merchants, and the pricing structure you choose drives your real take rate.</p>
+
+    <p><strong>Interchange-plus</strong> passes through the true cost of a transaction (interchange plus network fees) and adds a transparent markup. It protects your margin when card mix shifts, and it pairs naturally with <a href="/the-lab/interchange-optimization-for-platforms">interchange optimization</a>. <strong>Flat or blended</strong> pricing charges one simple rate, for example 2.9% plus 30 cents. It is easier to sell and predict, but you absorb the risk if interchange runs higher than your blend assumed. The further you move toward owning the payment, the more the pricing structure is yours to set, and the more it shapes what you actually keep.</p>
 
     <h2>Where to Start</h2>
 

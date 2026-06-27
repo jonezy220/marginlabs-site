@@ -27,6 +27,40 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you choose an embedded payments provider for a SaaS platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evaluate the full cost stack rather than the headline rate, who owns the merchant relationship, the migration path off the provider, the merchant onboarding experience, what happens when something goes wrong, the maturity of the API and documentation, the contract terms that bind you and whether the provider's roadmap aligns with yours. The headline rate is the least important of these for a platform monetizing payments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most important factor when choosing a payments provider?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Who owns the merchant relationship and the full cost stack, not the advertised rate. A provider that owns your merchants caps how much of the payments economics you can ever capture, and a low headline rate often hides assessments, fees and spread that determine your real margin. Both matter far more than the number a provider leads with."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should you optimize for the lowest processing rate when choosing a provider?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The lowest headline rate frequently comes with terms that cost you more later: ownership of the merchant relationship, weak migration paths, thin support, immature APIs or punitive contract clauses. For a platform building payments as a revenue line, control and economics over the long run matter more than shaving a few basis points up front."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }

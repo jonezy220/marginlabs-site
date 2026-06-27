@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to become a payment facilitator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standing up a full, registered payment facilitator typically takes 12 to 18 months from selecting a sponsor bank to processing live transactions. Card network registration with Visa and Mastercard alone runs 6 to 12 months, and building the underwriting, risk and compliance infrastructure adds several more. A managed PayFac-as-a-service path is far faster, a few weeks to a few months, because the provider already holds the registration and you operate under it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to become a payment facilitator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full PayFac registration runs roughly 500K to 2M dollars to implement and 300K to 800K dollars a year to operate. PayFac-as-a-service is far cheaper to stand up, about 50K to 200K dollars, plus 100K to 300K dollars a year and a 5 to 15 basis point share of spread to the provider. The gap is why most platforms start with PayFac-as-a-service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should you become a payment facilitator or use PayFac-as-a-service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on volume. Full PayFac only becomes worth the cost and complexity at roughly 200M dollars or more in annual payment volume, where the extra take rate you capture outweighs the extra operating cost. Below that, PayFac-as-a-service usually wins because you get facilitation-level economics without carrying the registration, risk and compliance burden yourself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the compliance burden of being a payment facilitator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As a payfac you own sub-merchant underwriting, ongoing transaction monitoring, sanctions and AML screening and PCI DSS Level 1 Service Provider validation, while your sponsor bank retains ultimate liability and must approve your program before you board merchants. It is a continuous operational function, not a one-time certification."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
