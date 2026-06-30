@@ -8,9 +8,72 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 25 Jun 2026 02:41:05 +0000</lastBuildDate>
-    <pubDate>Thu, 25 Jun 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Tue, 30 Jun 2026 03:04:42 +0000</lastBuildDate>
+    <pubDate>Tue, 30 Jun 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Payments as a Value-Creation Lever: The PE Playbook for Vertical SaaS</title>
+      <link>https://marginlabs.io/the-lab/payments-value-creation-lever-pe</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/payments-value-creation-lever-pe</guid>
+      <pubDate>Tue, 30 Jun 2026 14:00:00 +0000</pubDate>
+      <description>For a private equity sponsor, embedded payments is one of the most reliable value-creation levers in vertical SaaS. Why it works, where the value is trapped and the hold-period playbook that converts it.</description>
+      <content:encoded><![CDATA[<p>Most value-creation plans for a vertical SaaS platform treat payments as a product feature: something the platform offers, owned by a product manager, measured by whether it shipped. That framing leaves most of the value on the table.</p>
+
+    <p><strong>For a private equity sponsor, embedded payments is one of the most reliable value-creation levers in vertical SaaS.</strong> It converts payment volume the platform already has into high-margin, recurring, defensible revenue that lifts both EBITDA and the exit multiple, and most platforms enter a hold period capturing only a fraction of what is available.</p>
+
+    <h2>Why payments is a lever, not a feature</h2>
+
+    <p>Payments is not a feature, it is a second revenue engine sitting on top of volume the platform already processes. The merchants are already there. The transactions are already flowing. The only question is how much of that economics the platform captures, and for a sponsor that is one of the cleanest value-creation stories in the portfolio: high gross margin, recurring, attached to the core product and expandable without acquiring a single new customer. It is the same logic that makes payments revenue <a href="https://marginlabs.io/the-lab/payments-revenue-saas-valuation?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">worth more at exit than the software alone</a>.</p>
+
+    <blockquote class="pull-quote">Payments is a second revenue engine sitting on top of volume the platform already processes. The only question is how much of the economics it captures.</blockquote>
+
+    <h2>Where the value sits trapped at entry</h2>
+
+    <p>Most platforms arrive at a transaction monetizing payments well below their ceiling, and the gap almost always sits in one of four places. Diligence usually surfaces them, but <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments diligence</a> tells you the gap exists; the value-creation plan is what closes it.</p>
+
+    <ul>
+      <li><strong>Model gap.</strong> The platform refers merchants to a processor and takes a thin residual when its volume could justify owning the economics. This is the single biggest trapped-value item, because it is the difference between <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">referral-level and facilitation-level economics</a>.</li>
+      <li><strong>Activation gap.</strong> Payments is available but a small share of merchants actually use it. A platform monetizing 20% of eligible volume has most of its payments revenue still in front of it, and activation is usually the fastest lever to move.</li>
+      <li><strong>Pricing gap.</strong> The platform priced payments once, early, and never revisited it. Rates that made sense at launch are leaving margin on the table at scale.</li>
+      <li><strong>Cost gap.</strong> Interchange and processing cost are running higher than they need to, which is <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">margin the platform can actively shrink</a> rather than accept.</li>
+    </ul>
+
+    <h2>The hold-period playbook</h2>
+
+    <p>The reason payments fits private equity so well is that the whole arc can be run inside a hold period.</p>
+
+    <ol>
+      <li><strong>Diagnose</strong> the four gaps against real numbers: model, attach rate, take rate, cost.</li>
+      <li><strong>Make the model move that fits the timeline.</strong> This is the part operators get wrong. Becoming a full payment facilitator is a 12-to-18-month build, which can consume most of a hold period before it earns anything. A <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">managed PayFac-as-a-service</a> path captures facilitation-level economics in weeks to months, which is what makes it the right tool for a sponsor on a clock.</li>
+      <li><strong>Drive activation.</strong> Usually the largest near-term revenue lever and the one with the shortest payback, because the volume already exists. The <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant activation work</a> is unglamorous and it is where the money is.</li>
+      <li><strong>Optimize the cost side</strong> so the spread you capture is as wide as it can be.</li>
+      <li><strong>Reprice</strong> deliberately rather than by neglect.</li>
+    </ol>
+
+    <p>None of this requires acquiring new customers, building a new product or changing the platform's core motion. It is monetizing what already runs through the system, which is exactly why it converts so reliably into EBITDA.</p>
+
+    <h2>Why it shows up in the multiple, not just EBITDA</h2>
+
+    <p>Here is the part that matters most to a sponsor. Payments revenue does not just add to EBITDA, it changes how the business is valued. A next buyer underwrites owned, recurring payments economics differently than thin referral income, because it is high-margin, defensible and attached to a sticky workflow. Moving a platform from referral to owned facilitation economics, and lifting attach and take rate, raises the quality of revenue, not just the quantity. That tends to show up in the exit multiple, not only the earnings line, which is where the real return on this lever lives.</p>
+
+    <h2>The mistake to avoid</h2>
+
+    <p>The most common failure is treating payments as a product feature owned somewhere in the engineering backlog instead of a value-creation workstream owned at the GM or sponsor level. Payments cuts across product, pricing, risk, compliance and go-to-market. Left to a single function it gets optimized as a feature and underperforms as a business line. Run as a portfolio value-creation initiative with real ownership and a number attached, it becomes one of the most dependable levers in the plan.</p>
+
+    <p>Where a specific platform sits on these four gaps, and which move pays back fastest inside its hold period, only resolves against its actual volume and merchant mix. If that is the conversation you are having about a portfolio company, it is worth having against real numbers before the plan is set. Reach out and we will work through it.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">A value-creation lever, not a feature.</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's size the payments lever in your portfolio company.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call looks at the four gaps against a platform's real volume and merchant mix and tells you which move pays back fastest inside the hold period. Prefer to work it yourself first? The Framework walks you through the economics.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payments-value-creation-lever-pe?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Payfac Compliance Requirements: What a Platform Actually Has to Do</title>
       <link>https://marginlabs.io/the-lab/payfac-compliance-requirements</link>
@@ -2156,6 +2219,8 @@
       <description>The two terms get used interchangeably but describe different architectures, economics and competitive positions. Here is the distinction that matters.</description>
       <content:encoded><![CDATA[<p>"Embedded payments" and "integrated payments" are used interchangeably across the industry. Vendor websites, analyst reports, and conference panels treat them as synonyms. They're not. The distinction matters, and understanding it changes how you think about your payments strategy, your competitive position, and your revenue potential.</p>
 
+    <p><strong>The difference is ownership. Integrated payments connects your software to a third-party processor that still owns merchant onboarding, pricing and the relationship, so you earn referral residuals. Embedded payments makes the payment experience native to your product: you own onboarding, set pricing and earn facilitation-level economics on the same volume.</strong></p>
+
     <h2>Integrated Payments: Connection</h2>
 
     <p>Integrated payments means your software connects to a payment processor. The merchant can accept payments without leaving your application. But the payment experience is the processor's, their boarding flow, their settlement schedule, their merchant portal, their support line.</p>
@@ -2880,6 +2945,8 @@
 
     <p>Most platforms know payments is a revenue opportunity. Fewer can explain how the money actually flows. This article breaks down the four models, the economics of each, and the thresholds where each one starts to make sense.</p>
 
+    <p><strong>There are four embedded payments revenue models, ordered by how much of the payment you own: ISV referral (refer merchants and earn a residual), gateway or enhanced residuals (a larger cut for deeper involvement), managed PayFac or PayFac-as-a-service (own the payment experience on a provider's infrastructure) and full payment facilitation (become the payfac yourself). Each trades more operational responsibility for a larger share of the economics.</strong></p>
+
     <h2>Model 1: ISV Referral</h2>
 
     <p>The simplest path. You partner with a payment processor, embed their acceptance tools in your product, and earn a residual on merchant volume. The processor handles everything, underwriting, compliance, settlement, support.</p>
@@ -2937,6 +3004,12 @@
     </ul>
 
     <p>Smart operators focus on operating costs first because those determine long-run economics. Implementation costs are one-time. Operating costs are forever.</p>
+
+    <h2>How You Price Merchants: Interchange-Plus vs Flat</h2>
+
+    <p>The four models above are how you earn. Layered on top is how you price merchants, and the pricing structure you choose drives your real take rate.</p>
+
+    <p><strong>Interchange-plus</strong> passes through the true cost of a transaction (interchange plus network fees) and adds a transparent markup. It protects your margin when card mix shifts, and it pairs naturally with <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange optimization</a>. <strong>Flat or blended</strong> pricing charges one simple rate, for example 2.9% plus 30 cents. It is easier to sell and predict, but you absorb the risk if interchange runs higher than your blend assumed. The further you move toward owning the payment, the more the pricing structure is yours to set, and the more it shapes what you actually keep.</p>
 
     <h2>Where to Start</h2>
 

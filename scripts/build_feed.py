@@ -77,6 +77,9 @@ ARTICLES = [
     # distinct from the PCI piece). Both target zero-coverage GSC demand.
     ("cost-to-build-a-payment-gateway",            "2026-06-24"),
     ("payfac-compliance-requirements",             "2026-06-24"),
+    # 2026-06-30: dual-track flagship. Payments as a PE value-creation lever
+    # (Chris's job-search thesis + advisory-pipeline content for PE-backed platforms).
+    ("payments-value-creation-lever-pe",           "2026-06-30"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
