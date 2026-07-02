@@ -8,9 +8,71 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 30 Jun 2026 03:04:42 +0000</lastBuildDate>
-    <pubDate>Tue, 30 Jun 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Jul 2026 03:38:57 +0000</lastBuildDate>
+    <pubDate>Wed, 01 Jul 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Should Your Platform Monetize Payments Yet? A Readiness Check for Vertical SaaS</title>
+      <link>https://marginlabs.io/the-lab/should-your-platform-monetize-payments</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/should-your-platform-monetize-payments</guid>
+      <pubDate>Wed, 01 Jul 2026 14:00:00 +0000</pubDate>
+      <description>A vertical SaaS platform is ready to monetize payments when volume, merchant behavior and operational willingness line up. The readiness check, the volume floor and which model to start with.</description>
+      <content:encoded><![CDATA[<p>Most of the advice about embedded payments starts one step too late. It assumes you have already decided to monetize payments and just need to pick a provider or a model. The more useful question, and the one almost nobody with authority answers, comes before that: should your platform be doing this at all yet, and if so, where do you start.</p>
+
+    <p><strong>A vertical SaaS platform is ready to monetize payments when three things are true: meaningful payment volume already flows through or alongside the product, merchants pay through your software rather than a separate system and you are willing to own at least the merchant experience.</strong> If those hold, the first move is almost always a referral or a managed model, not becoming a registered payment facilitator. If they do not, waiting is the right call, not a timid one.</p>
+
+    <h2>Should your platform monetize payments at all?</h2>
+
+    <p>Most vertical SaaS platforms sit on payment volume they are barely monetizing, so the instinct is to assume the answer is always yes. It is not. Monetizing payments well is a business line, not a feature, and it only pays off when the platform is actually ready for it. Three readiness signals matter more than anything else:</p>
+
+    <ul>
+      <li><strong>Volume.</strong> Real money is flowing through the platform, not a trickle. Payments economics are a small percentage of volume, so you need enough volume for that percentage to matter.</li>
+      <li><strong>Merchant behavior.</strong> Your merchants already run payments through or alongside your product. If they use a completely separate processor and never touch payments inside your software, you have a distribution problem before you have a monetization one.</li>
+      <li><strong>Willingness to own it.</strong> Capturing more economics means owning more of the experience, and eventually some operational weight. If nobody on the team will own payments as a real line of the business, the economics will underperform no matter which model you pick.</li>
+    </ul>
+
+    <blockquote class="pull-quote">Monetizing payments is a business line, not a feature. It only pays off when the platform is actually ready to run it as one.</blockquote>
+
+    <h2>How much payment volume do you need before it is worth it?</h2>
+
+    <p>The honest answer is that it depends on the model, but there are rough floors. To make a referral or managed model worth the effort, you generally want to be in the tens of millions of dollars of annual payment volume or clearly heading there. Becoming your own registered payment facilitator is a different universe: that only starts to pay for its cost and burden at roughly two hundred million dollars a year or more, which is why almost no platform should start there. Below the floor, the effort of monetizing outweighs the return, and your energy is better spent growing the platform.</p>
+
+    <h2>Which model should you start with?</h2>
+
+    <p>Almost every platform that monetizes payments starts by owning less and grows into owning more. The realistic progression:</p>
+
+    <ol>
+      <li><strong>Referral.</strong> You refer merchants to a processor and earn a residual. Lowest commitment, thinnest economics, someone else owns the risk. The right first move for most.</li>
+      <li><strong>Managed PayFac / PayFac-as-a-service.</strong> You own the experience, the pricing and most of the economics on a provider's registration, without carrying a full payfac build. This is where most serious platforms land.</li>
+      <li><strong>Full, registered PayFac.</strong> Rare. Even the largest platforms usually run on a provider's infrastructure rather than registering themselves. It only makes sense at high volume with real appetite for the operational load.</li>
+    </ol>
+
+    <p>The <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV-vs-PayFac decision</a> and <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how platforms actually make money from payments</a> go deeper on each model. The mistake is skipping straight to "become a payfac" because it sounds like the ambitious move.</p>
+
+    <h2>How do ISVs choose between a referral model and owning the economics?</h2>
+
+    <p>It comes down to four factors, in order: your <strong>volume</strong> (is there enough for a bigger cut to matter), your <strong>operational readiness</strong> (will you carry underwriting, risk and support), how much <strong>control</strong> you want over the merchant experience, and the <strong>migration cost</strong> of changing models later, which almost everyone underprices. A platform with real volume and the will to own the experience should move up the models. A platform without either should stay on referral and not feel bad about it. If you are weighing a specific provider once you know the model, <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose a provider</a> covers that next step.</p>
+
+    <h2>When is it NOT the right time?</h2>
+
+    <p>This is the part vendors will never tell you, because every vendor's answer is "now, with us." It is genuinely not the right time when your volume is still thin, when nobody will own payments operationally or when your core product is not yet sticky enough that merchants would stay for the payments experience. Monetizing payments on a shaky product just adds a revenue line to a base that is still churning. Fix the base first, then come back to this.</p>
+
+    <h2>What is the first step if you are ready?</h2>
+
+    <p>If the readiness signals are there, the first step is not to pick a provider. It is to model what payments monetization is actually worth on your specific volume and merchant mix across the models, so the decision rests on your numbers rather than a vendor's pitch. That is the difference between bolting payments on as a feature and running it as a business line. If you want to work that math against your real numbers before you commit a roadmap to it, that is exactly the conversation worth having first.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Ready, or not yet?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Find out what payments is worth on your numbers.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call runs the readiness check and the model math against your actual volume and merchant mix, and tells you honestly whether now is the time and where to start. Prefer to work it yourself first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/should-your-platform-monetize-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Payments as a Value-Creation Lever: The PE Playbook for Vertical SaaS</title>
       <link>https://marginlabs.io/the-lab/payments-value-creation-lever-pe</link>

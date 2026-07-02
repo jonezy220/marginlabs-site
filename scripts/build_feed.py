@@ -80,6 +80,9 @@ ARTICLES = [
     # 2026-06-30: dual-track flagship. Payments as a PE value-creation lever
     # (Chris's job-search thesis + advisory-pipeline content for PE-backed platforms).
     ("payments-value-creation-lever-pe",           "2026-06-30"),
+    # 2026-07-01: readiness/decision piece (should you monetize payments + which model first).
+    # AEO-structured (question H2s, direct-answer block, first-person FAQ). QSC feeder.
+    ("should-your-platform-monetize-payments",     "2026-07-01"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
