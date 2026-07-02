@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does embedded payments cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Embedded payments has two cost layers. The direct cost of processing (interchange, network fees and the processor's markup) makes up most of a merchant's rate, typically in the low-to-mid single-digit percent depending on card mix. On top of that is the cost of the model you run (integration, compliance, risk and operations), which scales with how much of the payment you own. The headline rate a vendor quotes is only the first layer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the fee structure for embedded payment gateways?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An embedded payment gateway's fee structure usually combines a per-transaction cost (interchange plus network fees, passed through) with the provider's markup, which may be interchange-plus (transparent pass-through plus a set margin) or flat/blended (one simple rate like 2.9% plus 30 cents). Deeper models add platform, boarding, monitoring and settlement costs that do not show up in the headline rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the hidden costs of embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The costs vendors rarely lead with: PCI and compliance work, fraud and chargeback handling, underwriting and risk operations, integration and ongoing maintenance, and (in owned models) the provider's spread share or the staffing to run the program. These scale with how much of the payment you own and are where platforms are most often surprised."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to add payments to a SaaS platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the model. Referring merchants to a processor costs almost nothing to stand up. A managed or PayFac-Lite model costs meaningfully more to integrate and operate but far less than a full payfac, which runs into the hundreds of thousands to millions to build plus a comparable amount a year to run. The right question is not the headline rate but the total cost of the model against what it earns."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -99,13 +141,15 @@
   <div class="article-body">
     <p>The number most vendors won't give you until you're already two months into the sales process.</p>
 
+    <p><strong>Embedded payments has two cost layers: the direct cost of processing (interchange, network fees and the processor's markup, which together run most of a merchant's rate) and the cost of the model you run (integration, compliance, risk and operations, which scale with how much of the payment you own). The headline rate a vendor quotes is only the first layer, and the model layer is where platforms are most often surprised.</strong></p>
+
     <p>If you've ever tried to get a straight answer on what it costs to add embedded payments to a vertical SaaS platform, you know the experience: vague ranges, "it depends" answers, and a request to get on a call with a solutions engineer before anyone will give you real numbers.</p>
 
     <p>Some of that complexity is genuine, costs do vary meaningfully based on volume, vertical, and program structure. But a lot of it is deliberate obfuscation. Payment processors and PayFac-as-a-Service providers have strong incentives to get you into a sales process before you have enough information to negotiate effectively.</p>
 
     <p>This article lays out the real cost structure across all four embedded payments models. You should be able to read this and walk into any vendor conversation with a clear understanding of what you're paying for, what's negotiable, and what's a red flag.</p>
 
-    <h2>The Two Categories of Cost</h2>
+    <h2>What are the two categories of embedded payments cost?</h2>
 
     <p>Before we get into model-specific numbers, it's worth separating embedded payments costs into two categories that often get conflated: implementation costs and ongoing operating costs. They're different decisions with different timelines and different ROI calculations.</p>
 
@@ -194,7 +238,7 @@
 
     <p>We see early-stage platforms pursue Direct PayFac because it sounds like the most serious, most sophisticated option. That's usually a mistake that delays revenue by 18 months and consumes capital that could have been deployed in the core product.</p>
 
-    <h2>The Hidden Costs Everyone Forgets</h2>
+    <h2>What are the hidden costs of embedded payments?</h2>
 
     <p>Beyond the model-specific costs above, there are recurring costs that apply regardless of which path you choose, and they're almost always underestimated in initial business cases.</p>
 

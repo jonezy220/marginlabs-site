@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you read a payments P&L?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with gross processing volume, not revenue, then work down through the three layers: the gross fees charged to merchants, the passthrough costs (interchange and network assessments) that flow straight to the card networks, and the residual or net revenue your platform actually keeps. The line that matters most is net take rate, your net payments revenue divided by gross volume. Reading the P&L means separating the money that passes through you from the money you keep."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the key lines in a payments P&L?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The key lines are gross processing volume, gross payments revenue (total fees billed to merchants), passthrough costs (interchange and network assessments), processor or sponsor costs, and net payments revenue after those costs. From those you derive net take rate and gross margin on payments. Most confusion comes from mixing passthrough costs, which you never keep, with the true spread your platform earns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is net take rate in payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Net take rate is the payments revenue your platform actually keeps, expressed as a percentage of gross processing volume, after interchange, network assessments and processor costs are removed. It is the single cleanest measure of how well a payments program is monetizing, because it strips out the passthrough dollars that move through your account but never belong to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good net take rate for embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most vertical SaaS platforms, a healthy net take rate on card-present or card-not-present volume falls roughly in the 0.5 to 1.0 percent range after passthrough costs, depending on the monetization model and card mix. Referral arrangements sit at the low end, while managed PayFac and PayFac-as-a-service models capture more. The right benchmark depends on your model, but if you can't state your net take rate at all, that is the first problem to fix."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -106,6 +148,8 @@
 
     <p>But if you're running a vertical SaaS business with embedded payments, or evaluating whether to add them, understanding how to read a payments P&amp;L isn't optional. It's the difference between knowing whether your payments program is actually working and just assuming it is because the deposits keep showing up.</p>
 
+    <p><strong>To read a payments P&amp;L, start with gross processing volume, not revenue, then work down through three layers: gross fees billed to merchants, passthrough costs (interchange and network assessments) that flow straight to the card networks, and the net revenue your platform actually keeps. The single number that matters is net take rate, net payments revenue divided by gross volume. The whole job is separating the money that merely passes through you from the money you keep.</strong></p>
+
     <p>This is the framework we use at Margin Labs when we assess a platform's payments health. Walk through it once and you'll never look at a settlement report the same way again.</p>
 
     <h2>Start With Gross Volume, Not Revenue</h2>
@@ -149,7 +193,7 @@
       <p style="font-size:13px;color:var(--dim);margin:0;">The <a href="/margin-multiplier" style="color:var(--copper-lt);">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="/advisory" style="color:var(--copper-lt);">start a conversation</a> about what this means for your specific situation.</p>
     </div>
 
-    <h2>The Number That Actually Matters: Net Take Rate</h2>
+    <h2>What is net take rate in payments?</h2>
 
     <p>All three of those revenue layers collapse into one number that tells you the most about the health of your payments program: your net take rate.</p>
 

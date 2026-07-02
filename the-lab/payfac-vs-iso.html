@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between an ISO and a PayFac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An Independent Sales Organization (ISO) is a registered entity that refers merchants to a processor and earns a residual on the resulting volume, but it does not board, own or manage the merchant accounts. A Payment Facilitator (PayFac) boards its own sub-merchants under a master account, owns the merchant relationship and controls pricing, so it captures far more of the payment margin. The ISO is a distribution channel; the PayFac is closer to the processing economics itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a platform become an ISO or a PayFac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on volume, appetite for risk and how much of the payment margin you want to own. The ISO or referral path is faster to stand up, carries little compliance burden and fits platforms testing whether payments monetize at all. The PayFac path requires card-network registration or a managed PayFac-as-a-service partner, underwriting and compliance work, but it captures the most economics. Most software platforms should start with a referral or managed model and only take on full PayFac responsibility once volume justifies the overhead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ISO or PayFac better for a sales agent versus a software platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ISO model was built for sales agents and organizations whose business is signing merchants and earning residuals. The PayFac model was built for software platforms that already have merchants using their product and want to monetize the payment volume flowing through it. If your business is distribution, an ISO structure fits. If your business is software with embedded payments, a PayFac or managed PayFac model usually captures more value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a PayFac make more money than an ISO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A PayFac owns the merchant account and sets the merchant's price, so it keeps the spread between its cost of processing and what it charges, typically a much larger share of the payment margin. An ISO only earns a residual, a slice of the processor's margin, and has no control over pricing. On the same volume, a PayFac can capture several times the revenue of an ISO because it participates in the economics as a principal rather than a referrer."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -101,6 +143,8 @@
 
     <p>Most of the content explaining these models is written by companies that sell one of the two. That's a problem, because the answer isn't which model is better, it's which model matches where you are right now and how much of the payment margin you're ready to capture.</p>
 
+    <p><strong>An ISO refers merchants to a processor and earns a residual on the resulting volume without owning the merchant accounts. A PayFac boards its own sub-merchants, owns the relationship and sets pricing, so it captures far more of the payment margin. The ISO or referral path is faster and lighter to stand up; the PayFac or managed-PayFac path takes on compliance and underwriting but keeps the most economics. Pick the ISO route to test monetization, the PayFac route once volume justifies the overhead.</strong></p>
+
     <h2>What an ISO Actually Does</h2>
 
     <p>An Independent Sales Organization is a registered entity that refers merchants to a payment processor. The ISO doesn't process payments itself. It acts as a distribution channel, finding merchants, boarding them onto a processor's platform, and earning a residual on the processing volume those merchants generate.</p>
@@ -121,7 +165,7 @@
 
     <p>The trade-off: you're now responsible for merchant onboarding, KYC/AML compliance, transaction monitoring, reserve management, chargeback response, and regulatory reporting. You need staff, or a managed service provider, who understands payment operations. Implementation costs range from $50K for managed PayFac services to $500K+ for a full direct registration.</p>
 
-    <h2>The Economic Comparison</h2>
+    <h2>How does a PayFac make more than an ISO?</h2>
 
     <p>The math is simple but often ignored. Here's a side-by-side at three volume levels:</p>
 

@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between a merchant of record and a payment facilitator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The core difference is who is the seller of record and who carries the liability. A merchant of record becomes the legal seller and takes on tax, compliance and chargeback responsibility for the transaction. A payment facilitator lets its sub-merchants accept payments under its master account while each merchant stays the seller of record and owns that liability. MoR shifts the burden off your merchants; PayFac keeps them as principal and lets your platform monetize the payment flow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a payment facilitator a merchant of record?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A payment facilitator boards sub-merchants under its own master account, but each sub-merchant remains the merchant of record and the legal seller. A merchant of record is a distinct model where a third party becomes the seller itself and absorbs the tax, compliance and chargeback liability. They solve different problems, and a platform can use one, the other, or neither."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should a platform use a merchant of record instead of a payfac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A merchant of record makes sense when the platform wants to shift tax, compliance and fraud liability off its customers, which is common for cross-border digital sales where global tax and regulatory handling is the hard part. A payfac model makes sense when the goal is for the platform to monetize the payment flow while merchants remain the sellers and own their own liability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for international SaaS sales, MoR or payfac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For international SaaS sales, a merchant of record is often the simpler choice because it absorbs global tax collection, regulatory compliance and fraud liability that would otherwise fall on the platform or its merchants. A payfac model is better suited to domestic platforms that want to own the payment economics rather than offload cross-border complexity."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -90,6 +132,8 @@
   <div class="article-body">
     <p>Merchant of Record and Payment Facilitator sound like the same thing. Both involve a third party sitting between the buyer and the seller. Both promise to "handle payments" for software platforms. Both come up in the same conversations about embedded payments and revenue capture.</p>
 
+    <p><strong>The core difference is who is the seller of record and who carries the liability. A merchant of record (MoR) becomes the legal seller and takes on tax, compliance and chargeback responsibility. A payment facilitator (PayFac) lets sub-merchants accept payments under its master account while each merchant stays the seller of record. MoR shifts the burden off your merchants; PayFac keeps them as principal and lets your platform monetize the payment flow.</strong></p>
+
     <p>They are not the same thing. They solve different problems, carry different liabilities, and fit different business models. Picking the wrong one means either leaving money on the table or signing up for tax and compliance obligations you did not understand you were taking on.</p>
 
     <p>This article is the plain-language version. What each one actually is, what they share, where they diverge, and how to choose between them at your platform's stage and vertical.</p>
@@ -112,7 +156,7 @@
 
     <p>The PayFac model exists because, before it emerged, individual merchant accounts were slow to underwrite, friction-heavy to set up, and expensive to maintain. The PayFac model lets aggregators (Square, Stripe, Shopify Payments) board small merchants in minutes instead of weeks, accept the risk on the aggregate portfolio, and earn a portion of the basis-point spread on every transaction.</p>
 
-    <h2>The Core Differences</h2>
+    <h2>What is the core difference between MoR and PayFac?</h2>
 
     <p>The two models look similar on the surface (both involve a regulated entity sitting between the merchant and the payment networks) but they solve fundamentally different problems and carry different obligations.</p>
 

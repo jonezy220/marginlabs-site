@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between ISV referral and PayFac Lite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ISV referral means you refer merchants to a processor and collect a residual, typically 5 to 25 basis points, while the processor owns the relationship and the risk. PayFac Lite means you own onboarding, pricing and most of the economics on a sponsor's registration, often 25 to 75-plus basis points, in exchange for carrying more operational weight. Referral is lower commitment and lower return; PayFac Lite is more control, more margin and more responsibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do ISVs choose between a referral model and a payfac model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ISVs choose based on four things, in order: payment volume (is there enough for a bigger cut to matter), operational readiness (will you carry underwriting, risk and support), how much control you want over the merchant experience, and the migration cost of switching later. A platform with real volume and the will to own the experience moves to PayFac Lite; one without either stays on referral."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which earns more, ISV referral or PayFac Lite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PayFac Lite earns more per transaction because you own the pricing and capture facilitation-level economics rather than a thin referral residual. But it only nets out ahead once your volume is high enough that the extra take rate outweighs the operational cost of running the program. Below that volume, referral is the better economic choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is PayFac Lite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PayFac Lite, also called sponsored or managed PayFac, lets a software platform own the payment experience, pricing and most of the economics under a larger payment facilitator's registration, without becoming a fully registered payfac itself. It is the middle path between referring merchants for a residual and standing up a full, registered payfac."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -99,6 +141,8 @@
   <div class="article-body">
     <p>Every software company considering embedded payments eventually hits the same fork in the road: do you refer merchants to a processor and collect residuals, or do you take on more control, and more risk, by becoming a PayFac Lite under a larger <a href="/the-lab/what-is-a-payment-facilitator">payment facilitator</a>?</p>
 
+    <p><strong>The difference is how much you own and how much you earn. ISV referral means you refer merchants and collect a residual, typically 5 to 25 basis points, while the processor owns the relationship and the risk. PayFac Lite means you own onboarding, pricing and most of the economics on a sponsor's registration, often 25 to 75-plus basis points, in exchange for carrying more operational weight. ISVs choose based on volume, operational readiness and how much control they want.</strong></p>
+
     <p>Both models work. Both generate revenue. But they are built for fundamentally different companies at fundamentally different stages. Choosing the wrong one doesn't just leave money on the table, it can create operational drag that takes years to unwind.</p>
 
     <p>This article lays out the two models side by side, explains the economics of each, and gives you a practical framework for deciding which one fits where you are right now.</p>
@@ -152,7 +196,7 @@
       <p style="font-size:13px;color:var(--dim);margin:0;">The <a href="/margin-multiplier" style="color:var(--copper-lt);">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="/advisory" style="color:var(--copper-lt);">start a conversation</a> about what this means for your specific situation.</p>
     </div>
 
-    <h2>The Decision Framework</h2>
+    <h2>How do ISVs choose between referral and PayFac Lite?</h2>
 
     <p>Here's how to think about the choice:</p>
 
