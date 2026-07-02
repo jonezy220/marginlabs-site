@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much money do SaaS platforms make from payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends mostly on processing volume and the monetization model. As a rough frame, a referral model earns about 5 to 15 basis points of volume, a managed PayFac model about 30 to 60 bps, and full PayFac 80 to 120 bps or more. On 50 million dollars of annual volume that spans roughly 40 thousand to 500 thousand dollars a year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much can a vertical SaaS platform earn from embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Volume and model set the ceiling. A vertical platform with concentrated, higher-volume merchants can earn materially more per customer than a generic platform, and managed PayFac economics on real volume commonly reach six figures of annual high-margin revenue. Activation and pricing decide how close you get to the ceiling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a typical payments take rate for a software platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Net take rate typically runs from around 5 to 15 bps for referral arrangements up to roughly 80 to 120 bps for full PayFac, with managed PayFac in between. Take rate is net of interchange and processor cost, so the headline merchant rate is not the number that reaches your platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do payments economics change from year 1 to year 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They compound. Year 1 is throttled by activation ramp and the back-book you convert, while years 2 and 3 benefit from a larger activated base, repricing and cost optimization. Most founders underestimate year 1 and underestimate the year-3 compounding at the same time."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -100,8 +142,10 @@
     <p>The reason this question matters more than founders realize is that the numbers are large enough to materially change the trajectory of a vertical SaaS business, but they do not show up on the surface. The dollars are buried inside processor agreements, merchant pricing decisions, and operational choices that most founders never made deliberately. Until they get modeled, they are invisible.</p>
 
     <p>For the structural overview of how each model generates revenue, see <a href="/the-lab/how-saas-companies-make-money-from-payments">How SaaS Companies Make Money From Payments</a>. This article is the financial version. Specific dollars at specific volumes, across all four embedded payments arrangements.</p>
+    <p><strong>How much a platform makes from payments depends mostly on processing volume and the monetization model. As a rough frame, a referral model earns roughly 5 to 15 basis points of volume, a managed PayFac model 30 to 60 bps, and full PayFac 80 to 120 bps or more. Volume and model set the ceiling; activation and pricing decide how close you get to it.</strong></p>
 
-    <h2>Why Volume Is the Single Biggest Variable</h2>
+
+    <h2>Why is volume the single biggest variable?</h2>
 
     <p>Most embedded payments revenue conversations focus on the model: should we be ISV Referral, PayFac-as-a-Service, Full PayFac? Those choices matter. But the variable that drives most of the revenue outcome is annual processing volume.</p>
 
@@ -109,7 +153,7 @@
 
     <p>The starting point for sizing your opportunity is understanding your current annual processing volume. If you do not know it, estimate it: average merchants times average monthly payment volume per merchant times twelve. Most platforms have this data buried inside their processor reporting and have never aggregated it.</p>
 
-    <h2>What the Four Models Generate at Each Volume Tier</h2>
+    <h2>What do the four models generate at each volume tier?</h2>
 
     <p>Here is the framework. Net economics by model, as published in <a href="/the-lab/what-is-a-payment-facilitator">What Is a Payment Facilitator?</a>, applied across volume tiers most vertical SaaS platforms encounter. These ranges assume 60 to 75 percent merchant activation on payments, which is realistic for platforms past their first year of an embedded payments program. Year 1 results at lower activation rates would land at the lower end of each range.</p>
 

@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is PCI compliance for a SaaS platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PCI DSS is the card industry security standard that applies to any platform that touches, transmits or influences cardholder data. For a SaaS platform the practical question is scope: the less card data flows through your systems, the lighter your compliance obligation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do SaaS platforms need to be PCI compliant if they don't store card numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Not storing card numbers reduces your scope but does not remove the obligation. If your pages or servers can touch or influence cardholder data, even briefly, you are in scope. Using a provider's hosted fields or tokenization is what keeps most platforms in the lightest tier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which PCI SAQ applies to an embedded payments platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how card data reaches the processor. Platforms that fully outsource capture to hosted fields or a redirect often qualify for SAQ A, the simplest self-assessment. Platforms whose servers touch card data fall into heavier SAQ types with far more requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does PCI compliance cost for a software platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the lightest scope (SAQ A) the cost is mostly internal time and an annual self-assessment. As scope expands toward server-side card handling, costs climb into formal assessments, scanning and sometimes a QSA engagement. Minimizing scope is the single biggest cost lever."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -89,8 +131,10 @@
     <p>The truth is in between. Your PCI obligations depend entirely on your embedded payments model, and the range between models is enormous. A platform using hosted payment fields might complete a ~30-question self-assessment in an afternoon. A full PayFac managing its own token vault might spend $150K-$250K annually on compliance. Same regulatory framework. Completely different scope.</p>
 
     <p>PCI DSS v4.0 has been the current standard since April 2024 (v4.0.1 published June 2024). The framework's structure didn't change, but v4.0 added requirements, notably script management on payment pages, that affect even fully-outsourced platforms. Everything below reflects v4.0 obligations.</p>
+    <p><strong>For most SaaS platforms PCI compliance comes down to scope. The less cardholder data touches your systems, the lighter your obligation. Use a provider's hosted fields or tokenization and you can often qualify for the simplest self-assessment (SAQ A). Letting card data flow through your own servers expands scope, audit burden and cost dramatically.</strong></p>
 
-    <h2>How PCI Scope Works</h2>
+
+    <h2>How does PCI scope work?</h2>
 
     <p>PCI DSS applies to any entity that stores, processes, or transmits cardholder data. The operative word is "or", if you touch card data in any form at any point in the transaction flow, you're in scope.</p>
 
@@ -100,7 +144,7 @@
 
     <p>Most modern embedded payments architectures use tokenization and hosted fields specifically to keep platforms out of scope. The card number goes directly from the cardholder's browser to the processor's infrastructure. Your platform never sees it. You work with a token that represents the card but carries no exploitable value.</p>
 
-    <h2>SAQ Types: What Applies to You</h2>
+    <h2>Which PCI SAQ type applies to you?</h2>
 
     <p>PCI compliance is validated through Self-Assessment Questionnaires (SAQs) or, at higher levels, a Report on Compliance (RoC) conducted by a Qualified Security Assessor (QSA). Which SAQ applies to your platform depends on how you interact with card data.</p>
 
@@ -136,7 +180,7 @@
       <li><strong>Support team access.</strong> If your customer support team can see full card numbers in your admin tools (even if they're in the processor's dashboard embedded via iframe), verify that the iframe architecture keeps you out of scope. Some implementations leak data into the parent frame.</li>
     </ul>
 
-    <h2>What Compliance Actually Costs</h2>
+    <h2>What does PCI compliance actually cost?</h2>
 
     <p>For the majority of platforms using modern embedded payments architectures (hosted fields, PFaaS), the real compliance cost is:</p>
 

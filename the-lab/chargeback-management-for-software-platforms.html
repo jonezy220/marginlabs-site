@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is chargeback management for a software platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is owning three things: a response process for disputes, prevention to keep the chargeback ratio down, and reserve and liability handling. Platforms that monetize payments inherit chargeback responsibility, so the process has to exist before launch, not after the first dispute call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What chargeback ratio triggers card network penalties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Card networks flag merchants and platforms that cross roughly a 0.9 percent chargeback-to-transaction ratio, which puts them into monitoring programs with fines and remediation requirements. Staying well under that threshold is the operational target."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should a platform handle payment disputes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a defined process: capture evidence at the transaction level, respond within network deadlines, track outcomes, and feed patterns back into prevention. Ad hoc handling is where platforms lose disputes they could have won and let the ratio climb."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you reduce chargebacks on embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prevention is cheaper than response: clear merchant descriptors, good authorization and fraud controls, fast customer service, and clean settlement all reduce disputes. Prevention work pays for itself against fines and lost revenue."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -102,8 +144,10 @@
     <p>Chargebacks are the operational reality that most platforms discover after launching embedded payments, not before. Vendors don't lead with it. The integration docs gloss over it. And then a merchant calls about a disputed transaction and the team realizes there's no process for handling it.</p>
 
     <p>Chargebacks are manageable. The platforms that stay healthy manage them proactively. The ones that run into problems treat them as exceptions until they become a systemic issue.</p>
+    <p><strong>Chargeback management for a software platform means owning three things: a response process for disputes, prevention to keep the ratio down, and reserve and liability handling. The thresholds matter most: card networks flag merchants and platforms above roughly a 0.9 percent chargeback ratio, which triggers monitoring and fines. Build the process before you launch, not after the first dispute call.</strong></p>
 
-    <h2>What a Chargeback Actually Is</h2>
+
+    <h2>What is a chargeback?</h2>
 
     <p>A chargeback is a payment reversal initiated by a cardholder's bank. The cardholder disputes a transaction, claiming it was unauthorized, the goods or services weren't delivered, or the merchant misrepresented the transaction, and the bank reverses the payment, debiting the merchant's account and crediting the cardholder.</p>
 
@@ -111,7 +155,7 @@
 
     <p>Beyond the financial loss on an individual dispute, chargebacks carry fees ($15-$35 per dispute, regardless of outcome) and accumulate toward network thresholds that can put your entire payments program at risk.</p>
 
-    <h2>The Thresholds That Matter</h2>
+    <h2>What chargeback thresholds matter?</h2>
 
     <p>Visa and Mastercard monitor chargeback ratios at the merchant and facilitator level. Exceeding their thresholds triggers monitoring programs that are expensive and difficult to exit.</p>
 

@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you calculate embedded payments revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with gross merchant volume, apply a realistic activation rate, model the net economics of each monetization model (referral, managed PayFac, full PayFac), then subtract operating costs. The output is the annual revenue opportunity, and the gap between models is usually where the real decision sits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you model payments revenue for a SaaS platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Build it bottom up: merchant count times average volume gives gross volume, activation rate gives the share that actually processes with you, and net take rate per model gives revenue. Then net out operating and compliance cost. Avoid vendor projections and back-of-napkin estimates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What inputs go into a payments revenue model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Merchant count, average processing volume per merchant, activation rate, the net economics of each monetization model, and operating costs. The activation rate is the input teams most often skip, which is what makes optimistic models miss."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a realistic payments activation rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies widely by vertical and onboarding design, but many platforms see only 15 to 30 percent of merchants activate without deliberate work on friction and positioning. Modeling a high activation rate by default is the most common way a revenue model overstates the opportunity."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -108,6 +150,8 @@
     <p>Without this model, every other decision is downstream of a guess. You can't evaluate processor proposals, you can't justify implementation investment, and you can't set internal targets that mean anything.</p>
 
     <p>This article walks through the framework. The same inputs. The same math.</p>
+    <p><strong>To calculate embedded payments revenue, start with gross merchant volume, apply a realistic activation rate, then model the net economics of each monetization model and subtract operating costs. The output is the annual revenue opportunity, and the gap between models is usually where the real decision sits. Most teams skip the activation-rate step and overstate the number.</strong></p>
+
 
     <h2>Step 1: Start with Gross Merchant Volume</h2>
 
@@ -186,7 +230,7 @@
 
     <p>Over three years, assuming modest growth, that cumulative gap is typically $200K-$500K. That's capital that funds product development, sales hires, or market expansion. It's not abstract. It's real money you're choosing not to capture.</p>
 
-    <h2>What the Model Doesn't Tell You</h2>
+    <h2>What does the revenue model not tell you?</h2>
 
     <p>Revenue modeling is necessary but not sufficient for making the decision. The model doesn't capture:</p>
 

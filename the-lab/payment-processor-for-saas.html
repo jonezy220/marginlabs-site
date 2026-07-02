@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best payment processor for a SaaS platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single best processor. For a SaaS platform the processor matters less than the monetization model you choose (referral, managed PayFac or full PayFac), which determines your economics and who owns the merchant relationship. Pick the model first, then choose a processor that supports it. Platforms that lead with which processor usually optimize the wrong variable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a payment processor, a gateway and a payment facilitator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A payment processor moves the transaction between the card networks and the banks. A gateway is the technical connection that passes card data to the processor. A payment facilitator sits on top: it boards sub-merchants under its own account and owns pricing and the merchant relationship. A platform can use a processor and gateway without being a payfac."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I choose a payment processor for embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose based on the monetization model you have already picked, then compare on economics, underwriting and boarding support, reliability, reporting and how much of the operational weight the provider carries. The hidden costs (interchange handling, chargeback tooling, support) matter as much as the headline rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do SaaS platforms need their own payment processor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Most SaaS platforms run on a provider's processing infrastructure rather than becoming a processor or a registered payfac themselves. The real decision is how much of the payment economics you own, not whether you build processing."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -96,8 +138,10 @@
     <p>This article is the framework. What a payment processor actually does, how it differs from a gateway or a facilitator, what to look for when a SaaS platform is choosing one, and the hidden costs that determine whether the partnership pays off or quietly drags on the business.</p>
 
     <p><strong>A payment processor for a SaaS platform handles the technical movement of money between merchants, card networks and banks. But the processor sits below the model decision: a platform should settle its architecture (ISV Referral, PayFac-as-a-Service or Full PayFac) first, then choose the processor with the best terms inside that model. Architecture first, processor second.</strong></p>
+    <p><strong>The honest answer is that the processor is rarely the decision that matters most. For a SaaS platform the bigger call is the monetization model (referral, managed PayFac or full PayFac), which sets your economics and who owns the merchant relationship. Pick the model first, then the processor that fits it.</strong></p>
 
-    <h2>What a Payment Processor Actually Does</h2>
+
+    <h2>What does a payment processor actually do?</h2>
 
     <p>A payment processor is the entity that handles the technical movement of money between merchants, card networks (Visa, Mastercard, American Express, Discover), and banks. The processor authorizes transactions, settles funds, manages chargebacks, and provides the technical rails that let a merchant accept a card payment.</p>
 
@@ -148,7 +192,7 @@
 
     <p>For software platforms, the meaningful question is which model the platform is operating in. Once that decision is made (and the volume math justifies it), the processor selection becomes a question of who has the best terms within that model. For the upstream model decision, see <a href="/the-lab/should-you-become-a-payment-facilitator">Should You Become a Payment Facilitator?</a> and <a href="/the-lab/payfac-vs-isv">ISV Referral vs PayFac-as-a-Service</a>.</p>
 
-    <h2>What to Look For When a SaaS Platform Is Choosing a Processor</h2>
+    <h2>What should a SaaS platform look for when choosing a processor?</h2>
 
     <p>The evaluation criteria for a SaaS platform are different from the criteria a single business would use. The platform is evaluating a partner whose performance affects hundreds of sub-merchants and whose pricing structure determines the platform's own economics for years.</p>
 
@@ -176,7 +220,7 @@
 
     <p>If the platform serves merchants outside the US, the processor needs to operate in those geographies and support local card schemes (Interac in Canada, Bancomat in Italy, etc.). US-only processors often have foreign processing capability but at meaningfully worse rates. For platforms with international ambitions, evaluate this dimension early.</p>
 
-    <h2>The Hidden Costs Most Platforms Miss</h2>
+    <h2>What are the hidden costs most platforms miss?</h2>
 
     <p>Processor contracts contain costs that do not show up in the headline interchange-plus rate. These are where margin gets compressed unexpectedly.</p>
 

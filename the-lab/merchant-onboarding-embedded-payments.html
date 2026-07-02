@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you improve merchant onboarding for embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reduce the upfront ask. Use progressive disclosure, pre-fill data you already have, collect underwriting information only when needed, and time the ask to a moment of value. Onboarding friction, not pricing, is usually the real reason activation stalls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do merchants abandon payments onboarding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They hit a friction point: too many fields, an underwriting ask that feels heavy, or a form that arrives before they see the value. Roughly 60 percent never complete onboarding when the flow front-loads everything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is progressive disclosure in merchant onboarding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is asking for information in stages rather than all at once: start with the minimum needed to begin, then collect the rest as the merchant reaches steps that require it. It keeps early abandonment down."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you increase payments activation rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cut onboarding friction, pre-fill known data, time the ask to a value moment, and consider staffed boarding for higher-value merchants. Activation is won or lost in the boarding flow more than in pricing."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -100,6 +142,8 @@
     <p>The boarding flow is where most embedded payments programs lose merchants before they start. The integration is live, the economics are sound, and the product team has moved on to the next feature. But 60% of merchants never complete the onboarding. They start, hit a friction point, and quietly abandon it.</p>
 
     <p>Boarding conversion is the most underinvested part of a payments program. Most of the operational energy goes into the technical integration. Very little goes into the experience that determines whether merchants actually use it. It's also the single biggest lever for the <a href="/the-lab/payments-kpis-after-launch">activation rate KPI</a> that predicts whether your payments revenue will scale.</p>
+    <p><strong>Merchant onboarding is where most embedded payments programs lose merchants, often 60 percent never finish. The fix is to reduce the upfront ask: use progressive disclosure, pre-fill data you already have, collect underwriting information only when needed, and time the ask to a moment of value. Onboarding friction, not pricing, is usually the real reason activation stalls.</strong></p>
+
 
     <h2>What Merchants Are Being Asked to Do</h2>
 
@@ -118,7 +162,7 @@
 
     <p>This is a significant ask. You're requesting sensitive financial and identity information from a small business owner who may not have all of it immediately available, may not understand why it's needed, and hasn't yet seen enough value from your payments program to feel the request is worth the friction.</p>
 
-    <h2>The Progressive Disclosure Principle</h2>
+    <h2>What is the progressive disclosure principle?</h2>
 
     <p>The single most effective design principle for boarding flows is progressive disclosure: collect only what you need to take the next step, not everything you'll eventually need up front.</p>
 
@@ -134,7 +178,7 @@
 
     <p>Progressive disclosure typically improves boarding completion rates by 30-50% over single-form approaches. The merchant experiences early success before encountering the most sensitive requests.</p>
 
-    <h2>Where Merchants Drop Off</h2>
+    <h2>Where do merchants drop off in onboarding?</h2>
 
     <p>Analyze your boarding funnel by step. The drop-off points are predictable:</p>
 

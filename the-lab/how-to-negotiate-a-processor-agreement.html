@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you negotiate a payment processor agreement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leverage comes from volume and timing. Reopen the deal when your volume has grown well past the original terms or when a competing acquirer will quote you, then negotiate rate, revenue share, minimums and exit terms. Most platforms leave money on the table simply by never reopening the agreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does a SaaS platform have leverage with its processor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When volume has grown materially since signing, when a credible competing offer exists, or at renewal. Leverage is highest when you can plausibly move volume, which is exactly when most platforms forget to renegotiate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is negotiable in a processor or ISV agreement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The processing rate, revenue share or residual split, monthly minimums, and exit and portability terms are all typically negotiable. Volume-based repricing over the life of the deal is one of the most valuable things to secure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What terms should you never accept in a processor contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Avoid a long lock-in with no volume-based repricing, punitive exit terms, and clauses that make your data or merchant relationships hard to move. Those are the terms that quietly cost the most as you scale."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -99,6 +141,8 @@
     <p>Most ISV processor agreements, whether with Fiserv, Global Payments (TSYS), Worldpay, or any other major acquirer, are signed once, filed away, and never revisited. The platform grows, volume increases, and the economics of the original deal become progressively worse relative to what the platform could now command. The processor is happy to let this continue.</p>
 
     <p>Processor agreements are negotiable, at signing and at renewal. This article covers what's actually on the table, when you have leverage, and what platforms that negotiate well typically get.</p>
+    <p><strong>The leverage in a processor agreement comes from volume and timing. Renegotiate when your volume has grown well past the original deal or when a competing acquirer will quote you. What is negotiable is the rate, the revenue share, minimums and exit or portability terms; what you should never accept is a long lock-in with no volume-based repricing.</strong></p>
+
 
     <h2>Understand the Structure First</h2>
 
@@ -110,7 +154,7 @@
 
     <p><strong>The processor spread</strong> is the margin your processor earns above interchange and assessments. This is what you're negotiating. It's usually expressed as basis points above interchange, a flat per-transaction fee, or both. This is where the money lives.</p>
 
-    <h2>When You Have Leverage</h2>
+    <h2>When do you have leverage?</h2>
 
     <p>Leverage in processor negotiations comes from three sources: volume, competition, and optionality.</p>
 
@@ -122,7 +166,7 @@
 
     <p><strong>Optionality matters at contract signing.</strong> Once you've signed a three-year exclusive agreement with an early termination fee, your leverage is effectively zero until renewal. The time to negotiate termination rights, volume flexibility, and rate adjustment clauses is before you sign, not after.</p>
 
-    <h2>What's Negotiable</h2>
+    <h2>What is negotiable in a processor agreement?</h2>
 
     <p><strong>Processor spread.</strong> The most direct lever. Push for basis points above interchange rather than a blended rate, it's more transparent and easier to benchmark. Get competitive quotes and use them.</p>
 

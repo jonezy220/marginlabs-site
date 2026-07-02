@@ -27,6 +27,48 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When should a SaaS platform switch embedded payments providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When the economics have fallen well behind market, the provider can't support your roadmap, service or reliability is failing merchants, or you have outgrown the model. Because switching is expensive, weigh it against renegotiating first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the signs you should switch payment providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Five common signals: uncompetitive economics, a provider that blocks your roadmap, reliability or support problems that reach merchants, an outgrown model (such as referral when you should own the economics), and repeated failure to fix issues. Two or more together make the case."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to switch or renegotiate with your payments provider?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often renegotiate first. A credible switch threat frequently fixes the deal without the migration cost, which is the most expensive part of switching. Switch when renegotiation fails or the provider genuinely cannot support where you are going."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does switching payments providers cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It has four cost categories: direct migration (engineering, integration, parallel-running fees), merchant churn during re-boarding, diverted focus from the core product, and risk during the transition. The indirect costs usually dwarf the direct ones."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
   .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
@@ -85,8 +127,10 @@
     <p>And yet, sometimes it's the right move. Platforms that stay too long with a provider that no longer fits give up tens of basis points of margin every year, watch their merchants churn from friction the provider won't fix, and find themselves capability-constrained as they try to grow.</p>
 
     <p>The question isn't whether your current provider is perfect, none are. The question is whether the gap between what you have and what's available is large enough to justify the cost of moving. Here's the framework.</p>
+    <p><strong>You should consider switching embedded payments providers when the economics have fallen well behind market, the provider can't support your roadmap, service or reliability is failing merchants, or you have outgrown the model. But switching is expensive, so weigh it against renegotiating first; often a credible switch threat fixes the deal without the migration cost.</strong></p>
 
-    <h2>1. Five Signals You Should Be Considering a Switch</h2>
+
+    <h2>1. What five signals mean you should consider switching?</h2>
 
     <p>The decision starts with diagnosis. Not every irritation justifies a switch; some justify a conversation. These five signals are the ones that tend to compound and rarely resolve through negotiation alone:</p>
 
