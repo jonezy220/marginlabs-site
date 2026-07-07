@@ -83,6 +83,10 @@ ARTICLES = [
     # 2026-07-01: readiness/decision piece (should you monetize payments + which model first).
     # AEO-structured (question H2s, direct-answer block, first-person FAQ). QSC feeder.
     ("should-your-platform-monetize-payments",     "2026-07-01"),
+    # 2026-07-06: Implementation cluster PILLAR. Six-stage roadmap from decision
+    # to live and past live. Anchor for the KYB (Tue) and recurring-billing (Wed)
+    # spokes. AEO-structured (question H2s, direct-answer block, 4-Q FAQ). QSC CTA.
+    ("embedded-payments-implementation-roadmap",   "2026-07-06"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
