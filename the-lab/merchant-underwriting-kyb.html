@@ -1,0 +1,208 @@
+<!-- ML-LAB-040 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merchant Underwriting and KYB: What Your Platform Now Owns | Margin Labs</title>
+<meta name="description" content="When a platform owns the payment relationship, it inherits underwriting and KYB. What that actually means, why it is a control function and not a form, and how to run it without turning boarding into a wall.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/merchant-underwriting-kyb">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Merchant Underwriting and KYB: What Your Platform Now Owns | Margin Labs">
+<meta property="og:description" content="When a platform owns the payment relationship, it inherits underwriting and KYB. What that actually means, why it is a control function and not a form, and how to run it without turning boarding into a wall.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/merchant-underwriting-kyb">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between KYC and KYB?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KYC (know your customer) verifies individual people. KYB (know your business) verifies businesses: the legal entity, ownership, beneficial owners and that the business is what it claims to be. Payments boarding needs both, because you are verifying the company and the people who control it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a platform own when it underwrites merchants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three things: the approval decision (whether this merchant can process and at what limits), ongoing monitoring (because risk is not a one-time check at boarding), and the liability (if an approved merchant runs fraud or racks up chargebacks, the exposure flows up to the platform and its sponsor bank). Underwriting is a control you run continuously, not paperwork you clear once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you reduce boarding drop-off while still underwriting properly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-fill data you already hold, tier requirements to risk so a low-risk merchant is not underwritten like a high-risk one, automate the clear-cut approvals and route only edge cases to a human, and stage the ask so the merchant is not hit with everything at once. Decide your risk appetite up front in writing so boarding applies a policy rather than making a judgment call every time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if you approve a bad merchant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The exposure flows up. If an approved merchant commits fraud or generates excessive chargebacks, the platform and its sponsor bank carry the liability, not just the merchant. That is why underwriting is a risk-control function you own continuously once you move above a referral model."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Merchant Underwriting and KYB: What Your Platform Now Owns</h1>
+  <div class="article-meta">
+    <span>July 2026</span>
+    <span>6 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>When a platform moves from referring merchants to owning the payment relationship, it inherits a job it never had before: deciding who gets to process, and standing behind that decision. That job is underwriting, and the identity checks underneath it are KYB. Most platforms discover the weight of it only after they have approved a merchant who should not have been approved.</p>
+
+    <p>This is the third step of the <a href="/the-lab/embedded-payments-implementation-roadmap">embedded payments implementation roadmap</a>, and it is where you inherit obligations you did not have as a referral partner. Here is what underwriting and KYB actually involve once you own them, why they are a control function and not a form, and how to run them without turning boarding into a wall.</p>
+
+    <p><strong>KYB (know your business) is verifying that a merchant is a real, legitimate business and who controls it. Underwriting is the broader risk decision: whether to approve them, at what exposure and with what monitoring. When you move up from referral to a managed or full payfac model, both become your responsibility. You are now accountable for who you board, and the card networks and your sponsor bank hold you to it.</strong></p>
+
+    <h2>What is KYB, and how is it different from KYC?</h2>
+
+    <p>KYC (know your customer) verifies individual people. KYB verifies businesses: legal entity, ownership, beneficial owners and that the business is what it claims to be. Payments boarding needs both, because you are verifying the company and the people who control it. KYB is the part platforms tend to underestimate, because a business identity is messier to confirm than a person's.</p>
+
+    <h2>What does a platform actually own when it underwrites?</h2>
+
+    <p>Three things. The approval decision, whether this merchant can process and at what limits. The ongoing monitoring, because risk is not a one-time check at boarding. And the liability, because if an approved merchant runs fraud or racks up <a href="/the-lab/chargeback-management-for-software-platforms">chargebacks</a>, the exposure flows up to you and your sponsor bank. Underwriting is not paperwork you clear once. It is a control you run continuously. It is one of the main reasons the decision to <a href="/the-lab/should-you-become-a-payment-facilitator">move up from a referral model</a> is a business-model call, not a technical one.</p>
+
+    <h2>Why underwriting is a boarding-conversion problem, not just a risk problem</h2>
+
+    <p>Every underwriting requirement is also a boarding step, and every boarding step is a chance to lose the merchant. Ask for too much too early and you kill activation. Ask for too little and you approve risk you will pay for later. The craft is collecting the minimum needed to make a sound decision, staged so the merchant is not hit with everything at once. This is where risk and growth are in direct tension, and where most platforms get the balance wrong in one direction or the other. It is the same tension that runs through the whole <a href="/the-lab/merchant-onboarding-embedded-payments">merchant onboarding flow</a>.</p>
+
+    <h2>How to run underwriting without a wall</h2>
+
+    <p>Pre-fill what you already know, because you often hold more merchant data than a standalone processor would. Tier your requirements to risk, so a low-risk, low-volume merchant is not underwritten like a high-risk one. Automate the clear-cut approvals and route only the edge cases to a human. And decide your risk appetite up front, in writing, so boarding is applying a policy rather than making a judgment call every time.</p>
+
+    <h2>Where platforms get it wrong</h2>
+
+    <p>Treating KYB as a checkbox at signup and never revisiting it. Approving on thin verification to hit an activation number, then absorbing the chargebacks. Building underwriting as a one-time gate with no monitoring behind it. And under-staffing the function, because the integration looked finished and nobody scoped the operation that runs after it. The underwriting obligations you take on also shape your <a href="/the-lab/pci-compliance-for-saas-platforms">compliance footprint</a>, which grows with how much of the payments stack you own under the <a href="/the-lab/payfac-vs-isv">referral versus payfac decision</a>.</p>
+
+    <blockquote class="pull-quote">Underwriting is a control function, not a form. You are not collecting documents, you are deciding who gets to process and standing behind it, continuously.</blockquote>
+
+    <p>For help setting your underwriting policy and boarding flow before you are accountable for either, see the <a href="/advisory">advisory engagement</a>, or work the full sequence from the <a href="/the-lab/embedded-payments-implementation-roadmap">implementation roadmap</a>.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Set your underwriting policy before you own the risk.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works your boarding flow and risk appetite with you, against your real merchant mix, before you are accountable for either. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

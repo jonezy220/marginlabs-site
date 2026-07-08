@@ -87,6 +87,10 @@ ARTICLES = [
     # to live and past live. Anchor for the KYB (Tue) and recurring-billing (Wed)
     # spokes. AEO-structured (question H2s, direct-answer block, 4-Q FAQ). QSC CTA.
     ("embedded-payments-implementation-roadmap",   "2026-07-06"),
+    # 2026-07-08: Implementation cluster SPOKE (step 3). Merchant underwriting + KYB,
+    # what the platform owns once it moves above referral. Links up to the roadmap
+    # pillar. AEO-structured (question H2s, direct-answer block, 4-Q FAQ). QSC CTA.
+    ("merchant-underwriting-kyb",                  "2026-07-08"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).

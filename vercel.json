@@ -23,6 +23,11 @@
       "source": "/go/roadmap",
       "destination": "https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=implementation-roadmap",
       "permanent": false
+    },
+    {
+      "source": "/go/kyb",
+      "destination": "https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=merchant-underwriting-kyb",
+      "permanent": false
     }
   ],
   "functions": {

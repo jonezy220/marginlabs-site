@@ -8,9 +8,57 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 07 Jul 2026 03:32:45 +0000</lastBuildDate>
-    <pubDate>Mon, 06 Jul 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Wed, 08 Jul 2026 11:31:02 +0000</lastBuildDate>
+    <pubDate>Wed, 08 Jul 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Merchant Underwriting and KYB: What Your Platform Now Owns</title>
+      <link>https://marginlabs.io/the-lab/merchant-underwriting-kyb</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/merchant-underwriting-kyb</guid>
+      <pubDate>Wed, 08 Jul 2026 14:00:00 +0000</pubDate>
+      <description>When a platform owns the payment relationship, it inherits underwriting and KYB. What that actually means, why it is a control function and not a form, and how to run it without turning boarding into a wall.</description>
+      <content:encoded><![CDATA[<p>When a platform moves from referring merchants to owning the payment relationship, it inherits a job it never had before: deciding who gets to process, and standing behind that decision. That job is underwriting, and the identity checks underneath it are KYB. Most platforms discover the weight of it only after they have approved a merchant who should not have been approved.</p>
+
+    <p>This is the third step of the <a href="https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded payments implementation roadmap</a>, and it is where you inherit obligations you did not have as a referral partner. Here is what underwriting and KYB actually involve once you own them, why they are a control function and not a form, and how to run them without turning boarding into a wall.</p>
+
+    <p><strong>KYB (know your business) is verifying that a merchant is a real, legitimate business and who controls it. Underwriting is the broader risk decision: whether to approve them, at what exposure and with what monitoring. When you move up from referral to a managed or full payfac model, both become your responsibility. You are now accountable for who you board, and the card networks and your sponsor bank hold you to it.</strong></p>
+
+    <h2>What is KYB, and how is it different from KYC?</h2>
+
+    <p>KYC (know your customer) verifies individual people. KYB verifies businesses: legal entity, ownership, beneficial owners and that the business is what it claims to be. Payments boarding needs both, because you are verifying the company and the people who control it. KYB is the part platforms tend to underestimate, because a business identity is messier to confirm than a person's.</p>
+
+    <h2>What does a platform actually own when it underwrites?</h2>
+
+    <p>Three things. The approval decision, whether this merchant can process and at what limits. The ongoing monitoring, because risk is not a one-time check at boarding. And the liability, because if an approved merchant runs fraud or racks up <a href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">chargebacks</a>, the exposure flows up to you and your sponsor bank. Underwriting is not paperwork you clear once. It is a control you run continuously. It is one of the main reasons the decision to <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">move up from a referral model</a> is a business-model call, not a technical one.</p>
+
+    <h2>Why underwriting is a boarding-conversion problem, not just a risk problem</h2>
+
+    <p>Every underwriting requirement is also a boarding step, and every boarding step is a chance to lose the merchant. Ask for too much too early and you kill activation. Ask for too little and you approve risk you will pay for later. The craft is collecting the minimum needed to make a sound decision, staged so the merchant is not hit with everything at once. This is where risk and growth are in direct tension, and where most platforms get the balance wrong in one direction or the other. It is the same tension that runs through the whole <a href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant onboarding flow</a>.</p>
+
+    <h2>How to run underwriting without a wall</h2>
+
+    <p>Pre-fill what you already know, because you often hold more merchant data than a standalone processor would. Tier your requirements to risk, so a low-risk, low-volume merchant is not underwritten like a high-risk one. Automate the clear-cut approvals and route only the edge cases to a human. And decide your risk appetite up front, in writing, so boarding is applying a policy rather than making a judgment call every time.</p>
+
+    <h2>Where platforms get it wrong</h2>
+
+    <p>Treating KYB as a checkbox at signup and never revisiting it. Approving on thin verification to hit an activation number, then absorbing the chargebacks. Building underwriting as a one-time gate with no monitoring behind it. And under-staffing the function, because the integration looked finished and nobody scoped the operation that runs after it. The underwriting obligations you take on also shape your <a href="https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">compliance footprint</a>, which grows with how much of the payments stack you own under the <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">referral versus payfac decision</a>.</p>
+
+    <blockquote class="pull-quote">Underwriting is a control function, not a form. You are not collecting documents, you are deciding who gets to process and standing behind it, continuously.</blockquote>
+
+    <p>For help setting your underwriting policy and boarding flow before you are accountable for either, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>, or work the full sequence from the <a href="https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">implementation roadmap</a>.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Set your underwriting policy before you own the risk.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works your boarding flow and risk appetite with you, against your real merchant mix, before you are accountable for either. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>How to Implement Embedded Payments: A Roadmap for Software Platforms</title>
       <link>https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap</link>
@@ -41,7 +89,7 @@
 
     <h2>Step 3: Integrate, then board merchants</h2>
 
-    <p>The integration is the easy half. The hard half is boarding, because that is where you inherit underwriting and KYB obligations you did not have before. Every field you ask a merchant for is a chance to lose them, and every merchant you approve is one you are now accountable for. Design the <a href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">boarding flow</a> for completion, not for compliance theater, and treat underwriting as an ongoing function, not a one-time gate.</p>
+    <p>The integration is the easy half. The hard half is boarding, because that is where you inherit <a href="https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">underwriting and KYB obligations</a> you did not have before. Every field you ask a merchant for is a chance to lose them, and every merchant you approve is one you are now accountable for. Design the <a href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">boarding flow</a> for completion, not for compliance theater, and treat underwriting as an ongoing function, not a one-time gate.</p>
 
     <h2>Step 4: Migrate the existing book without churning it</h2>
 
@@ -65,7 +113,7 @@
 
     <blockquote class="pull-quote">Go-live is the middle of the project, not the end. The integration is the part you can schedule. Boarding, migration and activation are the parts that decide whether any of it was worth building.</blockquote>
 
-    <p>Related reading in the implementation cluster: merchant underwriting and KYB (what you own at step 3), and recurring billing and the payments stack (part of step 6). For operational support pressure-testing your own plan, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
+    <p>Related reading in the implementation cluster: <a href="https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant underwriting and KYB</a> (what you own at step 3), and recurring billing and the payments stack (part of step 6). For operational support pressure-testing your own plan, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
