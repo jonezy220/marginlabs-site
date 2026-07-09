@@ -187,6 +187,10 @@
   }
 
   // ── STRIPE CHECKOUT ───────────────────────────────
+  // GA4 ecommerce value per product, used for begin_checkout.
+  const PRODUCT_VALUE = { tier1: 139, tier2: 697, qsc: 379 };
+  const PRODUCT_NAME  = { tier1: 'Strategic Framework', tier2: 'Execution Playbook', qsc: 'Quick Start Call' };
+
   function wireCheckout(btnId, errId, product, resetLabel) {
     const btn = document.getElementById(btnId);
     if (!btn) return;
@@ -197,6 +201,15 @@
     window.addEventListener('pageshow', resetBtn);
     btn.addEventListener('click', async function () {
       const errMsg = document.getElementById(errId);
+      // GA4 checkout-intent event, fires the moment they commit to paying.
+      if (typeof gtag !== 'undefined') {
+        const val = PRODUCT_VALUE[product];
+        gtag('event', 'begin_checkout', {
+          currency: 'USD',
+          value: val,
+          items: [{ item_id: product, item_name: PRODUCT_NAME[product] || product, price: val }]
+        });
+      }
       btn.textContent = 'One moment...';
       btn.disabled = true;
       if (errMsg) errMsg.style.display = 'none';
@@ -339,12 +352,20 @@
     });
   })();
 
-  // ── QSC CLICK TRACKING (GA4 key event) ────────────
-  // Any Quick Start Call CTA click across the site fires qsc_click so the
-  // funnel step "intent to book" is measurable. Mark as a key event in GA4.
+  // ── CTA CLICK TRACKING (GA4) ──────────────────────
+  // One delegated listener covers every tagged CTA on the site:
+  //   • cta_click  — generic, fires for ANY [data-analytics] element so nav,
+  //                  homepage ladder (multiplier/framework/advisory), and Lab
+  //                  links all register. The token is passed as `cta`.
+  //   • qsc_click  — additional key event for Quick Start Call intent, kept
+  //                  distinct so the "intent to book" funnel step stays clean.
   document.addEventListener('click', function (e) {
-    var a = e.target.closest('[data-analytics*="consult"], [data-analytics*="qsc"]');
-    if (a && typeof gtag !== 'undefined') {
+    if (typeof gtag === 'undefined') return;
+    var el = e.target.closest('[data-analytics]');
+    if (!el) return;
+    var token = el.getAttribute('data-analytics');
+    gtag('event', 'cta_click', { cta: token, link_location: location.pathname });
+    if (/consult|qsc/.test(token)) {
       gtag('event', 'qsc_click', { link_location: location.pathname });
     }
   });
