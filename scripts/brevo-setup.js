@@ -62,6 +62,8 @@ async function createLists() {
     // Hot Leads: contacts currently in active personal outreach from Chris.
     // Cold nurture automations (WF1/WF2) should exclude this list from entry.
     { id: 7, name: 'Hot Leads',              folderId: 1 },
+    // Lab Subscribers: opt-ins from Lab article email capture (WF5 nurture).
+    { id: 12, name: 'Lab Subscribers',       folderId: 1 },
   ];
 
   // Check existing lists first
@@ -367,6 +369,41 @@ const EMAILS = [
       P('If anything has changed or you\'d like to add context before we connect, reply here.'),
     ],
   },
+
+  // ── WF5: Lab Subscriber Nurture ──
+  {
+    name: 'ml-wf5-day2',
+    subject: 'The number behind the article you read',
+    cta: ['Run the Margin Multiplier', 'https://marginlabs.io/margin-multiplier'],
+    body: [
+      P('Thanks for subscribing to the Lab. The pieces there are meant to answer the questions that come up when a platform starts taking payments seriously.'),
+      P('Most of them circle back to one number: what your payments opportunity is actually worth at your volume, across all four monetization models.'),
+      P('The Margin Multiplier runs that comparison in about 60 seconds. It pairs well with almost everything in the Lab, because it puts your specific numbers next to the concepts you just read about.'),
+    ],
+    postCta: P('No email gate on the reading. The Multiplier is where you plug in your own numbers.'),
+  },
+  {
+    name: 'ml-wf5-day7',
+    subject: 'Why most platforms leave payments margin on the table',
+    cta: ['Read: Why Merchants Don\'t Use Payments', 'https://marginlabs.io/the-lab/why-merchants-dont-use-payments'],
+    body: [
+      P('The gap between what a platform could earn on payments and what it actually earns usually comes down to two things: the model it picked, and how many of its merchants actually turn payments on.'),
+      P('The model is a one-time decision. Activation is a compounding one. A platform with strong activation on a simpler model often beats a platform with weak activation on a richer one.'),
+      P('This piece breaks down the three reasons merchants don\'t opt in, and what the platforms that get it right do differently:'),
+    ],
+    postCta: P('If payments is on your roadmap, this is the failure mode to design against early.'),
+  },
+  {
+    name: 'ml-wf5-day14',
+    subject: 'From reading to deciding',
+    cta: ['Get the Strategic Framework, $139', 'https://marginlabs.io/framework'],
+    body: [
+      P('The Lab is the free layer. It is built to help you think clearly about embedded payments before you commit to a path.'),
+      P('When you\'re ready to actually decide, the <a href="https://marginlabs.io/framework" style="color:#C8823C; text-decoration:underline;">Strategic Decision Framework</a> ($139) is the next step. Fourteen sections across the landscape, the four models in detail, and a 90-day action plan. It turns the reading into a decision you can take to your team.'),
+      P('If you\'d rather work your specific situation with someone who has run it, the <a href="https://marginlabs.io/quick-start-call" style="color:#C8823C; text-decoration:underline;">Quick Start Call</a> ($379) is one focused hour on your platform, with warm introductions to vetted processing partners and a written action plan in 48 hours.'),
+    ],
+    postCta: P('Either way, the Lab stays free. We\'ll only be in touch when there\'s something genuinely worth your time.'),
+  },
 ];
 
 async function createTemplates() {
@@ -431,12 +468,12 @@ async function main() {
   console.log('\n2. Lists...');
   await createLists();
 
-  console.log('\n3. Email templates (14 emails)...');
+  console.log('\n3. Email templates (17 emails)...');
   await createTemplates();
 
   console.log('\n═══ Done ═══\n');
-  console.log('Next: Configure 4 automation workflows in Brevo dashboard.');
-  console.log('See Brevo_Marketing_Automation_Plan_v2.docx for step-by-step instructions.\n');
+  console.log('Next: Configure 5 automation workflows in Brevo dashboard (UI-only, no API).');
+  console.log('See scripts/brevo-workflow-build-guide.md for step-by-step instructions.\n');
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
