@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>PREVIEW — The Margin Multiplier™ | Margin Labs</title>
+<meta name="description" content="Four inputs. Thirty seconds. See what your platform could be generating across all four embedded payments models.">
+<link rel="canonical" href="https://marginlabs.io/margin-multiplier">
+<meta property="og:title" content="The Margin Multiplier™ | Margin Labs">
+<meta property="og:description" content="Four inputs. Thirty seconds. See what your platform could be generating across all four embedded payments models.">
+<meta property="og:url" content="https://marginlabs.io/margin-multiplier">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/global-state.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How accurate are these basis-point ranges?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The bps ranges reflect what real platforms capture at each model, calibrated across hundreds of conversations, processor RFPs and PE diligence files. They're directional, not precise. Your actual capture depends on vertical, merchant mix, activation rate and the specific terms you negotiate with a processor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between PayFac-lite and Full PayFac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PayFac-lite means you use a partner like Stripe, Adyen, Tilled or Finix who handles the underwriting and money movement under their PayFac license. You get a meaningful slice of the economics with low operational burden. Full PayFac means you become the payment facilitator yourself, with sponsor bank relationships, your own compliance program and the full economic upside. Higher revenue, materially higher complexity and capital requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do you ask for my email before showing results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two reasons. First, we send a copy of your results plus the free Embedded Payments Guide PDF to your inbox so you have a reference document. Second, it lets us send the occasional follow-up if you want to go deeper. No sales call. No spam. Unsubscribe link in every email."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the free Embedded Payments Guide actually free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It's a vendor-neutral PDF that covers the four monetization models, basis-point math, processor economics, merchant activation rate and the operational considerations for each path. No payment required. No gated upsell. The Guide is the short version of our paid Strategic Decision Framework."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you share my data with processors or sell it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We don't sell your data. We don't share your inputs or email with processors, PayFac partners or any third party. The data stays with Margin Labs. If a meaningful next step involves a partner introduction, we ask first and you decide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my current setup is more complex than the four standard models?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick the closest model and read the results as directional. If you're running a hybrid setup, a sponsor bank residual structure, or a custom interchange-plus arrangement, the Multiplier gives you the order of magnitude but a Quick Start Call is the right next step to model your specific situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the next step after I get my results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depends on the gap. If the opportunity is meaningful and you want to move, the Strategic Decision Framework ($139) is a vendor-neutral playbook that takes you from question to decision. If you want a focused working session with model confirmation, processor shortlist and warm introductions, the Quick Start Call ($379) is the right path. We'll tell you which one fits your situation."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:   #0d0d0d; --bg2: #111111; --bg3: #171717; --bg4: #1e1e1e;
+  --bdr:  rgba(200,130,60,0.14);
+  --c:    #C8823C; --text: #F0EBE4;
+  --dim:  rgba(240,235,228,0.52); --dmr: rgba(240,235,228,0.3);
+  --font: 'DM Sans', sans-serif; --mono: 'DM Mono', monospace;
+}
+body { background:var(--bg); font-family:var(--font); color:var(--text); min-height:100vh; padding-bottom:80px; }
+
+/* PAGE HEADER — homepage-style hero with background art */
+.hero-mm { position:relative; overflow:hidden; padding:88px 48px 72px; background:var(--bg2); border-bottom:1px solid var(--bdr); }
+.hero-mm-bg { position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+.ph { max-width:760px; margin:0 auto; padding:0; text-align:center; position:relative; z-index:2; }
+.ey { font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.88; margin-bottom:20px; }
+.pt { font-size:clamp(30px, 4.4vw, 48px); font-weight:300; letter-spacing:-0.03em; line-height:1.18; margin-bottom:18px; }
+.pt strong { font-weight:700; }
+.ps { font-size:17px; font-weight:300; color:var(--dim); line-height:1.7; max-width:580px; margin:0 auto 28px; text-wrap:balance; }
+.hero-mm-cta { display:inline-flex; align-items:center; gap:10px; background:var(--c); color:#0d0d0d; border:none; border-radius:2px; font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; padding:15px 28px; cursor:pointer; text-decoration:none; transition:opacity 0.2s; }
+.hero-mm-cta:hover { opacity:0.88; }
+@media (max-width:768px) { .hero-mm { padding:56px 24px 48px; } }
+
+/* MAIN */
+.wrap { max-width:680px; margin:48px auto 0; padding:0 48px; }
+.step { display:none; }
+.step.active { display:block; }
+
+/* CARDS + INPUTS */
+.card { background:var(--bg3); border:1px solid var(--bdr); border-radius:4px; padding:36px 40px; margin-bottom:12px; }
+.card-label { font-family:var(--mono); font-size:8px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:20px; }
+.inputs-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:26px; }
+.ig { display:flex; flex-direction:column; gap:8px; }
+.ig label { font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--dmr); }
+
+select, input[type="email"], input[type="tel"], input[type="text"], textarea {
+  background:var(--bg4); border:1px solid var(--bdr); border-radius:2px;
+  color:var(--text); font-family:var(--font); font-size:14px; font-weight:300;
+  padding:11px 14px; width:100%;
+}
+select {
+  appearance:none; -webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C8823C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center; cursor:pointer;
+}
+select:focus, input:focus, textarea:focus { outline:none; border-color:rgba(200,130,60,0.45); }
+select option { background:var(--bg4); color:var(--text); }
+input::placeholder, textarea::placeholder { color:var(--dmr); }
+textarea { resize:vertical; min-height:90px; line-height:1.6; }
+
+/* BUTTONS */
+.btn-p {
+  background:var(--c); color:#0d0d0d; border:none; border-radius:2px;
+  font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:0.14em;
+  text-transform:uppercase; padding:14px 24px; cursor:pointer; transition:opacity 0.2s;
+  width:100%; display:block; text-align:center;
+}
+.btn-p:hover { opacity:0.88; }
+.btn-p:disabled { opacity:0.45; cursor:not-allowed; }
+.btn-p.auto { width:auto; display:inline-block; }
+
+.btn-g {
+  background:transparent; color:var(--text); border:1px solid rgba(240,235,228,0.15);
+  border-radius:2px; font-family:var(--mono); font-size:10px; font-weight:500;
+  letter-spacing:0.14em; text-transform:uppercase; padding:13px 24px;
+  cursor:pointer; transition:border-color 0.2s; text-decoration:none;
+  display:inline-block; text-align:center;
+}
+.btn-g:hover { border-color:rgba(200,130,60,0.4); color:var(--c); }
+
+/* GATE */
+.gate-headline { font-size:20px; font-weight:300; letter-spacing:-0.01em; margin-bottom:8px; }
+.gate-sub { font-size:13px; font-weight:300; color:var(--dim); line-height:1.7; margin-bottom:22px; }
+.email-row { display:flex; gap:10px; margin-bottom:12px; }
+.email-row input { flex:1; }
+.gate-note { font-family:var(--mono); font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--dmr); }
+.gate-err { font-size:12px; color:rgba(200,130,60,0.85); margin-top:10px; display:none; font-family:var(--mono); letter-spacing:0.08em; }
+
+/* RESULTS */
+.ri-label { font-family:var(--mono); font-size:8px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:10px; }
+.ri-hl { font-size:20px; font-weight:300; letter-spacing:-0.02em; margin-bottom:6px; }
+.ri-sub { font-size:13px; font-weight:300; color:var(--dim); line-height:1.65; margin-bottom:24px; }
+
+.model-grid { display:grid; grid-template-columns:1fr 1fr; gap:3px; margin-bottom:3px; }
+.mc { background:var(--bg3); border:1px solid var(--bdr); border-radius:2px; padding:22px 24px; position:relative; }
+.mc.is-cur  { border-color:rgba(200,130,60,0.22); }
+.mc.is-rec  { border-color:rgba(200,130,60,0.55); background:var(--bg2); }
+.mc.is-rec::before {
+  content:'Recommended'; position:absolute; top:-1px; right:14px;
+  background:var(--c); color:#0d0d0d; font-family:var(--mono); font-size:7px;
+  font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+  padding:3px 8px; border-radius:0 0 2px 2px;
+}
+.mc.is-ceil.is-rec::before { content:'Optimise here'; }
+.mc-num  { font-family:var(--mono); font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:var(--c); opacity:0.5; margin-bottom:5px; }
+.mc-name { font-size:14px; font-weight:400; color:var(--text); margin-bottom:14px; }
+.mc-rev  { font-size:28px; font-weight:700; color:var(--c); letter-spacing:-0.02em; line-height:1; margin-bottom:4px; }
+.mc-bps  { font-family:var(--mono); font-size:9px; letter-spacing:0.1em; color:var(--dmr); margin-bottom:10px; }
+.mc-tag  { font-size:12px; font-weight:300; color:var(--dim); }
+.mc-tag.up   { color:rgba(200,130,60,0.8); }
+.mc-tag.mono { font-family:var(--mono); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dmr); }
+
+.gap-box {
+  background:var(--bg2); border:1px solid var(--bdr); border-left:3px solid var(--c);
+  border-radius:2px; padding:22px 26px; margin:3px 0 3px;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.gap-lbl { font-family:var(--mono); font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:var(--dmr); margin-bottom:6px; }
+.gap-num { font-size:32px; font-weight:700; color:var(--c); letter-spacing:-0.02em; line-height:1; }
+.gap-sub { font-size:12px; font-weight:300; color:var(--dim); margin-top:5px; }
+.gap-rhs { font-size:13px; font-weight:300; color:var(--dim); line-height:1.72; max-width:280px; }
+
+.rationale { background:var(--bg3); border:1px solid var(--bdr); border-radius:4px; padding:24px 28px; margin:3px 0 24px; }
+.rat-lbl  { font-family:var(--mono); font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:10px; }
+.rat-text { font-size:14px; font-weight:300; color:var(--dim); line-height:1.75; }
+.rat-text strong { color:var(--text); font-weight:400; }
+
+/* CTA BLOCK */
+.cta-block { background:var(--bg3); border:1px solid var(--bdr); border-radius:4px; padding:30px 36px; margin-bottom:4px; }
+.cta-ey   { font-family:var(--mono); font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:8px; }
+.cta-hl   { font-size:17px; font-weight:300; letter-spacing:-0.01em; margin-bottom:8px; }
+.cta-sub  { font-size:13px; font-weight:300; color:var(--dim); line-height:1.65; margin-bottom:22px; }
+.cta-btns { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.cta-2nd  { font-family:var(--mono); font-size:8px; letter-spacing:0.14em; text-transform:uppercase; color:var(--dmr); }
+.cta-2nd a { color:var(--c); text-decoration:none; }
+.cta-2nd a:hover { text-decoration:underline; }
+
+
+.disc { max-width:680px; margin:24px auto 0; padding:0 48px; font-family:var(--mono); font-size:8px; letter-spacing:0.1em; color:var(--dmr); line-height:1.75; text-align:center; }
+
+/* WHAT YOU'LL GET — between hero and form */
+.wyg { max-width:1080px; margin:48px auto 32px; padding:0 48px; }
+.wyg-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.78; text-align:center; margin-bottom:10px; }
+.wyg-headline { font-size:22px; font-weight:300; letter-spacing:-0.015em; color:var(--text); text-align:center; margin-bottom:32px; }
+.wyg-headline strong { font-weight:600; }
+.wyg-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+.wyg-card { background:var(--bg3); border:1px solid var(--bdr); border-radius:4px; padding:24px 22px; }
+.wyg-num { font-family:var(--mono); font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--c); opacity:0.6; margin-bottom:10px; }
+.wyg-title { font-size:15px; font-weight:600; color:var(--text); margin-bottom:8px; line-height:1.35; min-height:2.7em; display:flex; align-items:flex-start; }
+.wyg-body { font-size:13px; font-weight:300; color:var(--dim); line-height:1.65; }
+@media (max-width:768px) { .wyg-grid { grid-template-columns:1fr; } .wyg { padding:0 24px; } }
+
+/* TRUST / VENDOR-NEUTRAL BLOCK — below form */
+.trust { max-width:760px; margin:56px auto 0; padding:36px 48px; background:var(--bg3); border:1px solid var(--bdr); border-left:3px solid var(--c); border-radius:4px; }
+.trust-eyebrow { font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.7; margin-bottom:12px; }
+.trust-headline { font-size:20px; font-weight:300; letter-spacing:-0.01em; color:var(--text); margin-bottom:14px; }
+.trust-headline strong { font-weight:600; }
+.trust-body { font-size:14px; font-weight:300; color:var(--dim); line-height:1.75; }
+.trust-body p { margin-bottom:12px; }
+.trust-body p:last-child { margin-bottom:0; }
+@media (max-width:768px) { .trust { margin:40px 20px 0; padding:28px 24px; max-width:none; } }
+
+/* FAQ — collapsible accordion */
+.faq { max-width:760px; margin:56px auto 0; padding:0 48px; }
+.faq-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c); opacity:0.78; text-align:center; margin-bottom:10px; }
+.faq-headline { font-size:26px; font-weight:300; letter-spacing:-0.015em; color:var(--text); text-align:center; margin-bottom:36px; }
+.faq-headline strong { font-weight:600; }
+.faq-list { display:flex; flex-direction:column; gap:8px; }
+.faq-item { background:var(--bg3); border:1px solid var(--bdr); border-radius:4px; overflow:hidden; transition:border-color 0.2s; }
+.faq-item[open] { border-color:rgba(200,130,60,0.32); }
+.faq-item summary { padding:20px 26px; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:15px; font-weight:600; color:var(--text); line-height:1.4; transition:color 0.2s; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary:hover { color:var(--c); }
+.faq-item summary::after { content:'+'; font-family:var(--mono); font-size:20px; font-weight:300; color:var(--c); opacity:0.7; transition:transform 0.25s ease, opacity 0.2s; flex-shrink:0; line-height:1; }
+.faq-item[open] summary::after { content:'−'; transform:rotate(0); opacity:1; }
+.faq-a { padding:0 26px 22px; font-size:14px; font-weight:300; color:var(--dim); line-height:1.72; }
+.faq-a a { color:var(--c); text-decoration:none; border-bottom:1px solid rgba(200,130,60,0.3); }
+.faq-a a:hover { border-bottom-color:var(--c); }
+@media (max-width:768px) { .faq { padding:0 24px; } .faq-item summary { padding:18px 22px; font-size:14px; } .faq-a { padding:0 22px 20px; } }
+
+/* MOBILE */
+@media (max-width:768px) {
+  .ph  { padding:0 24px; margin-top:40px; }
+  .pt  { font-size:28px; }
+  .wrap { padding:0 24px; }
+  .card { padding:24px 20px; }
+  .inputs-grid, .model-grid, .form-grid, .avail-grid { grid-template-columns:1fr; }
+  .email-row { flex-direction:column; }
+  .cta-btns { flex-direction:column; align-items:flex-start; }
+  .btn-p, .btn-g { width:100%; text-align:center; }
+  .gap-box { flex-direction:column; }
+  .modal { padding:28px 20px; }
+  .disc { padding:0 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HEADER — homepage-style hero with J-curve + stacked bars -->
+<section class="hero-mm">
+  <svg class="hero-mm-bg" viewBox="0 0 1440 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="mm-glow-bg" cx="50%" cy="40%" r="48%">
+        <stop offset="0%"   stop-color="#C8823C" stop-opacity="0.08"/>
+        <stop offset="100%" stop-color="#C8823C" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="mm-fade-l" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"   stop-color="#111111" stop-opacity="1"/>
+        <stop offset="18%"  stop-color="#111111" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="mm-fade-r" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="82%"  stop-color="#111111" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#111111" stop-opacity="1"/>
+      </linearGradient>
+      <linearGradient id="mm-fade-top" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#111111" stop-opacity="0.7"/>
+        <stop offset="35%"  stop-color="#111111" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="480" fill="#111111"/>
+    <rect width="1440" height="480" fill="url(#mm-glow-bg)"/>
+
+    <!-- Thin contained baseline rule (matches bar range, not full bleed) -->
+    <line x1="240" y1="438" x2="1200" y2="438" stroke="#C8823C" stroke-width="0.6" opacity="0.16"/>
+
+    <!-- Contained bar chart: 18 bars, x=240 to x=1200 (~960 wide, matches centered content) -->
+    <!-- Left 5 bars: muted base only (no incremental margin yet) -->
+    <!-- Bars 6-10: bright cap starts to emerge -->
+    <!-- Bars 11-18: bright cap grows and dominates -->
+    <g>
+      <!-- b1 — muted only -->
+      <rect x="240"  y="420" width="11" height="18"  fill="#C8823C" opacity="0.12" rx="1"/>
+      <!-- b2 — muted only -->
+      <rect x="296"  y="412" width="11" height="26"  fill="#C8823C" opacity="0.13" rx="1"/>
+      <!-- b3 — muted only -->
+      <rect x="352"  y="416" width="11" height="22"  fill="#C8823C" opacity="0.13" rx="1"/>
+      <!-- b4 — muted only -->
+      <rect x="408"  y="402" width="11" height="36"  fill="#C8823C" opacity="0.14" rx="1"/>
+      <!-- b5 — muted only -->
+      <rect x="464"  y="408" width="11" height="30"  fill="#C8823C" opacity="0.14" rx="1"/>
+      <!-- b6 — first bright cap emerging (small) -->
+      <rect x="520"  y="394" width="11" height="44"  fill="#C8823C" opacity="0.16" rx="1"/>
+      <rect x="520"  y="390" width="11" height="4"   fill="#C8823C" opacity="0.32" rx="1"/>
+      <!-- b7 -->
+      <rect x="576"  y="384" width="11" height="54"  fill="#C8823C" opacity="0.17" rx="1"/>
+      <rect x="576"  y="376" width="11" height="8"   fill="#C8823C" opacity="0.36" rx="1"/>
+      <!-- b8 -->
+      <rect x="632"  y="376" width="11" height="62"  fill="#C8823C" opacity="0.18" rx="1"/>
+      <rect x="632"  y="366" width="11" height="10"  fill="#C8823C" opacity="0.40" rx="1"/>
+      <!-- b9 -->
+      <rect x="688"  y="362" width="11" height="76"  fill="#C8823C" opacity="0.19" rx="1"/>
+      <rect x="688"  y="350" width="11" height="12"  fill="#C8823C" opacity="0.44" rx="1"/>
+      <!-- b10 -->
+      <rect x="744"  y="352" width="11" height="86"  fill="#C8823C" opacity="0.20" rx="1"/>
+      <rect x="744"  y="336" width="11" height="16"  fill="#C8823C" opacity="0.48" rx="1"/>
+      <!-- b11 -->
+      <rect x="800"  y="338" width="11" height="100" fill="#C8823C" opacity="0.22" rx="1"/>
+      <rect x="800"  y="318" width="11" height="20"  fill="#C8823C" opacity="0.54" rx="1"/>
+      <!-- b12 -->
+      <rect x="856"  y="326" width="11" height="112" fill="#C8823C" opacity="0.23" rx="1"/>
+      <rect x="856"  y="304" width="11" height="22"  fill="#C8823C" opacity="0.58" rx="1"/>
+      <!-- b13 -->
+      <rect x="912"  y="312" width="11" height="126" fill="#C8823C" opacity="0.25" rx="1"/>
+      <rect x="912"  y="286" width="11" height="26"  fill="#C8823C" opacity="0.64" rx="1"/>
+      <!-- b14 -->
+      <rect x="968"  y="296" width="11" height="142" fill="#C8823C" opacity="0.27" rx="1"/>
+      <rect x="968"  y="266" width="11" height="30"  fill="#C8823C" opacity="0.70" rx="1"/>
+      <!-- b15 -->
+      <rect x="1024" y="284" width="11" height="154" fill="#C8823C" opacity="0.28" rx="1"/>
+      <rect x="1024" y="250" width="11" height="34"  fill="#C8823C" opacity="0.76" rx="1"/>
+      <!-- b16 -->
+      <rect x="1080" y="266" width="11" height="172" fill="#C8823C" opacity="0.30" rx="1"/>
+      <rect x="1080" y="228" width="11" height="38"  fill="#C8823C" opacity="0.82" rx="1"/>
+      <!-- b17 -->
+      <rect x="1136" y="252" width="11" height="186" fill="#C8823C" opacity="0.32" rx="1"/>
+      <rect x="1136" y="210" width="11" height="42"  fill="#C8823C" opacity="0.88" rx="1"/>
+      <!-- b18 — tallest, brightest cap -->
+      <rect x="1192" y="232" width="11" height="206" fill="#C8823C" opacity="0.34" rx="1"/>
+      <rect x="1192" y="186" width="11" height="46"  fill="#C8823C" opacity="0.94" rx="1"/>
+    </g>
+
+    <!-- Edge fades with wider gradients so contained chart feels anchored -->
+    <rect width="1440" height="480" fill="url(#mm-fade-l)"/>
+    <rect width="1440" height="480" fill="url(#mm-fade-r)"/>
+    <rect width="1440" height="480" fill="url(#mm-fade-top)"/>
+  </svg>
+
+  <div class="ph">
+    <div class="ey">The Margin Multiplier™</div>
+    <h1 class="pt">What is your payments opportunity <strong>worth?</strong></h1>
+    <p class="ps">Four inputs. Thirty seconds. See what your platform could be earning across all four embedded payments models.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<div class="wrap" id="mm-main">
+
+  <!-- STEP 1: INPUTS -->
+  <div class="step active" id="step-inputs">
+    <div class="card">
+      <div class="card-label">Tell us about your platform</div>
+      <div class="inputs-grid">
+        <div class="ig">
+          <label for="arr">Annual Recurring Revenue</label>
+          <select id="arr" aria-label="ARR range">
+            <option value="" disabled selected>Select ARR range</option>
+            <option value="2">$1M – $5M</option>
+            <option value="7">$5M – $10M</option>
+            <option value="15">$10M – $20M</option>
+            <option value="35">$20M – $50M</option>
+            <option value="75">$50M – $100M</option>
+            <option value="150">$100M+</option>
+          </select>
+        </div>
+        <div class="ig">
+          <label for="vol">Annual Payments Volume</label>
+          <select id="vol" aria-label="Payments volume range">
+            <option value="" disabled selected>Select volume range</option>
+            <option value="500000">Under $1M</option>
+            <option value="2500000">$1M – $5M</option>
+            <option value="7500000">$5M – $10M</option>
+            <option value="17500000">$10M – $25M</option>
+            <option value="37500000">$25M – $50M</option>
+            <option value="75000000">$50M – $100M</option>
+            <option value="150000000">$100M+</option>
+          </select>
+        </div>
+        <div class="ig">
+          <label for="cur">Current Payments Model</label>
+          <select id="cur" aria-label="Current payments model">
+            <option value="" disabled selected>Select current model</option>
+            <option value="none">None (not started yet)</option>
+            <option value="isv">ISV Referral</option>
+            <option value="enhanced">Enhanced Residuals</option>
+            <option value="payfac_lite">PayFac-lite</option>
+            <option value="payfac">Full PayFac</option>
+            <option value="unsure">Not sure</option>
+          </select>
+        </div>
+        <div class="ig">
+          <label for="vert">Vertical / Industry</label>
+          <select id="vert" aria-label="Industry vertical">
+            <option value="" disabled selected>Select your vertical</option>
+            <option value="restaurant">Restaurant / Hospitality</option>
+            <option value="retail">Retail / Commerce</option>
+            <option value="field_service">Field Services</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="property">Property Management</option>
+            <option value="fitness">Fitness / Wellness</option>
+            <option value="professional">Professional Services</option>
+            <option value="other">Other vertical</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-p" onclick="goToGate()" data-analytics="mm-step1-submit">See My Results →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: EMAIL GATE -->
+  <div class="step" id="step-gate">
+    <div class="card">
+      <div class="card-label">One step to your numbers</div>
+      <h2 class="gate-headline">Your Margin Multiplier output is ready.</h2>
+      <p class="gate-sub">Enter your email to reveal your full model comparison and opportunity gap. We'll send a copy, plus the free Embedded Payments Guide, to your inbox.</p>
+      <div class="email-row">
+        <input type="email" id="gate-email" placeholder="you@company.com" required aria-label="Your email address"/>
+        <button class="btn-p" id="gate-btn" onclick="submitAndShow()" data-analytics="mm-gate-submit" style="width:auto;padding:11px 22px;">Unlock Results →</button>
+      </div>
+      <div class="gate-err" id="gate-err"></div>
+      <p class="gate-note">No sales call. No spam. Just your numbers.</p>
+      <p style="margin-top:16px;">
+        <a href="#" onclick="goBack(event)" data-analytics="mm-edit-inputs" style="font-family:var(--mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dmr);text-decoration:none;">← Edit inputs</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- STEP 3: RESULTS -->
+  <div class="step" id="step-results">
+    <div class="ri-label">Your Margin Multiplier Output</div>
+    <h2 class="ri-hl" id="ri-hl"></h2>
+    <p class="ri-sub" id="ri-sub"></p>
+    <div class="model-grid" id="model-grid"></div>
+    <div class="gap-box">
+      <div>
+        <div class="gap-lbl" id="gap-lbl">Annual opportunity</div>
+        <div class="gap-num" id="gap-num">-</div>
+        <div class="gap-sub" id="gap-sub"></div>
+      </div>
+      <div class="gap-rhs" id="gap-rhs"></div>
+    </div>
+    <div class="rationale">
+      <div class="rat-lbl">Why this recommendation</div>
+      <p class="rat-text" id="rat-text"></p>
+    </div>
+    <div class="cta-block" id="cta-block"></div>
+  </div>
+
+</div>
+
+<!-- TRUST / VENDOR-NEUTRAL -->
+<div class="trust">
+  <div class="trust-eyebrow">Why this is independent</div>
+  <h3 class="trust-headline">Vendor-neutral. <strong>Operator-built.</strong></h3>
+  <div class="trust-body">
+    <p>Built by Margin Labs, an independent advisory practice for embedded payments in vertical SaaS. No preferred PayFac partner, no sales team behind the numbers. The basis-point ranges reflect what real platforms capture across hundreds of processor RFPs and PE diligence files, and the recommendation follows your inputs, not a path that ends in a vendor sale.</p>
+  </div>
+</div>
+
+<!-- FAQ — collapsible -->
+<section class="faq">
+  <div class="faq-eyebrow">Frequently asked</div>
+  <h2 class="faq-headline">What people actually want to know <strong>before they run it.</strong></h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>How accurate are these basis-point ranges?</summary>
+      <p class="faq-a">The bps ranges reflect what real platforms capture at each model, calibrated across hundreds of conversations, processor RFPs and PE diligence files. They're directional, not precise. Your actual capture depends on vertical, merchant mix, activation rate and the specific terms you negotiate with a processor.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Why do you ask for my email before showing results?</summary>
+      <p class="faq-a">Two reasons. First, we send a copy of your results plus the free Embedded Payments Guide PDF to your inbox so you have a reference document. Second, it lets us send the occasional follow-up if you want to go deeper. No sales call. No spam. Unsubscribe link in every email.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you share my data with processors or sell it?</summary>
+      <p class="faq-a">No. We don't sell your data. We don't share your inputs or email with processors, PayFac partners or any third party. The data stays with Margin Labs. If a meaningful next step involves a partner introduction, we ask first and you decide.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What's the next step after I get my results?</summary>
+      <p class="faq-a">Depends on the gap. If the opportunity is meaningful and you want to move, the <a href="/">Strategic Decision Framework ($139)</a> is a vendor-neutral playbook that takes you from question to decision. If you want a focused working session with model confirmation, processor shortlist and warm introductions, the Quick Start Call ($379) is the right path. We'll tell you which one fits your situation.</p>
+    </details>
+  </div>
+</section>
+
+<div class="disc">
+  Revenue estimates use midpoint basis point rates applied to the midpoint of your selected volume range.
+  Actual results vary based on vertical, merchant mix, activation rate and provider terms.
+  Directional modeling only, not a guarantee of outcome.
+</div>
+
+
+
+
+<script>
+/*
+  MARGIN MULTIPLIER v4
+  Models + bps midpoints:
+    isv:          10 bps  (5–15)
+    enhanced:     30 bps  (20–40)
+    payfac_lite:  65 bps  (50–80)
+    payfac:      100 bps  (80–120)
+*/
+
+const MODELS = [
+  { id:'isv',         num:'01', name:'ISV Referral',       bps:10,  range:'5–15 bps' },
+  { id:'enhanced',    num:'02', name:'Enhanced Residuals', bps:30,  range:'20–40 bps' },
+  { id:'payfac_lite', num:'03', name:'PayFac-lite',        bps:65,  range:'50–80 bps' },
+  { id:'payfac',      num:'04', name:'Full PayFac',        bps:100, range:'80–120 bps' },
+];
+const MKEY = { isv:'isv', enhanced:'enhanced', payfac_lite:'payfac_lite', payfac:'payfac' };
+
+const VERT = {
+  restaurant:   'Restaurant and hospitality platforms see high transaction frequency, volume compounds quickly with strong merchant activation.',
+  retail:       'Retail platforms have variable merchant and ticket profiles. Model fit depends on merchant concentration and average transaction value.',
+  field_service:'Field service platforms typically see strong attach rates and recurring payment needs, a natural fit for embedded model economics.',
+  healthcare:   'Healthcare payments carry compliance complexity that affects model selection. Processor options may be constrained by regulatory requirements.',
+  property:     'Property management has high ACH volume alongside card, processor selection and model choice matter significantly here.',
+  fitness:      'Recurring billing and membership models drive predictable volume. Consistent with PayFac-lite and Full PayFac economics.',
+  professional: 'Professional services typically see lower transaction frequency but higher ticket, margin per transaction is the primary lever.',
+  other:        'Estimates are directional based on your volume and current model. Vertical-specific factors will affect actual basis point capture.',
+};
+
+const FORMSPREE_ID = 'xwvrzrov';
+
+function $c(id) { return document.getElementById(id); }
+function fmtCur(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1).replace(/\.0$/,'') + 'M';
+  if (n >= 1000)    return '$' + Math.round(n/1000) + 'K';
+  return '$' + Math.round(n).toLocaleString();
+}
+function fmtDiff(a, b, v) {
+  const fa = MODELS.find(m=>m.id===a), fb = MODELS.find(m=>m.id===b);
+  return fmtCur(v*((fb.bps-fa.bps)/10000));
+}
+
+function getRec(curId, vol) {
+  const v = parseFloat(vol);
+  if (curId==='payfac') return {
+    modelId:'payfac', ceiling:true, stayPut:true, ctaType:'consult-only',
+    ctaHl:"Let's talk about optimisation.",
+    ctaSub:"You're on the right model. The question now is how much margin you're actually capturing vs what the model allows. That's a conversation worth having.",
+    rationale:`You're already on <strong>Full PayFac</strong>, the highest-margin model available. The opportunity from here isn't model selection, it's optimisation: merchant activation rate, pricing strategy and take rate negotiation. Even a 10–15 bps improvement in effective rate at your volume moves the needle significantly.`,
+  };
+  if (curId==='payfac_lite') {
+    if (v>=25000000) return {
+      modelId:'payfac', ctaType:'consult',
+      ctaHl:"This move is worth a conversation.",
+      ctaSub:"Going from PayFac-lite to Full PayFac involves processor evaluation, pricing strategy and implementation sequencing. It's exactly the kind of decision that benefits from independent advice.",
+      rationale:`You're on <strong>PayFac-lite</strong> at a volume where <strong>Full PayFac</strong> economics are compelling. At your scale the incremental margin, approximately ${fmtDiff('payfac_lite','payfac',v)} annually, typically justifies the implementation investment.`,
+    };
+    return {
+      modelId:'payfac_lite', stayPut:true, ctaType:'primer',
+      ctaHl:"Understand what optimisation looks like at your stage.",
+      ctaSub:"The Strategic Decision Framework covers model economics in depth, including how to maximise margin within your current model before making a move.",
+      rationale:`You're on <strong>PayFac-lite</strong>, which is appropriate for your current volume. Full PayFac economics become compelling above approximately $25M in annual payment volume. Focus on merchant activation rate and take rate optimisation, that's where the margin is at your stage.`,
+    };
+  }
+  if (curId==='enhanced') {
+    if (v>=25000000) return {
+      modelId:'payfac', ctaType:'consult',
+      ctaHl:"At your volume, this is a significant decision.",
+      ctaSub:"Moving from Enhanced Residuals to Full PayFac involves processor selection, implementation cost and pricing strategy. Independent advice before you commit to a vendor matters.",
+      rationale:`You're on <strong>Enhanced Residuals</strong> at a volume where <strong>Full PayFac</strong> economics are genuinely compelling. The gap between 30 bps and 100 bps at your volume is approximately ${fmtDiff('enhanced','payfac',v)} annually.`,
+    };
+    return {
+      modelId:'payfac_lite', ctaType:'consult',
+      ctaHl:"This move is worth a conversation.",
+      ctaSub:"PayFac-lite selection involves evaluating providers, each with different economics and tradeoffs. Independent advice before you choose matters.",
+      rationale:`You're on <strong>Enhanced Residuals</strong>. The natural next step is <strong>PayFac-lite</strong>, it roughly doubles your effective take rate with manageable implementation complexity. At your volume the annual uplift is approximately ${fmtDiff('enhanced','payfac_lite',v)}.`,
+    };
+  }
+  if (curId==='isv') {
+    if (v>=50000000) return {
+      modelId:'payfac', ctaType:'consult',
+      ctaHl:"At your volume, this is a high-priority conversation.",
+      ctaSub:"The gap between ISV Referral and Full PayFac at your scale is substantial. Let's model the transition economics and identify the right path.",
+      rationale:`You're on <strong>ISV Referral</strong> at a volume where you're leaving significant margin on the table. Moving to <strong>Full PayFac</strong> could add approximately ${fmtDiff('isv','payfac',v)} annually.`,
+    };
+    if (v>=10000000) return {
+      modelId:'payfac_lite', ctaType:'consult',
+      ctaHl:"This move is worth a conversation.",
+      ctaSub:"PayFac-lite provider selection, Stripe, Adyen, Tilled, Finix and others, each has different economics and tradeoffs. Independent advice before you choose a partner matters.",
+      rationale:`You're on <strong>ISV Referral</strong> at a volume where <strong>PayFac-lite</strong> makes clear economic sense. The jump from 10 bps to 65 bps at your volume represents approximately ${fmtDiff('isv','payfac_lite',v)} in annual margin.`,
+    };
+    return {
+      modelId:'enhanced', ctaType:'primer',
+      ctaHl:"The Framework is your next step.",
+      ctaSub:"It covers the economics of all four models in depth, including what Enhanced Residuals looks like in practice and how to evaluate whether to go further.",
+      rationale:`You're on <strong>ISV Referral</strong>. The immediate next step is <strong>Enhanced Residuals</strong>, lowest implementation friction and roughly 3× your current take rate. At your volume that's approximately ${fmtDiff('isv','enhanced',v)} in additional annual margin.`,
+    };
+  }
+  // none / unsure
+  if (v>=25000000) return {
+    modelId:'payfac', ctaType:'consult',
+    ctaHl:"Starting at your scale is a meaningful decision.",
+    ctaSub:"Choosing the right model and processor from day one, rather than migrating later, is worth independent advice before you commit to a vendor.",
+    rationale:`With your payment volume and no existing model, you have a clean opportunity to start at <strong>Full PayFac</strong>. The economics at your scale justify the implementation investment, and starting right avoids the cost of migrating models later.`,
+  };
+  if (v>=5000000) return {
+    modelId:'payfac_lite', ctaType:'consult',
+    ctaHl:"Let's talk before you choose a provider.",
+    ctaSub:"PayFac-lite provider economics vary significantly. Getting independent advice before you commit to Stripe, Tilled, Finix, or others can save you from a costly migration later.",
+    rationale:`With your payment volume and no existing model, <strong>PayFac-lite</strong> is the recommended starting point. Strong economics without the full complexity of a PayFac buildout.`,
+  };
+  return {
+    modelId:'enhanced', ctaType:'primer',
+    ctaHl:"The Framework is the right starting point.",
+    ctaSub:"A vendor-neutral guide to all four models, how the economics work, how to evaluate the right path and how to get started independently.",
+    rationale:`With your current volume, <strong>Enhanced Residuals</strong> is the right starting model, fastest path to meaningful payments margin, lower implementation complexity and economics that scale as your volume grows.`,
+  };
+}
+
+// STATE
+let _s = {};
+
+function goToGate() {
+  const arr  = $c('arr').value;
+  const vol  = $c('vol').value;
+  const cur  = $c('cur').value;
+  const vert = $c('vert').value;
+  if (!arr||!vol||!cur||!vert) { alert('Please complete all four fields.'); return; }
+
+  gaEvent('calculator_started', {
+    volume_range:  $c('vol').options[$c('vol').selectedIndex].text,
+    current_model: $c('cur').options[$c('cur').selectedIndex].text,
+  });
+
+  const curKey  = MKEY[cur]||null;
+  const rec     = getRec(curKey||cur, vol);
+  const v       = parseFloat(vol);
+  const results = MODELS.map(m => ({ ...m, revenue: v*(m.bps/10000) }));
+  const curModel = results.find(m=>m.id===curKey);
+  const curRev   = curModel ? curModel.revenue : 0;
+  const recModel = results.find(m=>m.id===rec.modelId);
+  const gap      = recModel.revenue - curRev;
+
+  _s = {
+    arr, vol, cur, vert, curKey, rec, results, curModel, curRev, recModel, gap,
+    arrLbl: $c('arr').options[$c('arr').selectedIndex].text,
+    volLbl: $c('vol').options[$c('vol').selectedIndex].text,
+    curLbl: curModel ? curModel.name : (cur==='unsure'?'Unsure':'None (not started)'),
+    vertLbl: $c('vert').options[$c('vert').selectedIndex].text,
+  };
+
+  // Save calculator results to shared state
+  window.ML.saveCalc({
+    arrLbl:   _s.arrLbl,
+    volLbl:   _s.volLbl,
+    curLbl:   _s.curLbl,
+    vertLbl:  _s.vertLbl,
+    recModel: _s.recModel.name,
+    gapAmt:   fmtCur(_s.gap > 0 ? _s.gap : _s.recModel.revenue),
+    ctaType:  _s.rec.ctaType,
+  });
+
+  showStep('step-gate');
+}
+
+function goBack(e) { e.preventDefault(); showStep('step-inputs'); }
+
+async function submitAndShow() {
+  const email = $c('gate-email').value.trim();
+  const errEl = $c('gate-err');
+  const btn   = $c('gate-btn');
+  errEl.style.display = 'none';
+
+  if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent = 'Please enter a valid email address.';
+    errEl.style.display = 'block';
+    return;
+  }
+  btn.disabled = true; btn.textContent = 'Unlocking...';
+
+  gaEvent('calculator_completed', {
+    volume_range:      _s.volLbl,
+    recommended_model: _s.recModel.name,
+    cta_type:          _s.rec.ctaType,
+  });
+
+  // Save email to shared state
+  window.ML.saveVisitor({ email: email });
+
+  const gapAmt = _s.gap>0 ? _s.gap : _s.recModel.revenue;
+  const modelSummary = _s.results.map(m=>`${m.name}: ${fmtCur(m.revenue)}/yr (${m.range})`).join(' | ');
+
+  // Fire and forget, results always show regardless
+  fetch('/api/submit-calculator', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email,
+      arrLabel:     _s.arrLbl,
+      volLabel:     _s.volLbl,
+      curLabel:     _s.curLbl,
+      vertLabel:    _s.vertLbl,
+      recModel:     _s.recModel.name,
+      gapAmt:       fmtCur(_s.gap > 0 ? _s.gap : _s.recModel.revenue),
+      ctaType:      _s.rec.ctaType,
+      modelSummary: _s.results.map(m =>
+        `${m.name}: ${fmtCur(m.revenue)}/yr (${m.range})`
+      ).join(' | '),
+      utmParams: window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined,
+    }),
+  }).catch(() => {});
+
+  buildResults();
+  showStep('step-results');
+}
+
+function buildResults() {
+  const { results, curModel, curRev, recModel, gap, rec, volLbl, vertLbl, curLbl, vert } = _s;
+
+  $c('ri-hl').textContent  = `At ${volLbl} in annual payments volume, here's what each model generates.`;
+  $c('ri-sub').textContent = curModel
+    ? `You're currently on ${curModel.name}. These numbers show what you're capturing, and what each model would generate.`
+    : `You haven't started a payments program yet. These estimates show what each model would generate at your volume.`;
+
+  const grid = $c('model-grid'); grid.innerHTML = '';
+  results.forEach(m => {
+    const isCur = m.id===(curModel?curModel.id:null);
+    const isRec = m.id===recModel.id;
+    const delta = m.revenue - curRev;
+    let tag = '';
+    if (isCur&&!isRec)    tag=`<div class="mc-tag mono">Your current model</div>`;
+    else if (isCur&&isRec&&rec.ceiling) tag=`<div class="mc-tag mono">Current, optimise here</div>`;
+    else if (delta>0&&curModel&&!rec.ceiling) tag=`<div class="mc-tag up">+${fmtCur(delta)}/yr vs current</div>`;
+    else if (!curModel)   tag=`<div class="mc-tag">${fmtCur(m.revenue)}/yr opportunity</div>`;
+    const d = document.createElement('div');
+    d.className = 'mc'+(isCur?' is-cur':'')+(isRec?' is-rec':'')+(rec.ceiling?' is-ceil':'');
+    d.innerHTML = `<div class="mc-num">Model ${m.num}</div><div class="mc-name">${m.name}</div><div class="mc-rev">${fmtCur(m.revenue)}</div><div class="mc-bps">${m.range} · est. annual</div>${tag}`;
+    grid.appendChild(d);
+  });
+
+  const gapAmt = gap>0 ? gap : recModel.revenue;
+  $c('gap-lbl').textContent = rec.ceiling ? 'Annual optimisation opportunity' : rec.stayPut ? 'At your recommended model' : 'Annual opportunity gap';
+  $c('gap-num').textContent = fmtCur(gapAmt);
+  $c('gap-sub').textContent = curModel&&gap>0&&!rec.ceiling ? `potential annual uplift moving to ${recModel.name}` : rec.ceiling ? 'already captured, optimise activation and take rate to maximise it' : `annual estimate at ${recModel.name}, recommended for your stage`;
+  $c('gap-rhs').textContent = VERT[vert]||VERT.other;
+
+  $c('rat-text').innerHTML = rec.rationale;
+
+  const ctaEl = $c('cta-block');
+  const { ctaType, ctaHl, ctaSub } = rec;
+
+  if (ctaType==='consult-only'||ctaType==='consult') {
+    const sec = ctaType==='consult' ? `<span class="cta-2nd">Or <a href="#" id="primer-sec">get the Framework first →</a></span>` : '';
+    ctaEl.innerHTML = `
+      <div class="cta-ey">Next step</div>
+      <div class="cta-hl">${ctaHl}</div>
+      <p class="cta-sub">${ctaSub}</p>
+      <div class="cta-btns">
+        <button class="btn-p auto" id="consult-trigger" data-analytics="mm-cta-consult">Start the conversation →</button>
+        ${sec}
+      </div>`;
+    setTimeout(()=>{
+      const ct = $c('consult-trigger');
+      if (ct) ct.onclick = () => { window.location.href = '/advisory#form'; };
+      const ps = $c('primer-sec');
+      if (ps) ps.onclick = e => { e.preventDefault(); launchCheckout(ps); };
+    },50);
+  } else {
+    ctaEl.innerHTML = `
+      <div class="cta-ey">Next step</div>
+      <div class="cta-hl">${ctaHl}</div>
+      <p class="cta-sub">${ctaSub}</p>
+      <div class="cta-btns">
+        <button class="btn-p auto" id="primer-pri" data-analytics="mm-cta-primer">Get the Framework →</button>
+        <span class="cta-2nd">Or <a href="#" id="consult-soft">start a conversation →</a></span>
+      </div>`;
+    setTimeout(()=>{
+      const pp = $c('primer-pri');
+      if (pp) pp.onclick = () => launchCheckout(pp);
+      const cs = $c('consult-soft');
+      if (cs) cs.onclick = e => { e.preventDefault(); window.location.href = '/advisory#form'; };
+    },50);
+  }
+}
+
+async function launchCheckout(btn) {
+  gaEvent('checkout_initiated', { source: 'calculator_cta' });
+  const orig = btn.textContent;
+  btn.textContent = 'One moment...'; btn.style.opacity='0.6';
+  try {
+    const r = await fetch('/api/checkout',{method:'POST'});
+    const d = await r.json();
+    if (d.url) { window.location.href=d.url; return; }
+    throw new Error();
+  } catch(e) {
+    btn.textContent = orig; btn.style.opacity='1';
+    window.location.href='/#contact';
+  }
+}
+
+function gaEvent(name, params) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', name, params || {});
+  }
+}
+
+function showStep(id) {
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  $c(id).classList.add('active');
+  $c('mm-main').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+  <div class="footer-copy"><a href="/privacy" data-analytics="footer-privacy">Privacy</a></div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
