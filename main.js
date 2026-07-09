@@ -271,4 +271,76 @@
     });
   }
 
+  // ── LAB ARTICLE EMAIL CAPTURE ─────────────────────
+  // Injected on Lab article pages only (not the index). Captures the
+  // article traffic that previously left no trace: contact -> Brevo (list 2,
+  // SOURCE "Lab Subscriber"), and fires GA4 generate_lead (a key event).
+  (function () {
+    var path = location.pathname.replace(/\/+$/, '');
+    var isLabArticle = /^\/the-lab\/.+/.test(path) && !/\/index(\.html)?$/.test(path);
+    var wrap = document.querySelector('.article-wrap');
+    if (!isLabArticle || !wrap) return;
+
+    var slug = path.split('/').pop();
+    var block = document.createElement('div');
+    block.style.cssText = 'max-width:720px;margin:0 auto;padding:0 24px;';
+    block.innerHTML =
+      '<div style="border:1px solid rgba(200,130,60,0.28);border-radius:4px;background:rgba(200,130,60,0.05);padding:28px 28px 30px;margin:8px 0 8px;">' +
+        '<div style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:10px;">The Lab</div>' +
+        '<div style="font-size:19px;font-weight:600;letter-spacing:-0.02em;color:#F0EBE4;margin-bottom:8px;line-height:1.3;">Get new breakdowns like this</div>' +
+        '<p style="font-size:14px;font-weight:300;color:rgba(240,235,228,0.55);line-height:1.7;margin:0 0 18px;">Operator-level thinking on embedded payments for vertical SaaS. No fluff, no sales spam, unsubscribe anytime.</p>' +
+        '<form id="labCaptureForm" novalidate style="display:flex;gap:10px;flex-wrap:wrap;">' +
+          '<input id="labCaptureEmail" type="email" required autocomplete="email" placeholder="you@company.com" aria-label="Email address" style="flex:1;min-width:220px;background:#0d0d0d;border:1px solid rgba(240,235,228,0.18);border-radius:2px;color:#F0EBE4;font-family:inherit;font-size:14px;padding:12px 14px;">' +
+          '<button id="labCaptureBtn" type="submit" style="background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:\'DM Mono\',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:12px 24px;cursor:pointer;white-space:nowrap;">Subscribe &rarr;</button>' +
+        '</form>' +
+        '<div id="labCaptureSuccess" style="display:none;font-size:14px;color:#C8823C;margin-top:14px;">Thanks, you are on the list. First breakdown lands soon.</div>' +
+      '</div>';
+    wrap.insertAdjacentElement('afterend', block);
+
+    var form = block.querySelector('#labCaptureForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = block.querySelector('#labCaptureEmail');
+      var btn = block.querySelector('#labCaptureBtn');
+      var email = (input.value || '').trim();
+      if (!email || email.indexOf('@') < 1) { input.focus(); return; }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      var utm = window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined;
+
+      fetch('/api/brevo-subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          source: 'Lab Subscriber',
+          extraAttributes: { LAB_ARTICLE: slug },
+          utmParams: utm
+        })
+      }).then(function (r) {
+        block.querySelector('#labCaptureSuccess').style.display = 'block';
+        form.style.display = 'none';
+        if (window.ML && window.ML.saveVisitor) window.ML.saveVisitor({ email: email });
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'generate_lead', { source: 'lab_article', lab_article: slug });
+          if (r && r.ok) gtag('event', 'brevo_subscribed', { source: 'lab_article' });
+        }
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe →';
+      });
+    });
+  })();
+
+  // ── QSC CLICK TRACKING (GA4 key event) ────────────
+  // Any Quick Start Call CTA click across the site fires qsc_click so the
+  // funnel step "intent to book" is measurable. Mark as a key event in GA4.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-analytics*="consult"], [data-analytics*="qsc"]');
+    if (a && typeof gtag !== 'undefined') {
+      gtag('event', 'qsc_click', { link_location: location.pathname });
+    }
+  });
+
 })();
