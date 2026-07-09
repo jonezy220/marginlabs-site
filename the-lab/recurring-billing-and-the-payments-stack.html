@@ -1,0 +1,208 @@
+<!-- ML-LAB-041 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recurring Billing and the Payments Stack: Where They Meet | Margin Labs</title>
+<meta name="description" content="Billing and payments are two layers of the same stack, and where they meet is where the money leaks. How they fit together, why failed payments are a collections problem, and what dunning and reconciliation recover.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/recurring-billing-and-the-payments-stack">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Recurring Billing and the Payments Stack: Where They Meet | Margin Labs">
+<meta property="og:description" content="Billing and payments are two layers of the same stack, and where they meet is where the money leaks. How they fit together, why failed payments are a collections problem, and what dunning and reconciliation recover.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/recurring-billing-and-the-payments-stack">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between billing and payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Billing decides what a customer owes and when: the plan, the price, the schedule, the proration. Payments executes the collection: authorization, capture, settlement. They are separate layers, and the result of a charge has to flow back from payments to billing to keep the record true."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do recurring payments fail, and can you recover them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A meaningful share of recurring charges fail on the first attempt, most for recoverable reasons: an expired card, a temporary hold, an insufficient-funds moment. Treated as a closed event, that revenue is gone. Treated as the start of a recovery process (dunning), most of it comes back."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is dunning management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dunning is the structured retry and outreach process that recovers failed payments: smart retry timing, card updater services, and customer communication that prompts a fix. Intelligent dunning (retry when it is likely to work, update the card automatically, tell the customer clearly) recovers several points more revenue than naive daily retries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does reconciliation matter for a payments program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reconciliation confirms that what billing thinks happened matches what the payment stack and the bank actually did. Charges, refunds, fees, chargebacks and payouts all have to tie out. Skip it and small discrepancies compound into a number nobody trusts. At platform scale it is a continuous process, not a monthly spreadsheet."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+    </div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Recurring Billing and the Payments Stack: Where They Meet</h1>
+  <div class="article-meta">
+    <span>July 2026</span>
+    <span>6 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Platforms that add payments often already have billing. Subscriptions, invoices, usage charges, all running through some combination of a billing system and a processor. It works until the two stop agreeing with each other, and then a customer is double-charged, a failed payment goes uncollected for a month, and finance cannot tell which system is right.</p>
+
+    <p>Billing and payments are two layers of the same stack, and where they meet is where the money leaks. This is how they fit together, and the failure points that cost platforms real revenue. It is part of the last step of the <a href="/the-lab/embedded-payments-implementation-roadmap">embedded payments implementation roadmap</a>, operating what you now own.</p>
+
+    <p><strong>Billing decides what a customer owes and when. Payments executes the collection. They are separate layers: the billing system generates the charge, the payment stack moves the money, and the two must stay in sync on status, retries and reconciliation. Most recurring-revenue leakage comes not from pricing but from the seam between these two layers, where failed payments, retries and mismatched records quietly lose money.</strong></p>
+
+    <h2>How do billing and payments actually fit together?</h2>
+
+    <p>Billing is the system of record for what is owed: the plan, the price, the schedule, the proration. Payments is the execution layer: authorization, capture, settlement. A charge starts in billing, gets executed in payments, and the result, success, decline or dispute, has to flow back to billing to keep the record true. When that loop is clean, revenue is recognized correctly. When it is not, the two systems drift and finance stops trusting either one. Reading the numbers straight starts with knowing how to <a href="/the-lab/how-to-read-a-payments-pl">read a payments P&amp;L</a>.</p>
+
+    <h2>Why failed payments are a collections problem, not a billing problem</h2>
+
+    <p>A meaningful share of recurring charges fail on the first attempt, most for recoverable reasons: an expired card, a temporary hold, an insufficient-funds moment. If your stack treats a failed charge as a closed event, that revenue is simply gone. If it treats it as the start of a recovery process, most of it comes back. This is dunning, and it is one of the highest-return, least-glamorous parts of the entire payments operation. The recovered dollars land straight in the payments line that drives <a href="/the-lab/how-much-saas-platforms-make-from-payments">how much a platform makes from payments</a>.</p>
+
+    <h2>Dunning and retries: the recovery layer</h2>
+
+    <p>Dunning is the structured retry and outreach process that recovers failed payments: smart retry timing, card updater services and customer communication that prompts a fix without reading as a threat. The difference between naive retries (hammer the card daily) and intelligent dunning (retry when it is likely to work, update the card automatically, tell the customer clearly) is often several points of recovered revenue. On a subscription book, that is margin the platform keeps or loses based purely on the recovery layer. It sits right next to <a href="/the-lab/chargeback-management-for-software-platforms">chargeback management</a> and <a href="/the-lab/merchant-activation-playbook">merchant activation</a> as the operational work that decides whether a live program actually performs.</p>
+
+    <h2>Reconciliation: keeping billing and payments honest</h2>
+
+    <p>Reconciliation is the process that confirms what billing thinks happened matches what the payment stack and the bank actually did. Charges, refunds, fees, chargebacks and payouts all have to tie out. Skip it and small discrepancies compound into a number nobody trusts and an audit nobody enjoys. At platform scale, reconciliation is not a monthly spreadsheet, it is a continuous process, and it belongs in the implementation plan from day one.</p>
+
+    <h2>Where platforms get it wrong</h2>
+
+    <p>Bolting a processor onto a billing system and assuming they will stay in sync. Treating failed payments as final instead of recoverable. Running naive retries that get the card flagged. And deferring reconciliation until finance raises the alarm, by which point the drift is months deep. Every one of these is a revenue leak hiding as an operations detail.</p>
+
+    <blockquote class="pull-quote">Where billing and payments meet is where the money leaks. Most recurring-revenue loss is not a pricing problem, it is a seam problem, and the seam is fixable.</blockquote>
+
+    <p>For help finding the leaks between your billing and payment layers before they compound, see the <a href="/advisory">advisory engagement</a>, or work the full sequence from the <a href="/the-lab/embedded-payments-implementation-roadmap">implementation roadmap</a>.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Find the leaks before they compound.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works the seam between your billing and payment layers with you, against your real book, and finds the recurring revenue quietly leaking out. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

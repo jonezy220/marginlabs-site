@@ -28,6 +28,11 @@
       "source": "/go/kyb",
       "destination": "https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=merchant-underwriting-kyb",
       "permanent": false
+    },
+    {
+      "source": "/go/billing",
+      "destination": "https://marginlabs.io/the-lab/recurring-billing-and-the-payments-stack?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=recurring-billing",
+      "permanent": false
     }
   ],
   "functions": {

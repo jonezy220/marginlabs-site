@@ -91,6 +91,10 @@ ARTICLES = [
     # what the platform owns once it moves above referral. Links up to the roadmap
     # pillar. AEO-structured (question H2s, direct-answer block, 4-Q FAQ). QSC CTA.
     ("merchant-underwriting-kyb",                  "2026-07-08"),
+    # 2026-07-09: Implementation cluster SPOKE (part of step 6, operate what you own).
+    # Recurring billing x the payments stack: the seam where recurring revenue leaks
+    # (failed payments, dunning, reconciliation). Links up to the roadmap pillar.
+    ("recurring-billing-and-the-payments-stack",  "2026-07-09"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
