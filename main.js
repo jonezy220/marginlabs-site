@@ -315,6 +315,7 @@
         body: JSON.stringify({
           email: email,
           source: 'Lab Subscriber',
+          additionalListIds: [12], // "Lab Subscribers" list
           extraAttributes: { LAB_ARTICLE: slug },
           utmParams: utm
         })
