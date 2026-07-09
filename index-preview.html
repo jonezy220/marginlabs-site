@@ -111,6 +111,7 @@
   <div class="nav-controls">
     <ul class="nav-links" role="list">
       <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">Framework</a></li>
       <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
       <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
       <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
@@ -125,6 +126,7 @@
 <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
   <ul>
     <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">Framework</a></li>
     <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
     <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
     <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
@@ -308,16 +310,14 @@
 
       <!-- ─── OPTION 1: Margin Multiplier (free) ─── -->
       <div style="background:#111;border:1px solid rgba(240,235,228,0.12);border-radius:6px;padding:32px 26px;display:flex;flex-direction:column;text-align:left;">
-        <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;margin-bottom:14px;">Free</div>
-        <div style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:10px;">Margin Multiplier</div>
+        <div style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:12px;">Margin Multiplier</div>
         <p style="font-size:14px;font-weight:300;color:rgba(240,235,228,0.68);line-height:1.65;margin:0 0 26px;flex:1;">See what payments could be worth to your platform across all four monetization models. Quick, and free.</p>
         <a href="/margin-multiplier" data-analytics="ladder-multiplier" style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.35);padding:0 0 3px;align-self:flex-start;">Run it free &rarr;</a>
       </div>
 
       <!-- ─── OPTION 2: The Framework ($139, direct checkout) ─── -->
       <div style="background:#111;border:1px solid rgba(240,235,228,0.12);border-radius:6px;padding:32px 26px;display:flex;flex-direction:column;text-align:left;">
-        <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;margin-bottom:14px;">$139</div>
-        <div style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:10px;">The Framework</div>
+        <div style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:12px;">The Framework</div>
         <p style="font-size:14px;font-weight:300;color:rgba(240,235,228,0.68);line-height:1.65;margin:0 0 26px;flex:1;">A vendor-neutral playbook: the four models, real-world take rates, and a decision matrix. Instant PDF, decide on your own.</p>
         <button id="tier1-checkout-btn" data-analytics="product-tier1-cta" style="background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.35);padding:0 0 3px;align-self:flex-start;">Get it &middot; $139 &rarr;</button>
         <span id="tier1-checkout-error" style="display:none;font-size:12px;color:var(--copper);margin-top:10px;">Something went wrong. Try again or email hello@marginlabs.io</span>
@@ -325,8 +325,7 @@
 
       <!-- ─── OPTION 3: Quick Start Call ($379, direct checkout) ─── -->
       <div style="background:#111;border:1px solid rgba(240,235,228,0.12);border-radius:6px;padding:32px 26px;display:flex;flex-direction:column;text-align:left;">
-        <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;margin-bottom:14px;">$379</div>
-        <div style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:10px;">Quick Start Call</div>
+        <div style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:12px;">Quick Start Call</div>
         <p style="font-size:14px;font-weight:300;color:rgba(240,235,228,0.68);line-height:1.65;margin:0 0 26px;flex:1;">One hour on your specific situation, a written action plan in 48 hours, and warm intros to vetted processing partners.</p>
         <button id="qsc-checkout-btn" data-analytics="product-qsc-cta" style="background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.35);padding:0 0 3px;align-self:flex-start;">Book a call &middot; $379 &rarr;</button>
         <span id="qsc-checkout-error" style="display:none;font-size:12px;color:var(--copper);margin-top:10px;">Something went wrong. Try again or email hello@marginlabs.io</span>
@@ -334,8 +333,7 @@
 
       <!-- ─── OPTION 4: Advisory Retainer (by application) ─── -->
       <div style="background:#111;border:1px solid rgba(240,235,228,0.12);border-radius:6px;padding:32px 26px;display:flex;flex-direction:column;text-align:left;">
-        <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;margin-bottom:14px;">By application</div>
-        <div style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:10px;">Advisory Retainer</div>
+        <div style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:12px;">Advisory Retainer</div>
         <p style="font-size:14px;font-weight:300;color:rgba(240,235,228,0.68);line-height:1.65;margin:0 0 26px;flex:1;">An ongoing partnership for platforms building or scaling payments. Hands-on, a few clients at a time.</p>
         <a href="/advisory" data-analytics="ladder-retainer" style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(200,130,60,0.35);padding:0 0 3px;align-self:flex-start;">Apply &rarr;</a>
       </div>
