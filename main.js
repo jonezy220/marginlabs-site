@@ -217,6 +217,7 @@
 
   wireCheckout('tier1-checkout-btn', 'tier1-checkout-error', 'tier1', 'Get the Framework →');
   wireCheckout('tier2-checkout-btn', 'tier2-checkout-error', 'tier2', 'Get the Playbook →');
+  wireCheckout('qsc-checkout-btn',   'qsc-checkout-error',   'qsc',   'Book a Call →');
 
   // ── CONTACT FORM ──────────────────────────────────
   const contactForm = document.getElementById('contactForm');
@@ -343,5 +344,44 @@
       gtag('event', 'qsc_click', { link_location: location.pathname });
     }
   });
+
+  // ── HOMEPAGE: latest Lab articles (auto-pull) ─────
+  // If #lab-latest is present, fetch the Lab index and render the 3 newest
+  // cards so the homepage never goes stale. Falls back to the server-rendered
+  // cards already inside the container if the fetch fails.
+  (function () {
+    var host = document.getElementById('lab-latest');
+    if (!host) return;
+    fetch('/the-lab').then(function (r) { return r.text(); }).then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var cards = Array.prototype.slice.call(doc.querySelectorAll('.lab-card')).slice(0, 3);
+      if (!cards.length) return;
+      var frag = document.createDocumentFragment();
+      cards.forEach(function (c) {
+        var link  = c.querySelector('.lab-card-link');
+        var href  = link ? link.getAttribute('href') : '/the-lab/';
+        var title = (c.querySelector('.lab-card-title') || {}).textContent || '';
+        var desc  = (c.querySelector('.lab-card-desc')  || {}).textContent || '';
+        var date  = (c.querySelector('.lab-card-date')  || {}).textContent || '';
+        var a = document.createElement('a');
+        a.href = href;
+        a.setAttribute('data-analytics', 'lab-spotlight-' + href.split('/').pop());
+        a.style.cssText = 'display:block;padding:24px;border:1px solid rgba(200,130,60,0.15);border-radius:4px;text-decoration:none;transition:border-color 0.15s;background:#111;';
+        var d1 = document.createElement('div');
+        d1.style.cssText = "font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#C8823C;margin-bottom:12px;";
+        d1.textContent = date;
+        var d2 = document.createElement('div');
+        d2.style.cssText = 'font-size:17px;font-weight:500;letter-spacing:-0.015em;color:#F0EBE4;line-height:1.35;margin-bottom:10px;';
+        d2.textContent = title;
+        var d3 = document.createElement('div');
+        d3.style.cssText = 'font-size:13px;color:rgba(240,235,228,0.55);line-height:1.6;';
+        d3.textContent = desc;
+        a.appendChild(d1); a.appendChild(d2); a.appendChild(d3);
+        frag.appendChild(a);
+      });
+      host.innerHTML = '';
+      host.appendChild(frag);
+    }).catch(function () {});
+  })();
 
 })();

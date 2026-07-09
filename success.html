@@ -141,6 +141,32 @@
     });
   });
 
+  // Quick Start Call: after payment, hand off to the free Google Calendar
+  // "Margin Labs Quickstart" booking page so the buyer picks a time.
+  var QSC_BOOKING_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2i2_z4H9R7zoFnSeHc2TRC-gKITKSO34aLcCCHPY3CCIYIqKVsb9iNZlT_xWdhGdmnFoU3-9YN?gv=true';
+
+  var _params  = new URLSearchParams(window.location.search);
+  var _product = _params.get('product');
+
+  if (_product === 'qsc') {
+    var eyebrow = document.querySelector('.success-eyebrow');
+    var h1      = document.querySelector('.success-h1');
+    var body    = document.querySelector('.success-body');
+    var inner   = document.querySelector('.success-inner');
+    var back    = document.querySelector('.success-back');
+    if (eyebrow) eyebrow.textContent = 'Payment Received';
+    if (h1)      h1.textContent = 'Now pick your time.';
+    if (body)    body.innerHTML = 'Your Quick Start Call is paid. Choose a time that works and it drops straight onto the calendar. A confirmation is on its way to your inbox.';
+    if (inner && back) {
+      var btn = document.createElement('a');
+      btn.href = QSC_BOOKING_URL;
+      btn.textContent = 'Book your call →';
+      btn.setAttribute('data-analytics', 'qsc-book-after-pay');
+      btn.style.cssText = 'display:inline-block;background:#C8823C;color:#0d0d0d;border-radius:3px;font-family:"DM Mono",monospace;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:16px 32px;text-decoration:none;margin-bottom:28px;';
+      inner.insertBefore(btn, back);
+    }
+  }
+
   // Google Ads purchase conversion
   if (window.location.search.includes('product=tier1')) {
     gtag('event', 'conversion', {
@@ -153,13 +179,13 @@
 
   // GA4 purchase event
   if (window.location.search.includes('product=')) {
-    var params = new URLSearchParams(window.location.search);
-    var product = params.get('product');
-    var value = product === 'tier2' ? 697 : 139;
+    var product = _product;
+    var value = product === 'qsc' ? 379 : (product === 'tier2' ? 697 : 139);
+    var name  = product === 'qsc' ? 'Quick Start Call' : (product === 'tier2' ? 'Execution Playbook' : 'Strategic Framework');
     gtag('event', 'purchase', {
       currency: 'USD',
       value: value,
-      items: [{ item_id: product, item_name: product === 'tier2' ? 'Execution Playbook' : 'Strategic Framework', price: value }]
+      items: [{ item_id: product, item_name: name, price: value }]
     });
   }
 </script>
