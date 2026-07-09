@@ -190,6 +190,11 @@
   function wireCheckout(btnId, errId, product, resetLabel) {
     const btn = document.getElementById(btnId);
     if (!btn) return;
+    const originalLabel = btn.textContent;
+    function resetBtn() { btn.textContent = originalLabel; btn.disabled = false; }
+    // If the page is restored from bfcache (user clicked → went to Stripe →
+    // hit back), the button can stay stuck on "One moment...". Reset it.
+    window.addEventListener('pageshow', resetBtn);
     btn.addEventListener('click', async function () {
       const errMsg = document.getElementById(errId);
       btn.textContent = 'One moment...';
@@ -208,8 +213,7 @@
           throw new Error(data.error || 'No URL returned');
         }
       } catch (err) {
-        btn.textContent = resetLabel;
-        btn.disabled = false;
+        resetBtn();
         if (errMsg) errMsg.style.display = 'block';
       }
     });
