@@ -306,7 +306,7 @@
           fetch('/api/brevo-subscribe', {
             method:  'POST',
             headers: { 'Content-Type': 'application/json' },
-            body:    JSON.stringify({ email, firstName: name.split(' ')[0] || '', source: 'Homepage Contact Form', utmParams: window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined }),
+            body:    JSON.stringify({ email, firstName: name.split(' ')[0] || '', source: 'Homepage Contact Form', additionalListIds: [5], utmParams: window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined }),
           }).then(function (r) {
             if (r && r.ok && typeof gtag !== 'undefined') {
               gtag('event', 'brevo_subscribed', { source: 'homepage_contact_form' });

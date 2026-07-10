@@ -53,9 +53,10 @@ module.exports = async (req, res) => {
       }),
     }),
 
-    // 3. Brevo — add to CRM with both Multiplier Leads (4) and Free Guide Leads (3) lists + both attributes
-    // The confirmation email above includes the Guide PDF download link inline,
-    // so the user gets ONE email with results + Guide instead of two separate ones.
+    // 3. Brevo — add to CRM on Multiplier Leads (4) only, so the lead gets the
+    // WF2 Multiplier nurture (not also the WF1 Free Guide nurture). The Guide PDF
+    // is delivered inline in the confirmation email above, so HAS_FREE_GUIDE is
+    // still set as an attribute — we just don't add them to the Free Guide list.
     fetch(`${baseUrl}/api/brevo-subscribe`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -67,7 +68,7 @@ module.exports = async (req, res) => {
         ctaType,
         gapAmt,
         source:    'Margin Multiplier Calculator',
-        additionalListIds: [3, 4],
+        additionalListIds: [4],
         extraAttributes: {
           HAS_MULTIPLIER: true,
           HAS_FREE_GUIDE: true,

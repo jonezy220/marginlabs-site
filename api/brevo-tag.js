@@ -17,8 +17,8 @@ module.exports = async (req, res) => {
     });
 
     if (!response.ok && response.status !== 204) {
-      // Contact may not exist yet — create them
-      const createListIds = [2, ...(Array.isArray(listIds) ? listIds : [])];
+      // Contact may not exist yet — create them (no phantom master list 2)
+      const createListIds = Array.isArray(listIds) ? listIds : [];
       await fetch('https://api.brevo.com/v3/contacts', {
         method:  'POST',
         headers: {

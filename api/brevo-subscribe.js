@@ -37,8 +37,10 @@ module.exports = async (req, res) => {
     if (utmParams.utm_campaign) attributes.UTM_CAMPAIGN = utmParams.utm_campaign;
   }
 
-  // Build list IDs: always include master list (2), plus any additional lists
-  const listIds = [2];
+  // Build list IDs from the caller-provided lists only.
+  // (Previously seeded with a hardcoded master list 2 that does not exist in
+  // the account, which left contacts landing listless. Removed.)
+  const listIds = [];
   if (Array.isArray(additionalListIds)) {
     for (const id of additionalListIds) {
       if (!listIds.includes(id)) listIds.push(id);
