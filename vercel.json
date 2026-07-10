@@ -33,6 +33,11 @@
       "source": "/go/billing",
       "destination": "https://marginlabs.io/the-lab/recurring-billing-and-the-payments-stack?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=recurring-billing",
       "permanent": false
+    },
+    {
+      "source": "/go/choose",
+      "destination": "https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=how-to-choose-provider",
+      "permanent": false
     }
   ],
   "functions": {
