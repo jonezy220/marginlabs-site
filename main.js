@@ -51,17 +51,35 @@
   // Bind the current visitor's browsing to a known contact by email.
   // Called from the form/gate/purchase success handlers below.
   window.mlBrevoIdentify = function (email) {
-    if (!email || !window.Brevo) return;
-    window.Brevo.push(['identify', { identifiers: { email_id: String(email).trim().toLowerCase() } }]);
+    if (!email) return;
+    var e = String(email).trim().toLowerCase();
+    if (window.Brevo) window.Brevo.push(['identify', { identifiers: { email_id: e } }]);
+    // Also bind the PostHog person to this email.
+    if (window.posthog && window.posthog.identify) window.posthog.identify(e, { email: e });
   };
   // Log a named milestone on the contact timeline (e.g. ran_multiplier).
   window.mlBrevoTrack = function (event, email, data) {
-    if (!event || !window.Brevo) return;
-    var payload = ['track', event];
-    if (email) payload.push({ email_id: String(email).trim().toLowerCase() });
-    if (data) payload.push({ data: data });
-    window.Brevo.push(payload);
+    if (!event) return;
+    if (window.Brevo) {
+      var payload = ['track', event];
+      if (email) payload.push({ email_id: String(email).trim().toLowerCase() });
+      if (data) payload.push({ data: data });
+      window.Brevo.push(payload);
+    }
+    // Mirror the event into PostHog for funnels/analysis.
+    if (window.posthog && window.posthog.capture) window.posthog.capture(event, data || {});
   };
+})();
+
+// PostHog (product analytics: funnels, paths, session replay, heatmaps)
+// Project 506337 (US). Anonymous sessions are captured + recorded; a Person
+// profile is only created once identified (identified_only) to conserve quota.
+(function () {
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  window.posthog.init('phc_w4aVK7k6tqdRxwnXo5VBqhnmA9daTwpxCopcyWxiXqb5', {
+    api_host: 'https://us.i.posthog.com',
+    person_profiles: 'identified_only'
+  });
 })();
 
 (function () {
