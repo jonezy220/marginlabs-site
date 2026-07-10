@@ -36,6 +36,34 @@
   s.parentNode.insertBefore(b, s);
 })();
 
+// Brevo Tracker (SDK 2.0, client_key whp6oe7w8d43k0sg0fl04emo)
+// Tracks page views site-wide and binds them to a Brevo contact once
+// identified (via email-link click, or the mlBrevoIdentify() helper below).
+// So each contact's page journey shows on their Brevo profile.
+(function () {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://cdn.brevo.com/js/sdk-loader.js';
+  document.head.appendChild(s);
+  window.Brevo = window.Brevo || [];
+  window.Brevo.push(['init', { client_key: 'whp6oe7w8d43k0sg0fl04emo' }]);
+
+  // Bind the current visitor's browsing to a known contact by email.
+  // Called from the form/gate/purchase success handlers below.
+  window.mlBrevoIdentify = function (email) {
+    if (!email || !window.Brevo) return;
+    window.Brevo.push(['identify', { identifiers: { email_id: String(email).trim().toLowerCase() } }]);
+  };
+  // Log a named milestone on the contact timeline (e.g. ran_multiplier).
+  window.mlBrevoTrack = function (event, email, data) {
+    if (!event || !window.Brevo) return;
+    var payload = ['track', event];
+    if (email) payload.push({ email_id: String(email).trim().toLowerCase() });
+    if (data) payload.push({ data: data });
+    window.Brevo.push(payload);
+  };
+})();
+
 (function () {
   'use strict';
 
@@ -174,6 +202,9 @@
         // Save to shared ML state
         if (window.ML) window.ML.saveVisitor({ email });
 
+        // Brevo — bind this visitor's browsing history to their contact.
+        if (window.mlBrevoIdentify) window.mlBrevoIdentify(email);
+
         // GA4 event
         if (typeof gtag !== 'undefined') {
           gtag('event', 'guide_form_submitted', { source: 'homepage' });
@@ -268,6 +299,9 @@
             gtag('event', 'consult_form_submitted', { source: 'homepage_contact_form' });
           }
 
+          // Brevo — bind this visitor's browsing history to their contact.
+          if (window.mlBrevoIdentify) window.mlBrevoIdentify(email);
+
           // Brevo — tag as consulting lead, fire GA4 event on Brevo success
           fetch('/api/brevo-subscribe', {
             method:  'POST',
@@ -341,6 +375,8 @@
         block.querySelector('#labCaptureSuccess').style.display = 'block';
         form.style.display = 'none';
         if (window.ML && window.ML.saveVisitor) window.ML.saveVisitor({ email: email });
+        // Brevo — bind this reader's browsing history to their contact.
+        if (window.mlBrevoIdentify) window.mlBrevoIdentify(email);
         if (typeof gtag !== 'undefined') {
           gtag('event', 'generate_lead', { source: 'lab_article', lab_article: slug });
           if (r && r.ok) gtag('event', 'brevo_subscribed', { source: 'lab_article' });

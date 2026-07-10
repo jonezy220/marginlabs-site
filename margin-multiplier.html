@@ -751,6 +751,11 @@ async function submitAndShow() {
   // Save email to shared state
   window.ML.saveVisitor({ email: email });
 
+  // Brevo — bind this visitor's browsing history to their contact and log
+  // the "ran the Multiplier" milestone on their timeline.
+  if (window.mlBrevoIdentify) window.mlBrevoIdentify(email);
+  if (window.mlBrevoTrack) window.mlBrevoTrack('ran_multiplier', email, { recommended_model: _s.recModel.name });
+
   const gapAmt = _s.gap>0 ? _s.gap : _s.recModel.revenue;
   const modelSummary = _s.results.map(m=>`${m.name}: ${fmtCur(m.revenue)}/yr (${m.range})`).join(' | ');
 
