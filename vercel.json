@@ -20,6 +20,11 @@
       "permanent": true
     },
     {
+      "source": "/the-lab/when-to-switch-embedded-payments-providers",
+      "destination": "/the-lab/should-you-change-your-payments-model",
+      "permanent": true
+    },
+    {
       "source": "/go/roadmap",
       "destination": "https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=implementation-roadmap",
       "permanent": false
@@ -37,6 +42,16 @@
     {
       "source": "/go/choose",
       "destination": "https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=how-to-choose-provider",
+      "permanent": false
+    },
+    {
+      "source": "/go/optimize",
+      "destination": "https://marginlabs.io/the-lab/optimize-your-payments-model?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=optimize-model",
+      "permanent": false
+    },
+    {
+      "source": "/go/model",
+      "destination": "https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=change-model",
       "permanent": false
     }
   ],

@@ -1,0 +1,267 @@
+<!-- ML-LAB-021 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Should You Change Your Payments Model? Referral vs PayFac | Margin Labs</title>
+<meta name="description" content="Optimization has a ceiling. When your monetization is capped by the model itself, the question becomes a different model. The payments model ladder from ISV referral to payment facilitator (PayFac), the signals you've outgrown yours, what changing models costs, and the migration playbook.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/should-you-change-your-payments-model">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Should You Change Your Payments Model? Referral vs PayFac | Margin Labs">
+<meta property="og:description" content="Optimization has a ceiling. When your monetization is capped by the model itself, the question becomes a different model. The payments model ladder from ISV referral to payment facilitator (PayFac), the signals you've outgrown yours, what changing models costs, and the migration playbook.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/should-you-change-your-payments-model">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When should you change your payments model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When your monetization is capped by the model itself rather than the deal or the execution. Common triggers: you are referring payments and want to own the spread, you need control over onboarding and the merchant experience that only ownership gives, you have reached the volume where heavier-model economics clearly win, or you need capabilities your current model cannot reach. Optimize first; change the model only when optimization has hit its ceiling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the embedded payments models?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A ladder of increasing economics and responsibility: ISV referral (refer merchants, earn a share), enhanced residual (a larger cut for doing more of the work), PayFac-as-a-Service (own the experience and most economics while a provider carries the compliance and infrastructure), and full PayFac (own the economics, the risk and the regulatory burden). Each rung trades more control and margin for more operational and compliance load."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the referral model and payment facilitation (PayFac)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the referral model (the ISV referral model) you refer merchants to a provider and earn a share, with the provider owning onboarding, support, risk and compliance. Under payment facilitation you become the payment facilitator (PayFac), owning the merchant experience and the economics, and taking on more of the underwriting, risk and compliance load. Payment facilitation earns more per transaction; the referral model carries less responsibility. Moving from referral to PayFac is the most common model change platforms make."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does changing your payments model cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four categories: direct migration (engineering, integration, parallel-running), merchant churn during re-boarding, opportunity cost from diverted product focus, and transition risk. Because moving models usually means moving infrastructure, the indirect costs typically dwarf the direct ones, and the total is rarely under 250,000 dollars for a platform with meaningful volume."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should you optimize or change your payments model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Optimize first. Most near-term upside is in pricing, activation and failed-payment recovery inside the model you already run, and those wins are cheap and reversible. Change the model only when optimization is genuinely worked and the ceiling is structural, meaning the model itself limits what you can earn or control."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .kpi-block { background: var(--bg4, #1a1a1a); border-left: 2px solid var(--copper); padding: 16px 20px; margin: 16px 0 24px; }
+  .kpi-block .kpi-name { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
+  .kpi-block .kpi-formula { font-size: 14px; color: var(--text); margin-bottom: 4px; }
+  .kpi-block .kpi-bench { font-size: 13px; color: var(--dimmer); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Should You Change Your Payments Model?</h1>
+  <div class="article-meta">
+    <span>July 2026</span>
+    <span>8 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Every platform that monetizes payments eventually hits a plateau. The first response should be to <a href="/the-lab/optimize-your-payments-model">optimize the model you already run</a>, since most near-term upside is in pricing, activation and recovery, and those wins are cheap and reversible. But optimization has a ceiling. When you have taken those wins and the number still will not move the way the business needs, the constraint is no longer the deal or the execution. It is the model itself.</p>
+
+    <p>That is a different and much larger decision. Changing your payments model is not a better rate or a new vendor; it is a change in how much of the payments economics you own, and how much of the risk and compliance load you carry to own it. It is one of the highest-return moves a platform can make, and one of the most expensive to get wrong. Here is how to tell whether you are ready for it.</p>
+
+    <p><strong>Change your payments model when your monetization is capped by the model itself rather than the deal or the execution. The common triggers: you refer payments and want to own the spread, you need control over onboarding and the merchant experience that only ownership provides, you have reached the volume where heavier-model economics clearly win, or you need capabilities your current model cannot reach. Optimize first; change the model only when optimization has genuinely hit its ceiling.</strong></p>
+
+    <h2>What model are you actually on?</h2>
+
+    <p>Most platforms know their provider better than they know their model. The payments models form a ladder, and each rung trades more control and more economics for more operational and compliance responsibility. The move most platforms are weighing, and the one behind the common "payfac vs ISV" and "payment facilitation vs referral" questions, is a step from referring payments to facilitating them.</p>
+
+    <h3>ISV referral (the referral model)</h3>
+    <p>You refer merchants to a payments provider and earn a share of the revenue. Lowest effort, lowest economics, lowest risk. The provider owns the relationship, the onboarding, the support and the compliance. This referral model is the right starting point for most platforms, and the one most commonly outgrown.</p>
+
+    <h3>Enhanced residual</h3>
+    <p>The same basic structure with a larger cut, usually because you take on more of the work: some of the merchant experience, some of the servicing. More economics, still limited control. A reasonable step up that stops short of ownership.</p>
+
+    <h3>PayFac-as-a-Service</h3>
+    <p>You own the merchant experience and most of the economics while a provider carries the heaviest compliance and infrastructure. You get much of the upside and control of being a payment facilitator without standing up the full apparatus. For many platforms this is the destination, not a way station. See <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service</a> for the detail.</p>
+
+    <h3>Full PayFac</h3>
+    <p>You own the economics, the risk and the regulatory burden. The most control and the most margin, and the most to carry: underwriting, compliance, funding, and support all become yours. Right for a narrower set of platforms than the market's enthusiasm suggests. The comparison in <a href="/the-lab/payfac-vs-iso">PayFac vs ISO</a> and the broader question of <a href="/the-lab/should-your-platform-monetize-payments">whether your platform should monetize payments at all</a> are worth reading before you commit.</p>
+
+    <h2>What are the signals you have outgrown your model?</h2>
+
+    <p>Not every frustration is a model problem; many are optimization problems in disguise. These are the ones that tend to be structural, meaning no amount of tuning the current model resolves them.</p>
+
+    <h3>Signal 1: You are leaving the spread on the table</h3>
+    <p>You refer payments and watch someone else earn the margin on volume you originated. If the economics you are giving up would materially change your P&L, and you have the scale to support a heavier model, referral is now costing you more than it saves.</p>
+
+    <h3>Signal 2: Your monetization is capped by the model, not the market</h3>
+    <p>You want to price, package or bundle payments in a way your current model does not allow. When the ceiling on what you can charge or how you can structure it is set by your provider's model rather than by your customers, you have a structural constraint.</p>
+
+    <h3>Signal 3: You need control over the merchant experience</h3>
+    <p>Onboarding, boarding UX, funding timing, the support relationship. If <a href="/the-lab/payments-kpis-after-launch">activation</a> or merchant experience is capped by a flow you do not own and cannot change, ownership is the only real fix. Rule out the fixes inside your control with the <a href="/the-lab/merchant-activation-playbook">activation playbook</a> first; if the ceiling remains, it is the model.</p>
+
+    <h3>Signal 4: You have reached the volume where heavier economics win</h3>
+    <p>Every rung up the ladder has a volume at which its economics overtake the rung below, net of the added operational cost. Past that point, staying on the lighter model is a choice to earn less. The <a href="/margin-multiplier">Margin Multiplier</a> is built to find that crossover for your numbers.</p>
+
+    <h3>Signal 5: You need capabilities the model cannot reach</h3>
+    <p>New geographies, a regulated vertical, a funding or risk structure your current model does not support. These are structural gaps rather than negotiable ones, and they force the model question regardless of where your volume sits.</p>
+
+    <h2>What does changing your model cost?</h2>
+
+    <p>Because moving up the ladder usually means moving infrastructure, model change carries the full weight of a migration. Model it honestly before you decide; it is almost always larger than the first estimate.</p>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Direct Migration Cost</div>
+      <div class="kpi-formula">Engineering integration + parallel-running fees + project management</div>
+      <div class="kpi-bench">Typical range: $50K-$200K for a mid-size platform; higher for complex integrations</div>
+    </div>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Merchant Migration Cost</div>
+      <div class="kpi-formula">Re-boarding effort + communication + churn from friction</div>
+      <div class="kpi-bench">Expect 5-15% merchant churn during migration; higher if boarding flow is painful</div>
+    </div>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Opportunity Cost</div>
+      <div class="kpi-formula">Product roadmap time displaced + GTM focus consumed</div>
+      <div class="kpi-bench">Typically a full quarter of product team capacity; longer for the largest moves</div>
+    </div>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Risk & Compliance Cost</div>
+      <div class="kpi-formula">New underwriting and compliance load + chargeback continuity + data portability</div>
+      <div class="kpi-bench">Grows with every rung up the ladder; a full PayFac move takes on the most</div>
+    </div>
+
+    <p>The total is rarely under $250K for a platform with $25M+ annual GMV, and a move to full PayFac carries an ongoing compliance and operational cost that outlasts the migration itself. The heavier the rung, the more the recurring burden, not just the one-time project, has to be justified by the economics.</p>
+
+    <h2>Optimize or change: the decision line</h2>
+
+    <ul>
+      <li><strong>The ceiling is the deal or the execution:</strong> optimize, do not change models. Rate, activation and recovery still have room, and capturing it is cheaper and reversible. Start with <a href="/the-lab/optimize-your-payments-model">getting more from your current model</a>.</li>
+      <li><strong>The ceiling is economic and you have the scale:</strong> move one rung, not three. Referral to enhanced residual, or residual to PayFac-as-a-Service, captures most of the upside for a fraction of the load of going all the way to full PayFac.</li>
+      <li><strong>The ceiling is control or capability:</strong> change the model, because no deal fixes a structural gap. Match the rung to what you actually need to own, not to the most ambitious option.</li>
+      <li><strong>You are tempted by full PayFac:</strong> be sure the recurring compliance and risk burden is justified by the economics and that you have the operational appetite to carry it. For many platforms PayFac-as-a-Service captures most of the benefit without the weight.</li>
+    </ul>
+
+    <h2>The migration playbook</h2>
+
+    <p>If you have decided to move, execution determines whether the economics materialize or evaporate in operational chaos. Six steps:</p>
+
+    <h3>Step 1: Quantify the gap, economic and structural</h3>
+    <p>Document the economics of your current model versus the target rung, multiplied by projected volume over 36 months, and name the structural gains (control, capability) that will not show up in the rate math. The financial case has to stand on its own; the structural gains justify the effort to the team.</p>
+
+    <h3>Step 2: Run a real evaluation across providers</h3>
+    <p>Even with a preferred target, get competitive terms from at least two alternatives. It changes the conversation with your preferred provider and surfaces capability differences you would otherwise miss. The structural process is in <a href="/the-lab/how-to-choose-an-embedded-payments-provider">how to choose an embedded payments provider</a>.</p>
+
+    <h3>Step 3: Pilot with a small merchant cohort</h3>
+    <p>Choose merchants representative of your mix and willing to be partners. Run real volume through the new model for 30 to 60 days. The pilot surfaces integration issues, validates the economics and builds operational confidence before full cutover.</p>
+
+    <h3>Step 4: Settle runoff terms with your current provider</h3>
+    <p>Before notifying merchants, agree what happens to existing settlements, how long data is held, and where chargeback liability sits during the transition. Get it in writing while the relationship is still intact, not after it sours.</p>
+
+    <h3>Step 5: Phased migration over 3 to 6 months</h3>
+    <p>Never move the entire base in one weekend. Migrate by segment, smallest merchants first, then mid-tier, then top accounts. Each wave lets you fix issues before they compound. Over-communicate; most of the friction merchants feel is about communication, not the technical change.</p>
+
+    <h3>Step 6: Decommission cleanly</h3>
+    <p>Keep the old integration alive for 60 to 90 days post-cutover for late chargebacks, reconciliation and disputes. Then decommission, revoke credentials, and archive the data. A half-migrated state is the worst possible outcome.</p>
+
+    <blockquote class="pull-quote">The right time to change models is rarely when it feels most urgent. It is when optimization has been exhausted, the math has been clear for a quarter, and the operational readiness is in place to execute cleanly.</blockquote>
+
+    <p>Changing your model has a strong reversibility curve: cheap and recoverable before merchant migration begins, expensive and largely irreversible after. If optimization still has room, take it first and wait. If the ceiling is structural, the longer you carry a model you have outgrown, the more it costs.</p>
+
+    <p>The <a href="/margin-multiplier">Margin Multiplier</a> quantifies the economics of each rung against your volume. For the operational scenario and migration planning, that is what the <a href="/advisory">advisory engagement</a> is for.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Pressure-test the model change before you commit.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision against your real volume, merchant mix and model, tells you which rung actually fits, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

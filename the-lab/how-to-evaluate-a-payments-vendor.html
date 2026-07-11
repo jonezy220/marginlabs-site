@@ -1,0 +1,199 @@
+<!-- ML-LAB-043 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Evaluate a Payments Vendor for Your Business | Margin Labs</title>
+<meta name="description" content="The cheapest quote is often the wrong vendor. How to choose and compare a payments vendor on fit rather than price: payment-type coverage (card-present vs card-not-present), vertical expertise, model support, and whether they will underwrite your specific merchants. For SaaS platforms and ISVs.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/how-to-evaluate-a-payments-vendor">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="How to Evaluate a Payments Vendor for Your Business | Margin Labs">
+<meta property="og:description" content="The cheapest quote is often the wrong vendor. How to choose and compare a payments vendor on fit rather than price: payment-type coverage (card-present vs card-not-present), vertical expertise, model support, and whether they will underwrite your specific merchants. For SaaS platforms and ISVs.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/how-to-evaluate-a-payments-vendor">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you evaluate a payments vendor beyond price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evaluate for fit before price. Does the vendor support how your merchants actually get paid (card-present retail versus card-not-present online, plus ACH, wallets and recurring), does it know your vertical's risk and payment norms, does it support the model you want to run now and next, and will it underwrite your specific merchants. A vendor that fits on those four dimensions is worth more than the lowest quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between card-present and card-not-present payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Card-present (retail) means the card is physically read in person, through terminals or hardware, and carries lower fraud risk and different interchange. Card-not-present (online) means the card is entered without being physically present, through an API, hosted checkout or e-commerce, and carries higher fraud risk. Vendors are rarely equally strong at both, so match the vendor to your merchants' actual mix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does vertical expertise matter when choosing a payments vendor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A vendor that knows your vertical underwrites your merchants faster, understands the vertical's payment norms (deposits, tips, trust accounts, recurring), and often unlocks monetization a generalist misses. Vertical depth reduces boarding friction and risk surprises and raises the ceiling on what you can earn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should price be the main factor in choosing a payments vendor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Price is a tiebreaker among vendors that fit, not the opening filter. The cheapest quote is often the wrong vendor if it cannot support your payment types, your vertical, your model or your merchants. Establish fit first, then compare the full cost stack, not just the headline rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should a SaaS platform or ISV choose a payments provider?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare providers on fit before price. For a SaaS platform or ISV that means: whether the provider supports your merchants' payment types (card-present vs card-not-present, ACH, wallets, recurring), whether it knows your vertical, whether it supports the model you want to run (from ISV referral to payment facilitator), and whether it will underwrite your merchants. Shortlist on those, then compare economics."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .kpi-block { background: var(--bg4, #1a1a1a); border-left: 2px solid var(--copper); padding: 16px 20px; margin: 16px 0 24px; }
+  .kpi-block .kpi-name { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
+  .kpi-block .kpi-formula { font-size: 14px; color: var(--text); margin-bottom: 4px; }
+  .kpi-block .kpi-bench { font-size: 13px; color: var(--dimmer); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">How to Evaluate a Payments Vendor for Your Business</h1>
+  <div class="article-meta">
+    <span>July 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Most vendor evaluations open with a rate sheet and close with a signature to whoever quoted lowest. It is the wrong order. The cheapest quote is regularly the wrong vendor, because price is the one dimension that tells you nothing about whether the vendor actually fits your business. A provider can be ten basis points cheaper and still be a poor match if it cannot support how your merchants get paid, does not understand your vertical, or will not board the merchants you actually have.</p>
+
+    <p>There are two separate questions in any evaluation. The first is whether the vendor is any good in general: its cost stack, contract terms, reliability, support and roadmap. That is a quality question, and it is covered in <a href="/the-lab/how-to-choose-an-embedded-payments-provider">how to choose an embedded payments provider</a>. This piece is about the second question, the one that gets skipped: does this vendor fit your specific business. Fit is decided on four dimensions, and price is not one of them.</p>
+
+    <p><strong>Evaluate a payments vendor for fit before price. Four dimensions decide it: does the vendor support how your merchants actually get paid (card-present retail versus card-not-present online, plus ACH, wallets and recurring), does it know your vertical's risk and payment norms, does it support the model you want to run now and next, and will it underwrite your specific merchants. A vendor that fits on those four is worth more than the lowest quote.</strong></p>
+
+    <h2>Does the vendor fit how your merchants actually get paid?</h2>
+
+    <p>This is the dimension most often assumed rather than checked. Payment acceptance is not one thing, and vendors are rarely equally strong across all of it.</p>
+
+    <h3>Card-present (retail) versus card-not-present (online)</h3>
+    <p>Card-present means the card is physically read in person, through terminals or other hardware. It carries lower fraud risk, different interchange, and a hardware and in-person support burden. Card-not-present means the card is entered without being physically present, through an API, hosted checkout or e-commerce. It carries higher fraud risk, leans on tokenization and fraud tooling, and lives or dies on the quality of the developer experience. A vendor built for online card-not-present can be genuinely weak at retail card-present, and the reverse is just as common. Map your merchants' real mix first, then weight the evaluation to where your volume actually sits.</p>
+
+    <h3>The rest of the payment mix</h3>
+    <p>ACH and bank payments, digital wallets, and recurring or subscription billing each have their own support quality that varies widely by vendor. If a meaningful share of your volume is ACH, or your merchants run subscriptions, a vendor that treats those as afterthoughts will cost you in failed payments and reconciliation later. Weight each by its share of your volume, not by whether the vendor lists it on a feature page.</p>
+
+    <h2>Does the vendor know your vertical?</h2>
+
+    <p>Vertical depth is worth more than most evaluations credit. A vendor that already serves your vertical underwrites your merchants faster, because it recognizes the risk profile instead of treating every merchant as a new question. It understands the vertical's payment norms, deposits, tips, trust accounts, delayed capture, split funding, recurring, so those work out of the box rather than through custom work. And it often surfaces monetization a generalist never mentions, because it has seen what the vertical will pay for.</p>
+
+    <p>The opportunity cuts the other way too. Some verticals carry a payments opportunity large enough to justify choosing a vendor around it: high average tickets, strong recurring revenue, or a merchant base underserved by generic processors. A vendor with real depth in that vertical is not just a safer boarding experience; it is the difference between capturing that opportunity and leaving it on the table. Weigh the vendor's vertical expertise as a revenue input, not only a risk one.</p>
+
+    <h2>Does the vendor support the model you want to run?</h2>
+
+    <p>A vendor has to support not just the model you are on today but the one you are heading toward. If you are on referral and expect to move up to <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service</a> or beyond, a vendor that cannot take you there means a second migration later. The model ladder, ISV referral, enhanced residual, PayFac-as-a-Service, full PayFac, and which rung fits you, is covered in <a href="/the-lab/should-your-platform-monetize-payments">whether your platform should monetize payments</a> and <a href="/the-lab/payfac-vs-iso">PayFac vs ISO</a>.</p>
+
+    <p>This is also where it helps to be clear about which decision you are actually making. Changing your model, moving up a rung to own more economics and control, is a strategic move that almost always means a new vendor and a real migration; that is the subject of <a href="/the-lab/should-you-change-your-payments-model">whether to change your payments model</a>. Switching providers within the same model, keeping your current model but finding a better-fitting vendor, is a narrower move you make while <a href="/the-lab/optimize-your-payments-model">optimizing what you already run</a>. The fit criteria in this article apply to both, but the stakes and the migration effort are very different, so name the decision before you start evaluating.</p>
+
+    <h2>Will the vendor underwrite your merchants?</h2>
+
+    <p>A vendor that will not board your merchants, or boards them only under heavy reserves and reviews, is a poor fit no matter how good the rate looks. Underwriting appetite is a real evaluation criterion, not a formality. Check it against your actual merchant profile: their size and ticket range, their risk band, their chargeback history, anything about your vertical that a risk team treats as elevated. Ask the vendor directly how it would underwrite a representative sample of your base, and treat vague answers as a red flag. The cost of a vendor that rejects or reserves a third of your merchants dwarfs a few basis points of rate.</p>
+
+    <h2>Where does price actually fit in?</h2>
+
+    <p>Last, and as a tiebreaker. Once you have two or three vendors that genuinely fit your payment mix, your vertical, your model and your merchants, then compare economics, and compare the full cost stack rather than the headline rate: effective rate at your volume, the fees around it, the contract terms that bite later. Those mechanics live in <a href="/the-lab/how-to-choose-an-embedded-payments-provider">how to choose an embedded payments provider</a> and <a href="/the-lab/how-to-negotiate-a-processor-agreement">how to negotiate a processor agreement</a>. Price decides between good options. It should never be the filter that picks them.</p>
+
+    <blockquote class="pull-quote">The cheapest quote and the right vendor are rarely the same name. Establish fit on payment types, vertical, model and underwriting first. Then let price break the tie.</blockquote>
+
+    <p>Run the exercise in that order and the shortlist narrows fast, usually to fewer vendors than the rate-first approach would have you believe you are choosing among. The <a href="/margin-multiplier">Margin Multiplier</a> quantifies the economics once you have a fitting shortlist. If you want the evaluation run against your real merchant mix, vertical and model, that is what the <a href="/advisory">advisory engagement</a> is for.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Find the vendor that fits, not just the cheapest quote.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every business's merchant mix, vertical and model is different. A Quick Start Call works the evaluation against your real numbers, tells you which vendors actually fit, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

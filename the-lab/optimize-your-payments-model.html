@@ -1,0 +1,201 @@
+<!-- ML-LAB-042 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting More From Your Current Payments Model | Margin Labs</title>
+<meta name="description" content="Before you change models or switch providers, most of the upside is in optimizing what you already run. Where payments revenue leaks in your current model, and the levers that recover it without a migration.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/optimize-your-payments-model">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Getting More From Your Current Payments Model | Margin Labs">
+<meta property="og:description" content="Before you change models or switch providers, most of the upside is in optimizing what you already run. Where payments revenue leaks in your current model, and the levers that recover it without a migration.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/optimize-your-payments-model">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you increase revenue from payments without switching providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Optimize the model you already run before you change it. The largest levers are pricing (renegotiating your effective rate at volume), activation (getting more merchants to actually turn payments on), failed-payment recovery (dunning and retries), and right-sizing reserves. These recover margin without the cost or risk of a migration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the fastest way to improve payments economics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fix activation and failed payments first. Both convert volume you have already earned into revenue and require no new pricing negotiation. Then renegotiate your rate against your current volume, since deals signed at lower volume rarely reflect what you can command now."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you renegotiate your payment processing rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bring a real competing quote and anchor the conversation to your current volume and trajectory, not the volume you had when you signed. At scale, interchange-plus pricing usually beats a blended flat rate. A credible alternative moves the number far more than a polite ask."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should you optimize your payments model instead of changing it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Optimize when your economics, activation or recovery have room to improve and your model still fits where the business is going. Change the model only when you have hit the ceiling of what optimization can return, usually because your monetization is capped by the model itself rather than the deal."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .kpi-block { background: var(--bg4, #1a1a1a); border-left: 2px solid var(--copper); padding: 16px 20px; margin: 16px 0 24px; }
+  .kpi-block .kpi-name { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
+  .kpi-block .kpi-formula { font-size: 14px; color: var(--text); margin-bottom: 4px; }
+  .kpi-block .kpi-bench { font-size: 13px; color: var(--dimmer); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Getting More From Your Current Payments Model</h1>
+  <div class="article-meta">
+    <span>July 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>When payments revenue plateaus, the first instinct is usually to change something big: switch providers, or move up to a heavier model. Both are real options, and both are expensive and slow. What gets skipped is the cheaper, faster work sitting inside the model you already run. For most platforms the majority of the near-term upside is there, in volume you have already earned but are not fully converting to revenue.</p>
+
+    <p>Optimizing your current model is the low-risk lever. It is reversible, it does not put your merchant base through a migration, and it does not consume a quarter of product time. Changing the model is the high-risk lever, and it is the right one eventually, but only after you have taken the cheap wins first. This is how you find them.</p>
+
+    <p><strong>Before you change models or switch providers, optimize what you already run. The four levers that recover the most margin without a migration are pricing (renegotiating your effective rate against current volume), activation (getting more merchants to actually turn payments on), failed-payment recovery (dunning and retries), and right-sizing reserves and interchange. Change the model only when these have been worked and the ceiling is the model itself, not the deal.</strong></p>
+
+    <h2>Why does optimizing usually beat switching?</h2>
+
+    <p>Because the return on the two is asymmetric. Switching providers or changing models carries a large fixed cost, engineering, re-boarding, merchant communication, and a period of operational discontinuity while everything moves. You pay all of that before you see a dollar of benefit. Optimization inverts the shape: small, independent changes that each pay back quickly and none of which put the base at risk.</p>
+
+    <p>The other reason is that a switch rarely fixes the problems optimization solves. If merchants are not activating, or failed payments are quietly bleeding revenue, or your rate has drifted above market for your volume, those are problems inside your operation. Moving them to a new provider moves the symptoms, not the cause. Fix them where they live first. If the ceiling is still there afterward, then the model itself is the constraint, and that is a different article: <a href="/the-lab/should-you-change-your-payments-model">whether to change your payments model</a>.</p>
+
+    <h2>Where does the money actually leak in your current model?</h2>
+
+    <p>Four places, in rough order of how fast they pay back.</p>
+
+    <h3>1. Activation: merchants who never turn payments on</h3>
+    <p>This is almost always the biggest and most overlooked leak. Volume you have already won produces nothing until the merchant is live and processing. If your <a href="/the-lab/payments-kpis-after-launch">activation rate</a> sits below 40 to 50 percent, the revenue you are missing dwarfs any rate improvement, because it is the whole transaction, not a few basis points of it. The fixes are product and process, not pricing: a shorter boarding flow, less document friction, proactive nudges through the drop-off points. The <a href="/the-lab/merchant-activation-playbook">merchant activation playbook</a> walks the specific interventions.</p>
+
+    <h3>2. Failed payments: revenue you booked but did not collect</h3>
+    <p>Every declined renewal and soft-declined card is revenue you earned and then lost at the last step. A basic dunning and retry system, smart retry timing, card-updater services, clear customer messaging, recovers a meaningful share of it with no change to your model or your rate. Failed payments are a collections problem hiding as a payments problem; see <a href="/the-lab/recurring-billing-and-the-payments-stack">recurring billing and the payments stack</a> for how the two layers meet.</p>
+
+    <h3>3. Pricing: an effective rate set at a smaller version of your business</h3>
+    <p>Most rates are negotiated once, at the volume you had when you signed, and then never revisited. Volume grows, the rate does not follow. At scale a blended flat rate almost always carries more margin for the provider than a well-structured interchange-plus rate would. You do not have to switch to fix this; you have to reopen it. More on the mechanics below.</p>
+
+    <h3>4. Reserves and interchange: working capital and basis points</h3>
+    <p>Two smaller but real leaks. A reserve held against your account is working capital you cannot deploy, and it is often larger than your actual risk warrants once you have a track record to point to. And on the cost side, <a href="/the-lab/interchange-optimization-for-platforms">interchange optimization</a>, passing the right data on each transaction so cards qualify for lower rates, quietly lowers the true cost of every sale. Neither requires changing anything structural.</p>
+
+    <h2>How do you renegotiate your rate without switching?</h2>
+
+    <p>Make the alternative real before you have the conversation. The single biggest determinant of a renegotiation is whether your provider believes you will actually leave. So:</p>
+
+    <ul>
+      <li><strong>Get a genuine competing quote first.</strong> Not to switch, necessarily, but to know your real market rate and to have something concrete on the table. A polite request to lower the rate lands very differently than a specific alternative.</li>
+      <li><strong>Anchor to current volume and trajectory.</strong> Present where you are now and where you will be in twelve months, not the numbers from when you signed. Providers expect rate compression as volume grows; make them price to the business you are, not the one you were.</li>
+      <li><strong>Ask for interchange-plus if you are at scale.</strong> Unbundled pricing shows you exactly what the card costs and what the provider is charging on top. It is almost always the better structure past a few million a year in volume, and it makes every future negotiation cleaner.</li>
+    </ul>
+
+    <p>A credible switch threat frequently fixes the deal without the migration, which is the entire point. You capture most of the economic benefit of leaving while paying none of the cost of it.</p>
+
+    <h2>When has optimization hit its ceiling?</h2>
+
+    <p>Optimization has a real limit, and knowing where it is keeps you from over-tuning a model you have outgrown. You have hit the ceiling when the constraint is no longer the deal or the execution but the model itself: you are referring payments and want to own the spread, you are on a light model and need the control that only ownership gives, or your monetization is capped by what your provider's model structurally allows. When more optimization would only shave basis points off a model that no longer fits, the question changes from "how do I get more from this" to "am I on the right one."</p>
+
+    <blockquote class="pull-quote">Most platforms leave more on the table by under-running the model they have than by being on the wrong one. Take the cheap wins before you make the expensive move.</blockquote>
+
+    <p>The sequence matters. Work activation and recovery first, since they convert volume you already own and need no negotiation. Reopen pricing next. Right-size reserves and interchange alongside. Only when those are genuinely worked, and the number still will not move the way the business needs, is it time to look at <a href="/the-lab/should-you-change-your-payments-model">changing the model</a>.</p>
+
+    <p>The <a href="/margin-multiplier">Margin Multiplier</a> quantifies what each lever is worth against your actual volume, so you can sequence them by payback. If you want the optimization mapped and prioritized for your specific setup, that is what the <a href="/advisory">advisory engagement</a> is for.</p>
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">See where your current model is leaking margin.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every business's starting point is different. A Quick Start Call works your actual volume, merchant mix and model, finds the leaks worth chasing first, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
