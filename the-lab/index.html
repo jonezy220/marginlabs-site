@@ -107,6 +107,51 @@
     margin-top: 4px;
   }
   .lab-card-link:hover { border-color: var(--copper-lt); }
+  .lab-pillars {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 44px;
+  }
+  .lab-pillars-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 16px;
+  }
+  .lab-pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  @media (max-width: 640px) {
+    .lab-pillars-grid { grid-template-columns: 1fr; }
+  }
+  .pillar-card {
+    background: var(--bg4);
+    border-left: 2px solid var(--copper);
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .pillar-card:hover { background: var(--bg5); }
+  .pillar-title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .pillar-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--dim);
+    line-height: 1.6;
+  }
 </style>
 </head>
 <body>
@@ -162,6 +207,29 @@
   <div class="lab-header-eyebrow">Insights</div>
   <h1>The Lab</h1>
   <p class="lab-header-sub">Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</p>
+</div>
+
+<!-- ── START HERE / CORE GUIDES (pillar hub) ───── -->
+<div class="lab-pillars">
+  <div class="lab-pillars-label">Start here</div>
+  <div class="lab-pillars-grid">
+    <a class="pillar-card" href="/the-lab/what-is-a-payment-facilitator">
+      <div class="pillar-title">What is a Payment Facilitator?</div>
+      <div class="pillar-desc">The PayFac model explained: what it is, what it costs and whether your platform needs to become one.</div>
+    </a>
+    <a class="pillar-card" href="/the-lab/payfac-vs-isv">
+      <div class="pillar-title">PayFac vs ISV</div>
+      <div class="pillar-desc">The core model comparison for vertical SaaS: referral economics versus owning the spread, plus the volume where the answer flips.</div>
+    </a>
+    <a class="pillar-card" href="/the-lab/should-you-change-your-payments-model">
+      <div class="pillar-title">Should You Change Your Payments Model?</div>
+      <div class="pillar-desc">The ladder from ISV referral to payment facilitator, the signals you have outgrown yours and what moving really costs.</div>
+    </a>
+    <a class="pillar-card" href="/the-lab/how-to-choose-an-embedded-payments-provider">
+      <div class="pillar-title">How to Choose an Embedded Payments Provider</div>
+      <div class="pillar-desc">The eight questions that decide whether a payments partner works, beyond the headline rate.</div>
+    </a>
+  </div>
 </div>
 
 <!-- ── POST GRID ───────────────────────────────── -->
