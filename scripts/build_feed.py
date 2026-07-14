@@ -47,14 +47,13 @@ ARTICLES = [
     ("chargeback-management-for-software-platforms","2026-05-07"),
     ("payments-revenue-saas-valuation",            "2026-05-12"),
     ("pci-compliance-for-saas-platforms",          "2026-05-19"),
-    ("when-to-switch-embedded-payments-providers", "2026-05-26"),
     ("merchant-onboarding-embedded-payments",      "2026-05-28"),
     # June 2026
     ("should-you-become-a-payment-facilitator",    "2026-06-02"),
     ("how-much-saas-platforms-make-from-payments", "2026-06-04"),
     ("merchant-of-record-vs-payfac",               "2026-06-04"),
     ("payment-processor-for-saas",                 "2026-06-04"),
-    ("payfac-vs-isv",                              "2026-06-09"),
+    ("payfac-vs-isv",                              "2026-07-13"),
     # 2026-06-11 batch: KPIs hero (rewrite), Merchant Activation pillar (new),
     # PE diligence (absorbed the comprehensive ML-LAB-027 draft). Dates bumped
     # so the republished pieces surface as fresh in the feed and Lab index.
@@ -95,6 +94,12 @@ ARTICLES = [
     # Recurring billing x the payments stack: the seam where recurring revenue leaks
     # (failed payments, dunning, reconciliation). Links up to the roadmap pillar.
     ("recurring-billing-and-the-payments-stack",  "2026-07-09"),
+    # 2026-07-13: payments-model cluster. Optimize the current model (AEO-first),
+    # change-model (reframe of the retired when-to-switch, which now 301s here), and
+    # evaluate-vendor (fit over price). Hub-and-spoke: all funnel into payfac-vs-isv.
+    ("optimize-your-payments-model",              "2026-07-13"),
+    ("should-you-change-your-payments-model",     "2026-07-13"),
+    ("how-to-evaluate-a-payments-vendor",         "2026-07-13"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).

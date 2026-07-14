@@ -8,9 +8,261 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 09 Jul 2026 11:32:01 +0000</lastBuildDate>
-    <pubDate>Thu, 09 Jul 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Tue, 14 Jul 2026 14:58:41 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Jul 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>How to Evaluate a Payments Vendor for Your Business</title>
+      <link>https://marginlabs.io/the-lab/how-to-evaluate-a-payments-vendor</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-evaluate-a-payments-vendor</guid>
+      <pubDate>Mon, 13 Jul 2026 14:00:00 +0000</pubDate>
+      <description>The cheapest quote is often the wrong vendor. How to choose and compare a payments vendor on fit rather than price: payment-type coverage (card-present vs card-not-present), vertical expertise, model support, and whether they will underwrite your specific merchants. For SaaS platforms and ISVs.</description>
+      <content:encoded><![CDATA[<p>Most vendor evaluations open with a rate sheet and close with a signature to whoever quoted lowest. It is the wrong order. The cheapest quote is regularly the wrong vendor, because price is the one dimension that tells you nothing about whether the vendor actually fits your business. A provider can be ten basis points cheaper and still be a poor match if it cannot support how your merchants get paid, does not understand your vertical, or will not board the merchants you actually have.</p>
+
+    <p>There are two separate questions in any evaluation. The first is whether the vendor is any good in general: its cost stack, contract terms, reliability, support and roadmap. That is a quality question, and it is covered in <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>. This piece is about the second question, the one that gets skipped: does this vendor fit your specific business. Fit is decided on four dimensions, and price is not one of them.</p>
+
+    <p><strong>Evaluate a payments vendor for fit before price. Four dimensions decide it: does the vendor support how your merchants actually get paid (card-present retail versus card-not-present online, plus ACH, wallets and recurring), does it know your vertical's risk and payment norms, does it support the model you want to run now and next, and will it underwrite your specific merchants. A vendor that fits on those four is worth more than the lowest quote.</strong></p>
+
+    <h2>Does the vendor fit how your merchants actually get paid?</h2>
+
+    <p>This is the dimension most often assumed rather than checked. Payment acceptance is not one thing, and vendors are rarely equally strong across all of it.</p>
+
+    <h3>Card-present (retail) versus card-not-present (online)</h3>
+    <p>Card-present means the card is physically read in person, through terminals or other hardware. It carries lower fraud risk, different interchange, and a hardware and in-person support burden. Card-not-present means the card is entered without being physically present, through an API, hosted checkout or e-commerce. It carries higher fraud risk, leans on tokenization and fraud tooling, and lives or dies on the quality of the developer experience. A vendor built for online card-not-present can be genuinely weak at retail card-present, and the reverse is just as common. Map your merchants' real mix first, then weight the evaluation to where your volume actually sits.</p>
+
+    <h3>The rest of the payment mix</h3>
+    <p>ACH and bank payments, digital wallets, and recurring or subscription billing each have their own support quality that varies widely by vendor. If a meaningful share of your volume is ACH, or your merchants run subscriptions, a vendor that treats those as afterthoughts will cost you in failed payments and reconciliation later. Weight each by its share of your volume, not by whether the vendor lists it on a feature page.</p>
+
+    <h2>Does the vendor know your vertical?</h2>
+
+    <p>Vertical depth is worth more than most evaluations credit. A vendor that already serves your vertical underwrites your merchants faster, because it recognizes the risk profile instead of treating every merchant as a new question. It understands the vertical's payment norms, deposits, tips, trust accounts, delayed capture, split funding, recurring, so those work out of the box rather than through custom work. And it often surfaces monetization a generalist never mentions, because it has seen what the vertical will pay for.</p>
+
+    <p>The opportunity cuts the other way too. Some verticals carry a payments opportunity large enough to justify choosing a vendor around it: high average tickets, strong recurring revenue, or a merchant base underserved by generic processors. A vendor with real depth in that vertical is not just a safer boarding experience; it is the difference between capturing that opportunity and leaving it on the table. Weigh the vendor's vertical expertise as a revenue input, not only a risk one.</p>
+
+    <h2>Does the vendor support the model you want to run?</h2>
+
+    <p>A vendor has to support not just the model you are on today but the one you are heading toward. If you are on referral and expect to move up to <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a> or beyond, a vendor that cannot take you there means a second migration later. The model ladder, ISV referral, enhanced residual, PayFac-as-a-Service, full PayFac, and which rung fits you, is covered in <a href="https://marginlabs.io/the-lab/should-your-platform-monetize-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">whether your platform should monetize payments</a> and <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISV</a>.</p>
+
+    <p>This is also where it helps to be clear about which decision you are actually making. Changing your model, moving up a rung to own more economics and control, is a strategic move that almost always means a new vendor and a real migration; that is the subject of <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">whether to change your payments model</a>. Switching providers within the same model, keeping your current model but finding a better-fitting vendor, is a narrower move you make while <a href="https://marginlabs.io/the-lab/optimize-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">optimizing what you already run</a>. The fit criteria in this article apply to both, but the stakes and the migration effort are very different, so name the decision before you start evaluating.</p>
+
+    <h2>Will the vendor underwrite your merchants?</h2>
+
+    <p>A vendor that will not board your merchants, or boards them only under heavy reserves and reviews, is a poor fit no matter how good the rate looks. Underwriting appetite is a real evaluation criterion, not a formality. Check it against your actual merchant profile: their size and ticket range, their risk band, their chargeback history, anything about your vertical that a risk team treats as elevated. Ask the vendor directly how it would underwrite a representative sample of your base, and treat vague answers as a red flag. The cost of a vendor that rejects or reserves a third of your merchants dwarfs a few basis points of rate.</p>
+
+    <h2>Where does price actually fit in?</h2>
+
+    <p>Last, and as a tiebreaker. Once you have two or three vendors that genuinely fit your payment mix, your vertical, your model and your merchants, then compare economics, and compare the full cost stack rather than the headline rate: effective rate at your volume, the fees around it, the contract terms that bite later. Those mechanics live in <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a> and <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to negotiate a processor agreement</a>. Price decides between good options. It should never be the filter that picks them.</p>
+
+    <blockquote class="pull-quote">The cheapest quote and the right vendor are rarely the same name. Establish fit on payment types, vertical, model and underwriting first. Then let price break the tie.</blockquote>
+
+    <p>Run the exercise in that order and the shortlist narrows fast, usually to fewer vendors than the rate-first approach would have you believe you are choosing among. The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> quantifies the economics once you have a fitting shortlist. If you want the evaluation run against your real merchant mix, vertical and model, that is what the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a> is for.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Find the vendor that fits, not just the cheapest quote.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every business's merchant mix, vertical and model is different. A Quick Start Call works the evaluation against your real numbers, tells you which vendors actually fit, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-to-evaluate-a-payments-vendor?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Should You Change Your Payments Model? Referral vs PayFac</title>
+      <link>https://marginlabs.io/the-lab/should-you-change-your-payments-model</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/should-you-change-your-payments-model</guid>
+      <pubDate>Mon, 13 Jul 2026 14:00:00 +0000</pubDate>
+      <description>Optimization has a ceiling. When your monetization is capped by the model itself, the question becomes a different model. The payments model ladder from ISV referral to payment facilitator (PayFac), the signals you've outgrown yours, what changing models costs, and the migration playbook.</description>
+      <content:encoded><![CDATA[<p>Every platform that monetizes payments eventually hits a plateau. The first response should be to <a href="https://marginlabs.io/the-lab/optimize-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">optimize the model you already run</a>, since most near-term upside is in pricing, activation and recovery, and those wins are cheap and reversible. But optimization has a ceiling. When you have taken those wins and the number still will not move the way the business needs, the constraint is no longer the deal or the execution. It is the model itself.</p>
+
+    <p>That is a different and much larger decision. Changing your payments model is not a better rate or a new vendor; it is a change in how much of the payments economics you own, and how much of the risk and compliance load you carry to own it. It is one of the highest-return moves a platform can make, and one of the most expensive to get wrong. Here is how to tell whether you are ready for it.</p>
+
+    <p><strong>Change your payments model when your monetization is capped by the model itself rather than the deal or the execution. The common triggers: you refer payments and want to own the spread, you need control over onboarding and the merchant experience that only ownership provides, you have reached the volume where heavier-model economics clearly win, or you need capabilities your current model cannot reach. Optimize first; change the model only when optimization has genuinely hit its ceiling.</strong></p>
+
+    <h2>What model are you actually on?</h2>
+
+    <p>Most platforms know their provider better than they know their model. The payments models form a ladder, and each rung trades more control and more economics for more operational and compliance responsibility. The move most platforms are weighing, and the one behind the common "payfac vs ISV" and "payment facilitation vs referral" questions, is a step from referring payments to facilitating them.</p>
+
+    <h3>ISV referral (the referral model)</h3>
+    <p>You refer merchants to a payments provider and earn a share of the revenue. Lowest effort, lowest economics, lowest risk. The provider owns the relationship, the onboarding, the support and the compliance. This referral model is the right starting point for most platforms, and the one most commonly outgrown.</p>
+
+    <h3>Enhanced residual</h3>
+    <p>The same basic structure with a larger cut, usually because you take on more of the work: some of the merchant experience, some of the servicing. More economics, still limited control. A reasonable step up that stops short of ownership.</p>
+
+    <h3>PayFac-as-a-Service</h3>
+    <p>You own the merchant experience and most of the economics while a provider carries the heaviest compliance and infrastructure. You get much of the upside and control of being a <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitator</a> without standing up the full apparatus. For many platforms this is the destination, not a way station. See <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a> for the detail.</p>
+
+    <h3>Full PayFac</h3>
+    <p>You own the economics, the risk and the regulatory burden. The most control and the most margin, and the most to carry: underwriting, compliance, funding, and support all become yours. Right for a narrower set of platforms than the market's enthusiasm suggests. The comparison in <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISV</a> and the broader question of <a href="https://marginlabs.io/the-lab/should-your-platform-monetize-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">whether your platform should monetize payments at all</a> are worth reading before you commit.</p>
+
+    <h2>What are the signals you have outgrown your model?</h2>
+
+    <p>Not every frustration is a model problem; many are optimization problems in disguise. These are the ones that tend to be structural, meaning no amount of tuning the current model resolves them.</p>
+
+    <h3>Signal 1: You are leaving the spread on the table</h3>
+    <p>You refer payments and watch someone else earn the margin on volume you originated. If the economics you are giving up would materially change your P&L, and you have the scale to support a heavier model, referral is now costing you more than it saves.</p>
+
+    <h3>Signal 2: Your monetization is capped by the model, not the market</h3>
+    <p>You want to price, package or bundle payments in a way your current model does not allow. When the ceiling on what you can charge or how you can structure it is set by your provider's model rather than by your customers, you have a structural constraint.</p>
+
+    <h3>Signal 3: You need control over the merchant experience</h3>
+    <p>Onboarding, boarding UX, funding timing, the support relationship. If <a href="https://marginlabs.io/the-lab/payments-kpis-after-launch?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">activation</a> or merchant experience is capped by a flow you do not own and cannot change, ownership is the only real fix. Rule out the fixes inside your control with the <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">activation playbook</a> first; if the ceiling remains, it is the model.</p>
+
+    <h3>Signal 4: You have reached the volume where heavier economics win</h3>
+    <p>Every rung up the ladder has a volume at which its economics overtake the rung below, net of the added operational cost. Past that point, staying on the lighter model is a choice to earn less. The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> is built to find that crossover for your numbers.</p>
+
+    <h3>Signal 5: You need capabilities the model cannot reach</h3>
+    <p>New geographies, a regulated vertical, a funding or risk structure your current model does not support. These are structural gaps rather than negotiable ones, and they force the model question regardless of where your volume sits.</p>
+
+    <h2>What does changing your model cost?</h2>
+
+    <p>Because moving up the ladder usually means moving infrastructure, model change carries the full weight of a migration. Model it honestly before you decide; it is almost always larger than the first estimate.</p>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Direct Migration Cost</div>
+      <div class="kpi-formula">Engineering integration + parallel-running fees + project management</div>
+      <div class="kpi-bench">Typical range: $50K-$200K for a mid-size platform; higher for complex integrations</div>
+    </div>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Merchant Migration Cost</div>
+      <div class="kpi-formula">Re-boarding effort + communication + churn from friction</div>
+      <div class="kpi-bench">Expect 5-15% merchant churn during migration; higher if boarding flow is painful</div>
+    </div>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Opportunity Cost</div>
+      <div class="kpi-formula">Product roadmap time displaced + GTM focus consumed</div>
+      <div class="kpi-bench">Typically a full quarter of product team capacity; longer for the largest moves</div>
+    </div>
+
+    <div class="kpi-block">
+      <div class="kpi-name">Risk & Compliance Cost</div>
+      <div class="kpi-formula">New underwriting and compliance load + chargeback continuity + data portability</div>
+      <div class="kpi-bench">Grows with every rung up the ladder; a full PayFac move takes on the most</div>
+    </div>
+
+    <p>The total is rarely under $250K for a platform with $25M+ annual GMV, and a move to full PayFac carries an ongoing compliance and operational cost that outlasts the migration itself. The heavier the rung, the more the recurring burden, not just the one-time project, has to be justified by the economics.</p>
+
+    <h2>Optimize or change: the decision line</h2>
+
+    <ul>
+      <li><strong>The ceiling is the deal or the execution:</strong> optimize, do not change models. Rate, activation and recovery still have room, and capturing it is cheaper and reversible. Start with <a href="https://marginlabs.io/the-lab/optimize-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">getting more from your current model</a>.</li>
+      <li><strong>The ceiling is economic and you have the scale:</strong> move one rung, not three. Referral to enhanced residual, or residual to PayFac-as-a-Service, captures most of the upside for a fraction of the load of going all the way to full PayFac.</li>
+      <li><strong>The ceiling is control or capability:</strong> change the model, because no deal fixes a structural gap. Match the rung to what you actually need to own, not to the most ambitious option.</li>
+      <li><strong>You are tempted by full PayFac:</strong> be sure the recurring compliance and risk burden is justified by the economics and that you have the operational appetite to carry it. For many platforms PayFac-as-a-Service captures most of the benefit without the weight.</li>
+    </ul>
+
+    <h2>The migration playbook</h2>
+
+    <p>If you have decided to move, execution determines whether the economics materialize or evaporate in operational chaos. Six steps:</p>
+
+    <h3>Step 1: Quantify the gap, economic and structural</h3>
+    <p>Document the economics of your current model versus the target rung, multiplied by projected volume over 36 months, and name the structural gains (control, capability) that will not show up in the rate math. The financial case has to stand on its own; the structural gains justify the effort to the team.</p>
+
+    <h3>Step 2: Run a real evaluation across providers</h3>
+    <p>Even with a preferred target, get competitive terms from at least two alternatives. It changes the conversation with your preferred provider and surfaces capability differences you would otherwise miss. The structural process is in <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>.</p>
+
+    <h3>Step 3: Pilot with a small merchant cohort</h3>
+    <p>Choose merchants representative of your mix and willing to be partners. Run real volume through the new model for 30 to 60 days. The pilot surfaces integration issues, validates the economics and builds operational confidence before full cutover.</p>
+
+    <h3>Step 4: Settle runoff terms with your current provider</h3>
+    <p>Before notifying merchants, agree what happens to existing settlements, how long data is held, and where chargeback liability sits during the transition. Get it in writing while the relationship is still intact, not after it sours.</p>
+
+    <h3>Step 5: Phased migration over 3 to 6 months</h3>
+    <p>Never move the entire base in one weekend. Migrate by segment, smallest merchants first, then mid-tier, then top accounts. Each wave lets you fix issues before they compound. Over-communicate; most of the friction merchants feel is about communication, not the technical change.</p>
+
+    <h3>Step 6: Decommission cleanly</h3>
+    <p>Keep the old integration alive for 60 to 90 days post-cutover for late chargebacks, reconciliation and disputes. Then decommission, revoke credentials, and archive the data. A half-migrated state is the worst possible outcome.</p>
+
+    <blockquote class="pull-quote">The right time to change models is rarely when it feels most urgent. It is when optimization has been exhausted, the math has been clear for a quarter, and the operational readiness is in place to execute cleanly.</blockquote>
+
+    <p>Changing your model has a strong reversibility curve: cheap and recoverable before merchant migration begins, expensive and largely irreversible after. If optimization still has room, take it first and wait. If the ceiling is structural, the longer you carry a model you have outgrown, the more it costs.</p>
+
+    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> quantifies the economics of each rung against your volume. For the operational scenario and migration planning, that is what the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a> is for.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Pressure-test the model change before you commit.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision against your real volume, merchant mix and model, tells you which rung actually fits, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Getting More From Your Current Payments Model</title>
+      <link>https://marginlabs.io/the-lab/optimize-your-payments-model</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/optimize-your-payments-model</guid>
+      <pubDate>Mon, 13 Jul 2026 14:00:00 +0000</pubDate>
+      <description>Before you change models or switch providers, most of the upside is in optimizing what you already run. Where payments revenue leaks in your current model, and the levers that recover it without a migration.</description>
+      <content:encoded><![CDATA[<p>When payments revenue plateaus, the first instinct is usually to change something big: switch providers, or move up to a heavier model. Both are real options, and both are expensive and slow. What gets skipped is the cheaper, faster work sitting inside the model you already run. For most platforms the majority of the near-term upside is there, in volume you have already earned but are not fully converting to revenue.</p>
+
+    <p>Optimizing your current model is the low-risk lever. It is reversible, it does not put your merchant base through a migration, and it does not consume a quarter of product time. Changing the model is the high-risk lever, and it is the right one eventually, but only after you have taken the cheap wins first. This is how you find them.</p>
+
+    <p><strong>Before you change models or switch providers, optimize what you already run. The four levers that recover the most margin without a migration are pricing (renegotiating your effective rate against current volume), activation (getting more merchants to actually turn payments on), failed-payment recovery (dunning and retries), and right-sizing reserves and interchange. Change the model only when these have been worked and the ceiling is the model itself, not the deal.</strong></p>
+
+    <h2>Why does optimizing usually beat switching?</h2>
+
+    <p>Because the return on the two is asymmetric. Switching providers or changing models carries a large fixed cost, engineering, re-boarding, merchant communication, and a period of operational discontinuity while everything moves. You pay all of that before you see a dollar of benefit. Optimization inverts the shape: small, independent changes that each pay back quickly and none of which put the base at risk.</p>
+
+    <p>The other reason is that a switch rarely fixes the problems optimization solves. If merchants are not activating, or failed payments are quietly bleeding revenue, or your rate has drifted above market for your volume, those are problems inside your operation. Moving them to a new provider moves the symptoms, not the cause. Fix them where they live first. If the ceiling is still there afterward, then the model itself is the constraint, and that is a different article: <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">whether to change your payments model</a>.</p>
+
+    <h2>Where does the money actually leak in your current model?</h2>
+
+    <p>Four places, in rough order of how fast they pay back.</p>
+
+    <h3>1. Activation: merchants who never turn payments on</h3>
+    <p>This is almost always the biggest and most overlooked leak. Volume you have already won produces nothing until the merchant is live and processing. If your <a href="https://marginlabs.io/the-lab/payments-kpis-after-launch?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">activation rate</a> sits below 40 to 50 percent, the revenue you are missing dwarfs any rate improvement, because it is the whole transaction, not a few basis points of it. The fixes are product and process, not pricing: a shorter boarding flow, less document friction, proactive nudges through the drop-off points. The <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant activation playbook</a> walks the specific interventions.</p>
+
+    <h3>2. Failed payments: revenue you booked but did not collect</h3>
+    <p>Every declined renewal and soft-declined card is revenue you earned and then lost at the last step. A basic dunning and retry system, smart retry timing, card-updater services, clear customer messaging, recovers a meaningful share of it with no change to your model or your rate. Failed payments are a collections problem hiding as a payments problem; see <a href="https://marginlabs.io/the-lab/recurring-billing-and-the-payments-stack?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">recurring billing and the payments stack</a> for how the two layers meet.</p>
+
+    <h3>3. Pricing: an effective rate set at a smaller version of your business</h3>
+    <p>Most rates are negotiated once, at the volume you had when you signed, and then never revisited. Volume grows, the rate does not follow. At scale a blended flat rate almost always carries more margin for the provider than a well-structured interchange-plus rate would. You do not have to switch to fix this; you have to reopen it. More on the mechanics below.</p>
+
+    <h3>4. Reserves and interchange: working capital and basis points</h3>
+    <p>Two smaller but real leaks. A reserve held against your account is working capital you cannot deploy, and it is often larger than your actual risk warrants once you have a track record to point to. And on the cost side, <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange optimization</a>, passing the right data on each transaction so cards qualify for lower rates, quietly lowers the true cost of every sale. Neither requires changing anything structural.</p>
+
+    <h2>How do you renegotiate your rate without switching?</h2>
+
+    <p>Make the alternative real before you have the conversation. The single biggest determinant of a renegotiation is whether your provider believes you will actually leave. So:</p>
+
+    <ul>
+      <li><strong>Get a genuine competing quote first.</strong> Not to switch, necessarily, but to know your real market rate and to have something concrete on the table. A polite request to lower the rate lands very differently than a specific alternative.</li>
+      <li><strong>Anchor to current volume and trajectory.</strong> Present where you are now and where you will be in twelve months, not the numbers from when you signed. Providers expect rate compression as volume grows; make them price to the business you are, not the one you were.</li>
+      <li><strong>Ask for interchange-plus if you are at scale.</strong> Unbundled pricing shows you exactly what the card costs and what the provider is charging on top. It is almost always the better structure past a few million a year in volume, and it makes every future negotiation cleaner.</li>
+    </ul>
+
+    <p>A credible switch threat frequently fixes the deal without the migration, which is the entire point. You capture most of the economic benefit of leaving while paying none of the cost of it.</p>
+
+    <h2>When has optimization hit its ceiling?</h2>
+
+    <p>Optimization has a real limit, and knowing where it is keeps you from over-tuning a model you have outgrown. You have hit the ceiling when the constraint is no longer the deal or the execution but the model itself: you are referring payments and want to own the spread, you are on a light model and need the control that only ownership gives, or your monetization is capped by what your provider's model structurally allows. When more optimization would only shave basis points off a model that no longer fits, the question changes from "how do I get more from this" to "am I on the right one."</p>
+
+    <blockquote class="pull-quote">Most platforms leave more on the table by under-running the model they have than by being on the wrong one. Take the cheap wins before you make the expensive move.</blockquote>
+
+    <p>The sequence matters. Work activation and recovery first, since they convert volume you already own and need no negotiation. Reopen pricing next. Right-size reserves and interchange alongside. Only when those are genuinely worked, and the number still will not move the way the business needs, is it time to look at <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">changing the model</a>.</p>
+
+    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> quantifies what each lever is worth against your actual volume, so you can sequence them by payback. If you want the optimization mapped and prioritized for your specific setup, that is what the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a> is for.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See where your current model is leaking margin.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every business's starting point is different. A Quick Start Call works your actual volume, merchant mix and model, finds the leaks worth chasing first, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/optimize-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Recurring Billing and the Payments Stack: Where They Meet</title>
       <link>https://marginlabs.io/the-lab/recurring-billing-and-the-payments-stack</link>
@@ -1192,7 +1444,7 @@
       <title>PayFac vs ISV for Vertical SaaS: The Real Comparison</title>
       <link>https://marginlabs.io/the-lab/payfac-vs-isv</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-vs-isv</guid>
-      <pubDate>Tue, 09 Jun 2026 14:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Jul 2026 14:00:00 +0000</pubDate>
       <description>PayFac vs ISV is the question every vertical SaaS platform faces once payments matter. The economics, the operational burden and where the answer flips.</description>
       <content:encoded><![CDATA[<p>PayFac vs ISV is the question every vertical SaaS platform eventually faces. Usually right around the moment payments revenue starts looking like a real line item, the founder or VP of product asks finance what would happen if they captured more of the spread. The answer involves a model change. PayFac vs ISV is the choice between the two structural options, and most platforms get the comparison wrong on the first pass.</p>
 
@@ -1204,7 +1456,7 @@
 
     <p>An ISV in payments is an Independent Software Vendor that refers its customers to a payment processor and earns a residual on the volume those customers go on to process. The platform sells software. The processor signs the merchant agreement, runs the underwriting, owns the relationship, runs the operational machine and shares a slice of the economics with the platform that delivered the customer.</p>
 
-    <p>Sometimes the industry calls this the ISO model (Independent Sales Organization). The terms are closely related and often used interchangeably. We have a separate piece on <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISO that walks through the ISO and ISV terminology distinction</a> in more depth. For purposes of the PayFac vs ISV comparison, treat them as the same model with different labels.</p>
+    <p>Sometimes the industry calls this the ISO model (Independent Sales Organization). The terms are closely related and often used interchangeably. We have a separate piece on <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISO that walks through the ISO and ISV terminology distinction</a> in more depth. For purposes of the PayFac vs ISV comparison, treat them as the same model with different labels. The same decision also shows up framed as payment facilitation versus the referral model, which is the same question in different words: keep referring merchants for a residual, or facilitate the payments yourself and own the spread.</p>
 
     <p>The ISV path is the entry point because the bar to start is low. A platform with no payments program can sign an ISV agreement with a processor in days, integrate with a vendor SDK in weeks, and start earning residuals on the first transaction. No PCI program, no sub-merchant onboarding, no underwriting risk, no 24/7 payments operations. The processor owns all of that.</p>
 
@@ -1276,7 +1528,7 @@
 
     <h2>How to decide for your platform</h2>
 
-    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where moving up the ladder pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
+    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">moving up the ladder</a> pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
 
     <p>The Margin Multiplier walks through the four-model comparison at your specific volume and vertical in about 60 seconds. It is the right starting point for a platform asking the PayFac vs ISV question for the first time. The output shows what each model would generate, what the recommended move is and what the annual revenue delta of moving up the ladder looks like.</p>
 
@@ -1965,134 +2217,6 @@
   </div>
 </section>
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>When to Switch Embedded Payments Providers</title>
-      <link>https://marginlabs.io/the-lab/when-to-switch-embedded-payments-providers</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/when-to-switch-embedded-payments-providers</guid>
-      <pubDate>Tue, 26 May 2026 14:00:00 +0000</pubDate>
-      <description>Switching embedded payments providers is expensive but sometimes the right move. The signals, the costs, the decision framework, and the playbook for platforms considering a switch.</description>
-      <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/when-to-switch-embedded-payments-providers.png" alt="Switch or Renegotiate?, decision framework comparing take rate gap thresholds and recommended actions" class="article-hero">
-
-    <p>Switching embedded payments providers is one of the most expensive product decisions a SaaS platform can make. The direct migration costs are easy to quantify, engineering hours, integration work, parallel-running fees. The indirect costs are harder: merchant churn during re-boarding, focus diverted from core product, the operational discontinuity of transferring chargeback management and compliance posture from one provider to another.</p>
-
-    <p>And yet, sometimes it's the right move. Platforms that stay too long with a provider that no longer fits give up tens of basis points of margin every year, watch their merchants churn from friction the provider won't fix, and find themselves capability-constrained as they try to grow.</p>
-
-    <p>The question isn't whether your current provider is perfect, none are. The question is whether the gap between what you have and what's available is large enough to justify the cost of moving. Here's the framework.</p>
-    <p><strong>You should consider switching embedded payments providers when the economics have fallen well behind market, the provider can't support your roadmap, service or reliability is failing merchants, or you have outgrown the model. But switching is expensive, so weigh it against renegotiating first; often a credible switch threat fixes the deal without the migration cost.</strong></p>
-
-
-    <h2>1. What five signals mean you should consider switching?</h2>
-
-    <p>The decision starts with diagnosis. Not every irritation justifies a switch; some justify a conversation. These five signals are the ones that tend to compound and rarely resolve through negotiation alone:</p>
-
-    <h3>Signal 1: Your take rate is 15+ bps below the market for your model and volume</h3>
-    <p>Rates compress over time as competition increases and your volume grows. If you negotiated your current rate at $5M annual GMV and you're now at $50M, you're almost certainly overpaying. The gap is rarely closed by a renegotiation alone, providers anchor to original terms.</p>
-
-    <h3>Signal 2: Activation problems trace back to provider UX or onboarding flow</h3>
-    <p>If <a href="https://marginlabs.io/the-lab/payments-kpis-after-launch?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant activation rate</a> is stuck below 40% and you can trace the drop-off to your provider's KYC flow, document collection, or boarding UI, you have a capability problem your provider has chosen not to fix. Before you blame the provider, rule out the fixes inside your control using the <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant activation playbook</a>. Watch how long the roadmap promises stay unfulfilled.</p>
-
-    <h3>Signal 3: Risk events you can't get answers on</h3>
-    <p>Unresolved chargeback escalations, sudden merchant terminations without explanation, inability to get a real human on the phone during a compliance crisis, these are operational signals that your provider's risk team isn't structured to support a platform of your size. They tend to get worse, not better, as you grow.</p>
-
-    <h3>Signal 4: Strategic mismatch, you're outgrowing the model</h3>
-    <p>The most common version: a platform on <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a> that needs full PayFac economics and control. Or an ISV Referral platform that wants to capture the spread itself. If your monetization ceiling is set by your provider's model, you'll always feel the constraint.</p>
-
-    <h3>Signal 5: Multi-region or vertical-specific requirements your provider can't meet</h3>
-    <p>Expanding to Canada, EU, or APAC, or serving a regulated vertical (healthcare, legal trust accounts, gaming), often surfaces a capability gap that's structural rather than negotiable. Some providers simply don't operate in the geography or accept the vertical's risk profile.</p>
-
-    <h2>2. The Four Categories of Switching Cost</h2>
-
-    <p>Before deciding, model the cost honestly. It's almost always larger than the first estimate.</p>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Direct Migration Cost</div>
-      <div class="kpi-formula">Engineering integration + parallel-running fees + project management</div>
-      <div class="kpi-bench">Typical range: $50K-$200K for a mid-size platform; higher for complex integrations</div>
-    </div>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Merchant Migration Cost</div>
-      <div class="kpi-formula">Re-boarding effort + communication + churn from friction</div>
-      <div class="kpi-bench">Expect 5-15% merchant churn during migration; higher if boarding flow is painful</div>
-    </div>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Opportunity Cost</div>
-      <div class="kpi-formula">Product roadmap time displaced + GTM focus consumed</div>
-      <div class="kpi-bench">Typically a full quarter of product team capacity; longer for the largest migrations</div>
-    </div>
-
-    <div class="kpi-block">
-      <div class="kpi-name">Risk Cost</div>
-      <div class="kpi-formula">Chargeback continuity + compliance discontinuity + data portability</div>
-      <div class="kpi-bench">Hardest to quantify; usually surfaces as unplanned operational issues 30-90 days post-cutover</div>
-    </div>
-
-    <p>The total is rarely under $250K for a platform with $25M+ annual GMV. Plan for double that if your current provider holds critical data you'll need to migrate (tokenized cards, settlement histories, dispute records).</p>
-
-    <h2>3. Switch or Renegotiate? The Decision Framework</h2>
-
-    <p>Most platforms that ultimately switch should have renegotiated first. Most platforms that renegotiate should have done it sooner. This framework helps separate the two:</p>
-
-    <ul>
-      <li><strong>Take rate gap under 8 bps</strong>, Renegotiate. Frame the conversation around your current volume and trajectory; providers expect rate compression at scale. Don't switch for a marginal improvement that won't survive merchant churn.</li>
-      <li><strong>Take rate gap 8-20 bps with soft issues</strong>, Renegotiate hard first. Bring competing quotes; make the alternative real. A provider that knows you're seriously evaluating alternatives will often match within 10-15 bps to retain.</li>
-      <li><strong>Take rate gap over 20 bps</strong>, Switch. The compounding economic loss over 3-5 years dwarfs the migration cost. A provider that can't close a 20+ bps gap has structural cost issues; the gap won't close.</li>
-      <li><strong>Capability mismatch (regardless of bps)</strong>, Switch. If your strategic direction requires capabilities your provider can't offer, new geographies, new monetization model, new vertical, the rate conversation is irrelevant. You'll switch eventually; switching sooner avoids carrying the constraint longer.</li>
-    </ul>
-
-    <h2>4. The Switching Playbook</h2>
-
-    <p>If you've decided to switch, the execution determines whether the savings materialize or evaporate in operational chaos. Six steps:</p>
-
-    <h3>Step 1: Quantify the gap (financial and operational)</h3>
-    <p>Document the current cost structure in basis points, the new cost structure from your target provider, and the gap multiplied by projected GMV over a 36-month window. Add the operational pain points that won't show up in the rate comparison, these justify the migration emotionally to the executive team, but the financial case has to stand on its own.</p>
-
-    <h3>Step 2: Run a real RFP across 3 providers</h3>
-    <p>Even if you have a preferred target, get competitive quotes from at least two alternatives. The pricing pressure changes the conversation with your preferred provider, and the comparison surfaces capability differences you wouldn't otherwise notice. For the structural process, see <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>.</p>
-
-    <h3>Step 3: Pilot with 1-3 merchants before full commitment</h3>
-    <p>Choose merchants representative of your volume mix and willing to be migration partners. Run real transactions through the new provider for 30-60 days. The pilot surfaces integration issues, validates the rate quote, and gives you operational confidence before the full cutover.</p>
-
-    <h3>Step 4: Negotiate runoff terms with your current provider</h3>
-    <p>Before notifying merchants, settle the runoff economics with your incumbent, what happens to existing settlements, how long they'll hold data, what chargeback liability looks like during the transition. Get these in writing. A provider losing a customer can be unhelpful or actively obstructive about transitioning data; the negotiation happens before the relationship sours.</p>
-
-    <h3>Step 5: Phased migration over 3-6 months</h3>
-    <p>Never cut over the entire merchant base in a single weekend. Migrate by segment (smallest merchants first, then mid-tier, then top accounts) or by vertical sub-segment. Each wave lets you fix issues before they compound. Communicate proactively with merchants, the friction they experience is almost entirely about the communication, not the technical change.</p>
-
-    <h3>Step 6: Decommission cleanly</h3>
-    <p>Keep the old integration alive for 60-90 days post-cutover so you can handle late chargebacks, settlement reconciliation, and dispute response. Then decommission the integration code, revoke credentials, and archive the data. Half-migrated states are the worst possible outcome.</p>
-
-    <h2>5. Common Mistakes</h2>
-
-    <p>The platforms that switch and regret it usually make one of these mistakes:</p>
-
-    <ul>
-      <li><strong>Over-indexing on take rate, under-counting switching cost.</strong> A 10-bps improvement on $50M GMV is $50K/year. If switching costs $250K, you're three years away from break-even, before counting churn.</li>
-      <li><strong>Underestimating merchant churn during re-boarding.</strong> 5-15% is the realistic range. The 5% case requires investment in the migration experience; the 15% case is what happens when migration is treated as a back-office project.</li>
-      <li><strong>Not negotiating with the incumbent first.</strong> Many providers will match 10-15 bps of a competing quote rather than lose the account. Skipping the negotiation step leaves money on the table.</li>
-      <li><strong>Switching for marginal improvement.</strong> Switching is high-risk. The improvement should be material, 20+ bps, fundamental capability, or genuinely better economics for your model. Switching to save 3 bps is rarely worth the operational disruption.</li>
-      <li><strong>Treating it as a technical project rather than a customer-experience project.</strong> The integration work is the easy part. The merchant communication, the support load during cutover, the unexpected edge cases, these consume more time than engineering does.</li>
-    </ul>
-
-    <blockquote class="pull-quote">The right time to switch is rarely when it feels most urgent, it's when the math has been clear for a quarter and the operational readiness is in place to execute cleanly.</blockquote>
-
-    <p>Switching providers is a strategic decision with a strong reversibility curve: cheap and recoverable before merchant migration begins, expensive and largely irreversible after. The framework above won't make the decision for you, but it will tell you whether you have enough information to make it well. If the gap is small and your operational team is stretched, renegotiate and wait. If the gap is large or the capability mismatch is structural, the longer you wait, the more it costs.</p>
-
-    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> can help quantify the financial side of the decision. For operational scenarios and migration planning, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/when-to-switch-embedded-payments-providers?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>PCI Compliance for SaaS Platforms: What You Need</title>
