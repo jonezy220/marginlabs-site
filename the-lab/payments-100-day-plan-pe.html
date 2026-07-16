@@ -1,0 +1,253 @@
+<!-- ML-LAB-044 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First 100 Days: Payments Playbook for PE-Backed SaaS | Margin Labs</title>
+<meta name="description" content="The post-close payments 100-day plan for a PE-backed vertical SaaS platform: baseline the numbers, take the fast wins, then sequence the model change and migration.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/payments-100-day-plan-pe">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="The First 100 Days: Payments Playbook for PE-Backed SaaS | Margin Labs">
+<meta property="og:description" content="What to actually do about payments in the first 100 days after a vertical SaaS acquisition: baseline, fast wins, then the model change and migration, in that order.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/payments-100-day-plan-pe">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should a PE-backed SaaS platform do about payments in the first 100 days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Baseline the current state first (attach rate, take rate, leakage, the processor contract), then take the fast wins that need no migration (activation, failed-payment recovery, rate and reserve right-sizing), then confirm the monetization model and stage any model change or migration for later. Big moves pay back last and carry the most risk, so they come after the quick revenue is banked, not before."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should you migrate payments providers right after acquisition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Migration is where merchants churn and revenue dips before it climbs. Run it after the fast wins are banked, in cohorts, with a rollback path, and never on the same clock you are still using to baseline the business. Most of the near-term upside is in optimizing the model you already run."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which monetization model should a portfolio company target?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rarely the top of the ladder. Full PayFac is a 12-to-18-month build that pays off only above roughly 200 million dollars in annual volume. For most platforms on a hold-period clock, a managed PayFac-as-a-service path captures facilitation-level economics in weeks to months, which is why it is usually the right target from ISV Referral or Enhanced Residuals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should own payments after a PE acquisition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A single accountable owner with a payments revenue number attached, empowered at the GM or sponsor level, running a durable team against an outcome rather than a project team shipping one migration. Left in the engineering backlog as a feature, payments underperforms as a business line."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the fastest payments win post-close?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Activation and failed-payment recovery. Both convert volume the platform has already earned into revenue, need no new pricing negotiation and no partner sign-off, and show up on the board deck inside a quarter."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">The First 100 Days: A Payments Playbook for a PE-Backed Vertical SaaS Platform</h1>
+  <div class="article-meta">
+    <span>July 2026</span>
+    <span>8 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>The deal closed. The value-creation plan names payments as a monetization lever. Now the honest question is what you actually do about it in the first 100 days, because the wrong sequence burns most of a hold period before it earns anything. This is the operator's version of that sequence: baseline first, take the fast wins, and only then reach for the model change and the migration.</p>
+
+    <p>The temptation post-close is to open with the big move (become a payfac, rip out the processor, re-platform) because that is the move with the biggest number attached. Resist it. The big move is real, but it pays back last and carries the most execution risk. The revenue you can bank inside a hold period lives mostly in work you can start in week two.</p>
+
+    <h2>Days 1 to 30: baseline the current state against real numbers</h2>
+
+    <p>You cannot improve what you have not measured, and the data room summary almost never has the granularity you need. Diligence told you the gap probably exists. The first month is where you confirm its size and shape against live data.</p>
+
+    <p>Pull four numbers and trend them:</p>
+
+    <ul>
+      <li><strong>Attach (activation) rate.</strong> What share of eligible merchants are actually processing through the platform. This is the single most diagnostic number. A platform activating 25% of eligible volume has most of its payments revenue still in front of it.</li>
+      <li><strong>Net take rate in basis points.</strong> Total payments revenue divided by total processed volume, by month. The trend matters as much as the level. A declining take rate is a different problem than a low one.</li>
+      <li><strong>Leakage.</strong> Failed and declined payments never recovered, reserves held higher than the risk justifies, interchange running above where routing and card-type mix could put it. This is margin you are already entitled to and not collecting.</li>
+      <li><strong>The contract.</strong> The actual signed processor or PayFac agreement. Term, exclusivity, change-of-control and migration provisions. This decides which moves are even available to you later, so read it before you plan anything.</li>
+    </ul>
+
+    <p>Frame this as discovery, not delivery. You are testing where the value is trapped, not committing to a build. The output of month one is a sized, prioritized gap list, not a roadmap.</p>
+
+    <h2>Days 30 to 60: fix the fast wins before you touch the model</h2>
+
+    <p>The fast wins share three traits: they convert volume you already have, they need no migration, and they carry almost no execution risk. Take them first. They fund the credibility you will spend later on the harder moves, and they show up on the board deck inside a single quarter.</p>
+
+    <p><strong>Activation.</strong> Usually the largest near-term lever and the shortest payback, because the merchants and the volume already exist. The work is unglamorous (onboarding friction, a sales motion that never pitched payments, merchants who defaulted to their old processor) and it is where the money is. Start by understanding <a href="/the-lab/why-merchants-dont-use-payments">why eligible merchants are not turning payments on</a>, then run the <a href="/the-lab/merchant-activation-playbook">activation playbook</a> against the back book.</p>
+
+    <p><strong>Failed-payment recovery.</strong> Every declined or failed transaction that is never retried or dunned is revenue you earned and did not collect. Smart retries, updated card credentials and a real dunning sequence recover a meaningful share of it with no new pricing conversation and no partner sign-off.</p>
+
+    <p><strong>Rate and reserve right-sizing.</strong> Deals signed at lower volume rarely reflect what the platform can command now. A credible competing quote anchored to current volume moves the number far more than a polite ask. On the risk side, reserves set conservatively at launch are often working capital sitting idle. Both of these are <a href="/the-lab/optimize-your-payments-model">optimization inside the model you already run</a>, which is exactly why they come before any migration.</p>
+
+    <blockquote class="pull-quote">The revenue you can bank inside a hold period lives mostly in work you can start in week two, not in the migration everyone reaches for first.</blockquote>
+
+    <h2>Days 60 to 100: confirm the model, then sequence the big moves</h2>
+
+    <p>By now you have banked the quick revenue and you understand the platform's real economics. This is the window to confirm the monetization model and stage the moves that change it.</p>
+
+    <p>There are <a href="/the-lab/payfac-vs-isv">four models, in ascending order of economics and ownership</a>: ISV Referral, ISV + Enhanced Residuals, PayFac-as-a-Service and Full PayFac. Most platforms enter a hold period on one of the first two and have real headroom to move up. The right target is rarely the top of the ladder. <a href="/the-lab/should-you-become-a-payment-facilitator">Full PayFac is a 12-to-18-month build</a> that pays off only above roughly 200 million dollars in annual volume, and it can consume most of a hold period before it earns. For most portfolio companies the answer is a managed <a href="/the-lab/payfac-as-a-service">PayFac-as-a-service</a> path that captures facilitation-level economics in weeks to months rather than quarters.</p>
+
+    <p>Two disciplines matter in this window:</p>
+
+    <ul>
+      <li><strong>Decide the model against the four risks, not the biggest number.</strong> Value (will merchants accept the pricing and experience), usability (can they onboard without friction), feasibility (can your team stand up the operation) and business viability (does the economics clear the build and operating cost at your actual volume). A model that fails one of these looks great on a slide and stalls in execution. Work <a href="/the-lab/should-you-change-your-payments-model">whether to change the model at all</a> before you assume the answer is yes.</li>
+      <li><strong>Sequence migration last, and stage it.</strong> A model change or provider migration is where deals get disrupted, merchants churn and revenue dips before it climbs. Run it after the fast wins are banked, in cohorts, with a rollback path. Never migrate on the same clock you are still baselining on.</li>
+    </ul>
+
+    <h2>Staff it: someone owns payments as an operation</h2>
+
+    <p>The most common post-close failure is leaving payments in the engineering backlog as a feature instead of running it as a business line. Payments cuts across product, pricing, risk, compliance and go-to-market. Owned by a single function it gets optimized as a feature and underperforms as a business.</p>
+
+    <p>Name an owner with a number attached, accountable at the GM or sponsor level. In an empowered-team model this is a durable payments team pursuing an outcome (payments revenue and attach), not a project team shipping a migration and disbanding. Whether that owner is a hire, a fractional operator or an internal leader given the mandate, the point is that someone wakes up responsible for the payments P&L and reports on it like one.</p>
+
+    <h2>Set the board-facing metrics before the first board meeting</h2>
+
+    <p>Decide what you report before you are asked, so the narrative is yours. A tight board dashboard for payments:</p>
+
+    <ul>
+      <li><strong>Attach rate</strong>, trended, with the back-book runway sized in dollars.</li>
+      <li><strong>Net take rate</strong> in basis points, with the model target called out.</li>
+      <li><strong>Payments revenue and payments gross margin</strong>, separated from software.</li>
+      <li><strong>Leakage recovered</strong>, failed-payment recovery and reserve release, as a running total.</li>
+      <li><strong>The model roadmap</strong>, with the next move, its timeline and the revenue it unlocks.</li>
+    </ul>
+
+    <p>These are the same numbers a next buyer will diligence, so managing to them now compounds twice: once in the earnings line during the hold, and again in the <a href="/the-lab/payments-value-creation-lever-pe">quality of revenue that sets the exit multiple</a>.</p>
+
+    <p>The 100-day goal is not to finish the payments plan. It is to have banked the fast wins, confirmed the model against real numbers and stood up the ownership and metrics that let the bigger moves run on the rest of the hold period with confidence.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>What should a PE-backed SaaS platform do about payments in the first 100 days?</h3>
+    <p>Baseline the current state first (attach rate, take rate, leakage, the processor contract), then take the fast wins that need no migration (activation, failed-payment recovery, rate and reserve right-sizing), then confirm the monetization model and stage any model change or migration for later. Big moves pay back last and carry the most risk, so they come after the quick revenue is banked, not before.</p>
+
+    <h3>Should you migrate payments providers right after acquisition?</h3>
+    <p>No. Migration is where merchants churn and revenue dips before it climbs. Run it after the fast wins are banked, in cohorts, with a rollback path, and never on the same clock you are still using to baseline the business. Most of the near-term upside is in optimizing the model you already run.</p>
+
+    <h3>Which monetization model should a portfolio company target?</h3>
+    <p>Rarely the top of the ladder. Full PayFac is a 12-to-18-month build that pays off only above roughly 200 million dollars in annual volume. For most platforms on a hold-period clock, a managed PayFac-as-a-service path captures facilitation-level economics in weeks to months, which is why it is usually the right target from ISV Referral or Enhanced Residuals.</p>
+
+    <h3>Who should own payments after a PE acquisition?</h3>
+    <p>A single accountable owner with a payments revenue number attached, empowered at the GM or sponsor level, running a durable team against an outcome rather than a project team shipping one migration. Left in the engineering backlog as a feature, payments underperforms as a business line.</p>
+
+    <h3>What is the fastest payments win post-close?</h3>
+    <p>Activation and failed-payment recovery. Both convert volume the platform has already earned into revenue, need no new pricing negotiation and no partner sign-off, and show up on the board deck inside a quarter.</p>
+
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Post-close, on a hold-period clock.</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Sequencing payments in a portfolio company you just acquired?</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call baselines the four numbers against a platform's real volume and tells you which move pays back fastest inside the hold period, and in what order. Prefer to work it yourself first? The Framework walks you through the economics.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/framework" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-framework-secondary">Or decide it yourself with the Framework →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
