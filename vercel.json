@@ -58,6 +58,11 @@
       "source": "/go/100days",
       "destination": "https://marginlabs.io/the-lab/payments-100-day-plan-pe?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=pe-100-day",
       "permanent": false
+    },
+    {
+      "source": "/go/100days-co",
+      "destination": "https://marginlabs.io/the-lab/payments-100-day-plan-pe?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=pe-100-day",
+      "permanent": false
     }
   ],
   "functions": {
