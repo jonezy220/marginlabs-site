@@ -621,8 +621,8 @@ function getRec(curId, vol) {
     };
     return {
       modelId:'payfac_lite', stayPut:true, ctaType:'primer',
-      ctaHl:"Understand what optimisation looks like at your stage.",
-      ctaSub:"The Strategic Decision Framework covers model economics in depth, including how to maximise margin within your current model before making a move.",
+      ctaHl:"You can capture this yourself.",
+      ctaSub:"The Strategic Decision Framework is the 60-plus page playbook that takes you from this number to a decision: the four models, the basis-point math and a 90-day action plan. Pay once, download now, yours to keep.",
       rationale:`You're on <strong>PayFac-lite</strong>, which is appropriate for your current volume. Full PayFac economics become compelling above approximately $25M in annual payment volume. Focus on merchant activation rate and take rate optimisation, that's where the margin is at your stage.`,
     };
   }
@@ -819,7 +819,7 @@ function buildResults() {
   const { ctaType, ctaHl, ctaSub } = rec;
 
   if (ctaType==='consult-only'||ctaType==='consult') {
-    const sec = ctaType==='consult' ? `<span class="cta-2nd">Or <a href="#" id="primer-sec">get the Framework first →</a></span>` : '';
+    const sec = ctaType==='consult' ? `<span class="cta-2nd">Or <a href="#" id="primer-sec">get the $139 Framework and run it yourself →</a></span>` : '';
     ctaEl.innerHTML = `
       <div class="cta-ey">Next step</div>
       <div class="cta-hl">${ctaHl}</div>
@@ -840,7 +840,7 @@ function buildResults() {
       <div class="cta-hl">${ctaHl}</div>
       <p class="cta-sub">${ctaSub}</p>
       <div class="cta-btns">
-        <button class="btn-p auto" id="primer-pri" data-analytics="mm-cta-primer">Get the Framework →</button>
+        <button class="btn-p auto" id="primer-pri" data-analytics="mm-cta-primer">Get the Framework · $139 →</button>
         <span class="cta-2nd">Or <a href="#" id="consult-soft">start a conversation →</a></span>
       </div>`;
     setTimeout(()=>{
