@@ -1,0 +1,249 @@
+<!-- ML-LAB-045 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded Payments Benchmarks: What Good Looks Like | Margin Labs</title>
+<meta name="description" content="Realistic payments benchmarks for software platforms: attach rate, activation, take rate in bps by model, volume per merchant and gross margin, and what separates top quartile from median.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/payments-benchmarks-for-software-platforms">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Embedded Payments Benchmarks: What Good Looks Like | Margin Labs">
+<meta property="og:description" content="Attach rate, activation, take rate in basis points by model, volume per merchant and gross margin. The ranges real platforms hit, and what separates top-quartile performance from the median.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/payments-benchmarks-for-software-platforms">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good attach rate for embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends heavily on whether payments is default-on or opt-in. Opt-in programs commonly land 20 to 40 percent attach. Default-on programs, where payments is part of platform setup, commonly run 55 to 75 percent, with the top quartile above 80. The single biggest driver is where payments sits in the onboarding flow, not the quality of the product itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a healthy payments take rate for a software platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Net take rate varies by monetization model: roughly 5 to 15 bps for ISV Referral, 15 to 30 bps for ISV plus Enhanced Residuals, 25 to 70 bps for PayFac-as-a-Service and 50 to 120 bps for full PayFac. These are net of interchange and processor cost, so the headline merchant rate is not the number that reaches your platform. Whether you sit at the top or bottom of your model's band is usually a pricing and processor-terms question."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good gross margin on embedded payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On net payments revenue, gross margin commonly runs 70 to 90 percent once a program is past year one at reasonable scale. It is a high-margin line because interchange and processor cost are already removed before you reach net take rate. Margin below that band usually means a heavy support and cost-to-serve load rather than a risk problem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much processing volume should each merchant generate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Volume per merchant varies by an order of magnitude across verticals, from 20,000 to 40,000 dollars annually for low-volume retail up to 100,000 dollars or more for high-ticket B2B services. The absolute number matters less than the concentration curve: in most portfolios a small share of merchants drives most of the volume, so benchmark against platforms in your vertical and focus activation where the volume actually sits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do top-quartile platforms outperform the median?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rarely because of the model they chose. Top-quartile platforms win on activation, especially converting the back-book of merchants who predate the payments launch, and on managing payments as a business line with monthly targets rather than a quarterly revenue check. Both gaps are execution, not structure, which means they are recoverable."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Embedded Payments Benchmarks for Software Platforms: What Good Looks Like</h1>
+  <div class="article-meta">
+    <span>July 2026</span>
+    <span>8 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Most platforms know their payments numbers. Very few know whether those numbers are good. A 45 percent attach rate feels fine until you learn the top quartile runs past 70. This is the reference we use with operators to answer one question: where do you actually stand against typical performance, and how far is the gap to the platforms that run this well.</p>
+
+    <p>The ranges below are what we see across vertical SaaS and fintech platforms, not a cited study. Treat them as the honest middle of the distribution. Two platforms at the same volume can sit at opposite ends of every one of these, and the distance between median and top quartile is almost never structural. It is execution.</p>
+
+    <p><strong>In short: healthy attach rates run 30 to 70 percent depending on whether payments is default-on or opt-in, mature activation lands 50 to 65 percent, and net take rate spans roughly 5 to 15 bps for ISV Referral up to 80 to 120 bps for full PayFac. Top-quartile platforms separate on activation and back-book conversion, not on the model they picked.</strong></p>
+
+    <h2>Merchant Attach Rate: The First Number That Sorts Winners</h2>
+
+    <p>Attach rate is the share of your eligible merchants who have turned payments on at all. It is the widest-varying benchmark on this page because it is driven less by product and more by one design decision: is payments default-on at onboarding, or opt-in.</p>
+
+    <p>Opt-in programs, where a merchant has to actively choose your payments product, commonly land attach in the 20 to 40 percent range. The merchant already has a processor, and inertia wins unless you give them a reason to move. Default-on programs, where payments is part of getting set up on the platform and the merchant has to actively opt out, commonly run 55 to 75 percent and the top quartile pushes past 80. Same product, radically different outcome, decided almost entirely by where payments sits in the setup flow.</p>
+
+    <p>The gap between median and top quartile here is rarely the merchants. It is whether the platform treated payments as a feature to be discovered or as the default path of least resistance. Platforms that bury a "connect payments" toggle three screens into settings get opt-in numbers even when they think they built a default-on product.</p>
+
+    <blockquote class="pull-quote">Same product, opposite outcome, decided almost entirely by where payments sits in the setup flow.</blockquote>
+
+    <h2>Activation and Time-to-First-Transaction</h2>
+
+    <p>Attach tells you a merchant said yes. Activation tells you they actually processed. The two get conflated constantly, and the gap between them is where a lot of programs quietly leak.</p>
+
+    <p>Healthy activation, the share of eligible merchants processing real volume, runs 30 to 40 percent in year one and 50 to 65 percent at maturity. Top quartile reaches 70 percent or higher. Below 30 percent is the most common red flag we see in payments diligence, and it usually points to onboarding friction or weak go-to-market rather than anything structural.</p>
+
+    <p>Time-to-first-transaction is the underused companion metric. Best-in-class programs get a boarded merchant to their first live transaction inside a week, often inside 48 hours for self-serve verticals. Median drags to two or three weeks, and every day in that gap is a day the merchant can cool off, get busy or default back to their old processor. The platforms with the best activation numbers almost always have the shortest time-to-first-transaction, because the two are the same discipline measured at different points. For the levers behind these numbers, the mechanics live in <a href="/the-lab/why-merchants-dont-use-payments">why merchants do not use payments</a> and <a href="/the-lab/merchant-onboarding-embedded-payments">merchant onboarding for embedded payments</a>.</p>
+
+    <h2>Net Take Rate in Basis Points, by Model</h2>
+
+    <p>Take rate is where the four monetization models genuinely diverge, so this is the one benchmark you read by model rather than as a single range. All figures are net basis points on gross payment volume, meaning after interchange and processor cost, which is the number that actually reaches your platform.</p>
+
+    <p>ISV Referral typically nets 5 to 15 bps. You hand the merchant to a processor and collect a share. Simple, low-effort, low-capture.</p>
+
+    <p>ISV plus Enhanced Residuals typically nets 15 to 30 bps. Same referral posture but with a negotiated residual split that rewards you for the volume and support you bring.</p>
+
+    <p>PayFac-as-a-Service typically nets 25 to 70 bps, most commonly landing 30 to 60. You own the merchant experience and pricing while a provider carries the heaviest compliance and infrastructure load.</p>
+
+    <p>Full PayFac typically nets 50 to 120 bps, most commonly 80 to 120. You own the economics end to end, and you carry the underwriting, compliance and operational cost that comes with them.</p>
+
+    <p>The benchmark question is not just which band you sit in. It is whether you are at the top of your model's band or the bottom. A PayFac-as-a-Service platform netting 30 bps and one netting 60 bps are in the same model with double the take rate, and the difference is usually processor terms and merchant pricing, both recoverable. If your take rate is drifting down more than 3 to 5 bps in a quarter without a deliberate pricing change, treat it as a problem to diagnose. For the model trade-offs behind these ranges, see <a href="/the-lab/payfac-vs-isv">ISV Referral vs PayFac Lite</a>, and for the dollar version at each volume tier see <a href="/the-lab/how-much-saas-platforms-make-from-payments">how much SaaS platforms make from payments</a>.</p>
+
+    <h2>Processing Volume per Merchant</h2>
+
+    <p>Volume per merchant is the benchmark that varies most by vertical, so compare yourself to platforms in your neighborhood rather than to a universal number. A platform serving high-ticket B2B services merchants may see 100,000 dollars or more of annual processing per merchant. One serving low-volume local retailers may see 20,000 to 40,000 dollars. Both can be healthy.</p>
+
+    <p>What matters more than the absolute number is the distribution behind it. In most portfolios a small share of merchants drives the majority of volume, and a long tail processes almost nothing. Top-quartile platforms know their concentration curve cold and focus activation effort where the volume actually is, rather than chasing a headline merchant count. A program can look busy adding merchants while the volume that pays the bills stays flat, which is why raw merchant count divorced from volume per merchant is one of the most misleading numbers a platform can steer by.</p>
+
+    <p>Watch this alongside revenue per active merchant, which commonly lands 50 to 300 dollars per month depending on vertical and model. If per-merchant revenue sits below per-merchant cost to serve, more volume scales the problem rather than solving it.</p>
+
+    <h2>Gross Margin on Payments</h2>
+
+    <p>Gross margin is the benchmark that surprises operators, usually pleasantly. Embedded payments is a high-margin revenue line by software standards, and the reason is that the interchange and processor cost has already been stripped out before you get to net take rate. What is left is largely yours.</p>
+
+    <p>On net payments revenue, gross margin commonly runs 70 to 90 percent once a program is past its first year and operating at reasonable scale. The variation inside that band is driven by cost to serve: support load, chargeback losses, compliance amortization and the processor spread beyond interchange. Lower-margin programs are almost always carrying a heavier support burden, often because the product experience is not clear enough to let merchants self-serve, so the cost shows up as tickets rather than as risk.</p>
+
+    <p>Full PayFac generally carries the highest gross margin on net revenue because you keep more of the spread, but it also carries the most operating cost and compliance overhead, so contribution margin after those costs converges with the lighter models more than the headline suggests. The benchmark to hold yourself to is a cost to serve under roughly 30 percent of revenue per merchant, and a gross margin that improves as the program scales rather than eroding. If margin is going the wrong way as you grow, the cost is almost always in support and operations. The full cost stack by model is in <a href="/the-lab/what-embedded-payments-costs">what embedded payments actually cost</a> to operate.</p>
+
+    <h2>What Separates Top Quartile from Median</h2>
+
+    <p>Read these benchmarks together and a pattern shows up. The platforms in the top quartile are rarely there because they picked a more aggressive model. They are there because they execute two things the median platform underinvests in.</p>
+
+    <p>The first is activation, and specifically back-book conversion. New merchants boarded into a default-on flow activate at 70 to 85 percent almost everywhere. The spread between a median and a top-quartile platform is what happens to the back-book, the merchants who were already on the platform before payments launched. Median leaves 60 to 80 percent of them unconverted. Top quartile treats back-book conversion as a dedicated motion with renewal-window targeting and in-product rate comparisons, and it is the single largest revenue lever in the first two years.</p>
+
+    <p>The second is that top-quartile platforms manage payments as a business line with targets and a monthly review, not as a revenue number checked quarterly in the finance meeting. When the people who can move activation and take rate are never in the room, the numbers drift. The benchmarks on this page are only useful if someone owns the gap to them. For the full metric set to run that review, see <a href="/the-lab/payments-kpis-after-launch">payments KPIs after launch</a>.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is a good attach rate for embedded payments?</h3>
+    <p>It depends heavily on whether payments is default-on or opt-in. Opt-in programs commonly land 20 to 40 percent attach. Default-on programs, where payments is part of platform setup, commonly run 55 to 75 percent, with the top quartile above 80. The single biggest driver is where payments sits in the onboarding flow, not the quality of the product itself.</p>
+
+    <h3>What is a healthy payments take rate for a software platform?</h3>
+    <p>Net take rate varies by monetization model: roughly 5 to 15 bps for ISV Referral, 15 to 30 bps for ISV plus Enhanced Residuals, 25 to 70 bps for PayFac-as-a-Service and 50 to 120 bps for full PayFac. These are net of interchange and processor cost, so the headline merchant rate is not the number that reaches your platform. Whether you sit at the top or bottom of your model's band is usually a pricing and processor-terms question.</p>
+
+    <h3>What is a good gross margin on embedded payments?</h3>
+    <p>On net payments revenue, gross margin commonly runs 70 to 90 percent once a program is past year one at reasonable scale. It is a high-margin line because interchange and processor cost are already removed before you reach net take rate. Margin below that band usually means a heavy support and cost-to-serve load rather than a risk problem.</p>
+
+    <h3>How much processing volume should each merchant generate?</h3>
+    <p>Volume per merchant varies by an order of magnitude across verticals, from 20,000 to 40,000 dollars annually for low-volume retail up to 100,000 dollars or more for high-ticket B2B services. The absolute number matters less than the concentration curve: in most portfolios a small share of merchants drives most of the volume, so benchmark against platforms in your vertical and focus activation where the volume actually sits.</p>
+
+    <h3>Why do top-quartile platforms outperform the median?</h3>
+    <p>Rarely because of the model they chose. Top-quartile platforms win on activation, especially converting the back-book of merchants who predate the payments launch, and on managing payments as a business line with monthly targets rather than a quarterly revenue check. Both gaps are execution, not structure, which means they are recoverable.</p>
+
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Where do you actually stand?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">See your platform against these numbers in thirty seconds.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and shows what your platform could be capturing across all four models, and where the gap to top quartile actually sits. Want a working session on closing it? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/margin-multiplier" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-multiplier-primary">Run the Margin Multiplier →</a>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-consult-secondary">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
