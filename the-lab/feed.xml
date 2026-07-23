@@ -8,9 +8,98 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 20 Jul 2026 02:51:30 +0000</lastBuildDate>
-    <pubDate>Mon, 20 Jul 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 23 Jul 2026 03:27:22 +0000</lastBuildDate>
+    <pubDate>Thu, 23 Jul 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Embedded Finance Examples in Vertical SaaS: What the Best Platforms Did</title>
+      <link>https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas</guid>
+      <pubDate>Thu, 23 Jul 2026 14:00:00 +0000</pubDate>
+      <description>Real examples of successful embedded finance in vertical SaaS: Toast, Shopify, ServiceTitan, Mindbody and more. The pattern behind the winners, and what it means for your platform.</description>
+      <content:encoded><![CDATA[<p>Every board deck about embedded finance eventually shows the same four logos. The reason is that a small number of vertical software companies made payments and financial products a serious part of their business, and everyone else is trying to work out how they did it. The useful thing is not that Toast or Shopify exist. It is that they all ran roughly the same play, in roughly the same order, and the order is the lesson.</p>
+
+    <p><strong>The most successful embedded finance in vertical SaaS follows one pattern: start with payments, make it default-on inside the core workflow, get attach and activation high, then expand into lending, cards and accounts once the payments base is proven. Toast, Shopify, ServiceTitan and Mindbody all ran this sequence. None of them led with lending, and none of them treated payments as a checkbox feature.</strong></p>
+
+    <h2>What counts as successful embedded finance in vertical SaaS?</h2>
+
+    <p>Embedded finance is financial product built into software so the customer never leaves the workflow to pay, get paid, borrow or bank. In vertical SaaS the platform serves one industry, so it knows that industry's money flows better than any bank does, and it can offer a financial product on data and distribution it already owns. That is the structural advantage, and it is why a restaurant platform can out-execute a generic processor at selling payments to restaurants.</p>
+
+    <p>Successful looks like three things stacked in order. Payments becomes a real revenue line, often the largest one. Attach and activation across the existing customer base are high, not just for new signups. And the platform then uses the payments relationship to add a second and third financial product without acquiring a single new customer. A platform that has bolted on a payments toggle almost nobody uses has embedded finance on the roadmap, not in the business. For the broader frame, see <a href="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance for vertical SaaS</a>.</p>
+
+    <h2>Toast: how payments became the business</h2>
+
+    <p>Toast is the cleanest example because the direction of travel is so stark. It started as a cloud point-of-sale system for restaurants, a software product. Today the payment processing that runs through that software is its largest revenue engine, far larger than the software subscriptions. The restaurant never thinks of Toast as a payments company. They bought a POS, and the payments came with it because that is how the product works.</p>
+
+    <p>That is the default-on lesson in one company. Toast did not ask restaurants to go choose a processor. Processing is simply how you run the register, so attach is effectively built into the core workflow. On top of that payments base Toast layered financing for restaurants, using the transaction history it already had to underwrite. The lending did not come first. It came after the payments relationship made the platform the natural place to borrow.</p>
+
+    <blockquote class="pull-quote">The restaurant never thinks of Toast as a payments company. They bought a POS, and the payments came with it because that is how the product works.</blockquote>
+
+    <h2>Shopify: from payments to a full financial stack</h2>
+
+    <p>Shopify shows how far the sequence can run. It began with payments, its own processing product that a large majority of its merchants use rather than bolting on an outside gateway. Once that base existed, Shopify added an accelerated checkout wallet, then merchant financing and cash advances underwritten off store data, then a business money account, then installment payments and a business card. Each product rode on the merchant relationship and the data the previous product created.</p>
+
+    <p>The important part is not the length of the list. It is that the list is a sequence, not a menu. Shopify did not launch a bank account and a card and loans on day one. It earned each step by proving the one before it, and every new product was easier to sell because the merchant was already inside the financial relationship. This is the model most vertical platforms should study, not because they will match the scale, but because the ordering is copyable at any size.</p>
+
+    <h2>ServiceTitan: embedding payments in the home-services workflow</h2>
+
+    <p>ServiceTitan is the trades version of the same move. It is the software that home and commercial services businesses use to schedule jobs, dispatch technicians and invoice customers. Payments is embedded right where the invoice already lives, so the contractor collects through the software instead of running a separate terminal. Because the payment sits inside the job workflow, attach follows the workflow rather than depending on a separate sale.</p>
+
+    <p>ServiceTitan also added consumer financing, which matters more in the trades because the jobs are large. A homeowner facing a five-figure HVAC replacement is far more likely to say yes when financing is offered in the same flow that produces the quote. That is embedded finance doing what a standalone lender cannot: showing up at the exact moment of need, inside the tool that created the need. The payments came first, and the financing extended the same workflow.</p>
+
+    <h2>Mindbody, Squarespace and Housecall Pro: the pattern repeats</h2>
+
+    <p>The pattern is not unique to a few giants. Mindbody, the software for wellness, fitness and salon businesses, made integrated payments a core part of its monetization, so a studio takes bookings and payments through one system. Squarespace, better known as a website builder, expanded into commerce and then its own payments product, moving from tools to transactions. Housecall Pro, a home-services platform, built embedded payments and then instant payouts and financing on top, so a small contractor gets paid faster through the software they already run their day in.</p>
+
+    <p>Different verticals, same shape. Own the workflow, put payments where the money already changes hands, get the existing base using it, then extend into the next financial product. The verticals that look nothing alike on the surface converge on the identical structure underneath, which is the strongest signal that the structure, not the industry, is what is doing the work.</p>
+
+    <h2>What do the successful examples have in common?</h2>
+
+    <p>Read the examples together and four things repeat every time.</p>
+
+    <p>Payments came first. Not lending, not banking, not a card. Payments is the highest-frequency financial event in the workflow, and it produces the data that underwrites everything after it. Every platform that later offered credit earned the right to by first processing the payments that told them who was good for it.</p>
+
+    <p>It was default-on inside the core workflow. In each case payments is how the product works, not a feature the customer has to go find and switch on. That single design choice is the difference between the attach rates these platforms hit and the ones a buried payments toggle produces. The mechanics of that gap are in <a href="https://marginlabs.io/the-lab/embedded-payments-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded payments for vertical SaaS</a>.</p>
+
+    <p>They monetized the base, not just new signups. The revenue did not come only from new customers arriving into a payments-native flow. It came from converting the existing book of customers who predated the payments launch, which is the single largest and most underworked lever in the first years of any program.</p>
+
+    <p>Expansion was a sequence, not a leap. The second and third financial products came after the payments base was proven, each one easier because the relationship already existed. None of them tried to be a full financial stack on day one, and neither should you. Whether the right first step is a referral or owning more of the economics is the question in <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
+
+    <h2>What does this mean for your platform?</h2>
+
+    <p>You are not going to reproduce Shopify's stack, and you do not need to. What the examples give you is the order of operations and permission to start small. Put payments where the money already changes hands in your product, make it the default rather than a toggle, and measure attach and activation against the base you already have before you think about the next product. The economics of that first step, at your specific volume, are exactly what the <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how much SaaS platforms make from payments</a> math lays out.</p>
+
+    <p>The mistake is reading these examples as an argument for ambition, when they are really an argument for sequence. The platforms that struggle with embedded finance are usually the ones that skipped straight to the exciting products, or that launched payments as a feature nobody defaulted into. The ones that win did the boring thing first, did it as the default path, and let each financial product fund the next. If you want to pressure-test where your platform sits on that path and what the honest first move is, that is what a <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Quick Start Call</a> is for.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is embedded finance in vertical SaaS?</h3>
+    <p>Embedded finance in vertical SaaS is when a software platform for a specific industry builds financial products directly into its workflow, so its customers pay, get paid, borrow or bank without leaving the software. Payments is almost always the first and largest line, followed by lending, issued cards and deposit accounts. The point is that the financial product rides on data and distribution the platform already owns, which is why a vertical platform can offer it at better economics than a standalone bank or processor.</p>
+
+    <h3>Which vertical SaaS companies do embedded finance well?</h3>
+    <p>The most cited examples are Toast in restaurants, Shopify in commerce, ServiceTitan in the home and commercial trades, and Mindbody in wellness and fitness. Squarespace and Housecall Pro run the same playbook in their verticals. In every case payments came first and became a major revenue line, and lending or banking products were added on top of the payments base rather than launched cold.</p>
+
+    <h3>Do you have to become a payment facilitator to do embedded finance?</h3>
+    <p>No. Most platforms start with a referral or a managed PayFac-as-a-Service model, where a provider carries the heaviest compliance and infrastructure load, and only move toward full payment facilitator status once the volume justifies the operating cost. The successful examples reached full ownership of the economics over years, not on day one. The right entry point depends on your volume, your stage and how much operational load you can carry.</p>
+
+    <h3>Should a vertical SaaS platform start with payments or lending?</h3>
+    <p>Payments, almost always. Payments is the highest-frequency financial event in a customer's workflow, it produces the transaction data that underwrites everything else, and it funds and de-risks the later products. None of the well-known embedded finance winners led with lending. They earned the right to lend by first processing the payments that told them who was creditworthy.</p>
+
+    <h3>How long does it take to build a successful embedded finance line?</h3>
+    <p>Longer than a single roadmap cycle and shorter than most boards fear. The public examples took a few years to move from launching payments to a meaningful revenue line, and several more to layer on lending and banking. The pace is set less by the technology, which a provider can supply quickly, than by activation: how fast the platform gets its existing customer base actually using the product. Attach and activation are the clock, not the build.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Where would payments sit in your workflow?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your first embedded finance step is worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and shows what your platform could capture from payments across all four models. It is the fastest way to size the first move the winners all made. Want to think through the sequence for your platform? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Embedded Payments Benchmarks: What Good Looks Like</title>
       <link>https://marginlabs.io/the-lab/payments-benchmarks-for-software-platforms</link>
@@ -909,6 +998,10 @@
     <p>The honest answer is the one it usually is: it depends, and here it depends almost entirely on your merchant and card mix. A platform with B2B merchants and real commercial-card volume has the most to gain, because Level 2 and Level 3 data and clean qualification move serious money. A platform with high debit volume has the routing lever. A platform processing mostly consumer credit cards has less room, because those rates already sit near the floor and the effort may not clear the savings. The first move is always to look at your actual mix before you invest in any of it, which is exactly the kind of thing the <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">economics of your payments program</a> should already be telling you.</p>
 
     <p>Where your platform lands on that, and which of these levers is worth pulling first against your real volume and card mix, is the part that only resolves against your numbers. If you are looking at your processing cost and suspecting there is margin trapped in it, that is the conversation worth having before you either ignore it or chase the wrong lever. Reach out and we will work through yours.</p>
+
+    <h2>How does interchange optimization work for a SaaS platform?</h2>
+
+    <p>Interchange optimization for a SaaS platform means making sure every transaction qualifies for the lowest interchange category it is eligible for, through Level 2 and Level 3 data on commercial cards, clean transaction qualification, and smart debit routing. For a platform the leverage is scale. A fraction of a basis point saved across the whole portfolio is real margin, and it drops straight to the bottom line because interchange is a cost you can reduce without raising a single merchant's rate. The work only pays where your card mix supports it, which is why the first step is always reading your actual interchange qualification before investing in any of these levers.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">The honest answer? It depends.</div>
@@ -1865,6 +1958,10 @@
     <blockquote class="pull-quote">The processor decision for a software platform is not about picking the cheapest rate. It is about picking the partner whose architecture, terms, and economics will compound the right way over the next three to five years.</blockquote>
 
     <p>The full negotiation playbook (term sheets, redlines, the comparison framework) is in <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How to Negotiate a Processor Agreement</a>. For the upstream architecture decision that should precede processor selection, the <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> models the four embedded payments models at your specific volume. For the strategic conversation about your platform's situation, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
+
+    <h2>What makes a good SaaS payment processor?</h2>
+
+    <p>A good SaaS payment processor is the one whose architecture, terms and economics compound the right way for a platform, not the one with the lowest headline rate. Look for transparent interchange-plus pricing, a clean path to owning more of the merchant relationship and economics as you scale, developer-grade APIs and documentation, and contract terms that do not trap you when your volume grows. The cheapest SaaS payment processor on day one is often the most expensive by year three, once the exclusivity clauses and the flat-rate spread have had time to work against you.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
@@ -3194,6 +3291,10 @@
     <blockquote class="pull-quote">In vertical markets, payments isn't a feature. It's a competitive moat, but only if you build it before someone else does.</blockquote>
 
     <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> can show you what your merchant volume is worth under each monetization model. If you haven't run the numbers yet, that's the first step. If you want to think through what the model transition looks like for your specific vertical, that's what the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a> is built for.</p>
+
+    <h2>What does a good vertical SaaS payments strategy look like?</h2>
+
+    <p>A good vertical SaaS payments strategy starts from where you sit today and where the volume actually is, not from the model that captures the most in theory. It picks the monetization model your stage and merchant base can support, makes payments default-on in the setup flow rather than a toggle buried in settings, and treats activation and back-book conversion as the real levers. The strongest strategies are a sequence, referral first if you are early then owning more of the economics as your volume and operational maturity grow, rather than a single leap to full PayFac. For the model comparison that anchors this decision, see <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
@@ -3301,6 +3402,10 @@
     <blockquote class="pull-quote">The best payments partnerships are the ones where the economics improve as you grow. The worst ones are the ones where the contract prevents you from capturing that improvement.</blockquote>
 
     <p>If you're evaluating providers and want an independent assessment of proposals you've received, that's one of the most common use cases for a <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Labs Quick Start Call</a>. We review processor proposals, identify the contract terms that matter, and help you compare options without vendor bias.</p>
+
+    <h2>How is choosing an embedded finance partner different for a SaaS business?</h2>
+
+    <p>Choosing an embedded finance partner for your SaaS business is the same discipline as choosing a payments provider, applied wider. Payments is usually the first and largest embedded finance line, so the eight questions above (the full cost stack, who owns the merchant, the migration path, onboarding, support, API maturity, contract terms and roadmap fit) are exactly where to start. If the partner also offers lending, issued cards or accounts, hold each of those lines to the same test rather than assuming a strong payments partner is automatically the right partner for the rest. The best embedded finance partner for a SaaS business is the one whose economics improve as you grow across every product you turn on, not just the one you started with.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>

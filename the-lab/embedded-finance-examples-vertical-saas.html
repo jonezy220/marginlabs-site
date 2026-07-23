@@ -1,0 +1,241 @@
+<!-- ML-LAB-046 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded Finance Examples in Vertical SaaS: What the Best Platforms Did | Margin Labs</title>
+<meta name="description" content="Real examples of successful embedded finance in vertical SaaS: Toast, Shopify, ServiceTitan, Mindbody and more. The pattern behind the winners, and what it means for your platform.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Embedded Finance Examples in Vertical SaaS: What the Best Platforms Did | Margin Labs">
+<meta property="og:description" content="Successful embedded finance in vertical SaaS follows one pattern: payments first, default-on, then expand. Examples from Toast, Shopify, ServiceTitan and Mindbody, and what your platform can learn.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is embedded finance in vertical SaaS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Embedded finance in vertical SaaS is when a software platform for a specific industry builds financial products directly into its workflow, so its customers pay, get paid, borrow or bank without leaving the software. Payments is almost always the first and largest line, followed by lending, issued cards and deposit accounts. The point is that the financial product rides on data and distribution the platform already owns, which is why a vertical platform can offer it at better economics than a standalone bank or processor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which vertical SaaS companies do embedded finance well?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most cited examples are Toast in restaurants, Shopify in commerce, ServiceTitan in the home and commercial trades, and Mindbody in wellness and fitness. Squarespace and Housecall Pro run the same playbook in their verticals. In every case payments came first and became a major revenue line, and lending or banking products were added on top of the payments base rather than launched cold."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have to become a payment facilitator to do embedded finance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Most platforms start with a referral or a managed PayFac-as-a-Service model, where a provider carries the heaviest compliance and infrastructure load, and only move toward full payment facilitator status once the volume justifies the operating cost. The successful examples reached full ownership of the economics over years, not on day one. The right entry point depends on your volume, your stage and how much operational load you can carry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a vertical SaaS platform start with payments or lending?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Payments, almost always. Payments is the highest-frequency financial event in a customer's workflow, it produces the transaction data that underwrites everything else, and it funds and de-risks the later products. None of the well-known embedded finance winners led with lending. They earned the right to lend by first processing the payments that told them who was creditworthy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a successful embedded finance line?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Longer than a single roadmap cycle and shorter than most boards fear. The public examples took a few years to move from launching payments to a meaningful revenue line, and several more to layer on lending and banking. The pace is set less by the technology, which a provider can supply quickly, than by activation: how fast the platform gets its existing customer base actually using the product. Attach and activation are the clock, not the build."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab/" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Embedded Finance Examples in Vertical SaaS: What the Best Platforms Did</h1>
+  <div class="article-meta">
+    <span>July 2026</span>
+    <span>9 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>Every board deck about embedded finance eventually shows the same four logos. The reason is that a small number of vertical software companies made payments and financial products a serious part of their business, and everyone else is trying to work out how they did it. The useful thing is not that Toast or Shopify exist. It is that they all ran roughly the same play, in roughly the same order, and the order is the lesson.</p>
+
+    <p><strong>The most successful embedded finance in vertical SaaS follows one pattern: start with payments, make it default-on inside the core workflow, get attach and activation high, then expand into lending, cards and accounts once the payments base is proven. Toast, Shopify, ServiceTitan and Mindbody all ran this sequence. None of them led with lending, and none of them treated payments as a checkbox feature.</strong></p>
+
+    <h2>What counts as successful embedded finance in vertical SaaS?</h2>
+
+    <p>Embedded finance is financial product built into software so the customer never leaves the workflow to pay, get paid, borrow or bank. In vertical SaaS the platform serves one industry, so it knows that industry's money flows better than any bank does, and it can offer a financial product on data and distribution it already owns. That is the structural advantage, and it is why a restaurant platform can out-execute a generic processor at selling payments to restaurants.</p>
+
+    <p>Successful looks like three things stacked in order. Payments becomes a real revenue line, often the largest one. Attach and activation across the existing customer base are high, not just for new signups. And the platform then uses the payments relationship to add a second and third financial product without acquiring a single new customer. A platform that has bolted on a payments toggle almost nobody uses has embedded finance on the roadmap, not in the business. For the broader frame, see <a href="/the-lab/embedded-finance-for-vertical-saas">embedded finance for vertical SaaS</a>.</p>
+
+    <h2>Toast: how payments became the business</h2>
+
+    <p>Toast is the cleanest example because the direction of travel is so stark. It started as a cloud point-of-sale system for restaurants, a software product. Today the payment processing that runs through that software is its largest revenue engine, far larger than the software subscriptions. The restaurant never thinks of Toast as a payments company. They bought a POS, and the payments came with it because that is how the product works.</p>
+
+    <p>That is the default-on lesson in one company. Toast did not ask restaurants to go choose a processor. Processing is simply how you run the register, so attach is effectively built into the core workflow. On top of that payments base Toast layered financing for restaurants, using the transaction history it already had to underwrite. The lending did not come first. It came after the payments relationship made the platform the natural place to borrow.</p>
+
+    <blockquote class="pull-quote">The restaurant never thinks of Toast as a payments company. They bought a POS, and the payments came with it because that is how the product works.</blockquote>
+
+    <h2>Shopify: from payments to a full financial stack</h2>
+
+    <p>Shopify shows how far the sequence can run. It began with payments, its own processing product that a large majority of its merchants use rather than bolting on an outside gateway. Once that base existed, Shopify added an accelerated checkout wallet, then merchant financing and cash advances underwritten off store data, then a business money account, then installment payments and a business card. Each product rode on the merchant relationship and the data the previous product created.</p>
+
+    <p>The important part is not the length of the list. It is that the list is a sequence, not a menu. Shopify did not launch a bank account and a card and loans on day one. It earned each step by proving the one before it, and every new product was easier to sell because the merchant was already inside the financial relationship. This is the model most vertical platforms should study, not because they will match the scale, but because the ordering is copyable at any size.</p>
+
+    <h2>ServiceTitan: embedding payments in the home-services workflow</h2>
+
+    <p>ServiceTitan is the trades version of the same move. It is the software that home and commercial services businesses use to schedule jobs, dispatch technicians and invoice customers. Payments is embedded right where the invoice already lives, so the contractor collects through the software instead of running a separate terminal. Because the payment sits inside the job workflow, attach follows the workflow rather than depending on a separate sale.</p>
+
+    <p>ServiceTitan also added consumer financing, which matters more in the trades because the jobs are large. A homeowner facing a five-figure HVAC replacement is far more likely to say yes when financing is offered in the same flow that produces the quote. That is embedded finance doing what a standalone lender cannot: showing up at the exact moment of need, inside the tool that created the need. The payments came first, and the financing extended the same workflow.</p>
+
+    <h2>Mindbody, Squarespace and Housecall Pro: the pattern repeats</h2>
+
+    <p>The pattern is not unique to a few giants. Mindbody, the software for wellness, fitness and salon businesses, made integrated payments a core part of its monetization, so a studio takes bookings and payments through one system. Squarespace, better known as a website builder, expanded into commerce and then its own payments product, moving from tools to transactions. Housecall Pro, a home-services platform, built embedded payments and then instant payouts and financing on top, so a small contractor gets paid faster through the software they already run their day in.</p>
+
+    <p>Different verticals, same shape. Own the workflow, put payments where the money already changes hands, get the existing base using it, then extend into the next financial product. The verticals that look nothing alike on the surface converge on the identical structure underneath, which is the strongest signal that the structure, not the industry, is what is doing the work.</p>
+
+    <h2>What do the successful examples have in common?</h2>
+
+    <p>Read the examples together and four things repeat every time.</p>
+
+    <p>Payments came first. Not lending, not banking, not a card. Payments is the highest-frequency financial event in the workflow, and it produces the data that underwrites everything after it. Every platform that later offered credit earned the right to by first processing the payments that told them who was good for it.</p>
+
+    <p>It was default-on inside the core workflow. In each case payments is how the product works, not a feature the customer has to go find and switch on. That single design choice is the difference between the attach rates these platforms hit and the ones a buried payments toggle produces. The mechanics of that gap are in <a href="/the-lab/embedded-payments-vertical-saas">embedded payments for vertical SaaS</a>.</p>
+
+    <p>They monetized the base, not just new signups. The revenue did not come only from new customers arriving into a payments-native flow. It came from converting the existing book of customers who predated the payments launch, which is the single largest and most underworked lever in the first years of any program.</p>
+
+    <p>Expansion was a sequence, not a leap. The second and third financial products came after the payments base was proven, each one easier because the relationship already existed. None of them tried to be a full financial stack on day one, and neither should you. Whether the right first step is a referral or owning more of the economics is the question in <a href="/the-lab/payfac-vs-isv">ISV Referral vs PayFac Lite</a>.</p>
+
+    <h2>What does this mean for your platform?</h2>
+
+    <p>You are not going to reproduce Shopify's stack, and you do not need to. What the examples give you is the order of operations and permission to start small. Put payments where the money already changes hands in your product, make it the default rather than a toggle, and measure attach and activation against the base you already have before you think about the next product. The economics of that first step, at your specific volume, are exactly what the <a href="/the-lab/how-much-saas-platforms-make-from-payments">how much SaaS platforms make from payments</a> math lays out.</p>
+
+    <p>The mistake is reading these examples as an argument for ambition, when they are really an argument for sequence. The platforms that struggle with embedded finance are usually the ones that skipped straight to the exciting products, or that launched payments as a feature nobody defaulted into. The ones that win did the boring thing first, did it as the default path, and let each financial product fund the next. If you want to pressure-test where your platform sits on that path and what the honest first move is, that is what a <a href="/advisory">Quick Start Call</a> is for.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is embedded finance in vertical SaaS?</h3>
+    <p>Embedded finance in vertical SaaS is when a software platform for a specific industry builds financial products directly into its workflow, so its customers pay, get paid, borrow or bank without leaving the software. Payments is almost always the first and largest line, followed by lending, issued cards and deposit accounts. The point is that the financial product rides on data and distribution the platform already owns, which is why a vertical platform can offer it at better economics than a standalone bank or processor.</p>
+
+    <h3>Which vertical SaaS companies do embedded finance well?</h3>
+    <p>The most cited examples are Toast in restaurants, Shopify in commerce, ServiceTitan in the home and commercial trades, and Mindbody in wellness and fitness. Squarespace and Housecall Pro run the same playbook in their verticals. In every case payments came first and became a major revenue line, and lending or banking products were added on top of the payments base rather than launched cold.</p>
+
+    <h3>Do you have to become a payment facilitator to do embedded finance?</h3>
+    <p>No. Most platforms start with a referral or a managed PayFac-as-a-Service model, where a provider carries the heaviest compliance and infrastructure load, and only move toward full payment facilitator status once the volume justifies the operating cost. The successful examples reached full ownership of the economics over years, not on day one. The right entry point depends on your volume, your stage and how much operational load you can carry.</p>
+
+    <h3>Should a vertical SaaS platform start with payments or lending?</h3>
+    <p>Payments, almost always. Payments is the highest-frequency financial event in a customer's workflow, it produces the transaction data that underwrites everything else, and it funds and de-risks the later products. None of the well-known embedded finance winners led with lending. They earned the right to lend by first processing the payments that told them who was creditworthy.</p>
+
+    <h3>How long does it take to build a successful embedded finance line?</h3>
+    <p>Longer than a single roadmap cycle and shorter than most boards fear. The public examples took a few years to move from launching payments to a meaningful revenue line, and several more to layer on lending and banking. The pace is set less by the technology, which a provider can supply quickly, than by activation: how fast the platform gets its existing customer base actually using the product. Attach and activation are the clock, not the build.</p>
+
+  </div>
+  <a href="/the-lab/" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Where would payments sit in your workflow?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">See what your first embedded finance step is worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and shows what your platform could capture from payments across all four models. It is the fastest way to size the first move the winners all made. Want to think through the sequence for your platform? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/margin-multiplier" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-multiplier-primary">Run the Margin Multiplier →</a>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-consult-secondary">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

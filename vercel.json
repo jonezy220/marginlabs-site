@@ -73,6 +73,16 @@
       "source": "/go/benchmarks-co",
       "destination": "https://marginlabs.io/the-lab/payments-benchmarks-for-software-platforms?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=benchmarks",
       "permanent": false
+    },
+    {
+      "source": "/go/ef-examples",
+      "destination": "https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=ef-examples",
+      "permanent": false
+    },
+    {
+      "source": "/go/ef-examples-co",
+      "destination": "https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=ef-examples",
+      "permanent": false
     }
   ],
   "functions": {
