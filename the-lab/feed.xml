@@ -8,9 +8,88 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 23 Jul 2026 03:27:22 +0000</lastBuildDate>
-    <pubDate>Thu, 23 Jul 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Mon, 27 Jul 2026 01:45:55 +0000</lastBuildDate>
+    <pubDate>Mon, 27 Jul 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Cash Discounting vs Surcharging vs Convenience Fees: What Your Platform Can Offer</title>
+      <link>https://marginlabs.io/the-lab/cash-discounting-vs-surcharging</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/cash-discounting-vs-surcharging</guid>
+      <pubDate>Mon, 27 Jul 2026 14:00:00 +0000</pubDate>
+      <description>Cash discounting, surcharging and convenience fees are three different ways a software platform can help merchants offset card costs. The rules, the economics and the compliance risk of each.</description>
+      <content:encoded><![CDATA[<p>Merchants hate paying card fees, and every processor sales rep in the country has learned to open with some version of "what if you could pass that cost along." The pitch lands because the pain is real. But the three ways to actually do it are not the same thing, even though they get used interchangeably in a demo. Cash discounting, surcharging and convenience fees each have their own rules, their own economics and their own way of going wrong.</p>
+
+    <p>For a software platform thinking about offering one of these as a merchant feature, that distinction is not academic. When a merchant runs a cost-offset program incorrectly, the fallout does not stay with the merchant. It travels back up through the platform that enabled it.</p>
+
+    <p><strong>The three are not interchangeable. Surcharging adds a fee to credit card transactions and is capped by the card networks, credit only not debit, must be disclosed and registered. It is also banned or limited in several states. A convenience fee is a flat charge for using an alternative payment channel and only applies in narrow situations. Cash discounting posts the card price as the standard and rewards cash, and it is the most broadly permissible of the three. For a platform offering any of these as a merchant feature, the differences are legal and reputational, not cosmetic.</strong></p>
+
+    <h2>What is the difference between cash discounting, surcharging and convenience fees?</h2>
+
+    <p>Surcharging adds a fee, usually a percentage, on top of the ticket when a customer pays with a credit card. The posted price is the cash price and the card customer pays more. Convenience fees are a flat charge for using a payment channel that is not the merchant's standard way of getting paid, the classic example being a phone or online payment at a business that normally takes payment in person. Cash discounting flips the frame entirely: the merchant posts the higher card price as the everyday price and offers a discount to anyone who pays in cash.</p>
+
+    <p>The reason the labels get muddled is that all three end up in the same place, a card customer paying a little more than a cash customer. But the card networks and the states do not regulate the outcome. They regulate the mechanics, and the mechanics are where these three separate.</p>
+
+    <h2>Surcharging: the rules that trip platforms up</h2>
+
+    <p>Surcharging carries the heaviest rulebook of the three. The card networks cap the surcharge, commonly around 3 to 4 percent, and it cannot exceed the merchant's actual cost of acceptance. It applies to credit only, never debit, even when the debit card runs as credit. The merchant has to disclose the surcharge clearly at the point of entry and on the receipt, and in most cases has to notify or register with the card networks before switching it on. On top of the network rules, several states ban or limit surcharging outright, so a merchant's legal footing depends on where it operates.</p>
+
+    <p>That is a lot of moving parts for a small business to get right on its own, and the failure modes are ugly. Surcharge debit and the merchant is out of compliance. Skip the signage and the customer disputes the fee. Run it in a state that prohibits it and the exposure is legal, not just operational. When any of that happens, the chargebacks and brand fines do not stop at the merchant. They flow back through the platform and the processor that enabled the program in the first place.</p>
+
+    <h2>Convenience fees: the narrow lane</h2>
+
+    <p>Convenience fees sound flexible but live in a very narrow lane. The networks allow a flat fee, not a percentage, only when the customer is paying through an alternative channel that is not the merchant's customary way of accepting payment. A government office or a utility taking an online or phone payment is the textbook case. There are also restrictions tied to merchant category and to the requirement that the fee be genuinely for the convenience of the alternate channel, not just a card surcharge wearing a different name.</p>
+
+    <p>Because the lane is so specific, a convenience fee is easy to apply incorrectly. A merchant that charges the fee on its primary payment channel, or charges a percentage instead of a flat amount, has quietly turned a permitted convenience fee into a non-compliant surcharge without realizing it. For most vertical software platforms this is the least broadly useful of the three, and worth offering only when the merchant genuinely has a distinct alternate channel.</p>
+
+    <h2>Cash discounting: why it is the cleanest option</h2>
+
+    <p>Cash discounting is the option most platforms land on, and the reason is structural. Because the merchant posts the card price as the standard everyday price and simply offers a discount for cash, the program is framed as a discount rather than an added fee. That framing sidesteps most of the surcharge rulebook, including the network cap and much of the state-level prohibition, since offering a discount for cash has long been broadly permitted.</p>
+
+    <p>Cleaner does not mean effortless. The signage and the mechanics have to be right: the posted price genuinely has to be the card price, the discount has to be applied at the register the way it is described, and the receipts have to reflect it. Done sloppily, a cash discount program that is really a hidden surcharge invites the same disputes it was supposed to avoid. But when it is set up correctly, it gives the merchant the same economic result with materially less compliance surface than surcharging.</p>
+
+    <h2>Why this is a platform decision, not just a merchant one</h2>
+
+    <p>It is tempting to treat all of this as the merchant's problem. The platform provides the software, the merchant decides how to price, end of story. That framing misses where the value and the risk actually sit. Offering a credible cost-offset feature directly attacks the single most common objection to embedded payments, the belief that <a href="https://marginlabs.io/the-lab/why-merchants-dont-use-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments costs too much</a>. Give a merchant a compliant way to neutralize card fees and a large part of that objection disappears, which can lift attach on the payments product itself.</p>
+
+    <p>The flip side is that the platform inherits the compliance risk when a merchant fumbles it. If your software is the thing that turned on surcharging, applied the fee to debit or let a merchant run it in a state that bans it, the disputes and network fines route back through your program. The way to capture the upside without absorbing the downside is to build the disclosure, the debit exclusions, the state logic and the signage guidance into the feature rather than leaving the merchant to wire it up alone.</p>
+
+    <blockquote class="pull-quote">A cost-offset feature can lift attach by killing the "payments costs too much" objection, but the platform inherits the compliance risk the moment a merchant runs it wrong.</blockquote>
+
+    <h2>Which should your platform enable?</h2>
+
+    <p>The honest answer is that it depends on the merchant vertical, the state footprint and the platform's own risk tolerance. Cash discounting is the safest default and the one most platforms should reach for first, because it delivers the merchant economics with the lightest compliance load and the broadest permissibility. Surcharging has the strongest merchant appeal, because "make the card customer pay the fee" is an easy story to sell, but it comes with the heaviest compliance burden and real state-level exposure. Convenience fees are a specialty tool for the narrow set of merchants with a genuine alternate payment channel.</p>
+
+    <p>Whichever you enable, it should be read as part of the larger question of what your platform does with payments, not a standalone toggle. A cost-offset feature changes the merchant's effective cost of acceptance, which changes the <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">cost stack</a> your pricing sits on top of and feeds directly into the broader decision of <a href="https://marginlabs.io/the-lab/should-your-platform-monetize-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">whether your platform should monetize payments</a> at all. If you want the mechanics of surcharging specifically, the deeper treatment lives in <a href="https://marginlabs.io/the-lab/surcharging-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">surcharging for software platforms</a>.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Is surcharging legal?</h3>
+    <p>Legal at the federal level but capped by the card networks (commonly around 3 to 4 percent), allowed on credit not debit and banned or restricted in several states. It must be clearly disclosed and the merchant usually has to notify or register with the networks.</p>
+
+    <h3>What is the difference between a surcharge and a convenience fee?</h3>
+    <p>A surcharge is a percentage added to a credit card transaction for paying by card at all. A convenience fee is a flat charge for using an alternative payment channel the merchant does not normally offer, and it is limited to specific situations.</p>
+
+    <h3>Is cash discounting the same as surcharging?</h3>
+    <p>No. Cash discounting posts the card price as the standard price and gives a discount for paying cash, which sidesteps most surcharge rules because it is structured as a discount rather than an added fee.</p>
+
+    <h3>Can a software platform offer these to its merchants?</h3>
+    <p>Yes, as a feature. The platform should build in the disclosure and compliance guardrails, because when a merchant runs one of these incorrectly the disputes and network fines flow back up through the platform.</p>
+
+    <h3>Which is best for reducing merchant payment costs?</h3>
+    <p>Cash discounting is the cleanest and most broadly permissible. Surcharging has the most merchant appeal but carries the heaviest compliance load, so the right choice depends on the merchant vertical and state footprint.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Where does this fit your economics?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what a cost-offset feature is worth to your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Run the Margin Multiplier to size the payments opportunity across all four models, then book a Quick Start Call to think through which cost-offset approach fits your merchants.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/cash-discounting-vs-surcharging?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Embedded Finance Examples in Vertical SaaS: What the Best Platforms Did</title>
       <link>https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas</link>

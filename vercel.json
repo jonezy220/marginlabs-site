@@ -83,6 +83,16 @@
       "source": "/go/ef-examples-co",
       "destination": "https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=ef-examples",
       "permanent": false
+    },
+    {
+      "source": "/go/surcharge-options",
+      "destination": "https://marginlabs.io/the-lab/cash-discounting-vs-surcharging?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=surcharge-options",
+      "permanent": false
+    },
+    {
+      "source": "/go/surcharge-options-co",
+      "destination": "https://marginlabs.io/the-lab/cash-discounting-vs-surcharging?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=surcharge-options",
+      "permanent": false
     }
   ],
   "functions": {
