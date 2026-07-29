@@ -25,6 +25,26 @@
       "permanent": true
     },
     {
+      "source": "/the-lab/how-saas-companies-make-money-from-payments",
+      "destination": "/the-lab/how-much-saas-platforms-make-from-payments",
+      "permanent": true
+    },
+    {
+      "source": "/the-lab/calculate-payments-revenue",
+      "destination": "/the-lab/how-much-saas-platforms-make-from-payments",
+      "permanent": true
+    },
+    {
+      "source": "/the-lab/how-to-evaluate-a-payments-vendor",
+      "destination": "/the-lab/how-to-choose-an-embedded-payments-provider",
+      "permanent": true
+    },
+    {
+      "source": "/the-lab/payment-processor-for-saas",
+      "destination": "/the-lab/how-to-choose-an-embedded-payments-provider",
+      "permanent": true
+    },
+    {
       "source": "/go/roadmap",
       "destination": "https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=implementation-roadmap",
       "permanent": false

@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 27 Jul 2026 01:45:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 01:26:26 +0000</lastBuildDate>
     <pubDate>Mon, 27 Jul 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -376,64 +376,6 @@
   </div>
 </section>
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payments-100-day-plan-pe?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>How to Evaluate a Payments Vendor for Your Business</title>
-      <link>https://marginlabs.io/the-lab/how-to-evaluate-a-payments-vendor</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-evaluate-a-payments-vendor</guid>
-      <pubDate>Mon, 13 Jul 2026 14:00:00 +0000</pubDate>
-      <description>The cheapest quote is often the wrong vendor. How to choose and compare a payments vendor on fit rather than price: payment-type coverage (card-present vs card-not-present), vertical expertise, model support, and whether they will underwrite your specific merchants. For SaaS platforms and ISVs.</description>
-      <content:encoded><![CDATA[<p>Most vendor evaluations open with a rate sheet and close with a signature to whoever quoted lowest. It is the wrong order. The cheapest quote is regularly the wrong vendor, because price is the one dimension that tells you nothing about whether the vendor actually fits your business. A provider can be ten basis points cheaper and still be a poor match if it cannot support how your merchants get paid, does not understand your vertical, or will not board the merchants you actually have.</p>
-
-    <p>There are two separate questions in any evaluation. The first is whether the vendor is any good in general: its cost stack, contract terms, reliability, support and roadmap. That is a quality question, and it is covered in <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>. This piece is about the second question, the one that gets skipped: does this vendor fit your specific business. Fit is decided on four dimensions, and price is not one of them.</p>
-
-    <p><strong>Evaluate a payments vendor for fit before price. Four dimensions decide it: does the vendor support how your merchants actually get paid (card-present retail versus card-not-present online, plus ACH, wallets and recurring), does it know your vertical's risk and payment norms, does it support the model you want to run now and next, and will it underwrite your specific merchants. A vendor that fits on those four is worth more than the lowest quote.</strong></p>
-
-    <h2>Does the vendor fit how your merchants actually get paid?</h2>
-
-    <p>This is the dimension most often assumed rather than checked. Payment acceptance is not one thing, and vendors are rarely equally strong across all of it.</p>
-
-    <h3>Card-present (retail) versus card-not-present (online)</h3>
-    <p>Card-present means the card is physically read in person, through terminals or other hardware. It carries lower fraud risk, different interchange, and a hardware and in-person support burden. Card-not-present means the card is entered without being physically present, through an API, hosted checkout or e-commerce. It carries higher fraud risk, leans on tokenization and fraud tooling, and lives or dies on the quality of the developer experience. A vendor built for online card-not-present can be genuinely weak at retail card-present, and the reverse is just as common. Map your merchants' real mix first, then weight the evaluation to where your volume actually sits.</p>
-
-    <h3>The rest of the payment mix</h3>
-    <p>ACH and bank payments, digital wallets, and recurring or subscription billing each have their own support quality that varies widely by vendor. If a meaningful share of your volume is ACH, or your merchants run subscriptions, a vendor that treats those as afterthoughts will cost you in failed payments and reconciliation later. Weight each by its share of your volume, not by whether the vendor lists it on a feature page.</p>
-
-    <h2>Does the vendor know your vertical?</h2>
-
-    <p>Vertical depth is worth more than most evaluations credit. A vendor that already serves your vertical underwrites your merchants faster, because it recognizes the risk profile instead of treating every merchant as a new question. It understands the vertical's payment norms, deposits, tips, trust accounts, delayed capture, split funding, recurring, so those work out of the box rather than through custom work. And it often surfaces monetization a generalist never mentions, because it has seen what the vertical will pay for.</p>
-
-    <p>The opportunity cuts the other way too. Some verticals carry a payments opportunity large enough to justify choosing a vendor around it: high average tickets, strong recurring revenue, or a merchant base underserved by generic processors. A vendor with real depth in that vertical is not just a safer boarding experience; it is the difference between capturing that opportunity and leaving it on the table. Weigh the vendor's vertical expertise as a revenue input, not only a risk one.</p>
-
-    <h2>Does the vendor support the model you want to run?</h2>
-
-    <p>A vendor has to support not just the model you are on today but the one you are heading toward. If you are on referral and expect to move up to <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a> or beyond, a vendor that cannot take you there means a second migration later. The model ladder, ISV referral, enhanced residual, PayFac-as-a-Service, full PayFac, and which rung fits you, is covered in <a href="https://marginlabs.io/the-lab/should-your-platform-monetize-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">whether your platform should monetize payments</a> and <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISV</a>.</p>
-
-    <p>This is also where it helps to be clear about which decision you are actually making. Changing your model, moving up a rung to own more economics and control, is a strategic move that almost always means a new vendor and a real migration; that is the subject of <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">whether to change your payments model</a>. Switching providers within the same model, keeping your current model but finding a better-fitting vendor, is a narrower move you make while <a href="https://marginlabs.io/the-lab/optimize-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">optimizing what you already run</a>. The fit criteria in this article apply to both, but the stakes and the migration effort are very different, so name the decision before you start evaluating.</p>
-
-    <h2>Will the vendor underwrite your merchants?</h2>
-
-    <p>A vendor that will not board your merchants, or boards them only under heavy reserves and reviews, is a poor fit no matter how good the rate looks. Underwriting appetite is a real evaluation criterion, not a formality. Check it against your actual merchant profile: their size and ticket range, their risk band, their chargeback history, anything about your vertical that a risk team treats as elevated. Ask the vendor directly how it would underwrite a representative sample of your base, and treat vague answers as a red flag. The cost of a vendor that rejects or reserves a third of your merchants dwarfs a few basis points of rate.</p>
-
-    <h2>Where does price actually fit in?</h2>
-
-    <p>Last, and as a tiebreaker. Once you have two or three vendors that genuinely fit your payment mix, your vertical, your model and your merchants, then compare economics, and compare the full cost stack rather than the headline rate: effective rate at your volume, the fees around it, the contract terms that bite later. Those mechanics live in <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a> and <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to negotiate a processor agreement</a>. Price decides between good options. It should never be the filter that picks them.</p>
-
-    <blockquote class="pull-quote">The cheapest quote and the right vendor are rarely the same name. Establish fit on payment types, vertical, model and underwriting first. Then let price break the tie.</blockquote>
-
-    <p>Run the exercise in that order and the shortlist narrows fast, usually to fewer vendors than the rate-first approach would have you believe you are choosing among. The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> quantifies the economics once you have a fitting shortlist. If you want the evaluation run against your real merchant mix, vertical and model, that is what the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a> is for.</p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Find the vendor that fits, not just the cheapest quote.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every business's merchant mix, vertical and model is different. A Quick Start Call works the evaluation against your real numbers, tells you which vendors actually fit, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-to-evaluate-a-payments-vendor?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Should You Change Your Payments Model? Referral vs PayFac</title>
@@ -826,10 +768,10 @@
     <ol>
       <li><strong>Referral.</strong> You refer merchants to a processor and earn a residual. Lowest commitment, thinnest economics, someone else owns the risk. The right first move for most.</li>
       <li><strong>Managed PayFac / PayFac-as-a-service.</strong> You own the experience, the pricing and most of the economics on a provider's registration, without carrying a full payfac build. This is where most serious platforms land.</li>
-      <li><strong>Full, registered PayFac.</strong> Rare. Even the largest platforms usually run on a provider's infrastructure rather than registering themselves. It only makes sense at high volume with real appetite for the operational load.</li>
+      <li><strong>Full, registered <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitator</a>.</strong> Rare. Even the largest platforms usually run on a provider's infrastructure rather than registering themselves. It only makes sense at high volume with real appetite for the operational load.</li>
     </ol>
 
-    <p>The <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV-vs-PayFac decision</a> and <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how platforms actually make money from payments</a> go deeper on each model. The mistake is skipping straight to "become a payfac" because it sounds like the ambitious move.</p>
+    <p>The <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV-vs-PayFac decision</a> and <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how platforms actually make money from payments</a> go deeper on each model. The mistake is skipping straight to "become a payfac" because it sounds like the ambitious move.</p>
 
     <h2>How do ISVs choose between a referral model and owning the economics?</h2>
 
@@ -876,7 +818,7 @@
     <p>Most platforms arrive at a transaction monetizing payments well below their ceiling, and the gap almost always sits in one of four places. Diligence usually surfaces them, but <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments diligence</a> tells you the gap exists; the value-creation plan is what closes it.</p>
 
     <ul>
-      <li><strong>Model gap.</strong> The platform refers merchants to a processor and takes a thin residual when its volume could justify owning the economics. This is the single biggest trapped-value item, because it is the difference between <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">referral-level and facilitation-level economics</a>.</li>
+      <li><strong>Model gap.</strong> The platform refers merchants to a processor and takes a thin residual when its volume could justify owning the economics. This is the single biggest trapped-value item, because it is the difference between <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">referral-level and facilitation-level economics</a>, the exact trade-off laid out in <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">the ISV referral vs PayFac comparison</a>.</li>
       <li><strong>Activation gap.</strong> Payments is available but a small share of merchants actually use it. A platform monetizing 20% of eligible volume has most of its payments revenue still in front of it, and activation is usually the fastest lever to move.</li>
       <li><strong>Pricing gap.</strong> The platform priced payments once, early, and never revisited it. Rates that made sense at launch are leaving margin on the table at scale.</li>
       <li><strong>Cost gap.</strong> Interchange and processing cost are running higher than they need to, which is <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">margin the platform can actively shrink</a> rather than accept.</li>
@@ -888,7 +830,7 @@
 
     <ol>
       <li><strong>Diagnose</strong> the four gaps against real numbers: model, attach rate, take rate, cost.</li>
-      <li><strong>Make the model move that fits the timeline.</strong> This is the part operators get wrong. Becoming a full payment facilitator is a 12-to-18-month build, which can consume most of a hold period before it earns anything. A <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">managed PayFac-as-a-service</a> path captures facilitation-level economics in weeks to months, which is what makes it the right tool for a sponsor on a clock.</li>
+      <li><strong>Make the model move that fits the timeline.</strong> This is the part operators get wrong. Becoming a <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">full payment facilitator</a> is a 12-to-18-month build, which can consume most of a hold period before it earns anything. A <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">managed PayFac-as-a-service</a> path captures facilitation-level economics in weeks to months, which is what makes it the right tool for a sponsor on a clock.</li>
       <li><strong>Drive activation.</strong> Usually the largest near-term revenue lever and the one with the shortest payback, because the volume already exists. The <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant activation work</a> is unglamorous and it is where the money is.</li>
       <li><strong>Optimize the cost side</strong> so the spread you capture is as wide as it can be.</li>
       <li><strong>Reprice</strong> deliberately rather than by neglect.</li>
@@ -1014,7 +956,7 @@
 
     <h2>When building can actually make sense</h2>
 
-    <p>It is not never. If payments processing is your core product rather than an attached revenue line, if you are at a scale where a few basis points of saved cost dwarfs a multimillion-dollar run rate, or if you have a genuinely novel flow no provider supports, owning the rails can pay off. Those conditions are rare, and the platforms that meet them usually already know it. For everyone else, the question is not how to build a gateway cheaply. It is how to capture payments economics without building one at all, which is what <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded payments cost</a> and <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how platforms make money from payments</a> are really about.</p>
+    <p>It is not never. If payments processing is your core product rather than an attached revenue line, if you are at a scale where a few basis points of saved cost dwarfs a multimillion-dollar run rate, or if you have a genuinely novel flow no provider supports, owning the rails can pay off. Those conditions are rare, and the platforms that meet them usually already know it. For everyone else, the question is not how to build a gateway cheaply. It is how to capture payments economics without building one at all, which is what <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded payments cost</a> and <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how platforms make money from payments</a> are really about.</p>
 
     <h2>How to actually decide</h2>
 
@@ -1074,7 +1016,7 @@
 
     <h2>So is it worth the work for your platform?</h2>
 
-    <p>The honest answer is the one it usually is: it depends, and here it depends almost entirely on your merchant and card mix. A platform with B2B merchants and real commercial-card volume has the most to gain, because Level 2 and Level 3 data and clean qualification move serious money. A platform with high debit volume has the routing lever. A platform processing mostly consumer credit cards has less room, because those rates already sit near the floor and the effort may not clear the savings. The first move is always to look at your actual mix before you invest in any of it, which is exactly the kind of thing the <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">economics of your payments program</a> should already be telling you.</p>
+    <p>The honest answer is the one it usually is: it depends, and here it depends almost entirely on your merchant and card mix. A platform with B2B merchants and real commercial-card volume has the most to gain, because Level 2 and Level 3 data and clean qualification move serious money. A platform with high debit volume has the routing lever. A platform processing mostly consumer credit cards has less room, because those rates already sit near the floor and the effort may not clear the savings. The first move is always to look at your actual mix before you invest in any of it, which is exactly the kind of thing the <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">economics of your payments program</a> should already be telling you.</p>
 
     <p>Where your platform lands on that, and which of these levers is worth pulling first against your real volume and card mix, is the part that only resolves against your numbers. If you are looking at your processing cost and suspecting there is margin trapped in it, that is the conversation worth having before you either ignore it or chase the wrong lever. Reach out and we will work through yours.</p>
 
@@ -1108,7 +1050,7 @@
 
     <p>Every embedded-finance product depends on two assets, and a payments program is what creates both. The first is the money flow: once funds move through your platform, holding, lending against or issuing on top of them is a much smaller step than starting cold. The second is the data. Payment volume is the single best underwriting signal a small business produces, better than a tax return and far more current. A platform that processes a merchant's payments can see revenue trend, seasonality and health in close to real time, which is exactly what a lender or an account provider needs and exactly what the merchant's existing bank does not have.</p>
 
-    <p>That is why sequence matters more than ambition. A platform that tries to launch lending before it owns the payment relationship is underwriting blind and competing with the merchant's bank without an advantage. A platform that has earned the payment relationship first is expanding from strength. If you are still working out the payments side of this, <a href="https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">build vs buy vs partner</a> covers how to run that program, and <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a> covers the economics underneath it. Embedded finance is the chapter after both.</p>
+    <p>That is why sequence matters more than ambition. A platform that tries to launch lending before it owns the payment relationship is underwriting blind and competing with the merchant's bank without an advantage. A platform that has earned the payment relationship first is expanding from strength. If you are still working out the payments side of this, <a href="https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">build vs buy vs partner</a> covers how to run that program, and <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a> covers the economics underneath it. Embedded finance is the chapter after both.</p>
 
     <blockquote class="pull-quote">Payments gives you the money flow and the data. Embedded finance is what you build on top of them. Skip the first and the rest has no foundation.</blockquote>
 
@@ -1213,7 +1155,7 @@
 
     <p><strong>The model decision translates.</strong> Whether to refer, run a managed program or build the full stack is the same structural choice in Sao Paulo as in Atlanta, even though the providers and thresholds differ. If you have worked the <a href="https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">build versus buy versus partner</a> decision once, you already have the frame for doing it again in a new market.</p>
 
-    <p><strong>The monetization economics translate.</strong> The shape of how a platform makes money from payments, and the way that margin compresses as the merchant mix shifts, follows patterns that look familiar across borders. The numbers change but the structure of <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how a platform earns on payments</a> does not, which means an operator who understands their US economics can reason about the LATAM version quickly.</p>
+    <p><strong>The monetization economics translate.</strong> The shape of how a platform makes money from payments, and the way that margin compresses as the merchant mix shifts, follows patterns that look familiar across borders. The numbers change but the structure of <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how a platform earns on payments</a> does not, which means an operator who understands their US economics can reason about the LATAM version quickly.</p>
 
     <p><strong>The operator questions translate.</strong> The right things to ask a provider, about downstream risk, about pricing under a shifting mix, about who actually handles a frozen merchant, are the same questions that matter anywhere. A platform that learned to read a US provider knows how to read a local one. The checklist carries even when the names on it do not.</p>
 
@@ -1271,7 +1213,7 @@
 
     <div class="path-block">
       <p><span class="lbl">Build</span>: the full, registered payment facilitator.</p>
-      <p>You become your own PayFac: register with the card networks, secure a sponsor bank, stand up underwriting, compliance, risk and settlement, and run the whole program. You capture 80 to 120 basis points or more, and you take on a compliance and risk operation that needs real headcount and capital. A small number of very high-volume platforms belong here. Most that think they do are better served buying.</p>
+      <p>You become your own PayFac: register with the card networks, secure a sponsor bank, stand up underwriting, compliance, risk and settlement, and run the whole program. If the scope of that is not yet concrete, our primer on <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how the PayFac model works</a> lays out exactly what you would be taking on. You capture 80 to 120 basis points or more, and you take on a compliance and risk operation that needs real headcount and capital. A small number of very high-volume platforms belong here. Most that think they do are better served buying.</p>
     </div>
 
     <p>The same four-model language shows up across our other pieces, with the ISV referral path sometimes split into a basic referral and an enhanced-residual variant. The build, buy, partner frame collapses that into the decision that actually matters: who owns the program.</p>
@@ -1280,7 +1222,7 @@
 
     <blockquote class="pull-quote">Every step toward more economics is a step toward more operational responsibility. The right path is the furthest one your platform can actually staff and stomach, not the one with the biggest take rate on the slide.</blockquote>
 
-    <p>The single most common mistake is reading the basis-point numbers as the whole story. The 80 to 120 of a full PayFac looks like eight times the 5 to 15 of a referral, and on a spreadsheet at today's volume it can be. But the higher number carries underwriting losses, PCI program cost, support load, capital tied up in reserves and a team you have to hire. The number that matters is what you net after the full cost of running the program, which is why the honest comparison is always net margin at your real volume, not the rate anyone quotes you. For the full picture of how those economics work, see <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a>, and to put rough numbers against your own volume, the <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> sizes it in two minutes.</p>
+    <p>The single most common mistake is reading the basis-point numbers as the whole story. The 80 to 120 of a full PayFac looks like eight times the 5 to 15 of a referral, and on a spreadsheet at today's volume it can be. But the higher number carries underwriting losses, PCI program cost, support load, capital tied up in reserves and a team you have to hire. The number that matters is what you net after the full cost of running the program, which is why the honest comparison is always net margin at your real volume, not the rate anyone quotes you. For the full picture of how those economics work, see <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a>, and to put rough numbers against your own volume, the <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> sizes it in two minutes.</p>
 
     <h2>How to choose for your stage</h2>
 
@@ -1362,7 +1304,7 @@
 
     <p>This is the part that separates a platform decision from a merchant one. When a single merchant surcharges, they own their own compliance. When you offer surcharging as a platform feature, you are building the mechanism that hundreds of merchants rely on, and the failures are systemic. If your cap logic is wrong, it is wrong for everyone. If your debit detection misfires, it misfires at scale. If a state changes its rules and your configuration lags, every merchant in that state is now out of compliance through no action of their own.</p>
 
-    <p>That is the real cost, and it does not appear in the feature spec. It is the cost of carrying the rulebook on behalf of your base: the engineering to enforce caps and card types correctly, the legal monitoring to keep state configuration current, the support load when a cardholder disputes a surcharge, and the share of <a href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">chargeback risk</a> that follows. Whether you take that on, or push it down to merchants, or lean on your processor to carry it, is a genuine strategic choice and it depends heavily on your model and your appetite. It is also the kind of cost that belongs in the same conversation as the rest of <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a> and the broader question of <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS platforms make money from payments</a>, because surcharging changes the economics for your merchants without obviously changing them for you.</p>
+    <p>That is the real cost, and it does not appear in the feature spec. It is the cost of carrying the rulebook on behalf of your base: the engineering to enforce caps and card types correctly, the legal monitoring to keep state configuration current, the support load when a cardholder disputes a surcharge, and the share of <a href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">chargeback risk</a> that follows. Whether you take that on, or push it down to merchants, or lean on your processor to carry it, is a genuine strategic choice and it depends heavily on your model and your appetite. It is also the kind of cost that belongs in the same conversation as the rest of <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a> and the broader question of <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS platforms make money from payments</a>, because surcharging changes the economics for your merchants without obviously changing them for you.</p>
 
     <blockquote class="pull-quote">Surcharging moves the activation number and the retention number at the same time. It also moves the compliance risk onto whoever built it. For a platform, that is you.</blockquote>
 
@@ -1390,7 +1332,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses</guid>
       <pubDate>Tue, 16 Jun 2026 14:00:00 +0000</pubDate>
       <description>Every PayFac-as-a-Service provider makes tradeoffs the pitch glosses over. Where PFaaS providers are genuinely strong, where they are systematically weak, and the questions that surface it before you sign.</description>
-      <content:encoded><![CDATA[<p>Every PayFac-as-a-Service pitch sounds the same. We handle compliance. Merchants onboard in minutes. You keep more of the spread. None of that is wrong. PFaaS is the right model for a lot of vertical SaaS platforms, and if you have decided <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PFaaS is your route</a>, you are pointed in a sensible direction.</p>
+      <content:encoded><![CDATA[<p>Every PayFac-as-a-Service pitch sounds the same. We handle compliance. Merchants onboard in minutes. You keep more of the spread. None of that is wrong. PFaaS lets you run a facilitation program on someone else's registration, so it helps to be clear on <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator actually is</a> before you weigh providers. PFaaS is the right model for a lot of vertical SaaS platforms, and if you have decided <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PFaaS is your route</a>, you are pointed in a sensible direction.</p>
 
     <p>But every PFaaS provider makes tradeoffs, and the ones that hurt do not show up in the demo. They show up twelve to eighteen months in, when a chunk of your merchants get frozen, or your margin quietly compresses, or your finance team cannot reconcile a month. This piece is the part that does not make the deck: where PFaaS providers are genuinely strong, where they are systematically weak, and what each tradeoff actually means for you. No provider named, because the point is to teach you to read any of them.</p>
 
@@ -1465,7 +1407,7 @@
 
     <p>Lay the seven dimensions next to your own situation and the picture usually resolves quickly. A platform with simple payments, small merchants and a light support appetite weights onboarding speed and economics, and can live with less control. A platform with complex funds flow, larger merchants or a regulated vertical weights control, settlement flexibility and support, and should be suspicious of the fastest-boarding, most-automated option. There is no best provider in the abstract. There is a best fit for a specific platform, and the fit is determined by which tradeoffs you can absorb.</p>
 
-    <p>For the full provider-agnostic evaluation checklist, the companion piece is <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>, and the mechanics of <a href="https://marginlabs.io/the-lab/payment-processor-for-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">choosing a payment processor for your SaaS</a> sit one layer underneath that. And if you are still deciding between models before you get to providers at all, start with <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
+    <p>For the full provider-agnostic evaluation checklist, the companion piece is <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose an embedded payments provider</a>, and the mechanics of <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">choosing a payment processor for your SaaS</a> sit one layer underneath that. And if you are still deciding between models before you get to providers at all, start with <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
 
     <p>So which provider is right for you? My honest answer is the same one I give every platform that asks: it depends. Not as a way to dodge the question, but because it genuinely does, on your volume, your merchant mix and what your product needs to do with money. The seven dimensions are the framework anyone can use. Which tradeoffs you can absorb, and which provider on your shortlist is strongest exactly where you are weakest, is the part that only resolves when someone who has done this looks at your actual situation. If you are weighing providers right now, that is the conversation worth having before you sign anything. Reach out and we will work through yours.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
@@ -1517,7 +1459,7 @@
       <div class="kpi-bench">ISV Referral: 5-15 bps | PFaaS: 25-70 bps | Full PayFac: 50-100 bps</div>
     </div>
 
-    <p>Your net take rate tells you how efficiently you monetize volume, and the range you should expect depends on <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how your platform makes money from payments</a>. If it is declining, you have one of three problems: pricing (giving away too much margin to win merchants), mix (high-volume low-margin merchants growing faster than the rest) or cost (processor spread eating your net). Each has a different fix, so the first job is to figure out which one you have.</p>
+    <p>Your net take rate tells you how efficiently you monetize volume, and the range you should expect depends on <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how your platform makes money from payments</a>. If it is declining, you have one of three problems: pricing (giving away too much margin to win merchants), mix (high-volume low-margin merchants growing faster than the rest) or cost (processor spread eating your net). Each has a different fix, so the first job is to figure out which one you have.</p>
 
     <p>Track it monthly. If it moves more than 3 to 5 bps in a quarter without a deliberate pricing change, investigate. The benchmark ranges above reflect typical economics by model. See <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a> for the trade-offs that determine which range your platform sits in.</p>
 
@@ -1898,7 +1840,7 @@
 
     <h2>How to decide for your platform</h2>
 
-    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">moving up the ladder</a> pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
+    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">moving up the ladder</a> pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
 
     <p>The Margin Multiplier walks through the four-model comparison at your specific volume and vertical in about 60 seconds. It is the right starting point for a platform asking the PayFac vs ISV question for the first time. The output shows what each model would generate, what the recommended move is and what the annual revenue delta of moving up the ladder looks like.</p>
 
@@ -1917,142 +1859,6 @@
   </div>
 </section>
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Payment Processor for SaaS: How to Choose the Right One</title>
-      <link>https://marginlabs.io/the-lab/payment-processor-for-saas</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/payment-processor-for-saas</guid>
-      <pubDate>Thu, 04 Jun 2026 14:00:00 +0000</pubDate>
-      <description>Picking a processor for a software platform is not like picking one for a single business. The economics, vocabulary and evaluation that actually matter.</description>
-      <content:encoded><![CDATA[<p>Software platforms looking to embed payments almost always start with the same question: which payment processor should we use? It is the natural starting point. It is also usually the wrong starting point.</p>
-
-    <p>The reason it is the wrong starting point is that "payment processor" is the most overloaded term in payments. Most of what software platforms actually need from a payments partner sits one level above the processor in the stack: at the facilitator, the gateway, or the integrated platform layer. Choosing a processor without first understanding which model you are operating in is how vertical SaaS platforms end up locked into bad economics for three to five years.</p>
-
-    <p>This article is the framework. What a payment processor actually does, how it differs from a gateway or a facilitator, what to look for when a SaaS platform is choosing one, and the hidden costs that determine whether the partnership pays off or quietly drags on the business.</p>
-
-    <p><strong>A payment processor for a SaaS platform handles the technical movement of money between merchants, card networks and banks. But the processor sits below the model decision: a platform should settle its architecture (ISV Referral, PayFac-as-a-Service or Full PayFac) first, then choose the processor with the best terms inside that model. Architecture first, processor second.</strong></p>
-    <p><strong>When a platform evaluates SaaS payment processing, the honest answer is that the processor is rarely the decision that matters most. The bigger call is the monetization model (referral, managed PayFac or full PayFac), which sets your economics and who owns the merchant relationship. Pick the model first, then the processor that fits it.</strong></p>
-
-
-    <h2>What does a payment processor actually do?</h2>
-
-    <p>A payment processor is the entity that handles the technical movement of money between merchants, card networks (Visa, Mastercard, American Express, Discover), and banks. The processor authorizes transactions, settles funds, manages chargebacks, and provides the technical rails that let a merchant accept a card payment.</p>
-
-    <p>The big processors most platforms have heard of (Worldpay, Fiserv, Global Payments, TSYS, Adyen, Stripe) own large portions of the merchant processing market. Most of them operate at multiple layers of the stack: they are processors, but they also operate gateways, offer PayFac-as-a-Service infrastructure, and in some cases register as Merchants of Record for specific lines of business. Calling one of them "a payment processor" describes their core function but understates everything else they do.</p>
-
-    <p>For a single business choosing how to accept card payments, "payment processor" is the right vocabulary. For a software platform embedding payments for hundreds of sub-merchants, the processor is one of several components in a larger architecture decision. The architecture decision (ISV Referral, Enhanced Residuals, PayFac-as-a-Service, Full PayFac) comes first. The processor selection comes second.</p>
-
-    <h2>Processor vs Gateway vs Payment Facilitator: The Vocabulary That Matters</h2>
-
-    <p>Three terms get used loosely in software platform conversations about payments, and the distinction matters because each layer captures different economics and carries different obligations. If the facilitator layer is unfamiliar, start with <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">What Is a Payment Facilitator?</a> before going further.</p>
-
-    <img src="https://marginlabs.io/assets/lab-images/tables/payment-processor-for-saas-1.png" alt="payment-processor-for-saas comparison table 1" />
-
-    <p>For software platforms, the meaningful question is which model the platform is operating in. Once that decision is made (and the volume math justifies it), the processor selection becomes a question of who has the best terms within that model. For the upstream model decision, see <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Should You Become a Payment Facilitator?</a> and <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac-as-a-Service</a>.</p>
-
-    <h2>What should a SaaS platform look for when choosing a processor?</h2>
-
-    <p>The evaluation criteria for a SaaS platform are different from the criteria a single business would use. The platform is evaluating a partner whose performance affects hundreds of sub-merchants and whose pricing structure determines the platform's own economics for years.</p>
-
-    <h3>Pricing structure and transparency</h3>
-
-    <p>Look for interchange-plus pricing rather than tiered or qualified-rate models. Interchange-plus passes through the actual card network costs and charges a transparent markup on top. Tiered pricing buckets card types into "qualified," "mid-qualified," and "non-qualified" tiers with margin baked in opaquely. For software platforms operating at scale, interchange-plus is the only model that lets you predict and audit your economics. For the full negotiation framework, see <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How to Negotiate a Processor Agreement</a>.</p>
-
-    <h3>Sub-merchant boarding architecture</h3>
-
-    <p>If the platform is operating under a PayFac or PFaaS structure, the processor needs to support sub-merchant boarding via API. The boarding process needs to handle KYC, underwriting decisions, risk scoring, and approval workflows at a pace that matches the platform's growth trajectory. Processors built for single-merchant relationships (Tier-1 acquiring banks) often cannot board sub-merchants quickly enough for vertical SaaS at scale.</p>
-
-    <h3>Settlement timing and reserves</h3>
-
-    <p>Standard merchant settlement is T+2 (two business days after the transaction). Some processors offer T+1 or same-day settlement for an additional fee. For sub-merchant portfolios, the processor's reserve policy (a percentage of volume held back against future chargebacks) directly affects merchant cash flow and the platform's economics. Negotiate this upfront. Reserves are often the largest hidden cost in processor agreements.</p>
-
-    <h3>Chargeback management infrastructure</h3>
-
-    <p>The processor's chargeback workflow becomes the platform's chargeback workflow. If the processor's dispute response window is short, the platform's operations team needs to match it. If the processor's chargeback fees are high (some charge $25 to $50 per dispute regardless of outcome), those fees compress the platform's economics on every transaction that gets disputed. For the operational framework, see <a href="https://marginlabs.io/the-lab/chargeback-management-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Chargeback Management for Software Platforms</a>.</p>
-
-    <h3>Vertical-specific risk tolerance</h3>
-
-    <p>Different processors have different appetites for different verticals. High-risk verticals (gaming, CBD, adult, certain SaaS subscriptions) get categorized as MATCH-listed or restricted by some processors. Low-risk verticals (B2B services, professional services, brick-and-mortar retail) get favorable rates almost everywhere. Verify before signing that the processor accepts your sub-merchant vertical mix.</p>
-
-    <h3>Geographic coverage</h3>
-
-    <p>If the platform serves merchants outside the US, the processor needs to operate in those geographies and support local card schemes (Interac in Canada, Bancomat in Italy, etc.). US-only processors often have foreign processing capability but at meaningfully worse rates. For platforms with international ambitions, evaluate this dimension early.</p>
-
-    <h2>What are the hidden costs most platforms miss?</h2>
-
-    <p>Processor contracts contain costs that do not show up in the headline interchange-plus rate. These are where margin gets compressed unexpectedly.</p>
-
-    <p><strong>Monthly minimums.</strong> Most processor contracts include a monthly minimum fee that scales with volume tier. Platforms in early growth often hit the minimum at lower volumes than expected, eroding effective economics.</p>
-
-    <p><strong>Statement and fees stack.</strong> Per-transaction fees, batch fees, settlement fees, chargeback fees, retrieval fees, monthly maintenance, PCI compliance fees, regulatory compliance fees, and AVS lookup fees can add 5 to 15 basis points of effective cost on top of the headline rate. Audit the fee stack carefully in the proposal.</p>
-
-    <p><strong>Currency conversion margin.</strong> Cross-border transactions get billed at a foreign exchange rate plus a markup, typically 1 to 3 percent over the wholesale rate. Platforms with international merchant volume can find that the FX margin exceeds their net economics on those transactions.</p>
-
-    <p><strong>Early termination fees.</strong> Most processor agreements have 36 to 60 month terms with early termination penalties that can run $25K to $100K+ per merchant or more for sub-merchant portfolios. Read the term and termination clauses before signing. Often these are negotiable down to lower penalties or shorter cure periods.</p>
-
-    <p><strong>PCI non-compliance fees.</strong> Some processors charge automatic monthly PCI non-compliance fees ($30 to $50 per merchant per month) until each merchant attests compliance. For platforms with 500+ sub-merchants, this can become a meaningful cost line if attestation tracking is not automated. For the compliance scope, see <a href="https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PCI Compliance for SaaS Platforms</a>.</p>
-
-    <h2>Typical Processor Categories for SaaS Platforms</h2>
-
-    <p>Different processors fit different stages of platform maturity. The right choice depends on volume, vertical, and which embedded payments model the platform is pursuing.</p>
-
-    <h3>Tier-1 acquiring banks (Worldpay, Fiserv, Global Payments, TSYS)</h3>
-
-    <p>The largest processors by volume. Strong infrastructure, broad merchant acceptance, deep risk capacity. Often the right call for ISV Referral arrangements at scale, where the platform earns a residual on volume processed through the acquirer. Pricing flexibility tends to be lower than newer providers, but stability and merchant fit are usually highest.</p>
-
-    <h3>Modern PFaaS-friendly processors (Adyen, Worldpay's PayFac line, Fiserv Carat)</h3>
-
-    <p>Processors that have built sub-merchant boarding architecture, integrated KYC tools, and platform-friendly API surfaces. Often the right call for PFaaS arrangements where the platform owns the merchant relationship but operates under the processor's facilitation infrastructure.</p>
-
-    <h3>API-first integrated platforms (Stripe, Adyen, Braintree)</h3>
-
-    <p>Companies that combine gateway, processing, and facilitation under one commercial relationship and one API. Fast to integrate, opinionated about workflow, premium pricing. Often the right call for early-stage platforms prioritizing time-to-market over economics, and for platforms whose merchant base is small-ticket or digital-native.</p>
-
-    <h3>Specialty PFaaS providers (Finix, Tilled, Payrix, NMI)</h3>
-
-    <p>Providers focused specifically on enabling other software platforms to operate as PayFacs. Typically offer better economics than the API-first integrated platforms at scale, with longer integration timelines and more customization. They are not interchangeable, so weigh the <a href="https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PFaaS provider strengths and weaknesses</a> before picking one. For deep-dive on this category, see <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a>.</p>
-
-    <h2>Common Mistakes Platforms Make</h2>
-
-    <p><strong>Picking the processor before the architecture.</strong> Choosing Stripe or Worldpay before deciding whether to operate as an ISV referrer, a PFaaS partner, or a full PayFac is putting the cart before the horse. The architecture determines the criteria. The criteria determine the processor.</p>
-
-    <p><strong>Optimizing for headline rate instead of total economics.</strong> The headline interchange-plus rate is one of 12 to 15 variables that determine actual processing cost. Two processors with the same headline rate can deliver materially different effective economics depending on the fee stack, the reserve policy, and the chargeback fees.</p>
-
-    <p><strong>Underestimating switching costs.</strong> Most platforms underestimate how disruptive a processor change is. Re-boarding sub-merchants, retraining the operations team, rebuilding reporting integrations, and absorbing the temporary degradation in approval rates can take 6 to 12 months and lose 10 to 15 percent of the active merchant base. For the full framework on when switching makes sense, see <a href="https://marginlabs.io/the-lab/when-to-switch-embedded-payments-providers?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">When to Switch Embedded Payments Providers</a>.</p>
-
-    <p><strong>Signing the first proposal.</strong> Most processors will offer 20 to 50 basis points of pricing flexibility on the first proposal if the platform brings a competing bid. Most platforms do not solicit a competing bid because they do not know the negotiation framework. The cost of skipping this step is usually larger than the cost of the engagement that would have produced a competing bid.</p>
-
-    <h2>A Decision Framework</h2>
-
-    <p>If your platform is selecting a payment processor, do this in this order.</p>
-
-    <ol>
-      <li><strong>Settle the architecture decision first.</strong> Are you operating as ISV Referral, Enhanced Residuals, PayFac-as-a-Service, or Full PayFac? If you do not know, the <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> models your economics under each.</li>
-      <li><strong>List the processors that fit your architecture.</strong> ISV Referral works with most Tier-1 acquirers. PFaaS narrows the field to providers with sub-merchant boarding architecture. Full PayFac requires direct relationships with sponsor banks and specific processors.</li>
-      <li><strong>Solicit at least two competitive proposals.</strong> Bring an outside-in benchmark of typical rates for your volume tier and vertical. Use the second proposal to negotiate the first.</li>
-      <li><strong>Audit the entire fee stack, not just the headline rate.</strong> Add up minimums, per-transaction fees, settlement fees, chargeback fees, monthly maintenance, and PCI fees. The number that matters is the effective cost per dollar of processed volume, not the interchange-plus markup.</li>
-      <li><strong>Negotiate term and termination clauses before pricing.</strong> A 36-month term with high early-termination penalties is more expensive than a 60-month term with low penalties, even at a slightly worse rate. Term flexibility is worth real money.</li>
-    </ol>
-
-    <blockquote class="pull-quote">The processor decision for a software platform is not about picking the cheapest rate. It is about picking the partner whose architecture, terms, and economics will compound the right way over the next three to five years.</blockquote>
-
-    <p>The full negotiation playbook (term sheets, redlines, the comparison framework) is in <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How to Negotiate a Processor Agreement</a>. For the upstream architecture decision that should precede processor selection, the <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> models the four embedded payments models at your specific volume. For the strategic conversation about your platform's situation, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
-
-    <h2>What makes a good SaaS payment processor?</h2>
-
-    <p>A good SaaS payment processor is the one whose architecture, terms and economics compound the right way for a platform, not the one with the lowest headline rate. Look for transparent interchange-plus pricing, a clean path to owning more of the merchant relationship and economics as you scale, developer-grade APIs and documentation, and contract terms that do not trap you when your volume grows. The cheapest SaaS payment processor on day one is often the most expensive by year three, once the exclusivity clauses and the flat-rate spread have had time to work against you.</p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payment-processor-for-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Merchant of Record vs PayFac: Which One Fits Your Platform</title>
@@ -2170,7 +1976,7 @@
 
     <p>The reason this question matters more than founders realize is that the numbers are large enough to materially change the trajectory of a vertical SaaS business, but they do not show up on the surface. The dollars are buried inside processor agreements, merchant pricing decisions, and operational choices that most founders never made deliberately. Until they get modeled, they are invisible.</p>
 
-    <p>For the structural overview of how each model generates revenue, see <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How SaaS Companies Make Money From Payments</a>. This article is the financial version. Specific dollars at specific volumes, across all four embedded payments arrangements.</p>
+    <p>This is the financial version of the question. The four models are covered below, and here the focus is specific dollars at specific volumes, across all four embedded payments arrangements. If you want the model comparison first, the <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV referral vs PayFac comparison</a> is the place to start.</p>
     <p><strong>How much a platform makes from payments depends mostly on processing volume and the monetization model. As a rough frame, a referral model earns roughly 5 to 15 basis points of volume, a managed PayFac model 30 to 60 bps, and full PayFac 80 to 120 bps or more. Volume and model set the ceiling; activation and pricing decide how close you get to it.</strong></p>
 
 
@@ -2981,7 +2787,7 @@
 
     <p>The payment experience isn't bolted on, it's woven into workflows. When a merchant creates an invoice, the payment link is generated automatically. When a customer pays, reconciliation happens in real time within the same system. When a dispute occurs, the merchant manages it from your dashboard, not the processor's.</p>
 
-    <p>In an embedded model, you're typically earning 25-90+ basis points because you're carrying operational responsibility and the merchant's relationship is with you, not with a processor they may never interact with directly.</p>
+    <p>In an embedded model, you're typically earning 25-90+ basis points because you're carrying operational responsibility and the merchant's relationship is with you, not with a processor they may never interact with directly. This is the same ownership posture that defines <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator actually is</a>, and embedded programs are usually built on top of that model.</p>
 
     <div class="compare-grid">
       <div class="compare-cell">
@@ -3029,7 +2835,7 @@
 
     <blockquote class="pull-quote">Integrated payments is a feature. Embedded payments is a business line. The difference is ownership, and ownership is what creates both margin and moat.</blockquote>
 
-    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> shows you the revenue difference between referral-level and facilitation-level economics on your specific volume. Start there if you want to see what the ownership gap is costing you. For more on what this transition looks like in practice, see <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How SaaS Companies Make Money from Payments</a> and the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement overview</a>.</p>
+    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> shows you the revenue difference between referral-level and facilitation-level economics on your specific volume. Start there if you want to see what the ownership gap is costing you. For more on what this transition looks like in practice, see <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How SaaS Companies Make Money from Payments</a> and the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement overview</a>.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
@@ -3042,106 +2848,6 @@
   </div>
 </section>
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-vs-integrated-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>How to Calculate Your Embedded Payments Revenue</title>
-      <link>https://marginlabs.io/the-lab/calculate-payments-revenue</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/calculate-payments-revenue</guid>
-      <pubDate>Fri, 01 May 2026 14:00:00 +0000</pubDate>
-      <description>A step-by-step framework for modeling what your payment volume is actually worth under each monetization model, the same approach used in advisory engagements.</description>
-      <content:encoded><![CDATA[<p>The most common gap in payments strategy conversations is this: the team hasn't modeled the actual revenue opportunity. Not a vendor's projection. Not a back-of-napkin estimate. An actual model that accounts for merchant count, average volume, realistic activation rates, and the net economics of each of the <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ways SaaS companies make money from payments</a>.</p>
-
-    <p>Without this model, every other decision is downstream of a guess. You can't evaluate processor proposals, you can't justify implementation investment, and you can't set internal targets that mean anything.</p>
-
-    <p>This article walks through the framework. The same inputs. The same math.</p>
-    <p><strong>To calculate embedded payments revenue, start with gross merchant volume, apply a realistic activation rate, then model the net economics of each monetization model and subtract operating costs. The output is the annual revenue opportunity, and the gap between models is usually where the real decision sits. Most teams skip the activation-rate step and overstate the number.</strong></p>
-
-
-    <h2>Step 1: Start with Gross Merchant Volume</h2>
-
-    <p>Everything in payments economics starts with volume. Not revenue. Not merchant count. Gross payment volume, the total dollar amount your merchants process through or alongside your platform.</p>
-
-    <div class="calc-block">
-      <div class="formula">Total merchants × Average monthly volume × 12 = Annual GMV</div>
-      <div class="example">Example: 250 merchants × $120,000/month = $30M annual GMV</div>
-    </div>
-
-    <p>If you don't know average monthly volume, estimate from your vertical's benchmarks. A single-location restaurant processes $30K-$80K/month. A field service company processes $15K-$50K/month. A property management company processes $50K-$200K/month. Use the midpoint and refine with real data later.</p>
-
-    <h2>Step 2: Apply Your Activation Rate</h2>
-
-    <p>Not every merchant will use your embedded payments. Some have a processor they're happy with. Some won't switch until you give them a compelling reason. Realistic activation rates by model:</p>
-
-    <img src="https://marginlabs.io/assets/lab-images/tables/calculate-payments-revenue-1.png" alt="calculate-payments-revenue comparison table 1" />
-
-    <p>If you're pre-launch, use 30% for year one and 50% for year two. Conservative, but grounded in what platforms typically see across verticals.</p>
-
-    <div class="calc-block">
-      <div class="formula">Active GMV = Total GMV × Activation Rate</div>
-      <div class="example">Example: $30M × 30% = $9M active GMV in year one</div>
-    </div>
-
-    <h2>Step 3: Model Revenue Under Each Approach</h2>
-
-    <p>Apply the net take rate for each model to your active GMV. Using our $9M year-one example:</p>
-
-    <img src="https://marginlabs.io/assets/lab-images/tables/calculate-payments-revenue-2.png" alt="calculate-payments-revenue comparison table 2" />
-
-    <p>Year three assumes 60% activation and 15% organic merchant growth. The compounding effect of activation growth plus merchant growth is the most underappreciated dynamic in payments monetization.</p>
-
-    <div style="background:#1a1a1a;border-left:2px solid #C8823C;padding:20px 24px;margin:32px 0;">
-      <p style="font-size:14px;font-weight:400;color:#F0EBE4;margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
-      <p style="font-size:13px;color:#8a8580;margin:0;">The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">start a conversation</a> about what this means for your specific situation.</p>
-    </div>
-
-    <h2>Step 4: Subtract Operating Costs</h2>
-
-    <p>Revenue is only half the equation. Each model carries operating costs that don't appear in the vendor pitch deck:</p>
-
-    <ul>
-      <li><strong>ISV Referral:</strong> Near zero. The processor carries everything. Your only cost is engineering time to maintain the integration.</li>
-      <li><strong>Enhanced Residuals:</strong> Minimal. Light merchant support responsibility, some compliance overhead. Budget $15K-$30K annually.</li>
-      <li><strong>PayFac-as-a-Service:</strong> Meaningful. Merchant support (0.5-1.0 FTEs), compliance ($5K-$15K/year), chargeback tooling ($3K-$10K/year), integration maintenance. Budget $60K-$120K annually depending on merchant count.</li>
-      <li><strong>Full PayFac:</strong> Significant. Dedicated compliance and risk staff, sponsor bank fees, network reporting, reserve management. Budget $150K-$300K annually as a baseline.</li>
-    </ul>
-
-    <p>This is why model transition thresholds matter. PayFac-as-a-Service costs $60K+ to operate. If your gross payment revenue under that model is $54K in year one, you're losing money. At $90K in year two, you're marginally profitable. At $124K in year three, the economics are clear. The crossover point, where PFaaS net revenue exceeds ISV Referral net revenue after operating costs, typically falls between $40M and $70M in total GMV, depending on activation rates.</p>
-
-    <h2>Step 5: Calculate the Opportunity Cost</h2>
-
-    <p>The number that should drive urgency isn't what you're earning. It's what you're not earning.</p>
-
-    <blockquote class="pull-quote">If you're in ISV Referral at 15 bps with $15M in active volume, you're earning $22,500. Under PayFac-as-a-Service at 60 bps on the same volume, you'd earn $90,000. The annual gap is $67,500, growing every year.</blockquote>
-
-    <p>Over three years, assuming modest growth, that cumulative gap is typically $200K-$500K. That's capital that funds product development, sales hires, or market expansion. It's not abstract. It's real money you're choosing not to capture.</p>
-
-    <h2>What does the revenue model not tell you?</h2>
-
-    <p>Revenue modeling is necessary but not sufficient for making the decision. The model doesn't capture:</p>
-
-    <ul>
-      <li><strong>Implementation timeline.</strong> A PayFac-as-a-Service integration takes 3-6 months of engineering time. What else could that team be building?</li>
-      <li><strong>Merchant churn risk during migration.</strong> Moving from referral to PFaaS means re-boarding merchants. Some percentage will use the transition as a reason to evaluate alternatives.</li>
-      <li><strong>Strategic value beyond revenue.</strong> Owning the payment experience creates data advantages, merchant stickiness, and competitive moats that don't show up in a revenue model but matter enormously at exit.</li>
-    </ul>
-
-    <p>The model gives you the math. The strategy gives you the decision. Both are necessary.</p>
-
-    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> runs this calculation in about 60 seconds, enter your merchant count, average volume, and current take rate and it shows you the revenue under all four models side by side. If you want to work through the operating cost and transition timing questions, that's what the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a> is built for.</p>
-
-    <p>Related: <a href="https://marginlabs.io/the-lab/how-to-read-a-payments-pl?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How to Read a Payments P&L</a>, once you've modeled the opportunity, this is the framework for tracking whether you're capturing it.</p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments program could be worth.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier turns your volume and model into a directional revenue number in two minutes. The Framework helps you decide which model gets you there.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide your model with the Framework →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/calculate-payments-revenue?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>PayFac-as-a-Service: What It Is and When It Makes Sense</title>
@@ -3330,7 +3036,7 @@
 
     <p>Vertical platforms tend to have higher average merchant volumes and lower merchant counts than horizontal platforms at the same total GMV. A vertical platform with 300 merchants processing $200K each has $60M in volume. A horizontal platform might need 2,000 merchants to reach the same number.</p>
 
-    <p>This means vertical platforms hit PayFac-as-a-Service economic thresholds sooner, with fewer merchants generating more concentrated volume. The operational burden is also lower because merchant profiles are homogeneous. Underwriting 300 similar businesses is simpler than underwriting 2,000 diverse ones.</p>
+    <p>This means vertical platforms hit PayFac-as-a-Service economic thresholds sooner, with fewer merchants generating more concentrated volume. The operational burden is also lower because merchant profiles are homogeneous. Underwriting 300 similar businesses is simpler than underwriting 2,000 diverse ones, and that concentration is part of why the <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitator model</a> fits vertical platforms so well.</p>
 
     <p>If you're a vertical platform above $30M in merchant volume, you should be actively evaluating the transition from referral to PayFac-as-a-Service. The economics are likely already compelling.</p>
 
@@ -3485,6 +3191,10 @@
     <h2>How is choosing an embedded finance partner different for a SaaS business?</h2>
 
     <p>Choosing an embedded finance partner for your SaaS business is the same discipline as choosing a payments provider, applied wider. Payments is usually the first and largest embedded finance line, so the eight questions above (the full cost stack, who owns the merchant, the migration path, onboarding, support, API maturity, contract terms and roadmap fit) are exactly where to start. If the partner also offers lending, issued cards or accounts, hold each of those lines to the same test rather than assuming a strong payments partner is automatically the right partner for the rest. The best embedded finance partner for a SaaS business is the one whose economics improve as you grow across every product you turn on, not just the one you started with.</p>
+
+    <h2>Is a payment processor the same as an embedded payments provider?</h2>
+
+    <p>Not quite, and the vocabulary trips up a lot of platforms. A payment processor moves the transaction and settles the money. A gateway passes card data securely into that processor. A payment facilitator sits on top and lets your merchants transact under your umbrella so you own the relationship and a larger share of the economics. When a software platform asks "which payment processor should we use," the real question is usually broader: which partner gives you the model, the merchant ownership and the economics you want, not just the cheapest place to route a transaction. That is why the eight questions above are framed around the provider relationship rather than the processing rate alone. If you want the model side of this decision first, the <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV referral vs PayFac comparison</a> and <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator actually is</a> are the two places to start.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
@@ -3588,7 +3298,7 @@
 
     <p><strong>"We need to become a PayFac."</strong> Maybe. But for most platforms between $30M and $200M in volume, a managed PayFac arrangement gives you 60-80% of the economics at 20-30% of the complexity. Full registration is the end state, not the starting point.</p>
 
-    <p><strong>"PayFac means we're a payments company now."</strong> No. It means you're monetizing the payments flowing through your platform. You're still a software company. The payments program is a revenue line, not a pivot. For the broader picture of <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a>, the PayFac model is one approach among several.</p>
+    <p><strong>"PayFac means we're a payments company now."</strong> No. It means you're monetizing the payments flowing through your platform. You're still a software company. The payments program is a revenue line, not a pivot. For the broader picture of <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a>, the PayFac model is one approach among several.</p>
 
     <p><strong>"It's too complex for our team."</strong> A managed PayFac provider handles the regulatory complexity. Your operational addition is merchant onboarding, basic support, and chargeback response, which at most platforms translates to 0.5 to 1.5 FTEs depending on merchant count.</p>
 
@@ -3688,102 +3398,6 @@
   </div>
 </section>
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>How SaaS Companies Make Money from Payments</title>
-      <link>https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments</guid>
-      <pubDate>Wed, 08 Apr 2026 14:00:00 +0000</pubDate>
-      <description>From 5 bps in referral to 90+ bps in PayFac Lite, the four ways SaaS platforms monetize payment volume, with real revenue numbers at $30M, $50M, and $100M in volume.</description>
-      <content:encoded><![CDATA[<p>Every vertical SaaS platform sits on top of payment volume. Your merchants process transactions through or alongside your software, scheduling, invoicing, point of sale, e-commerce, field service. That volume is raw material. The question is whether you're capturing any of its value.</p>
-
-    <p>Most platforms know payments is a revenue opportunity. Fewer can explain how the money actually flows. This article breaks down the four models, the economics of each, and the thresholds where each one starts to make sense.</p>
-
-    <p><strong>There are four embedded payments revenue models, ordered by how much of the payment you own: ISV referral (refer merchants and earn a residual), gateway or enhanced residuals (a larger cut for deeper involvement), managed PayFac or PayFac-as-a-service (own the payment experience on a provider's infrastructure) and full payment facilitation (become the payfac yourself). Each trades more operational responsibility for a larger share of the economics.</strong></p>
-
-    <h2>Model 1: ISV Referral</h2>
-
-    <p>The simplest path. You partner with a payment processor, embed their acceptance tools in your product, and earn a residual on merchant volume. The processor handles everything, underwriting, compliance, settlement, support.</p>
-
-    <p>Your revenue: 5 to 25 basis points on gross merchant volume. On a platform with 200 merchants processing $150K each ($30M annual volume), that's $15K to $75K per year. It's low-touch, low-risk, and you can be live in weeks.</p>
-
-    <p>The ceiling is real. You don't control merchant pricing, you don't own the processing relationship, and your share of the margin is typically 15-25% of the total payment economics. But for platforms under $50M in volume, the simplicity is worth it.</p>
-
-    <h2>Model 2: Gateway / Enhanced Residuals</h2>
-
-    <p>A step up from basic referral. You partner with a gateway provider or negotiate enhanced terms with a processor that give you a larger share of the payment margin. You may take on some merchant-facing responsibilities, boarding, first-line support, in exchange for improved economics.</p>
-
-    <p>Your revenue: 15 to 40 basis points net. On the same $30M in volume, that's $45K to $120K per year. Implementation is more involved ($25K-$75K), and you'll need at least one person who understands the payment flow. But the economics are 2-3x better than basic referral.</p>
-
-    <p>This model works well for platforms in the $20M to $75M volume range that want better economics without the full operational weight of payment facilitation.</p>
-
-    <h2>Model 3: PayFac Lite / Managed PayFac</h2>
-
-    <p>You become a sub-merchant aggregator under a <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">registered payment facilitator</a>. You own merchant onboarding, set merchant pricing, and keep the spread between what you charge and what you pay the processor at wholesale (interchange plus a small markup).</p>
-
-    <p>Your revenue: 30 to 90+ basis points net. On $30M in volume, that's $90K to $270K. On $100M, it's $300K to $900K. The economics are 4-5x better than referral at scale.</p>
-
-    <p>You take on merchant underwriting (within parameters), compliance monitoring, chargeback first-response, and settlement management. Implementation costs $50K to $200K, and you need operational capacity, either internal or through a managed service provider.</p>
-
-    <p>This is the model that changes payments from a feature into a business line. Most platforms that reach $50M+ in volume and have the operational maturity to support it should be evaluating this transition.</p>
-
-    <div style="background:#1a1a1a;border-left:2px solid #C8823C;padding:20px 24px;margin:32px 0;">
-      <p style="font-size:14px;font-weight:400;color:#F0EBE4;margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
-      <p style="font-size:13px;color:#8a8580;margin:0;">The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">start a conversation</a> about what this means for your specific situation.</p>
-    </div>
-
-    <h2>Model 4: Full Payment Facilitation (Direct PayFac)</h2>
-
-    <p>You register directly with Visa and Mastercard as a Payment Facilitator. You own the full stack: underwriting, compliance, settlement, dispute management, network reporting. You buy processing at the lowest possible rate and keep maximum margin.</p>
-
-    <p>Your revenue: 50 to 100+ basis points net. The economics are the best available. But the cost to get here is significant: $500K to $2M+ in implementation, 12-18 months to launch, dedicated compliance and risk staff, and ongoing regulatory obligations.</p>
-
-    <p>This model only makes sense at $100M+ in annual volume. Most platforms that pursue full PayFac too early delay revenue by 12-18 months and burn capital that should go into the core product. It's the end state, not the starting point.</p>
-
-    <h2>The Revenue Curve Is Not Linear</h2>
-
-    <p>The economics of each model look like steps, not a slope. You don't gradually earn more by processing more volume under the same model. You earn meaningfully more by moving to the next model when your volume justifies it.</p>
-
-    <p>This is why the most important discipline in payments monetization is re-evaluating annually. The platform that was right to start in ISV Referral at $15M in volume is leaving $100K+ on the table by staying there at $60M.</p>
-
-    <h2>The Costs Everyone Forgets</h2>
-
-    <p>Revenue is only half the equation. Each model carries operating costs, and knowing <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments cost</a> matters as much as the revenue. These are the ones that don't appear in the vendor pitch deck:</p>
-
-    <ul>
-      <li><strong>Merchant support:</strong> you're now first-line for payment questions. Budget 0.5 to 1.5 FTEs depending on merchant count.</li>
-      <li><strong>Compliance:</strong> $5K to $25K annually for PCI compliance, depending on your model and volume.</li>
-      <li><strong>Integration maintenance:</strong> 10-20% of your initial build cost annually. Payment APIs change, card network rules update, and edge cases surface.</li>
-      <li><strong>Chargeback management:</strong> in PayFac models, you carry first-response responsibility and potentially reserve exposure.</li>
-    </ul>
-
-    <p>Smart operators focus on operating costs first because those determine long-run economics. Implementation costs are one-time. Operating costs are forever.</p>
-
-    <h2>How You Price Merchants: Interchange-Plus vs Flat</h2>
-
-    <p>The four models above are how you earn. Layered on top is how you price merchants, and the pricing structure you choose drives your real take rate.</p>
-
-    <p><strong>Interchange-plus</strong> passes through the true cost of a transaction (interchange plus network fees) and adds a transparent markup. It protects your margin when card mix shifts, and it pairs naturally with <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange optimization</a>. <strong>Flat or blended</strong> pricing charges one simple rate, for example 2.9% plus 30 cents. It is easier to sell and predict, but you absorb the risk if interchange runs higher than your blend assumed. The further you move toward owning the payment, the more the pricing structure is yours to set, and the more it shapes what you actually keep.</p>
-
-    <h2>Where to Start</h2>
-
-    <p>If you're not monetizing payments today, start by quantifying the opportunity. Take your merchant count, multiply by average monthly volume, and <a href="https://marginlabs.io/the-lab/calculate-payments-revenue?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">calculate your payments revenue</a> under each approach.</p>
-
-    <blockquote class="pull-quote">The gap between what most platforms earn on payments and what they could earn is usually the most surprising number in any strategy conversation.</blockquote>
-
-    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> does this calculation in about 60 seconds. It won't tell you which model to choose, but it will show you the size of the opportunity you're either capturing or leaving on the table.</p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments program could be worth.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier turns your volume and model into a directional revenue number in two minutes. The Framework helps you decide which model gets you there.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide your model with the Framework →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Payment Facilitator vs. ISO: Which Model Fits Your Platform</title>
@@ -4017,7 +3631,7 @@
 
     <p class="cost-label">Ongoing Costs</p>
 
-    <p>There are essentially no ongoing costs in a referral model. You're receiving a share of the economics the processor earns. If volume drops, your revenue drops but so does your cost basis, there's no fixed cost structure to worry about. The referral model is the lowest-cost of <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">the ways SaaS companies make money from payments</a>.</p>
+    <p>There are essentially no ongoing costs in a referral model. You're receiving a share of the economics the processor earns. If volume drops, your revenue drops but so does your cost basis, there's no fixed cost structure to worry about. The referral model is the lowest-cost of <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">the ways SaaS companies make money from payments</a>.</p>
 
     <p class="cost-label">The Real Cost</p>
 
@@ -4134,7 +3748,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-read-a-payments-pl</guid>
       <pubDate>Fri, 13 Mar 2026 14:00:00 +0000</pubDate>
       <description>Net take rate benchmarks: ISV Referral 5-12 bps, PayFac Lite 15-40 bps, Direct PayFac 30-80 bps. How to read your payments P&amp;L and know if your program is performing.</description>
-      <content:encoded><![CDATA[<p>Most vertical SaaS companies have a <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments revenue line</a>. Almost none of them know what it actually means.</p>
+      <content:encoded><![CDATA[<p>Most vertical SaaS companies have a <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments revenue line</a>. Almost none of them know what it actually means.</p>
 
     <p>If you've ever looked at a payments settlement report and felt like you were reading a foreign language, you're not alone. The payments industry has a talent for complexity, multiple fee types, passthrough costs, residual splits, interchange categories, and most of the people who built these revenue streams weren't thinking about how a CFO would want to see them on a P&amp;L.</p>
 
@@ -4288,7 +3902,7 @@
 
     <h2>What are the four ways to capture payments margin?</h2>
 
-    <p>There are exactly four models for monetizing payments as a vertical SaaS company. Every program, from a simple referral arrangement to a full payment facilitator license, fits into one of these structures. The right model for your business depends on your volume, your stage, your technical capacity, and how much you want to own the merchant relationship.</p>
+    <p>There are exactly four models for monetizing payments as a vertical SaaS company. Every program, from a simple referral arrangement to a full payment facilitator license, fits into one of these structures. The right model for your business depends on your volume, your stage, your technical capacity, and how much you want to own the merchant relationship. If you are weighing the two ends of that spectrum, our breakdown of <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">the ISV referral vs PayFac comparison</a> walks through the trade-offs in detail.</p>
 
     <p class="cost-label">Model 1: ISV Referral</p>
 
@@ -4310,7 +3924,7 @@
 
     <p class="cost-label">Model 4: Direct PayFac</p>
 
-    <p>You register as a payment facilitator with Visa and Mastercard, build or buy the infrastructure to underwrite and board merchants directly, and capture the maximum available economics on your volume. Net take rates in this model run from 30 to 80 basis points, but the investment is substantial: 18 to 24 months to build, $500K or more in upfront costs, and dedicated payments engineering and compliance resources.</p>
+    <p>You register as a payment facilitator with Visa and Mastercard, build or buy the infrastructure to underwrite and board merchants directly, and capture the maximum available economics on your volume. If you are still fuzzy on <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator actually is</a>, that primer covers the mechanics before you commit to this path. Net take rates in this model run from 30 to 80 basis points, but the investment is substantial: 18 to 24 months to build, $500K or more in upfront costs, and dedicated payments engineering and compliance resources.</p>
 
     <p>Direct PayFac is the right answer for platforms processing $100M or more annually that have the organizational capacity to operate a payments business alongside their software business. It's not the right answer for most companies, and pursuing it too early is one of the most common expensive mistakes we see.</p>
 
@@ -4321,7 +3935,7 @@
 
     <h2>How do you calculate your margin multiplier?</h2>
 
-    <p>The multiplier itself is straightforward. Take your total annual payment volume, multiply by your target net take rate for each of the four models, and compare the result to your current <a href="https://marginlabs.io/the-lab/how-saas-companies-make-money-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments revenue</a> (or zero, if you haven't started).</p>
+    <p>The multiplier itself is straightforward. Take your total annual payment volume, multiply by your target net take rate for each of the four models, and compare the result to your current <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments revenue</a> (or zero, if you haven't started).</p>
 
     <p>A healthy payments program typically represents 10% to 30% of ARR within 18-36 months of launch. Platforms that have operated mature programs for several years often see payments revenue approaching 50% of software ARR, or exceeding it.</p>
 

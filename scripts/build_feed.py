@@ -35,13 +35,11 @@ ARTICLES = [
     ("why-merchants-dont-use-payments",            "2026-03-22"),
     # April 2026
     ("payfac-vs-iso",                              "2026-04-03"),
-    ("how-saas-companies-make-money-from-payments","2026-04-08"),
     ("what-is-a-payment-facilitator",              "2026-04-14"),
     ("how-to-choose-an-embedded-payments-provider","2026-04-19"),
     ("embedded-payments-vertical-saas",            "2026-04-24"),
     ("payfac-as-a-service",                        "2026-04-29"),
     # May 2026
-    ("calculate-payments-revenue",                 "2026-05-01"),
     ("embedded-vs-integrated-payments",            "2026-05-04"),
     ("how-to-negotiate-a-processor-agreement",     "2026-05-05"),
     ("chargeback-management-for-software-platforms","2026-05-07"),
@@ -52,7 +50,6 @@ ARTICLES = [
     ("should-you-become-a-payment-facilitator",    "2026-06-02"),
     ("how-much-saas-platforms-make-from-payments", "2026-06-04"),
     ("merchant-of-record-vs-payfac",               "2026-06-04"),
-    ("payment-processor-for-saas",                 "2026-06-04"),
     ("payfac-vs-isv",                              "2026-07-13"),
     # 2026-06-11 batch: KPIs hero (rewrite), Merchant Activation pillar (new),
     # PE diligence (absorbed the comprehensive ML-LAB-027 draft). Dates bumped
@@ -99,7 +96,6 @@ ARTICLES = [
     # evaluate-vendor (fit over price). Hub-and-spoke: all funnel into payfac-vs-isv.
     ("optimize-your-payments-model",              "2026-07-13"),
     ("should-you-change-your-payments-model",     "2026-07-13"),
-    ("how-to-evaluate-a-payments-vendor",         "2026-07-13"),
     ("payments-100-day-plan-pe",                  "2026-07-16"),
     ("payments-benchmarks-for-software-platforms","2026-07-20"),
     ("embedded-finance-examples-vertical-saas",   "2026-07-23"),
@@ -145,7 +141,7 @@ def extract_body(html_text: str) -> str:
     """Extract <div class="article-body">...</div>. The body ends with the
     "← Back to The Lab" anchor that closes the <article> wrapper."""
     m = re.search(
-        r'<div class="article-body">(.*?)</div>\s*<a href="/the-lab/" class="article-back">',
+        r'<div class="article-body">(.*?)</div>\s*<a href="/the-lab/?" class="article-back">',
         html_text, re.DOTALL,
     )
     if not m:
@@ -205,11 +201,9 @@ TABLE_IMAGE_SLUGS = {
     "payfac-vs-isv",
     "merchant-of-record-vs-payfac",
     "payfac-as-a-service",
-    "calculate-payments-revenue",
     # supporting articles (1 table each), added 2026-06-12
     "merchant-activation-playbook",
     "what-is-a-payment-facilitator",
-    "payment-processor-for-saas",
     "pci-compliance-for-saas-platforms",
     "how-to-read-a-payments-pl",
 }
