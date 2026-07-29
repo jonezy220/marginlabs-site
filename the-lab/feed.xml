@@ -8,9 +8,88 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 29 Jul 2026 01:26:26 +0000</lastBuildDate>
-    <pubDate>Mon, 27 Jul 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Wed, 29 Jul 2026 01:58:18 +0000</lastBuildDate>
+    <pubDate>Wed, 29 Jul 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>How Much Volume Before You Should Become a Payment Facilitator?</title>
+      <link>https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac</guid>
+      <pubDate>Wed, 29 Jul 2026 14:00:00 +0000</pubDate>
+      <description>The GMV threshold for becoming a payment facilitator is the wrong question. Why PayFac-as-a-Service captures most of the economics, and what actually triggers full registration.</description>
+      <content:encoded><![CDATA[<p>It is one of the first questions a platform asks once payments starts pulling real revenue: how much volume do we need before we go become a payment facilitator? People want a number. Ten million in GMV, fifty million, a billion. Something clean they can put on a slide and point to as the moment the model flips.</p>
+
+    <p>The number does not exist, and chasing it sends you down the wrong road. The question assumes registration is the destination and volume is the on-ramp. Neither is true. Registration is a specific operational decision with real costs, and for most platforms the lighter models already deliver the economics they think registration will unlock.</p>
+
+    <p><strong>There is no magic volume number. PayFac-as-a-Service captures most of the economics of registration without the compliance, underwriting and headcount load, so becoming a registered payment facilitator is a control and risk-appetite decision, not a GMV milestone. Most platforms asking how much volume they need are solving the wrong problem. The real triggers are control over the stack, a specific vertical or risk reason and economics that only pencil at very large scale.</strong></p>
+
+    <h2>How much volume do you need to become a payment facilitator?</h2>
+
+    <p>The honest answer is that there is no fixed number, and no responsible person can give you one without knowing why you are asking. Operators expect a threshold because that is how most other build-versus-buy decisions work: at some scale the fixed cost of owning a thing beats the variable cost of renting it, and there is a crossover point you can compute. Payment facilitation feels like it should have the same clean crossover.</p>
+
+    <p>It does not, because the thing you would be buying with registration is not mostly economics. It is control and liability. You can process an enormous amount of volume through a managed model and never hit a point where the math alone forces you to register. Platforms discover this the hard way when they build the case and the payback keeps not arriving. If you want the underlying definition first, start with <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator actually is</a>.</p>
+
+    <h2>Why the GMV-threshold question is the wrong frame</h2>
+
+    <p>The frame breaks because it treats full registration as the only way to capture payments economics, when it is not. PayFac-as-a-Service closes most of the economic gap. Under a managed model you already earn the bulk of the spread, own the merchant relationship and set your own pricing. The marginal basis points you would pick up by carrying the full registration yourself are smaller than most platforms assume, and they arrive with a large fixed operating cost attached.</p>
+
+    <p>So the interesting comparison is never referral versus full PayFac. It is PayFac-as-a-Service versus full registration, and on that comparison the gap is narrow enough that volume alone rarely justifies the jump. The <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">model comparison</a> lays out where each option earns its keep.</p>
+
+    <h2>What PayFac-as-a-Service captures vs full registration</h2>
+
+    <p>With PayFac-as-a-Service you own the merchant experience and most of the economics. You onboard and price your merchants, the payments live inside your product, and you keep the majority of the spread. What you do not carry is the heaviest load. A provider is the registered facilitator, so the provider holds the sponsor bank relationship, the underwriting apparatus and the compliance obligations that come with being the entity of record. You get the upside of embedded payments without becoming a regulated payments company overnight.</p>
+
+    <p>Full registration flips that. You carry all of it. The economics you keep go up at the margin, but so does everything else: the sponsor bank relationship you have to source and maintain, the underwriting and risk decisions you now own outright, and the compliance surface that used to be someone else's problem. The <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service model</a> exists precisely because most platforms want the first outcome, not the second.</p>
+
+    <blockquote class="pull-quote">You can process an enormous amount of volume through a managed model and never hit a point where the math alone forces you to register.</blockquote>
+
+    <h2>The real cost of registering</h2>
+
+    <p>Registration is not a one-time filing. It is a standing operation. You need dedicated headcount in risk, compliance and underwriting, because those functions do not run themselves and cannot be a side project for an engineer. You need tooling for onboarding, monitoring and reporting, which you either build or buy, and both cost real money and time. You carry ongoing audits rather than a single certification. And you have to source and keep a sponsor bank relationship, which is its own commercial and relationship burden.</p>
+
+    <p>None of that scales down. A platform doing a modest volume pays roughly the same fixed operating cost as a much larger one, which is exactly why the economics only start to pencil at real scale. The full picture of that load is in the <a href="https://marginlabs.io/the-lab/payfac-compliance-requirements?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">compliance requirements</a> for registered facilitators.</p>
+
+    <h2>What actually triggers full registration</h2>
+
+    <p>Three things trigger it, and volume is rarely the headline reason. The first is control. You want to own the stack and the risk decisions, set your own underwriting appetite and not route those calls through a provider. The second is economics that only work at very large scale, where the fixed operating cost finally divides across enough volume to beat the managed model. The third is a specific structural reason, usually a vertical the PayFac-as-a-Service provider's sponsor bank will not support, so the managed path is closed to you and registration becomes the way in rather than the upgrade.</p>
+
+    <p>Notice that a GMV milestone appears nowhere on that list as a cause. Scale can make the economics of registration viable, but it is the control and risk reasons that make it necessary. Volume is a condition, not a trigger.</p>
+
+    <h2>So should your platform register?</h2>
+
+    <p>Most platforms never should. The ones that register well did it because they needed control they could not get any other way, or because their risk appetite and vertical demanded it, not because a number told them to. Registering to chase a marginal basis point or two, without a control or risk reason underneath it, is how platforms end up owning a compliance operation they did not want and cannot staff.</p>
+
+    <p>Start with a referral model or PayFac-as-a-Service, capture the economics that path gives you, and register only when the control, risk or scale reasons are real and specific to your situation. If you are weighing whether you are actually ready, the <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">readiness question</a> is the right next read.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How much GMV do you need to become a payment facilitator?</h3>
+    <p>There is no fixed threshold. PayFac-as-a-Service captures most of the economics, so registration is a control and risk decision, and on economics alone it rarely pencils even well into the billions in volume.</p>
+
+    <h3>Is PayFac-as-a-Service the same as being a payment facilitator?</h3>
+    <p>With PFaaS you get most of the merchant experience and economics, but the provider is the registered payment facilitator that carries the compliance and infrastructure load.</p>
+
+    <h3>What does it cost to become a registered payment facilitator?</h3>
+    <p>Real headcount in risk, compliance and underwriting, tooling to build or buy, ongoing audits and a sponsor bank relationship. It usually only makes sense at large scale or when you need control the lighter models cannot give you.</p>
+
+    <h3>Why do platforms become payment facilitators?</h3>
+    <p>For control over the stack and risk decisions, for economics that work at very large scale, or because their vertical is one the PFaaS provider's sponsor bank will not support. Rarely because they hit a GMV milestone.</p>
+
+    <h3>Should my platform become a payment facilitator?</h3>
+    <p>Probably not. Start with a referral model or PayFac-as-a-Service and register only when the reasons for control, risk or scale are real and specific.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Is registration actually your move?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Figure out which payments model fits your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier compares all four models on your own numbers, so you can see what registration would actually add over PayFac-as-a-Service. Want to decide with a second set of eyes? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Cash Discounting vs Surcharging vs Convenience Fees: What Your Platform Can Offer</title>
       <link>https://marginlabs.io/the-lab/cash-discounting-vs-surcharging</link>
