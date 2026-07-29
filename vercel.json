@@ -50,6 +50,11 @@
       "permanent": false
     },
     {
+      "source": "/go/payfac-volume-co",
+      "destination": "https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=payfac-volume",
+      "permanent": false
+    },
+    {
       "source": "/go/roadmap",
       "destination": "https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=implementation-roadmap",
       "permanent": false
