@@ -8,9 +8,98 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 29 Jul 2026 01:58:18 +0000</lastBuildDate>
-    <pubDate>Wed, 29 Jul 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2026 14:07:21 +0000</lastBuildDate>
+    <pubDate>Thu, 30 Jul 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Embedded Lending for Vertical SaaS</title>
+      <link>https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas</guid>
+      <pubDate>Thu, 30 Jul 2026 14:00:00 +0000</pubDate>
+      <description>Embedded lending for vertical SaaS, explained for platform operators. Why payments first earns the right to lend, the models from referral to on-book, licensing, and where the ROI comes from.</description>
+      <content:encoded><![CDATA[<p>Once payments starts throwing off real revenue, the next question for a vertical SaaS platform is almost always lending. You already move money for your merchants, you already see what they earn, and offering them credit inside your product looks like the obvious way to widen the wallet. Embedded lending for vertical SaaS is a genuinely large opportunity, but the platforms that win it do not lead with lending. They lead with payments, and they let payments earn the right to lend.</p>
+
+    <p>This is written for the platform operator, the product leader, GM or exec deciding whether and how to add lending. It is not written for the borrower. The whole point is that your platform occupies a position a standalone lender cannot buy, and the question is how to use that position without taking on risk you are not built to carry.</p>
+
+    <p><strong>Embedded lending is offering credit to the businesses on your platform, inside your own product, priced and underwritten off the data your platform already holds. For a vertical SaaS platform the verdict is simple: payments first, then lending. The payment flow you already run is the underwriting data that makes lending work, so monetizing payments is not a detour on the way to lending, it is the foundation of it. Start with a partner who carries the balance sheet and the risk, and only consider owning the loans yourself once your data and activation are mature.</strong></p>
+
+    <h2>What is embedded lending for a vertical SaaS platform?</h2>
+
+    <p>Embedded lending is putting a credit product inside the software your merchants already use to run their business, so they can borrow without leaving your platform and without a separate application to a bank they have no relationship with. The credit could be a term loan, a line of credit, a merchant cash advance against future sales or invoice factoring. What makes it embedded is that the offer, the underwriting and the servicing all live inside your product and lean on your data.</p>
+
+    <p>It is worth separating this cleanly from embedded payments, because operators conflate them. Payments moves money the merchant has already earned, from their customer to them, and you take a slice of the flow. Lending advances money the merchant has not earned yet, against your read of what they will earn, and someone carries the risk that they do not. Payments is a toll on a flow. Lending is a bet on a future. They rhyme, and one enables the other, but they are not the same product and they do not carry the same risk. For the broader map of what a platform can build here, the pillar on <a href="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance for vertical SaaS</a> puts lending in context with the other financial products a platform can layer in.</p>
+
+    <h2>Why platforms are positioned to win embedded lending</h2>
+
+    <p>A vertical SaaS platform starts with two advantages a standalone lender spends enormous money to acquire, and usually never fully gets. The first is distribution. The merchant is already inside your product every day, so the customer acquisition cost of putting a credit offer in front of them is close to zero. The second is data. If you are already running the merchant's payments, you can see their real revenue, its seasonality, its trend and its volatility, not a self-reported figure on a loan application. That flow is the underwriting signal, and you own it.</p>
+
+    <p>This is exactly why the sequencing matters. Payments first, then lending. The payment flow is the underwriting data, so a platform that has not yet built and monetized payments does not have the raw material that makes lending safe or cheap to underwrite. Monetizing payments is not just a revenue line that happens to come earlier. It is the thing that produces the signal lending runs on. The muscle is the same one described in <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">the payments model comparison</a>: you are moving up a curve where you take on more of the flow, more of the economics and more of the risk, one deliberate step at a time.</p>
+
+    <blockquote class="pull-quote">The payment flow you already run is the underwriting data. That is why payments first is not a detour on the way to lending, it is the foundation of it.</blockquote>
+
+    <h2>The models, from lightest to heaviest</h2>
+
+    <p>Embedded lending is not one thing you either do or do not do. It is a range of models, and they line up on a risk-and-capital curve that will feel familiar to anyone who has looked at payments. At the light end you take fees and carry no risk. At the heavy end you fund the loans and own the losses. The economics rise as you move up, and so does the burden.</p>
+
+    <h3>Partner-funded and referral lending</h3>
+
+    <p>The lightest model is partner-funded. A lending partner carries the balance sheet and the risk, and your platform provides the distribution and, ideally, the data that helps the partner underwrite. You earn a revenue share on origination or a piece of the interest, and you do not fund a single loan. Your capital is not at stake and the licensing burden mostly sits with the partner. This is where almost every platform should start, because it lets you prove that your merchants actually want credit and that your data actually predicts repayment, before you put your own balance sheet behind that bet.</p>
+
+    <h3>Merchant cash advance and factoring</h3>
+
+    <p>Merchant cash advance and invoice factoring are usually the first specific products a platform offers, because they map so directly onto the payments flow. An advance is repaid as a fixed slice of daily card volume, which the platform is already processing, so collection is automatic and the risk is tied to a flow you can see. Factoring advances against outstanding invoices in the same spirit. These can be run partner-funded or on-book, but they tend to be the entry product because the repayment mechanism is built into the payment rails you already own.</p>
+
+    <h3>Balance-sheet and on-book lending</h3>
+
+    <p>At the heavy end you fund the loans yourself and hold them on your own balance sheet. Now you own the risk outright. The economics are the largest here, because you keep the interest rather than sharing it, but you also carry the losses when merchants do not repay, you need capital to lend, and you take on the full licensing and compliance surface. This is the lending equivalent of full registration in payments: it can be the right move at scale and with the right data, and it is the wrong move for a platform reaching for economics it has not yet earned the right to. The trade-off is the same shape as ISV versus PayFac. Economics rise with the risk, the capital and the licensing you are willing to take on.</p>
+
+    <h2>What embedded lending licensing and compliance actually require</h2>
+
+    <p>Embedded finance licensing is the part operators most often underestimate, and it is the single biggest reason to partner rather than own. Lending is a regulated activity. Depending on the product, who you lend to and where they are, you may need state lending licenses, and consumer-facing credit brings a heavier regulatory load than lending to businesses. Behind the license sits a bank or a licensed lender that actually originates, and a compliance surface covering disclosures, fair-lending obligations, servicing and collections practices.</p>
+
+    <p>In a partner-funded model most of that burden lives with the partner. The lender holds the licenses and the charter, and your platform is the distribution and data layer, which is a very different and much lighter obligation than being the lender of record. In an on-book model you inherit the whole surface. This is precisely why most platforms partner. Not because owning the loans is impossible, but because the licensing and compliance load is a standing operation with real headcount and real ongoing cost, the same way it is on the payments side, described in the <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitator foundation</a>. Partner first, and treat getting licensed as a decision you make later, on purpose, for a specific reason.</p>
+
+    <h2>The economics and ROI of embedded lending</h2>
+
+    <p>The ROI of embedded lending for a vertical SaaS platform comes from your data advantage and your distribution, not from becoming a lender. That distinction is the whole game. A standalone lender has to buy its borrowers and guess at their revenue. You already have the borrowers, and you already see the revenue, so you can originate at a fraction of the cost and underwrite with better signal. The return shows up as revenue share, origination fees or a slice of interest, attached to a base of merchants you already own.</p>
+
+    <p>Directionally, the attractive part is that this attaches to an existing base. You are not building a new go-to-market, you are adding a revenue line to relationships you already have, at an acquisition cost close to zero. In a partner-funded model the return is a cut of activity your partner funds, which means the ROI can be strong precisely because your capital is not tied up. In an on-book model you keep more per loan, but you have funded it and you carry the losses, so the return has to compensate for capital and risk, not just effort. The honest framing is that lending done as a data-and-distribution play tends to have a better risk-adjusted return for a platform than lending done as an attempt to become a bank. For the strategic version of why this compounds platform value, see the note on <a href="https://marginlabs.io/the-lab/payments-value-creation-lever-pe?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments as a value-creation lever</a>, which applies just as directly to lending stacked on top.</p>
+
+    <h2>When embedded lending makes sense, and when it does not</h2>
+
+    <p>Embedded lending makes sense when three things are true. Payments is already in place and monetized, so you have the flow and the underwriting data. Activation and adoption are mature, so a meaningful share of your base uses the platform deeply enough that a credit offer lands in context rather than as a bolt-on. And there is real demand, meaning your merchants have a genuine working-capital need your data can see, not a product you are pushing because it looks good on a roadmap.</p>
+
+    <p>It does not make sense as a first financial product. A platform that reaches for lending before payments is monetized is reaching for the risk without the data that makes the risk manageable, and it usually shows. It also does not make sense as a way to chase a headline revenue number by moving straight to on-book lending. That is the same mistake platforms make when they register as a full payment facilitator to capture a marginal basis point they do not need. The sequence is the discipline: payments first, then data and activation maturity, then lending, and within lending start partner-funded and earn your way up the curve. If you want to see how other platforms have layered these products in order, the <a href="https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance examples</a> walk through the pattern.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is embedded lending for a vertical SaaS platform?</h3>
+    <p>Embedded lending is offering credit to the businesses on your platform inside your own product, using the data your platform already holds. It is distinct from embedded payments: payments moves money the merchant already earned, lending advances money against money they will earn.</p>
+
+    <h3>What are the best embedded lending solutions for a vertical SaaS platform?</h3>
+    <p>There is no single best solution, only the right model for your maturity. Most platforms should start with partner-funded referral lending where a lending partner carries the balance sheet and risk, then consider on-book lending only once payments data and activation are mature.</p>
+
+    <h3>What is the ROI of embedded lending for a vertical SaaS platform?</h3>
+    <p>The return comes from your data advantage and distribution, not from becoming a lender. It shows up as revenue share, origination fees or a slice of interest, attached to a base of merchants you already own, at a customer acquisition cost close to zero because the borrower is already on the platform.</p>
+
+    <h3>What does embedded finance licensing actually require?</h3>
+    <p>It depends on the model. Partner-funded lending leans on the lender's licenses and bank charter, so the platform usually needs little of its own. On-book lending can require state lending licenses and a heavy compliance surface, which is why most platforms partner rather than get licensed.</p>
+
+    <h3>How do you monetize a vertical SaaS platform with embedded lending?</h3>
+    <p>Sequence it after payments. Payments monetization builds the flow and the underwriting data, then lending attaches to that base as an additional revenue line through revenue share, origination fees or interest participation. It is the same monetization muscle as payments, one rung up the risk curve.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Is lending your next move?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Get the payments foundation right before you lend.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Lending stacks on top of a monetized payment flow. The Margin Multiplier shows what your payments base is worth across all four models, which is the base lending attaches to. Want to pressure-test the sequence? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>How Much Volume Before You Should Become a Payment Facilitator?</title>
       <link>https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac</link>
@@ -1832,12 +1921,12 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>PayFac vs ISV for Vertical SaaS: The Real Comparison</title>
+      <title>ISV vs PayFac: The Real Comparison</title>
       <link>https://marginlabs.io/the-lab/payfac-vs-isv</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-vs-isv</guid>
       <pubDate>Mon, 13 Jul 2026 14:00:00 +0000</pubDate>
-      <description>PayFac vs ISV is the question every vertical SaaS platform faces once payments matter. The economics, the operational burden and where the answer flips.</description>
-      <content:encoded><![CDATA[<p>PayFac vs ISV is the question every vertical SaaS platform eventually faces. Usually right around the moment payments revenue starts looking like a real line item, the founder or VP of product asks finance what would happen if they captured more of the spread. The answer involves a model change. PayFac vs ISV is the choice between the two structural options, and most platforms get the comparison wrong on the first pass.</p>
+      <description>ISV vs PayFac for vertical SaaS: payment facilitation vs the referral model, side by side. The economics, the operational burden and where the answer flips.</description>
+      <content:encoded><![CDATA[<p>ISV vs PayFac is the question every vertical SaaS platform eventually faces. Usually right around the moment payments revenue starts looking like a real line item, the founder or VP of product asks finance what would happen if they captured more of the spread. This is payment facilitation vs the referral model, the choice between staying an ISV that refers merchants for a residual or becoming a PayFac that facilitates the payments and owns the spread. PayFac vs ISV is the choice between those two structural options, and most platforms get the comparison wrong on the first pass.</p>
 
     <p>The short version: ISV is the entry point, PayFac is the destination, and the migration between them is rarely as smooth as the slide deck makes it sound. The right model for a specific platform depends on volume, vertical, operational appetite and where the platform is in its lifecycle. None of those answers is universal, and the wrong answer at the wrong time can cost a platform six figures of annual margin or trap it in an operational program it was not ready to run.</p>
 
@@ -1853,7 +1942,7 @@
 
     <h2>What PayFac actually means</h2>
 
-    <p>A <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Payment Facilitator</a> is a platform that has signed a master merchant agreement with a processor and is operating its own sub-merchant program. The platform underwrites and boards the sub-merchants under its own scope, sets pricing for those sub-merchants, handles settlement and reconciliation, manages disputes and chargebacks, runs a Level 1 PCI compliance program and takes on operational and capital responsibility for the sub-merchant base.</p>
+    <p>For the full definition, see <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator actually is</a>. In short, a Payment Facilitator is a platform that has signed a master merchant agreement with a processor and is operating its own sub-merchant program. The platform underwrites and boards the sub-merchants under its own scope, sets pricing for those sub-merchants, handles settlement and reconciliation, manages disputes and chargebacks, runs a Level 1 PCI compliance program and takes on operational and capital responsibility for the sub-merchant base.</p>
 
     <p>In exchange, the platform captures the spread between what the processor charges it (the cost of processing) and what it charges its sub-merchants. That spread can be 50 to 120 basis points of volume depending on the variant, the negotiation and the vertical. Compared to the 5 to 15 basis points an ISV captures, the PayFac economics are dramatically better. The operational burden is also dramatically larger.</p>
 
@@ -1925,7 +2014,7 @@
 
     <p>For the deeper decision (which model fits the platform's specific stage, what the right migration path looks like, how to evaluate the managed PayFac partners), the Strategic Decision Framework covers the comparison in detail, including real-world basis-point ranges, the operational requirements at each model and the decision matrix by volume tier.</p>
 
-    <p>And if the platform is at the point of choosing between specific PayFac partners or negotiating an ISV agreement with PayFac migration in mind, that is the kind of situation a Quick Start Call exists for.</p>
+    <p>If the underlying question is really whether to make the jump at all, we cover that head-on in <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">should you become a payment facilitator</a>. And if the platform is at the point of choosing between specific PayFac partners or negotiating an ISV agreement with PayFac migration in mind, that is the kind of situation a Quick Start Call exists for.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Which model fits you?</div>
@@ -3288,18 +3377,18 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-to-choose-an-embedded-payments-provider?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>What Is a Payment Facilitator (PayFac)? A SaaS Guide</title>
+      <title>What Is a Payment Facilitator (PayFac)?</title>
       <link>https://marginlabs.io/the-lab/what-is-a-payment-facilitator</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-a-payment-facilitator</guid>
       <pubDate>Tue, 14 Apr 2026 14:00:00 +0000</pubDate>
-      <description>What a payment facilitator (PayFac) is, what it costs to become one and whether your SaaS platform should. Real economics and a clear decision framework.</description>
+      <description>A payment facilitator (PayFac) is an entity that boards merchants under its own account. What the PayFac model is, what it costs and whether your SaaS should.</description>
       <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/what-is-a-payment-facilitator.png" alt="The Payment Facilitation Spectrum, comparing ISV Referral, ISV Enhanced, PayFac-as-a-Service, and Full PayFac across volume threshold and net economics" class="article-hero">
+
+    <p><strong>A payment facilitator (PayFac) is an entity registered with the card networks (Visa, Mastercard) that boards merchants under its own master merchant ID and processes payments on their behalf. Instead of each merchant getting an individual account, a payment facilitator aggregates them as sub-merchants under one umbrella, owning the relationship and the pricing. This is the payment facilitator model, and it is how software platforms enable payments for hundreds or thousands of small businesses without underwriting each one individually.</strong></p>
 
     <p>Payment facilitator. PayFac. Managed PayFac. PayFac Lite. PayFac-as-a-Service. Sub-merchant. Master merchant. The terminology around payment facilitation is genuinely confusing, and it's confusing by design, because the companies defining these terms are the ones selling the services.</p>
 
     <p>If you run product, finance, or partnerships at a software company and you're trying to figure out what payment facilitation actually means for your business, this is the plain-language version. No jargon ladders. No sales positioning disguised as education.</p>
-
-    <p><strong>A payment facilitator (PayFac) is an entity registered with the card networks (Visa, Mastercard) that boards merchants under its own master merchant ID and processes payments on their behalf. Instead of each merchant getting an individual account, a PayFac aggregates them as sub-merchants under one umbrella, owning the relationship and the pricing.</strong></p>
 
     <h2>The Basic Concept</h2>
 
@@ -3335,13 +3424,17 @@
 
     <p>You're not registered with the card networks yourself. But you set merchant rates, control the boarding experience, and keep the spread between what you charge and what you pay the provider. Net margins typically range from 30 to 60 basis points.</p>
 
-    <p>This model, sometimes called PayFac Lite, is the fastest-growing segment in embedded payments because it gives platforms PayFac-level economics without PayFac-level infrastructure requirements. Implementation costs range from $50K to $200K, and you can be live in 3-6 months.</p>
+    <p>This model, sometimes called PayFac Lite or a hybrid PayFac, is the fastest-growing segment in embedded payments because it gives platforms PayFac-level economics without PayFac-level infrastructure requirements. Implementation costs range from $50K to $200K, and you can be live in 3-6 months.</p>
 
     <p class="cost-label">ISV Referral (Not PayFac)</p>
 
     <p>For comparison: in an ISV Referral arrangement, you're not a PayFac at all. You refer merchants to a processor, the processor boards and underwrites them, and you collect a residual, typically 5 to 15 basis points. You don't control pricing, you don't own the merchant relationship in payments terms, and your economics are a fraction of what a PayFac arrangement would produce.</p>
 
-    <p>Referral is the right starting point for many platforms, but it's important to understand that it is fundamentally different from payment facilitation, even though some processors blur the line in their marketing.</p>
+    <p>Referral is the right starting point for many platforms, but it's important to understand that it is fundamentally different from payment facilitation, even though some processors blur the line in their marketing. If you're weighing referral against facilitating payments yourself, our <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV vs PayFac comparison</a> lays out the economics and the operational trade at each volume tier so you can see which payments model fits.</p>
+
+    <p class="cost-label">Payment Facilitator Platform and Digital Payment Facilitator</p>
+
+    <p>Two related terms come up a lot. A payment facilitator platform is the software product that boards sub-merchants, sets pricing and runs the payments experience, which is the platform angle most vertical SaaS companies care about. A digital payment facilitator is simply a PayFac whose merchants are software-native and card-not-present rather than card-present retail. Both describe the same underlying model. What differs is who the merchants are and how they take payments, not the structure of the facilitation itself.</p>
 
     <div style="background:#1a1a1a;border-left:2px solid #C8823C;padding:20px 24px;margin:32px 0;">
       <p style="font-size:14px;font-weight:400;color:#F0EBE4;margin:0 0 8px;"><strong>Want to see the numbers for your platform?</strong></p>
@@ -3395,7 +3488,7 @@
 
     <h2>How Much Does It Cost to Become a Payment Facilitator?</h2>
 
-    <p>Costs vary dramatically depending on which model you pursue. The numbers below are typical ranges for a mid-size SaaS platform in the $30M-$200M annual processing volume range.</p>
+    <p>Costs vary dramatically depending on which model you pursue. The numbers below are typical ranges for a mid-size SaaS platform in the $30M-$200M annual processing volume range. For the full breakdown across every line item, see <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a>.</p>
 
     <p class="cost-label">Full PayFac Registration</p>
 
@@ -3451,6 +3544,26 @@
     <div class="faq-item">
       <p class="faq-q">When does it make sense to become a full PayFac instead of using PayFac-as-a-Service?</p>
       <p class="faq-a">Full PayFac registration starts making financial sense at $100M+ in annual processing volume, where the 30-40 basis point economic uplift over PayFac-as-a-Service exceeds the implementation and operating costs. Below that volume, PFaaS is almost always the right choice. Above it, the decision depends on strategic factors like geographic expansion, vertical specialization, and willingness to take on regulatory complexity.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the payment facilitator model?</p>
+      <p class="faq-a">The payment facilitator model is the arrangement where one registered entity boards merchants as sub-merchants under its own master account instead of each merchant getting an individual merchant account. It lets a software platform enable payments for hundreds or thousands of small businesses without underwriting each one individually, and it lets the platform own the pricing and keep a larger share of the margin than a referral arrangement would.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is a payment facilitator platform?</p>
+      <p class="faq-a">A payment facilitator platform is the software product that boards sub-merchants, sets their pricing and runs the payments experience under a PayFac or managed PayFac arrangement. It is the platform angle most vertical SaaS companies care about, because the software product itself becomes the front door for onboarding, pricing and support while the regulatory layer sits with the registered PayFac or the managed provider.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is a hybrid PayFac?</p>
+      <p class="faq-a">A hybrid PayFac is another name for the managed PayFac or PayFac-as-a-Service arrangement, the middle option between ISV referral and full registration. A registered PayFac provides the sponsor bank relationships, card network registrations and compliance frameworks, and the platform handles merchant onboarding, pricing and first-line support. It gives platforms most of the PayFac economics, typically 30 to 60 basis points net, without full PayFac infrastructure requirements.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is a digital payment facilitator?</p>
+      <p class="faq-a">A digital payment facilitator is a PayFac whose merchants are software-native and card-not-present rather than card-present retail. The underlying model is identical to any other payment facilitator. What differs is who the merchants are and how they take payments, not the structure of the facilitation itself.</p>
     </div>
 
     <h2>Where to Go from Here</h2>
