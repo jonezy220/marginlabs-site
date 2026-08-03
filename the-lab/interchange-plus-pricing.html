@@ -1,0 +1,233 @@
+<!-- ML-LAB-048 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interchange-Plus Pricing for Platforms: Structure Payments, Keep the Spread | Margin Labs</title>
+<meta name="description" content="A platform embedding payments both buys and sells payments. Interchange-plus is two decisions: what you buy on to see your true cost and what you charge your merchants. The spread is your revenue.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/interchange-plus-pricing">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Interchange-Plus Pricing for Platforms: Structure Payments, Keep the Spread | Margin Labs">
+<meta property="og:description" content="A platform embedding payments both buys and sells payments. Interchange-plus is two decisions: what you buy on to see your true cost and what you charge your merchants. The spread is your revenue.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/interchange-plus-pricing">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is interchange-plus pricing for a platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A cost-plus model where interchange and network assessments are passed through at cost and your provider adds a fixed, disclosed markup you can see. For a platform it works on both sides: it is the model you buy on to see your true cost, and one of the models you can offer your own merchants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a platform buy its payments on interchange-plus or flat-rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interchange-plus. It is the only model that shows your true cost per transaction, which is what lets you price your merchants intelligently and manage the spread that is your payments revenue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What pricing model should a platform charge its merchants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a monetization and positioning choice, not an operational default. Flat or blended captures more spread but is less transparent, and a sophisticated merchant will eventually question it. Interchange-plus to merchants is transparent and competitive with a smaller explicit markup. The right call depends on your merchant base and your strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a platform make money on payments pricing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the spread between what it pays its processor or PayFac provider and what it charges its merchants. That spread is the payments revenue line, and a platform can only set and defend it if it can see its true cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does interchange-plus matter for a platform specifically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because a platform sits between its provider and its merchants. It needs cost visibility upstream, which interchange-plus gives it, to price merchants intelligently downstream and keep the spread from leaking."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Interchange-Plus Pricing for Platforms: Structure Payments and Keep the Spread</h1>
+  <div class="article-meta">
+    <span>August 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p>A platform that embeds payments is not a merchant, and it should not read its pricing like one. It sits in the middle of the payments stack. It buys payments from a processor or PayFac provider on one side, and it sells payments to its own merchants on the other. That middle seat is the business. It is also where the pricing model does its work or its damage, because the model shows up twice, once on each side of you.</p>
+
+    <p>Most platforms only think about one side. They set a merchant-facing rate, inherit whatever their provider handed them upstream, and never connect the two. The pricing model gets treated as a contract detail the finance team skims. It is not a detail. It decides how much of every transaction you keep, and across an entire merchant base that becomes a real line of revenue.</p>
+
+    <p><strong>For a platform, interchange-plus is two decisions, not one. Upstream, buy your payments on interchange-plus from your processor or PayFac provider so you can see your true cost per transaction. Downstream, decide what to charge your merchants. The spread between the two is your payments revenue, and you can only set and defend it if you can see your cost. That is why the model you buy on matters as much as the model you sell.</strong></p>
+
+    <h2>What interchange-plus pricing actually is</h2>
+
+    <p>Interchange is the fee set by the card networks and paid to the card-issuing bank on every transaction. No processor invents it or controls it. Under interchange-plus, interchange and the network assessments are passed through at cost. Your provider adds a fixed markup on top that you can see, stated as its own line.</p>
+
+    <p>That is the whole idea. Cost-plus, fully itemized. The alternative is a single blended number that folds the cost and the markup together into one figure you have to take on trust. Everything below is about why that difference matters more for a platform than for anyone else, because a platform lives on both sides of it.</p>
+
+    <h2>Buy on interchange-plus so you can see your true cost</h2>
+
+    <p>Start with the side platforms tend to neglect: the deal you sign with your own processor or PayFac provider. Take interchange-plus there. If your provider puts you on a flat or tiered rate, your own cost is hidden from you, and when interchange on a category falls your flat cost does not fall with it. The provider keeps that gap, on your volume, across your whole book. Tiered upstream is worse, because the provider decides which bucket your transactions land in and the downgrades are theirs to define.</p>
+
+    <p>The reason this matters is not only your own margin. You cannot price your merchants intelligently if you do not know what a transaction actually costs you. A platform on a blended upstream rate is pricing its merchants on a guess. Whether you sit on the ISV or the PayFac side of that relationship changes who you buy from and how much you control, which is the subject of <a href="/the-lab/payfac-vs-isv">ISV Referral vs PayFac Lite</a>, but on either side you want to see your cost at the transaction level.</p>
+
+    <h2>What you charge your merchants is a monetization decision</h2>
+
+    <p>Now the side platforms do think about, usually too narrowly. The pricing model you offer your merchants is not an operational default to pass through from your provider. It is a positioning and margin choice, and it is where your payments revenue is actually set.</p>
+
+    <p>Flat or blended to your merchants is simpler for them and captures more spread for you, because the same opacity that costs you upstream now works in your favor. The catch is that it is exactly the opacity you would resent from your own processor, and a sophisticated merchant will eventually ask what they are really paying. Interchange-plus to your merchants is transparent and easy to defend, and it competes well against a standalone processor, but you monetize through a smaller, explicit markup rather than a hidden spread.</p>
+
+    <p>There is no universally right answer. It depends on your merchant base and your strategy. A platform serving small merchants who value simplicity can run a blended rate for years. A platform serving larger merchants who benchmark their processing will do better offering transparency and winning on it. What you should not do is pick by accident.</p>
+
+    <h2>The spread is your payments revenue</h2>
+
+    <p>Put the two sides together and it gets simple. You pay a cost upstream. You charge a price downstream. The gap between them, across every transaction your merchants run, is your payments revenue. That spread is the line a board or an acquirer cares about, and you are managing it whether you realize it or not.</p>
+
+    <blockquote class="pull-quote">The spread between what you pay upstream and what you charge your merchants is the payments line. You can only manage what you can see.</blockquote>
+
+    <p>You can only set and defend that spread if you can see your true cost, which is why the upstream decision comes first. A platform that buys on interchange-plus knows its cost to the transaction. It can price merchants, run <a href="/the-lab/interchange-optimization-for-platforms">interchange optimization</a> to lower that cost and watch the spread hold as interchange shifts. A platform on a blended upstream rate is flying blind on the most important number in its payments P&L.</p>
+
+    <h2>How to structure the deal as a platform</h2>
+
+    <p>Two moves. First, on the buy side, ask for interchange-plus in writing and ask for the markup stated as a specific number. Interchange itself is not negotiable, the networks set it, so a provider competing on lower rates without disclosing the markup is competing on a number that is partly cost you cannot change. The negotiable figure is the plus. The full playbook is in <a href="/the-lab/how-to-negotiate-a-processor-agreement">how to negotiate a processor agreement</a>.</p>
+
+    <p>Second, on the sell side, choose your merchant-facing model deliberately. Decide whether you are monetizing through a visible markup or a blended spread, and make sure it fits the merchants you actually serve. The worst outcome is passing your provider's model straight through to your merchants without a decision, which is how platforms end up with pricing that serves the provider rather than the platform.</p>
+
+    <h2>When does this matter most?</h2>
+
+    <p>At scale, and it compounds. On low volume the difference between models is real but small in absolute dollars, so an early platform can reasonably start simple on both sides. As volume grows, a hidden spread upstream and an unexamined model downstream both start moving real money, multiplied across your entire merchant base. The pricing model that was a rounding error at launch becomes a material share of payments revenue at scale.</p>
+
+    <p>Most platforms never revisit either side. That is the quiet cost: not choosing wrong once, but never looking again as the numbers grew into the range where they matter. To put real figures on it, the <a href="/the-lab/what-embedded-payments-costs">true cost stack of embedded payments</a> and the <a href="/the-lab/how-much-saas-platforms-make-from-payments">dollar version of what platforms make from payments</a> are where the spread stops being abstract.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is interchange-plus pricing for a platform?</h3>
+    <p>A cost-plus model where interchange and network assessments are passed through at cost and your provider adds a fixed, disclosed markup you can see. For a platform it works on both sides: it is the model you buy on to see your true cost, and one of the models you can offer your own merchants.</p>
+
+    <h3>Should a platform buy its payments on interchange-plus or flat-rate?</h3>
+    <p>Interchange-plus. It is the only model that shows your true cost per transaction, which is what lets you price your merchants intelligently and manage the spread that is your payments revenue.</p>
+
+    <h3>What pricing model should a platform charge its merchants?</h3>
+    <p>It is a monetization and positioning choice, not an operational default. Flat or blended captures more spread but is less transparent, and a sophisticated merchant will eventually question it. Interchange-plus to merchants is transparent and competitive with a smaller explicit markup. The right call depends on your merchant base and your strategy.</p>
+
+    <h3>How does a platform make money on payments pricing?</h3>
+    <p>On the spread between what it pays its processor or PayFac provider and what it charges its merchants. That spread is the payments revenue line, and a platform can only set and defend it if it can see its true cost.</p>
+
+    <h3>Why does interchange-plus matter for a platform specifically?</h3>
+    <p>Because a platform sits between its provider and its merchants. It needs cost visibility upstream, which interchange-plus gives it, to price merchants intelligently downstream and keep the spread from leaking.</p>
+
+  </div>
+  <a href="/the-lab" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">How much spread are you leaving on the table?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">See what your payments pricing is really worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and models the spread across all four monetization models, so you can see what your pricing is capturing and what it is leaving behind. Want to pressure-test an actual provider deal or your merchant pricing? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Book a Quick Start Call →</a>
+      <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-multiplier-secondary">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
