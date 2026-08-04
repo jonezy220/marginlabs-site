@@ -9,6 +9,7 @@
   <url><loc>https://marginlabs.io/principal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://marginlabs.io/the-lab</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://marginlabs.io/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://marginlabs.io/the-lab/payment-orchestration-for-platforms</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://marginlabs.io/the-lab/interchange-plus-pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>

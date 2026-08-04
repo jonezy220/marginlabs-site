@@ -65,6 +65,11 @@
       "permanent": false
     },
     {
+      "source": "/go/orchestration-co",
+      "destination": "https://marginlabs.io/the-lab/payment-orchestration-for-platforms?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=payment-orchestration",
+      "permanent": false
+    },
+    {
       "source": "/go/roadmap",
       "destination": "https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=implementation-roadmap",
       "permanent": false
