@@ -117,6 +117,22 @@
         "@type": "Answer",
         "text": "Stripe Connect is one implementation of the PayFac-as-a-Service model, but not the only one. Connect uses a per-transaction platform fee model (0.25 percent plus $0.25 on top of standard processing fees) and is optimized for fast time-to-market. Other PFaaS providers like Finix, Tilled, and Payrix offer interchange-plus pricing that can be more economical at scale, white-label control over the merchant experience, and longer integration timelines in exchange for that flexibility. Choosing between them depends on volume, vertical, branding requirements, and how much engineering capacity the platform can invest in the integration."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PayFac in a box the same as PayFac-as-a-Service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mostly yes. PayFac in a box, digital PayFac and managed PayFac are marketing labels for the same model: a registered Payment Facilitator supplies the card network registration, sponsor bank relationship and compliance framework, and your platform operates as a sub-facilitator on top of it. What matters is not the name but the economics you keep (typically 30 to 60 bps), the operations you take on (onboarding, pricing, first-line support, chargeback response) and whose brand the merchant sees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a white-label PayFac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A white-label PayFac is a PayFac-as-a-Service arrangement where the merchant-facing experience, the onboarding, statements, dashboards and support, carries your brand rather than the provider's. It is the same underlying model as PFaaS. The white-label label just signals a high degree of brand control. Stripe Connect exposes more of the Stripe brand to merchants, while Finix, Tilled and Payrix are built to keep your platform front and center. If brand ownership of the payments experience matters, it is a primary selection criterion between providers."
+      }
     }
   ]
 }
@@ -176,7 +192,7 @@
     <span>9 min read</span>
   </div>
   <div class="article-body">
-    <p>Payment Facilitation as a Service, also called Managed PayFac, PayFac Lite, or Embedded PayFac, has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a <a href="/the-lab/what-is-a-payment-facilitator">Payment Facilitator</a> without building the compliance and operational infrastructure yourself.</p>
+    <p>Payment Facilitation as a Service, also called Managed PayFac, PayFac Lite, Embedded PayFac, PayFac in a Box or white-label PayFac, has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a <a href="/the-lab/what-is-a-payment-facilitator">Payment Facilitator</a> without building the compliance and operational infrastructure yourself.</p>
 
     <p>The model exists because there's a wide gap between the economics of ISV Referral (5-25 basis points) and the cost of becoming a full registered PayFac ($500K+ implementation, 12-18 months to launch, dedicated compliance staff). Most platforms fit somewhere in the middle, they've outgrown referral economics but can't justify the investment of full facilitation. PayFac-as-a-Service fills that gap.</p>
 
@@ -187,6 +203,10 @@
     <p>You handle merchant-facing operations: onboarding, pricing, first-line support, and in some cases, underwriting decisions within pre-approved parameters. The PFaaS provider handles the regulatory layer: network reporting, reserve calculations, compliance monitoring, and the relationship with the acquiring bank.</p>
 
     <p>Merchants are boarded as your sub-merchants. You set the rate. You collect the spread between what you charge and what you pay the provider. The provider earns their margin from the processing cost you pay them, typically interchange plus 10 to 20 basis points, depending on volume and risk profile. Stripe Connect charges differently (a per-transaction platform fee of 0.25% + $0.25 on top of standard processing), while Finix and Tilled price on an interchange-plus model that can be more economical at scale.</p>
+
+    <h2>PayFac in a Box, White-Label PayFac, Digital PayFac: Same Model, Different Names</h2>
+
+    <p>The market has not settled on one name for this, and the labels get used loosely. "PayFac in a box" and "digital PayFac" usually describe the same managed arrangement covered here: a provider supplies the registration, sponsor bank and compliance layer, and you operate on top of it. "White-label PayFac" points at one specific dimension of it, how much the merchant-facing experience carries your brand instead of the provider's. Stripe Connect sits at the low end of white-label control, the merchant often sees Stripe. Finix, Tilled and Payrix sit at the high end, the merchant sees you. If a vendor pitches you "PayFac in a box," the questions that matter are the same ones in this piece: what economics you keep, what operations you own and whose brand the merchant sees.</p>
 
     <h2>The Economics</h2>
 
@@ -389,6 +409,16 @@
     <div class="faq-item">
       <p class="faq-q">Is PayFac-as-a-Service the same as Stripe Connect?</p>
       <p class="faq-a">Stripe Connect is one implementation of the PayFac-as-a-Service model, but not the only one. Connect uses a per-transaction platform fee model (0.25 percent plus $0.25 on top of standard processing fees) and is optimized for fast time-to-market. Other PFaaS providers like Finix, Tilled, and Payrix offer interchange-plus pricing that can be more economical at scale, white-label control over the merchant experience, and longer integration timelines in exchange for that flexibility. Choosing between them depends on volume, vertical, branding requirements, and how much engineering capacity the platform can invest in the integration.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is "PayFac in a box" the same as PayFac-as-a-Service?</p>
+      <p class="faq-a">Mostly yes. "PayFac in a box," "digital PayFac" and "managed PayFac" are marketing labels for the same model: a registered Payment Facilitator supplies the card network registration, sponsor bank relationship and compliance framework, and your platform operates as a sub-facilitator on top of it. What matters is not the name but the economics you keep (typically 30 to 60 bps), the operations you take on (onboarding, pricing, first-line support, chargeback response) and whose brand the merchant sees.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is a white-label PayFac?</p>
+      <p class="faq-a">A white-label PayFac is a PayFac-as-a-Service arrangement where the merchant-facing experience, the onboarding, statements, dashboards and support, carries your brand rather than the provider's. It is the same underlying model as PFaaS. The "white-label" label just signals a high degree of brand control. Stripe Connect exposes more of the Stripe brand to merchants, while Finix, Tilled and Payrix are built to keep your platform front and center. If brand ownership of the payments experience matters, it is a primary selection criterion between providers.</p>
     </div>
 
     <blockquote class="pull-quote">PFaaS is the right model when referral economics feel like leaving money on the table, but full PayFac feels like building a payments company instead of a software company.</blockquote>
