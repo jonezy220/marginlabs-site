@@ -138,6 +138,11 @@
       "source": "/go/surcharge-options-co",
       "destination": "https://marginlabs.io/the-lab/cash-discounting-vs-surcharging?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=surcharge-options",
       "permanent": false
+    },
+    {
+      "source": "/go/pfaas",
+      "destination": "https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=payfac-in-a-box",
+      "permanent": false
     }
   ],
   "functions": {
