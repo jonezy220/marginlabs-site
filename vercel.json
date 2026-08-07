@@ -143,6 +143,11 @@
       "source": "/go/pfaas",
       "destination": "https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=payfac-in-a-box",
       "permanent": false
+    },
+    {
+      "source": "/go/become-payfac-co",
+      "destination": "https://marginlabs.io/the-lab/how-to-become-a-payment-facilitator?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=how-to-become-payfac",
+      "permanent": false
     }
   ],
   "functions": {

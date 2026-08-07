@@ -8,9 +8,102 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 04 Aug 2026 20:15:03 +0000</lastBuildDate>
-    <pubDate>Wed, 05 Aug 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Fri, 07 Aug 2026 15:54:12 +0000</lastBuildDate>
+    <pubDate>Fri, 07 Aug 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>How to Become a Payment Facilitator</title>
+      <link>https://marginlabs.io/the-lab/how-to-become-a-payment-facilitator</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/how-to-become-a-payment-facilitator</guid>
+      <pubDate>Fri, 07 Aug 2026 14:00:00 +0000</pubDate>
+      <description>How to become a payment facilitator: the actual sequence of steps to register with the card networks, secure a sponsor bank and stand up the operation. Plus the lighter path most platforms weigh first.</description>
+      <content:encoded><![CDATA[<p>You have decided, or you are close to deciding, that your platform should become a payment facilitator. Now you want the actual process. Not whether to do it and not how much volume you need first, but the concrete sequence of steps to register and stand the operation up. That is a fair question, and it has a real answer, as long as you go in understanding what you are actually signing up for.</p>
+
+    <p>Becoming a payment facilitator is not a form you file. It is a sequence of steps that ends in a standing operation you run for as long as you process payments. Here is the shape of it, step by step, with pointers to where each piece gets its own deep dive.</p>
+
+    <p><strong>To become a payment facilitator you secure a sponsor bank or acquirer relationship, register with the card networks as a payment facilitator, build the underwriting, onboarding, risk and compliance operation, achieve PCI compliance, then go live and operate. It is a standing operation, not a one-time filing, and it carries real headcount and capital indefinitely. Before you register directly, most platforms should evaluate PayFac-as-a-Service, which delivers most of the outcome without most of the load.</strong></p>
+
+    <h2>What does becoming a payment facilitator actually involve?</h2>
+
+    <p>It involves two things that get collapsed into one word. There is registration, which is the paperwork and approvals that make you a recognized payment facilitator in the eyes of the card networks and your sponsor bank. And there is the operation, which is the team, the tooling and the ongoing obligations that let you actually onboard merchants, move their money and manage the risk of doing so. Registration is the smaller half. The operation is the part that lasts.</p>
+
+    <p>People underestimate the second half because the first half is what shows up in the how-to guides. Registering is finite. You do it, it completes, you are registered. The operation never completes. You underwrite merchants every day, you monitor transactions every day and you answer to compliance every day. If you only budget for the registration, you have budgeted for the wrong thing. For the underlying definition of what you are becoming, start with <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator actually is</a>, the pillar this whole cluster hangs off.</p>
+
+    <h2>Step 1: Have you confirmed the model is right for you?</h2>
+
+    <p>Before any of the mechanics, confirm the decision itself is sound, because the steps that follow are expensive to unwind. Two questions settle it. First, is your platform actually ready to own the risk, the compliance and the headcount, or are you registering to chase a marginal basis point without the reasons underneath. The <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">readiness question</a> works through that honestly and is worth reading before you go further.</p>
+
+    <p>Second, does your scale support it, because full registration only pencils when the fixed operating cost divides across enough volume. The <a href="https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">volume question</a> covers where that line sits and why it is a control decision more than a milestone. We will not re-argue either point here. If you have worked through both and the answer is still yes, proceed.</p>
+
+    <h2>Step 2: How do you secure a sponsor bank or acquirer relationship?</h2>
+
+    <p>This is where the real process starts, and it is the step platforms most often underestimate. You cannot register with the card networks on your own. You need a sponsor bank, an acquiring bank that is a member of the card networks, to sponsor you into Visa and Mastercard and to sit behind you as the regulated network member that settles the transactions and carries ultimate liability for them. In the standard model the funds settle through that acquirer into your master merchant account, and you pay your sub-merchants out from there. Banks that actively sponsor payment facilitators include Wells Fargo, Fifth Third, Pathward, Esquire Bank and Synovus. Finding one that will take your vertical, your risk profile and your projected volume is a commercial courtship, not a signup.</p>
+
+    <p>Expect diligence in both directions. The sponsor bank underwrites you the way you will later underwrite your merchants. They look at your balance sheet, your leadership, your risk controls and the kind of merchants you plan to bring on. Some verticals get declined outright because the bank has no appetite for the risk. This step gates everything after it, so start it early and treat the relationship as a long-term partnership, because that is what it is.</p>
+
+    <blockquote class="pull-quote">Registration is the smaller half. The operation is the part that lasts.</blockquote>
+
+    <h2>Step 3: How do you register with the card networks?</h2>
+
+    <p>Once you have a sponsor, you register as a payment facilitator with the card networks, primarily Visa and Mastercard, through that sponsor. This is the step people picture when they imagine a payment facilitator license. There is no single government license by that name. What exists is network registration: you are entered into Visa and Mastercard's payment facilitator programs, the role Visa renamed from payment service provider, you agree to their rules and you take on the obligations that come with being a registered facilitator.</p>
+
+    <p>Registration is not just a checkbox. The networks impose ongoing requirements on how you onboard merchants, how you monitor them and how you report, and those requirements are conditions of staying registered, not one-time gates. Your sponsor bank shepherds you through the mechanics, but the obligations land on you. Once you clear this step you are a registered payment facilitator on paper. The rest of the work is making that real.</p>
+
+    <h2>Step 4: How do you build the operation?</h2>
+
+    <p>This is the heaviest step and the one that never ends. Being registered means nothing until you can actually take on merchants and manage the risk of holding them. That means building three capabilities and staffing them.</p>
+
+    <p>The first is underwriting and know-your-business. Every merchant you bring on has to be vetted, which means verifying the business, screening for risk and deciding whether to approve them and on what terms. That is now your call, not a provider's. The mechanics of that live in <a href="https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant underwriting and KYB</a>. The second is merchant onboarding, the flow that turns an approved applicant into a live, paid-out merchant inside your product without friction that kills your conversion. There is a whole discipline to getting that right, covered in <a href="https://marginlabs.io/the-lab/merchant-onboarding-embedded-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant onboarding for embedded payments</a>.</p>
+
+    <p>The third is risk and transaction monitoring, the ongoing watch over the money moving through your platform so fraud, chargebacks and merchant failures do not become losses you eat. This one runs continuously and needs real people behind it. Together these three are why registration is a standing operation. They do not run themselves and they cannot be a side project for an engineer.</p>
+
+    <h2>Step 5: How do you achieve and maintain PCI compliance?</h2>
+
+    <p>As a registered facilitator you carry a heightened PCI compliance obligation, and it is a maintain, not a certify-once. You validate against the standard, you keep the controls current and you re-attest on an ongoing cadence. The card networks and your sponsor bank both hold you to it, and lapses are not a paperwork problem, they are an existential one. The practical shape of PCI for a platform is laid out in <a href="https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PCI compliance for SaaS platforms</a>.</p>
+
+    <p>PCI is one line item in a much larger compliance surface you now own, from network rules to anti-money-laundering obligations to the audits that come with all of it. Depending on how funds flow through you, state money-transmitter licensing can come into play as well, since taking possession of merchant funds is what triggers it, which is one more reason to settle the funds-flow structure with your sponsor early. Rather than reproduce that here, the full load is catalogued in <a href="https://marginlabs.io/the-lab/payfac-compliance-requirements?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitator compliance requirements</a>. Read it before you commit, because it is the part of the operation that most often gets under-resourced, and it is the part that gets platforms in trouble.</p>
+
+    <h2>How long does it take and what does it cost?</h2>
+
+    <p>Directionally: think in months, not weeks, and think in a standing operation, not a project with an end date. Sourcing and closing a sponsor bank relationship takes real time on its own. Network registration takes more. Building and staffing the underwriting, onboarding, risk and compliance functions takes more still, and much of it runs in parallel rather than in a neat line. There is no version of this that is fast.</p>
+
+    <p>On cost, the honest framing is that the meaningful number is not the setup, it is the ongoing. You carry dedicated headcount in risk, compliance and underwriting, tooling you either build or buy for onboarding and monitoring, recurring audits and the commercial weight of the sponsor bank relationship. None of that scales down cleanly, which is why the economics only start to work at real volume. A registered payment facilitator is a payments company operating inside your software company, and it costs like one every month, not just at launch.</p>
+
+    <h2>The lighter path most platforms weigh first</h2>
+
+    <p>Before you commit to all of the above, know that there is a path that gives you most of the outcome without most of the load. Under PayFac-as-a-Service a provider is the registered payment facilitator. They hold the sponsor bank relationship, they carry the network registration and they own the heaviest compliance obligations. You still own the merchant experience, you still set your pricing and you still keep the bulk of the economics. What you do not do is become a regulated payments company overnight.</p>
+
+    <p>For most platforms that is the right first move, and often the permanent one. Direct registration earns its keep when you need control the managed model cannot give you, when your scale is genuinely large enough that the fixed cost divides down or when your vertical is one no provider's sponsor bank will support. Short of those reasons, the managed path captures what you actually want. The full comparison lives in <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a>. Work through it before you start sourcing sponsor banks, not after. Given how much this decision carries, if you want a second set of eyes on whether direct registration is right for your platform, that is what an <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a> is built for.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How do you become a payment facilitator?</h3>
+    <p>You secure a sponsor bank or acquirer relationship, register with the card networks, build an underwriting, onboarding, risk and compliance operation, achieve PCI compliance, then go live and operate it. Becoming a payment facilitator is standing up a program, not filing paperwork once.</p>
+
+    <h3>Is there a payment facilitator license you apply for?</h3>
+    <p>There is no single government license called a payment facilitator license. You become a registered payment facilitator by registering with Visa and Mastercard through a sponsor bank or acquirer, then meeting the network and compliance requirements on an ongoing basis.</p>
+
+    <h3>What are the steps to register as a payment facilitator?</h3>
+    <p>Confirm the model fits, secure a sponsor bank or acquirer relationship, register with the card networks, build the underwriting, onboarding, risk and monitoring operation, then achieve and maintain PCI compliance before you go live.</p>
+
+    <h3>How long does it take to become a payment facilitator?</h3>
+    <p>Plan in months, not weeks. Sourcing a sponsor bank, completing network registration and building the underwriting, risk and compliance operation take real time, and the operation continues indefinitely once you are live.</p>
+
+    <h3>Do you have to become a registered payment facilitator to embed payments?</h3>
+    <p>No. A referral model or PayFac-as-a-Service lets you embed payments and keep most of the economics while a provider carries the registration, sponsor bank relationship and compliance load. Most platforms should weigh that path before registering directly.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Register direct or go managed?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Pressure-test the decision before you start sourcing sponsor banks.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier compares all four models on your own numbers, so you can see what direct registration would actually add over PayFac-as-a-Service. Want a second set of eyes on the call? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/how-to-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Payment Orchestration for Platforms</title>
       <link>https://marginlabs.io/the-lab/payment-orchestration-for-platforms</link>
@@ -508,7 +601,7 @@
     <p>The most cited examples are Toast in restaurants, Shopify in commerce, ServiceTitan in the home and commercial trades, and Mindbody in wellness and fitness. Squarespace and Housecall Pro run the same playbook in their verticals. In every case payments came first and became a major revenue line, and lending or banking products were added on top of the payments base rather than launched cold.</p>
 
     <h3>Do you have to become a payment facilitator to do embedded finance?</h3>
-    <p>No. Most platforms start with a referral or a managed PayFac-as-a-Service model, where a provider carries the heaviest compliance and infrastructure load, and only move toward full payment facilitator status once the volume justifies the operating cost. The successful examples reached full ownership of the economics over years, not on day one. The right entry point depends on your volume, your stage and how much operational load you can carry.</p>
+    <p>No. Most platforms start with a referral or a managed PayFac-as-a-Service model, where a provider carries the heaviest compliance and infrastructure load, and only move toward <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">full payment facilitator status</a> once the volume justifies the operating cost. The successful examples reached full ownership of the economics over years, not on day one. The right entry point depends on your volume, your stage and how much operational load you can carry.</p>
 
     <h3>Should a vertical SaaS platform start with payments or lending?</h3>
     <p>Payments, almost always. Payments is the highest-frequency financial event in a customer's workflow, it produces the transaction data that underwrites everything else, and it funds and de-risks the later products. None of the well-known embedded finance winners led with lending. They earned the right to lend by first processing the payments that told them who was creditworthy.</p>
@@ -884,7 +977,7 @@
     <p>Most rates are negotiated once, at the volume you had when you signed, and then never revisited. Volume grows, the rate does not follow. At scale a blended flat rate almost always carries more margin for the provider than a well-structured interchange-plus rate would. You do not have to switch to fix this; you have to reopen it. More on the mechanics below.</p>
 
     <h3>4. Reserves and interchange: working capital and basis points</h3>
-    <p>Two smaller but real leaks. A reserve held against your account is working capital you cannot deploy, and it is often larger than your actual risk warrants once you have a track record to point to. And on the cost side, <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange optimization</a>, passing the right data on each transaction so cards qualify for lower rates, quietly lowers the true cost of every sale. Neither requires changing anything structural.</p>
+    <p>Two smaller but real leaks. A reserve held against your account is working capital you cannot deploy, and it is often larger than your actual risk warrants once you have a track record to point to. And on the cost side, <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange optimization</a>, passing the right data on each transaction so cards qualify for lower rates, quietly lowers the true cost of every sale. And where merchant appetite and card-brand rules allow it, <a href="https://marginlabs.io/the-lab/surcharging-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">passing card fees to merchants through surcharging</a> recovers cost from the other side. None of these requires changing anything structural.</p>
 
     <h2>How do you renegotiate your rate without switching?</h2>
 
@@ -1070,7 +1163,7 @@
 
     <blockquote class="pull-quote">Go-live is the middle of the project, not the end. The integration is the part you can schedule. Boarding, migration and activation are the parts that decide whether any of it was worth building.</blockquote>
 
-    <p>Related reading in the implementation cluster: <a href="https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant underwriting and KYB</a> (what you own at step 3), and <a href="https://marginlabs.io/the-lab/recurring-billing-and-the-payments-stack?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">recurring billing and the payments stack</a> (part of step 6). For operational support pressure-testing your own plan, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
+    <p>Related reading in the implementation cluster: <a href="https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">merchant underwriting and KYB</a> (what you own at step 3), <a href="https://marginlabs.io/the-lab/recurring-billing-and-the-payments-stack?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">recurring billing and the payments stack</a> (part of step 6) and <a href="https://marginlabs.io/the-lab/cross-border-embedded-payments-latam?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">cross-border embedded payments</a> for platforms rolling the same program out across geographies. For operational support pressure-testing your own plan, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
@@ -1361,7 +1454,7 @@
 
     <h2>Why this is a margin lever, not just a cost line</h2>
 
-    <p>Here is the part that makes interchange optimization a platform decision rather than a back-office chore. In a managed PayFac or full PayFac model you capture the spread between your cost of processing and the rate you charge sub-merchants. Interchange is the biggest piece of that cost. Lower it, and you have two choices, both good: keep the saving and widen your margin, or pass some of it to merchants as a better rate and use it for retention and activation. Either way the work pays for itself out of money that was previously leaking to no one's benefit. It sits in the same cost stack as everything else in <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments cost</a>, and it is one of the few items on that list you can actively shrink.</p>
+    <p>Here is the part that makes interchange optimization a platform decision rather than a back-office chore. In a managed PayFac or full PayFac model you capture the spread between your cost of processing and the rate you charge sub-merchants. Interchange is the biggest piece of that cost. Lower it, and you have two choices, both good: keep the saving and widen your margin, or pass some of it to merchants as a better rate and use it for retention and activation. Either way the work pays for itself out of money that was previously leaking to no one's benefit. It sits in the same cost stack as everything else in <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments cost</a>, and it is one of the few items on that list you can actively shrink. Where interchange optimization lowers the cost side, <a href="https://marginlabs.io/the-lab/surcharging-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">surcharging for software platforms</a> works the other end by passing card fees to merchants, and the two are worth weighing together as margin levers.</p>
 
     <h2>So is it worth the work for your platform?</h2>
 
@@ -1399,7 +1492,7 @@
 
     <p>Every embedded-finance product depends on two assets, and a payments program is what creates both. The first is the money flow: once funds move through your platform, holding, lending against or issuing on top of them is a much smaller step than starting cold. The second is the data. Payment volume is the single best underwriting signal a small business produces, better than a tax return and far more current. A platform that processes a merchant's payments can see revenue trend, seasonality and health in close to real time, which is exactly what a lender or an account provider needs and exactly what the merchant's existing bank does not have.</p>
 
-    <p>That is why sequence matters more than ambition. A platform that tries to launch lending before it owns the payment relationship is underwriting blind and competing with the merchant's bank without an advantage. A platform that has earned the payment relationship first is expanding from strength. If you are still working out the payments side of this, <a href="https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">build vs buy vs partner</a> covers how to run that program, and <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a> covers the economics underneath it. Embedded finance is the chapter after both.</p>
+    <p>That is why sequence matters more than ambition. A platform that tries to launch lending before it owns the payment relationship is underwriting blind and competing with the merchant's bank without an advantage. A platform that has earned the payment relationship first is expanding from strength, whether that means adding a financial product or <a href="https://marginlabs.io/the-lab/cross-border-embedded-payments-latam?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">expanding payments across borders</a> as the merchant base goes international. If you are still working out the payments side of this, <a href="https://marginlabs.io/the-lab/build-vs-buy-vs-partner-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">build vs buy vs partner</a> covers how to run that program, and <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how SaaS companies make money from payments</a> covers the economics underneath it, and <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">whether to refer payments or own the economics</a> is the model decision that sets it all up. Embedded finance is the chapter after both.</p>
 
     <blockquote class="pull-quote">Payments gives you the money flow and the data. Embedded finance is what you build on top of them. Skip the first and the rest has no foundation.</blockquote>
 
@@ -1579,7 +1672,7 @@
 
     <p>Lower volume and a light operational appetite point to <strong>partnering</strong>. The economics of building or buying do not clear the cost of the operation until you have enough volume to spread it over, and below that line the referral model keeps you out of a program you are not ready to run. Meaningful and growing volume, plus a willingness to own the merchant experience, point to <strong>buying</strong> a managed PayFac program, which is where most platforms maximize net margin without taking on a risk operation. Very large volume, a specific product or risk need a provider cannot serve, and a genuine appetite to run compliance and risk in-house point to <strong>building</strong>.</p>
 
-    <p>The deeper decision between the entry path and the managed path is the one most platforms actually wrestle with, and it has its own piece: <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISV for vertical SaaS</a> walks through the comparison with the volume thresholds and the migration math. If you are weighing the full build, <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">should you become a payment facilitator</a> is the honest version of that question. And once you have settled on buying, <a href="https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PFaaS provider strengths and weaknesses</a> is how you read the providers without getting sold.</p>
+    <p>The deeper decision between the entry path and the managed path is the one most platforms actually wrestle with, and it has its own piece: <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac vs ISV for vertical SaaS</a> walks through the comparison with the volume thresholds and the migration math. If you are weighing the full build, <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">should you become a payment facilitator</a> is the honest version of that question, and <a href="https://marginlabs.io/the-lab/cost-to-build-a-payment-gateway?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what it costs to build a payment gateway</a> puts real numbers against the infrastructure side of that path. And once you have settled on buying, <a href="https://marginlabs.io/the-lab/pfaas-provider-strengths-and-weaknesses?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PFaaS provider strengths and weaknesses</a> is how you read the providers without getting sold.</p>
 
     <h2>It is a path, not a one-time pick</h2>
 
@@ -3008,7 +3101,7 @@
 
     <blockquote class="pull-quote">The platforms that manage chargebacks well aren't the ones with the most sophisticated tooling. They're the ones who built a process before they needed it.</blockquote>
 
-    <p>Related: <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a> covers the operational responsibilities that come with the PFaaS model, including chargeback first-response obligations. For a full review of your payments operations posture, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
+    <p>Related: <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service</a> covers the operational responsibilities that come with the PFaaS model, including chargeback first-response obligations, and <a href="https://marginlabs.io/the-lab/surcharging-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">surcharging for software platforms</a> is the adjacent margin lever once your dispute posture is under control. For a full review of your payments operations posture, see the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement</a>.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
@@ -3204,7 +3297,7 @@
       <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-as-a-service</guid>
       <pubDate>Wed, 29 Apr 2026 14:00:00 +0000</pubDate>
       <description>PayFac-as-a-Service gives platforms PayFac-level economics without building compliance infrastructure. Here's how it works, what it costs, and when it's the right move.</description>
-      <content:encoded><![CDATA[<p>Payment Facilitation as a Service, also called Managed PayFac, PayFac Lite, or Embedded PayFac, has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Payment Facilitator</a> without building the compliance and operational infrastructure yourself.</p>
+      <content:encoded><![CDATA[<p>Payment Facilitation as a Service, also called Managed PayFac, PayFac Lite, Embedded PayFac, PayFac in a Box or white-label PayFac, has become one of the fastest-growing models in embedded payments. The premise is simple: you get most of the economic benefits of being a <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Payment Facilitator</a> without building the compliance and operational infrastructure yourself.</p>
 
     <p>The model exists because there's a wide gap between the economics of ISV Referral (5-25 basis points) and the cost of becoming a full registered PayFac ($500K+ implementation, 12-18 months to launch, dedicated compliance staff). Most platforms fit somewhere in the middle, they've outgrown referral economics but can't justify the investment of full facilitation. PayFac-as-a-Service fills that gap.</p>
 
@@ -3215,6 +3308,10 @@
     <p>You handle merchant-facing operations: onboarding, pricing, first-line support, and in some cases, underwriting decisions within pre-approved parameters. The PFaaS provider handles the regulatory layer: network reporting, reserve calculations, compliance monitoring, and the relationship with the acquiring bank.</p>
 
     <p>Merchants are boarded as your sub-merchants. You set the rate. You collect the spread between what you charge and what you pay the provider. The provider earns their margin from the processing cost you pay them, typically interchange plus 10 to 20 basis points, depending on volume and risk profile. Stripe Connect charges differently (a per-transaction platform fee of 0.25% + $0.25 on top of standard processing), while Finix and Tilled price on an interchange-plus model that can be more economical at scale.</p>
+
+    <h2>PayFac in a Box, White-Label PayFac, Digital PayFac: Same Model, Different Names</h2>
+
+    <p>The market has not settled on one name for this, and the labels get used loosely. "PayFac in a box" and "digital PayFac" usually describe the same managed arrangement covered here: a provider supplies the registration, sponsor bank and compliance layer, and you operate on top of it. "White-label PayFac" points at one specific dimension of it, how much the merchant-facing experience carries your brand instead of the provider's. Stripe Connect sits at the low end of white-label control, the merchant often sees Stripe. Finix, Tilled and Payrix sit at the high end, the merchant sees you. If a vendor pitches you "PayFac in a box," the questions that matter are the same ones in this piece: what economics you keep, what operations you own and whose brand the merchant sees.</p>
 
     <h2>The Economics</h2>
 
@@ -3275,7 +3372,7 @@
 
     <p>PFaaS gives you 60-80% of the economics at 20-30% of the cost and complexity. For most platforms between $30M and $200M in volume, that trade-off is correct.</p>
 
-    <p>The transition from PFaaS to full PayFac is possible but nontrivial. It typically involves migrating your merchant portfolio to a new processing infrastructure, securing your own sponsor bank, and building the compliance and reporting systems the PFaaS provider was handling. Plan for 12-18 months. For the broader decision framework on whether to make that move, see <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Should You Become a Payment Facilitator?</a></p>
+    <p>The transition from PFaaS to full PayFac is possible but nontrivial. It typically involves migrating your merchant portfolio to a new processing infrastructure, securing your own sponsor bank, and building the compliance and reporting systems the PFaaS provider was handling. Plan for 12-18 months. Much of that lift is infrastructure the managed model spared you, and <a href="https://marginlabs.io/the-lab/cost-to-build-a-payment-gateway?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">the cost of building your own gateway</a> is the clearest way to size it before you commit. For the broader decision framework on whether to make that move, see <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Should You Become a Payment Facilitator?</a></p>
 
     <h2>PayFac-as-a-Service vs Full PayFac vs ISV Referral: The Complete Comparison</h2>
 
@@ -3333,6 +3430,16 @@
     <div class="faq-item">
       <p class="faq-q">Is PayFac-as-a-Service the same as Stripe Connect?</p>
       <p class="faq-a">Stripe Connect is one implementation of the PayFac-as-a-Service model, but not the only one. Connect uses a per-transaction platform fee model (0.25 percent plus $0.25 on top of standard processing fees) and is optimized for fast time-to-market. Other PFaaS providers like Finix, Tilled, and Payrix offer interchange-plus pricing that can be more economical at scale, white-label control over the merchant experience, and longer integration timelines in exchange for that flexibility. Choosing between them depends on volume, vertical, branding requirements, and how much engineering capacity the platform can invest in the integration.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is "PayFac in a box" the same as PayFac-as-a-Service?</p>
+      <p class="faq-a">Mostly yes. "PayFac in a box," "digital PayFac" and "managed PayFac" are marketing labels for the same model: a registered Payment Facilitator supplies the card network registration, sponsor bank relationship and compliance framework, and your platform operates as a sub-facilitator on top of it. What matters is not the name but the economics you keep (typically 30 to 60 bps), the operations you take on (onboarding, pricing, first-line support, chargeback response) and whose brand the merchant sees.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is a white-label PayFac?</p>
+      <p class="faq-a">A white-label PayFac is a PayFac-as-a-Service arrangement where the merchant-facing experience, the onboarding, statements, dashboards and support, carries your brand rather than the provider's. It is the same underlying model as PFaaS. The "white-label" label just signals a high degree of brand control. Stripe Connect exposes more of the Stripe brand to merchants, while Finix, Tilled and Payrix are built to keep your platform front and center. If brand ownership of the payments experience matters, it is a primary selection criterion between providers.</p>
     </div>
 
     <blockquote class="pull-quote">PFaaS is the right model when referral economics feel like leaving money on the table, but full PayFac feels like building a payments company instead of a software company.</blockquote>
@@ -3428,7 +3535,7 @@
 
     <h2>What does a good vertical SaaS payments strategy look like?</h2>
 
-    <p>A good vertical SaaS payments strategy starts from where you sit today and where the volume actually is, not from the model that captures the most in theory. It picks the monetization model your stage and merchant base can support, makes payments default-on in the setup flow rather than a toggle buried in settings, and treats activation and back-book conversion as the real levers. The strongest strategies are a sequence, referral first if you are early then owning more of the economics as your volume and operational maturity grow, rather than a single leap to full PayFac. For the model comparison that anchors this decision, see <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>.</p>
+    <p>A good vertical SaaS payments strategy starts from where you sit today and where the volume actually is, not from the model that captures the most in theory. It picks the monetization model your stage and merchant base can support, makes payments default-on in the setup flow rather than a toggle buried in settings, and treats activation and back-book conversion as the real levers. The strongest strategies are a sequence, referral first if you are early then owning more of the economics as your volume and operational maturity grow, rather than a single leap to full PayFac. For the model comparison that anchors this decision, see <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>, and for platforms whose merchant base is moving into new markets, <a href="https://marginlabs.io/the-lab/cross-border-embedded-payments-latam?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">cross-border embedded payments (the LATAM view)</a> covers how the same strategy holds up across borders.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
@@ -4063,7 +4170,7 @@
 
     <p>Direct PayFac is in a different cost category entirely. The primary cost components are: registration fees with Visa and Mastercard ($5,000-$10,000), dedicated payments engineering (typically 2-4 full-time engineers for 18-24 months), legal and compliance infrastructure, underwriting and risk systems, and reserves capital.</p>
 
-    <p>When you add it all up, internal labor, systems, legal, compliance, and reserve requirements, most platforms building a Direct PayFac from scratch spend $500,000 to $2M before they reach steady-state operations.</p>
+    <p>When you add it all up, internal labor, systems, legal, compliance, and reserve requirements, most platforms building a Direct PayFac from scratch spend $500,000 to $2M before they reach steady-state operations. The gateway layer alone is a meaningful slice of that, and <a href="https://marginlabs.io/the-lab/cost-to-build-a-payment-gateway?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what it costs to build a payment gateway</a> breaks that piece down on its own.</p>
 
     <p class="cost-label">Ongoing Costs</p>
 
