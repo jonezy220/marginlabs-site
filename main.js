@@ -414,14 +414,49 @@
   //   • qsc_click  — additional key event for Quick Start Call intent, kept
   //                  distinct so the "intent to book" funnel step stays clean.
   document.addEventListener('click', function (e) {
-    if (typeof gtag === 'undefined') return;
     var el = e.target.closest('[data-analytics]');
     if (!el) return;
     var token = el.getAttribute('data-analytics');
-    gtag('event', 'cta_click', { cta: token, link_location: location.pathname });
-    if (/consult|qsc/.test(token)) {
-      gtag('event', 'qsc_click', { link_location: location.pathname });
+    var ctaPayload = { cta: token, link_location: location.pathname };
+    var isQsc = /consult|qsc/.test(token);
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'cta_click', ctaPayload);
+      if (isQsc) gtag('event', 'qsc_click', { link_location: location.pathname });
     }
+    if (window.posthog && window.posthog.capture) {
+      window.posthog.capture('cta_click', ctaPayload);
+      if (isQsc) window.posthog.capture('qsc_click', { link_location: location.pathname });
+    }
+  });
+
+  // ── UNIVERSAL LINK CLICK TRACKING (GA4 + PostHog) ──
+  // One delegated listener instruments EVERY link that isn't already a tagged
+  // CTA above: the Lab "Start here" pillar cards, in-article links, lab cards,
+  // footer and back links, on every page and every future article, with zero
+  // per-link tagging. `link_section` segments them (e.g. pillar vs article-body)
+  // and `link_url` identifies the exact destination.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    if (a.closest('[data-analytics]')) return;            // already tracked as cta_click
+    var href = a.getAttribute('href') || '';
+    if (!href || href.charAt(0) === '#' || href.indexOf('javascript:') === 0) return;
+    var section = a.closest('.lab-pillars') ? 'pillar'
+                : a.closest('.article-body') ? 'article-body'
+                : a.closest('.lab-grid') ? 'lab-card'
+                : a.closest('.site-footer') ? 'footer'
+                : a.closest('.site-nav, .nav-mobile') ? 'nav'
+                : 'other';
+    var external = /^https?:\/\//.test(href) && href.indexOf(location.host) === -1;
+    var payload = {
+      link_url: href,
+      link_text: (a.textContent || '').trim().slice(0, 100),
+      link_section: section,
+      is_external: external,
+      link_location: location.pathname
+    };
+    if (typeof gtag !== 'undefined') gtag('event', 'link_click', payload);
+    if (window.posthog && window.posthog.capture) window.posthog.capture('link_click', payload);
   });
 
   // ── HOMEPAGE: latest Lab articles (auto-pull) ─────
