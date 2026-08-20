@@ -45,6 +45,16 @@
       "permanent": true
     },
     {
+      "source": "/go/payfac-cost",
+      "destination": "https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=payfac-cost",
+      "permanent": false
+    },
+    {
+      "source": "/go/payfac-cost-co",
+      "destination": "https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=payfac-cost",
+      "permanent": false
+    },
+    {
       "source": "/go/payfac-volume",
       "destination": "https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=payfac-volume",
       "permanent": false

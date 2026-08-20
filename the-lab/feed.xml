@@ -8,9 +8,99 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 07 Aug 2026 15:54:12 +0000</lastBuildDate>
-    <pubDate>Fri, 07 Aug 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 20 Aug 2026 11:12:54 +0000</lastBuildDate>
+    <pubDate>Thu, 20 Aug 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>The True Cost of Becoming a PayFac</title>
+      <link>https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac</guid>
+      <pubDate>Thu, 20 Aug 2026 14:00:00 +0000</pubDate>
+      <description>What does it really cost to become a PayFac? The registration and build fees are the small part. The loss, compliance and headcount costs that show up every year after are what actually decide it.</description>
+      <content:encoded><![CDATA[<p><strong>The registration fees you can Google are the cheap part. For most vertical SaaS platforms the number that actually decides whether to become a PayFac is not the build cost, it is the loss and compliance cost that shows up every year after, and it does not go away when the project ships.</strong></p>
+
+    <p>The whole industry sells <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">becoming a PayFac</a> like it is the finish line. You own the full stack, you keep every basis point, you control the experience. The pitch is real and the extra economics are real. What gets left out is that you are standing up a payments company inside your software company, and a payments company has a cost structure that a software company does not.</p>
+
+    <p>Here is the honest version of the bill.</p>
+
+    <h2>What does it actually cost to become a PayFac?</h2>
+
+    <p>There is no single number, and anyone who gives you one is selling something. But the costs fall into three buckets, and they get bigger and less visible as you go down the list. The setup costs are what people quote. The operating costs are what people underestimate. The risk costs are what end the projects that fail.</p>
+
+    <h2>The visible costs: registration, PCI and the build</h2>
+
+    <p>These are the ones that make it into the business case, because they are easy to quote.</p>
+
+    <p>You register with the card networks as a payment facilitator. Visa and Mastercard both charge for that, and once you add the legal work and the program build to stand it up you are into the tens of thousands before you process a dollar.</p>
+
+    <p>You carry <a href="https://marginlabs.io/the-lab/pci-compliance-for-saas-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PCI DSS</a> at the top level. Not the self-assessment questionnaire a normal software company fills out, the full Level 1 program with an annual audit, the tooling and the people to keep you inside it. At any real scale that runs into six figures a year, and it is recurring, not one time.</p>
+
+    <p>You build or buy the technical stack. Onboarding, underwriting, ledgering, payouts, reporting, dispute handling. If you build the gateway piece yourself the <a href="https://marginlabs.io/the-lab/cost-to-build-a-payment-gateway?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">cost to build a payment gateway</a> alone is a project most platforms underestimate, and if you buy it you are paying for it forever.</p>
+
+    <p>Add these up and the number is large but knowable. This is the part the vendor deck is honest about, because it is the part that makes owning the stack look like a one-time investment. It is not.</p>
+
+    <h2>The invisible costs: loss, reserves and funding</h2>
+
+    <p>This is where the model quietly changes shape, because you are no longer paying for software, you are pricing risk.</p>
+
+    <p>You need a sponsor bank or acquirer, and they price the risk you are taking on. The weaker or more concentrated your merchant mix, the more that costs, and the more they push back onto you in reserves and guarantees.</p>
+
+    <p>You hold capital in reserve against merchant losses, and you carry the loss when a sub-merchant fails, refunds a book of orders it cannot cover or turns out to be fraud. Those basis points you took the whole model on are gross. Underneath sit loss provision, rolling reserves on the weaker part of the book and settlement funding you now have to manage. A handful of bad merchants can erase a year of the incremental margin, and unlike the setup costs you cannot predict which year it lands in.</p>
+
+    <p>That is the difference between a software P&amp;L and a payments P&amp;L. A software company sells a product and books the margin. A PayFac takes the margin and posts a liability against it, and the liability line has to go into the model before the revenue line or the model is wrong.</p>
+
+    <blockquote class="pull-quote">The liability line has to go into the model before the revenue line, or the model is wrong.</blockquote>
+
+    <h2>The cost nobody models: the team you never stop paying</h2>
+
+    <p>Underwriting, risk, compliance, disputes and merchant support. Becoming a PayFac means hiring for all of it, and that team does not go away when volume is flat, so it is a fixed cost you are now carrying through every season and every downturn.</p>
+
+    <p>And here is the part that gets lost. Every one of those hires, and every hour your existing engineers and product people spend on payments risk instead of the product, is an hour not spent on the thing your customers actually pay you for. Your payment volume grows when your customers grow, so the revenue was never going to come from owning more of the stack. It comes from a product they grow their business with. The PayFac build competes directly with that, and it competes for your best people.</p>
+
+    <h2>When does the math actually flip?</h2>
+
+    <p>This is the real question, and the answer is not the one most decks give.</p>
+
+    <p>It is not absolute volume. A big book of clean similar merchants can sit under a <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">managed model</a> forever and never justify owning the loss. The model flips when the risk profile of your portfolio changes: when the merchant mix concentrates, or the risky tail grows enough that you are actively pricing and reserving against real loss instead of modeling a theoretical one. Volume is a bad proxy for that, and <a href="https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how much volume you have</a> is the wrong first question.</p>
+
+    <p>The uncomfortable part is that the point where the economics of owning it start to work is usually the exact point where a software company is least equipped to run it, because now the loss is real and the controls to contain it are exactly the muscle you have not built.</p>
+
+    <h2>PayFac vs a managed model: the fully loaded comparison</h2>
+
+    <p>Put the two side by side on a fully loaded basis and the picture changes.</p>
+
+    <p>Full PayFac captures the most economics per transaction and costs the most to run, most of it in fixed risk and compliance overhead that does not flex with volume. A managed model, <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV referral or PayFac as a service</a>, captures less per transaction and carries almost none of that overhead, because the provider holds the registration, the PCI burden, the reserves and the loss.</p>
+
+    <p>For most vertical SaaS platforms the managed model is not the on-ramp to owning it all. It is the destination. You keep the merchant relationship, you keep the pricing, you keep most of the economics and you keep your team pointed at the product instead of a compliance org. Full PayFac earns its keep at real scale, or when you need control no provider can give you. Short of that, the 20 or 30 extra basis points cost more to capture than they are worth.</p>
+
+    <p>That is the calculation. Not the setup fee, the fully loaded cost of running a payments company you did not set out to build.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How much does it cost to become a PayFac?</h3>
+    <p>Setup runs from the tens of thousands into six figures for network registration, a Level 1 PCI program and the technical build. But the setup cost is the small part. The recurring cost of compliance, reserves, loss provision and a dedicated risk and support team is what actually determines whether it pays off, and that cost lands every year, not once.</p>
+
+    <h3>Is becoming a PayFac worth it?</h3>
+    <p>For a minority of platforms, yes. At real scale, or where you need control no provider offers, owning the stack pays. For most vertical SaaS platforms the fully loaded cost of the risk and compliance overhead is higher than the extra basis points you capture, and a <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">managed model</a> keeps more of the economics net of cost.</p>
+
+    <h3>What is the biggest hidden cost of becoming a PayFac?</h3>
+    <p>Loss. You carry the liability when a sub-merchant fails, and you reserve capital against it. The basis points are gross, and the loss line underneath them is what turns a good-looking model into a bad one. Second to that is the fixed cost of the risk and compliance team you now pay in every season.</p>
+
+    <h3>Does more payment volume mean I should become a PayFac?</h3>
+    <p>Not on its own. The decision turns on the risk profile of your portfolio, not the size of it. A large book of low-risk similar merchants can stay on a managed model indefinitely. See <a href="https://marginlabs.io/the-lab/how-much-volume-to-become-a-payfac?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how much volume it takes to become a PayFac</a> and <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">should you become a payment facilitator</a>.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">What would it actually cost you?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Put a real number on PayFac vs managed for your platform.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call sizes the fully loaded PayFac vs managed comparison against your actual merchant mix, so the decision runs on your economics and not a vendor's deck.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>How to Become a Payment Facilitator</title>
       <link>https://marginlabs.io/the-lab/how-to-become-a-payment-facilitator</link>
