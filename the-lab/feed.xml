@@ -8,9 +8,98 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 20 Aug 2026 11:12:54 +0000</lastBuildDate>
-    <pubDate>Thu, 20 Aug 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Wed, 26 Aug 2026 16:38:26 +0000</lastBuildDate>
+    <pubDate>Wed, 26 Aug 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Embedded Banking for Vertical SaaS</title>
+      <link>https://marginlabs.io/the-lab/embedded-banking-for-vertical-saas</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-banking-for-vertical-saas</guid>
+      <pubDate>Wed, 26 Aug 2026 14:00:00 +0000</pubDate>
+      <description>Embedded banking is the stickiest line in embedded finance and the one platforms most often build for the wrong reason. What holding your customers' money actually requires, and when it is worth it.</description>
+      <content:encoded><![CDATA[<p><strong>Embedded banking, holding your customers' money in accounts on your platform, is the stickiest line in embedded finance and the one platforms most often build for the wrong reason. The reason to do it is not the deposit float. It is that once a business's money lives with you, so does its whole financial operation, and that is the hardest thing in software for a customer to walk away from.</strong></p>
+
+    <p>Payments is only the first line. Once a platform has real adoption and money is already moving through it, holding that money is the natural next step. It is one of the expansion lines that turns a software company into the center of a customer's financial life, and of all of them it is the one that locks the customer in hardest. It is also the one that carries the most operational weight, so it rewards platforms that do it deliberately and punishes the ones that do it for the wrong reason.</p>
+
+    <h2>What is embedded banking?</h2>
+
+    <p>Embedded banking is giving your customers a place to hold and move money inside your software, under your brand. A balance, an operating account, bill pay, payouts, the money side of running their business, living where they already work instead of at a separate bank down the street.</p>
+
+    <p>The important part is what you are not. You are not becoming a bank. A chartered partner bank holds the deposits and carries the FDIC insurance, a banking-as-a-service provider supplies the rails and the compliance tooling, and you supply the experience and the relationship. You are the front door, not the vault.</p>
+
+    <p>Put it next to the other lines and the role is clear. Embedded payments moves money in. <a href="https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Embedded lending</a> advances money against future sales. Embedded banking is where the money sits and flows in between. It is the account, not the transaction.</p>
+
+    <h2>Why do platforms get embedded banking wrong?</h2>
+
+    <p>They build it for the float. The neobank playbook says open deposit accounts, earn interest on the balances, book a revenue line. At platform scale that float is thin, it moves with rates, and on its own it is nowhere near enough to justify the weight of holding money. Chase the float and embedded banking looks like a bad business, because as a standalone revenue line it usually is.</p>
+
+    <p>The float is a byproduct. It is not the point, and a platform that builds the whole program around it has aimed at the smallest prize on the table.</p>
+
+    <h2>Why is holding money the stickiest line?</h2>
+
+    <p>Because money sitting in your platform is money that runs through your platform. When a business keeps its balance with you, so does its cash flow, its bill pay and the timing of every dollar in and out. You stop being a tool the business opens in the morning and become the account it operates from all day.</p>
+
+    <blockquote class="pull-quote">A business will switch software over a feature or a price. It will not move the account it runs its business from for either.</blockquote>
+
+    <p>That changes the switching math entirely. A business will move off your software over a missing feature or a better price. It will not move its operating account for either, because moving where your money lives is slow, risky and genuinely painful in a way that swapping a tool never is. Deposits are the deepest moat in financial services for exactly this reason, and a platform that holds the operating account inherits that moat. It also earns the right to everything above it, because now you can <a href="https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">lend against the balance</a>, spend from it with a card and see the customer's whole financial picture instead of a slice.</p>
+
+    <h2>What does holding money actually require?</h2>
+
+    <p>This is where the platforms that did it for the float get hurt, because holding money is real weight and most of it never makes the demo.</p>
+
+    <p>You are now responsible for the safeguarding and custody of customer funds, for knowing your customers and their customers through KYC and KYB, for monitoring transactions for fraud and money laundering, for reconciling every cent every day and for handling the disputes and errors that come with moving money. This is banking-grade compliance and operations, and it is unforgiving in a way software operations are not. A reconciliation break is not a bug you fix next sprint. It is missing money, and someone has to answer for it that day.</p>
+
+    <p>Your partner bank and your BaaS provider carry the charter and a large share of the regulatory obligation, which is the entire reason to work through them. But the experience, the support and the operational discipline are yours, and depending on how the funds actually flow, money-transmission and licensing questions can land on you rather than the bank. That is not a detail to sort out later. It gets settled with your BaaS partner and counsel before you build, because it shapes what you can offer and what you are on the hook for.</p>
+
+    <h2>How do platforms build embedded banking?</h2>
+
+    <p>There is a continuum, the same own-versus-rent question as every other embedded finance line, running from least weight and least economics to most of both.</p>
+
+    <p><strong>Ride a BaaS provider.</strong> The provider and its sponsor bank hold the charter, the deposits and the heaviest compliance load, and you plug in through a single integration. Fastest, lowest risk, lowest ceiling and the right first move for almost every platform because it lets you prove customers will actually bank with you before you take on real weight.</p>
+
+    <p><strong>Go direct to a sponsor bank.</strong> You work straight with a partner bank and own more of the program and the economics, taking on more of the compliance and operational build in return. More control, more margin, more weight.</p>
+
+    <p><strong>Own the charter.</strong> A vanishingly small number of platforms at genuine scale pursue their own bank charter or buy one. It is the deep end, a multiyear regulatory undertaking, and it is not where you start or where most platforms should ever go.</p>
+
+    <p>Which rung is right depends on your scale, on how central money movement already is to your customers' work and on whether owning more of the stack earns more than it costs to carry. Most platforms get everything they actually want on the first rung.</p>
+
+    <h2>When is embedded banking worth building?</h2>
+
+    <p>When your customers already move real money through your platform and holding the balance would make you the account they operate from. That is the test. If <a href="https://marginlabs.io/the-lab/should-your-platform-monetize-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments</a> and payouts already run through you, the money is halfway to living with you anyway, and giving it a place to sit turns a series of transactions into a relationship.</p>
+
+    <p>It is not worth it for the float, and it is not worth it if your customers would never actually run their business from an account with you, because then you have taken on all of the weight for a balance that just parks. Like every expansion line, this works on top of a platform that already has payments adoption and sticky customers, so it is the same sequencing logic behind <a href="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance for vertical SaaS</a>. For a sense of what good expansion looks like across the category, the <a href="https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance examples</a> are worth a read.</p>
+
+    <p>Do it for the float and it is not worth the weight. Do it to become the account the business runs on, and everything you might add later, the lending, the cards, the full financial picture, is already sitting on top of money that is not going anywhere.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is embedded banking?</h3>
+    <p>Embedded banking is letting your customers hold and move money in accounts inside your software, under your brand. A chartered partner bank holds the deposits and a banking-as-a-service provider supplies the rails, so the platform delivers the experience without becoming a bank itself.</p>
+
+    <h3>Is embedded banking just about earning interest on deposits?</h3>
+    <p>No, and building the program around the float is the common mistake. At platform scale the float is thin and rate-dependent. The real value is that holding a customer's money makes you the account they operate from, which is the stickiest position in their stack and the foundation for lending and cards.</p>
+
+    <h3>Does a vertical SaaS platform need a bank charter to offer banking?</h3>
+    <p>Almost never. Most platforms ride a banking-as-a-service provider whose sponsor bank holds the charter, the deposits and the heaviest compliance load. Owning a charter is a multiyear regulatory undertaking that only a handful of platforms at real scale should ever consider.</p>
+
+    <h3>What is the hardest part of embedded banking?</h3>
+    <p>The weight that never makes the demo: safeguarding and custody of funds, KYC and KYB, transaction monitoring for fraud and money laundering, daily reconciliation and dispute handling. It is banking-grade operations, and a reconciliation break is missing money, not a bug for next sprint.</p>
+
+    <h3>When should a platform add embedded banking?</h3>
+    <p>Once it has payments adoption and sticky customers, and only when customers already move real money through the platform so holding the balance would make you their operating account. If they would never actually bank with you, the weight is not worth the parked balance.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Is banking your next line?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Add banking to become the account, not chase the float.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Holding money is the stickiest line in embedded finance and the heaviest to carry. Before you build, it is worth pressure-testing whether your customers would actually bank with you and which rung of the continuum fits. A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-banking-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>The True Cost of Becoming a PayFac</title>
       <link>https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac</link>
