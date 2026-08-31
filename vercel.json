@@ -85,6 +85,16 @@
       "permanent": false
     },
     {
+      "source": "/go/card-issuing-co",
+      "destination": "https://marginlabs.io/the-lab/embedded-card-issuing-for-vertical-saas?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=embedded-card-issuing",
+      "permanent": false
+    },
+    {
+      "source": "/go/card-issuing",
+      "destination": "https://marginlabs.io/the-lab/embedded-card-issuing-for-vertical-saas?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=embedded-card-issuing",
+      "permanent": false
+    },
+    {
       "source": "/go/roadmap",
       "destination": "https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=implementation-roadmap",
       "permanent": false
