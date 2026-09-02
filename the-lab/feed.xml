@@ -8,9 +8,92 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 31 Aug 2026 04:15:01 +0000</lastBuildDate>
-    <pubDate>Mon, 31 Aug 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Wed, 02 Sep 2026 03:29:06 +0000</lastBuildDate>
+    <pubDate>Wed, 02 Sep 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Embedded Insurance for Vertical SaaS</title>
+      <link>https://marginlabs.io/the-lab/embedded-insurance-for-vertical-saas</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-insurance-for-vertical-saas</guid>
+      <pubDate>Wed, 02 Sep 2026 14:00:00 +0000</pubDate>
+      <description>Embedded insurance is one of the highest-margin expansion lines a vertical SaaS platform can add after payments. How it works, why the margins are so high and when it is worth building.</description>
+      <content:encoded><![CDATA[<p><strong>Embedded insurance is one of the highest-margin expansion lines a vertical SaaS platform can add after payments, and most platforms never do. It works because the platform already sits on the risk data an insurer needs and the moment of sale an insurer wants, which means it can price and place coverage a generic carrier cannot.</strong></p>
+
+    <p>Payments is only the first line. Once a platform has real adoption and the volume is running through it, it can start doing more for its customers and the businesses they serve. That is where the expansion lines come in, lending, banking, insurance. Each one does more for the customer and opens a new revenue line for the platform, and insurance is one of the most interesting of them because it does two things at once. It gives your customers and their customers real protection, and it carries margin that payments cannot match.</p>
+
+    <h2>What is embedded insurance?</h2>
+
+    <p>Embedded insurance is offering a relevant insurance product inside your software, at the moment it is obviously needed, using data the platform already has. It is not a banner ad for a third-party insurer and it is not a link buried in a help center. It is a policy placed in the workflow, priced and presented where the need actually shows up.</p>
+
+    <p>Put it next to the other embedded finance lines and the difference is clean. Embedded payments moves money. <a href="https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Embedded lending</a> advances money against future sales. Embedded insurance prices risk. And of the three, insurance is the one where the platform's data is worth the most, because pricing risk accurately is the entire business of insurance and the platform can often do it better than the carrier.</p>
+
+    <h2>Why is embedded insurance an expansion play and not a starting point?</h2>
+
+    <p>Because it depends on everything payments builds first. You cannot price risk on customers you do not understand, and you do not understand them until they are running real volume through your platform and you can see how they operate. Payments is what earns you that view. It generates the activity, the history and the data, and it makes you sticky enough that the customer takes the next product from you rather than shopping for it.</p>
+
+    <p>So the sequence matters. Payments first, then adoption, then the expansion lines once you actually understand the book. A platform that bolts insurance on before it has that foundation is selling a product it cannot price and cannot service, which is the fast way to lose money on a high-margin line. This is the same sequencing logic behind <a href="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance for vertical SaaS</a> generally, and it is worth getting right.</p>
+
+    <h2>Why are vertical SaaS platforms good at insurance?</h2>
+
+    <p>Because they see the thing being insured and the behavior around it. A generic carrier prices off broad actuarial tables and a form the applicant fills out. A vertical platform prices off what is actually happening. A field service platform can see the equipment on every job and the crews running it. A logistics platform sees the routes behind each shipment and the claims that follow. A property platform sees the units and how fast they turn over.</p>
+
+    <p>That is a real underwriting edge, and underwriting edge is the whole game in insurance. When you can price risk more accurately than the market, you can either win business the carrier would decline or make margin on business the carrier misprices. Either way the advantage compounds, and it is an advantage the platform already owns by virtue of running the workflow. It is the same "you own the context so you own the economics" logic that makes embedded payments work, pointed at a higher-margin product.</p>
+
+    <h2>Why is the margin so high?</h2>
+
+    <p>Because of how the two products monetize. Payments monetizes at basis points on volume, and those basis points are thin and getting thinner. Insurance monetizes as commission or a share of underwriting profit on a product priced off risk, and when the platform's data prices that risk better than the market, that share is structural rather than promotional.</p>
+
+    <p>That is why, for the platforms that have built it well, insurance can end up a bigger and far higher-margin line than the payments that got them into embedded finance in the first place. The payments got them the data and the distribution. The insurance is where the data and the distribution actually pay.</p>
+
+    <h2>How do platforms build embedded insurance?</h2>
+
+    <p>There is a continuum, and it maps to the same own-versus-rent question as every other embedded finance line. It runs from least risk and least economics to most of both.</p>
+
+    <p><strong>Agency or referral.</strong> You place another carrier's policies and earn a commission. The carrier holds the product, the underwriting and the risk. This is the lowest-effort entry point and the lowest ceiling, and it is the right first step for most platforms because it lets you learn whether your customers will actually buy before you commit real weight.</p>
+
+    <p><strong>Managing general agent.</strong> You underwrite on a carrier's paper, using your data and your rules, and you take a larger share of the economics for taking on more of the work. This is where the platform's data edge starts to really pay, because you are the one pricing the risk. It also carries more operational and regulatory weight.</p>
+
+    <p><strong>Self-underwriting.</strong> You own the most economics and you carry the most, including real balance sheet and regulatory obligations. This is the deep end. A handful of platforms with genuine scale and a genuine data advantage get here and it becomes one of their best businesses, but it is not where you start and it is not where most platforms should end up.</p>
+
+    <p>Which rung is right depends on your scale, your data and your appetite, and on whether you actually need to own the risk to capture the value or whether you are just adding cost. Most platforms capture most of what they want on the lighter rungs. Insurance also has its own licensing requirements that turn on how much of the product you hold, so that question gets settled with counsel before you build, not after.</p>
+
+    <h2>When is embedded insurance worth building?</h2>
+
+    <p>When the thing your customers do carries a real, recurring, mispriced risk that you can see and a generic carrier cannot. That is the test. If there is genuine risk in the workflow and you have the data to price it better than the market, insurance can become the highest-margin thing you attach. If there is no real risk in what your customers do, there is no insurance line, and forcing one is worse than skipping it.</p>
+
+    <p>It is also worth being honest that this is an expansion move, not a rescue. It works on top of a platform that already has payments adoption and sticky customers. If you are not there yet, the work is to get there first. For a sense of what good expansion looks like across the category, the <a href="https://marginlabs.io/the-lab/embedded-finance-examples-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance examples</a> are a useful reference, and the <a href="https://marginlabs.io/the-lab/should-your-platform-monetize-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">readiness question</a> is worth answering honestly before you add any new line.</p>
+
+    <p>The platforms that figure this out end up with an insurance line bigger and higher margin than the processing that got them there. The reason more do not is that they still think of themselves as software companies. In their niche they are the best-positioned underwriter in the market, and they are leaving it on the table.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is embedded insurance?</h3>
+    <p>Embedded insurance is a relevant insurance product offered inside a software platform, at the moment of need, priced using data the platform already has. It is a policy placed in the workflow rather than a referral out to a third-party insurer.</p>
+
+    <h3>How do vertical SaaS platforms make money from embedded insurance?</h3>
+    <p>Through commission on the policies placed, or a share of underwriting profit when the platform prices the risk itself. Because the platform's data prices risk more accurately than a generic carrier, that share is structural, which is why insurance can out-earn the payments that preceded it.</p>
+
+    <h3>Is embedded insurance more profitable than embedded payments?</h3>
+    <p>Often yes, per dollar. Payments monetizes at thin basis points on volume. Insurance monetizes on risk priced off the platform's data, so for a platform with a real underwriting edge the margin is materially higher. It is an expansion line though, not a starting point.</p>
+
+    <h3>Do you need a license to offer embedded insurance?</h3>
+    <p>It depends on how much of the product you hold. Agency or referral is the lightest and usually rides a licensed carrier. Acting as a managing general agent or self-underwriting carries real licensing and regulatory obligations. Settle the structure with counsel before you build.</p>
+
+    <h3>When should a platform add embedded insurance?</h3>
+    <p>Once it has payments adoption and sticky customers, and only where the customers' work carries a real, recurring, mispriced risk the platform can see. No genuine risk in the workflow means no insurance line.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Is insurance your next line?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Add insurance where the risk is real, not because it looked high-margin.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Insurance is the highest-margin line in the stack when there is genuine, mispriced risk in your customers' workflow, and a cost with no payoff when there is not. Before you build, it is worth pressure-testing whether the risk is real and which rung of the continuum fits. A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-insurance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Embedded Card Issuing for Vertical SaaS</title>
       <link>https://marginlabs.io/the-lab/embedded-card-issuing-for-vertical-saas</link>

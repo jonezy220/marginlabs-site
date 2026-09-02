@@ -95,6 +95,16 @@
       "permanent": false
     },
     {
+      "source": "/go/insurance-co",
+      "destination": "https://marginlabs.io/the-lab/embedded-insurance-for-vertical-saas?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=embedded-insurance",
+      "permanent": false
+    },
+    {
+      "source": "/go/insurance",
+      "destination": "https://marginlabs.io/the-lab/embedded-insurance-for-vertical-saas?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=embedded-insurance",
+      "permanent": false
+    },
+    {
       "source": "/go/roadmap",
       "destination": "https://marginlabs.io/the-lab/embedded-payments-implementation-roadmap?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=implementation-roadmap",
       "permanent": false
