@@ -342,68 +342,95 @@
   }
 
   // ── LAB ARTICLE EMAIL CAPTURE ─────────────────────
-  // Injected on Lab article pages only (not the index). Captures the
-  // article traffic that previously left no trace: contact -> Brevo (list 2,
-  // SOURCE "Lab Subscriber"), and fires GA4 generate_lead (a key event).
+  // Injected on Lab article pages only (not the index). TWO placements:
+  //   • mid  — inserted before an early section H2 so readers who never reach
+  //            the end still get one (catches non-finishers).
+  //   • end  — after the article body (original position).
+  // Both -> Brevo list 12 "Lab Subscribers", fire GA4 generate_lead, and tag
+  // LAB_PLACEMENT so we can see which position converts. No modal, no gate,
+  // no interstitial — inline only, to protect rank (SEO is the priority).
   (function () {
     var path = location.pathname.replace(/\/+$/, '');
     var isLabArticle = /^\/the-lab\/.+/.test(path) && !/\/index(\.html)?$/.test(path);
     var wrap = document.querySelector('.article-wrap');
     if (!isLabArticle || !wrap) return;
-
     var slug = path.split('/').pop();
-    var block = document.createElement('div');
-    block.style.cssText = 'max-width:720px;margin:0 auto;padding:0 24px;';
-    block.innerHTML =
-      '<div style="border:1px solid rgba(200,130,60,0.28);border-radius:4px;background:rgba(200,130,60,0.05);padding:28px 28px 30px;margin:8px 0 8px;">' +
-        '<div style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:10px;">The Lab</div>' +
-        '<div style="font-size:19px;font-weight:600;letter-spacing:-0.02em;color:#F0EBE4;margin-bottom:8px;line-height:1.3;">Get new breakdowns like this</div>' +
-        '<p style="font-size:14px;font-weight:300;color:rgba(240,235,228,0.55);line-height:1.7;margin:0 0 18px;">Operator-level thinking on embedded payments for vertical SaaS. No fluff, no sales spam, unsubscribe anytime.</p>' +
-        '<form id="labCaptureForm" novalidate style="display:flex;gap:10px;flex-wrap:wrap;">' +
-          '<input id="labCaptureEmail" type="email" required autocomplete="email" placeholder="you@company.com" aria-label="Email address" style="flex:1;min-width:220px;background:#0d0d0d;border:1px solid rgba(240,235,228,0.18);border-radius:2px;color:#F0EBE4;font-family:inherit;font-size:14px;padding:12px 14px;">' +
-          '<button id="labCaptureBtn" type="submit" style="background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:\'DM Mono\',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:12px 24px;cursor:pointer;white-space:nowrap;">Subscribe &rarr;</button>' +
-        '</form>' +
-        '<div id="labCaptureSuccess" style="display:none;font-size:14px;color:#C8823C;margin-top:14px;">Thanks, you are on the list. First breakdown lands soon.</div>' +
-      '</div>';
-    wrap.insertAdjacentElement('afterend', block);
 
-    var form = block.querySelector('#labCaptureForm');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var input = block.querySelector('#labCaptureEmail');
-      var btn = block.querySelector('#labCaptureBtn');
-      var email = (input.value || '').trim();
-      if (!email || email.indexOf('@') < 1) { input.focus(); return; }
+    function buildBlock(placement) {
+      var compact = placement === 'mid';
+      var block = document.createElement('div');
+      // mid sits inside the already-constrained .article-body (margin only);
+      // end sits after .article-wrap in the full-width page (needs the column).
+      block.style.cssText = compact ? 'margin:34px 0;' : 'max-width:720px;margin:0 auto;padding:0 24px;';
+      block.innerHTML =
+        '<div style="border:1px solid rgba(200,130,60,0.28);border-radius:4px;background:rgba(200,130,60,0.05);padding:' + (compact ? '22px 24px 24px' : '28px 28px 30px') + ';margin:8px 0 8px;">' +
+          '<div style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:10px;">The Lab</div>' +
+          '<div style="font-size:' + (compact ? '17px' : '19px') + ';font-weight:600;letter-spacing:-0.02em;color:#F0EBE4;margin-bottom:8px;line-height:1.3;">Get new breakdowns like this</div>' +
+          '<p style="font-size:14px;font-weight:300;color:rgba(240,235,228,0.55);line-height:1.7;margin:0 0 18px;">Operator-level thinking on embedded payments for vertical SaaS. No fluff, no sales spam, unsubscribe anytime.</p>' +
+          '<form class="lab-cap-form" novalidate style="display:flex;gap:10px;flex-wrap:wrap;">' +
+            '<input class="lab-cap-email" type="email" required autocomplete="email" placeholder="you@company.com" aria-label="Email address" style="flex:1;min-width:220px;background:#0d0d0d;border:1px solid rgba(240,235,228,0.18);border-radius:2px;color:#F0EBE4;font-family:inherit;font-size:14px;padding:12px 14px;">' +
+            '<button class="lab-cap-btn" type="submit" style="background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:\'DM Mono\',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:12px 24px;cursor:pointer;white-space:nowrap;">Subscribe &rarr;</button>' +
+          '</form>' +
+          '<div class="lab-cap-success" style="display:none;font-size:14px;color:#C8823C;margin-top:14px;">Thanks, you are on the list. First breakdown lands soon.</div>' +
+        '</div>';
 
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      var utm = window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined;
+      var form = block.querySelector('.lab-cap-form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = block.querySelector('.lab-cap-email');
+        var btn = block.querySelector('.lab-cap-btn');
+        var email = (input.value || '').trim();
+        if (!email || email.indexOf('@') < 1) { input.focus(); return; }
 
-      fetch('/api/brevo-subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: email,
-          source: 'Lab Subscriber',
-          additionalListIds: [12], // "Lab Subscribers" list
-          extraAttributes: { LAB_ARTICLE: slug },
-          utmParams: utm
-        })
-      }).then(function (r) {
-        block.querySelector('#labCaptureSuccess').style.display = 'block';
-        form.style.display = 'none';
-        if (window.ML && window.ML.saveVisitor) window.ML.saveVisitor({ email: email });
-        // Brevo — bind this reader's browsing history to their contact.
-        if (window.mlBrevoIdentify) window.mlBrevoIdentify(email);
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'generate_lead', { source: 'lab_article', lab_article: slug });
-          if (r && r.ok) gtag('event', 'brevo_subscribed', { source: 'lab_article' });
-        }
-      }).catch(function () {
-        btn.disabled = false;
-        btn.textContent = 'Subscribe →';
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        var utm = window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined;
+
+        fetch('/api/brevo-subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            source: 'Lab Subscriber',
+            additionalListIds: [12], // "Lab Subscribers" list
+            extraAttributes: { LAB_ARTICLE: slug, LAB_PLACEMENT: placement },
+            utmParams: utm
+          })
+        }).then(function (r) {
+          block.querySelector('.lab-cap-success').style.display = 'block';
+          form.style.display = 'none';
+          if (window.ML && window.ML.saveVisitor) window.ML.saveVisitor({ email: email });
+          // Brevo — bind this reader's browsing history to their contact.
+          if (window.mlBrevoIdentify) window.mlBrevoIdentify(email);
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'generate_lead', { source: 'lab_article', lab_article: slug, placement: placement });
+            if (r && r.ok) gtag('event', 'brevo_subscribed', { source: 'lab_article', placement: placement });
+          }
+        }).catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Subscribe →';
+        });
       });
-    });
+      return block;
+    }
+
+    // End-of-article block (always).
+    wrap.insertAdjacentElement('afterend', buildBlock('end'));
+
+    // Mid-article block: before an early section H2 so non-finishers get one.
+    // Only on articles with enough sections to warrant it (avoids stacking two
+    // blocks close together on short pieces). Skip if it would land inside the FAQ.
+    var body = wrap.querySelector('.article-body');
+    if (body) {
+      var h2s = body.querySelectorAll('h2');
+      if (h2s.length >= 4) {
+        var idx = Math.min(2, h2s.length - 2); // ~3rd section, roughly 35-45% in
+        var target = h2s[idx];
+        if (target && !/frequently asked|faq/i.test(target.textContent || '')) {
+          target.parentNode.insertBefore(buildBlock('mid'), target);
+        }
+      }
+    }
   })();
 
   // ── CTA CLICK TRACKING (GA4) ──────────────────────
