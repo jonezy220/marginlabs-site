@@ -408,7 +408,10 @@
         if (!email || email.indexOf('@') < 1) { input.focus(); return; }
         btn.disabled = true; btn.textContent = 'Sending…';
         subscribe(email, 'end',
-          function () { block.querySelector('.lab-cap-success').style.display = 'block'; form.style.display = 'none'; },
+          function () {
+            if (window.posthog) window.posthog.capture('lab_end_email_submitted', { lab_article: slug });
+            block.querySelector('.lab-cap-success').style.display = 'block'; form.style.display = 'none';
+          },
           function () { btn.disabled = false; btn.textContent = 'Subscribe →'; });
       });
     })();
@@ -437,8 +440,15 @@
         '</div>';
       document.body.appendChild(bar);
 
-      var shown = false, nearEnd = false;
-      function render() { bar.style.transform = (shown && !nearEnd) ? 'translateY(0)' : 'translateY(115%)'; }
+      var shown = false, nearEnd = false, firedShown = false;
+      function render() {
+        var vis = shown && !nearEnd;
+        bar.style.transform = vis ? 'translateY(0)' : 'translateY(115%)';
+        // PostHog: fire ribbon_shown once the bar actually slides into view.
+        // This is the real "read >=32% of the article" signal, so it filters
+        // out parked tabs that fire a pageview but never scroll.
+        if (vis && !firedShown) { firedShown = true; if (window.posthog) window.posthog.capture('ribbon_shown', { lab_article: slug }); }
+      }
       function onScroll() {
         var st = window.pageYOffset || document.documentElement.scrollTop;
         var dh = document.documentElement.scrollHeight - window.innerHeight;
@@ -458,6 +468,7 @@
 
       bar.querySelector('.lab-bar-close').addEventListener('click', function () {
         shown = false; render();
+        if (window.posthog) window.posthog.capture('ribbon_dismissed', { lab_article: slug });
         try { localStorage.setItem('ml_lab_bar_dismissed', '1'); } catch (e) {}
         window.removeEventListener('scroll', onScroll);
       });
@@ -469,6 +480,7 @@
         if (!email || email.indexOf('@') < 1) { input.focus(); return; }
         btn.disabled = true; btn.textContent = 'Sending…';
         subscribe(email, 'bar', function () {
+          if (window.posthog) window.posthog.capture('ribbon_email_submitted', { lab_article: slug });
           bar.querySelector('div').innerHTML = '<div style="max-width:1000px;margin:0 auto;padding:12px 20px;font-size:14px;color:#C8823C;">Thanks, you are on the list. First breakdown lands soon.</div>';
           setTimeout(function () { shown = false; render(); }, 2600);
         }, function () { btn.disabled = false; btn.textContent = 'Subscribe'; });
