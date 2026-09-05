@@ -418,6 +418,12 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
 <!-- CALCULATOR -->
 <div class="wrap" id="mm-main">
 
+  <!-- SAMPLE OUTPUT (shows the payoff before the four inputs) -->
+  <div id="mm-sample" style="max-width:640px;margin:0 auto 26px;padding:18px 22px;border:1px solid var(--copper);border-radius:10px;background:rgba(200,130,60,0.06)">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--copper);margin-bottom:8px">See it before you build it</div>
+    <p style="margin:0;font-size:15px;line-height:1.55">A platform running <strong>$25M to $50M</strong> in annual payments volume on a simple ISV referral deal earns roughly <strong>$38K a year</strong> from payments. The same volume run through PayFac-lite earns closer to <strong>$244K</strong>. That is a six-figure gap sitting inside the same customer base. The tool below shows your number across all four models.</p>
+  </div>
+
   <!-- STEP 1: INPUTS -->
   <div class="step active" id="step-inputs">
     <div class="card">
@@ -482,15 +488,15 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
   <!-- STEP 2: EMAIL GATE -->
   <div class="step" id="step-gate">
     <div class="card">
-      <div class="card-label">One step to your numbers</div>
-      <h2 class="gate-headline">Your Margin Multiplier output is ready.</h2>
-      <p class="gate-sub">Enter your email to reveal your full model comparison and opportunity gap. We'll send a copy, plus the free Embedded Payments Guide, to your inbox.</p>
+      <div class="card-label">Your numbers are calculated</div>
+      <h2 class="gate-headline">Where should we send your results?</h2>
+      <p class="gate-sub">Your full model comparison and opportunity gap are ready. Tell us where to send them and we'll include the free Embedded Payments Guide too.</p>
       <div class="email-row">
         <input type="email" id="gate-email" placeholder="you@company.com" required aria-label="Your email address"/>
-        <button class="btn-p" id="gate-btn" onclick="submitAndShow()" data-analytics="mm-gate-submit" style="width:auto;padding:11px 22px;">Unlock Results →</button>
+        <button class="btn-p" id="gate-btn" onclick="submitAndShow()" data-analytics="mm-gate-submit" style="width:auto;padding:11px 22px;">Email me my results →</button>
       </div>
       <div class="gate-err" id="gate-err"></div>
-      <p class="gate-note">No sales call. No spam. Just your numbers.</p>
+      <p class="gate-note">No sales call. No spam. One email with your numbers.</p>
       <p style="margin-top:16px;">
         <a href="#" onclick="goBack(event)" data-analytics="mm-edit-inputs" style="font-family:var(--mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dmr);text-decoration:none;">← Edit inputs</a>
       </p>
