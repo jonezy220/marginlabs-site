@@ -442,7 +442,7 @@
       function onScroll() {
         var st = window.pageYOffset || document.documentElement.scrollTop;
         var dh = document.documentElement.scrollHeight - window.innerHeight;
-        if (dh > 0 && (st / dh) > 0.55) { shown = true; render(); }
+        if (dh > 0 && (st / dh) > 0.30) { shown = true; render(); }
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
