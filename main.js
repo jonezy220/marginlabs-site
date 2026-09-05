@@ -342,13 +342,15 @@
   }
 
   // ── LAB ARTICLE EMAIL CAPTURE ─────────────────────
-  // Injected on Lab article pages only (not the index). TWO placements:
-  //   • mid  — inserted before an early section H2 so readers who never reach
-  //            the end still get one (catches non-finishers).
-  //   • end  — after the article body (original position).
+  // Injected on Lab article pages only (not the index). TWO surfaces:
+  //   • end — inline card after the article body (finisher capture).
+  //   • bar — slim sticky bottom bar for non-finishers: appears after ~35%
+  //           scroll, dismissible (remembered in localStorage), auto-hides
+  //           when the footer/end block is in view, short on mobile. Slim +
+  //           dismissible keeps it out of Google's intrusive-interstitial
+  //           penalty, so rank (the priority) is protected.
   // Both -> Brevo list 12 "Lab Subscribers", fire GA4 generate_lead, and tag
-  // LAB_PLACEMENT so we can see which position converts. No modal, no gate,
-  // no interstitial — inline only, to protect rank (SEO is the priority).
+  // LAB_PLACEMENT (end|bar) so we can see which surface actually converts.
   (function () {
     var path = location.pathname.replace(/\/+$/, '');
     var isLabArticle = /^\/the-lab\/.+/.test(path) && !/\/index(\.html)?$/.test(path);
@@ -356,16 +358,39 @@
     if (!isLabArticle || !wrap) return;
     var slug = path.split('/').pop();
 
-    function buildBlock(placement) {
-      var compact = placement === 'mid';
+    // Shared: fire the subscribe to Brevo list 12 + GA4, tag placement.
+    function subscribe(email, placement, done, fail) {
+      var utm = window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined;
+      fetch('/api/brevo-subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          source: 'Lab Subscriber',
+          additionalListIds: [12], // "Lab Subscribers" list
+          extraAttributes: { LAB_ARTICLE: slug, LAB_PLACEMENT: placement },
+          utmParams: utm
+        })
+      }).then(function (r) {
+        if (window.ML && window.ML.saveVisitor) window.ML.saveVisitor({ email: email });
+        if (window.mlBrevoIdentify) window.mlBrevoIdentify(email);
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'generate_lead', { source: 'lab_article', lab_article: slug, placement: placement });
+          if (r && r.ok) gtag('event', 'brevo_subscribed', { source: 'lab_article', placement: placement });
+        }
+        try { localStorage.setItem('ml_lab_subscribed', '1'); } catch (e) {}
+        if (done) done();
+      }).catch(function () { if (fail) fail(); });
+    }
+
+    // ── END-OF-ARTICLE inline card ──
+    (function () {
       var block = document.createElement('div');
-      // mid sits inside the already-constrained .article-body (margin only);
-      // end sits after .article-wrap in the full-width page (needs the column).
-      block.style.cssText = compact ? 'margin:34px 0;' : 'max-width:720px;margin:0 auto;padding:0 24px;';
+      block.style.cssText = 'max-width:720px;margin:0 auto;padding:0 24px;';
       block.innerHTML =
-        '<div style="border:1px solid rgba(200,130,60,0.28);border-radius:4px;background:rgba(200,130,60,0.05);padding:' + (compact ? '22px 24px 24px' : '28px 28px 30px') + ';margin:8px 0 8px;">' +
+        '<div style="border:1px solid rgba(200,130,60,0.28);border-radius:4px;background:rgba(200,130,60,0.05);padding:28px 28px 30px;margin:8px 0 8px;">' +
           '<div style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin-bottom:10px;">The Lab</div>' +
-          '<div style="font-size:' + (compact ? '17px' : '19px') + ';font-weight:600;letter-spacing:-0.02em;color:#F0EBE4;margin-bottom:8px;line-height:1.3;">Get new breakdowns like this</div>' +
+          '<div style="font-size:19px;font-weight:600;letter-spacing:-0.02em;color:#F0EBE4;margin-bottom:8px;line-height:1.3;">Get new breakdowns like this</div>' +
           '<p style="font-size:14px;font-weight:300;color:rgba(240,235,228,0.55);line-height:1.7;margin:0 0 18px;">Operator-level thinking on embedded payments for vertical SaaS. No fluff, no sales spam, unsubscribe anytime.</p>' +
           '<form class="lab-cap-form" novalidate style="display:flex;gap:10px;flex-wrap:wrap;">' +
             '<input class="lab-cap-email" type="email" required autocomplete="email" placeholder="you@company.com" aria-label="Email address" style="flex:1;min-width:220px;background:#0d0d0d;border:1px solid rgba(240,235,228,0.18);border-radius:2px;color:#F0EBE4;font-family:inherit;font-size:14px;padding:12px 14px;">' +
@@ -373,64 +398,81 @@
           '</form>' +
           '<div class="lab-cap-success" style="display:none;font-size:14px;color:#C8823C;margin-top:14px;">Thanks, you are on the list. First breakdown lands soon.</div>' +
         '</div>';
-
+      wrap.insertAdjacentElement('afterend', block);
       var form = block.querySelector('.lab-cap-form');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var input = block.querySelector('.lab-cap-email');
-        var btn = block.querySelector('.lab-cap-btn');
+        var input = block.querySelector('.lab-cap-email'), btn = block.querySelector('.lab-cap-btn');
         var email = (input.value || '').trim();
         if (!email || email.indexOf('@') < 1) { input.focus(); return; }
-
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-        var utm = window.ML && window.ML.getUtmParams ? window.ML.getUtmParams() : undefined;
-
-        fetch('/api/brevo-subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: email,
-            source: 'Lab Subscriber',
-            additionalListIds: [12], // "Lab Subscribers" list
-            extraAttributes: { LAB_ARTICLE: slug, LAB_PLACEMENT: placement },
-            utmParams: utm
-          })
-        }).then(function (r) {
-          block.querySelector('.lab-cap-success').style.display = 'block';
-          form.style.display = 'none';
-          if (window.ML && window.ML.saveVisitor) window.ML.saveVisitor({ email: email });
-          // Brevo — bind this reader's browsing history to their contact.
-          if (window.mlBrevoIdentify) window.mlBrevoIdentify(email);
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'generate_lead', { source: 'lab_article', lab_article: slug, placement: placement });
-            if (r && r.ok) gtag('event', 'brevo_subscribed', { source: 'lab_article', placement: placement });
-          }
-        }).catch(function () {
-          btn.disabled = false;
-          btn.textContent = 'Subscribe →';
-        });
+        btn.disabled = true; btn.textContent = 'Sending…';
+        subscribe(email, 'end',
+          function () { block.querySelector('.lab-cap-success').style.display = 'block'; form.style.display = 'none'; },
+          function () { btn.disabled = false; btn.textContent = 'Subscribe →'; });
       });
-      return block;
-    }
+    })();
 
-    // End-of-article block (always).
-    wrap.insertAdjacentElement('afterend', buildBlock('end'));
+    // ── SLIM STICKY BOTTOM BAR ──
+    (function () {
+      var dismissed, subscribed;
+      try { dismissed = localStorage.getItem('ml_lab_bar_dismissed'); subscribed = localStorage.getItem('ml_lab_subscribed'); } catch (e) {}
+      if (dismissed || subscribed) return;
 
-    // Mid-article block: before an early section H2 so non-finishers get one.
-    // Only on articles with enough sections to warrant it (avoids stacking two
-    // blocks close together on short pieces). Skip if it would land inside the FAQ.
-    var body = wrap.querySelector('.article-body');
-    if (body) {
-      var h2s = body.querySelectorAll('h2');
-      if (h2s.length >= 4) {
-        var idx = Math.min(2, h2s.length - 2); // ~3rd section, roughly 35-45% in
-        var target = h2s[idx];
-        if (target && !/frequently asked|faq/i.test(target.textContent || '')) {
-          target.parentNode.insertBefore(buildBlock('mid'), target);
-        }
+      var bar = document.createElement('div');
+      bar.setAttribute('role', 'region');
+      bar.setAttribute('aria-label', 'Subscribe to The Lab');
+      bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:9998;transform:translateY(115%);transition:transform .35s ease;background:rgba(13,13,13,0.97);border-top:1px solid rgba(200,130,60,0.35);';
+      bar.innerHTML =
+        '<div style="max-width:1000px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">' +
+          '<div style="flex:1;min-width:170px;">' +
+            '<span style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#C8823C;margin-right:10px;">The Lab</span>' +
+            '<span style="font-size:14px;color:#F0EBE4;font-weight:500;">Get new breakdowns like this.</span>' +
+          '</div>' +
+          '<form class="lab-bar-form" novalidate style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">' +
+            '<input class="lab-bar-email" type="email" required autocomplete="email" placeholder="you@company.com" aria-label="Email address" style="min-width:210px;background:#000;border:1px solid rgba(240,235,228,0.2);border-radius:2px;color:#F0EBE4;font-family:inherit;font-size:13px;padding:9px 12px;">' +
+            '<button class="lab-bar-btn" type="submit" style="background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:\'DM Mono\',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:9px 18px;cursor:pointer;white-space:nowrap;">Subscribe</button>' +
+          '</form>' +
+          '<button class="lab-bar-close" type="button" aria-label="Dismiss" style="background:none;border:none;color:rgba(240,235,228,0.5);font-size:22px;line-height:1;cursor:pointer;padding:2px 6px;">&times;</button>' +
+        '</div>';
+      document.body.appendChild(bar);
+
+      var shown = false, footerVisible = false;
+      function render() { bar.style.transform = (shown && !footerVisible) ? 'translateY(0)' : 'translateY(115%)'; }
+      function onScroll() {
+        var st = window.pageYOffset || document.documentElement.scrollTop;
+        var dh = document.documentElement.scrollHeight - window.innerHeight;
+        if (dh > 0 && (st / dh) > 0.35) { shown = true; render(); }
       }
-    }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Hide when the footer is in view so the sticky bar never overlaps the
+      // end-of-article card at the bottom (no double prompt).
+      var footer = document.querySelector('.site-footer');
+      if (footer && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { footerVisible = en.isIntersecting; render(); });
+        }, { threshold: 0 }).observe(footer);
+      }
+
+      bar.querySelector('.lab-bar-close').addEventListener('click', function () {
+        shown = false; render();
+        try { localStorage.setItem('ml_lab_bar_dismissed', '1'); } catch (e) {}
+        window.removeEventListener('scroll', onScroll);
+      });
+
+      bar.querySelector('.lab-bar-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = bar.querySelector('.lab-bar-email'), btn = bar.querySelector('.lab-bar-btn');
+        var email = (input.value || '').trim();
+        if (!email || email.indexOf('@') < 1) { input.focus(); return; }
+        btn.disabled = true; btn.textContent = 'Sending…';
+        subscribe(email, 'bar', function () {
+          bar.querySelector('div').innerHTML = '<div style="max-width:1000px;margin:0 auto;padding:12px 20px;font-size:14px;color:#C8823C;">Thanks, you are on the list. First breakdown lands soon.</div>';
+          setTimeout(function () { shown = false; render(); }, 2600);
+        }, function () { btn.disabled = false; btn.textContent = 'Subscribe'; });
+      });
+    })();
   })();
 
   // ── CTA CLICK TRACKING (GA4) ──────────────────────
