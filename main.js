@@ -386,6 +386,7 @@
     // ── END-OF-ARTICLE inline card ──
     (function () {
       var block = document.createElement('div');
+      block.className = 'lab-end-card';
       block.style.cssText = 'max-width:720px;margin:0 auto;padding:0 24px;';
       block.innerHTML =
         '<div style="border:1px solid rgba(200,130,60,0.28);border-radius:4px;background:rgba(200,130,60,0.05);padding:28px 28px 30px;margin:8px 0 8px;">' +
@@ -421,7 +422,7 @@
       var bar = document.createElement('div');
       bar.setAttribute('role', 'region');
       bar.setAttribute('aria-label', 'Subscribe to The Lab');
-      bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:9998;transform:translateY(115%);transition:transform .35s ease;background:rgba(13,13,13,0.97);border-top:1px solid rgba(200,130,60,0.35);';
+      bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:9998;transform:translateY(115%);transition:transform .55s ease;background:rgba(13,13,13,0.97);border-top:1px solid rgba(200,130,60,0.35);';
       bar.innerHTML =
         '<div style="max-width:1000px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">' +
           '<div style="flex:1;min-width:170px;">' +
@@ -436,23 +437,23 @@
         '</div>';
       document.body.appendChild(bar);
 
-      var shown = false, footerVisible = false;
-      function render() { bar.style.transform = (shown && !footerVisible) ? 'translateY(0)' : 'translateY(115%)'; }
+      var shown = false, nearEnd = false;
+      function render() { bar.style.transform = (shown && !nearEnd) ? 'translateY(0)' : 'translateY(115%)'; }
       function onScroll() {
         var st = window.pageYOffset || document.documentElement.scrollTop;
         var dh = document.documentElement.scrollHeight - window.innerHeight;
-        if (dh > 0 && (st / dh) > 0.35) { shown = true; render(); }
+        if (dh > 0 && (st / dh) > 0.55) { shown = true; render(); }
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
 
-      // Hide when the footer is in view so the sticky bar never overlaps the
-      // end-of-article card at the bottom (no double prompt).
-      var footer = document.querySelector('.site-footer');
-      if (footer && 'IntersectionObserver' in window) {
+      // Hide the bar as soon as the end-of-article inline card comes into view
+      // (fall back to the footer) so the two prompts never show at once.
+      var hideAt = document.querySelector('.lab-end-card') || document.querySelector('.site-footer');
+      if (hideAt && 'IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) { footerVisible = en.isIntersecting; render(); });
-        }, { threshold: 0 }).observe(footer);
+          entries.forEach(function (en) { nearEnd = en.isIntersecting; render(); });
+        }, { threshold: 0 }).observe(hideAt);
       }
 
       bar.querySelector('.lab-bar-close').addEventListener('click', function () {
