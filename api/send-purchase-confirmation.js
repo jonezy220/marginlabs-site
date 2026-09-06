@@ -13,6 +13,7 @@ module.exports = async (req, res) => {
       subject: 'Your Strategic Decision Framework — order confirmed',
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#0d0d0d;color:#F0EBE4;padding:40px 32px;">
+          <img src="https://marginlabs.io/emails/brand-lockup-transparent.png" alt="Margin Labs" width="200" style="width:200px;max-width:62%;height:auto;display:block;margin:0 0 28px;">
           <p style="font-family:monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin:0 0 32px;">Margin Labs</p>
           <h1 style="font-size:24px;font-weight:300;margin:0 0 16px;">You're in.</h1>
           <p style="font-size:15px;color:rgba(240,235,228,0.6);line-height:1.75;margin:0 0 24px;">

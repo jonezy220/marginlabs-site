@@ -27,6 +27,7 @@ async function sendDeliveryEmail(email, product, downloadUrl) {
     <tr><td align="center">
       <table width="560" cellpadding="0" cellspacing="0" style="background:#1a1a1a;border-radius:4px;border:1px solid rgba(200,130,60,0.15);padding:48px 40px;">
         <tr><td>
+          <img src="https://marginlabs.io/emails/brand-lockup-transparent.png" alt="Margin Labs" width="200" style="width:200px;max-width:62%;height:auto;display:block;margin:0 0 24px;">
           <p style="margin:0 0 8px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;font-family:'DM Mono',monospace;">Margin Labs</p>
           <h1 style="margin:0 0 24px;font-size:22px;font-weight:600;color:#F0EBE4;line-height:1.3;">Thank you for your purchase.</h1>
           <p style="margin:0 0 32px;font-size:15px;line-height:1.7;color:rgba(240,235,228,0.72);">${productName} is ready to download.</p>
