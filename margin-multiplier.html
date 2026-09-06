@@ -485,25 +485,7 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
     </div>
   </div>
 
-  <!-- STEP 2: EMAIL GATE -->
-  <div class="step" id="step-gate">
-    <div class="card">
-      <div class="card-label">Your numbers are calculated</div>
-      <h2 class="gate-headline">Where should we send your results?</h2>
-      <p class="gate-sub">Your full model comparison and opportunity gap are ready. Tell us where to send them and we'll include the free Embedded Payments Guide too.</p>
-      <div class="email-row">
-        <input type="email" id="gate-email" placeholder="you@company.com" required aria-label="Your email address"/>
-        <button class="btn-p" id="gate-btn" onclick="submitAndShow()" data-analytics="mm-gate-submit" style="width:auto;padding:11px 22px;">Email me my results →</button>
-      </div>
-      <div class="gate-err" id="gate-err"></div>
-      <p class="gate-note">No sales call. No spam. One email with your numbers.</p>
-      <p style="margin-top:16px;">
-        <a href="#" onclick="goBack(event)" data-analytics="mm-edit-inputs" style="font-family:var(--mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dmr);text-decoration:none;">← Edit inputs</a>
-      </p>
-    </div>
-  </div>
-
-  <!-- STEP 3: RESULTS -->
+  <!-- STEP 2: RESULTS (value-first: shown free, no email gate) -->
   <div class="step" id="step-results">
     <div class="ri-label">Your Margin Multiplier Output</div>
     <h2 class="ri-hl" id="ri-hl"></h2>
@@ -517,11 +499,30 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
       </div>
       <div class="gap-rhs" id="gap-rhs"></div>
     </div>
+
+    <!-- REPORT OFFER (value-first email capture: result is free, email buys the shareable report) -->
+    <div class="report-offer" id="report-offer" style="margin:22px 0;padding:20px 22px;border:1px solid var(--copper);border-radius:10px;background:rgba(200,130,60,0.06)">
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--copper);margin-bottom:8px">Take it with you</div>
+      <p style="margin:0 0 14px;font-size:15px;line-height:1.55">Want this as a report you can send to your team? We'll email your personalized Margin Multiplier breakdown, the recommended model and why, plus the free Embedded Payments Guide.</p>
+      <div class="email-row">
+        <input type="email" id="report-email" placeholder="you@company.com" required aria-label="Your email address"/>
+        <button class="btn-p" id="report-btn" onclick="requestReport()" data-analytics="mm-report-request" style="width:auto;padding:11px 22px;">Email me the report →</button>
+      </div>
+      <div class="gate-err" id="report-err"></div>
+      <p class="gate-note">No sales call. No spam. One email with your report.</p>
+    </div>
+    <div id="report-done" style="display:none;margin:22px 0;padding:20px 22px;border:1px solid var(--copper);border-radius:10px;background:rgba(200,130,60,0.06)">
+      <p style="margin:0;font-size:15px;line-height:1.55">Sent. Check your inbox for your personalized report and the Embedded Payments Guide.</p>
+    </div>
+
     <div class="rationale">
       <div class="rat-lbl">Why this recommendation</div>
       <p class="rat-text" id="rat-text"></p>
     </div>
     <div class="cta-block" id="cta-block"></div>
+    <p style="margin-top:18px;text-align:center;">
+      <a href="#" onclick="goBack(event)" data-analytics="mm-edit-inputs" style="font-family:var(--mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dmr);text-decoration:none;">← Edit inputs</a>
+    </p>
   </div>
 
 </div>
@@ -545,8 +546,8 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
       <p class="faq-a">The bps ranges reflect what real platforms capture at each model, calibrated across hundreds of conversations, processor RFPs and PE diligence files. They're directional, not precise. Your actual capture depends on vertical, merchant mix, activation rate and the specific terms you negotiate with a processor.</p>
     </details>
     <details class="faq-item">
-      <summary>Why do you ask for my email before showing results?</summary>
-      <p class="faq-a">Two reasons. First, we send a copy of your results plus the free Embedded Payments Guide PDF to your inbox so you have a reference document. Second, it lets us send the occasional follow-up if you want to go deeper. No sales call. No spam. Unsubscribe link in every email.</p>
+      <summary>Do I need to enter my email to see my results?</summary>
+      <p class="faq-a">No. Your results show on screen for free, no email required. You only enter an email if you want the report emailed to you, a personalized breakdown you can send to your team plus the recommended model and why and the free Embedded Payments Guide. No sales call. No spam. Unsubscribe link in every email.</p>
     </details>
     <details class="faq-item">
       <summary>Do you share my data with processors or sell it?</summary>
@@ -730,15 +731,21 @@ function goToGate() {
     ctaType:  _s.rec.ctaType,
   });
 
-  showStep('step-gate');
+  // Value-first: render and show the result immediately, no email gate.
+  buildResults();
+  showStep('step-results');
+  gaEvent('calculator_result_viewed', { volume_range: _s.volLbl, recommended_model: _s.recModel.name });
+  if (window.posthog) window.posthog.capture('mm_result_viewed', { recommended_model: _s.recModel.name, volume_range: _s.volLbl });
 }
 
 function goBack(e) { e.preventDefault(); showStep('step-inputs'); }
 
-async function submitAndShow() {
-  const email = $c('gate-email').value.trim();
-  const errEl = $c('gate-err');
-  const btn   = $c('gate-btn');
+// Value-first email capture: the result is already on screen, this delivers the
+// shareable report + the guide to the visitor's inbox and logs the lead.
+async function requestReport() {
+  const email = $c('report-email').value.trim();
+  const errEl = $c('report-err');
+  const btn   = $c('report-btn');
   errEl.style.display = 'none';
 
   if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -746,13 +753,14 @@ async function submitAndShow() {
     errEl.style.display = 'block';
     return;
   }
-  btn.disabled = true; btn.textContent = 'Unlocking...';
+  btn.disabled = true; btn.textContent = 'Sending...';
 
   gaEvent('calculator_completed', {
     volume_range:      _s.volLbl,
     recommended_model: _s.recModel.name,
     cta_type:          _s.rec.ctaType,
   });
+  if (window.posthog) window.posthog.capture('mm_report_requested', { recommended_model: _s.recModel.name, volume_range: _s.volLbl });
 
   // Save email to shared state
   window.ML.saveVisitor({ email: email });
@@ -765,7 +773,7 @@ async function submitAndShow() {
   const gapAmt = _s.gap>0 ? _s.gap : _s.recModel.revenue;
   const modelSummary = _s.results.map(m=>`${m.name}: ${fmtCur(m.revenue)}/yr (${m.range})`).join(' | ');
 
-  // Fire and forget, results always show regardless
+  // Fire and forget, the report is delivered by email
   fetch('/api/submit-calculator', {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -778,6 +786,7 @@ async function submitAndShow() {
       recModel:     _s.recModel.name,
       gapAmt:       fmtCur(_s.gap > 0 ? _s.gap : _s.recModel.revenue),
       ctaType:      _s.rec.ctaType,
+      rationale:    _s.rec.rationale,
       modelSummary: _s.results.map(m =>
         `${m.name}: ${fmtCur(m.revenue)}/yr (${m.range})`
       ).join(' | '),
@@ -785,12 +794,20 @@ async function submitAndShow() {
     }),
   }).catch(() => {});
 
-  buildResults();
-  showStep('step-results');
+  // Swap the offer for the confirmation, the result stays on screen
+  const off = $c('report-offer'), done = $c('report-done');
+  if (off)  off.style.display  = 'none';
+  if (done) done.style.display = 'block';
 }
 
 function buildResults() {
   const { results, curModel, curRev, recModel, gap, rec, volLbl, vertLbl, curLbl, vert } = _s;
+
+  // Reset the report offer each render (in case they edited inputs after submitting)
+  const _off = $c('report-offer'), _done = $c('report-done'), _rb = $c('report-btn');
+  if (_off)  _off.style.display  = '';
+  if (_done) _done.style.display = 'none';
+  if (_rb) { _rb.disabled = false; _rb.textContent = 'Email me the report →'; }
 
   $c('ri-hl').textContent  = `At ${volLbl} in annual payments volume, here's what each model generates.`;
   $c('ri-sub').textContent = curModel

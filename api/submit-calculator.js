@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
   const {
     email, arrLabel, volLabel, curLabel, vertLabel,
-    recModel, gapAmt, ctaType, modelSummary
+    recModel, gapAmt, ctaType, modelSummary, rationale
   } = req.body;
 
   if (!email) return res.status(400).json({ error: 'Missing email' });
@@ -49,7 +49,7 @@ module.exports = async (req, res) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email, volLabel, curLabel, recModel,
-        gapAmt, modelSummary, arrLabel, vertLabel,
+        gapAmt, modelSummary, arrLabel, vertLabel, rationale,
       }),
     }),
 

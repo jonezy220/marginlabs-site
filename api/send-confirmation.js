@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { email, volLabel, curLabel, recModel, gapAmt, modelSummary, arrLabel, vertLabel } = req.body;
+  const { email, volLabel, curLabel, recModel, gapAmt, modelSummary, arrLabel, vertLabel, rationale } = req.body;
   if (!email || !volLabel) return res.status(400).json({ error: 'Missing required fields' });
 
   try {
@@ -40,6 +40,10 @@ module.exports = async (req, res) => {
               </tr>`;
             }).join('')}
           </table>
+          ${rationale ? `<div style="background:#111;border:1px solid rgba(200,130,60,0.10);border-radius:4px;padding:20px 24px;margin-bottom:16px;">
+            <p style="font-family:monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin:0 0 8px;">Why ${recModel || 'this model'}</p>
+            <p style="font-size:13px;color:rgba(240,235,228,0.72);line-height:1.7;margin:0;">${rationale}</p>
+          </div>` : ''}
           <div style="background:#111;border:1px solid rgba(200,130,60,0.14);border-radius:4px;padding:24px;margin-bottom:16px;">
             <p style="font-family:monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin:0 0 8px;">Your free Guide</p>
             <p style="font-size:16px;font-weight:300;margin:0 0 8px;">The Embedded Payments Guide</p>
