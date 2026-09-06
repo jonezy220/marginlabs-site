@@ -14,6 +14,7 @@ module.exports = async (req, res) => {
       subject: `Your Margin Multiplier — ${volLabel} in payments volume`,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#0d0d0d;color:#F0EBE4;padding:40px 32px;">
+          <img src="https://marginlabs.io/emails/brand-lockup.png" alt="Margin Labs" width="200" style="width:200px;max-width:62%;height:auto;display:block;margin:0 0 28px;">
           <p style="font-family:monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin:0 0 32px;">The Margin Multiplier™</p>
           <h1 style="font-size:24px;font-weight:300;margin:0 0 8px;letter-spacing:-0.02em;">Your payments opportunity estimate</h1>
           <p style="font-size:14px;color:rgba(240,235,228,0.55);margin:0 0 32px;line-height:1.7;">
