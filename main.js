@@ -210,7 +210,7 @@
         fetch('/api/brevo-subscribe', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify({ email, source: 'Free Guide Lead', utmParams: _utm }),
+          body:    JSON.stringify({ email, source: 'Free Guide Lead', additionalListIds: [3], utmParams: _utm }),
         }).then(function (r) {
           if (r && r.ok && typeof gtag !== 'undefined') {
             gtag('event', 'brevo_subscribed', { source: 'free_guide' });
