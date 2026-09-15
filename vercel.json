@@ -45,6 +45,11 @@
       "permanent": true
     },
     {
+      "source": "/go/mor-payfac-co",
+      "destination": "https://marginlabs.io/the-lab/merchant-of-record-vs-payfac?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=mor-payfac",
+      "permanent": false
+    },
+    {
       "source": "/go/payfac-cost",
       "destination": "https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=payfac-cost",
       "permanent": false
