@@ -158,7 +158,7 @@
 
     <p><strong>An ISV refers its customers to a processor and earns a residual (5 to 15 bps) while the processor owns the merchant and the operational burden. A PayFac boards its own sub-merchants, sets pricing and captures the full spread (50 to 120 bps) in exchange for taking on risk, disputes and compliance. ISV is the entry point, PayFac the destination.</strong></p>
 
-    <h2>What ISV actually means in payments</h2>
+    <h2>What does ISV actually mean in payments?</h2>
 
     <p>An ISV in payments is an Independent Software Vendor that refers its customers to a payment processor and earns a residual on the volume those customers go on to process. The platform sells software. The processor signs the merchant agreement, runs the underwriting, owns the relationship, runs the operational machine and shares a slice of the economics with the platform that delivered the customer.</p>
 
@@ -166,7 +166,7 @@
 
     <p>The ISV path is the entry point because the bar to start is low. A platform with no payments program can sign an ISV agreement with a processor in days, integrate with a vendor SDK in weeks, and start earning residuals on the first transaction. No PCI program, no sub-merchant onboarding, no underwriting risk, no 24/7 payments operations. The processor owns all of that.</p>
 
-    <h2>What PayFac actually means</h2>
+    <h2>What does PayFac actually mean?</h2>
 
     <p>For the full definition, see <a href="/the-lab/what-is-a-payment-facilitator">what a payment facilitator actually is</a>. In short, a Payment Facilitator is a platform that has signed a master merchant agreement with a processor and is operating its own sub-merchant program. The platform underwrites and boards the sub-merchants under its own scope, sets pricing for those sub-merchants, handles settlement and reconciliation, manages disputes and chargebacks, runs a Level 1 PCI compliance program and takes on operational and capital responsibility for the sub-merchant base.</p>
 
@@ -174,7 +174,7 @@
 
     <p>Most platforms that "become a PayFac" today do not actually build the full operational program themselves. They use a managed PayFac partner: Stripe Connect, Adyen for Platforms, Tilled, Finix, Payrix and a handful of others. The managed PayFac partner handles the sub-merchant infrastructure, the PCI program, the settlement and the ops, and the platform captures most of the economics while skipping most of the build. <a href="/the-lab/payfac-as-a-service">PayFac-as-a-Service is the sweet spot</a> for the majority of vertical SaaS platforms above a certain volume threshold.</p>
 
-    <h2>The economics, side by side</h2>
+    <h2>How do the ISV and PayFac economics compare?</h2>
 
     <p>The basis-point comparison is the headline number, but the way to compare PayFac vs ISV honestly is to look at annual dollar capture at a representative volume. Here is what each model generates on 25 million dollars of annual processed volume.</p>
 
@@ -217,7 +217,7 @@
 
     <p>The gap between an ISV Referral arrangement and a Managed PayFac at 25 million dollars of volume is roughly 150 thousand dollars per year. At 100 million, it is closer to 600 thousand. At 500 million, the gap is in the millions. The economics tell you why every vertical SaaS platform eventually asks the PayFac vs ISV question, and why the answer for most platforms above a volume threshold is some flavor of PayFac.</p>
 
-    <h2>The operational burden, side by side</h2>
+    <h2>How does the operational burden compare between ISV and PayFac?</h2>
 
     <p>The economics are only half the comparison. The other half is what each model demands operationally, and this is where most platforms underestimate the trade.</p>
 
@@ -277,7 +277,7 @@
 
     <div class="pull-quote">PayFac vs ISV is rarely a question about which model is better. It is a question about which model is right for the platform's volume, vertical and operational appetite right now.</div>
 
-    <h2>The volume threshold where the answer flips</h2>
+    <h2>At what volume does the ISV vs PayFac answer flip?</h2>
 
     <p>The general thresholds we see in the vertical SaaS market right now:</p>
 
@@ -291,7 +291,7 @@
 
     <p>These thresholds are not bright lines. Vertical matters. Average transaction size matters. Merchant count and concentration matter. A vertical SaaS platform with 200 large merchants doing 5 million each has a different PayFac vs ISV math than a platform with 20,000 small merchants doing 50 thousand each.</p>
 
-    <h2>What determines the answer for a specific platform</h2>
+    <h2>What determines the right answer for a specific platform?</h2>
 
     <p>The honest diagnostic comes down to four questions.</p>
 
@@ -311,13 +311,13 @@
 
     <p>For some platforms, owning the merchant-of-record relationship is itself a strategic moat. For others, it is just a way to capture margin. The strategic answer changes how the platform should think about the model. A platform whose entire competitive position depends on payments depth thinks differently from a platform where payments is one of several revenue streams.</p>
 
-    <h2>The migration path</h2>
+    <h2>What does migrating from ISV to PayFac actually involve?</h2>
 
     <p>Most platforms that end up on PayFac started as ISVs. The migration is not painless. Sub-merchants have to be re-boarded under the platform's master agreement. The settlement and reconciliation flow has to be rebuilt. The platform takes on PCI scope it did not have before. Some merchants get lost in the transition. Reasonable expectations: 3 to 6 months of operational distraction, 5 to 15 percent of active merchants lost in re-boarding, and meaningful engineering time pulled off the core product.</p>
 
     <p>The platforms that handle the migration well plan for it from the start. They choose their initial ISV partner with a clear PayFac path in mind. They negotiate ISV agreements that do not penalize migration. They get the data structure right early so that the eventual PayFac sub-merchant import is not a from-scratch rebuild. The platforms that handle the migration poorly are the ones that built ISV for the short term and got stuck when the volume justified PayFac but the operational debt would not allow it.</p>
 
-    <h2>How to decide for your platform</h2>
+    <h2>How should you decide for your own platform?</h2>
 
     <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="/the-lab/how-much-saas-platforms-make-from-payments">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where <a href="/the-lab/should-you-change-your-payments-model">moving up the ladder</a> pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
 
