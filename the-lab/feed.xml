@@ -8,9 +8,90 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 02 Sep 2026 03:29:06 +0000</lastBuildDate>
-    <pubDate>Wed, 02 Sep 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Fri, 18 Sep 2026 18:59:59 +0000</lastBuildDate>
+    <pubDate>Fri, 18 Sep 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Interchange-Plus Pricing for Platforms: Structure Payments, Keep the Spread</title>
+      <link>https://marginlabs.io/the-lab/interchange-plus-pricing</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/interchange-plus-pricing</guid>
+      <pubDate>Fri, 18 Sep 2026 14:00:00 +0000</pubDate>
+      <description>A platform embedding payments both buys and sells payments. Interchange-plus is two decisions: what you buy on to see your true cost and what you charge your merchants. The spread is your revenue.</description>
+      <content:encoded><![CDATA[<p>A platform that embeds payments is not a merchant, and it should not read its pricing like one. It sits in the middle of the payments stack. It buys payments from a processor or PayFac provider on one side, and it sells payments to its own merchants on the other. That middle seat is the business. It is also where the pricing model does its work or its damage, because the model shows up twice, once on each side of you.</p>
+
+    <p>Most platforms only think about one side. They set a merchant-facing rate, inherit whatever their provider handed them upstream, and never connect the two. The pricing model gets treated as a contract detail the finance team skims. It is not a detail. It decides how much of every transaction you keep, and across an entire merchant base that becomes a real line of revenue.</p>
+
+    <p><strong>For a platform, interchange-plus is two decisions, not one. Upstream, buy your payments on interchange-plus from your processor or PayFac provider so you can see your true cost per transaction. Downstream, decide what to charge your merchants. The spread between the two is your payments revenue, and you can only set and defend it if you can see your cost. That is why the model you buy on matters as much as the model you sell.</strong></p>
+
+    <h2>What interchange-plus pricing actually is</h2>
+
+    <p>Interchange is the fee set by the card networks and paid to the card-issuing bank on every transaction. No processor invents it or controls it. Under interchange-plus, interchange and the network assessments are passed through at cost. Your provider adds a fixed markup on top that you can see, stated as its own line.</p>
+
+    <p>That is the whole idea. Cost-plus, fully itemized. The alternative is a single blended number that folds the cost and the markup together into one figure you have to take on trust. Everything below is about why that difference matters more for a platform than for anyone else, because a platform lives on both sides of it.</p>
+
+    <h2>Buy on interchange-plus so you can see your true cost</h2>
+
+    <p>Start with the side platforms tend to neglect: the deal you sign with your own processor or PayFac provider. Take interchange-plus there. If your provider puts you on a flat or tiered rate, your own cost is hidden from you, and when interchange on a category falls your flat cost does not fall with it. The provider keeps that gap, on your volume, across your whole book. Tiered upstream is worse, because the provider decides which bucket your transactions land in and the downgrades are theirs to define.</p>
+
+    <p>The reason this matters is not only your own margin. You cannot price your merchants intelligently if you do not know what a transaction actually costs you. A platform on a blended upstream rate is pricing its merchants on a guess. Whether you sit on the ISV or the PayFac side of that relationship changes who you buy from and how much you control, which is the subject of <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>, but on either side you want to see your cost at the transaction level.</p>
+
+    <h2>What you charge your merchants is a monetization decision</h2>
+
+    <p>Now the side platforms do think about, usually too narrowly. The pricing model you offer your merchants is not an operational default to pass through from your provider. It is a positioning and margin choice, and it is where your payments revenue is actually set.</p>
+
+    <p>Flat or blended to your merchants is simpler for them and captures more spread for you, because the same opacity that costs you upstream now works in your favor. The catch is that it is exactly the opacity you would resent from your own processor, and a sophisticated merchant will eventually ask what they are really paying. Interchange-plus to your merchants is transparent and easy to defend, and it competes well against a standalone processor, but you monetize through a smaller, explicit markup rather than a hidden spread.</p>
+
+    <p>There is no universally right answer. It depends on your merchant base and your strategy. A platform serving small merchants who value simplicity can run a blended rate for years. A platform serving larger merchants who benchmark their processing will do better offering transparency and winning on it. What you should not do is pick by accident.</p>
+
+    <h2>The spread is your payments revenue</h2>
+
+    <p>Put the two sides together and it gets simple. You pay a cost upstream. You charge a price downstream. The gap between them, across every transaction your merchants run, is your payments revenue. That spread is the line a board or an acquirer cares about, and you are managing it whether you realize it or not.</p>
+
+    <blockquote class="pull-quote">The spread between what you pay upstream and what you charge your merchants is the payments line. You can only manage what you can see.</blockquote>
+
+    <p>You can only set and defend that spread if you can see your true cost, which is why the upstream decision comes first. A platform that buys on interchange-plus knows its cost to the transaction. It can price merchants, run <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange optimization</a> to lower that cost and watch the spread hold as interchange shifts. A platform on a blended upstream rate is flying blind on the most important number in its payments P&L.</p>
+
+    <h2>How to structure the deal as a platform</h2>
+
+    <p>Two moves. First, on the buy side, ask for interchange-plus in writing and ask for the markup stated as a specific number. Interchange itself is not negotiable, the networks set it, so a provider competing on lower rates without disclosing the markup is competing on a number that is partly cost you cannot change. The negotiable figure is the plus. The full playbook is in <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to negotiate a processor agreement</a>.</p>
+
+    <p>Second, on the sell side, choose your merchant-facing model deliberately. Decide whether you are monetizing through a visible markup or a blended spread, and make sure it fits the merchants you actually serve. The worst outcome is passing your provider's model straight through to your merchants without a decision, which is how platforms end up with pricing that serves the provider rather than the platform.</p>
+
+    <h2>When does this matter most?</h2>
+
+    <p>At scale, and it compounds. On low volume the difference between models is real but small in absolute dollars, so an early platform can reasonably start simple on both sides. As volume grows, a hidden spread upstream and an unexamined model downstream both start moving real money, multiplied across your entire merchant base. The pricing model that was a rounding error at launch becomes a material share of payments revenue at scale.</p>
+
+    <p>Most platforms never revisit either side. That is the quiet cost: not choosing wrong once, but never looking again as the numbers grew into the range where they matter. To put real figures on it, the <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">true cost stack of embedded payments</a> and the <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">dollar version of what platforms make from payments</a> are where the spread stops being abstract.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is interchange-plus pricing for a platform?</h3>
+    <p>A cost-plus model where interchange and network assessments are passed through at cost and your provider adds a fixed, disclosed markup you can see. For a platform it works on both sides: it is the model you buy on to see your true cost, and one of the models you can offer your own merchants.</p>
+
+    <h3>Should a platform buy its payments on interchange-plus or flat-rate?</h3>
+    <p>Interchange-plus. It is the only model that shows your true cost per transaction, which is what lets you price your merchants intelligently and manage the spread that is your payments revenue.</p>
+
+    <h3>What pricing model should a platform charge its merchants?</h3>
+    <p>It is a monetization and positioning choice, not an operational default. Flat or blended captures more spread but is less transparent, and a sophisticated merchant will eventually question it. Interchange-plus to merchants is transparent and competitive with a smaller explicit markup. The right call depends on your merchant base and your strategy.</p>
+
+    <h3>How does a platform make money on payments pricing?</h3>
+    <p>On the spread between what it pays its processor or PayFac provider and what it charges its merchants. That spread is the payments revenue line, and a platform can only set and defend it if it can see its true cost.</p>
+
+    <h3>Why does interchange-plus matter for a platform specifically?</h3>
+    <p>Because a platform sits between its provider and its merchants. It needs cost visibility upstream, which interchange-plus gives it, to price merchants intelligently downstream and keep the spread from leaking.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">How much spread are you leaving on the table?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments pricing is really worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and models the spread across all four monetization models, so you can see what your pricing is capturing and what it is leaving behind. Want to pressure-test an actual provider deal or your merchant pricing? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/interchange-plus-pricing?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Embedded Insurance for Vertical SaaS</title>
       <link>https://marginlabs.io/the-lab/embedded-insurance-for-vertical-saas</link>
@@ -87,7 +168,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Add insurance where the risk is real, not because it looked high-margin.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Insurance is the highest-margin line in the stack when there is genuine, mispriced risk in your customers' workflow, and a cost with no payoff when there is not. Before you build, it is worth pressure-testing whether the risk is real and which rung of the continuum fits. A Quick Start Call is the next step.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -172,7 +253,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Add cards to complete the loop, not chase the interchange.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A card is only worth the money that runs across it, and issuing one is the heaviest regulated surface in the stack. Before you build, it is worth pressure-testing whether there is real flow to put behind it and which rung of the continuum fits. A Quick Start Call is the next step.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -261,7 +342,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Add banking to become the account, not chase the float.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Holding money is the stickiest line in embedded finance and the heaviest to carry. Before you build, it is worth pressure-testing whether your customers would actually bank with you and which rung of the continuum fits. A Quick Start Call is the next step.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -351,7 +432,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Put a real number on PayFac vs managed for your platform.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call sizes the fully loaded PayFac vs managed comparison against your actual merchant mix, so the decision runs on your economics and not a vendor's deck.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -444,7 +525,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Pressure-test the decision before you start sourcing sponsor banks.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier compares all four models on your own numbers, so you can see what direct registration would actually add over PayFac-as-a-Service. Want a second set of eyes on the call? A Quick Start Call is the next step.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -544,93 +625,12 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Get the payments model right before you add layers on top.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier compares all four models on your own numbers, so you can see which one fits before you ever think about routing across providers. Want to pressure-test the call? A Quick Start Call is the next step.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/payment-orchestration-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Interchange-Plus Pricing for Platforms: Structure Payments, Keep the Spread</title>
-      <link>https://marginlabs.io/the-lab/interchange-plus-pricing</link>
-      <guid isPermaLink="true">https://marginlabs.io/the-lab/interchange-plus-pricing</guid>
-      <pubDate>Mon, 03 Aug 2026 14:00:00 +0000</pubDate>
-      <description>A platform embedding payments both buys and sells payments. Interchange-plus is two decisions: what you buy on to see your true cost and what you charge your merchants. The spread is your revenue.</description>
-      <content:encoded><![CDATA[<p>A platform that embeds payments is not a merchant, and it should not read its pricing like one. It sits in the middle of the payments stack. It buys payments from a processor or PayFac provider on one side, and it sells payments to its own merchants on the other. That middle seat is the business. It is also where the pricing model does its work or its damage, because the model shows up twice, once on each side of you.</p>
-
-    <p>Most platforms only think about one side. They set a merchant-facing rate, inherit whatever their provider handed them upstream, and never connect the two. The pricing model gets treated as a contract detail the finance team skims. It is not a detail. It decides how much of every transaction you keep, and across an entire merchant base that becomes a real line of revenue.</p>
-
-    <p><strong>For a platform, interchange-plus is two decisions, not one. Upstream, buy your payments on interchange-plus from your processor or PayFac provider so you can see your true cost per transaction. Downstream, decide what to charge your merchants. The spread between the two is your payments revenue, and you can only set and defend it if you can see your cost. That is why the model you buy on matters as much as the model you sell.</strong></p>
-
-    <h2>What interchange-plus pricing actually is</h2>
-
-    <p>Interchange is the fee set by the card networks and paid to the card-issuing bank on every transaction. No processor invents it or controls it. Under interchange-plus, interchange and the network assessments are passed through at cost. Your provider adds a fixed markup on top that you can see, stated as its own line.</p>
-
-    <p>That is the whole idea. Cost-plus, fully itemized. The alternative is a single blended number that folds the cost and the markup together into one figure you have to take on trust. Everything below is about why that difference matters more for a platform than for anyone else, because a platform lives on both sides of it.</p>
-
-    <h2>Buy on interchange-plus so you can see your true cost</h2>
-
-    <p>Start with the side platforms tend to neglect: the deal you sign with your own processor or PayFac provider. Take interchange-plus there. If your provider puts you on a flat or tiered rate, your own cost is hidden from you, and when interchange on a category falls your flat cost does not fall with it. The provider keeps that gap, on your volume, across your whole book. Tiered upstream is worse, because the provider decides which bucket your transactions land in and the downgrades are theirs to define.</p>
-
-    <p>The reason this matters is not only your own margin. You cannot price your merchants intelligently if you do not know what a transaction actually costs you. A platform on a blended upstream rate is pricing its merchants on a guess. Whether you sit on the ISV or the PayFac side of that relationship changes who you buy from and how much you control, which is the subject of <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>, but on either side you want to see your cost at the transaction level.</p>
-
-    <h2>What you charge your merchants is a monetization decision</h2>
-
-    <p>Now the side platforms do think about, usually too narrowly. The pricing model you offer your merchants is not an operational default to pass through from your provider. It is a positioning and margin choice, and it is where your payments revenue is actually set.</p>
-
-    <p>Flat or blended to your merchants is simpler for them and captures more spread for you, because the same opacity that costs you upstream now works in your favor. The catch is that it is exactly the opacity you would resent from your own processor, and a sophisticated merchant will eventually ask what they are really paying. Interchange-plus to your merchants is transparent and easy to defend, and it competes well against a standalone processor, but you monetize through a smaller, explicit markup rather than a hidden spread.</p>
-
-    <p>There is no universally right answer. It depends on your merchant base and your strategy. A platform serving small merchants who value simplicity can run a blended rate for years. A platform serving larger merchants who benchmark their processing will do better offering transparency and winning on it. What you should not do is pick by accident.</p>
-
-    <h2>The spread is your payments revenue</h2>
-
-    <p>Put the two sides together and it gets simple. You pay a cost upstream. You charge a price downstream. The gap between them, across every transaction your merchants run, is your payments revenue. That spread is the line a board or an acquirer cares about, and you are managing it whether you realize it or not.</p>
-
-    <blockquote class="pull-quote">The spread between what you pay upstream and what you charge your merchants is the payments line. You can only manage what you can see.</blockquote>
-
-    <p>You can only set and defend that spread if you can see your true cost, which is why the upstream decision comes first. A platform that buys on interchange-plus knows its cost to the transaction. It can price merchants, run <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange optimization</a> to lower that cost and watch the spread hold as interchange shifts. A platform on a blended upstream rate is flying blind on the most important number in its payments P&L.</p>
-
-    <h2>How to structure the deal as a platform</h2>
-
-    <p>Two moves. First, on the buy side, ask for interchange-plus in writing and ask for the markup stated as a specific number. Interchange itself is not negotiable, the networks set it, so a provider competing on lower rates without disclosing the markup is competing on a number that is partly cost you cannot change. The negotiable figure is the plus. The full playbook is in <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to negotiate a processor agreement</a>.</p>
-
-    <p>Second, on the sell side, choose your merchant-facing model deliberately. Decide whether you are monetizing through a visible markup or a blended spread, and make sure it fits the merchants you actually serve. The worst outcome is passing your provider's model straight through to your merchants without a decision, which is how platforms end up with pricing that serves the provider rather than the platform.</p>
-
-    <h2>When does this matter most?</h2>
-
-    <p>At scale, and it compounds. On low volume the difference between models is real but small in absolute dollars, so an early platform can reasonably start simple on both sides. As volume grows, a hidden spread upstream and an unexamined model downstream both start moving real money, multiplied across your entire merchant base. The pricing model that was a rounding error at launch becomes a material share of payments revenue at scale.</p>
-
-    <p>Most platforms never revisit either side. That is the quiet cost: not choosing wrong once, but never looking again as the numbers grew into the range where they matter. To put real figures on it, the <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">true cost stack of embedded payments</a> and the <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">dollar version of what platforms make from payments</a> are where the spread stops being abstract.</p>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <h3>What is interchange-plus pricing for a platform?</h3>
-    <p>A cost-plus model where interchange and network assessments are passed through at cost and your provider adds a fixed, disclosed markup you can see. For a platform it works on both sides: it is the model you buy on to see your true cost, and one of the models you can offer your own merchants.</p>
-
-    <h3>Should a platform buy its payments on interchange-plus or flat-rate?</h3>
-    <p>Interchange-plus. It is the only model that shows your true cost per transaction, which is what lets you price your merchants intelligently and manage the spread that is your payments revenue.</p>
-
-    <h3>What pricing model should a platform charge its merchants?</h3>
-    <p>It is a monetization and positioning choice, not an operational default. Flat or blended captures more spread but is less transparent, and a sophisticated merchant will eventually question it. Interchange-plus to merchants is transparent and competitive with a smaller explicit markup. The right call depends on your merchant base and your strategy.</p>
-
-    <h3>How does a platform make money on payments pricing?</h3>
-    <p>On the spread between what it pays its processor or PayFac provider and what it charges its merchants. That spread is the payments revenue line, and a platform can only set and defend it if it can see its true cost.</p>
-
-    <h3>Why does interchange-plus matter for a platform specifically?</h3>
-    <p>Because a platform sits between its provider and its merchants. It needs cost visibility upstream, which interchange-plus gives it, to price merchants intelligently downstream and keep the spread from leaking.</p>
-<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">How much spread are you leaving on the table?</div>
-    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments pricing is really worth.</h2>
-    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and models the spread across all four monetization models, so you can see what your pricing is capturing and what it is leaving behind. Want to pressure-test an actual provider deal or your merchant pricing? A Quick Start Call is the next step.</p>
-    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
-      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
-    </div>
-  </div>
-</section>
-<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/interchange-plus-pricing?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
       <title>Embedded Lending for Vertical SaaS</title>
@@ -714,7 +714,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Get the payments foundation right before you lend.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Lending stacks on top of a monetized payment flow. The Margin Multiplier shows what your payments base is worth across all four models, which is the base lending attaches to. Want to pressure-test the sequence? A Quick Start Call is the next step.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -793,7 +793,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Figure out which payments model fits your platform.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier compares all four models on your own numbers, so you can see what registration would actually add over PayFac-as-a-Service. Want to decide with a second set of eyes? A Quick Start Call is the next step.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -872,7 +872,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what a cost-offset feature is worth to your platform.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Run the Margin Multiplier to size the payments opportunity across all four models, then book a Quick Start Call to think through which cost-offset approach fits your merchants.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -961,7 +961,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your first embedded finance step is worth.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and shows what your platform could capture from payments across all four models. It is the fastest way to size the first move the winners all made. Want to think through the sequence for your platform? A Quick Start Call is the next step.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -1159,7 +1159,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Sequencing payments in a portfolio company you just acquired?</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call baselines the four numbers against a platform's real volume and tells you which move pays back fastest inside the hold period, and in what order. Prefer to work it yourself first? The Framework walks you through the economics.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1285,7 +1285,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Pressure-test the model change before you commit.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision against your real volume, merchant mix and model, tells you which rung actually fits, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1353,7 +1353,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See where your current model is leaking margin.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every business's starting point is different. A Quick Start Call works your actual volume, merchant mix and model, finds the leaks worth chasing first, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1401,7 +1401,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Find the leaks before they compound.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works the seam between your billing and payment layers with you, against your real book, and finds the recurring revenue quietly leaking out. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1449,7 +1449,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Set your underwriting policy before you own the risk.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works your boarding flow and risk appetite with you, against your real merchant mix, before you are accountable for either. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1517,7 +1517,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Pressure-test your plan before you sign the contract.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works your implementation plan with you, against your real volume, merchant mix and model, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1579,7 +1579,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Find out what payments is worth on your numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call runs the readiness check and the model math against your actual volume and merchant mix, and tells you honestly whether now is the time and where to start. Prefer to work it yourself first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1642,7 +1642,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's size the payments lever in your portfolio company.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call looks at the four gaps against a platform's real volume and merchant mix and tells you which move pays back fastest inside the hold period. Prefer to work it yourself first? The Framework walks you through the economics.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1698,7 +1698,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's figure out which payfac model fits your risk and volume.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call weighs what carrying full payfac compliance would cost you against what a managed model gives up in economics, on your actual numbers. Prefer to work the decision yourself first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1745,7 +1745,7 @@
 
     <h2>When building can actually make sense</h2>
 
-    <p>It is not never. If payments processing is your core product rather than an attached revenue line, if you are at a scale where a few basis points of saved cost dwarfs a multimillion-dollar run rate, or if you have a genuinely novel flow no provider supports, owning the rails can pay off. Those conditions are rare, and the platforms that meet them usually already know it. For everyone else, the question is not how to build a gateway cheaply. It is how to capture payments economics without building one at all, which is what <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded payments cost</a> and <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how platforms make money from payments</a> are really about.</p>
+    <p>It is not never. If payments processing is your core product rather than an attached revenue line, if you are at a scale where a few basis points of saved cost dwarfs a multimillion-dollar run rate, or if you have a genuinely novel flow no provider supports, owning the rails can pay off. Those conditions are rare, and the platforms that meet them usually already know it. For everyone else, the question is not how to build a gateway cheaply. It is how to capture payments economics without building one at all, which is what <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded payments cost</a> and <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how platforms make money from payments</a> are really about. And if the real problem is managing several processors or gateways rather than building one from scratch, that is a <a href="https://marginlabs.io/the-lab/payment-orchestration-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment orchestration</a> question, not a build-a-gateway one.</p>
 
     <h2>How to actually decide</h2>
 
@@ -1756,7 +1756,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's run the real number against your volume.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call models your build cost plus run cost against what partnering would cost on your actual payments volume, so the decision rests on your numbers instead of a benchmark. Prefer to work it yourself first? The Framework walks you through the economics.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1818,7 +1818,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's find the margin trapped in your processing cost.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call looks at your actual merchant and card mix and tells you which interchange levers are worth pulling, and which are not. Prefer to work the decision on your own first? The Framework walks you through the economics.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1897,7 +1897,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's work out what comes after payments for you.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call maps your move beyond payments against your real volume, merchant base and roadmap, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -1969,7 +1969,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's work out your move across the border.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call maps your LATAM payments move against your real customers, markets and economics, country by country, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through the model logic that carries across the border.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -2032,7 +2032,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Decide it with a framework, not a guess.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Strategic Decision Framework walks you through the model choice step by step, with the math and the volume thresholds laid out. Want a second pair of eyes on your actual numbers? A Quick Start Call does it with you.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -2108,7 +2108,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's work out whether surcharging is worth it for you.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works your situation against your real merchant footprint, processor and checkout, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -2205,7 +2205,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Let's work out what it depends on for you.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Two ways to work out what it depends on for you. The Framework walks you through the decision on your own. A Quick Start Call does it with you, against your actual volume, merchant mix and product, and I make the intro when it fits.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -2335,7 +2335,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -2452,7 +2452,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -2534,7 +2534,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -2636,13 +2636,15 @@
     <p>For the deeper decision (which model fits the platform's specific stage, what the right migration path looks like, how to evaluate the managed PayFac partners), the Strategic Decision Framework covers the comparison in detail, including real-world basis-point ranges, the operational requirements at each model and the decision matrix by volume tier.</p>
 
     <p>If the underlying question is really whether to make the jump at all, we cover that head-on in <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">should you become a payment facilitator</a>. And if the platform is at the point of choosing between specific PayFac partners or negotiating an ISV agreement with PayFac migration in mind, that is the kind of situation a Quick Start Call exists for.</p>
+
+    <p>Platforms further along, already running multiple processors or expanding into new payment methods, are usually asking a different question: whether to bring in <a href="https://marginlabs.io/the-lab/payment-orchestration-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment orchestration</a> to manage that complexity, not which single model to pick.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Which model fits you?</div>
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Decide it with a framework, not a guess.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Strategic Decision Framework walks you through the model choice step by step, with the math and the volume thresholds laid out. Want a second pair of eyes on your actual numbers? A Quick Start Call does it with you.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -2654,7 +2656,7 @@
       <link>https://marginlabs.io/the-lab/merchant-of-record-vs-payfac</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/merchant-of-record-vs-payfac</guid>
       <pubDate>Thu, 04 Jun 2026 14:00:00 +0000</pubDate>
-      <description>MoR and PayFac sound alike but solve different problems. One owns tax and liability for global sales, the other aggregates sub-merchants. Which fits you.</description>
+      <description>MoR and PayFac get confused constantly. One owns tax and liability for global sales, the other aggregates sub-merchants and pays you for it. Here's the decision framework.</description>
       <content:encoded><![CDATA[<p>Merchant of Record and Payment Facilitator sound like the same thing. Both involve a third party sitting between the buyer and the seller. Both promise to "handle payments" for software platforms. Both come up in the same conversations about embedded payments and revenue capture.</p>
 
     <p><strong>The core difference is who is the seller of record and who carries the liability. A merchant of record (MoR) becomes the legal seller and takes on tax, compliance and chargeback responsibility. A payment facilitator (PayFac) lets sub-merchants accept payments under its master account while each merchant stays the seller of record. MoR shifts the burden off your merchants; PayFac keeps them as principal and lets your platform monetize the payment flow.</strong></p>
@@ -2734,6 +2736,12 @@
       <li><strong>If your customers are the sellers</strong> (your platform is software that other businesses use to accept payments from their own customers): PayFac or PayFac-as-a-Service is the right architecture. The economics are basis points on volume, not a percentage of revenue.</li>
       <li><strong>If you operate both kinds of businesses</strong> (some lines sell your own product, some lines enable merchant payments): you may need both architectures running in parallel for different revenue streams.</li>
     </ol>
+
+    <h2>Where This Shows Up in Diligence</h2>
+
+    <p>The MoR-or-PayFac question rarely gets asked directly in a board deck or a diligence call. It shows up sideways, as a line item that does not reconcile. A platform reports payments revenue growing and margin quietly shrinking, or a payments expense line that looks like a vendor cost when it is actually the MoR fee eating five to nine points of every dollar the platform never had a chance to capture.</p>
+
+    <p>If nobody on the team can say plainly which model the platform is running and why, that is usually not a strategy decision someone made. It is a default that happened during a vendor selection three years ago and was never revisited.</p>
 
     <blockquote class="pull-quote">MoR and PayFac are not competing options. They are different answers to different questions. The question is whether your platform is the seller or whether your customers are.</blockquote>
 
@@ -3089,7 +3097,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Decide it with a framework, not a guess.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Strategic Decision Framework walks you through the model choice step by step, with the math and the volume thresholds laid out. Want a second pair of eyes on your actual numbers? A Quick Start Call does it with you.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -3180,7 +3188,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -3274,7 +3282,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -3368,7 +3376,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -3455,7 +3463,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -3541,7 +3549,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -3800,7 +3808,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -3889,7 +3897,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments program could be worth.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier turns your volume and model into a directional revenue number in two minutes. A conversation turns it into a plan.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
@@ -4004,7 +4012,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -4212,7 +4220,7 @@
 
     <blockquote class="pull-quote">Payment facilitation isn't about becoming a payments company. It's about capturing the economics of the payments already flowing through your software.</blockquote>
 
-    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> models your revenue across all four monetization approaches, ISV Referral, Enhanced Residuals, PayFac Lite, and Full PayFac, in about 60 seconds. Start there, then read our <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">comparison of PayFac vs. ISO</a> for the full decision framework.</p>
+    <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> models your revenue across all four monetization approaches, ISV Referral, Enhanced Residuals, PayFac Lite, and Full PayFac, in about 60 seconds. Start there, then read our <a href="https://marginlabs.io/the-lab/payfac-vs-iso?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">comparison of PayFac vs. ISO</a> for the full decision framework. Already running multiple processors or payment methods and the integration is getting harder to manage? See whether <a href="https://marginlabs.io/the-lab/payment-orchestration-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment orchestration</a> is solving a real problem for you yet, or adding complexity before you need it.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
@@ -4419,7 +4427,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
@@ -4562,7 +4570,7 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments program could be worth.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier turns your volume and model into a directional revenue number in two minutes. The Framework helps you decide which model gets you there.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
       <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
