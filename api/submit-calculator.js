@@ -29,6 +29,7 @@ module.exports = async (req, res) => {
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         email,
+        submitter_email: email,
         source:          'Margin Multiplier',
         arr:             arrLabel || 'Not specified',
         volume:          volLabel,
