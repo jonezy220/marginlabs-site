@@ -8,9 +8,203 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 18 Sep 2026 18:59:59 +0000</lastBuildDate>
-    <pubDate>Fri, 18 Sep 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Tue, 22 Sep 2026 16:25:12 +0000</lastBuildDate>
+    <pubDate>Tue, 22 Sep 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Embedded Payments Economics Benchmarks: bps by Model</title>
+      <link>https://marginlabs.io/the-lab/embedded-payments-economics-benchmarks</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-payments-economics-benchmarks</guid>
+      <pubDate>Tue, 22 Sep 2026 14:00:00 +0000</pubDate>
+      <description>Payment infrastructure benchmarks in basis points: what platforms capture at each model, from 5-15 bps ISV Referral to 50-120 bps Full PayFac, with revenue math.</description>
+      <content:encoded><![CDATA[<p><strong>A vertical SaaS platform captures a predictable band of its processed card volume depending on the monetization model it runs. Calibrated from processor RFPs and payments diligence, the benchmark ladder is roughly 5 to 15 basis points for ISV Referral, 15 to 30 bps for Enhanced Residuals, 25 to 70 bps for a managed PayFac (PayFac-lite) and 50 to 120 bps for a Full PayFac, each a genuine range because where a platform lands depends on how much complexity, volume and negotiating leverage it brings. On $50M of annual card volume that spread is the difference between about $25,000 and $600,000 a year in gross payments revenue from the same merchant base. This is the payment infrastructure benchmark to plan against, and the one number that decides whether the platform ever earns it is merchant activation.</strong></p>
+
+    <p>Every payments revenue conversation in vertical SaaS eventually collapses into two questions. What do platforms actually capture at each model, and what is the gap between the model we run today and the next one up. This piece answers both in basis points and in dollars, at real volume tiers, so a platform can size the prize before it sizes the build.</p>
+
+    <p>The ranges here are directional. They are the honest middle of what shows up across processor bids, term sheets and diligence engagements, not a guaranteed rate card. Two platforms at identical volume can land at opposite ends of the same band, and where a platform sits inside its band is almost always a pricing and processor-terms question rather than a structural one. For where these numbers sit against operational performance benchmarks like attach rate and gross margin, this piece pairs with the companion reference, <a href="https://marginlabs.io/the-lab/payments-benchmarks-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded payments benchmarks for software platforms</a>, which covers what good looks like on the metrics side.</p>
+
+    <h2>What does each model capture on the bps ladder?</h2>
+
+    <p>The four models are not four flavors of the same thing. They are four points on a curve that trades ownership and operating burden for a bigger share of the payment. The more of the payment stack the platform owns, the more basis points it keeps, and the more cost and risk it carries to keep them.</p>
+
+    <p>Net basis points here means the share of gross card volume that reaches the platform after interchange and processor cost. It is not the merchant's headline rate. A merchant paying 2.9 percent is not handing the platform 290 bps. The platform keeps the thin slice that sits above the processor's cost, and that slice is what the ladder below measures.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Monetization model</th>
+          <th>Net take rate (bps)</th>
+          <th>What the platform owns</th>
+          <th>Operating burden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ISV Referral</td>
+          <td>5 to 15</td>
+          <td>Nothing beyond the referral</td>
+          <td>Minimal</td>
+        </tr>
+        <tr>
+          <td>Enhanced Residuals</td>
+          <td>15 to 30</td>
+          <td>Negotiated residual split, some support</td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>PayFac-lite (managed PayFac)</td>
+          <td>25 to 70</td>
+          <td>Merchant experience, pricing, onboarding</td>
+          <td>Moderate</td>
+        </tr>
+        <tr>
+          <td>Full PayFac</td>
+          <td>50 to 120</td>
+          <td>Full economics, underwriting, compliance, ops</td>
+          <td>High</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>PayFac-lite and Full PayFac are both genuine ranges, not narrow bands, because where a platform lands inside them tracks how much complexity it takes on. A platform running a straightforward vertical with light underwriting sits toward the bottom of its model's range. One running higher-risk merchants, more payment methods or deeper compliance work earns its way toward the top, because it is carrying more of the operating burden that the range is compensating for.</p>
+
+    <p>The jump that matters most is not the top of the ladder. It is the step from a referral posture, where the platform hands the merchant to a processor and collects a share, to a managed PayFac, where the platform owns the merchant experience and pricing while a provider carries the heaviest compliance and infrastructure load. That single step is worth roughly a 4x to 5x change in captured basis points at the midpoint of each band, and it is reachable without building a payments company. The trade-offs behind that step are the subject of <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac-lite</a>.</p>
+
+    <h2>What does a platform capture at each payments model in dollars?</h2>
+
+    <p>Basis points are abstract until they are multiplied by volume. The tables below run the same four models across three volume tiers a vertical SaaS platform is likely to sit at: $10M, $50M and $100M in annual card volume. Each cell is gross payments revenue at the low, midpoint and high of that model's band, before the platform's own cost to serve.</p>
+
+    <h3>At $10M annual card volume</h3>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Low (bps)</th>
+          <th>Midpoint</th>
+          <th>High (bps)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ISV Referral</td><td>$5,000</td><td>$10,000</td><td>$15,000</td></tr>
+        <tr><td>Enhanced Residuals</td><td>$15,000</td><td>$22,500</td><td>$30,000</td></tr>
+        <tr><td>PayFac-lite</td><td>$25,000</td><td>$47,500</td><td>$70,000</td></tr>
+        <tr><td>Full PayFac</td><td>$50,000</td><td>$85,000</td><td>$120,000</td></tr>
+      </tbody>
+    </table>
+
+    <h3>At $50M annual card volume</h3>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Low (bps)</th>
+          <th>Midpoint</th>
+          <th>High (bps)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ISV Referral</td><td>$25,000</td><td>$50,000</td><td>$75,000</td></tr>
+        <tr><td>Enhanced Residuals</td><td>$75,000</td><td>$112,500</td><td>$150,000</td></tr>
+        <tr><td>PayFac-lite</td><td>$125,000</td><td>$237,500</td><td>$350,000</td></tr>
+        <tr><td>Full PayFac</td><td>$250,000</td><td>$425,000</td><td>$600,000</td></tr>
+      </tbody>
+    </table>
+
+    <h3>At $100M annual card volume</h3>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Low (bps)</th>
+          <th>Midpoint</th>
+          <th>High (bps)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ISV Referral</td><td>$50,000</td><td>$100,000</td><td>$150,000</td></tr>
+        <tr><td>Enhanced Residuals</td><td>$150,000</td><td>$225,000</td><td>$300,000</td></tr>
+        <tr><td>PayFac-lite</td><td>$250,000</td><td>$475,000</td><td>$700,000</td></tr>
+        <tr><td>Full PayFac</td><td>$500,000</td><td>$850,000</td><td>$1,200,000</td></tr>
+      </tbody>
+    </table>
+
+    <p>Read down any column and the shape of the decision is clear. At $50M, moving from a referral arrangement at the middle of its band to a managed PayFac at the middle of its band takes captured revenue from about $50,000 to about $237,500 a year. That $187,500 delta is what funds the integration and the onboarding work the managed model requires, and it recurs every year on volume the platform already has. The build cost of each model, and the payback math against these numbers, lives in <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually costs</a>.</p>
+
+    <h2>Why is the gap between models the real benchmark?</h2>
+
+    <p>The headline band is only half the picture. The number that changes a roadmap is the gap between the model a platform runs now and the one directly above it, on the volume it already processes.</p>
+
+    <p>At $100M in annual volume, the midpoint gaps stack like this. Referral to Enhanced Residuals is roughly $125,000 a year. Enhanced Residuals to PayFac-lite is roughly $250,000. PayFac-lite to Full PayFac is roughly $375,000. None of those steps requires new merchants. They are pure re-monetization of existing volume, which is why the gap between models, not the absolute band, is the benchmark a platform should carry into a board conversation.</p>
+
+    <p>The gap also explains why so many platforms leave money on the table quietly, and why the PayFac-lite and Full PayFac bands are wide enough to matter on their own. A platform sitting at the bottom of the PayFac-lite band at 25 bps and one sitting at the top at 70 bps are in the same model, doing the same work, with nearly a 3x difference in captured revenue. On $50M that is the difference between $125,000 and $350,000 a year, and most of that $225,000 gap is recoverable through processor terms, merchant pricing and how much complexity the platform has actually taken on, without changing the model at all. Before a platform commits to a bigger, harder model, the first benchmark to run is whether it is even at the top of its current band.</p>
+
+    <h2>Why does activation decide whether the bps get realized?</h2>
+
+    <p>Here is the number that undoes every table above. The bps ladder assumes the volume is actually flowing through the platform's payments product. It rarely all is. The multiplier that turns headline capture into real capture is merchant activation, the share of eligible merchants processing live volume through the platform.</p>
+
+    <p>A platform can negotiate a beautiful 70 bps managed PayFac deal and still capture a fraction of it if only a slice of its merchants have turned payments on. Activation scales the whole revenue line linearly. At 100 percent activation the platform earns the headline number. At 20 percent it earns a fifth of it, no matter how good the bps deal is.</p>
+
+    <p>The table below holds the model fixed at a PayFac-lite midpoint of roughly 47.5 bps on $50M of eligible volume, and varies only activation. The headline revenue is $237,500. Watch what activation does to it.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Merchant activation</th>
+          <th>Volume actually processed</th>
+          <th>Revenue captured at 47.5 bps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>20%</td><td>$10M</td><td>$47,500</td></tr>
+        <tr><td>40%</td><td>$20M</td><td>$95,000</td></tr>
+        <tr><td>60%</td><td>$30M</td><td>$142,500</td></tr>
+        <tr><td>80%</td><td>$40M</td><td>$190,000</td></tr>
+        <tr><td>100%</td><td>$50M</td><td>$237,500</td></tr>
+      </tbody>
+    </table>
+
+    <p>A platform at 20 percent activation on a 47.5 bps managed model captures $47,500, close to what a referral platform captures at its own midpoint of 10 bps with full activation ($50,000). The pricier model bought almost nothing. This is the most common and most expensive mistake in embedded payments: a platform negotiates up the bps ladder and never fixes the activation curve, so it pays to build a Ferrari and drives it at 20 miles an hour.</p>
+
+    <p>The practical read is that activation is a higher-leverage lever than the model choice for most platforms below the top quartile. Doubling activation from 30 to 60 percent doubles captured revenue on the model already in place, with no new processor deal and no new build. The mechanics of moving that curve, along with attach-rate and activation benchmarks by program design, are in the companion piece, <a href="https://marginlabs.io/the-lab/payments-benchmarks-for-software-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded payments benchmarks for software platforms</a>.</p>
+
+    <h2>How should you use these benchmarks?</h2>
+
+    <p>Three moves come out of the numbers above. First, find the platform's current model on the ladder and confirm it is at the top of its band, not the bottom, before assuming a bigger model is the answer. The $225,000 of intra-band upside at $50M on PayFac-lite alone is usually the cheapest revenue on the table. Second, size the gap to the next model up on current volume, not on projected volume, so the business case rests on volume that already exists. Third, and before either of the first two, measure activation, because the entire ladder is multiplied by it and a low activation rate quietly caps every other number on this page.</p>
+
+    <p>These are payment infrastructure benchmarks, not guarantees. They are calibrated to give a platform a defensible starting range for a processor conversation, a board slide or a build-versus-partner decision, and to make the gaps between models legible in dollars. Where a specific platform lands inside them is a function of its volume mix, its vertical, its processor terms and, above all, how much of its eligible volume it has actually switched on.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What do software platforms capture at each embedded payments model?</h3>
+    <p>In net basis points on processed card volume, roughly 5 to 15 bps for ISV Referral, 15 to 30 bps for Enhanced Residuals, 25 to 70 bps for a managed PayFac or PayFac-lite, and 50 to 120 bps for a Full PayFac. These are directional ranges calibrated from processor RFPs and diligence, net of interchange and processor cost, so they are the share that actually reaches the platform rather than the merchant's headline rate. The PayFac-lite and Full PayFac bands are wide because complexity, not just model choice, drives where a platform lands inside them.</p>
+
+    <h3>How much embedded payments revenue does $50M of card volume generate?</h3>
+    <p>At the midpoint of each band, about $50,000 a year at ISV Referral, $112,500 at Enhanced Residuals, $237,500 at PayFac-lite and $425,000 at Full PayFac, before the platform's own cost to serve. The full band runs from roughly $25,000 at the bottom of referral to $600,000 at the top of Full PayFac on the same $50M, which is why the model choice and the position within the band both matter.</p>
+
+    <h3>What is a payment facilitator's economics compared to a referral model?</h3>
+    <p>A Full PayFac captures roughly 50 to 120 bps because it owns the full economics, underwriting, compliance and operations, while an ISV Referral captures 5 to 15 bps because it owns almost nothing beyond the introduction. The PayFac keeps far more of each transaction but carries the risk, compliance and operating cost that come with owning the payment, and where it lands in its own wide band tracks how much of that complexity it has actually taken on, so the right comparison is captured basis points net of that operating burden, not the headline band alone.</p>
+
+    <h3>Does moving up the payments model always increase revenue?</h3>
+    <p>Only if merchant activation holds. Captured revenue is the model's basis points multiplied by the volume actually processing through the platform, so a platform at 20 percent activation on a 47.5 bps managed model captures roughly the same dollars as a fully activated referral platform at its 10 bps midpoint. Moving up the ladder without fixing activation buys a bigger rate on a smaller base and often nets nothing.</p>
+
+    <h3>Are these embedded payments benchmarks guaranteed rates?</h3>
+    <p>No. They are directional ranges calibrated from processor bids, term sheets and diligence, meant to give a platform a defensible starting point for planning and negotiation. Actual capture depends on volume mix, vertical, processor terms and activation, and two platforms at the same volume can sit at opposite ends of the same band.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Size the prize before you size the build</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your platform could be capturing.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and runs your own volume across all four models, so you can see the gap in dollars, not just basis points. Want a working session on closing it? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-payments-economics-benchmarks?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Interchange-Plus Pricing for Platforms: Structure Payments, Keep the Spread</title>
       <link>https://marginlabs.io/the-lab/interchange-plus-pricing</link>
@@ -23,19 +217,19 @@
 
     <p><strong>For a platform, interchange-plus is two decisions, not one. Upstream, buy your payments on interchange-plus from your processor or PayFac provider so you can see your true cost per transaction. Downstream, decide what to charge your merchants. The spread between the two is your payments revenue, and you can only set and defend it if you can see your cost. That is why the model you buy on matters as much as the model you sell.</strong></p>
 
-    <h2>What interchange-plus pricing actually is</h2>
+    <h2>What is interchange-plus pricing, actually?</h2>
 
     <p>Interchange is the fee set by the card networks and paid to the card-issuing bank on every transaction. No processor invents it or controls it. Under interchange-plus, interchange and the network assessments are passed through at cost. Your provider adds a fixed markup on top that you can see, stated as its own line.</p>
 
     <p>That is the whole idea. Cost-plus, fully itemized. The alternative is a single blended number that folds the cost and the markup together into one figure you have to take on trust. Everything below is about why that difference matters more for a platform than for anyone else, because a platform lives on both sides of it.</p>
 
-    <h2>Buy on interchange-plus so you can see your true cost</h2>
+    <h2>Why should you buy your payments on interchange-plus?</h2>
 
     <p>Start with the side platforms tend to neglect: the deal you sign with your own processor or PayFac provider. Take interchange-plus there. If your provider puts you on a flat or tiered rate, your own cost is hidden from you, and when interchange on a category falls your flat cost does not fall with it. The provider keeps that gap, on your volume, across your whole book. Tiered upstream is worse, because the provider decides which bucket your transactions land in and the downgrades are theirs to define.</p>
 
     <p>The reason this matters is not only your own margin. You cannot price your merchants intelligently if you do not know what a transaction actually costs you. A platform on a blended upstream rate is pricing its merchants on a guess. Whether you sit on the ISV or the PayFac side of that relationship changes who you buy from and how much you control, which is the subject of <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV Referral vs PayFac Lite</a>, but on either side you want to see your cost at the transaction level.</p>
 
-    <h2>What you charge your merchants is a monetization decision</h2>
+    <h2>What pricing model should you charge your merchants?</h2>
 
     <p>Now the side platforms do think about, usually too narrowly. The pricing model you offer your merchants is not an operational default to pass through from your provider. It is a positioning and margin choice, and it is where your payments revenue is actually set.</p>
 
@@ -43,7 +237,7 @@
 
     <p>There is no universally right answer. It depends on your merchant base and your strategy. A platform serving small merchants who value simplicity can run a blended rate for years. A platform serving larger merchants who benchmark their processing will do better offering transparency and winning on it. What you should not do is pick by accident.</p>
 
-    <h2>The spread is your payments revenue</h2>
+    <h2>Why is the spread your payments revenue?</h2>
 
     <p>Put the two sides together and it gets simple. You pay a cost upstream. You charge a price downstream. The gap between them, across every transaction your merchants run, is your payments revenue. That spread is the line a board or an acquirer cares about, and you are managing it whether you realize it or not.</p>
 
@@ -51,7 +245,7 @@
 
     <p>You can only set and defend that spread if you can see your true cost, which is why the upstream decision comes first. A platform that buys on interchange-plus knows its cost to the transaction. It can price merchants, run <a href="https://marginlabs.io/the-lab/interchange-optimization-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange optimization</a> to lower that cost and watch the spread hold as interchange shifts. A platform on a blended upstream rate is flying blind on the most important number in its payments P&L.</p>
 
-    <h2>How to structure the deal as a platform</h2>
+    <h2>How should a platform structure the interchange-plus deal?</h2>
 
     <p>Two moves. First, on the buy side, ask for interchange-plus in writing and ask for the markup stated as a specific number. Interchange itself is not negotiable, the networks set it, so a provider competing on lower rates without disclosing the markup is competing on a number that is partly cost you cannot change. The negotiable figure is the plus. The full playbook is in <a href="https://marginlabs.io/the-lab/how-to-negotiate-a-processor-agreement?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to negotiate a processor agreement</a>.</p>
 
@@ -2553,7 +2747,7 @@
 
     <p><strong>An ISV refers its customers to a processor and earns a residual (5 to 15 bps) while the processor owns the merchant and the operational burden. A PayFac boards its own sub-merchants, sets pricing and captures the full spread (50 to 120 bps) in exchange for taking on risk, disputes and compliance. ISV is the entry point, PayFac the destination.</strong></p>
 
-    <h2>What ISV actually means in payments</h2>
+    <h2>What does ISV actually mean in payments?</h2>
 
     <p>An ISV in payments is an Independent Software Vendor that refers its customers to a payment processor and earns a residual on the volume those customers go on to process. The platform sells software. The processor signs the merchant agreement, runs the underwriting, owns the relationship, runs the operational machine and shares a slice of the economics with the platform that delivered the customer.</p>
 
@@ -2561,7 +2755,7 @@
 
     <p>The ISV path is the entry point because the bar to start is low. A platform with no payments program can sign an ISV agreement with a processor in days, integrate with a vendor SDK in weeks, and start earning residuals on the first transaction. No PCI program, no sub-merchant onboarding, no underwriting risk, no 24/7 payments operations. The processor owns all of that.</p>
 
-    <h2>What PayFac actually means</h2>
+    <h2>What does PayFac actually mean?</h2>
 
     <p>For the full definition, see <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator actually is</a>. In short, a Payment Facilitator is a platform that has signed a master merchant agreement with a processor and is operating its own sub-merchant program. The platform underwrites and boards the sub-merchants under its own scope, sets pricing for those sub-merchants, handles settlement and reconciliation, manages disputes and chargebacks, runs a Level 1 PCI compliance program and takes on operational and capital responsibility for the sub-merchant base.</p>
 
@@ -2569,7 +2763,7 @@
 
     <p>Most platforms that "become a PayFac" today do not actually build the full operational program themselves. They use a managed PayFac partner: Stripe Connect, Adyen for Platforms, Tilled, Finix, Payrix and a handful of others. The managed PayFac partner handles the sub-merchant infrastructure, the PCI program, the settlement and the ops, and the platform captures most of the economics while skipping most of the build. <a href="https://marginlabs.io/the-lab/payfac-as-a-service?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">PayFac-as-a-Service is the sweet spot</a> for the majority of vertical SaaS platforms above a certain volume threshold.</p>
 
-    <h2>The economics, side by side</h2>
+    <h2>How do the ISV and PayFac economics compare?</h2>
 
     <p>The basis-point comparison is the headline number, but the way to compare PayFac vs ISV honestly is to look at annual dollar capture at a representative volume. Here is what each model generates on 25 million dollars of annual processed volume.</p>
 
@@ -2577,7 +2771,7 @@
 
     <p>The gap between an ISV Referral arrangement and a Managed PayFac at 25 million dollars of volume is roughly 150 thousand dollars per year. At 100 million, it is closer to 600 thousand. At 500 million, the gap is in the millions. The economics tell you why every vertical SaaS platform eventually asks the PayFac vs ISV question, and why the answer for most platforms above a volume threshold is some flavor of PayFac.</p>
 
-    <h2>The operational burden, side by side</h2>
+    <h2>How does the operational burden compare between ISV and PayFac?</h2>
 
     <p>The economics are only half the comparison. The other half is what each model demands operationally, and this is where most platforms underestimate the trade.</p>
 
@@ -2587,7 +2781,7 @@
 
     <div class="pull-quote">PayFac vs ISV is rarely a question about which model is better. It is a question about which model is right for the platform's volume, vertical and operational appetite right now.</div>
 
-    <h2>The volume threshold where the answer flips</h2>
+    <h2>At what volume does the ISV vs PayFac answer flip?</h2>
 
     <p>The general thresholds we see in the vertical SaaS market right now:</p>
 
@@ -2601,7 +2795,7 @@
 
     <p>These thresholds are not bright lines. Vertical matters. Average transaction size matters. Merchant count and concentration matter. A vertical SaaS platform with 200 large merchants doing 5 million each has a different PayFac vs ISV math than a platform with 20,000 small merchants doing 50 thousand each.</p>
 
-    <h2>What determines the answer for a specific platform</h2>
+    <h2>What determines the right answer for a specific platform?</h2>
 
     <p>The honest diagnostic comes down to four questions.</p>
 
@@ -2621,13 +2815,13 @@
 
     <p>For some platforms, owning the merchant-of-record relationship is itself a strategic moat. For others, it is just a way to capture margin. The strategic answer changes how the platform should think about the model. A platform whose entire competitive position depends on payments depth thinks differently from a platform where payments is one of several revenue streams.</p>
 
-    <h2>The migration path</h2>
+    <h2>What does migrating from ISV to PayFac actually involve?</h2>
 
     <p>Most platforms that end up on PayFac started as ISVs. The migration is not painless. Sub-merchants have to be re-boarded under the platform's master agreement. The settlement and reconciliation flow has to be rebuilt. The platform takes on PCI scope it did not have before. Some merchants get lost in the transition. Reasonable expectations: 3 to 6 months of operational distraction, 5 to 15 percent of active merchants lost in re-boarding, and meaningful engineering time pulled off the core product.</p>
 
     <p>The platforms that handle the migration well plan for it from the start. They choose their initial ISV partner with a clear PayFac path in mind. They negotiate ISV agreements that do not penalize migration. They get the data structure right early so that the eventual PayFac sub-merchant import is not a from-scratch rebuild. The platforms that handle the migration poorly are the ones that built ISV for the short term and got stuck when the volume justified PayFac but the operational debt would not allow it.</p>
 
-    <h2>How to decide for your platform</h2>
+    <h2>How should you decide for your own platform?</h2>
 
     <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">moving up the ladder</a> pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
 
@@ -3324,7 +3518,7 @@
 
     <p>The buyer's model typically shows three scenarios: maintain (current trajectory), optimize (better activation + pricing), and transform (model upgrade). The spread between these scenarios is the "payments optionality" that drives premium pricing.</p>
 
-    <h2>What Drives the Multiple</h2>
+    <h2>What drives the SaaS payments valuation multiple?</h2>
 
     <p>Not all payments revenue is valued equally. The factors that push the multiple higher:</p>
 
@@ -3336,7 +3530,7 @@
       <li><strong>Contract structure.</strong> Multi-year processor agreements with favorable volume ratchets, no exclusivity, and clean change-of-control provisions are worth more than agreements that expire in 6 months or require processor consent to transfer.</li>
     </ul>
 
-    <h2>Revenue Recognition and Reporting</h2>
+    <h2>How should you report payments revenue for valuation purposes?</h2>
 
     <p>How you report payments revenue matters for valuation. There are two approaches, and the difference affects perceived scale and margin:</p>
 
@@ -3346,7 +3540,7 @@
 
     <p>If you're preparing for a fundraise or exit, align your reporting with how the buyer will model it. Most PE firms and strategic acquirers will restate to net regardless of how you present it, so reporting net from the start demonstrates financial sophistication and saves diligence time.</p>
 
-    <h2>The Optionality Premium</h2>
+    <h2>What is the optionality premium in payments revenue valuation?</h2>
 
     <p>The most interesting valuation dynamic is what we call the optionality premium: the value attributed to payments revenue that doesn't exist yet but is structurally available.</p>
 
@@ -3356,7 +3550,7 @@
 
     <p>Buyers price this optionality into their model as "Year 2-3 upside." The platform that can demonstrate a credible path from current state to optimized state, with a plan, not just a projection, captures that optionality in the purchase price rather than giving it away to the buyer as their value creation thesis.</p>
 
-    <h2>Preparing for the Conversation</h2>
+    <h2>How should you prepare for the payments valuation conversation?</h2>
 
     <p>If an exit or fundraise is on your horizon (12-24 months), the payments preparation checklist:</p>
 
@@ -4033,7 +4227,7 @@
 
     <p>If you run product, finance, or partnerships at a software company and you're trying to figure out what payment facilitation actually means for your business, this is the plain-language version. No jargon ladders. No sales positioning disguised as education.</p>
 
-    <h2>The Basic Concept</h2>
+    <h2>What is the basic concept behind a payment facilitator?</h2>
 
     <p>A Payment Facilitator is an entity registered with the card networks (Visa, Mastercard) that is authorized to board merchants under its own merchant identification number (MID) and process payments on their behalf.</p>
 
@@ -4041,7 +4235,7 @@
 
     <p>This matters for software companies because it changes the economics. When a processor gives each of your merchants their own account, the processor owns the relationship and keeps most of the margin. When merchants are aggregated under a PayFac structure, the PayFac, which could be you, or a service you use, controls the pricing and keeps a larger share.</p>
 
-    <h2>Why It Exists</h2>
+    <h2>Why does the payment facilitator model exist?</h2>
 
     <p>Before the PayFac model, getting a merchant account was slow and painful. Every business that wanted to accept card payments had to apply individually, go through underwriting, wait days or weeks for approval, and sign a direct agreement with a processor. For a software platform trying to enable payments for hundreds or thousands of small businesses, this was a dealbreaker.</p>
 
@@ -4049,7 +4243,7 @@
 
     <p>For vertical SaaS platforms, the PayFac model unlocked the ability to embed payments into their product and participate in the economics, not just connect merchants to a processor and collect a referral fee.</p>
 
-    <h2>The Spectrum of Payment Facilitation</h2>
+    <h2>What is the spectrum of payment facilitation?</h2>
 
     <p>This is where the terminology gets muddy. "Payment facilitator" describes a spectrum of arrangements, not a single model. Here's how to think about it:</p>
 
@@ -4084,7 +4278,7 @@
       <p style="font-size:13px;color:#8a8580;margin:0;">The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Multiplier</a> models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">start a conversation</a> about what this means for your specific situation.</p>
     </div>
 
-    <h2>What a PayFac Is Responsible For</h2>
+    <h2>What is a payment facilitator responsible for?</h2>
 
     <p>Whether you're a full PayFac or operating under a managed PayFac arrangement, someone is carrying these responsibilities. Understanding them helps you evaluate what you're taking on versus what your provider handles:</p>
 
@@ -4099,7 +4293,7 @@
 
     <p>In a managed PayFac arrangement, the provider handles most of the compliance and regulatory reporting. You handle merchant onboarding, first-line support, and pricing. The split varies by provider, and understanding exactly who owns what is critical before you sign.</p>
 
-    <h2>The Economics in Simple Terms</h2>
+    <h2>How does the payment facilitator economics work, in simple terms?</h2>
 
     <p>Here's why payment facilitation matters financially. On a $100 credit card transaction at a merchant rate of 2.75%:</p>
 
@@ -4109,7 +4303,7 @@
 
     <p>The difference, $175,000 to $325,000 per year on $50M in volume, is why the PayFac model exists for software companies. And that gap widens every year as your volume grows.</p>
 
-    <h2>Common Misconceptions</h2>
+    <h2>What are the most common misconceptions about becoming a PayFac?</h2>
 
     <p><strong>"We need to become a PayFac."</strong> Maybe. But for most platforms between $30M and $200M in volume, a managed PayFac arrangement gives you 60-80% of the economics at 20-30% of the complexity. Full registration is the end state, not the starting point.</p>
 
@@ -4119,7 +4313,7 @@
 
     <p><strong>"We should wait until we have more volume."</strong> The threshold is lower than most teams assume. At $30-50M in annual volume with 150+ merchants, the economics of managed PayFac typically justify the move. The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> can show you the specific numbers for your volume.</p>
 
-    <h2>Payment Facilitator vs Payment Processor vs ISO</h2>
+    <h2>How does a payment facilitator differ from a payment processor or an ISO?</h2>
 
     <p>One of the most common questions software platforms ask is how a payment facilitator differs from a payment processor or an ISO (independent sales organization). The terms get used interchangeably in vendor marketing, but they describe genuinely different arrangements with different economics and different obligations.</p>
 
@@ -4209,7 +4403,7 @@
       <p class="faq-a">A digital payment facilitator is a PayFac whose merchants are software-native and card-not-present rather than card-present retail. The underlying model is identical to any other payment facilitator. What differs is who the merchants are and how they take payments, not the structure of the facilitation itself.</p>
     </div>
 
-    <h2>Where to Go from Here</h2>
+    <h2>Where should you go from here?</h2>
 
     <p>If you're trying to decide whether payment facilitation makes sense for your platform, start with two questions:</p>
 

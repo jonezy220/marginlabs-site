@@ -1,0 +1,350 @@
+<!-- ML-LAB-058 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded Payments Economics Benchmarks: bps by Model | Margin Labs</title>
+<meta name="description" content="Payment infrastructure benchmarks in basis points: what platforms capture at each model, from 5-15 bps ISV Referral to 50-120 bps Full PayFac, with revenue math.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/embedded-payments-economics-benchmarks">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Embedded Payments Economics Benchmarks: bps by Model | Margin Labs">
+<meta property="og:description" content="What a vertical SaaS platform actually captures at each payments model, in basis points and in dollars at real volume tiers, plus why activation decides whether any of it lands.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/embedded-payments-economics-benchmarks">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do software platforms capture at each embedded payments model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In net basis points on processed card volume, roughly 5 to 15 bps for ISV Referral, 15 to 30 bps for Enhanced Residuals, 25 to 70 bps for a managed PayFac or PayFac-lite, and 50 to 120 bps for a Full PayFac. These are directional ranges calibrated from processor RFPs and diligence, net of interchange and processor cost, so they are the share that actually reaches the platform rather than the merchant's headline rate. The PayFac-lite and Full PayFac bands are wide because complexity, not just model choice, drives where a platform lands inside them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much embedded payments revenue does $50M of card volume generate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At the midpoint of each band, about $50,000 a year at ISV Referral, $112,500 at Enhanced Residuals, $237,500 at PayFac-lite and $425,000 at Full PayFac, before the platform's own cost to serve. The full band runs from roughly $25,000 at the bottom of referral to $600,000 at the top of Full PayFac on the same $50M, which is why the model choice and the position within the band both matter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a payment facilitator's economics compared to a referral model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Full PayFac captures roughly 50 to 120 bps because it owns the full economics, underwriting, compliance and operations, while an ISV Referral captures 5 to 15 bps because it owns almost nothing beyond the introduction. The PayFac keeps far more of each transaction but carries the risk, compliance and operating cost that come with owning the payment, and where it lands in its own wide band tracks how much of that complexity it has actually taken on, so the right comparison is captured basis points net of that operating burden, not the headline band alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does moving up the payments model always increase revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only if merchant activation holds. Captured revenue is the model's basis points multiplied by the volume actually processing through the platform, so a platform at 20 percent activation on a 47.5 bps managed model captures roughly the same dollars as a fully activated referral platform at its 10 bps midpoint. Moving up the ladder without fixing activation buys a bigger rate on a smaller base and often nets nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these embedded payments benchmarks guaranteed rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They are directional ranges calibrated from processor bids, term sheets and diligence, meant to give a platform a defensible starting point for planning and negotiation. Actual capture depends on volume mix, vertical, processor terms and activation, and two platforms at the same volume can sit at opposite ends of the same band."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 8px; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="1" y="15" width="4" height="4" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="6.5" y="13" width="4" height="6" rx=".5" fill="#C8823C" opacity="0.38"/><rect x="12" y="11" width="4" height="8" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="12" y="7.5" width="4" height="3.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="11.5" y1="11" x2="16.5" y2="11" stroke="#C8823C" stroke-width=".75" opacity=".52"/><rect x="17.5" y="9" width="4.5" height="10" rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/><rect x="17.5" y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/><line x1="17" y1="9" x2="22" y2="9" stroke="#C8823C" stroke-width=".9" opacity=".58"/><line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/><polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Embedded Payments Economics Benchmarks: What Platforms Capture at Each Payments Model</h1>
+  <div class="article-meta">
+    <span>September 2026</span>
+    <span>7 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p><strong>A vertical SaaS platform captures a predictable band of its processed card volume depending on the monetization model it runs. Calibrated from processor RFPs and payments diligence, the benchmark ladder is roughly 5 to 15 basis points for ISV Referral, 15 to 30 bps for Enhanced Residuals, 25 to 70 bps for a managed PayFac (PayFac-lite) and 50 to 120 bps for a Full PayFac, each a genuine range because where a platform lands depends on how much complexity, volume and negotiating leverage it brings. On $50M of annual card volume that spread is the difference between about $25,000 and $600,000 a year in gross payments revenue from the same merchant base. This is the payment infrastructure benchmark to plan against, and the one number that decides whether the platform ever earns it is merchant activation.</strong></p>
+
+    <p>Every payments revenue conversation in vertical SaaS eventually collapses into two questions. What do platforms actually capture at each model, and what is the gap between the model we run today and the next one up. This piece answers both in basis points and in dollars, at real volume tiers, so a platform can size the prize before it sizes the build.</p>
+
+    <p>The ranges here are directional. They are the honest middle of what shows up across processor bids, term sheets and diligence engagements, not a guaranteed rate card. Two platforms at identical volume can land at opposite ends of the same band, and where a platform sits inside its band is almost always a pricing and processor-terms question rather than a structural one. For where these numbers sit against operational performance benchmarks like attach rate and gross margin, this piece pairs with the companion reference, <a href="/the-lab/payments-benchmarks-for-software-platforms">embedded payments benchmarks for software platforms</a>, which covers what good looks like on the metrics side.</p>
+
+    <h2>What does each model capture on the bps ladder?</h2>
+
+    <p>The four models are not four flavors of the same thing. They are four points on a curve that trades ownership and operating burden for a bigger share of the payment. The more of the payment stack the platform owns, the more basis points it keeps, and the more cost and risk it carries to keep them.</p>
+
+    <p>Net basis points here means the share of gross card volume that reaches the platform after interchange and processor cost. It is not the merchant's headline rate. A merchant paying 2.9 percent is not handing the platform 290 bps. The platform keeps the thin slice that sits above the processor's cost, and that slice is what the ladder below measures.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Monetization model</th>
+          <th>Net take rate (bps)</th>
+          <th>What the platform owns</th>
+          <th>Operating burden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ISV Referral</td>
+          <td>5 to 15</td>
+          <td>Nothing beyond the referral</td>
+          <td>Minimal</td>
+        </tr>
+        <tr>
+          <td>Enhanced Residuals</td>
+          <td>15 to 30</td>
+          <td>Negotiated residual split, some support</td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>PayFac-lite (managed PayFac)</td>
+          <td>25 to 70</td>
+          <td>Merchant experience, pricing, onboarding</td>
+          <td>Moderate</td>
+        </tr>
+        <tr>
+          <td>Full PayFac</td>
+          <td>50 to 120</td>
+          <td>Full economics, underwriting, compliance, ops</td>
+          <td>High</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>PayFac-lite and Full PayFac are both genuine ranges, not narrow bands, because where a platform lands inside them tracks how much complexity it takes on. A platform running a straightforward vertical with light underwriting sits toward the bottom of its model's range. One running higher-risk merchants, more payment methods or deeper compliance work earns its way toward the top, because it is carrying more of the operating burden that the range is compensating for.</p>
+
+    <p>The jump that matters most is not the top of the ladder. It is the step from a referral posture, where the platform hands the merchant to a processor and collects a share, to a managed PayFac, where the platform owns the merchant experience and pricing while a provider carries the heaviest compliance and infrastructure load. That single step is worth roughly a 4x to 5x change in captured basis points at the midpoint of each band, and it is reachable without building a payments company. The trade-offs behind that step are the subject of <a href="/the-lab/payfac-vs-isv">ISV Referral vs PayFac-lite</a>.</p>
+
+    <h2>What does a platform capture at each payments model in dollars?</h2>
+
+    <p>Basis points are abstract until they are multiplied by volume. The tables below run the same four models across three volume tiers a vertical SaaS platform is likely to sit at: $10M, $50M and $100M in annual card volume. Each cell is gross payments revenue at the low, midpoint and high of that model's band, before the platform's own cost to serve.</p>
+
+    <h3>At $10M annual card volume</h3>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Low (bps)</th>
+          <th>Midpoint</th>
+          <th>High (bps)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ISV Referral</td><td>$5,000</td><td>$10,000</td><td>$15,000</td></tr>
+        <tr><td>Enhanced Residuals</td><td>$15,000</td><td>$22,500</td><td>$30,000</td></tr>
+        <tr><td>PayFac-lite</td><td>$25,000</td><td>$47,500</td><td>$70,000</td></tr>
+        <tr><td>Full PayFac</td><td>$50,000</td><td>$85,000</td><td>$120,000</td></tr>
+      </tbody>
+    </table>
+
+    <h3>At $50M annual card volume</h3>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Low (bps)</th>
+          <th>Midpoint</th>
+          <th>High (bps)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ISV Referral</td><td>$25,000</td><td>$50,000</td><td>$75,000</td></tr>
+        <tr><td>Enhanced Residuals</td><td>$75,000</td><td>$112,500</td><td>$150,000</td></tr>
+        <tr><td>PayFac-lite</td><td>$125,000</td><td>$237,500</td><td>$350,000</td></tr>
+        <tr><td>Full PayFac</td><td>$250,000</td><td>$425,000</td><td>$600,000</td></tr>
+      </tbody>
+    </table>
+
+    <h3>At $100M annual card volume</h3>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Low (bps)</th>
+          <th>Midpoint</th>
+          <th>High (bps)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ISV Referral</td><td>$50,000</td><td>$100,000</td><td>$150,000</td></tr>
+        <tr><td>Enhanced Residuals</td><td>$150,000</td><td>$225,000</td><td>$300,000</td></tr>
+        <tr><td>PayFac-lite</td><td>$250,000</td><td>$475,000</td><td>$700,000</td></tr>
+        <tr><td>Full PayFac</td><td>$500,000</td><td>$850,000</td><td>$1,200,000</td></tr>
+      </tbody>
+    </table>
+
+    <p>Read down any column and the shape of the decision is clear. At $50M, moving from a referral arrangement at the middle of its band to a managed PayFac at the middle of its band takes captured revenue from about $50,000 to about $237,500 a year. That $187,500 delta is what funds the integration and the onboarding work the managed model requires, and it recurs every year on volume the platform already has. The build cost of each model, and the payback math against these numbers, lives in <a href="/the-lab/what-embedded-payments-costs">what embedded payments actually costs</a>.</p>
+
+    <h2>Why is the gap between models the real benchmark?</h2>
+
+    <p>The headline band is only half the picture. The number that changes a roadmap is the gap between the model a platform runs now and the one directly above it, on the volume it already processes.</p>
+
+    <p>At $100M in annual volume, the midpoint gaps stack like this. Referral to Enhanced Residuals is roughly $125,000 a year. Enhanced Residuals to PayFac-lite is roughly $250,000. PayFac-lite to Full PayFac is roughly $375,000. None of those steps requires new merchants. They are pure re-monetization of existing volume, which is why the gap between models, not the absolute band, is the benchmark a platform should carry into a board conversation.</p>
+
+    <p>The gap also explains why so many platforms leave money on the table quietly, and why the PayFac-lite and Full PayFac bands are wide enough to matter on their own. A platform sitting at the bottom of the PayFac-lite band at 25 bps and one sitting at the top at 70 bps are in the same model, doing the same work, with nearly a 3x difference in captured revenue. On $50M that is the difference between $125,000 and $350,000 a year, and most of that $225,000 gap is recoverable through processor terms, merchant pricing and how much complexity the platform has actually taken on, without changing the model at all. Before a platform commits to a bigger, harder model, the first benchmark to run is whether it is even at the top of its current band.</p>
+
+    <h2>Why does activation decide whether the bps get realized?</h2>
+
+    <p>Here is the number that undoes every table above. The bps ladder assumes the volume is actually flowing through the platform's payments product. It rarely all is. The multiplier that turns headline capture into real capture is merchant activation, the share of eligible merchants processing live volume through the platform.</p>
+
+    <p>A platform can negotiate a beautiful 70 bps managed PayFac deal and still capture a fraction of it if only a slice of its merchants have turned payments on. Activation scales the whole revenue line linearly. At 100 percent activation the platform earns the headline number. At 20 percent it earns a fifth of it, no matter how good the bps deal is.</p>
+
+    <p>The table below holds the model fixed at a PayFac-lite midpoint of roughly 47.5 bps on $50M of eligible volume, and varies only activation. The headline revenue is $237,500. Watch what activation does to it.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Merchant activation</th>
+          <th>Volume actually processed</th>
+          <th>Revenue captured at 47.5 bps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>20%</td><td>$10M</td><td>$47,500</td></tr>
+        <tr><td>40%</td><td>$20M</td><td>$95,000</td></tr>
+        <tr><td>60%</td><td>$30M</td><td>$142,500</td></tr>
+        <tr><td>80%</td><td>$40M</td><td>$190,000</td></tr>
+        <tr><td>100%</td><td>$50M</td><td>$237,500</td></tr>
+      </tbody>
+    </table>
+
+    <p>A platform at 20 percent activation on a 47.5 bps managed model captures $47,500, close to what a referral platform captures at its own midpoint of 10 bps with full activation ($50,000). The pricier model bought almost nothing. This is the most common and most expensive mistake in embedded payments: a platform negotiates up the bps ladder and never fixes the activation curve, so it pays to build a Ferrari and drives it at 20 miles an hour.</p>
+
+    <p>The practical read is that activation is a higher-leverage lever than the model choice for most platforms below the top quartile. Doubling activation from 30 to 60 percent doubles captured revenue on the model already in place, with no new processor deal and no new build. The mechanics of moving that curve, along with attach-rate and activation benchmarks by program design, are in the companion piece, <a href="/the-lab/payments-benchmarks-for-software-platforms">embedded payments benchmarks for software platforms</a>.</p>
+
+    <h2>How should you use these benchmarks?</h2>
+
+    <p>Three moves come out of the numbers above. First, find the platform's current model on the ladder and confirm it is at the top of its band, not the bottom, before assuming a bigger model is the answer. The $225,000 of intra-band upside at $50M on PayFac-lite alone is usually the cheapest revenue on the table. Second, size the gap to the next model up on current volume, not on projected volume, so the business case rests on volume that already exists. Third, and before either of the first two, measure activation, because the entire ladder is multiplied by it and a low activation rate quietly caps every other number on this page.</p>
+
+    <p>These are payment infrastructure benchmarks, not guarantees. They are calibrated to give a platform a defensible starting range for a processor conversation, a board slide or a build-versus-partner decision, and to make the gaps between models legible in dollars. Where a specific platform lands inside them is a function of its volume mix, its vertical, its processor terms and, above all, how much of its eligible volume it has actually switched on.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What do software platforms capture at each embedded payments model?</h3>
+    <p>In net basis points on processed card volume, roughly 5 to 15 bps for ISV Referral, 15 to 30 bps for Enhanced Residuals, 25 to 70 bps for a managed PayFac or PayFac-lite, and 50 to 120 bps for a Full PayFac. These are directional ranges calibrated from processor RFPs and diligence, net of interchange and processor cost, so they are the share that actually reaches the platform rather than the merchant's headline rate. The PayFac-lite and Full PayFac bands are wide because complexity, not just model choice, drives where a platform lands inside them.</p>
+
+    <h3>How much embedded payments revenue does $50M of card volume generate?</h3>
+    <p>At the midpoint of each band, about $50,000 a year at ISV Referral, $112,500 at Enhanced Residuals, $237,500 at PayFac-lite and $425,000 at Full PayFac, before the platform's own cost to serve. The full band runs from roughly $25,000 at the bottom of referral to $600,000 at the top of Full PayFac on the same $50M, which is why the model choice and the position within the band both matter.</p>
+
+    <h3>What is a payment facilitator's economics compared to a referral model?</h3>
+    <p>A Full PayFac captures roughly 50 to 120 bps because it owns the full economics, underwriting, compliance and operations, while an ISV Referral captures 5 to 15 bps because it owns almost nothing beyond the introduction. The PayFac keeps far more of each transaction but carries the risk, compliance and operating cost that come with owning the payment, and where it lands in its own wide band tracks how much of that complexity it has actually taken on, so the right comparison is captured basis points net of that operating burden, not the headline band alone.</p>
+
+    <h3>Does moving up the payments model always increase revenue?</h3>
+    <p>Only if merchant activation holds. Captured revenue is the model's basis points multiplied by the volume actually processing through the platform, so a platform at 20 percent activation on a 47.5 bps managed model captures roughly the same dollars as a fully activated referral platform at its 10 bps midpoint. Moving up the ladder without fixing activation buys a bigger rate on a smaller base and often nets nothing.</p>
+
+    <h3>Are these embedded payments benchmarks guaranteed rates?</h3>
+    <p>No. They are directional ranges calibrated from processor bids, term sheets and diligence, meant to give a platform a defensible starting point for planning and negotiation. Actual capture depends on volume mix, vertical, processor terms and activation, and two platforms at the same volume can sit at opposite ends of the same band.</p>
+
+  </div>
+  <a href="/the-lab" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Size the prize before you size the build</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">See what your platform could be capturing.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier takes four inputs and runs your own volume across all four models, so you can see the gap in dollars, not just basis points. Want a working session on closing it? A Quick Start Call is the next step.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/margin-multiplier" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-multiplier-primary">Run the Margin Multiplier →</a>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-consult-secondary">Or book a Quick Start Call →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px"><div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div></a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+</footer>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>
