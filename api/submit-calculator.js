@@ -55,8 +55,10 @@ module.exports = async (req, res) => {
 
     // 3. Brevo — add to CRM on Multiplier Leads (4) only, so the lead gets the
     // WF2 Multiplier nurture (not also the WF1 Free Guide nurture). The Guide PDF
-    // is delivered inline in the confirmation email above, so HAS_FREE_GUIDE is
-    // still set as an attribute — we just don't add them to the Free Guide list.
+    // is delivered as an on-page download button the moment they submit (see
+    // margin-multiplier.html #report-done), not gated on the confirmation email
+    // actually landing — GUIDE_DELIVERY_METHOD records that so it's traceable
+    // even if the Resend confirmation email above silently fails.
     fetch(`${baseUrl}/api/brevo-subscribe`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -72,6 +74,7 @@ module.exports = async (req, res) => {
         extraAttributes: {
           HAS_MULTIPLIER: true,
           HAS_FREE_GUIDE: true,
+          GUIDE_DELIVERY_METHOD: 'on_page_download',
           ENTRY_DATE: new Date().toISOString().split('T')[0],
         },
         utmParams: req.body.utmParams,

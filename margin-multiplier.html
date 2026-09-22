@@ -503,16 +503,17 @@ textarea { resize:vertical; min-height:90px; line-height:1.6; }
     <!-- REPORT OFFER (value-first email capture: result is free, email buys the shareable report) -->
     <div class="report-offer" id="report-offer" style="margin:22px 0;padding:20px 22px;border:1px solid var(--copper);border-radius:10px;background:rgba(200,130,60,0.06)">
       <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--copper);margin-bottom:8px">Take it with you</div>
-      <p style="margin:0 0 14px;font-size:15px;line-height:1.55">Want this as a report you can send to your team? We'll email your personalized Margin Multiplier breakdown, the recommended model and why, plus the free Embedded Payments Guide.</p>
+      <p style="margin:0 0 14px;font-size:15px;line-height:1.55">Want this as a report you can send to your team? Get the free Embedded Payments Guide instantly, plus we'll email your personalized Margin Multiplier breakdown and the recommended model and why.</p>
       <div class="email-row">
         <input type="email" id="report-email" placeholder="you@company.com" required aria-label="Your email address"/>
-        <button class="btn-p" id="report-btn" onclick="requestReport()" data-analytics="mm-report-request" style="width:auto;padding:11px 22px;">Email me the report →</button>
+        <button class="btn-p" id="report-btn" onclick="requestReport()" data-analytics="mm-report-request" style="width:auto;padding:11px 22px;">Get the report →</button>
       </div>
       <div class="gate-err" id="report-err"></div>
       <p class="gate-note">No sales call. No spam. One email with your report.</p>
     </div>
     <div id="report-done" style="display:none;margin:22px 0;padding:20px 22px;border:1px solid var(--copper);border-radius:10px;background:rgba(200,130,60,0.06)">
-      <p style="margin:0;font-size:15px;line-height:1.55">Sent. Check your inbox for your personalized report and the Embedded Payments Guide.</p>
+      <p style="margin:0 0 14px;font-size:15px;line-height:1.55">Here's your guide, download it now. Your personalized report is also on its way to your inbox.</p>
+      <a href="/assets/MarginLabs_Embedded_Payments_Opportunity.pdf" target="_blank" rel="noopener" class="btn-p" id="guide-download-btn" data-analytics="mm-guide-download" style="display:inline-block;width:auto;padding:11px 22px;text-decoration:none;">Download the Guide →</a>
     </div>
 
     <div class="rationale">
@@ -794,6 +795,8 @@ async function requestReport() {
     }),
   }).catch(() => {});
 
+  if (window.mlBrevoTrack) window.mlBrevoTrack('guide_delivered_onpage', email, { method: 'on_page_download' });
+
   // Swap the offer for the confirmation, the result stays on screen
   const off = $c('report-offer'), done = $c('report-done');
   if (off)  off.style.display  = 'none';
@@ -807,7 +810,7 @@ function buildResults() {
   const _off = $c('report-offer'), _done = $c('report-done'), _rb = $c('report-btn');
   if (_off)  _off.style.display  = '';
   if (_done) _done.style.display = 'none';
-  if (_rb) { _rb.disabled = false; _rb.textContent = 'Email me the report →'; }
+  if (_rb) { _rb.disabled = false; _rb.textContent = 'Get the report →'; }
 
   $c('ri-hl').textContent  = `At ${volLbl} in annual payments volume, here's what each model generates.`;
   $c('ri-sub').textContent = curModel

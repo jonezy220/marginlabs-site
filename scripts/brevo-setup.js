@@ -33,10 +33,11 @@ async function brevo(method, path, body) {
 
 async function createAttributes() {
   const attrs = [
-    { name: 'HAS_FREE_GUIDE', type: 'boolean' },
-    { name: 'HAS_MULTIPLIER', type: 'boolean' },
-    { name: 'HAS_FRAMEWORK',  type: 'boolean' },
-    { name: 'ENTRY_DATE',     type: 'date' },
+    { name: 'HAS_FREE_GUIDE',         type: 'boolean' },
+    { name: 'HAS_MULTIPLIER',         type: 'boolean' },
+    { name: 'HAS_FRAMEWORK',          type: 'boolean' },
+    { name: 'ENTRY_DATE',             type: 'date' },
+    { name: 'GUIDE_DELIVERY_METHOD',  type: 'text' },
   ];
 
   for (const attr of attrs) {

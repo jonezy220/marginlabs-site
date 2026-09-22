@@ -25,5 +25,8 @@ Audited the live site, API handlers and Brevo wiring after the analytics kept sh
 3. **Fix the listless free-guide bug (one-line code):** add the Free Guide list ID to the `main.js` free-guide brevo-subscribe call once the list is confirmed. (Only affects homepage free-guide leads; Multiplier and Lab captures are correctly listed.)
 4. **Then optimize for volume/conversion, not new surfaces:** the surfaces exist. Levers are more traffic to them and better opt-in rate (offer, placement, maybe surfacing the Lab block higher or on scroll). Not a rebuild.
 
+## Implemented 2026-09-04 (Lab capture conversion)
+Two Lab surfaces now, both -> list 12, tagged `LAB_PLACEMENT` (end|bar) + GA4 placement param so we can measure which converts: (1) end-of-article inline card (kept), (2) a slim dismissible sticky bottom bar for non-finishers (appears ~35% scroll, remembers dismissal/subscribe in localStorage, auto-hides when the footer is in view, short on mobile). Inline + slim-dismissible only, no modal/gate/interstitial, to protect rank. A brief mid-article inline block (commit 0b5682b) was shipped then replaced by the bar (commit da310c7) per Chris's call.
+
 ## Note on "7 returning"
 "Returning users" in GA4 = people who re-visit the SITE, not email subscribers (subscribers are engaged off-site via email). So low returning does not by itself prove capture is broken. The real proof will be in Brevo: check the actual contact count and recent additions on lists 4 and the Free Guide list. If those are near-zero despite Multiplier completions, item 1 or 2 is the break.
