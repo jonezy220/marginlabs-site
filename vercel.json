@@ -185,6 +185,11 @@
       "permanent": false
     },
     {
+      "source": "/go/multiplier",
+      "destination": "https://marginlabs.io/margin-multiplier?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=margin-multiplier",
+      "permanent": false
+    },
+    {
       "source": "/go/become-payfac-co",
       "destination": "https://marginlabs.io/the-lab/how-to-become-a-payment-facilitator?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=how-to-become-payfac",
       "permanent": false
