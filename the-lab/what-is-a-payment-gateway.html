@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is a Payment Gateway? | Margin Labs</title>
+<meta name="description" content="A payment gateway captures and encrypts transaction data and passes it to the processor for authorization. What it actually does, how it differs from a processor, and what it costs.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/what-is-a-payment-gateway">
+<meta property="og:title" content="What Is a Payment Gateway? | Margin Labs">
+<meta property="og:description" content="A payment gateway captures and encrypts transaction data and passes it to the processor for authorization. What it actually does, how it differs from a processor, and what it costs.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/what-is-a-payment-gateway">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a payment gateway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A payment gateway is the technology that captures a transaction's card or bank details at checkout, encrypts them, and sends them to a payment processor for authorization. It is the layer between the checkout page or terminal and the rest of the payments stack, not the entity that moves money or underwrites merchants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a payment gateway and a payment processor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A gateway captures and transmits the transaction. A processor takes that transaction, routes it to the card networks and issuing bank, and returns an approve or decline. Many modern providers, Stripe and Adyen among them, bundle both functions into one integration, which is why the two terms get used interchangeably even though they describe different jobs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a separate payment gateway if I use a PayFac or PayFac-as-a-Service provider?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost never. Modern PayFac and PayFac-as-a-Service providers include gateway functionality in the same API, so a platform integrates once and gets capture, encryption, tokenization, and processing together. A standalone gateway integration is mainly relevant for platforms that already have a processor relationship and need to add gateway capability on top of it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a payment gateway cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standalone gateways typically charge a flat per-transaction fee, often $0.10 to $0.30, sometimes with a small monthly platform fee on top, separate from the interchange and processor markup on the transaction itself. Bundled providers fold the gateway fee into their all-in per-transaction rate, so there is no separate line item to negotiate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Stripe a payment gateway or a payment processor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Stripe operates gateway functionality (capture, encryption, tokenization) and processing functionality (routing to the networks, returning authorization results) under one integration, along with PayFac-style merchant onboarding through Stripe Connect. That bundling is the norm among modern providers, which is part of why the terminology confuses platforms evaluating their options."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .faq-item { margin: 20px 0 28px; }
+  .faq-q { font-size: 16px; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+  .faq-a { font-size: 15px; color: var(--dim); line-height: 1.7; margin: 0; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="1"    y="15"  width="4"   height="4"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="6.5"  y="13"  width="4"   height="6"   rx=".5"        fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="11"  width="4"   height="8"   rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="12"   y="7.5" width="4"   height="3.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="11.5" y1="11"  x2="16.5" y2="11"  stroke="#C8823C" stroke-width=".75" opacity=".52"/>
+      <rect x="17.5"  y="9"   width="4.5" height="10"  rx="0 0 .5 .5" fill="#C8823C" opacity="0.38"/>
+      <rect x="17.5"  y="1.5" width="4.5" height="7.5" rx=".5 .5 0 0" fill="#C8823C"/>
+      <line x1="17"   y1="9"  x2="22"   y2="9"   stroke="#C8823C" stroke-width=".9" opacity=".58"/>
+      <line x1="19.75" y1="1.5" x2="19.75" y2="-.5" stroke="#C8823C" stroke-width=".9" stroke-dasharray=".7,1"/>
+      <polyline points="18.75,.5 19.75,-.5 20.75,.5" stroke="#C8823C" stroke-width=".9" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<!-- ── ARTICLE ─────────────────────────────────── -->
+<article class="article-wrap">
+  <a href="/the-lab" class="article-back">← Back to The Lab</a>
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">What Is a Payment Gateway?</h1>
+  <div class="article-meta">
+    <span>September 2026</span>
+    <span>5 min read</span>
+  </div>
+  <div class="article-body">
+
+    <p><strong>A payment gateway is the technology that captures a transaction's card or bank details at checkout, encrypts them, and passes them to a payment processor for authorization. It sits between the checkout page or terminal and the rest of the payments stack. It does not move money, underwrite merchants, or set pricing, that is the processor's and the acquirer's job.</strong></p>
+
+    <p>Gateway, processor, acquirer, network. Four different jobs, four different words, and in practice most platforms hear all four used to describe whatever Stripe or Adyen is doing for them. That collapse is understandable, modern providers bundle the functions, but understanding what each layer actually does matters the moment you're negotiating a contract, debugging a decline, or deciding whether you need to integrate something new.</p>
+
+    <h2>What does a payment gateway actually do?</h2>
+
+    <p>Four jobs, in order. First, capture: read the card or bank details entered at checkout or dipped at a terminal. Second, encrypt: wrap that data so it can't be read in transit, using TLS and, for stored data, tokenization. Third, transmit: send the encrypted transaction to a processor, which routes it to the card network and the issuing bank. Fourth, return: relay the approve or decline back to the checkout page in real time, usually well under a second.</p>
+
+    <p>A gateway also typically handles a few things adjacent to that core loop: tokenizing card numbers so the platform never has to store raw PANs, supporting stored payment methods for recurring billing, and layering in 3-D Secure or other authentication where a card network or regulation requires it. For the mechanics of how tokenization specifically works, see <a href="/the-lab/what-is-payment-tokenization">what payment tokenization actually is</a>.</p>
+
+    <h2>How does a payment gateway differ from a payment processor?</h2>
+
+    <p>The gateway captures and transmits. The processor is what happens next: it takes the transaction the gateway handed off, routes it through the card network to the issuing bank, and comes back with an authorization decision. The processor is also usually the party with the relationship to the acquiring bank, the one actually responsible for moving settled funds into the merchant's account days later.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>What it does</th>
+          <th>What it does not do</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Gateway</strong></td>
+          <td>Captures, encrypts, and transmits the transaction; returns the result</td>
+          <td>Does not decide approve/decline, does not hold merchant funds</td>
+        </tr>
+        <tr>
+          <td><strong>Processor</strong></td>
+          <td>Routes the transaction to the card network and issuer, returns authorization</td>
+          <td>Does not usually handle the buyer-facing capture step</td>
+        </tr>
+        <tr>
+          <td><strong>Acquirer</strong></td>
+          <td>Holds the merchant account, receives and settles funds</td>
+          <td>Does not run the checkout technology</td>
+        </tr>
+        <tr>
+          <td><strong>Card network</strong></td>
+          <td>Sets interchange, routes authorization requests, arbitrates disputes</td>
+          <td>Does not touch a merchant's checkout page directly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>In practice, one company often plays two or three of these roles at once. Stripe, Adyen, and similar providers bundle gateway and processor functionality into a single API, and increasingly add PayFac-style acquiring on top, which is exactly what lets a platform integrate once instead of stitching four vendor relationships together. For the platform-specific version of choosing among them, see <a href="/the-lab/payment-processor-for-saas">how to choose a payment processor for SaaS</a>.</p>
+
+    <div class="pull-quote">A gateway is the door. A processor is what happens on the other side of it. Most platforms only ever need to know that the door is well built, not who built it.</div>
+
+    <h2>Do you need a separate gateway if you use a PayFac or PayFac-as-a-Service provider?</h2>
+
+    <p>Almost never. This is the question that actually matters for a vertical SaaS platform embedding payments, and the short answer is that a modern PayFac or PayFac-as-a-Service integration already includes gateway functionality. You integrate once, capture and encryption are handled inside that same API, and there is no separate gateway contract to negotiate or vendor to manage. For what the PayFac layer itself is doing on top of that, see <a href="/the-lab/what-is-a-payment-facilitator">what a payment facilitator is</a>.</p>
+
+    <p>A standalone gateway integration is mostly relevant for a narrower case: a platform that already has its own processor or acquiring relationship and needs to add gateway capability, capture and tokenization, on top of an existing setup rather than starting from a bundled provider. That is a smaller and shrinking share of new embedded payments builds.</p>
+
+    <h2>How much does a payment gateway cost?</h2>
+
+    <p>Standalone gateways typically charge a flat per-transaction fee, commonly in the $0.10 to $0.30 range, sometimes with a small monthly platform or account fee on top. That fee sits separately from the interchange and processor markup on the transaction itself, so a merchant or platform evaluating a standalone gateway is looking at two line items, not one.</p>
+
+    <p>Bundled providers fold the gateway cost into their all-in per-transaction rate. There is no separate gateway line to negotiate, which simplifies the contract but also makes it harder to see exactly what you're paying for each layer. If cost transparency at the transaction level matters to how you price your own merchants, that is the same logic covered in <a href="/the-lab/interchange-plus-pricing">interchange-plus pricing for platforms</a>.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">What is a payment gateway?</p>
+      <p class="faq-a">A payment gateway is the technology that captures a transaction's card or bank details at checkout, encrypts them, and sends them to a payment processor for authorization. It is the layer between the checkout page or terminal and the rest of the payments stack, not the entity that moves money or underwrites merchants.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the difference between a payment gateway and a payment processor?</p>
+      <p class="faq-a">A gateway captures and transmits the transaction. A processor takes that transaction, routes it to the card networks and issuing bank, and returns an approve or decline. Many modern providers, Stripe and Adyen among them, bundle both functions into one integration, which is why the two terms get used interchangeably even though they describe different jobs.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Do I need a separate payment gateway if I use a PayFac or PayFac-as-a-Service provider?</p>
+      <p class="faq-a">Almost never. Modern PayFac and PayFac-as-a-Service providers include gateway functionality in the same API, so a platform integrates once and gets capture, encryption, tokenization, and processing together. A standalone gateway integration is mainly relevant for platforms that already have a processor relationship and need to add gateway capability on top of it.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How much does a payment gateway cost?</p>
+      <p class="faq-a">Standalone gateways typically charge a flat per-transaction fee, often $0.10 to $0.30, sometimes with a small monthly platform fee on top, separate from the interchange and processor markup on the transaction itself. Bundled providers fold the gateway fee into their all-in per-transaction rate, so there is no separate line item to negotiate.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is Stripe a payment gateway or a payment processor?</p>
+      <p class="faq-a">Both. Stripe operates gateway functionality (capture, encryption, tokenization) and processing functionality (routing to the networks, returning authorization results) under one integration, along with PayFac-style merchant onboarding through Stripe Connect. That bundling is the norm among modern providers, which is part of why the terminology confuses platforms evaluating their options.</p>
+    </div>
+
+  </div>
+  <a href="/the-lab" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Past the basics?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">See what your payments program could be worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="/advisory" style="color:var(--copper-lt);">start a conversation</a> about what this means for your specific situation.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/margin-multiplier" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-mm-primary">Run the Margin Multiplier →</a>
+      <a href="/advisory" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-consult-secondary">Or talk to me about your specific situation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+  <div class="footer-copy"><a href="/privacy" data-analytics="footer-privacy">Privacy</a></div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

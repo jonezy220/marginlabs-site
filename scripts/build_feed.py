@@ -110,6 +110,8 @@ ARTICLES = [
     ("embedded-insurance-for-vertical-saas",       "2026-09-02"),
     ("interchange-plus-pricing",                  "2026-09-18"),
     ("embedded-payments-economics-benchmarks",    "2026-09-22"),
+    ("what-is-a-payment-gateway",                  "2026-09-24"),
+    ("what-is-payment-tokenization",               "2026-09-24"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).

@@ -8,9 +8,214 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 22 Sep 2026 16:25:12 +0000</lastBuildDate>
-    <pubDate>Tue, 22 Sep 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 24 Sep 2026 13:41:32 +0000</lastBuildDate>
+    <pubDate>Thu, 24 Sep 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>What Is Payment Tokenization?</title>
+      <link>https://marginlabs.io/the-lab/what-is-payment-tokenization</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-payment-tokenization</guid>
+      <pubDate>Thu, 24 Sep 2026 14:00:00 +0000</pubDate>
+      <description>Tokenization replaces a card number with a non-sensitive placeholder. What it actually does, how it differs from encryption, and why it matters for recurring billing.</description>
+      <content:encoded><![CDATA[<p><strong>Tokenization replaces a card number with a randomly generated placeholder, called a token, that carries no exploitable value if it's intercepted or stolen. The token maps back to the real card number only inside the vault that created it, so a platform can store and reuse the token for future charges without ever holding the actual card number itself.</strong></p>
+
+    <p>Every subscription business runs on tokenization whether anyone on the team could define it or not. The moment a platform stores a payment method to charge again next month, something has to hold onto that card without holding onto the card. Tokenization is the mechanism, and it is worth understanding on purpose rather than by accident, because it touches PCI compliance, checkout security, and recurring-revenue reliability all at once.</p>
+
+    <h2>How does tokenization actually work?</h2>
+
+    <p>At the moment of capture, whether that's checkout or a card reader, the raw card number gets sent to a tokenization system, usually built into the gateway or processor. That system generates a token, a string of characters with no mathematical relationship to the card number, and returns the token to the merchant or platform. From that point forward, the platform stores and transacts against the token. The token is submitted for future charges, and the tokenization system on the other end resolves it back to the real card number to complete the transaction. The raw number never has to live in the platform's own database again.</p>
+
+    <h2>How is tokenization different from encryption?</h2>
+
+    <p>Encryption is reversible: anyone with the correct key can decrypt the data back to its original form. Tokenization is not reversible in that same sense. A token has no mathematical link to the card number it represents, it is a reference that only resolves to real data inside the specific vault that issued it. Steal a token from anywhere else and it is useless.</p>
+
+    <p>The two aren't competitors, they're layered. Encryption (TLS) protects card data in transit, on its way from the checkout form to the gateway. Tokenization protects it at rest, once the platform needs to store something to charge again later. A payments stack that only encrypts and never tokenizes is still storing raw card numbers somewhere, which is exactly the liability tokenization exists to remove. For the layer that does the capturing and transmitting in the first place, see <a href="https://marginlabs.io/the-lab/what-is-a-payment-gateway?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment gateway is</a>.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Encryption</th>
+          <th>Tokenization</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Reversible?</strong></td>
+          <td>Yes, with the correct key</td>
+          <td>No, the token has no mathematical link back</td>
+        </tr>
+        <tr>
+          <td><strong>Protects data</strong></td>
+          <td>In transit</td>
+          <td>At rest, for reuse</td>
+        </tr>
+        <tr>
+          <td><strong>Typical use</strong></td>
+          <td>Checkout form to gateway (TLS)</td>
+          <td>Stored payment methods, recurring billing</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>What is a network token, and why does it matter more than a regular one?</h2>
+
+    <p>Most tokens are issued by whichever gateway or processor captured the transaction, and they only work within that provider's system. A network token is different: it's issued directly by the card network itself, Visa's VTS or Mastercard's MDES, which makes it portable across providers rather than locked to one.</p>
+
+    <p>The bigger advantage for a subscription business is what happens when a card expires or gets reissued after fraud. A regular token tied to the old card number just fails on the next charge attempt, and the platform has to chase the customer for updated card details, which is exactly the friction that drives involuntary churn. A network token updates automatically behind the scenes when the network reissues the card, so the next charge attempt succeeds without the customer doing anything. For a platform running recurring billing at any real volume, that difference shows up directly in the renewal-failure rate.</p>
+
+    <div class="pull-quote">The token isn't a security feature bolted onto the payment. For a subscription business, it's the thing that lets the payment survive past the moment it was first entered.</div>
+
+    <h2>Does tokenization reduce PCI compliance burden?</h2>
+
+    <p>Yes, and this is usually the reason a platform ends up caring about tokenization at all. PCI DSS scope is driven by whether a system stores, processes, or transmits raw cardholder data. A platform that tokenizes at capture and never touches the real card number again qualifies for SAQ A, the lightest self-assessment tier, essentially confirming that a third party handles the sensitive data. Skip tokenization and store or pass raw card numbers through your own systems, and the compliance burden climbs into much heavier tiers, with real audit and infrastructure cost attached. This is one of the practical reasons the economics in <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually cost</a> favor providers who tokenize by default rather than as an add-on.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">What is tokenization in payments?</p>
+      <p class="faq-a">Tokenization replaces a card number with a randomly generated placeholder, called a token, that has no exploitable value on its own. The token maps back to the real card number only inside the vault that created it. A platform or merchant can store and reuse the token for future charges without ever holding the actual card number.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How is tokenization different from encryption?</p>
+      <p class="faq-a">Encryption is reversible: the original data can be recovered with the correct key. Tokenization is not reversible in that sense, the token has no mathematical relationship to the card number, it's a reference that only resolves back to real data inside the vault that issued it. Payments systems typically use both: encryption protects data in transit, tokenization protects it at rest.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is a network token?</p>
+      <p class="faq-a">A network token is a token issued directly by a card network, Visa's VTS or Mastercard's MDES, rather than by a single gateway or processor. It's portable across providers and, critically for subscription businesses, it updates automatically when the underlying card expires or is reissued, which prevents a failed recurring charge from a stale card number.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Does tokenization reduce PCI compliance burden?</p>
+      <p class="faq-a">Yes, substantially. If a platform never stores, transmits, or processes raw card numbers because tokenization happens at capture, the PCI DSS scope that applies to it shrinks to the lightest self-assessment tier (SAQ A) instead of the heavier tiers that apply when a system actually touches cardholder data.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Why does tokenization matter for subscription billing specifically?</p>
+      <p class="faq-a">Recurring billing depends on charging a stored payment method months or years after the customer entered it. Tokenization is what makes storing that payment method safe and compliant. Network tokens go a step further and auto-update when a card is reissued, which directly reduces involuntary churn from failed renewals on expired cards.</p>
+    </div>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Past the basics?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments program could be worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">start a conversation</a> about what this means for your specific situation.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or talk to me about your specific situation →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/what-is-payment-tokenization?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>What Is a Payment Gateway?</title>
+      <link>https://marginlabs.io/the-lab/what-is-a-payment-gateway</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-a-payment-gateway</guid>
+      <pubDate>Thu, 24 Sep 2026 14:00:00 +0000</pubDate>
+      <description>A payment gateway captures and encrypts transaction data and passes it to the processor for authorization. What it actually does, how it differs from a processor, and what it costs.</description>
+      <content:encoded><![CDATA[<p><strong>A payment gateway is the technology that captures a transaction's card or bank details at checkout, encrypts them, and passes them to a payment processor for authorization. It sits between the checkout page or terminal and the rest of the payments stack. It does not move money, underwrite merchants, or set pricing, that is the processor's and the acquirer's job.</strong></p>
+
+    <p>Gateway, processor, acquirer, network. Four different jobs, four different words, and in practice most platforms hear all four used to describe whatever Stripe or Adyen is doing for them. That collapse is understandable, modern providers bundle the functions, but understanding what each layer actually does matters the moment you're negotiating a contract, debugging a decline, or deciding whether you need to integrate something new.</p>
+
+    <h2>What does a payment gateway actually do?</h2>
+
+    <p>Four jobs, in order. First, capture: read the card or bank details entered at checkout or dipped at a terminal. Second, encrypt: wrap that data so it can't be read in transit, using TLS and, for stored data, tokenization. Third, transmit: send the encrypted transaction to a processor, which routes it to the card network and the issuing bank. Fourth, return: relay the approve or decline back to the checkout page in real time, usually well under a second.</p>
+
+    <p>A gateway also typically handles a few things adjacent to that core loop: tokenizing card numbers so the platform never has to store raw PANs, supporting stored payment methods for recurring billing, and layering in 3-D Secure or other authentication where a card network or regulation requires it. For the mechanics of how tokenization specifically works, see <a href="https://marginlabs.io/the-lab/what-is-payment-tokenization?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what payment tokenization actually is</a>.</p>
+
+    <h2>How does a payment gateway differ from a payment processor?</h2>
+
+    <p>The gateway captures and transmits. The processor is what happens next: it takes the transaction the gateway handed off, routes it through the card network to the issuing bank, and comes back with an authorization decision. The processor is also usually the party with the relationship to the acquiring bank, the one actually responsible for moving settled funds into the merchant's account days later.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>What it does</th>
+          <th>What it does not do</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Gateway</strong></td>
+          <td>Captures, encrypts, and transmits the transaction; returns the result</td>
+          <td>Does not decide approve/decline, does not hold merchant funds</td>
+        </tr>
+        <tr>
+          <td><strong>Processor</strong></td>
+          <td>Routes the transaction to the card network and issuer, returns authorization</td>
+          <td>Does not usually handle the buyer-facing capture step</td>
+        </tr>
+        <tr>
+          <td><strong>Acquirer</strong></td>
+          <td>Holds the merchant account, receives and settles funds</td>
+          <td>Does not run the checkout technology</td>
+        </tr>
+        <tr>
+          <td><strong>Card network</strong></td>
+          <td>Sets interchange, routes authorization requests, arbitrates disputes</td>
+          <td>Does not touch a merchant's checkout page directly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>In practice, one company often plays two or three of these roles at once. Stripe, Adyen, and similar providers bundle gateway and processor functionality into a single API, and increasingly add PayFac-style acquiring on top, which is exactly what lets a platform integrate once instead of stitching four vendor relationships together. For the platform-specific version of choosing among them, see <a href="https://marginlabs.io/the-lab/payment-processor-for-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose a payment processor for SaaS</a>.</p>
+
+    <div class="pull-quote">A gateway is the door. A processor is what happens on the other side of it. Most platforms only ever need to know that the door is well built, not who built it.</div>
+
+    <h2>Do you need a separate gateway if you use a PayFac or PayFac-as-a-Service provider?</h2>
+
+    <p>Almost never. This is the question that actually matters for a vertical SaaS platform embedding payments, and the short answer is that a modern PayFac or PayFac-as-a-Service integration already includes gateway functionality. You integrate once, capture and encryption are handled inside that same API, and there is no separate gateway contract to negotiate or vendor to manage. For what the PayFac layer itself is doing on top of that, see <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment facilitator is</a>.</p>
+
+    <p>A standalone gateway integration is mostly relevant for a narrower case: a platform that already has its own processor or acquiring relationship and needs to add gateway capability, capture and tokenization, on top of an existing setup rather than starting from a bundled provider. That is a smaller and shrinking share of new embedded payments builds.</p>
+
+    <h2>How much does a payment gateway cost?</h2>
+
+    <p>Standalone gateways typically charge a flat per-transaction fee, commonly in the $0.10 to $0.30 range, sometimes with a small monthly platform or account fee on top. That fee sits separately from the interchange and processor markup on the transaction itself, so a merchant or platform evaluating a standalone gateway is looking at two line items, not one.</p>
+
+    <p>Bundled providers fold the gateway cost into their all-in per-transaction rate. There is no separate gateway line to negotiate, which simplifies the contract but also makes it harder to see exactly what you're paying for each layer. If cost transparency at the transaction level matters to how you price your own merchants, that is the same logic covered in <a href="https://marginlabs.io/the-lab/interchange-plus-pricing?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">interchange-plus pricing for platforms</a>.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">What is a payment gateway?</p>
+      <p class="faq-a">A payment gateway is the technology that captures a transaction's card or bank details at checkout, encrypts them, and sends them to a payment processor for authorization. It is the layer between the checkout page or terminal and the rest of the payments stack, not the entity that moves money or underwrites merchants.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the difference between a payment gateway and a payment processor?</p>
+      <p class="faq-a">A gateway captures and transmits the transaction. A processor takes that transaction, routes it to the card networks and issuing bank, and returns an approve or decline. Many modern providers, Stripe and Adyen among them, bundle both functions into one integration, which is why the two terms get used interchangeably even though they describe different jobs.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Do I need a separate payment gateway if I use a PayFac or PayFac-as-a-Service provider?</p>
+      <p class="faq-a">Almost never. Modern PayFac and PayFac-as-a-Service providers include gateway functionality in the same API, so a platform integrates once and gets capture, encryption, tokenization, and processing together. A standalone gateway integration is mainly relevant for platforms that already have a processor relationship and need to add gateway capability on top of it.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How much does a payment gateway cost?</p>
+      <p class="faq-a">Standalone gateways typically charge a flat per-transaction fee, often $0.10 to $0.30, sometimes with a small monthly platform fee on top, separate from the interchange and processor markup on the transaction itself. Bundled providers fold the gateway fee into their all-in per-transaction rate, so there is no separate line item to negotiate.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is Stripe a payment gateway or a payment processor?</p>
+      <p class="faq-a">Both. Stripe operates gateway functionality (capture, encryption, tokenization) and processing functionality (routing to the networks, returning authorization results) under one integration, along with PayFac-style merchant onboarding through Stripe Connect. That bundling is the norm among modern providers, which is part of why the terminology confuses platforms evaluating their options.</p>
+    </div>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Past the basics?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">See what your payments program could be worth.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Margin Multiplier models your revenue under all four embedded payments approaches. Takes 60 seconds. No signup required. Or <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">start a conversation</a> about what this means for your specific situation.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Run the Margin Multiplier →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or talk to me about your specific situation →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/what-is-a-payment-gateway?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Embedded Payments Economics Benchmarks: bps by Model</title>
       <link>https://marginlabs.io/the-lab/embedded-payments-economics-benchmarks</link>
@@ -2043,17 +2248,17 @@
 
     <div class="stage-block">
       <p><span class="lbl">1. Capital and lending</span></p>
-      <p>Working-capital advances or loans, underwritten off the payments data you already see. This is usually the first and most natural step, because the data does the hard part and merchant demand is real: small businesses are chronically underserved on access to capital. It earns interest and origination fees, often the highest-margin line you can add. It also carries credit risk and a capital question, which is the catch covered below.</p>
+      <p>Working-capital advances or loans, underwritten off the payments data you already see. This is usually the first and most natural step, because the data does the hard part and merchant demand is real: small businesses are chronically underserved on access to capital. It earns interest and origination fees, often the highest-margin line you can add. It also carries credit risk and a capital question, which is the catch covered below. For the mechanics, see <a href="https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded lending for vertical SaaS</a>.</p>
     </div>
 
     <div class="stage-block">
       <p><span class="lbl">2. Accounts</span></p>
-      <p>A deposit or operating account that holds the merchant's funds on your platform instead of at an outside bank. Once payments settle into an account you control, the merchant's financial center of gravity moves onto your software. Accounts earn a share of deposit economics and money-movement fees, and they make every other product stickier because the money already lives there.</p>
+      <p>A deposit or operating account that holds the merchant's funds on your platform instead of at an outside bank. Once payments settle into an account you control, the merchant's financial center of gravity moves onto your software. Accounts earn a share of deposit economics and money-movement fees, and they make every other product stickier because the money already lives there. For what this actually requires, see <a href="https://marginlabs.io/the-lab/embedded-banking-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded banking for vertical SaaS</a>.</p>
     </div>
 
     <div class="stage-block">
       <p><span class="lbl">3. Cards</span></p>
-      <p>Branded debit or expense cards issued to the merchant, usually drawing on the account or the capital line. Every swipe earns interchange, and a card puts your brand in the merchant's pocket on the spending side, not just the accepting side. Issuing is operationally heavier and only pays off at enough volume, so it tends to come once accounts are established.</p>
+      <p>Branded debit or expense cards issued to the merchant, usually drawing on the account or the capital line. Every swipe earns interchange, and a card puts your brand in the merchant's pocket on the spending side, not just the accepting side. Issuing is operationally heavier and only pays off at enough volume, so it tends to come once accounts are established. For what building this actually requires, see <a href="https://marginlabs.io/the-lab/embedded-card-issuing-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded card issuing for vertical SaaS</a>.</p>
     </div>
 
     <p>The order is not a rule, it is a gravity. Lending uses your data, accounts capture the funds, cards monetize the spend. Some platforms reach straight for issuing because the interchange math looks clean, and some skip lending because they have no appetite for credit risk. The point is to add the product your merchants actually need and your data can actually support, in the sequence that compounds, rather than the one with the best slide.</p>
