@@ -601,6 +601,11 @@ const VERT = {
 
 const FORMSPREE_ID = 'xwvrzrov';
 
+// Free Quick Start Call for anyone who completes the calculator: completing
+// the form is itself the intent signal, so the $379 fee is waived here.
+// Same booking calendar success.html hands paying customers to post-Stripe.
+const QSC_BOOKING_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2i2_z4H9R7zoFnSeHc2TRC-gKITKSO34aLcCCHPY3CCIYIqKVsb9iNZlT_xWdhGdmnFoU3-9YN?gv=true';
+
 function $c(id) { return document.getElementById(id); }
 function fmtCur(n) {
   if (n >= 1000000) return '$' + (n/1000000).toFixed(1).replace(/\.0$/,'') + 'M';
@@ -850,13 +855,14 @@ function buildResults() {
       <div class="cta-ey">Next step</div>
       <div class="cta-hl">${ctaHl}</div>
       <p class="cta-sub">${ctaSub}</p>
+      <p class="cta-sub" style="color:var(--copper);">You've already done the work above, so the usual $379 Quick Start Call fee is waived.</p>
       <div class="cta-btns">
-        <button class="btn-p auto" id="consult-trigger" data-analytics="mm-cta-consult">Start the conversation →</button>
+        <button class="btn-p auto" id="qsc-free-trigger" data-analytics="mm-cta-free-qsc">Book a free Quick Start Call →</button>
         ${sec}
       </div>`;
     setTimeout(()=>{
-      const ct = $c('consult-trigger');
-      if (ct) ct.onclick = () => { window.location.href = '/advisory#form'; };
+      const qt = $c('qsc-free-trigger');
+      if (qt) qt.onclick = () => { window.open(QSC_BOOKING_URL, '_blank', 'noopener'); };
       const ps = $c('primer-sec');
       if (ps) ps.onclick = e => { e.preventDefault(); launchCheckout(ps); };
     },50);
@@ -867,13 +873,13 @@ function buildResults() {
       <p class="cta-sub">${ctaSub}</p>
       <div class="cta-btns">
         <button class="btn-p auto" id="primer-pri" data-analytics="mm-cta-primer">Get the Framework · $139 →</button>
-        <span class="cta-2nd">Or <a href="#" id="consult-soft">start a conversation →</a></span>
+        <span class="cta-2nd">Or <a href="#" id="qsc-free-secondary">book a free Quick Start Call →</a></span>
       </div>`;
     setTimeout(()=>{
       const pp = $c('primer-pri');
       if (pp) pp.onclick = () => launchCheckout(pp);
-      const cs = $c('consult-soft');
-      if (cs) cs.onclick = e => { e.preventDefault(); window.location.href = '/advisory#form'; };
+      const qs = $c('qsc-free-secondary');
+      if (qs) qs.onclick = e => { e.preventDefault(); window.open(QSC_BOOKING_URL, '_blank', 'noopener'); };
     },50);
   }
 }
