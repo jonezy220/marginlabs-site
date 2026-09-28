@@ -198,6 +198,11 @@
       "source": "/go/become-payfac-co",
       "destination": "https://marginlabs.io/the-lab/how-to-become-a-payment-facilitator?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=how-to-become-payfac",
       "permanent": false
+    },
+    {
+      "source": "/go/payment-gateway-co",
+      "destination": "https://marginlabs.io/the-lab/what-is-a-payment-gateway?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=payment-gateway",
+      "permanent": false
     }
   ],
   "functions": {
