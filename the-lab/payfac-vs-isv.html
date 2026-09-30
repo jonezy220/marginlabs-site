@@ -72,6 +72,14 @@
         "@type": "Answer",
         "text": "No. PayFac is better economically per dollar of volume processed, but it comes with operational burden (sub-merchant onboarding, KYC, settlement, disputes, PCI program, 24/7 ops) that does not pay back below a certain volume. For platforms with low payment volume, fragmented merchant bases or strategic concerns about owning payment risk, ISV Referral with negotiated enhanced residuals is often the right answer. The right model is the one whose economics outweigh its operational cost for your specific volume and stage."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "ISV vs PayFac: how should a platform actually decide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The decision comes down to volume and operational appetite. Below roughly 10 million dollars in annual processed volume, ISV Referral is usually right since the PayFac operational lift rarely pays back yet. Above 25 million, the basis-point gap, 5 to 15 bps for ISV versus 50 to 120 bps for PayFac, becomes large enough to justify the build, especially through a managed PayFac partner. Between those thresholds, run the diagnostic: how fast is volume growing, how concentrated is the merchant base, does the platform want to own the merchant-of-record relationship, and is payments a strategic moat or just a revenue line. The right answer is stage-appropriate, not permanent, and should be re-checked every year as volume grows."
+      }
     }
   ]
 }
@@ -317,6 +325,38 @@
     <p>If the underlying question is really whether to make the jump at all, we cover that head-on in <a href="/the-lab/should-you-become-a-payment-facilitator">should you become a payment facilitator</a>. And if the platform is at the point of choosing between specific PayFac partners or negotiating an ISV agreement with PayFac migration in mind, that is the kind of situation a Quick Start Call exists for.</p>
 
     <p>Platforms further along, already running multiple processors or expanding into new payment methods, are usually asking a different question: whether to bring in <a href="/the-lab/payment-orchestration-for-platforms">payment orchestration</a> to manage that complexity, not which single model to pick.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the actual difference between PayFac and ISV in payments?</p>
+      <p class="faq-a">An ISV in payments is a software platform that refers its customers to a processor and earns a residual on the volume those customers process. The processor owns the merchant relationship, runs the underwriting, takes the operational burden and pays the platform a share. A PayFac is the merchant of record itself. The platform onboards its sub-merchants under its own master agreement with the processor, sets pricing, takes the dispute and risk burden and captures the full economics minus what it owes the underlying processor.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">At what volume should a vertical SaaS platform switch from ISV to PayFac?</p>
+      <p class="faq-a">The PayFac economics start to make sense around 10 to 25 million dollars in annual processed volume, depending on the variant chosen and the implementation cost. Below 10 million, the operational lift of a PayFac (full or managed) almost never pays back. Above 25 million, the basis-point delta between ISV residuals and PayFac economics becomes material enough to justify the build. The middle is where managed PayFac options (Stripe Connect, Adyen for Platforms, Tilled, Finix) flatten the curve.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Can a SaaS platform start as an ISV and migrate to PayFac later?</p>
+      <p class="faq-a">Yes, and most platforms do. The migration involves re-boarding sub-merchants under new agreements, rebuilding settlement and reconciliation flows, taking on PCI scope and accepting 3 to 6 months of operational disruption. The smart move is choosing the initial ISV partner with future migration in mind. Some processors have a clear path from referral to their own managed PayFac program; others make migration deliberately painful to defend their margin.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the basis-point gap between ISV and PayFac?</p>
+      <p class="faq-a">ISV Referral typically captures 5 to 15 basis points of processed volume. Enhanced Residuals on top of ISV can push that to 20 to 40 basis points with negotiation. Managed PayFac (PayFac-as-a-Service) sits at 50 to 80 basis points. Full PayFac captures 80 to 120 basis points but with materially higher operational and capital burden. The gap between ISV at 10 bps and managed PayFac at 65 bps on 25 million dollars of volume is roughly 137,500 dollars per year. That number is what makes the comparison interesting.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is PayFac always better than ISV for a SaaS platform?</p>
+      <p class="faq-a">No. PayFac is better economically per dollar of volume processed, but it comes with operational burden (sub-merchant onboarding, KYC, settlement, disputes, PCI program, 24/7 ops) that does not pay back below a certain volume. For platforms with low payment volume, fragmented merchant bases or strategic concerns about owning payment risk, ISV Referral with negotiated enhanced residuals is often the right answer. The right model is the one whose economics outweigh its operational cost for your specific volume and stage.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">ISV vs PayFac: how should a platform actually decide?</p>
+      <p class="faq-a">The decision comes down to volume and operational appetite. Below roughly 10 million dollars in annual processed volume, ISV Referral is usually right since the PayFac operational lift rarely pays back yet. Above 25 million, the basis-point gap, 5 to 15 bps for ISV versus 50 to 120 bps for PayFac, becomes large enough to justify the build, especially through a managed PayFac partner. Between those thresholds, run the diagnostic: how fast is volume growing, how concentrated is the merchant base, does the platform want to own the merchant-of-record relationship, and is payments a strategic moat or just a revenue line. The right answer is stage-appropriate, not permanent, and should be re-checked every year as volume grows.</p>
+    </div>
 
   </div>
   <a href="/the-lab" class="article-back">← Back to The Lab</a>
