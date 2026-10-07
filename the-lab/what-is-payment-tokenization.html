@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Is Payment Tokenization? | Margin Labs</title>
-<meta name="description" content="Tokenization replaces a card number with a non-sensitive placeholder. What it actually does, how it differs from encryption, and why it matters for recurring billing.">
+<title>Payment Tokenization: What It Is and How It Works | Margin Labs</title>
+<meta name="description" content="How payment tokenization works: a card number becomes a token worthless if stolen. Network vs gateway tokens, tokenization vs encryption, PCI scope and recurring billing.">
 <link rel="canonical" href="https://marginlabs.io/the-lab/what-is-payment-tokenization">
-<meta property="og:title" content="What Is Payment Tokenization? | Margin Labs">
-<meta property="og:description" content="Tokenization replaces a card number with a non-sensitive placeholder. What it actually does, how it differs from encryption, and why it matters for recurring billing.">
+<meta property="og:title" content="Payment Tokenization: What It Is and How It Works | Margin Labs">
+<meta property="og:description" content="How payment tokenization works: a card number becomes a token worthless if stolen. Network vs gateway tokens, tokenization vs encryption, PCI scope and recurring billing.">
 <meta property="og:url" content="https://marginlabs.io/the-lab/what-is-payment-tokenization">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
@@ -144,7 +144,7 @@
 
     <p>Every subscription business runs on tokenization whether anyone on the team could define it or not. The moment a platform stores a payment method to charge again next month, something has to hold onto that card without holding onto the card. Tokenization is the mechanism, and it is worth understanding on purpose rather than by accident, because it touches PCI compliance, checkout security, and recurring-revenue reliability all at once.</p>
 
-    <h2>How does tokenization actually work?</h2>
+    <h2>How does tokenization work in payments?</h2>
 
     <p>At the moment of capture, whether that's checkout or a card reader, the raw card number gets sent to a tokenization system, usually built into the gateway or processor. That system generates a token, a string of characters with no mathematical relationship to the card number, and returns the token to the merchant or platform. From that point forward, the platform stores and transacts against the token. The token is submitted for future charges, and the tokenization system on the other end resolves it back to the real card number to complete the transaction. The raw number never has to live in the platform's own database again.</p>
 
