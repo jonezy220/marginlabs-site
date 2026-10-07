@@ -55,6 +55,11 @@
       "permanent": false
     },
     {
+      "source": "/go/saas-lending-co",
+      "destination": "https://marginlabs.io/the-lab/saas-lending-platforms?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=saas-lending",
+      "permanent": false
+    },
+    {
       "source": "/go/payfac-cost",
       "destination": "https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=payfac-cost",
       "permanent": false
