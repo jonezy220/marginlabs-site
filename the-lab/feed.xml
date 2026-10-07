@@ -8,9 +8,133 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 07 Oct 2026 15:18:03 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 17:02:09 +0000</lastBuildDate>
     <pubDate>Wed, 07 Oct 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
+    <item>
+      <title>Embedded Payments vs Embedded Finance: What's Actually Different</title>
+      <link>https://marginlabs.io/the-lab/embedded-payments-vs-embedded-finance</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/embedded-payments-vs-embedded-finance</guid>
+      <pubDate>Wed, 07 Oct 2026 14:00:00 +0000</pubDate>
+      <description>Embedded payments and embedded finance get treated as one market. They are not, and the gap decides which vendors belong in the conversation.</description>
+      <content:encoded><![CDATA[<p>Vendor decks use "embedded payments" and "embedded finance" almost interchangeably now. A processor's sales deck calls itself an embedded finance platform. A banking-as-a-service provider calls its product embedded payments. The terms have collapsed into each other in the marketing, which is a problem the moment a platform is actually choosing who to build with, because the two markets have different vendors, different infrastructure and a different compliance footprint underneath them.</p>
+
+    <p>The distinction is not academic. Get it wrong and a platform ends up evaluating a banking-as-a-service platform for a problem that only needed a processor, or the reverse, trying to stretch a payments vendor into a lending or deposit product it was never built to support.</p>
+
+    <p><strong>Embedded payments is the ability to move money inside your product: accept a card, process a transaction, send a payout. Embedded finance is the wider category that includes payments plus lending, business banking accounts, card issuing and insurance, all built into the same product. Payments is one line item inside embedded finance, not another name for it.</strong></p>
+
+    <h2>What embedded payments actually covers</h2>
+
+    <p>Embedded payments is money movement. A merchant on the platform accepts a card, ACH or wallet payment from their customer, the platform routes that transaction through a processor or a managed PayFac partner, and the merchant gets paid out. Whether the platform runs this as an <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV referral or a PayFac</a> changes the economics, but the scope is the same: capture, process, settle, payout.</p>
+
+    <p>The vendors that live here are processors and managed PayFac providers, the Stripes, Adyens, Payrixes, Finixes and Tilleds of the world. They are built for one job: move money reliably and compliantly. Most of the <a href="https://marginlabs.io/the-lab/payment-orchestration-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment orchestration</a> conversation happens at this layer too, because as volume grows, platforms start routing across more than one of these processors.</p>
+
+    <h2>What embedded finance actually covers</h2>
+
+    <p>Embedded finance is the umbrella. It includes embedded payments, then adds product lines that were historically bank-only: extending credit to merchants, issuing them a branded card, giving them a deposit account that lives inside the platform, or offering insurance tied to their business. Each of those is its own regulated product with its own infrastructure requirement.</p>
+
+    <p>The vendors here are different in kind, not just size. A banking-as-a-service provider like Unit, Treasury Prime, Synctera or Column sits on top of a sponsor bank relationship and exposes account, card and sometimes lending rails through an API. Some of them also handle payments, which is part of why the category gets confused with embedded payments. But the core product is broader: it is bank-grade infrastructure, not payment-processing infrastructure.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Embedded payments</th>
+          <th>Embedded finance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Core question</td>
+          <td>How does money move through the product</td>
+          <td>What financial products can the platform offer</td>
+        </tr>
+        <tr>
+          <td>Typical vendor</td>
+          <td>Processor or managed PayFac (Stripe, Adyen, Payrix, Finix, Tilled)</td>
+          <td>Banking-as-a-service platform (Unit, Treasury Prime, Synctera, Column)</td>
+        </tr>
+        <tr>
+          <td>Underlying infrastructure</td>
+          <td>Card network and ACH rails</td>
+          <td>Sponsor bank relationship plus card and ACH rails</td>
+        </tr>
+        <tr>
+          <td>Revenue lines</td>
+          <td>Interchange spread on processed volume</td>
+          <td>Interchange spread plus interest, card fees, account fees</td>
+        </tr>
+        <tr>
+          <td>Compliance surface</td>
+          <td>PCI, card network rules</td>
+          <td>PCI plus bank regulatory requirements (KYC, BSA/AML, lending compliance where relevant)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Why the distinction changes which vendors you call</h2>
+
+    <p>If the actual need is "let our merchants accept payments," bringing a banking-as-a-service platform into the RFP wastes months. Those vendors are built to stand up deposit accounts and card programs, and the sales process, the integration timeline and the compliance review all reflect that heavier scope. A platform that only needs payments processing will spend a year re-litigating requirements it never had.</p>
+
+    <p>The reverse mistake is just as common. A platform decides it wants to offer merchants a business banking account or a lending product, then tries to get there by adding features to its existing payments processor relationship. Processors are not banks. They do not hold deposits, they are not set up to extend credit and stretching a payments integration to cover those products usually means rebuilding on different infrastructure later anyway.</p>
+
+    <blockquote class="pull-quote">Embedded payments answers "how does money move." Embedded finance answers "what financial products can we actually offer." Confusing the two means evaluating vendors for a scope you don't need, or trying to stretch a vendor past the scope it was built for.</blockquote>
+
+    <h2>The sequence most platforms actually follow</h2>
+
+    <p>Payments comes first almost every time, and for good reason. It is the highest-frequency touchpoint with the merchant, the easiest to justify commercially and the dataset that makes everything after it possible. A platform that has run payments for its merchants for a year has transaction history, volume patterns and risk signal that no lending or banking product could get without it.</p>
+
+    <p>From there, platforms expand one line at a time, usually in the order the merchant actually asks for them. <a href="https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Embedded lending</a> is typically the first add, because the payments data underwrites it directly. <a href="https://marginlabs.io/the-lab/embedded-banking-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Embedded banking</a> and deposit accounts follow for platforms whose merchants would genuinely rather manage their operating cash inside the same product they already live in all day. <a href="https://marginlabs.io/the-lab/embedded-card-issuing-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Card issuing</a> and <a href="https://marginlabs.io/the-lab/embedded-insurance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded insurance</a> round out the set for platforms with a strong enough merchant relationship to sell a card program or a coverage product credibly. The full roadmap and sequencing logic is in <a href="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance for vertical SaaS</a>.</p>
+
+    <p>None of that is a checklist every platform should work through. Most platforms should nail payments and stop. Embedded finance is the right conversation only once payments is genuinely working, merchant trust is real and there is a specific product merchants are already asking for.</p>
+
+    <p>Payroll sits at the edge of this definition and gets argued both ways. It moves money and carries real compliance weight, tax withholding, filings, wage law, which is why some vendors and analysts count it as embedded finance. Others leave it out because the core product is HR and labor compliance, not a merchant-facing payment flow. Either way, it is a separate build-or-partner decision from the finance stack above, not a sixth row on that table.</p>
+
+    <h2>How to tell which conversation you're actually having</h2>
+
+    <p>Before a vendor call, name the actual product decision. "We need our merchants to accept payments in the product" is an embedded payments conversation, and the right names on the list are processors and managed PayFac partners. "We want to give our merchants a deposit account, a card or access to credit" is an embedded finance conversation, and the right names on the list are banking-as-a-service platforms, evaluated with a longer compliance and integration timeline in mind.</p>
+
+    <p>Getting this right before the first vendor call saves the quarter that usually gets lost finding out three meetings in that the platform brought the wrong category of vendor to the table.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the difference between embedded payments and embedded finance?</p>
+      <p class="faq-a">Embedded payments is the ability to move money inside your product: accept a card, process a transaction, send a payout. Embedded finance is the broader category that includes embedded payments plus lending, business banking accounts, card issuing and insurance built into the same product. Payments is one line inside embedded finance, not a synonym for it.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is embedded finance just a bigger version of embedded payments?</p>
+      <p class="faq-a">Not quite. It is a different scope of product and a different scope of vendor relationship. Embedded payments needs a processor or a managed PayFac partner. Embedded finance needs that plus a banking-as-a-service provider, a lending partner or balance sheet and, in some cases, a card issuing platform. The infrastructure, the compliance surface and the revenue model are all wider, not just the volume.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Which vendors handle embedded payments versus embedded finance?</p>
+      <p class="faq-a">Embedded payments vendors are processors and managed PayFac providers: Stripe, Adyen, Payrix, Finix, Tilled and similar. Embedded finance vendors are banking-as-a-service platforms that bundle payments with deposit accounts, card issuing and sometimes lending rails: Unit, Treasury Prime, Synctera, Column and similar. Some platforms, Stripe included, now sit across both categories, which is part of why the terms get blurred.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Does a platform need embedded finance to do embedded payments well?</p>
+      <p class="faq-a">No. Payments alone is a complete, valuable business line and most vertical SaaS platforms should get it right before adding anything else. Embedded finance is an expansion decision for platforms that already have payments working, real merchant trust and a clear reason customers would want a lending, banking or card product from the same login.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What usually comes first, embedded payments or embedded finance?</p>
+      <p class="faq-a">Payments comes first almost every time. It is the highest-frequency interaction, the easiest to justify to merchants and the foundation the other lines get built on. Lending, banking and card issuing are usually added one at a time once payments data gives the platform enough signal to underwrite and enough trust to sell the next product.</p>
+    </div>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Talk it through against your actual numbers.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? Run the Margin Multiplier.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/embedded-payments-vs-embedded-finance?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>SaaS Lending Platforms: How Vertical SaaS Offers Financing</title>
       <link>https://marginlabs.io/the-lab/saas-lending-platforms</link>
