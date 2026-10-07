@@ -60,6 +60,11 @@
       "permanent": false
     },
     {
+      "source": "/go/ep-vs-ef-co",
+      "destination": "https://marginlabs.io/the-lab/embedded-payments-vs-embedded-finance?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=ep-vs-ef",
+      "permanent": false
+    },
+    {
       "source": "/go/payfac-cost",
       "destination": "https://marginlabs.io/the-lab/true-cost-of-becoming-a-payfac?utm_source=linkedin&utm_medium=social&utm_content=personal&utm_campaign=payfac-cost",
       "permanent": false
