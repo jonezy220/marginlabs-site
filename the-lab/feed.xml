@@ -8,20 +8,129 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 24 Sep 2026 13:41:32 +0000</lastBuildDate>
-    <pubDate>Thu, 24 Sep 2026 14:00:00 +0000</pubDate>
+    <lastBuildDate>Wed, 07 Oct 2026 15:18:03 +0000</lastBuildDate>
+    <pubDate>Wed, 07 Oct 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
-      <title>What Is Payment Tokenization?</title>
+      <title>SaaS Lending Platforms: How Vertical SaaS Offers Financing</title>
+      <link>https://marginlabs.io/the-lab/saas-lending-platforms</link>
+      <guid isPermaLink="true">https://marginlabs.io/the-lab/saas-lending-platforms</guid>
+      <pubDate>Wed, 07 Oct 2026 14:00:00 +0000</pubDate>
+      <description>A SaaS lending platform is a vertical SaaS product that extends financing to the businesses on it, underwritten off its own payment data. How it actually works, the partner-funded to on-book spectrum, and the risks an operator has to weigh.</description>
+      <content:encoded><![CDATA[<p><strong>A SaaS lending platform is a vertical SaaS product that extends capital to the businesses running on it, underwritten off the payment and usage data the platform already holds. The mechanics come down to one decision: who funds the loans and who carries the risk. That decision runs on a spectrum from partner-funded, where a lending partner holds the balance sheet and the platform takes zero balance-sheet risk, through forward-flow, to on-book, where the platform funds the loans itself. Almost every vertical SaaS platform should start at the partner-funded end and earn its way up.</strong></p>
+
+    <p>This is written for the operator deciding how to add financing, not for the borrower. The question underneath every "how do we offer lending" conversation is not really about lending. It is about how much risk and capital the platform is willing to take on to capture more of the economics, and the good news is that a platform can offer financing to its customers without carrying a dollar of it. For the case on whether to do this at all and what the return looks like, the companion piece on <a href="https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded lending for vertical SaaS</a> covers the ROI and the sequencing. This one is about how the machine actually works.</p>
+
+    <h2>What is a SaaS lending platform?</h2>
+
+    <p>A SaaS lending platform is not a lending company. It is a vertical SaaS platform that has added a financing product inside the software its customers already use to run their business. The customer sees a credit offer in context, applies without leaving the product and gets funded, and the whole flow leans on data the platform already has rather than on a separate application to a bank the customer has no relationship with.</p>
+
+    <p>The financing itself can take several shapes. A term loan. A revolving line of credit. A merchant cash advance repaid as a slice of daily card sales. Invoice factoring against outstanding receivables. What makes it a SaaS lending platform rather than a bank integration is that the offer, the underwriting signal and often the servicing all live inside the software and run on the platform's own data.</p>
+
+    <p>Put it next to the other financial lines a platform can add and the role is clear. Payments moves money the customer already earned. Banking holds the balance in between. Lending advances money the customer has not earned yet, against the platform's read of what they will earn. It is the same expansion logic behind <a href="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance for vertical SaaS</a>, one rung further up the risk curve than payments.</p>
+
+    <h2>How does a vertical SaaS platform actually offer financing?</h2>
+
+    <p>Mechanically, standing up a SaaS lending platform means assembling four pieces: the offer surface inside the product, the underwriting signal, the capital that funds the loan and the servicing and collections that run it after origination. The platform always owns the first piece. Where the other three sit is the entire build-vs-partner decision.</p>
+
+    <p>In the lightest version the platform owns only the offer surface and the data. It presents the credit offer inside the product, passes the underwriting signal to a lending partner, and the partner does everything else: approves, funds, services and collects. The platform never touches the capital or the compliance surface. In the heaviest version the platform owns all four, funding loans off its own balance sheet and running collections itself.</p>
+
+    <p>The through-line is that a platform does not have to become a lender to offer lending. It has to decide how many of those four pieces it wants to carry, and each one it takes on adds economics and adds weight in equal measure.</p>
+
+    <h2>What does "no balance-sheet risk" actually mean?</h2>
+
+    <p>Balance-sheet risk is the risk that a loan is not repaid and the lender eats the loss. When operators ask which model has no balance-sheet risk, they are asking which model lets the platform offer financing without owning that loss, and the answer is the partner-funded model.</p>
+
+    <p>In a partner-funded arrangement the lending partner funds every loan out of its own capital and carries the default risk. The platform provides distribution and, ideally, the data that helps the partner underwrite, and earns a revenue share, a referral fee or a slice of the interest. No platform capital is deployed and no loan sits on the platform's books, so a customer defaulting is the partner's loss, not the platform's. That is what "no balance-sheet risk" means in practice, and it is why this is where almost every platform should begin. It lets the platform prove that its customers actually want credit and that its data actually predicts repayment, before it puts its own money behind that bet.</p>
+
+    <h2>What is the partner-funded to on-book spectrum?</h2>
+
+    <p>Financing models line up on a risk-and-capital curve that will feel familiar to anyone who has looked at the payments models. At the light end the platform takes fees and carries no risk. At the heavy end it funds the loans and owns the losses. Economics rise as it moves up the curve, and so does the burden.</p>
+
+    <blockquote class="pull-quote">The platform does not have to become a lender to offer lending. It has to decide how many of the four pieces, the offer, the underwriting, the capital and the servicing, it wants to carry.</blockquote>
+
+    <h3>Partner-funded and referral</h3>
+    <p>The lightest model. A lending partner funds and owns every loan and carries the risk. The platform supplies distribution and data and earns a fee or revenue share. No platform capital, minimal licensing exposure, the lowest ceiling on economics and the right first move for nearly every platform.</p>
+
+    <h3>Forward-flow</h3>
+    <p>A middle model. The platform originates loans under an agreement where a capital partner commits in advance to buy them, usually on a defined schedule and set of criteria. The platform gets more control over the product and the customer experience and a larger cut of the economics, while the loans move off its books to the buyer. Some flavors leave the platform holding a first-loss slice or a portion of the risk, which is exactly the term to read carefully, because "forward-flow" can mean anything from near-zero risk to a real risk share depending on how the deal is struck.</p>
+
+    <h3>On-book</h3>
+    <p>The heaviest model. The platform funds the loans itself and holds them on its own balance sheet. It keeps the interest rather than sharing it, so the economics are the largest here, but it also owns every default, needs capital to lend against and takes on the full licensing, compliance and servicing surface. This is the lending equivalent of full payment-facilitator registration: the right move at real scale with proven data, and the wrong move for a platform reaching for economics it has not yet earned.</p>
+
+    <p>The trade-off is the same shape as <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV referral versus becoming a PayFac</a>. Economics rise with the risk, the capital and the licensing the platform is willing to take on, one deliberate step at a time.</p>
+
+    <h2>Why is payment data the underwriting flywheel?</h2>
+
+    <p>The reason a SaaS lending platform can underwrite better and cheaper than a standalone lender is that it already sees the borrower's real revenue. A standalone lender works off a loan application, a self-reported figure and a credit pull. A platform that already runs its customers' payments sees actual sales, their seasonality, their trend and their volatility, refreshed every day the customer transacts. That is a far stronger underwriting signal than anything a cold application produces, and the platform gets it for free as a byproduct of running payments.</p>
+
+    <p>This is why the sequence matters, and it is the single most important mechanic in the whole model. The payment flow is the underwriting data. A platform that has not yet built and monetized payments does not have the raw material that makes lending safe or cheap to underwrite, so it is stuck underwriting like everyone else. A platform that has monetized payments is sitting on a live, high-frequency revenue feed that gets more predictive the longer the customer stays.</p>
+
+    <p>The flywheel is that better data lets the platform, or its partner, approve more customers at lower loss rates, which makes the financing product better, which drives more adoption, which produces more payment data. Merchant cash advance and factoring are usually the first products a platform offers for exactly this reason: repayment is collected automatically as a slice of the card volume the platform is already processing, so the money the platform sees is both the underwriting signal and the collection mechanism. The same <a href="https://marginlabs.io/the-lab/merchant-underwriting-kyb?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">underwriting and KYB discipline</a> that governs onboarding merchants for payments feeds directly into lending decisions.</p>
+
+    <h2>How does an operator decide whether to build or partner?</h2>
+
+    <p>The build-vs-partner decision is really a decision about how far up the spectrum to go, and it turns on three questions. How mature is the payment data. How much capital is the platform willing and able to deploy. And how much regulated, standing operational weight is it prepared to carry.</p>
+
+    <p>Partner when the platform is early, when it has not yet proven demand or the predictive power of its data, or when it does not want lending losses and lending compliance on its own books. That covers most platforms, most of the time. Partner-funded lending lets a platform launch a credible financing product in a fraction of the time and at a fraction of the risk of building one, because the partner brings the capital, the licenses and the servicing infrastructure.</p>
+
+    <p>Build, or move toward on-book, only when several things are already true. Payments is monetized and the underwriting data is deep. Demand is proven. The platform has real capital to deploy and the appetite to carry losses. And the extra economics of owning the loans clearly beat the cost of the capital, the risk and the compliance operation. On-book lending is a standing business with real headcount, not a feature. Reaching for it early is the same mistake as registering as a full payment facilitator to capture a basis point the platform does not need.</p>
+
+    <h2>What are the risks an operator has to weigh?</h2>
+
+    <p>Three risks sit underneath every SaaS lending platform, and the model chosen determines who carries each one.</p>
+
+    <h3>Credit risk</h3>
+    <p>The risk that borrowers do not repay. In a partner-funded model this sits with the partner. In forward-flow it depends on the terms and any first-loss the platform retains. On-book, it is entirely the platform's, and it shows up in cycles: a portfolio that looks fine in a good year can turn quickly when the vertical hits a downturn, and the platform's customers tend to turn together because they are in the same business.</p>
+
+    <h3>Capital risk</h3>
+    <p>Funding loans requires capital, and that capital is tied up and exposed until the loans are repaid. Partner-funded models require none of the platform's capital. On-book models require a lot of it, plus a plan for what happens to funding if the platform's own financing dries up in a tight market, which is exactly when its customers need credit most.</p>
+
+    <h3>Compliance risk</h3>
+    <p>Lending is a regulated activity, and the surface depends on the product, who the borrower is and where they are. Lending to consumers carries a heavier load than lending to businesses. Depending on the product and jurisdiction the platform may need state lending licenses, and behind any program sit disclosure obligations, fair-lending rules and servicing and collections requirements. In a partner-funded model most of this lives with the partner who holds the licenses and the bank relationship. On-book, the platform inherits the whole surface. This is settled with counsel before anything ships, because it shapes what the platform can offer and what it is on the hook for. It is also the single biggest reason most platforms partner rather than get licensed.</p>
+
+    <p>Read against those three risks, the partner-funded model is not a compromise. For most platforms it is the correct answer, because it delivers a real financing product to customers while leaving the credit, capital and compliance where the people built to carry it already sit. The platform keeps what it is uniquely good at, the distribution and the data, and rents the rest until it has a specific, earned reason to own it.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is a SaaS lending platform?</h3>
+    <p>A SaaS lending platform is a vertical SaaS product that offers financing to the businesses running on it, underwritten off the payment and usage data the platform already holds. It is not a lending company. The platform supplies the offer surface and the data, and depending on the model a partner or the platform itself supplies the capital and carries the risk.</p>
+
+    <h3>Which SaaS financing model has no balance-sheet risk?</h3>
+    <p>The partner-funded model. A lending partner funds every loan out of its own capital and carries the default risk, while the platform provides distribution and data and earns a fee or revenue share. No platform capital is deployed and no loan sits on the platform's books, so a customer default is the partner's loss, not the platform's.</p>
+
+    <h3>How does a vertical SaaS platform integrate lending into its product?</h3>
+    <p>It assembles four pieces: the offer surface inside the software, the underwriting signal, the capital that funds the loan and the servicing and collections. The platform always owns the offer surface and usually the data. In a partner-funded build a lending partner supplies the capital, servicing and compliance, so integration is mostly presenting the offer and passing the underwriting signal.</p>
+
+    <h3>Why is payment data important for SaaS lending?</h3>
+    <p>Because it is a far stronger underwriting signal than a loan application. A platform running its customers' payments sees actual revenue, seasonality and trend, refreshed daily, instead of a self-reported figure. That data lets the platform or its partner approve more customers at lower loss rates, which is why lending should be sequenced after payments is monetized.</p>
+
+    <h3>Should a SaaS platform build its own lending or partner?</h3>
+    <p>Almost every platform should partner first. Partner-funded lending launches a credible financing product without deploying capital, carrying credit losses or taking on lending licenses. Building toward on-book lending makes sense only once payments data is deep, demand is proven, the platform has capital to deploy and the extra economics clearly beat the cost of the capital, risk and compliance.</p>
+<section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Thinking about financing?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Pressure-test the build-vs-partner call before you commit capital.</h2>
+    <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The right model depends on how mature your payments data is and how much risk you actually want to carry. A Quick Start Call walks through where you sit on the spectrum and what the next step looks like.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Start a Quick Start Call →</a>
+      <a href="https://marginlabs.io/the-lab/embedded-lending-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or read the ROI case for lending →</a>
+    </div>
+  </div>
+</section>
+<p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/saas-lending-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Payment Tokenization: What It Is and How It Works</title>
       <link>https://marginlabs.io/the-lab/what-is-payment-tokenization</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-payment-tokenization</guid>
       <pubDate>Thu, 24 Sep 2026 14:00:00 +0000</pubDate>
-      <description>Tokenization replaces a card number with a non-sensitive placeholder. What it actually does, how it differs from encryption, and why it matters for recurring billing.</description>
+      <description>How payment tokenization works: a card number becomes a token worthless if stolen. Network vs gateway tokens, tokenization vs encryption, PCI scope and recurring billing.</description>
       <content:encoded><![CDATA[<p><strong>Tokenization replaces a card number with a randomly generated placeholder, called a token, that carries no exploitable value if it's intercepted or stolen. The token maps back to the real card number only inside the vault that created it, so a platform can store and reuse the token for future charges without ever holding the actual card number itself.</strong></p>
 
     <p>Every subscription business runs on tokenization whether anyone on the team could define it or not. The moment a platform stores a payment method to charge again next month, something has to hold onto that card without holding onto the card. Tokenization is the mechanism, and it is worth understanding on purpose rather than by accident, because it touches PCI compliance, checkout security, and recurring-revenue reliability all at once.</p>
 
-    <h2>How does tokenization actually work?</h2>
+    <h2>How does tokenization work in payments?</h2>
 
     <p>At the moment of capture, whether that's checkout or a card reader, the raw card number gets sent to a tokenization system, usually built into the gateway or processor. That system generates a token, a string of characters with no mathematical relationship to the card number, and returns the token to the merchant or platform. From that point forward, the platform stores and transacts against the token. The token is submitted for future charges, and the tokenization system on the other end resolves it back to the real card number to complete the transaction. The raw number never has to live in the platform's own database again.</p>
 
@@ -1559,7 +1668,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call baselines the four numbers against a platform's real volume and tells you which move pays back fastest inside the hold period, and in what order. Prefer to work it yourself first? The Framework walks you through the economics.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -1579,7 +1688,7 @@
 
     <h2>What model are you actually on?</h2>
 
-    <p>Most platforms know their provider better than they know their model. The payments models form a ladder, and each rung trades more control and more economics for more operational and compliance responsibility. The move most platforms are weighing, and the one behind the common "payfac vs ISV" and "payment facilitation vs referral" questions, is a step from referring payments to facilitating them.</p>
+    <p>Most platforms know their provider better than they know their model. The payments models form a ladder, and each rung trades more control and more economics for more operational and compliance responsibility. The move most platforms are weighing, and the one behind the common "payfac vs ISV" and "<a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitation vs referral</a>" questions, is a step from referring payments to facilitating them.</p>
 
     <h3>ISV referral (the referral model)</h3>
     <p>You refer merchants to a payments provider and earn a share of the revenue. Lowest effort, lowest economics, lowest risk. The provider owns the relationship, the onboarding, the support and the compliance. This referral model is the right starting point for most platforms, and the one most commonly outgrown.</p>
@@ -1753,7 +1862,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every business's starting point is different. A Quick Start Call works your actual volume, merchant mix and model, finds the leaks worth chasing first, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -1801,7 +1910,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works the seam between your billing and payment layers with you, against your real book, and finds the recurring revenue quietly leaking out. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -1849,7 +1958,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works your boarding flow and risk appetite with you, against your real merchant mix, before you are accountable for either. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -1917,7 +2026,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works your implementation plan with you, against your real volume, merchant mix and model, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2042,7 +2151,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call looks at the four gaps against a platform's real volume and merchant mix and tells you which move pays back fastest inside the hold period. Prefer to work it yourself first? The Framework walks you through the economics.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2098,7 +2207,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call weighs what carrying full payfac compliance would cost you against what a managed model gives up in economics, on your actual numbers. Prefer to work the decision yourself first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2156,7 +2265,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call models your build cost plus run cost against what partnering would cost on your actual payments volume, so the decision rests on your numbers instead of a benchmark. Prefer to work it yourself first? The Framework walks you through the economics.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2218,7 +2327,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call looks at your actual merchant and card mix and tells you which interchange levers are worth pulling, and which are not. Prefer to work the decision on your own first? The Framework walks you through the economics.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2297,7 +2406,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call maps your move beyond payments against your real volume, merchant base and roadmap, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2369,7 +2478,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call maps your LATAM payments move against your real customers, markets and economics, country by country, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through the model logic that carries across the border.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2508,7 +2617,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">A Quick Start Call works your situation against your real merchant footprint, processor and checkout, and I make the intro when it fits. Prefer to work the decision on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2735,7 +2844,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2852,7 +2961,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -2934,7 +3043,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -3037,6 +3146,38 @@
     <p>If the underlying question is really whether to make the jump at all, we cover that head-on in <a href="https://marginlabs.io/the-lab/should-you-become-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">should you become a payment facilitator</a>. And if the platform is at the point of choosing between specific PayFac partners or negotiating an ISV agreement with PayFac migration in mind, that is the kind of situation a Quick Start Call exists for.</p>
 
     <p>Platforms further along, already running multiple processors or expanding into new payment methods, are usually asking a different question: whether to bring in <a href="https://marginlabs.io/the-lab/payment-orchestration-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment orchestration</a> to manage that complexity, not which single model to pick.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the actual difference between PayFac and ISV in payments?</p>
+      <p class="faq-a">An ISV in payments is a software platform that refers its customers to a processor and earns a residual on the volume those customers process. The processor owns the merchant relationship, runs the underwriting, takes the operational burden and pays the platform a share. A PayFac is the merchant of record itself. The platform onboards its sub-merchants under its own master agreement with the processor, sets pricing, takes the dispute and risk burden and captures the full economics minus what it owes the underlying processor.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">At what volume should a vertical SaaS platform switch from ISV to PayFac?</p>
+      <p class="faq-a">The PayFac economics start to make sense around 10 to 25 million dollars in annual processed volume, depending on the variant chosen and the implementation cost. Below 10 million, the operational lift of a PayFac (full or managed) almost never pays back. Above 25 million, the basis-point delta between ISV residuals and PayFac economics becomes material enough to justify the build. The middle is where managed PayFac options (Stripe Connect, Adyen for Platforms, Tilled, Finix) flatten the curve.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Can a SaaS platform start as an ISV and migrate to PayFac later?</p>
+      <p class="faq-a">Yes, and most platforms do. The migration involves re-boarding sub-merchants under new agreements, rebuilding settlement and reconciliation flows, taking on PCI scope and accepting 3 to 6 months of operational disruption. The smart move is choosing the initial ISV partner with future migration in mind. Some processors have a clear path from referral to their own managed PayFac program; others make migration deliberately painful to defend their margin.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the basis-point gap between ISV and PayFac?</p>
+      <p class="faq-a">ISV Referral typically captures 5 to 15 basis points of processed volume. Enhanced Residuals on top of ISV can push that to 20 to 40 basis points with negotiation. Managed PayFac (PayFac-as-a-Service) sits at 50 to 80 basis points. Full PayFac captures 80 to 120 basis points but with materially higher operational and capital burden. The gap between ISV at 10 bps and managed PayFac at 65 bps on 25 million dollars of volume is roughly 137,500 dollars per year. That number is what makes the comparison interesting.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is PayFac always better than ISV for a SaaS platform?</p>
+      <p class="faq-a">No. PayFac is better economically per dollar of volume processed, but it comes with operational burden (sub-merchant onboarding, KYC, settlement, disputes, PCI program, 24/7 ops) that does not pay back below a certain volume. For platforms with low payment volume, fragmented merchant bases or strategic concerns about owning payment risk, ISV Referral with negotiated enhanced residuals is often the right answer. The right model is the one whose economics outweigh its operational cost for your specific volume and stage.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">ISV vs PayFac: how should a platform actually decide?</p>
+      <p class="faq-a">The decision comes down to volume and operational appetite. Below roughly 10 million dollars in annual processed volume, ISV Referral is usually right since the PayFac operational lift rarely pays back yet. Above 25 million, the basis-point gap, 5 to 15 bps for ISV versus 50 to 120 bps for PayFac, becomes large enough to justify the build, especially through a managed PayFac partner. Between those thresholds, run the diagnostic: how fast is volume growing, how concentrated is the merchant base, does the platform want to own the merchant-of-record relationship, and is payments a strategic moat or just a revenue line. The right answer is stage-appropriate, not permanent, and should be re-checked every year as volume grows.</p>
+    </div>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Which model fits you?</div>
@@ -3151,8 +3292,8 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Decide it with a framework, not a guess.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Strategic Decision Framework walks you through the model choice step by step, with the math and the volume thresholds laid out. Want a second pair of eyes on your actual numbers? A Quick Start Call does it with you.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Get the Framework →</a>
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
 </section>
@@ -3588,7 +3729,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -3682,7 +3823,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -3776,7 +3917,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -3863,7 +4004,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -3949,7 +4090,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -4208,7 +4349,7 @@
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? The Framework walks you through it.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
       <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
+      <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or run the Margin Multiplier →</a>
     </div>
   </div>
 </section>
@@ -4423,7 +4564,7 @@
       <link>https://marginlabs.io/the-lab/what-is-a-payment-facilitator</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-a-payment-facilitator</guid>
       <pubDate>Tue, 14 Apr 2026 14:00:00 +0000</pubDate>
-      <description>A payment facilitator (PayFac) is an entity that boards merchants under its own account. What the PayFac model is, what it costs and whether your SaaS should.</description>
+      <description>A payment facilitator (PayFac) boards merchants under its own account and keeps the pricing. What it costs and whether your SaaS should become one.</description>
       <content:encoded><![CDATA[<img src="https://marginlabs.io/assets/lab-images/what-is-a-payment-facilitator.png" alt="The Payment Facilitation Spectrum, comparing ISV Referral, ISV Enhanced, PayFac-as-a-Service, and Full PayFac across volume threshold and net economics" class="article-hero">
 
     <p><strong>A payment facilitator (PayFac) is an entity registered with the card networks (Visa, Mastercard) that boards merchants under its own master merchant ID and processes payments on their behalf. Instead of each merchant getting an individual account, a payment facilitator aggregates them as sub-merchants under one umbrella, owning the relationship and the pricing. This is the payment facilitator model, and it is how software platforms enable payments for hundreds or thousands of small businesses without underwriting each one individually.</strong></p>
@@ -4569,6 +4710,11 @@
     </div>
 
     <div class="faq-item">
+      <p class="faq-q">What is the difference between payment facilitation and a referral model?</p>
+      <p class="faq-a">Payment facilitation and a referral model are fundamentally different arrangements, not two names for the same thing. In a referral model, you send merchants to a processor, the processor underwrites and boards them, and you collect a residual, typically 5 to 15 basis points, without controlling pricing or owning the merchant relationship. In payment facilitation, whether managed or full, merchants are boarded as sub-merchants under one master account, and the platform sets pricing and keeps a larger share of the margin, 30 basis points and up depending on the model. Referral is the simpler starting point. Payment facilitation is where the larger economics live as volume grows.</p>
+    </div>
+
+    <div class="faq-item">
       <p class="faq-q">What does a payment facilitator do?</p>
       <p class="faq-a">A payment facilitator handles six core responsibilities: merchant underwriting (KYC, KYB, risk assessment), transaction monitoring (fraud, volume anomalies), chargeback management (dispute response and reserves), settlement and funding (moving money from networks to merchant bank accounts), compliance reporting (to card networks and sponsor banks), and PCI compliance (DSS Level 1 for a full PayFac).</p>
     </div>
@@ -4696,7 +4842,7 @@
 
     <h2>PayFac vs ISV (the question most platforms are actually asking)</h2>
 
-    <p>A lot of platforms search for "PayFac vs ISV" or "ISV vs PayFac" when they really mean PayFac vs ISO. The ISO model and the ISV Referral model are closely related: in both cases, the platform refers merchants to a processor and earns a residual. ISO is the older industry term; ISV Referral is the modern term software companies tend to use. The economics and the operational burden are similar, the labels are different.</p>
+    <p>A lot of platforms search for "PayFac vs ISV" or "ISV vs PayFac" when they really mean PayFac vs ISO. The ISO model and the ISV Referral model are closely related: in both cases, the platform refers merchants to a processor and earns a residual. ISO is the older industry term; ISV Referral is the modern term software companies tend to use. The economics and the operational burden are similar, the labels are different. Whichever label you start from, it's the same underlying <a href="https://marginlabs.io/the-lab/what-is-a-payment-facilitator?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitation vs referral model</a> question.</p>
 
     <p>If you're comparing PayFac to ISV Referral, the answer is the same as the comparison above. The PayFac model gives you control of the merchant relationship and the full economics. The ISV Referral model gives you a residual and lower operational burden. Volume is the main variable that flips the math: below roughly $10M in annual processed volume, ISV Referral usually wins. Above $25M, the PayFac economics start to look compelling. The middle is where the work of <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">comparing ISV Referral to PayFac-lite</a> actually pays off.</p>
 
@@ -4721,8 +4867,8 @@
     <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:#F0EBE4;">Decide it with a framework, not a guess.</h2>
     <p style="font-size:15px;font-weight:300;color:#8a8580);line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">The Strategic Decision Framework walks you through the model choice step by step, with the math and the volume thresholds laid out. Want a second pair of eyes on your actual numbers? A Quick Start Call does it with you.</p>
     <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Get the Framework →</a>
-      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or book a Quick Start Call →</a>
+      <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;">Work with Margin Labs →</a>
+      <a href="https://marginlabs.io/framework?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;">Or decide it yourself with the Framework →</a>
     </div>
   </div>
 </section>

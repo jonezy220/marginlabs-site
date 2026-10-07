@@ -112,6 +112,8 @@ ARTICLES = [
     ("embedded-payments-economics-benchmarks",    "2026-09-22"),
     ("what-is-a-payment-gateway",                  "2026-09-24"),
     ("what-is-payment-tokenization",               "2026-09-24"),
+    # 2026-10-07: build-vs-partner mechanics companion to embedded-lending-for-vertical-saas.
+    ("saas-lending-platforms",                     "2026-10-07"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
