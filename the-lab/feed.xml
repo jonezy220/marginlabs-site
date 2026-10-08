@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 07 Oct 2026 17:02:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 12:53:37 +0000</lastBuildDate>
     <pubDate>Wed, 07 Oct 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -245,11 +245,11 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/saas-lending-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>Payment Tokenization: What It Is and How It Works</title>
+      <title>What Is Payment Tokenization?</title>
       <link>https://marginlabs.io/the-lab/what-is-payment-tokenization</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/what-is-payment-tokenization</guid>
       <pubDate>Thu, 24 Sep 2026 14:00:00 +0000</pubDate>
-      <description>How payment tokenization works: a card number becomes a token worthless if stolen. Network vs gateway tokens, tokenization vs encryption, PCI scope and recurring billing.</description>
+      <description>How tokenization works in payments: a card number becomes a token worthless if stolen. Network vs gateway tokens, tokenization vs encryption, PCI scope and recurring billing.</description>
       <content:encoded><![CDATA[<p><strong>Tokenization replaces a card number with a randomly generated placeholder, called a token, that carries no exploitable value if it's intercepted or stolen. The token maps back to the real card number only inside the vault that created it, so a platform can store and reuse the token for future charges without ever holding the actual card number itself.</strong></p>
 
     <p>Every subscription business runs on tokenization whether anyone on the team could define it or not. The moment a platform stores a payment method to charge again next month, something has to hold onto that card without holding onto the card. Tokenization is the mechanism, and it is worth understanding on purpose rather than by accident, because it touches PCI compliance, checkout security, and recurring-revenue reliability all at once.</p>
