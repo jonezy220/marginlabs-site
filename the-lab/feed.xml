@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 08 Oct 2026 12:53:37 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 13:20:09 +0000</lastBuildDate>
     <pubDate>Wed, 07 Oct 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -3261,7 +3261,7 @@
 
     <h2>How should you decide for your own platform?</h2>
 
-    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">moving up the ladder</a> pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better.</p>
+    <p>One mistake worth naming first: most platforms treat this as a permanent choice rather than a stage-appropriate one. ISV and PayFac are two of the main ways <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS companies make money from payments</a>, and the residuals start to feel meaningful, so platforms stop checking whether they have crossed the threshold where <a href="https://marginlabs.io/the-lab/should-you-change-your-payments-model?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">moving up the ladder</a> pays. Re-run the math every year. At 200 merchants processing $150,000 each, $30M in volume earns about $60K a year as an ISV referral and about $270K as a managed PayFac, a $210K gap that widens with every merchant you add. The right model is the one that fits where you are now, but you should be actively managing toward where the economics get meaningfully better, especially if an exit is anywhere on the horizon, <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payments economics are a standard diligence item</a> in vertical SaaS deals now.</p>
 
     <p>The Margin Multiplier walks through the four-model comparison at your specific volume and vertical in about 60 seconds. It is the right starting point for a platform asking the PayFac vs ISV question for the first time. The output shows what each model would generate, what the recommended move is and what the annual revenue delta of moving up the ladder looks like.</p>
 
@@ -4981,6 +4981,8 @@
     <p>The most common mistake is treating ISO vs. PayFac as a permanent, binary choice rather than a stage-appropriate one. Companies get comfortable in referral programs, the residuals start to feel meaningful, and they stop evaluating whether they've crossed the threshold.</p>
 
     <p>Run the math annually. The economics shift faster than most teams realize, especially in high-growth verticals where merchant count and average volume are both increasing.</p>
+
+    <p>This is also exactly what shows up in a PE diligence process. A platform still sitting in referral economics when the volume supports more is an undermonetized asset a buyer's team will find regardless, see <a href="https://marginlabs.io/the-lab/payments-due-diligence?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what payments due diligence for vertical SaaS actually covers</a>.</p>
 
     <blockquote class="pull-quote">The right model today should match where you are. The mistake is staying in it after you've outgrown it.</blockquote>
 
