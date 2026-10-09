@@ -213,6 +213,11 @@
       "source": "/go/payment-gateway-co",
       "destination": "https://marginlabs.io/the-lab/what-is-a-payment-gateway?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=payment-gateway",
       "permanent": false
+    },
+    {
+      "source": "/go/platform-expansion-co",
+      "destination": "https://marginlabs.io/the-lab/embedded-finance-vs-platform-expansion?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=platform-expansion",
+      "permanent": false
     }
   ],
   "functions": {
