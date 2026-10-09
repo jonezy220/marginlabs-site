@@ -116,6 +116,9 @@ ARTICLES = [
     ("saas-lending-platforms",                     "2026-10-07"),
     # 2026-10-07: catch-up ship of the 9/30 calendar slot, never wired in at the time.
     ("embedded-payments-vs-embedded-finance",      "2026-10-07"),
+    # 2026-10-12: companion to embedded-payments-vs-embedded-finance, spun off the
+    # payroll-scope question raised when that article shipped.
+    ("embedded-finance-vs-platform-expansion",     "2026-10-12"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).
