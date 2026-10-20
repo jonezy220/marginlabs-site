@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 19 Oct 2026 16:43:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 03:03:43 +0000</lastBuildDate>
     <pubDate>Wed, 21 Oct 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -35,42 +35,7 @@
 
     <p>Every function involved has a legitimate stake. The trouble is that each one, owning the line alone, optimizes for its own piece of it.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Function</th>
-          <th>What it wants</th>
-          <th>If it owns the line alone</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Finance</td>
-          <td>Predictable rev-share and margin</td>
-          <td>The contract gets optimized, adoption doesn't</td>
-        </tr>
-        <tr>
-          <td>Product</td>
-          <td>A roadmap slot and a clean merchant experience</td>
-          <td>It ships, but nobody can say no to a bad deal term</td>
-        </tr>
-        <tr>
-          <td>Engineering</td>
-          <td>A stable integration and a fixed scope</td>
-          <td>Built to spec, then left alone</td>
-        </tr>
-        <tr>
-          <td>Compliance and risk</td>
-          <td>No regulatory or loss exposure</td>
-          <td>The safest version of the line is the one that never launches</td>
-        </tr>
-        <tr>
-          <td>Sales and partnerships</td>
-          <td>A signed partner and a launch</td>
-          <td>The deal closes and the economics never get revisited</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/who-owns-embedded-finance-roadmap-1.png" alt="who-owns-embedded-finance-roadmap comparison table 1" />
 
     <p>None of those wants is wrong. They're inputs. The line needs one person who weighs them against each other and answers for the result.</p>
 
@@ -191,42 +156,7 @@
 
     <p>Payroll is the one that gets argued both ways, and it's worth being precise about why. It moves money and carries real compliance weight: tax withholding, filings, wage law. That's why some vendors and analysts fold it into embedded finance. But the thing that actually connects the embedded finance lines together isn't "moves money," it's "gets underwritten by payments data and sold on payments trust." Payroll doesn't clear either bar. It's a separate build-or-partner decision, not a sixth row on the finance table.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Dimension</th>
-          <th>Embedded finance expansion</th>
-          <th>Platform expansion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Core question</td>
-          <td>What financial products can the platform offer with the trust and data it already has</td>
-          <td>Should the platform become good at an entirely different software discipline</td>
-        </tr>
-        <tr>
-          <td>Built on</td>
-          <td>Existing payments data and merchant trust</td>
-          <td>A new data model and a new buyer relationship, built from scratch</td>
-        </tr>
-        <tr>
-          <td>Underwriting dependency</td>
-          <td>Payments transaction history drives risk decisions directly</td>
-          <td>None. Payments data doesn't inform the product</td>
-        </tr>
-        <tr>
-          <td>Build or partner model</td>
-          <td>Banking-as-a-service or lending partner layered onto existing infrastructure</td>
-          <td>Build from zero, acquire or resell a category specialist's product</td>
-        </tr>
-        <tr>
-          <td>Competitive set</td>
-          <td>Other embedded finance offerings inside vertical SaaS</td>
-          <td>Mature, standalone category leaders (Salesforce, HubSpot, QuickBooks, Gusto and similar)</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/embedded-finance-vs-platform-expansion-1.png" alt="embedded-finance-vs-platform-expansion comparison table 1" />
 
     <h2>Why the two get pitched the same way</h2>
 
@@ -311,42 +241,7 @@
 
     <p>The vendors here are different in kind, not just size. A banking-as-a-service provider like Unit, Treasury Prime, Synctera or Column sits on top of a sponsor bank relationship and exposes account, card and sometimes lending rails through an API. Some of them also handle payments, which is part of why the category gets confused with embedded payments. But the core product is broader: it is bank-grade infrastructure, not payment-processing infrastructure.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Dimension</th>
-          <th>Embedded payments</th>
-          <th>Embedded finance</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Core question</td>
-          <td>How does money move through the product</td>
-          <td>What financial products can the platform offer</td>
-        </tr>
-        <tr>
-          <td>Typical vendor</td>
-          <td>Processor or managed PayFac (Stripe, Adyen, Payrix, Finix, Tilled)</td>
-          <td>Banking-as-a-service platform (Unit, Treasury Prime, Synctera, Column)</td>
-        </tr>
-        <tr>
-          <td>Underlying infrastructure</td>
-          <td>Card network and ACH rails</td>
-          <td>Sponsor bank relationship plus card and ACH rails</td>
-        </tr>
-        <tr>
-          <td>Revenue lines</td>
-          <td>Interchange spread on processed volume</td>
-          <td>Interchange spread plus interest, card fees, account fees</td>
-        </tr>
-        <tr>
-          <td>Compliance surface</td>
-          <td>PCI, card network rules</td>
-          <td>PCI plus bank regulatory requirements (KYC, BSA/AML, lending compliance where relevant)</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/embedded-payments-vs-embedded-finance-1.png" alt="embedded-payments-vs-embedded-finance comparison table 1" />
 
     <h2>Why the distinction changes which vendors you call</h2>
 
@@ -540,32 +435,7 @@
 
     <p>The two aren't competitors, they're layered. Encryption (TLS) protects card data in transit, on its way from the checkout form to the gateway. Tokenization protects it at rest, once the platform needs to store something to charge again later. A payments stack that only encrypts and never tokenizes is still storing raw card numbers somewhere, which is exactly the liability tokenization exists to remove. For the layer that does the capturing and transmitting in the first place, see <a href="https://marginlabs.io/the-lab/what-is-a-payment-gateway?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what a payment gateway is</a>.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Encryption</th>
-          <th>Tokenization</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Reversible?</strong></td>
-          <td>Yes, with the correct key</td>
-          <td>No, the token has no mathematical link back</td>
-        </tr>
-        <tr>
-          <td><strong>Protects data</strong></td>
-          <td>In transit</td>
-          <td>At rest, for reuse</td>
-        </tr>
-        <tr>
-          <td><strong>Typical use</strong></td>
-          <td>Checkout form to gateway (TLS)</td>
-          <td>Stored payment methods, recurring billing</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/what-is-payment-tokenization-1.png" alt="what-is-payment-tokenization comparison table 1" />
 
     <h2>What is a network token, and why does it matter more than a regular one?</h2>
 
@@ -638,37 +508,7 @@
 
     <p>The gateway captures and transmits. The processor is what happens next: it takes the transaction the gateway handed off, routes it through the card network to the issuing bank, and comes back with an authorization decision. The processor is also usually the party with the relationship to the acquiring bank, the one actually responsible for moving settled funds into the merchant's account days later.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Layer</th>
-          <th>What it does</th>
-          <th>What it does not do</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Gateway</strong></td>
-          <td>Captures, encrypts, and transmits the transaction; returns the result</td>
-          <td>Does not decide approve/decline, does not hold merchant funds</td>
-        </tr>
-        <tr>
-          <td><strong>Processor</strong></td>
-          <td>Routes the transaction to the card network and issuer, returns authorization</td>
-          <td>Does not usually handle the buyer-facing capture step</td>
-        </tr>
-        <tr>
-          <td><strong>Acquirer</strong></td>
-          <td>Holds the merchant account, receives and settles funds</td>
-          <td>Does not run the checkout technology</td>
-        </tr>
-        <tr>
-          <td><strong>Card network</strong></td>
-          <td>Sets interchange, routes authorization requests, arbitrates disputes</td>
-          <td>Does not touch a merchant's checkout page directly</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/what-is-a-payment-gateway-1.png" alt="what-is-a-payment-gateway comparison table 1" />
 
     <p>In practice, one company often plays two or three of these roles at once. Stripe, Adyen, and similar providers bundle gateway and processor functionality into a single API, and increasingly add PayFac-style acquiring on top, which is exactly what lets a platform integrate once instead of stitching four vendor relationships together. For the platform-specific version of choosing among them, see <a href="https://marginlabs.io/the-lab/payment-processor-for-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">how to choose a payment processor for SaaS</a>.</p>
 
@@ -745,42 +585,7 @@
 
     <p>Net basis points here means the share of gross card volume that reaches the platform after interchange and processor cost. It is not the merchant's headline rate. A merchant paying 2.9 percent is not handing the platform 290 bps. The platform keeps the thin slice that sits above the processor's cost, and that slice is what the ladder below measures.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Monetization model</th>
-          <th>Net take rate (bps)</th>
-          <th>What the platform owns</th>
-          <th>Operating burden</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ISV Referral</td>
-          <td>5 to 15</td>
-          <td>Nothing beyond the referral</td>
-          <td>Minimal</td>
-        </tr>
-        <tr>
-          <td>Enhanced Residuals</td>
-          <td>15 to 30</td>
-          <td>Negotiated residual split, some support</td>
-          <td>Low</td>
-        </tr>
-        <tr>
-          <td>PayFac-lite (managed PayFac)</td>
-          <td>25 to 70</td>
-          <td>Merchant experience, pricing, onboarding</td>
-          <td>Moderate</td>
-        </tr>
-        <tr>
-          <td>Full PayFac</td>
-          <td>50 to 120</td>
-          <td>Full economics, underwriting, compliance, ops</td>
-          <td>High</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/embedded-payments-economics-benchmarks-1.png" alt="embedded-payments-economics-benchmarks comparison table 1" />
 
     <p>PayFac-lite and Full PayFac are both genuine ranges, not narrow bands, because where a platform lands inside them tracks how much complexity it takes on. A platform running a straightforward vertical with light underwriting sits toward the bottom of its model's range. One running higher-risk merchants, more payment methods or deeper compliance work earns its way toward the top, because it is carrying more of the operating burden that the range is compensating for.</p>
 
@@ -792,60 +597,15 @@
 
     <h3>At $10M annual card volume</h3>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Low (bps)</th>
-          <th>Midpoint</th>
-          <th>High (bps)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>ISV Referral</td><td>$5,000</td><td>$10,000</td><td>$15,000</td></tr>
-        <tr><td>Enhanced Residuals</td><td>$15,000</td><td>$22,500</td><td>$30,000</td></tr>
-        <tr><td>PayFac-lite</td><td>$25,000</td><td>$47,500</td><td>$70,000</td></tr>
-        <tr><td>Full PayFac</td><td>$50,000</td><td>$85,000</td><td>$120,000</td></tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/embedded-payments-economics-benchmarks-2.png" alt="embedded-payments-economics-benchmarks comparison table 2" />
 
     <h3>At $50M annual card volume</h3>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Low (bps)</th>
-          <th>Midpoint</th>
-          <th>High (bps)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>ISV Referral</td><td>$25,000</td><td>$50,000</td><td>$75,000</td></tr>
-        <tr><td>Enhanced Residuals</td><td>$75,000</td><td>$112,500</td><td>$150,000</td></tr>
-        <tr><td>PayFac-lite</td><td>$125,000</td><td>$237,500</td><td>$350,000</td></tr>
-        <tr><td>Full PayFac</td><td>$250,000</td><td>$425,000</td><td>$600,000</td></tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/embedded-payments-economics-benchmarks-3.png" alt="embedded-payments-economics-benchmarks comparison table 3" />
 
     <h3>At $100M annual card volume</h3>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Low (bps)</th>
-          <th>Midpoint</th>
-          <th>High (bps)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>ISV Referral</td><td>$50,000</td><td>$100,000</td><td>$150,000</td></tr>
-        <tr><td>Enhanced Residuals</td><td>$150,000</td><td>$225,000</td><td>$300,000</td></tr>
-        <tr><td>PayFac-lite</td><td>$250,000</td><td>$475,000</td><td>$700,000</td></tr>
-        <tr><td>Full PayFac</td><td>$500,000</td><td>$850,000</td><td>$1,200,000</td></tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/embedded-payments-economics-benchmarks-4.png" alt="embedded-payments-economics-benchmarks comparison table 4" />
 
     <p>Read down any column and the shape of the decision is clear. At $50M, moving from a referral arrangement at the middle of its band to a managed PayFac at the middle of its band takes captured revenue from about $50,000 to about $237,500 a year. That $187,500 delta is what funds the integration and the onboarding work the managed model requires, and it recurs every year on volume the platform already has. The build cost of each model, and the payback math against these numbers, lives in <a href="https://marginlabs.io/the-lab/what-embedded-payments-costs?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">what embedded payments actually costs</a>.</p>
 
@@ -865,22 +625,7 @@
 
     <p>The table below holds the model fixed at a PayFac-lite midpoint of roughly 47.5 bps on $50M of eligible volume, and varies only activation. The headline revenue is $237,500. Watch what activation does to it.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Merchant activation</th>
-          <th>Volume actually processed</th>
-          <th>Revenue captured at 47.5 bps</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>20%</td><td>$10M</td><td>$47,500</td></tr>
-        <tr><td>40%</td><td>$20M</td><td>$95,000</td></tr>
-        <tr><td>60%</td><td>$30M</td><td>$142,500</td></tr>
-        <tr><td>80%</td><td>$40M</td><td>$190,000</td></tr>
-        <tr><td>100%</td><td>$50M</td><td>$237,500</td></tr>
-      </tbody>
-    </table>
+    <img src="https://marginlabs.io/assets/lab-images/tables/embedded-payments-economics-benchmarks-5.png" alt="embedded-payments-economics-benchmarks comparison table 5" />
 
     <p>A platform at 20 percent activation on a 47.5 bps managed model captures $47,500, close to what a referral platform captures at its own midpoint of 10 bps with full activation ($50,000). The pricier model bought almost nothing. This is the most common and most expensive mistake in embedded payments: a platform negotiates up the bps ladder and never fixes the activation curve, so it pays to build a Ferrari and drives it at 20 miles an hour.</p>
 

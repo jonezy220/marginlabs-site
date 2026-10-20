@@ -227,6 +227,13 @@ TABLE_IMAGE_SLUGS = {
     "what-is-a-payment-facilitator",
     "pci-compliance-for-saas-platforms",
     "how-to-read-a-payments-pl",
+    # added 2026-10-19
+    "embedded-finance-vs-platform-expansion",
+    "who-owns-embedded-finance-roadmap",
+    "embedded-payments-vs-embedded-finance",
+    "what-is-payment-tokenization",
+    "what-is-a-payment-gateway",
+    "embedded-payments-economics-benchmarks",
 }
 
 
