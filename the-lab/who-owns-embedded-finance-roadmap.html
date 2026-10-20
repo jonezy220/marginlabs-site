@@ -1,0 +1,327 @@
+<!-- ML-LAB-062 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Owns the Embedded Finance Roadmap: Product, Finance or a Payments Team? | Margin Labs</title>
+<meta name="description" content="Most embedded finance lines stall between departments, not in the build. Product should own the roadmap through one leader who holds both roadmap authority and the authority to turn down a bad deal.">
+<link rel="canonical" href="https://marginlabs.io/the-lab/who-owns-embedded-finance-roadmap">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Who Owns the Embedded Finance Roadmap: Product, Finance or a Payments Team? | Margin Labs">
+<meta property="og:description" content="Most embedded finance lines stall between departments, not in the build. Product should own the roadmap through one leader who holds both roadmap authority and the authority to turn down a bad deal.">
+<meta property="og:url" content="https://marginlabs.io/the-lab/who-owns-embedded-finance-roadmap">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:image:width" content="520">
+<meta property="og:image:height" content="100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://marginlabs.io/emails/brand-lockup.png">
+<meta property="og:site_name" content="Margin Labs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/js/global-state.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who should own embedded finance at a vertical SaaS company?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Product, through one named leader who holds two things at once: authority over what gets built and the authority to turn down a deal that breaks the economics. Finance is the P&L partner and sits in every deal decision, compliance holds a real veto on risk and engineering builds it. What matters most is that both authorities sit with the same person and that person answers for an outcome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my platform need a dedicated payments team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not at first. Early on, a product leader who owns embedded finance as part of a broader scope is the right setup. A dedicated team starts to make sense when a second embedded line is on the roadmap, when the board or sponsor tracks payments and fintech revenue as its own line, when the platform is moving toward PayFac-lite or full PayFac, or when a processor or partner renegotiation is coming that nobody in-house can run. Two or more of those usually means the part-time setup is already costing money."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should product or finance own a new revenue line like lending or banking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Product should own it and finance should be the named P&L partner. Finance understands the economics best, but the levers that move an embedded finance line after launch are product levers: where the offer appears, which merchants see it and how many steps it takes to say yes. Finance can model what a better attach rate is worth. Product is the function that can change it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does an embedded finance product owner actually do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They hold roadmap authority (where the offer shows up, which merchants get it first, how eligibility and onboarding work and when the next line gets sequenced in) and deal authority (the ability to say no to a partner term, a pricing exception or an extra partner that breaks the economics). Both are tied to an outcome: attach rate, activation, revenue per merchant and losses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What role should compliance play in embedded finance decisions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compliance should hold a real veto on risk, which is different from owning the roadmap. When the gatekeeper also owns the line, it tends toward the most defensible version of itself, which is often the version merchants use least. Keep compliance as a named contact with stop authority on risk grounds, written down alongside the owner's decision rights."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; }
+  .article-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; display: inline-block; margin-bottom: 40px; }
+  .article-back:hover { color: var(--copper-lt); border-color: var(--copper-lt); }
+  .article-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .article-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dimmer); margin-bottom: 40px; display: flex; gap: 20px; }
+  .article-body { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 40px; }
+  .article-body a { color: var(--copper-lt); }
+  .article-body h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin: 40px 0 12px; line-height: 1.3; }
+  .article-body h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 28px 0 10px; line-height: 1.4; }
+  .article-body p { margin-bottom: 20px; }
+  .article-body ol, .article-body ul { margin: 0 0 20px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .pull-quote { border-left: 2px solid var(--copper); padding: 16px 24px; margin: 32px 0; font-size: 18px; font-weight: 300; color: var(--text); line-height: 1.6; font-style: italic; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 14px; }
+  .compare-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(200,130,60,0.3); }
+  .compare-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .faq-item { margin: 20px 0 28px; }
+  .faq-q { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .faq-a { font-size: 15px; font-weight: 300; color: var(--dim); line-height: 1.7; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home">
+    <img src="/assets/nav-icon.svg" width="22" height="22" alt="" aria-hidden="true" class="nav-icon">
+    <div class="wordmark"><div class="wm-text" style="font-size:19px"><span class="mg">Margin</span><span class="lb">Labs</span></div></div>
+  </a>
+  <div class="nav-controls">
+    <ul class="nav-links" role="list">
+      <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+      <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+      <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+      <li><a href="/the-lab" data-analytics="nav-the-lab">The Lab</a></li>
+      <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="/margin-multiplier" data-analytics="nav-multiplier">Margin Multiplier</a></li>
+    <li><a href="/framework" data-analytics="nav-framework">The Framework</a></li>
+    <li><a href="/advisory" data-analytics="nav-advisory">Advisory</a></li>
+    <li><a href="/the-lab" data-analytics="nav-the-lab">The Lab</a></li>
+    <li><a href="/principal" data-analytics="nav-principal">Principal</a></li>
+  </ul>
+</div>
+
+<article class="article-wrap">
+  <a href="/the-lab" class="article-back">← The Lab</a>
+
+  <div class="article-eyebrow">The Lab</div>
+  <h1 class="article-title">Who Owns the Embedded Finance Roadmap: Product, Finance or a Payments Team?</h1>
+  <div class="article-meta">
+    <span>October 2026</span>
+    <span>8 min read</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>Most vertical SaaS platforms spend a quarter deciding whether to add lending or banking and about an hour deciding who will run it. The build decision gets the vendor bake-off, the business case and the board slide. The ownership decision gets settled by default, usually by whoever signed the partner contract or whoever books the revenue, and that default is where a lot of good embedded finance lines quietly stall.</p>
+
+    <p>This picks up where <a href="/the-lab/embedded-finance-vs-platform-expansion">telling embedded finance apart from platform expansion</a> leaves off. Once a platform has decided a new line genuinely rides on its payments relationship, the next failure point usually isn't the build. It's that the line ends up half-owned by four functions and fully owned by none of them.</p>
+
+    <p><strong>Product should own the embedded finance roadmap, through one named leader who holds two things at once: authority over what gets built and the authority to turn down a deal that breaks the economics. Finance is the P&amp;L partner, compliance is a gate with real veto on risk and engineering ships it. A dedicated payments team makes sense once specific signals show up, usually a second embedded line or a move up the payments model ladder, not before.</strong></p>
+
+    <h2>Why ownership gets skipped</h2>
+
+    <p>Three things push it off the agenda. The first is that the partner model makes the line feel handled. A lending or banking-as-a-service partner runs the regulated part, so it's easy to assume the partner runs the line. The partner runs its product. Nobody at the partner decides where the offer shows up in the platform, which merchants see it or what happens when attach stalls at a few percent.</p>
+
+    <p>The second is accounting gravity. The revenue lands as a rev-share or residual line in finance's model, so finance becomes the owner without anyone actually deciding it. Finance can tell you what the line earned last quarter. It usually can't change the onboarding flow that determines next quarter.</p>
+
+    <p>The third is that the launch feels like the finish. Engineering ships the integration, sales announces it and the line moves to maintenance before anyone has worked on whether merchants actually use it. That's the same <a href="/the-lab/merchant-activation-playbook">activation problem</a> payments itself runs into, one layer up.</p>
+
+    <h2>What each function wants from the line</h2>
+
+    <p>Every function involved has a legitimate stake. The trouble is that each one, owning the line alone, optimizes for its own piece of it.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Function</th>
+          <th>What it wants</th>
+          <th>If it owns the line alone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Finance</td>
+          <td>Predictable rev-share and margin</td>
+          <td>The contract gets optimized, adoption doesn't</td>
+        </tr>
+        <tr>
+          <td>Product</td>
+          <td>A roadmap slot and a clean merchant experience</td>
+          <td>It ships, but nobody can say no to a bad deal term</td>
+        </tr>
+        <tr>
+          <td>Engineering</td>
+          <td>A stable integration and a fixed scope</td>
+          <td>Built to spec, then left alone</td>
+        </tr>
+        <tr>
+          <td>Compliance and risk</td>
+          <td>No regulatory or loss exposure</td>
+          <td>The safest version of the line is the one that never launches</td>
+        </tr>
+        <tr>
+          <td>Sales and partnerships</td>
+          <td>A signed partner and a launch</td>
+          <td>The deal closes and the economics never get revisited</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>None of those wants is wrong. They're inputs. The line needs one person who weighs them against each other and answers for the result.</p>
+
+    <h2>What owning it like a product actually means</h2>
+
+    <p>Ownership isn't a title on an org chart. It's two specific authorities sitting with the same person.</p>
+
+    <h3>Roadmap authority</h3>
+
+    <p>Deciding what gets built and in what order: where the offer appears in the product, which merchants get it first, what eligibility and onboarding look like and when the next line gets sequenced in. This is where embedded finance revenue actually gets made or lost, because attach and activation are product problems.</p>
+
+    <h3>Deal authority</h3>
+
+    <p>The authority to say no. No to a partner term that doesn't cover the support load. No to a pricing exception for a large merchant that resets every other merchant's expectations. No to a second partner bolted on because someone promised it in a sales cycle. Without this, the roadmap owner can build a great experience on top of economics someone else already gave away.</p>
+
+    <p>Both authorities need an outcome attached: attach rate, activation, revenue per merchant and losses, tracked the way <a href="/the-lab/payments-kpis-after-launch">payments KPIs after launch</a> lays out.</p>
+
+    <blockquote class="pull-quote">An embedded finance line needs one person who decides what gets built and can turn down a deal that breaks the economics. Split those two authorities and the line has a coordinator, not an owner.</blockquote>
+
+    <h2>Why product, and not finance</h2>
+
+    <p>The case for finance owning it is real. Finance understands the economics better than anyone, models the rev-share and is usually the function a board or PE sponsor talks to about the line. That's why finance has to be the named P&amp;L partner, in the room for every deal decision.</p>
+
+    <p>But the levers that move an embedded finance line after launch are product levers. Whether a merchant sees a capital offer at the moment they need it. Whether opening a deposit account takes two clicks or a separate application. Whether the offer is shown to merchants who will actually qualify. Finance can model what a better attach rate is worth. Product is the function that can change it.</p>
+
+    <p>Compliance is the other function that sometimes ends up owning by default, especially in lending. Compliance should hold a real veto on risk, and that's different from holding the roadmap. A line run by its gatekeeper tends toward the most defensible version of itself, which is often the version merchants use least.</p>
+
+    <h2>When a dedicated payments team is justified</h2>
+
+    <p>Early on, the right setup is a product leader who owns embedded finance as part of a broader scope, with a named finance partner and a named compliance contact. A dedicated payments or fintech team stood up before the line is material tends to become a silo, competing with the core product for engineering capacity it can't yet justify.</p>
+
+    <p>The signals that it's time:</p>
+
+    <ul>
+      <li><strong>A second embedded line is on the roadmap.</strong> Payments plus lending, or lending plus banking, means shared data, shared partners and a shared merchant experience that need one owner across them.</li>
+      <li><strong>The board or sponsor tracks payments and fintech revenue as its own line.</strong> Once it's part of the <a href="/the-lab/payments-value-creation-lever-pe">value creation story</a>, it needs a leader who answers for it directly.</li>
+      <li><strong>The platform is moving up the model ladder.</strong> Going from a referral or ISV setup toward PayFac-lite or full PayFac brings underwriting, risk and operational load a part-time owner can't carry. The <a href="/the-lab/payfac-vs-isv">PayFac vs ISV comparison</a> covers what changes.</li>
+      <li><strong>A processor or partner renegotiation is coming</strong> and nobody in-house can run it end to end.</li>
+    </ul>
+
+    <p>One of these is a reason to start planning. Two or more usually means the part-time setup is already costing money.</p>
+
+    <h2>How to set up accountability without building a silo</h2>
+
+    <p>A few structural choices keep a payments owner from turning into a separate company inside the company:</p>
+
+    <ul>
+      <li><strong>Put the owner inside the product organization, not beside it.</strong> Embedded finance lives in the same flows as the core product, and the owner needs to be in the same planning conversations.</li>
+      <li><strong>Write the decision rights down.</strong> Who decides the roadmap, who can turn down a deal, who can stop a launch on risk grounds. Three lines in a doc settle most of the arguments before they start.</li>
+      <li><strong>Hold one standing review on the line's numbers</strong> with product, finance and compliance in the room. Monthly is usually enough. That review is where finance's P&amp;L view and product's adoption view get reconciled.</li>
+      <li><strong>Share engineering capacity through the normal planning process</strong> until the signals above justify a dedicated team.</li>
+    </ul>
+
+    <h2>A quick way to check where you stand</h2>
+
+    <p>Ask three people the same question: the head of product, the CFO and whoever manages the embedded finance partner. Who can turn down a deal on this line? If all three give the same name, the line has an owner. If you get three different names, or a long pause, the ownership decision never got made, and that's usually a bigger drag on the line than anything in the partner contract.</p>
+
+    <p>It's also one of the cheaper problems to fix. Make the decision, write it down and give that person an outcome to answer for. For the earlier question of whether a line belongs in the embedded finance stack at all, start with <a href="/the-lab/embedded-finance-for-vertical-saas">embedded finance for vertical SaaS</a>.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">Who should own embedded finance at a vertical SaaS company?</p>
+      <p class="faq-a">Product, through one named leader who holds two things at once: authority over what gets built and the authority to turn down a deal that breaks the economics. Finance is the P&amp;L partner and sits in every deal decision, compliance holds a real veto on risk and engineering builds it. What matters most is that both authorities sit with the same person and that person answers for an outcome.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Does my platform need a dedicated payments team?</p>
+      <p class="faq-a">Not at first. Early on, a product leader who owns embedded finance as part of a broader scope is the right setup. A dedicated team starts to make sense when a second embedded line is on the roadmap, when the board or sponsor tracks payments and fintech revenue as its own line, when the platform is moving toward PayFac-lite or full PayFac, or when a processor or partner renegotiation is coming that nobody in-house can run. Two or more of those usually means the part-time setup is already costing money.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Should product or finance own a new revenue line like lending or banking?</p>
+      <p class="faq-a">Product should own it and finance should be the named P&amp;L partner. Finance understands the economics best, but the levers that move an embedded finance line after launch are product levers: where the offer appears, which merchants see it and how many steps it takes to say yes. Finance can model what a better attach rate is worth. Product is the function that can change it.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What does an embedded finance product owner actually do?</p>
+      <p class="faq-a">They hold roadmap authority (where the offer shows up, which merchants get it first, how eligibility and onboarding work and when the next line gets sequenced in) and deal authority (the ability to say no to a partner term, a pricing exception or an extra partner that breaks the economics). Both are tied to an outcome: attach rate, activation, revenue per merchant and losses.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What role should compliance play in embedded finance decisions?</p>
+      <p class="faq-a">Compliance should hold a real veto on risk, which is different from owning the roadmap. When the gatekeeper also owns the line, it tends toward the most defensible version of itself, which is often the version merchants use least. Keep compliance as a named contact with stop authority on risk grounds, written down alongside the owner's decision rights.</p>
+    </div>
+
+  </div>
+
+  <a href="/the-lab" class="article-back">← Back to The Lab</a>
+</article>
+
+<!-- ── END-OF-ARTICLE CTA ──────────────────────── -->
+<section style="background:var(--surface-2,#111);border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--mono,'DM Mono',monospace);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want a second opinion?</div>
+    <h2 style="font-size:28px;font-weight:300;letter-spacing:-0.02em;line-height:1.3;margin-bottom:14px;color:var(--text,#F0EBE4);">Talk it through against your actual numbers.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dim,rgba(240,235,228,0.52));line-height:1.75;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Every platform's starting point is different. A Quick Start Call works the decision with you, against your real volume, merchant mix and product, and I make the intro when it fits. Prefer to decide on your own first? Run the Margin Multiplier.</p>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <a href="/advisory" style="display:inline-block;background:#C8823C;color:#0d0d0d;border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;cursor:pointer;text-decoration:none;" data-analytics="article-cta-consult-primary">Work with Margin Labs →</a>
+      <a href="/margin-multiplier" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#C8823C;text-decoration:none;opacity:0.75;" data-analytics="article-cta-multiplier-secondary">Or run the Margin Multiplier →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="/" class="nav-brand" aria-label="Margin Labs home" style="gap:8px">
+    <div class="wm-text" style="font-size:13px"><span class="mg">Margin</span><span class="lb">Labs</span></div>
+  </a>
+  <div class="footer-copy">© 2026 Margin Labs LLC</div>
+  <div class="footer-copy"><a href="mailto:hello@marginlabs.io">hello@marginlabs.io</a></div>
+  <div class="footer-copy"><a href="/privacy" data-analytics="footer-privacy">Privacy</a></div>
+</footer>
+
+<script src="/js/global-state.js"></script>
+<script src="/js/consult-modal.js"></script>
+<script src="/main.js"></script>
+<script>
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') { gtag('event', name, params || {}); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-analytics]').forEach(function (el) {
+      el.addEventListener('click', function () { gaEvent(el.dataset.analytics, {}); });
+    });
+  });
+</script>
+</body>
+</html>

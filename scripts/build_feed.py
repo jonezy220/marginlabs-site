@@ -119,6 +119,8 @@ ARTICLES = [
     # 2026-10-12: companion to embedded-payments-vs-embedded-finance, spun off the
     # payroll-scope question raised when that article shipped.
     ("embedded-finance-vs-platform-expansion",     "2026-10-12"),
+    # 2026-10-21: ML-LAB-062, week 2 of the product/payments crossover arc.
+    ("who-owns-embedded-finance-roadmap",          "2026-10-21"),
 ]
 
 # Brand CSS variables → fallback hex (Substack won't resolve var(...) refs).

@@ -218,6 +218,11 @@
       "source": "/go/platform-expansion-co",
       "destination": "https://marginlabs.io/the-lab/embedded-finance-vs-platform-expansion?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=platform-expansion",
       "permanent": false
+    },
+    {
+      "source": "/go/finance-ownership-co",
+      "destination": "https://marginlabs.io/the-lab/who-owns-embedded-finance-roadmap?utm_source=linkedin&utm_medium=social&utm_content=company&utm_campaign=finance-ownership",
+      "permanent": false
     }
   ],
   "functions": {
