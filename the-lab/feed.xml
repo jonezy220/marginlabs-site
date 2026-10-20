@@ -8,7 +8,7 @@
     <description>Independent thinking on embedded payments, model selection, and the margin hiding in your platform.</description>
     <language>en-us</language>
     <atom:link href="https://marginlabs.io/the-lab/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 20 Oct 2026 03:03:43 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 12:55:54 +0000</lastBuildDate>
     <pubDate>Wed, 21 Oct 2026 14:00:00 +0000</pubDate>
     <generator>scripts/build_feed.py</generator>
     <item>
@@ -320,7 +320,7 @@
 
     <p>A SaaS lending platform is not a lending company. It is a vertical SaaS platform that has added a financing product inside the software its customers already use to run their business. The customer sees a credit offer in context, applies without leaving the product and gets funded, and the whole flow leans on data the platform already has rather than on a separate application to a bank the customer has no relationship with.</p>
 
-    <p>The financing itself can take several shapes. A term loan. A revolving line of credit. A merchant cash advance repaid as a slice of daily card sales. Invoice factoring against outstanding receivables. What makes it a SaaS lending platform rather than a bank integration is that the offer, the underwriting signal and often the servicing all live inside the software and run on the platform's own data.</p>
+    <p>The financing itself can take several shapes. A term loan. A revolving line of credit. A merchant cash advance repaid as a slice of daily card sales. Invoice factoring against outstanding receivables. What makes it a SaaS lending platform rather than a bank integration is that the offer, the underwriting signal and often the servicing all live inside the software and run on the platform's own data. Operators also call it SaaS lending software, embedded commercial lending technology or a commercial lending platform. The category is the same.</p>
 
     <p>Put it next to the other financial lines a platform can add and the role is clear. Payments moves money the customer already earned. Banking holds the balance in between. Lending advances money the customer has not earned yet, against the platform's read of what they will earn. It is the same expansion logic behind <a href="https://marginlabs.io/the-lab/embedded-finance-for-vertical-saas?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">embedded finance for vertical SaaS</a>, one rung further up the risk curve than payments.</p>
 
@@ -1319,7 +1319,7 @@
 
     <h3>Partner-funded and referral lending</h3>
 
-    <p>The lightest model is partner-funded. A lending partner carries the balance sheet and the risk, and your platform provides the distribution and, ideally, the data that helps the partner underwrite. You earn a revenue share on origination or a piece of the interest, and you do not fund a single loan. Your capital is not at stake and the licensing burden mostly sits with the partner. This is where almost every platform should start, because it lets you prove that your merchants actually want credit and that your data actually predicts repayment, before you put your own balance sheet behind that bet.</p>
+    <p>The lightest model is partner-funded. A lending partner carries the balance sheet and the risk, and your platform provides the distribution and, ideally, the data that helps the partner underwrite. You earn a revenue share on origination or a piece of the interest, and you do not fund a single loan. Your capital is not at stake and the licensing burden mostly sits with the partner. This is where almost every platform should start, because it lets you prove that your merchants actually want credit and that your data actually predicts repayment, before you put your own balance sheet behind that bet. For how this looks as a product, see our breakdown of what a <a href="https://marginlabs.io/the-lab/saas-lending-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">SaaS lending platform</a> is and how vertical SaaS offers financing.</p>
 
     <h3>Merchant cash advance and factoring</h3>
 
@@ -2374,13 +2374,13 @@
 
     <p>When a platform says it wants to build a gateway, it usually means one of a few different things, and they cost wildly different amounts. A thin integration layer over an existing processor is a few weeks of work. A true gateway, the thing that authorizes, captures, tokenizes, routes and settles card transactions on its own rails, is a multi-year program with a permanent team attached. Most cost estimates you find online quietly assume the first and quote it as if it were the second. The first question is always which one you actually need, and for the overwhelming majority of platforms the honest answer is neither.</p>
 
-    <h2>The upfront build is the number everyone quotes</h2>
+    <h2>Payment gateway development cost: the number everyone quotes</h2>
 
     <p>The engineering to stand up core gateway functionality, card authorization and capture, tokenization and vaulting, basic reporting and a merchant onboarding flow, generally lands somewhere between several hundred thousand and a couple million dollars depending on how much you build versus assemble. That is real money, but it is also the part of the estimate that is easiest to scope and the least dangerous. If the build cost were the whole story, more platforms would build.</p>
 
     <blockquote class="pull-quote">The build is a project with an end date. Everything that makes a gateway a gateway is a cost with no end date.</blockquote>
 
-    <h2>The run cost is the number that matters</h2>
+    <h2>The cost of running a payment gateway per year</h2>
 
     <p>Here is what the build-cost estimates leave out, and it is the part that sinks platforms that go it alone:</p>
 
@@ -2405,6 +2405,26 @@
     <h2>How to actually decide</h2>
 
     <p>The number that decides this is not the build quote and it is not a benchmark from a blog. It is your build cost plus your honest annual run cost, set against what partnering would cost as a share of your payments revenue, modeled on your real volume. Run that and the answer is usually obvious. If you want to pressure-test it against your numbers before you commit a roadmap to it, that is exactly the conversation worth having first.</p>
+  
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How much does it cost to build a payment gateway?</h3>
+    <p>Building a payment gateway from scratch typically runs a software platform several hundred thousand to a few million dollars upfront in engineering, then a comparable amount every year to run it. The upfront build is the easiest part to scope. The ongoing cost of PCI Level 1, certifications, fraud tooling, uptime and maintenance is what makes the real number much larger than the build quote alone.</p>
+
+    <h3>Is it cheaper to build or buy a payment gateway?</h3>
+    <p>Buying or partnering is cheaper for almost every platform. The build cost is a one-time project, but running a gateway means carrying PCI Level 1 scope, network certifications, fraud infrastructure, uptime and an ongoing compliance burden forever. A partner prices that as a small share of revenue, where building asks you to staff a payments company inside your software company.</p>
+
+    <h3>What ongoing costs come with running a payment gateway?</h3>
+    <p>PCI DSS Level 1 audits and scans, Visa and Mastercard certifications plus processor certification, fraud and chargeback tooling, uptime engineering with a real on-call rotation, and continuous maintenance against card network mandates and regulatory change. These recur every year and often rival or exceed the original build cost.</p>
+
+    <h3>When does building your own payment gateway make sense?</h3>
+    <p>Building can make sense when payments processing is your core product rather than an attached revenue line, when you are at a scale where saving a few basis points outweighs a multimillion-dollar annual run rate, or when you have a genuinely novel flow no provider supports. Those conditions are rare and the platforms that meet them usually already know it.</p>
+
+    <h3>What does it cost to run a payment gateway per year?</h3>
+    <p>Running a gateway typically costs a comparable amount to the original build, every year. The recurring lines are the PCI DSS Level 1 audit and scans, Visa, Mastercard and processor certifications, fraud and chargeback tooling, uptime engineering with an on-call rotation and maintenance against card network mandates. That annual run cost, not the build quote, is the number that should decide build versus buy.</p>
+
+    <h3>How much does it cost to integrate a payment gateway?</h3>
+    <p>Integrating an existing payment gateway is a very different number from building one. A thin integration layer over an existing processor is a few weeks of engineering, plus the per-transaction fees the provider charges. The provider carries the PCI Level 1 scope, certifications and uptime, which is why integrating or partnering is the right answer for most software platforms.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Build, buy or partner?</div>
@@ -3197,7 +3217,7 @@
 <p style="font-size:13px;color:#8a8580;font-style:italic;margin-top:32px;">This article was originally published on <a href="https://marginlabs.io/the-lab/merchant-activation-playbook?utm_source=substack&utm_medium=newsletter&utm_campaign=lab" style="color:#D8A058;">Margin Labs</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>ISV vs PayFac: The Real Comparison</title>
+      <title>ISV vs PayFac: Payment Facilitation vs the Referral Model</title>
       <link>https://marginlabs.io/the-lab/payfac-vs-isv</link>
       <guid isPermaLink="true">https://marginlabs.io/the-lab/payfac-vs-isv</guid>
       <pubDate>Mon, 13 Jul 2026 14:00:00 +0000</pubDate>
@@ -3295,6 +3315,11 @@
     <p>Platforms further along, already running multiple processors or expanding into new payment methods, are usually asking a different question: whether to bring in <a href="https://marginlabs.io/the-lab/payment-orchestration-for-platforms?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment orchestration</a> to manage that complexity, not which single model to pick.</p>
 
     <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">Payment facilitation vs the referral model: what is the difference?</p>
+      <p class="faq-a">In the referral model the platform sends merchants to a processor that signs them, prices them, underwrites them and owns the relationship, and the platform earns a residual of roughly 5 to 15 basis points. In payment facilitation the platform boards merchants under its own master agreement, sets pricing and carries onboarding, risk and disputes, and captures 50 to 120 basis points depending on whether it runs a managed or full PayFac. Referral trades economics for simplicity. Facilitation trades operational burden for margin.</p>
+    </div>
 
     <div class="faq-item">
       <p class="faq-q">What is the actual difference between PayFac and ISV in payments?</p>
@@ -4284,7 +4309,7 @@
       </div>
     </div>
 
-    <h2>Why the Distinction Matters: Three Dimensions</h2>
+    <h2>Embedded vs Integrated Payments: Why the Difference Matters</h2>
 
     <p><strong>On economics:</strong> integrated payments gives you referral-level revenue (5-25 bps). Embedded payments gives you facilitation-level revenue (25-90+ bps). On $50M in merchant volume, that's the difference between $25K-$125K and $125K-$450K annually. Same merchants. Same volume. Different architecture, different economics.</p>
 
@@ -4320,6 +4345,20 @@
     <blockquote class="pull-quote">Integrated payments is a feature. Embedded payments is a business line. The difference is ownership, and ownership is what creates both margin and moat.</blockquote>
 
     <p>The <a href="https://marginlabs.io/margin-multiplier?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">Margin Multiplier</a> shows you the revenue difference between referral-level and facilitation-level economics on your specific volume. Start there if you want to see what the ownership gap is costing you. For more on what this transition looks like in practice, see <a href="https://marginlabs.io/the-lab/how-much-saas-platforms-make-from-payments?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">How SaaS Companies Make Money from Payments</a> and the <a href="https://marginlabs.io/advisory?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">advisory engagement overview</a>.</p>
+  
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is the difference between embedded payments and integrated payments?</h3>
+    <p>The difference is ownership. Integrated payments connects your software to a third-party processor that still owns merchant onboarding, pricing and the relationship, so you earn referral residuals. Embedded payments makes the payment experience native to your product: you own onboarding, set pricing and earn facilitation-level economics on the same volume.</p>
+
+    <h3>Is integrated or embedded payments better for a vertical SaaS platform?</h3>
+    <p>It depends on how much of the payment experience you want to own. Integrated is faster to stand up and earns referral residuals of roughly 5 to 25 basis points. Embedded earns facilitation-level economics of 25 to 90 plus basis points but requires owning onboarding, pricing and operational responsibility. Most platforms sit on a spectrum between the two.</p>
+
+    <h3>Why does embedded payments earn more than integrated payments?</h3>
+    <p>Because you carry more of the value chain. In an integrated model the processor owns the merchant relationship, the pricing and the risk, so you earn a referral share. In an embedded model you own onboarding, set the merchant rate and carry operational responsibility, so you participate in facilitation-level economics on the same volume.</p>
+
+    <h3>Embedded vs integrated payments: which earns more on the same volume?</h3>
+    <p>Embedded payments. On 50 million dollars of merchant volume, integrated payments at 5 to 25 basis points earns roughly 25,000 to 125,000 dollars a year, while embedded payments at 25 to 90 plus basis points earns roughly 125,000 to 450,000 dollars. Same merchants, same volume. The gap is what you own.</p>
 <section style="background:#111;border-top:1px solid rgba(200,130,60,0.14);padding:72px 24px;">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
     <div style="font-family:'DM Mono', monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C8823C;opacity:0.7;margin-bottom:12px;">Want to go further?</div>
@@ -4760,7 +4799,7 @@
 
     <p>For comparison: in an ISV Referral arrangement, you're not a PayFac at all. You refer merchants to a processor, the processor boards and underwrites them, and you collect a residual, typically 5 to 15 basis points. You don't control pricing, you don't own the merchant relationship in payments terms, and your economics are a fraction of what a PayFac arrangement would produce.</p>
 
-    <p>Referral is the right starting point for many platforms, but it's important to understand that it is fundamentally different from payment facilitation, even though some processors blur the line in their marketing. If you're weighing referral against facilitating payments yourself, our <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">ISV vs PayFac comparison</a> lays out the economics and the operational trade at each volume tier so you can see which payments model fits.</p>
+    <p>Referral is the right starting point for many platforms, but it's important to understand that it is fundamentally different from payment facilitation, even though some processors blur the line in their marketing. If you're weighing referral against facilitating payments yourself, our <a href="https://marginlabs.io/the-lab/payfac-vs-isv?utm_source=substack&utm_medium=newsletter&utm_campaign=lab">payment facilitation vs referral model comparison</a> lays out the economics and the operational trade at each volume tier so you can see which payments model fits.</p>
 
     <p class="cost-label">Payment Facilitator Platform and Digital Payment Facilitator</p>
 

@@ -64,6 +64,22 @@
         "@type": "Answer",
         "text": "Building can make sense when payments processing is your core product rather than an attached revenue line, when you are at a scale where saving a few basis points outweighs a multimillion-dollar annual run rate, or when you have a genuinely novel flow no provider supports. Those conditions are rare and the platforms that meet them usually already know it."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost to run a payment gateway per year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Running a gateway typically costs a comparable amount to the original build, every year. The recurring lines are the PCI DSS Level 1 audit and scans, Visa, Mastercard and processor certifications, fraud and chargeback tooling, uptime engineering with an on-call rotation and maintenance against card network mandates. That annual run cost, not the build quote, is the number that should decide build versus buy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to integrate a payment gateway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integrating an existing payment gateway is a very different number from building one. A thin integration layer over an existing processor is a few weeks of engineering, plus the per-transaction fees the provider charges. The provider carries the PCI Level 1 scope, certifications and uptime, which is why integrating or partnering is the right answer for most software platforms."
+      }
     }
   ]
 }
@@ -132,13 +148,13 @@
 
     <p>When a platform says it wants to build a gateway, it usually means one of a few different things, and they cost wildly different amounts. A thin integration layer over an existing processor is a few weeks of work. A true gateway, the thing that authorizes, captures, tokenizes, routes and settles card transactions on its own rails, is a multi-year program with a permanent team attached. Most cost estimates you find online quietly assume the first and quote it as if it were the second. The first question is always which one you actually need, and for the overwhelming majority of platforms the honest answer is neither.</p>
 
-    <h2>The upfront build is the number everyone quotes</h2>
+    <h2>Payment gateway development cost: the number everyone quotes</h2>
 
     <p>The engineering to stand up core gateway functionality, card authorization and capture, tokenization and vaulting, basic reporting and a merchant onboarding flow, generally lands somewhere between several hundred thousand and a couple million dollars depending on how much you build versus assemble. That is real money, but it is also the part of the estimate that is easiest to scope and the least dangerous. If the build cost were the whole story, more platforms would build.</p>
 
     <blockquote class="pull-quote">The build is a project with an end date. Everything that makes a gateway a gateway is a cost with no end date.</blockquote>
 
-    <h2>The run cost is the number that matters</h2>
+    <h2>The cost of running a payment gateway per year</h2>
 
     <p>Here is what the build-cost estimates leave out, and it is the part that sinks platforms that go it alone:</p>
 
@@ -163,7 +179,28 @@
     <h2>How to actually decide</h2>
 
     <p>The number that decides this is not the build quote and it is not a benchmark from a blog. It is your build cost plus your honest annual run cost, set against what partnering would cost as a share of your payments revenue, modeled on your real volume. Run that and the answer is usually obvious. If you want to pressure-test it against your numbers before you commit a roadmap to it, that is exactly the conversation worth having first.</p>
-  </div>
+  
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How much does it cost to build a payment gateway?</h3>
+    <p>Building a payment gateway from scratch typically runs a software platform several hundred thousand to a few million dollars upfront in engineering, then a comparable amount every year to run it. The upfront build is the easiest part to scope. The ongoing cost of PCI Level 1, certifications, fraud tooling, uptime and maintenance is what makes the real number much larger than the build quote alone.</p>
+
+    <h3>Is it cheaper to build or buy a payment gateway?</h3>
+    <p>Buying or partnering is cheaper for almost every platform. The build cost is a one-time project, but running a gateway means carrying PCI Level 1 scope, network certifications, fraud infrastructure, uptime and an ongoing compliance burden forever. A partner prices that as a small share of revenue, where building asks you to staff a payments company inside your software company.</p>
+
+    <h3>What ongoing costs come with running a payment gateway?</h3>
+    <p>PCI DSS Level 1 audits and scans, Visa and Mastercard certifications plus processor certification, fraud and chargeback tooling, uptime engineering with a real on-call rotation, and continuous maintenance against card network mandates and regulatory change. These recur every year and often rival or exceed the original build cost.</p>
+
+    <h3>When does building your own payment gateway make sense?</h3>
+    <p>Building can make sense when payments processing is your core product rather than an attached revenue line, when you are at a scale where saving a few basis points outweighs a multimillion-dollar annual run rate, or when you have a genuinely novel flow no provider supports. Those conditions are rare and the platforms that meet them usually already know it.</p>
+
+    <h3>What does it cost to run a payment gateway per year?</h3>
+    <p>Running a gateway typically costs a comparable amount to the original build, every year. The recurring lines are the PCI DSS Level 1 audit and scans, Visa, Mastercard and processor certifications, fraud and chargeback tooling, uptime engineering with an on-call rotation and maintenance against card network mandates. That annual run cost, not the build quote, is the number that should decide build versus buy.</p>
+
+    <h3>How much does it cost to integrate a payment gateway?</h3>
+    <p>Integrating an existing payment gateway is a very different number from building one. A thin integration layer over an existing processor is a few weeks of engineering, plus the per-transaction fees the provider charges. The provider carries the PCI Level 1 scope, certifications and uptime, which is why integrating or partnering is the right answer for most software platforms.</p>
+
+</div>
   <a href="/the-lab" class="article-back">← Back to The Lab</a>
 </article>
 
