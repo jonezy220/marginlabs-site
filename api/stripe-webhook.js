@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
       const proto   = req.headers['x-forwarded-proto'] || 'https';
       const baseUrl = `${proto}://${req.headers.host}`;
 
-      await Promise.allSettled([
+      const results = await Promise.allSettled([
         // Tag in Brevo as customer + add to Framework Customers list
         fetch(`${baseUrl}/api/brevo-tag`, {
           method:  'POST',
@@ -64,6 +64,21 @@ module.exports = async (req, res) => {
         // Generate signed download link and send delivery email
         generateAndSendDownloadLink(email, product),
       ]);
+
+      // Log every step so a failed delivery is visible in Vercel runtime logs
+      const labels = ['brevo-tag', 'purchase-confirmation', 'delivery-email'];
+      results.forEach((r, i) => {
+        if (r.status === 'rejected') {
+          console.error(`[stripe-webhook] ${labels[i]} FAILED for session ${session.id}:`, r.reason);
+        } else if (r.value && r.value.ok === false) {
+          console.error(`[stripe-webhook] ${labels[i]} returned HTTP ${r.value.status} for session ${session.id}`);
+        }
+      });
+
+      // The delivery email is the one that matters. Return 500 so Stripe retries instead of treating a failed delivery as done.
+      if (results[2].status === 'rejected') {
+        return res.status(500).json({ error: 'Delivery email failed' });
+      }
     }
   }
 

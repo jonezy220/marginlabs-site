@@ -15,7 +15,7 @@ const PDF_NAMES = {
   tier2: 'Embedded_Payments_Execution_Playbook.pdf',
 };
 
-module.exports = async (req, res) => {
+async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
   const { token } = req.query;
@@ -55,4 +55,13 @@ module.exports = async (req, res) => {
 
   const buffer = await blobRes.arrayBuffer();
   res.send(Buffer.from(buffer));
+}
+
+module.exports = async (req, res) => {
+  try {
+    return await handler(req, res);
+  } catch (err) {
+    console.error('[download] failed:', err);
+    return res.status(500).json({ error: 'Download temporarily unavailable. Email hello@marginlabs.io.' });
+  }
 };
