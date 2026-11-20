@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /assets/
-Disallow: /success
 Disallow: /api/
 Sitemap: https://marginlabs.io/sitemap.xml
