@@ -5,7 +5,12 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.marginlabs.io" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.marginlabs.io"
+        }
+      ],
       "destination": "https://marginlabs.io/:path*",
       "permanent": true
     },
@@ -229,5 +234,16 @@
     "api/stripe-webhook.js": {
       "maxDuration": 30
     }
-  }
+  },
+  "headers": [
+    {
+      "source": "/assets/Embedded_Payments_Strategic_Decision_Framework_:id.pdf",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
 }

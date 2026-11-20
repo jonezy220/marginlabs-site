@@ -139,6 +139,24 @@
   var _params  = new URLSearchParams(window.location.search);
   var _product = _params.get('product');
 
+  // Strategic Decision Framework: hand the PDF over directly on the success page.
+  // This page is noindex, disallowed in robots.txt and never linked from the site.
+  if (_product === 'tier1') {
+    var t1body  = document.querySelector('.success-body');
+    var t1inner = document.querySelector('.success-inner');
+    var t1back  = document.querySelector('.success-back');
+    if (t1body) t1body.innerHTML = 'Your order is confirmed. Your copy of The Embedded Payments Strategic Decision Framework is ready to download below. Questions? hello@marginlabs.io.';
+    if (t1inner && t1back) {
+      var t1btn = document.createElement('a');
+      t1btn.href = '/assets/Embedded_Payments_Strategic_Decision_Framework_0392f7f305a2722f.pdf';
+      t1btn.setAttribute('download', 'Embedded_Payments_Strategic_Decision_Framework.pdf');
+      t1btn.textContent = 'Download your copy \u2193';
+      t1btn.setAttribute('data-analytics', 'tier1-download-after-pay');
+      t1btn.style.cssText = 'display:inline-block;background:#C8823C;color:#0d0d0d;border-radius:3px;font-family:"DM Mono",monospace;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:16px 32px;text-decoration:none;margin-bottom:28px;';
+      t1inner.insertBefore(t1btn, t1back);
+    }
+  }
+
   if (_product === 'qsc') {
     var eyebrow = document.querySelector('.success-eyebrow');
     var h1      = document.querySelector('.success-h1');

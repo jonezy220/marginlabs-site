@@ -1,12 +1,4 @@
 const stripe   = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const crypto   = require('crypto');
-const { Redis } = require('@upstash/redis');
-const { sendDeliveryEmail } = require('./send-delivery-email');
-
-const redis = new Redis({
-  url:   process.env.KV_REST_API_URL,
-  token: process.env.KV_REST_API_TOKEN,
-});
 
 const PRICE_TO_PRODUCT = {
   'price_1TErFkENN4Yp4lBxmuHE2r1G': 'tier1',
@@ -61,12 +53,10 @@ module.exports = async (req, res) => {
           headers: { 'Content-Type': 'application/json' },
           body:    JSON.stringify({ email }),
         }),
-        // Generate signed download link and send delivery email
-        generateAndSendDownloadLink(email, product),
       ]);
 
       // Log every step so a failed delivery is visible in Vercel runtime logs
-      const labels = ['brevo-tag', 'purchase-confirmation', 'delivery-email'];
+      const labels = ['brevo-tag', 'purchase-confirmation'];
       results.forEach((r, i) => {
         if (r.status === 'rejected') {
           console.error(`[stripe-webhook] ${labels[i]} FAILED for session ${session.id}:`, r.reason);
@@ -74,31 +64,11 @@ module.exports = async (req, res) => {
           console.error(`[stripe-webhook] ${labels[i]} returned HTTP ${r.value.status} for session ${session.id}`);
         }
       });
-
-      // The delivery email is the one that matters. Return 500 so Stripe retries instead of treating a failed delivery as done.
-      if (results[2].status === 'rejected') {
-        return res.status(500).json({ error: 'Delivery email failed' });
-      }
     }
   }
 
   res.status(200).json({ received: true });
 };
-
-async function generateAndSendDownloadLink(email, product) {
-  const token     = crypto.randomBytes(32).toString('hex');
-  const expiresAt = Date.now() + 72 * 60 * 60 * 1000;
-
-  // Store download token with 72h TTL
-  await redis.set(`dl:${token}`, { email, product, expiresAt, createdAt: Date.now() }, { px: 72 * 60 * 60 * 1000 });
-
-  // Maintain secondary index for re-request lookups (90-day TTL)
-  await redis.sadd(`purchases:${email}`, product);
-  await redis.expire(`purchases:${email}`, 90 * 24 * 60 * 60);
-
-  const downloadUrl = `https://marginlabs.io/api/download?token=${token}`;
-  await sendDeliveryEmail(email, product, downloadUrl);
-}
 
 function detectProduct(session) {
   const lineItems = session.line_items?.data || [];

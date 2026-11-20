@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
           <p style="font-family:monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C8823C;margin:0 0 32px;">Margin Labs</p>
           <h1 style="font-size:24px;font-weight:300;margin:0 0 16px;">You're in.</h1>
           <p style="font-size:15px;color:rgba(240,235,228,0.6);line-height:1.75;margin:0 0 24px;">
-            Your order is confirmed. Your download link for The Embedded Payments Strategic Decision Framework is in a separate email from hello@marginlabs.io, sent at the same time. If you don't see it within a few minutes, check spam or reply here and we'll send it directly.
+            Your order is confirmed. If you closed the page before downloading, reply to this email and we'll send your copy of The Embedded Payments Strategic Decision Framework directly.
           </p>
           <p style="font-size:14px;color:rgba(240,235,228,0.5);line-height:1.7;margin:0 0 32px;">
             Questions? Reply to this email or reach out at hello@marginlabs.io.
