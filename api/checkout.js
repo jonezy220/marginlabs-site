@@ -27,6 +27,11 @@ module.exports = async (req, res) => {
 
   const { product } = req.body || {};
 
+  // Quick Start Call checkout is retired (wind-down 2026-11-20): QSC requests go through the /advisory form.
+  if (product === 'qsc') {
+    return res.status(410).json({ error: 'Quick Start Call checkout is no longer available. Use the contact form at /advisory.' });
+  }
+
   // Build line_items: QSC uses inline price_data on the product; tiers use price IDs.
   let line_items;
   if (product === 'qsc') {

@@ -401,6 +401,9 @@ body { background:var(--bg-adv); font-family:var(--font); color:var(--text); pad
       var f = document.getElementById('adv-email');
       if (f) f.value = window.ML.visitor.email;
     }
+    var q = new URLSearchParams(window.location.search).get('intent');
+    var sel = document.getElementById('adv-intent');
+    if (sel && q === 'qsc') sel.value = 'Quick Start Call';
     if (window.location.hash === '#form') {
       document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' });
     }
