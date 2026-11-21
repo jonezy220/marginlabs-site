@@ -590,10 +590,9 @@ const VERT = {
 
 const FORMSPREE_ID = 'xwvrzrov';
 
-// Free Quick Start Call for anyone who completes the calculator: completing
-// the form is itself the intent signal, so the $379 fee is waived here.
-// Same booking calendar success.html hands paying customers to post-Stripe.
-const QSC_BOOKING_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2i2_z4H9R7zoFnSeHc2TRC-gKITKSO34aLcCCHPY3CCIYIqKVsb9iNZlT_xWdhGdmnFoU3-9YN?gv=true';
+// Quick Start Call requests go through the /advisory contact form (QSC checkout and
+// direct calendar booking retired 2026-11-20, wind-down).
+const QSC_BOOKING_URL = '/advisory?intent=qsc#form';
 
 function $c(id) { return document.getElementById(id); }
 function fmtCur(n) {
@@ -844,9 +843,9 @@ function buildResults() {
       <div class="cta-ey">Next step</div>
       <div class="cta-hl">${ctaHl}</div>
       <p class="cta-sub">${ctaSub}</p>
-      <p class="cta-sub" style="color:var(--copper);">You've already done the work above, so the usual $379 Quick Start Call fee is waived.</p>
+      <p class="cta-sub" style="color:var(--copper);">You've already run your numbers above. Tell us about your platform and we will follow up.</p>
       <div class="cta-btns">
-        <button class="btn-p auto" id="qsc-free-trigger" data-analytics="mm-cta-free-qsc">Book a free Quick Start Call →</button>
+        <button class="btn-p auto" id="qsc-free-trigger" data-analytics="mm-cta-free-qsc">Request a Quick Start Call →</button>
         ${sec}
       </div>`;
     setTimeout(()=>{
@@ -862,7 +861,7 @@ function buildResults() {
       <p class="cta-sub">${ctaSub}</p>
       <div class="cta-btns">
         <button class="btn-p auto" id="primer-pri" data-analytics="mm-cta-primer">Get the Framework · $139 →</button>
-        <span class="cta-2nd">Or <a href="#" id="qsc-free-secondary">book a free Quick Start Call →</a></span>
+        <span class="cta-2nd">Or <a href="#" id="qsc-free-secondary">request a Quick Start Call →</a></span>
       </div>`;
     setTimeout(()=>{
       const pp = $c('primer-pri');
