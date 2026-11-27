@@ -176,27 +176,40 @@
     }
   }
 
-  // Google Ads purchase conversion
-  if (window.location.search.includes('product=tier1')) {
-    gtag('event', 'conversion', {
-      'send_to': 'AW-18079962820/purchase',
-      'value': 139.00,
-      'currency': 'USD',
-      'transaction_id': new URLSearchParams(window.location.search).get('session_id') || ''
-    });
-  }
-
-  // GA4 purchase event
-  if (window.location.search.includes('product=')) {
-    var product = _product;
+  // Purchase tracking: only for a real Stripe Checkout return (session_id cs_...), once per session.
+  // Without this gate, any visit to /success?product=tier1 counted as a sale.
+  (function () {
+    var q = new URLSearchParams(window.location.search);
+    var sid = q.get('session_id') || '';
+    if (!/^cs_(live|test)_/.test(sid)) return;
+    try {
+      if (localStorage.getItem('ml_purchase_' + sid)) return;
+      localStorage.setItem('ml_purchase_' + sid, '1');
+    } catch (e) {}
+    var product = q.get('product') || '';
     var value = product === 'qsc' ? 379 : (product === 'tier2' ? 697 : 139);
     var name  = product === 'qsc' ? 'Quick Start Call' : (product === 'tier2' ? 'Execution Playbook' : 'Strategic Framework');
-    gtag('event', 'purchase', {
-      currency: 'USD',
-      value: value,
-      items: [{ item_id: product, item_name: name, price: value }]
-    });
-  }
+
+    // Google Ads purchase conversion (Framework only)
+    if (product === 'tier1' && typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18079962820/purchase',
+        'value': 139.00,
+        'currency': 'USD',
+        'transaction_id': sid
+      });
+    }
+
+    // GA4 purchase event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'purchase', {
+        transaction_id: sid,
+        currency: 'USD',
+        value: value,
+        items: [{ item_id: product, item_name: name, price: value }]
+      });
+    }
+  })();
 </script>
 </body>
 </html>
